@@ -6,15 +6,15 @@
     1,
     0
   ],
-  "scores": 21,
+  "scores": 22,
   "conceptResultSigns": [
-    0,
     1,
-    -1
+    -1,
+    0
   ],
   "series": 300,
   "longest": 18,
   "longSeed": 267,
   "physicsSamples": 676401,
-  "maxStep": 0.2643255100387005
+  "maxStep": 0.28517530400534374
 }

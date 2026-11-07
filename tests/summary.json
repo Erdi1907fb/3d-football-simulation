@@ -1,29 +1,29 @@
 {
- "version": "V108",
- "ranAt": "2026-11-07T22:59:43.692Z",
+ "version": "V110",
+ "ranAt": "2026-11-07T23:49:01.391Z",
  "results": [
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 10.2,
-   "summary": "{\"PASS\":true,\"version\":108,\"contests\":240,\"kicks\":2039,\"outcomes\":{\"goal\":526,\"post\":168,\"wall\":343,\"save\":508,\"wide\":494},\"techniques\":[\"dip\",\"outside\",\"knuckle\",\"curl\",\"power\",\"under\"],\"physicalMatch\":0.9971,\"earlyFinish\":48,\"suddenDeath\":92,\"samples\":1202098,\"maxStep\":0.581,\"brandBoards\":true,\"sameSpotRounds\":1198,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16}"
+   "seconds": 14.5,
+   "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2066,\"outcomes\":{\"goal\":527,\"save\":504,\"wide\":493,\"post\":160,\"wall\":382},\"techniques\":[\"knuckle\",\"curl\",\"dip\",\"power\",\"outside\",\"under\"],\"physicalMatch\":0.9976,\"earlyFinish\":52,\"suddenDeath\":98,\"samples\":1216350,\"maxStep\":0.581,\"brandBoards\":true,\"sameSpotRounds\":1169,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":347,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1308}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 3.2,
-   "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4596,\"techniques\":{\"high-corner\":778,\"chip\":388,\"power-rise\":357,\"placed\":774,\"disguised\":194,\"driven\":776,\"central\":379,\"inside-foot\":730,\"outside-foot\":220},\"speedKmh\":{\"min\":53,\"median\":82,\"max\":107},\"maxStep60fps\":0.528}"
+   "seconds": 4.3,
+   "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4596,\"techniques\":{\"high-corner\":778,\"chip\":388,\"power-rise\":357,\"placed\":774,\"disguised\":194,\"driven\":776,\"central\":379,\"inside-foot\":730,\"outside-foot\":220},\"speedKmh\":{\"min\":53,\"median\":82,\"max\":107},\"maxStep60fps\":0.568,\"aeroKicks\":655,\"maxCurlMetres\":0.302}"
   },
   {
    "test": "celebrations.cjs",
    "pass": true,
    "seconds": 0.3,
-   "summary": "{\"PASS\":true,\"celebrations\":100,\"moves\":43,\"arrivals\":8,\"teamRoutines\":14,\"posesChecked\":14400,\"posesWithMotion\":11385,\"planPackShare\":0.851,\"distinctPicked\":100}"
+   "summary": "{\"PASS\":true,\"celebrations\":106,\"small\":19,\"finaleSlideShare\":0.77,\"goalSlideShare\":0.41,\"runArmVariants\":35,\"moves\":45,\"arrivals\":8,\"teamRoutines\":14,\"posesChecked\":15264,\"posesWithMotion\":14852,\"planPackShare\":0.851,\"distinctPicked\":106}"
   },
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 1.7,
+   "seconds": 2,
    "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
   },
   {
@@ -35,19 +35,19 @@
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 3.1,
+   "seconds": 4.5,
    "summary": "{"
   },
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 4.1,
+   "seconds": 5.4,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 0.8,
+   "seconds": 1.1,
    "summary": "{"
   },
   {
@@ -59,7 +59,7 @@
   {
    "test": "remaster.cjs",
    "pass": true,
-   "seconds": 0.9,
+   "seconds": 1,
    "summary": "{\"PASS\":true,\"tacticalTargets\":270,\"intents\":[\"inverted-cover\",\"rest-defence\",\"overlap\",\"pivot\",\"half-space\",\"weak-side-width\",\"wide-offer\",\"pin-and-run\",\"back-line\",\"goal-side-cover\",\"front-screen\",\"midfield-line\",\"fullback-width\",\"screen-pivot\",\"far-post-run\"],\"mirrorInvariant\":true,\"reciprocalAvoidance\":true,\"coincidentBodiesRecovered\":true,\"materialGroups\":[{\"before\":20,\"after\":14},{\"before\":20,\"after\":13}],\"deployBindings\":\"normal/concept/penalty\",\"shaderContract\":true}"
   },
   {
@@ -71,13 +71,13 @@
   {
    "test": "search-test.cjs",
    "pass": true,
-   "seconds": 0,
+   "seconds": 0.1,
    "summary": "{"
   },
   {
    "test": "engine-test.cjs",
    "pass": true,
-   "seconds": 110.3,
+   "seconds": 125.5,
    "summary": "{"
   }
  ],

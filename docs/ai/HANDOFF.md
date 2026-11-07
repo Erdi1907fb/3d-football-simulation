@@ -17,6 +17,22 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V109 → V110 (kararlı)
+
+- **Dal / commit:** `claude/great-curie-v7xiuc` → `main` (hızlı ileri). Commit: “V110: …”.
+- **Kullanıcı isteği:** Mixamo hariç tüm açık görevler; diz kayışlarını daha görünür yapıp çimde iz bırakmak; tek kolun
+  sabit kaldığı sevinçleri çeşitlendirmek; frikikte taraftarın tam ikiye bölünmesi; frikikte yalnız baraj/kaleci/vurucu,
+  gol başına küçük sevinç, sonda köşede büyük sevinç; üç moddan görüntüler; tüm testler.
+- **Yapılanlar:** bkz. CHANGELOG V110 ve PROJECT_STATE §4c. T-201, 202, 204–208, 210–212, 214 tamamlandı; T-203 kullanıcı
+  kararıyla kapandı (D-013); T-209 (gerçek cihaz) kullanıcıda; Mixamo (T-213/215) hariç tutuldu.
+- **Testler:** `node tests/run-all.cjs` → bkz. `tests/summary.json`. Tarayıcı: frikik (takım/düello), penaltı ve bültenden
+  normal maç (Lorient–Brest, kişisel deneme modu) kareleri; football-lab ve face-coverage sayfa hatası kontrolü.
+- **Dikkat:** Yerel test için bülten maçını `index.html`’de “Kişisel deneme” modunda aç (PHP veri uçları olmadan
+  “Next90 tahmini” modu yayınlanmış veri ister). `celebration-pack.js` artık poz kütüphanesidir: `gesture` alanı
+  (organizeWall, placeBall, focus, lieDown, wallCover, sad) sahne tarafından uygulanır.
+
+---
+
 ## [2026-11-07] Claude Code · V108 → V109 (kararlı)
 
 - **Dal / commit:** `claude/great-curie-v7xiuc` → `main` (hızlı ileri). Commit: “V109: …”.

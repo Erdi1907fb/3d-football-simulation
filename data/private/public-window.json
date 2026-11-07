@@ -1,0 +1,580 @@
+{
+    "schema": 6,
+    "writtenAt": "2026-11-08T02:42:12+03:00",
+    "today": "2026-11-08",
+    "replayIds": [],
+    "bulletin": {
+        "serverNow": "2026-11-08T02:42:12+03:00",
+        "today": "2026-11-08",
+        "tomorrow": "2026-11-09",
+        "dates": [
+            "2026-11-08",
+            "2026-11-09",
+            "2026-11-10",
+            "2026-11-11",
+            "2026-11-12",
+            "2026-11-13"
+        ],
+        "windowEnd": "2026-11-13",
+        "aheadDays": 5,
+        "pendingForecasts": 0,
+        "timezone": "Europe/Istanbul",
+        "generatedAt": "2026-11-08T02:42:12+03:00",
+        "matches": [],
+        "bigMatches": [],
+        "bigMatchAheadDays": 5,
+        "coverage": [
+            {
+                "id": "tr.1",
+                "name": "Süper Lig",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "en.1",
+                "name": "Premier League",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "de.1",
+                "name": "Bundesliga",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "it.1",
+                "name": "Serie A",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "es.1",
+                "name": "La Liga",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "fr.1",
+                "name": "Ligue 1",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "ucl",
+                "name": "Şampiyonlar Ligi",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "uel",
+                "name": "Avrupa Ligi",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "uecl",
+                "name": "Konferans Ligi",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            }
+        ],
+        "todayReport": {
+            "date": "2026-11-08",
+            "finalized": false,
+            "rows": [],
+            "total": 0,
+            "settled": 0,
+            "exact": 0,
+            "outcome": 0,
+            "near": 0,
+            "meanScoreError": null,
+            "outcomeRate": null,
+            "exactRate": null
+        },
+        "pollAfterSeconds": 300
+    },
+    "report": {
+        "date": "2026-11-07",
+        "finalized": false,
+        "rows": [],
+        "total": 0,
+        "settled": 0,
+        "exact": 0,
+        "outcome": 0,
+        "near": 0,
+        "meanScoreError": null,
+        "outcomeRate": null,
+        "exactRate": null
+    },
+    "health": {
+        "competitionCoverage": [
+            {
+                "id": "tr.1",
+                "name": "Süper Lig",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "en.1",
+                "name": "Premier League",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "de.1",
+                "name": "Bundesliga",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "it.1",
+                "name": "Serie A",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "es.1",
+                "name": "La Liga",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "fr.1",
+                "name": "Ligue 1",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "ucl",
+                "name": "Şampiyonlar Ligi",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "uel",
+                "name": "Avrupa Ligi",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "uecl",
+                "name": "Konferans Ligi",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "tr.1",
+                "name": "Süper Lig · TFF",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "tr.1",
+                "name": "Süper Lig",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "en.1",
+                "name": "Premier League",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "de.1",
+                "name": "Bundesliga",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "it.1",
+                "name": "Serie A",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "es.1",
+                "name": "La Liga",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "fr.1",
+                "name": "Ligue 1",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "ucl",
+                "name": "Şampiyonlar Ligi",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "uel",
+                "name": "Avrupa Ligi",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            },
+            {
+                "id": "uecl",
+                "name": "Konferans Ligi",
+                "status": "waiting",
+                "fetchedAt": null,
+                "fixtureCount": 0,
+                "unknownKickoffs": null,
+                "latestResultDate": null,
+                "unscoredPastFixtures": null
+            }
+        ],
+        "status": "stale",
+        "lastAttempt": "2026-11-08T02:42:12+03:00",
+        "lastSuccess": null,
+        "nextRefresh": "2026-11-08T08:42:12+03:00",
+        "sourceChecks": {
+            "live/tr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/en.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/de.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/it.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/es.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/fr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/ucl": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/uel": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "live/uecl": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "tff/tr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/tr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/en.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/de.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/it.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/es.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/fr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/tr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/en.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/de.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/it.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/es.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/fr.1": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/ucl": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2025-26/ucl": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/uel": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            },
+            "2026-27/uecl": {
+                "status": "waiting",
+                "fetchedAt": null,
+                "matches": 0
+            }
+        },
+        "coverage": {
+            "configuredCompetitions": [
+                "tr.1",
+                "en.1",
+                "de.1",
+                "it.1",
+                "es.1",
+                "fr.1",
+                "ucl",
+                "uel",
+                "uecl"
+            ],
+            "defaultUnavailable": [
+                "National teams"
+            ],
+            "note": "Community fixtures/results. Unknown times remain provisional. Download freshness does not guarantee source accuracy or complete results."
+        },
+        "authorizedFeedConfigured": false,
+        "fixtureCount": 680,
+        "predictionCount": 0,
+        "pendingForecasts": 0,
+        "liveCoverage": [
+            {
+                "id": "tr.1",
+                "name": "Süper Lig",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "en.1",
+                "name": "Premier League",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "de.1",
+                "name": "Bundesliga",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "it.1",
+                "name": "Serie A",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "es.1",
+                "name": "La Liga",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "fr.1",
+                "name": "Ligue 1",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "ucl",
+                "name": "Şampiyonlar Ligi",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "uel",
+                "name": "Avrupa Ligi",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            },
+            {
+                "id": "uecl",
+                "name": "Konferans Ligi",
+                "status": "waiting",
+                "today": 0,
+                "tomorrow": 0,
+                "fetchedAt": null
+            }
+        ],
+        "secondaryData": {
+            "provider": "BSD",
+            "configured": false,
+            "coachPolicy": "independent-current-club-source",
+            "faces": {
+                "clubs": 180,
+                "players": 4600,
+                "matched": 4507,
+                "downloaded": 4507,
+                "missing": 93,
+                "bsdMatched": 4065
+            }
+        },
+        "rolloverHour": 6,
+        "bulletinDay": "2026-11-08",
+        "schedulerLastRunAt": null,
+        "pollAfterSeconds": 300,
+        "resultRefreshSeconds": 900,
+        "publicationNeeded": false,
+        "fixtureScope": "all",
+        "publishAheadDays": 5,
+        "autoRefreshEnabled": true,
+        "pendingSources": 26,
+        "webCooldownSeconds": 8,
+        "backgroundVerified": false,
+        "cronOverdue": true,
+        "dataOverdue": false
+    }
+}

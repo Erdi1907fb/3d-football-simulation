@@ -2,6 +2,28 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V110 — 2026-11-08 (Claude Code) · kararlı
+
+### Yeni
+- Çimde diz/göğüs kayma izleri; stüdyoda kayışlar gerçekten öne ilerler.
+- GameplayFootball el yapımı sevinç (`happy_extreme`, `happy_normal`) ve üzgünlük (`sad_normal`) klipleri bağlandı;
+  sevinç sayısı 106.
+- Frikik: barajın arkasında yatan oyuncu (alçak şutu keser), kalecinin barajı yönetmesi ve açıortay konumu, vurucunun
+  topu yerleştirip geri çekilmesi, kalite ayarı.
+- Maç: kontra koşu hatları, pres tetikleyicileri, rakip kontrasında geri koşu.
+- `docs/ai/research/LEAGUE-SOCCER.md` inceleme raporu.
+
+### Değişen
+- Frikikte ekranda yalnız baraj + kaleci + vurucu; her golde topun önünde küçük sevinç, seri sonunda köşede büyük sevinç.
+- Penaltıda da gol başına küçük sevinç, finalde büyük sevinç.
+- Frikik taraftarı: eşit → stadyum tam ortadan ikiye; tek taraf → tüm tribün.
+- Koşu sırasında iki kol da hareketli (6 düzen); maç gollerinde kayış oranı ~%41.
+- Penaltı uçuşu ve maç şutları aerodinamik modelde; forma/şort kumaş dokusu, şort numarası netliği.
+
+### Testler
+- `run-all` 13/13; frikik testine yatan oyuncu, açıortay, hazırlık; sevinç testine küçük/büyük set, iki kol, kayış ilerlemesi,
+  jestler; penaltı testine aerodinamik hedef doğruluğu ve kavis eklendi.
+
 ## V109 — 2026-11-07 (Claude Code) · kararlı
 
 ### Yeni

@@ -1,8 +1,10 @@
 /* Deterministic metre/second ball integration. Used by the v3 shot resolver. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./open-football-adapter.js'));else r.SekmeFootballPhysics=f(r.Next90OpenFootball);})(typeof globalThis!=='undefined'?globalThis:this,function(OpenFootball){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./open-football-adapter.js'),require('./ball-aero.js'));else r.SekmeFootballPhysics=f(r.Next90OpenFootball,r.Next90BallAero);})(typeof globalThis!=='undefined'?globalThis:this,function(OpenFootball,Aero){'use strict';
+// V110: in-air drag follows the shared aerodynamic drag-crisis curve (ball-aero.js), scaled
+// to the existing 120 Hz kernel; spin/Magnus and ground roll are unchanged.
 const STEP=1/120,R=.11,clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 function advance(b,dt=STEP){
- const air=b.y>R+.003||Math.abs(b.vy)>.12,drag=air?.035:0,v=Math.hypot(b.vx,b.vz),mx=-(b.spin||0)*b.vz*.0035,mz=(b.spin||0)*b.vx*.0035;
+ const air=b.y>R+.003||Math.abs(b.vy)>.12,sp3=Math.hypot(b.vx,b.vy,b.vz),drag=air?(Aero?.5*1.2*Math.PI*R*R/.43*Aero.dragCoefficient(sp3)*sp3*.55:.035):0,v=Math.hypot(b.vx,b.vz),mx=-(b.spin||0)*b.vz*.0035,mz=(b.spin||0)*b.vx*.0035;
  b.vx+=(mx-b.vx*drag)*dt;b.vz+=(mz-b.vz*drag)*dt;if(!air&&v>.01){const retained=Math.max(0,1-.62*dt/Math.max(.01,v))*Math.exp(-.035*dt);b.vx*=retained;b.vz*=retained;if(Math.hypot(b.vx,b.vz)<.10)b.vx=b.vz=0;}
  b.x+=b.vx*dt;b.z+=b.vz*dt;b.y+=b.vy*dt-(air?4.905*dt*dt:0);if(air)b.vy-=9.81*dt;
  if(b.y<R){const impact=Math.abs(b.vy),restitution=clamp(.34+impact*.008,.36,.48),grip=clamp(.94-impact*.012,.80,.92);b.y=R;b.vy=impact>.45?impact*restitution:0;b.vx*=grip;b.vz*=grip;}b.spin=(b.spin||0)*Math.exp(-dt*.40);return b;

@@ -75,3 +75,20 @@ sayfasının yükü; kaynak aynı, `tools/build-national-walls.cjs` ile yeniden 
 **Karar:** `assets/characters/animations/*.json` (index.json, land.json dahil) ve `base_body.joints.json` geri getirildi.
 **Gerekçe:** klasör toptan silinirken referans taramasında listelenmeyen iki dosya da gitmişti; çalışma anında kullanılmıyorlar
 ama küçük ve `sources.json` tarafından belgeleniyorlar. Kural AGENTS.md §7’ye eklendi.
+
+## D-013 · 2026-11-08 · claude · kabul — Frikikte yalnız baraj, kaleci, vurucu; küçük/büyük sevinç ayrımı
+**Karar:** Kullanıcı isteğiyle kutudaki oyuncular ve hakem kaldırıldı (T-203 ikinci top oyunu bu yüzden kapatıldı).
+Her gol için yerinde küçük sevinç, seri sonunda köşede büyük sevinç (penaltı ile aynı). 
+
+## D-014 · 2026-11-08 · claude · kabul — Penaltı uçuşu aerodinamik, sonuç modeli sabit
+**Karar:** `penalty-engine.js` görünen uçuşu `ball-aero.solve` ile hesaplar; hedef ve varış zamanı aynı kalır (testte
+<0,1 mm). RNG akışı değişmedi; `presentation`/`variation` testleri aynı vuruş sayılarını verir.
+
+## D-015 · 2026-11-08 · claude · kabul — Maç fiziğinde aerodinamik sürükleme
+**Karar:** `football-physics.advance` havadaki sürüklemeyi `ball-aero.dragCoefficient` ile hesaplar (0,55 ölçekli).
+**Gerekçe:** daha gerçekçi uzak şut yavaşlaması; `engine-test` (18 maç, 54 korunan gol) değişmeden geçti. Yayınlanmış
+skorlar `forecast-physics` ile fiziksel olarak yeniden çözülür, değişmez.
+
+## D-016 · 2026-11-08 · claude · kabul — Frikik taraftar bölünmesi uzun eksende
+**Karar:** Frikik kamerası her turda farklı açıdan baktığı için bölünme penaltı kamera ışını yerine sahanın uzun ekseninde
+(z=0) yapılır: kalenin arkasındaki tribün tam ortadan ikiye ayrılır.

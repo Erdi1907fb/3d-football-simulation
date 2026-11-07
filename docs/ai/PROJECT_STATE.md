@@ -1,17 +1,17 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V109** · 2026-11-07 · Claude Code
+> Son güncelleme: **V110** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V109** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V110** |
+| Kararlı sürüm | **V110** (`VERSION`) |
+| Sonraki geliştirme hedefi | **V111** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v109.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Sürüm doğrulama | `build.php` → `assets/release-v110.json` (sha256 listesi, `tools/make-release.cjs`) |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -86,6 +86,25 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   bandın üstünde tutar.
 - **Penaltı:** teknik etiketi + hız (ayak içi köşe, doksana, sert, ayak üstü güçlü, ayak dışı, Panenka, ortaya…);
   ayak dışı vuruşta falso ters yöne. Sonuç modeli ve rastgele akış değişmedi (testler aynı sayıları verir).
+
+## 4c. V110 eklemeleri
+- **Serbest vuruş sahnesi:** ekranda yalnız baraj, kaleci ve vurucu; hakem kadraj dışında. Vurucu topu yerleştirir,
+  geri çekilir, odaklanır; kaleci önce yakın direkte barajı yönetir (kol işareti), sonra yan adımla açıortay
+  konumuna geçer (League-Soccer `goalie_default` uyarlaması). Kısa mesafede bazen barajın arkasına bir oyuncu yatar
+  ve alçak şutları fiziksel olarak keser. Taraftar: “eşit” seçilirse stadyum uzun eksen (z=0) boyunca tam ikiye
+  bölünür; tek taraf seçilirse tüm tribün o takımın.
+- **Sevinç kuralı (stüdyolar):** her penaltı/frikik golünde vurucu topun önünde *küçük* bir sevinç yapar (yerinde, kayışsız);
+  kaçırınca bazen GameplayFootball “üzgün” klibi. Seri bitince kazanan köşeye koşar ve *büyük* sevinç (çoğunlukla diz
+  üstü kayış, çimde iz bırakarak).
+- **Sevinç paketi v110:** 106 sevinç (6’sı GameplayFootball el yapımı `happy_extreme/happy_normal` klipleri), koşu
+  sırasında iki kolun da oynadığı 6 kol düzeni, maç gollerinin ~%41’inde kayış (%28 diz üstü), stüdyoda kayış öne
+  ilerler ve **çimde kayma izi** bırakır (`useTrails`, geri sarınca sıfırlanır).
+- **Fizik:** penaltı uçuşu `ball-aero.js` ile (çözücü hedef/zamanı korur, sonuç değişmez); maç şutlarında hava direnci
+  sürükleme krizi eğrisine bağlandı (`football-physics.js`).
+- **Maç taktikleri:** top kazanımından sonraki 6,5 sn kontra koşu hatları; pres tetikleyicileri (kenar çizgisi tuzağı,
+  geriye dönük top alma) ve rakip kontrasında geri koşu (`collective-play.js`).
+- **Görünüm:** forma/şortta prosedürel örgü normal haritası, şort numarası 512 px.
+- **Serbest vuruş kalite ayarı:** Yüksek/Dengeli/Hızlı (site geneli `SekmeGraphics` ile ortak).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

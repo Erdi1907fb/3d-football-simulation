@@ -114,7 +114,8 @@ function create(options={}){
  const quality=Graphics.get(options.quality);
  const teams=options.teams||M.teams,compact=!!options.compact,stadiumProfile=A.profile(teams,options.venue,Presentation.profile(options.fixture,teams));
  // Every seat remains occupied on phones. Only nearby articulation is simplified.
- const penaltySupporter=p=>PenaltyStage.supporter(p,options.penaltyCrowd);const seats=venue=>{const rows=crowdLayout(venue,stadiumProfile).map(p=>{if(options.penaltyCrowd)p={...p,team:penaltySupporter(p)};return compact?{...p,detail:p.detail&&p.id%8===0}:p;});if(options.penaltyCrowd==='equal'){const count=rows.reduce((n,p)=>n+(p.team===0),0),target=Math.floor(rows.length/2),from=count>target?0:1;let left=Math.abs(count-target);const offCamera=rows.filter(p=>p.team===from&&p.x<0&&Math.abs(p.z)<5).sort((a,b)=>Math.abs(a.z)-Math.abs(b.z));for(const p of offCamera){if(!left)break;p.team=1-from;left--;}}return rows;};
+ // V110: Free Kick Studio splits the whole bowl exactly along the pitch's long axis (z=0); one-side mode fills every stand.
+ const penaltySupporter=p=>options.freeKickStudio?(options.penaltyCrowd==='equal'?(p.z>=0?1:0):options.penaltyCrowd==='away'?1:0):PenaltyStage.supporter(p,options.penaltyCrowd);const seats=venue=>{const rows=crowdLayout(venue,stadiumProfile).map(p=>{if(options.penaltyCrowd)p={...p,team:penaltySupporter(p)};return compact?{...p,detail:p.detail&&p.id%8===0}:p;});if(options.penaltyCrowd==='equal'){const count=rows.reduce((n,p)=>n+(p.team===0),0),target=Math.floor(rows.length/2),from=count>target?0:1;let left=Math.abs(count-target);const offCamera=rows.filter(p=>p.team===from&&p.x<0&&Math.abs(p.z)<5).sort((a,b)=>Math.abs(a.z)-Math.abs(b.z));for(const p of offCamera){if(!left)break;p.team=1-from;left--;}}return rows;};
 
  const kitRuntime=Kits.create(teams,{loadImage:options.loadKitImage});
  const scene=new T.Scene();
@@ -130,7 +131,7 @@ function create(options={}){
  const badge=(parent,team,w,h,x,y,z)=>mesh(geo('PlaneGeometry',w,h),crestMaterials[team],parent,x,y,z);
  const netGoals=[];
  const stadium=new T.Group();stadium.userData.baked=true;scene.add(stadium);box(stadium,164,.6,128,0x173529,0,-.4,0);const lighting=N.create(scene,stadium);scene.fog.near=450;scene.fog.far=900;const stadiumShell=Shell.create({scene,stadium,profile:stadiumProfile,teams});const stadiumExtras=A.create(stadium,stadiumProfile,teams,options.canvasFactory);const ceremony=PC.create(scene,teams,options.canvasFactory);scene.userData.stadium={...stadiumProfile};
- const adboards=Boards.create(stadium,options.canvasFactory,{fixture:options.fixture,brandOnly:!!(options.penaltyStudio||options.freeKickStudio||options.brandBoards)});const pitchDetail=P.create(stadium,{quality:quality.id,tufts:0,anisotropy:quality.anisotropy}),{grass,grassNormal}=pitchDetail;
+ const adboards=Boards.create(stadium,options.canvasFactory,{fixture:options.fixture,brandOnly:!!(options.penaltyStudio||options.freeKickStudio||options.brandBoards)});const slideTrails=CelebrationPack?.useTrails?.(T,stadium);const pitchDetail=P.create(stadium,{quality:quality.id,tufts:0,anisotropy:quality.anisotropy}),{grass,grassNormal}=pitchDetail;
  const turf=[0x2f7d44,0x38894c].map(color=>new T.MeshStandardMaterial({color,map:grass,normalMap:grassNormal,normalScale:new T.Vector2(.11,.12),roughness:.98}));
  scene.userData.turf=pitchDetail.info;
  const turfMeshes=[];for(let i=0;i<14;i++)turfMeshes.push(box(stadium,105/14,.035,68,turf[i%2],-52.5+(i+.5)*105/14,-.015,0));for(const m of turfMeshes){m.userData.noBatch=true;m.receiveShadow=quality.shadows;}const turfReady=pitchDetail.bind(turf,turfMeshes);
@@ -498,6 +499,7 @@ function create(options={}){
     if(style==='kneelPoint'&&['solo','group'].includes(p.celebrationStage))kneel=Math.min(1,(p.celebrationStage==='solo'?Math.max(0,age-p.celebrationSlideEnd+1.4):state.celebration?.groupAge||0)*3);
     if(kneel>0){a.waist.position.y=.923+(.52-.923)*kneel;for(const l of a.legs){l.hip.rotation.x=l.hip.rotation.x*(1-kneel)-.55*kneel;l.knee.rotation.x=l.knee.rotation.x*(1-kneel)+(Math.PI/2+.55)*kneel;l.boot.rotation.x=-l.hip.rotation.x-l.knee.rotation.x;}}
    }
+   slideTrails?.frame(state);if(p.gesture&&CelebrationPack)CelebrationPack.gesture(a,p);
    if(p.celebrate&&p.goalScorer&&!p.photoPose&&CelebrationPack)CelebrationPack.apply(a,p,state);
    const teamRoutine=p.teamRoutine||state.chance?.celebrationTeamRoutine;if(p.celebrate&&p.celebrationStage==='group'&&!p.goalScorer&&teamRoutine&&CelebrationPack?.team(a,p,state,teamRoutine)){}else
    if(p.celebrate&&p.celebrationStage==='group'&&!p.goalScorer){const variant=((state.chance.celebrationVariant||0)+a.index)%6,beat=state.celebration?.beat||0;
