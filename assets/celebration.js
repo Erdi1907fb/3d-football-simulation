@@ -40,6 +40,9 @@ function create({players,team,dir,flank,venue,scorerId,variant=0,holdSeconds=HOL
  const ids=runners.map(p=>p.id),scorerArrival=soloStart;
  return{target,scorer:scorer.id,scorerArrival,leadDelay:joinAt,soloStart,soloEnd,runDuration,duration:runDuration+hold,hold,frames,ids,stageAt(time){return time<soloStart?'run':time<soloEnd?'solo':time<runDuration?'join':'group';},sample(time){const t=clamp(time/STEP,0,frames.length-1),i=Math.min(frames.length-2,Math.floor(t)),q=t-i,a=frames[i],b=frames[i+1];return ids.map((id,j)=>{const k=j*7;return{id,x:a[k]+(b[k]-a[k])*q,z:a[k+1]+(b[k+1]-a[k+1])*q,vx:a[k+2]+(b[k+2]-a[k+2])*q,vz:a[k+3]+(b[k+3]-a[k+3])*q,heading:a[k+4]+turn(a[k+4],b[k+4])*q,travel:a[k+5]+(b[k+5]-a[k+5])*q,speed:time>=runDuration?0:a[k+6]+(b[k+6]-a[k+6])*q};});}};
 }
-function plan(seed,index){const n=(Math.imul((seed||91)^0x736576,1664525)>>>0),styles=['armsWide','heart','salute','airplane','clapCrowd','pointToCrowd','doublePump','earCup','skyPoint','crowdConductor'];return{style:index%2===0?((Math.floor(index/2)+(n%2))%2?'packDance':'packCheer'):styles[(Math.floor(index/2)+n)%styles.length],variant:(n+index*5)%6,soloSeconds:3.2};}
+// V109: 85% of goals draw from the 100-celebration pack; the rest keep the original clip styles.
+const Pack=(typeof globalThis!=='undefined'&&globalThis.Next90CelebrationPack)||(typeof module==='object'&&module.exports?require('./celebration-pack.js'):null);
+function plan(seed,index){const n0=(Math.imul((seed||91)^0x51ed27,2246822519)+index*7919)>>>0;if(Pack&&n0%100<85){const c=Pack.pick(seed||91,index);return{style:c.style,variant:c.variant,soloSeconds:c.soloSeconds,teamRoutine:c.team,packId:c.id};}return legacyPlan(seed,index);}
+function legacyPlan(seed,index){const n=(Math.imul((seed||91)^0x736576,1664525)>>>0),styles=['armsWide','heart','salute','airplane','clapCrowd','pointToCrowd','doublePump','earCup','skyPoint','crowdConductor'];return{style:index%2===0?((Math.floor(index/2)+(n%2))%2?'packDance':'packCheer'):styles[(Math.floor(index/2)+n)%styles.length],variant:(n+index*5)%6,soloSeconds:3.2};}
 return{create,destination,HOLD,STEP,plan};
 });

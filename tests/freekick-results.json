@@ -2,26 +2,37 @@
   "PASS": true,
   "version": 108,
   "contests": 240,
-  "kicks": 2084,
+  "kicks": 2039,
   "outcomes": {
-    "goal": 505,
-    "wall": 363,
-    "save": 541,
-    "post": 167,
-    "wide": 508
+    "goal": 526,
+    "post": 168,
+    "wall": 343,
+    "save": 508,
+    "wide": 494
   },
   "techniques": [
+    "dip",
     "outside",
     "knuckle",
-    "under",
-    "power",
     "curl",
-    "dip"
+    "power",
+    "under"
   ],
-  "physicalMatch": 0.9981,
-  "earlyFinish": 45,
-  "suddenDeath": 96,
-  "samples": 1225856,
-  "maxStep": 0.585,
-  "brandBoards": true
+  "physicalMatch": 0.9971,
+  "earlyFinish": 48,
+  "suddenDeath": 92,
+  "samples": 1202098,
+  "maxStep": 0.581,
+  "brandBoards": true,
+  "sameSpotRounds": 1198,
+  "mirroredPairs": 800,
+  "spotPresets": {
+    "right-wide": 400,
+    "left-wide": 400,
+    "long": 400,
+    "central": 400,
+    "right": 400,
+    "left": 400
+  },
+  "nationalWallCountries": 16
 }

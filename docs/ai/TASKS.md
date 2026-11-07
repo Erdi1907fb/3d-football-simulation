@@ -4,7 +4,7 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V109
+## Aktif hedef: V110
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
@@ -19,12 +19,20 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-209 | Gerçek cihaz testi: iPhone Safari + Android Chrome’da `freekick.html` MP4 indirme | todo | kullanıcı | Ajanlar fiziksel cihaz testi yapamaz |
 | T-210 | `football-lab.html`, `face-coverage.html` V108 kanonik dosyalarla tarayıcı doğrulaması | todo | — | |
 | T-211 | Serbest vuruş stüdyosunda kalite ayarları (gölge, kalabalık yoğunluğu) için `studio-settings` entegrasyonu | todo | — | `studio-settings.js` |
+| T-213 | Sevinçler için gerçek motion-capture klipleri (kullanıcı Mixamo’dan indirirse retarget) | todo | — | `celebration-clips.js`, D-005 |
+| T-214 | Serbest vuruş kalecisinin barajı kurarken işaret vermesi / bağırma animasyonu | todo | — | `freekick-ui.js` |
 | T-212 | Oyuncu modeli: forma kumaş kırışık normal haritası, şort/çorap numarası netliği, saç profilleri | todo | — | `scene.js`, `kit-runtime.js`, `jersey-print.js` |
 
 ## Tamamlananlar
 
 | ID | Görev | Sürüm | Sahip |
 |---|---|---|---|
+| T-109 | Sevinç paketi: 100 gol sevinci + 14 takım rutini, tüm modlar | V109 | claude |
+| T-110 | Serbest vuruş ayna nokta takvimi + aynı nokta/tur | V109 | claude |
+| T-111 | Millî forma düellosunda millî kadro barajı (isim+numara) | V109 | claude |
+| T-112 | Serbest vuruş grafiklerini Reels güvenli bandına taşıma, kamera kadrajı | V109 | claude |
+| T-113 | Penaltı teknik etiketi + hız, ayak dışı | V109 | claude |
+| T-114 | Test paketi: penaltı, sevinç, tahmin (JS+PHP), run-all | V109 | claude |
 | T-101 | Repo temizliği: yinelenen sürüm kopyaları, eski HTML’ler, kullanılmayan büyük dosyalar | V108 | claude |
 | T-102 | Ortak çalışma altyapısı (AGENTS/CLAUDE/VERSION/docs/ai, release manifest aracı) | V108 | claude |
 | T-103 | Ortak aerodinamik top modülü `ball-aero.js` | V108 | claude |

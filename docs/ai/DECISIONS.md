@@ -57,3 +57,21 @@ testlerde (18 maç, korunan goller) regresyon üretmedi.
 **Karar:** `AGENTS.md` (ortak kurallar) + `CLAUDE.md` (Claude eki) + `docs/ai/*`. Codex
 `AGENTS.md`’yi otomatik okur; Claude `CLAUDE.md` üzerinden aynı dosyaya yönlendirilir.
 **Gerekçe:** İki ajan birbirinin sohbetini göremez; tek doğruluk kaynağı commit edilmiş dosyalardır.
+
+## D-009 · 2026-11-07 · claude · kabul — Sevinçler prosedürel paket
+**Karar:** 100 sevinç, 8 varış × 43 imza hareketin adlandırılmış birleşimleri olarak `celebration-pack.js` içinde
+prosedürel eklem animasyonu; FIFA/EA varlıkları kullanılmaz (telif). **Gerekçe:** lisans temiz, dosya boyutu küçük
+(~15 KB), mevcut iskelet ve tam vücut çalışma zamanıyla uyumlu; motion-capture gelirse aynı `style` adıyla değiştirilebilir.
+
+## D-010 · 2026-11-07 · claude · kabul — Stüdyo grafikleri tek güvenli bantta
+**Karar:** Serbest vuruş grafikleri penaltıdaki `Stage.overlayLayout` bandına taşındı. **Gerekçe:** kullanıcı: Reels/Shorts
+üst ve alt bölgeleri platform arayüzü altında kalıyor; penaltı yerleşimi sahada doğrulanmış.
+
+## D-011 · 2026-11-07 · claude · kabul — Millî baraj verisi ön hesaplanmış
+**Karar:** 32 MB `concept/teams.js` yerine `national-walls.json` (≈630 KB, 16 ülke, 1980–2026). **Gerekçe:** serbest vuruş
+sayfasının yükü; kaynak aynı, `tools/build-national-walls.cjs` ile yeniden üretilebilir.
+
+## D-012 · 2026-11-07 · claude · kabul — V108 temizliğinde geri alınan dosyalar
+**Karar:** `assets/characters/animations/*.json` (index.json, land.json dahil) ve `base_body.joints.json` geri getirildi.
+**Gerekçe:** klasör toptan silinirken referans taramasında listelenmeyen iki dosya da gitmişti; çalışma anında kullanılmıyorlar
+ama küçük ve `sources.json` tarafından belgeleniyorlar. Kural AGENTS.md §7’ye eklendi.

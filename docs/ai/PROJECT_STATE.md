@@ -1,17 +1,17 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V108** · 2026-11-07 · Claude Code
+> Son güncelleme: **V109** · 2026-11-07 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V108** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V109** |
+| Kararlı sürüm | **V109** (`VERSION`) |
+| Sonraki geliştirme hedefi | **V110** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v108.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Sürüm doğrulama | `build.php` → `assets/release-v109.json` (sha256 listesi, `tools/make-release.cjs`) |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -73,13 +73,27 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Kameralar: oyuncunun arkasından (varsayılan), omuz üstü, yayın açısı, kale arkası.
 - UI: `freekick.html` + `assets/freekick-ui.js`; dışa açık API `window.Next90FreeKickStudio`.
 
+## 4b. V109 eklemeleri
+- **Sevinç paketi** `assets/celebration-pack.js`: 100 adlandırılmış gol sevinci (8 varış: diz üstü/göğüs üstü/yan kayış,
+  zıplayıp dönme, sıçrama, diz çökme, tek diz; 43 imza hareket) + 14 takım rutini. Normal maçta gollerin ~%85’i paketten
+  seçilir (`celebration.js plan()`), penaltı/serbest vuruş tepkileri ve final sevinçleri de paketi kullanır.
+  Sahne kancası: `scene.js` → `CelebrationPack.apply` (golcü) ve `CelebrationPack.team` (takım arkadaşları).
+- **Serbest vuruş noktaları:** `schedule()` — sol/sağ noktalar birebir ayna çiftleri (bir sol ayaklıyı zorlayan nokta,
+  sağ ayaklıyı zorlayan aynasıyla eşleşir), ayrıca merkez ve uzak mesafe; her turda iki taraf aynı noktadan vurur.
+- **Millî baraj:** düelloda millî forma seçilince barajı o ülkenin gerçek kadrosu (isim + forma numarası) oluşturur,
+  formanın dönemine en yakın yıl seçilir (`assets/national-walls.json`, `tools/build-national-walls.cjs`, 16 ülke).
+- **Güvenli alan:** serbest vuruş grafikleri penaltı stüdyosundaki bantla birebir aynı yere taşındı; kamera aksiyonu
+  bandın üstünde tutar.
+- **Penaltı:** teknik etiketi + hız (ayak içi köşe, doksana, sert, ayak üstü güçlü, ayak dışı, Panenka, ortaya…);
+  ayak dışı vuruşta falso ters yöne. Sonuç modeli ve rastgele akış değişmedi (testler aynı sayıları verir).
+
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
   gerçek GPU FPS ölçülmedi.
 - Serbest vuruşta baraj oyuncuları ve kutudaki oyuncular basit poz kullanır (koşu/zıplama);
   ikili mücadele veya kafa vuruşu ile ikinci top (rebound) oyunu yok.
 - Oyuncu modelleri MPFB tabanlı stilize modellerdir; yüzler fotoğraf dokusudur, 3D tarama değildir.
-- Mixamo animasyonları **eklenmedi** (lisans: Adobe hesabı ve dağıtım şartları; bkz. DECISIONS D-005).
+- Sevinçler prosedüreldir (eklem açıları); motion-capture klibi değildir. Mixamo animasyonları **eklenmedi** (lisans: Adobe hesabı ve dağıtım şartları; bkz. DECISIONS D-005).
 - Normal maç motoru “chance” (pozisyon) tabanlı zaman çizelgesi üretir; tam 90 dakikalık sürekli
   fizik simülasyonu değildir. V108’de yalnızca savunma blok derinliği/step-off eklendi.
 - Penaltı motoru kendi parabolik yolunu kullanır; `ball-aero.js`’ye taşınması V109 görevidir.

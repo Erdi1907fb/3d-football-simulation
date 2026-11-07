@@ -2,6 +2,24 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V109 — 2026-11-07 (Claude Code) · kararlı
+
+### Yeni
+- **Sevinç paketi:** 100 adlandırılmış gol sevinci (diz üstü kayış, göğüs üstü kayış, yan kayış, zıplayıp dönme, sıçrayıp
+  yumruk, diz çökme, tek diz; uçak, kalp, sus, kulak, okçu, robot, dab, meditasyon, samba, gölge boksu…) ve 14 takım
+  rutini (kucaklaşma, üst üste yığılma, birlikte zıplama, golcüye selam, alkış halkası, birlikte kayış…). Normal maç,
+  penaltı ve serbest vuruşta.
+- **Millî baraj:** düelloda millî forma → barajda o ülkenin gerçek oyuncuları ve forma numaraları.
+- **Testler:** `penalty.cjs`, `celebrations.cjs`, `forecast.cjs`, `forecast.php`, `run-all.cjs` (+ `tests/summary.json`).
+
+### İyileştirmeler
+- Serbest vuruş noktaları: sol/sağ ayna çiftleri, merkez ve uzak; her turda iki taraf aynı noktadan.
+- Serbest vuruş grafikleri Reels/Shorts güvenli bandında (penaltı ile aynı yer); kamera kadrajı aksiyonu bandın üstünde tutar.
+- Penaltı: vuruş tekniği + hız etiketi; ayak dışı vuruş falsosu.
+
+### Düzeltmeler
+- V108 temizliğinde yanlışlıkla silinen küçük animasyon JSON dosyaları geri getirildi.
+
 ## V108 — 2026-11-07 (Claude Code) · kararlı
 
 ### Yeni

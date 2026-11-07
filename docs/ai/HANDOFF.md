@@ -17,6 +17,32 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-07] Claude Code · V108 → V109 (kararlı)
+
+- **Dal / commit:** `claude/great-curie-v7xiuc` → `main` (hızlı ileri). Commit: “V109: …”.
+- **Kullanıcı isteği (özet):** Tüm modlara sevinç paketi (takım + golcü, diz kayması vb., mümkünse ~100);
+  serbest vuruşta dengeli rastgele noktalar (sol/sağ ayaklıyı eşit zorlayan, merkez, uzak) ve her turda iki tarafın
+  aynı noktadan vurması; penaltı vuruş çeşitleri ve görünümü; millî forma düellosunda barajın doğru millî takım
+  oyuncularından (doğru numaralarla) oluşması; Reels güvenli alanına göre grafik yerleşimi; kod hatası taraması;
+  penaltı/maç/tahmin testleri; 1080p60 MP4’ün korunması; silinen dosyaların gözden geçirilmesi.
+- **Yapılanlar:** `celebration-pack.js` (100 + 14) ve sahne/planlayıcı/stüdyo bağlantıları; `freekick-engine.js`
+  `schedule()` ayna noktalar; `national-walls.json` + üretici araç; serbest vuruş grafikleri penaltı bandına,
+  kameralar yeniden kadrajlandı; penaltı teknik etiketi + hız, ayak dışı falso; önceki temizlikte yanlışlıkla silinen
+  küçük `assets/characters/animations/*.json` ve `base_body.joints.json` geri getirildi; yeni testler
+  (`penalty`, `celebrations`, `forecast.cjs`, `forecast.php`, `run-all`).
+- **Hata taraması:** tüm JS `node --check`, tüm PHP `php -l`, tüm JSON ayrıştırma, HTML/`fetch`/statik yol
+  referansları ve PHP `__DIR__` yolları tarandı → hata yok (yalnız isteğe bağlı `render-config.php`).
+- **Testler:** `node tests/run-all.cjs` → 13/13 PASS (`tests/summary.json`). Tarayıcı (Chromium/SwiftShader):
+  serbest vuruş takım + düello, millî baraj (Portekiz 2026), sevinç kareleri, **1080×1920 / 60 FPS MP4 kodlama
+  denemesi 1,5 sn klip → geçerli MP4** (tam süreli ve sesli dışa aktarma ile gerçek telefon test edilmedi).
+- **Tamamlanmayanlar:** motion-capture sevinç klipleri (Mixamo vb.), penaltı yolunun `ball-aero.js`’ye taşınması,
+  maçta atak/kontra çeşitleri (TASKS T-201…T-212 sürüyor).
+- **Sonraki ajan için dikkat:** sevinç stili `pack:<id>` biçimindedir; eski stiller (`kneeSlide`, `packCheer`…) hâlâ
+  geçerli. `celebrationSlideEnd=0` stüdyo modunu (yerinde kayış) belirtir. Grafik yerleşimini değiştirirken
+  `Stage.overlayLayout` dışına çıkma.
+
+---
+
 ## [2026-11-07] Claude Code · V107 → V108 (kararlı)
 
 - **Dal / commit:** `claude/great-curie-v7xiuc` → `main`’e hızlı ileri birleştirildi

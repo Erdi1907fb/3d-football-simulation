@@ -44,6 +44,8 @@ olursa **bu dosya geçerlidir**.
   İstenen sonuç bulunamazsa fiziksel sonuç kazanır.
 - **Dürüstlük:** uydurma istatistik, sahte resmî logo/forma eklenmez. Tahmin modelleri
   “model tahmini/eğlence ağırlığı” olarak etiketlenir.
+- **Reels/Shorts güvenli alanı:** stüdyo grafikleri yalnız `Stage.overlayLayout` bandında (1080×1920’de x 30–909, y ≈1296–1518). Üst ~250 px, alt ~400 px ve sağ kenar platform arayüzüne aittir; kamera aksiyonu bandın üstünde tutar.
+- **Sevinçler:** `assets/celebration-pack.js` (100 sevinç + 14 takım rutini) tüm modlarda ortaktır; yeni sevinç eklerken `NAMES` listesine ekle ve `tests/celebrations.cjs` çalıştır.
 - **Reklam panoları:** stüdyolarda (penaltı/serbest vuruş) lig markası yok; next90sim
   markası (`assets/brand-config.js`, `assets/next90sim.png`).
 - Kullanıcının istediği özellikleri izinsiz kaldırma. Çalışan sistemi sıfırdan yeniden yazma.
@@ -62,7 +64,12 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, marka panoları | ~10 sn |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar | ~2,5 dk |
+| `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
+| `node tests/penalty.cjs` | Penaltı teknikleri (9 tür), hız aralığı, ayak dışı falso, süreklilik | ~3 sn |
+| `node tests/celebrations.cjs` | 100 sevinç + 14 takım rutini, 14.400 poz sonlu/geçerli, planlayıcı dağılımı | <1 sn |
+| `node tests/forecast.cjs` | Konsept analiz (1X2 toplamı, simetri, ev avantajı), sezon motoru (fikstür, puan, tohum) | ~2 sn |
+| `php tests/forecast.php` | Sunucu tahmin modeli: determinizm, xG sınırları, gelecek veri sızıntısı yok, piyasa oranı, kilit özeti | <1 sn |
 | `node tests/presentation.cjs` | Penaltı serileri, resmî kural, yerleşim | ~3 sn |
 | `node tests/variation.cjs` | Senaryo çeşitliliği, top adım sürekliliği | ~3 sn |
 | `node tests/recovery.cjs` | Misafir oyuncu düelloları, milli kaleciler | ~1 sn |
@@ -114,3 +121,4 @@ dosyalardır.
   büyük veri dosyalarıdır; adlarını değiştirme (sunucu ve testler bu yollara bağlı).
 - `data/private/` ve sunucudaki `config.php` gizlidir; repoya gerçek anahtar koyma.
 - `.htaccess` `docs/`, `tests/`, `tools/`, `*.md` erişimini engeller; yayına bunları açma.
+- **Dosya silme kuralı:** bir dosyayı silmeden önce `index.html`, `penalty.html`, `freekick.html`, tüm `*.php`, `server/*.php` ve aktif JS’ten (dinamik yol birleştirmeleri dahil: `'assets/pitch/turf-'+kind`) referans taraması yap. PHP veri akışı (haftalık bülten, 5 gün ileri maçlar, cron) dosyalarına dokunma. Emin değilsen silme, `TASKS.md`’ye not düş.
