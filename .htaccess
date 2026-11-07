@@ -1,6 +1,6 @@
 Options -Indexes
 DirectoryIndex index.php index.html
-<FilesMatch "^(config(\.example)?\.php|cron\.php|.*\.(md|test\.mjs))$">
+<FilesMatch "^(config(\.example)?\.php|cron\.php|.*\.(md|test\.mjs|cjs))$">
   Require all denied
 </FilesMatch>
 <IfModule mod_headers.c>
@@ -8,8 +8,16 @@ DirectoryIndex index.php index.html
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 <IfModule mod_headers.c>
-  <FilesMatch "^(index\.(html|php)|penalty(-v99|-v103|-v104|-v105|-v107|-v107|-v107)?\.html|next90sim-v(96|97|98|99|103|104|105|106|107)\.html|build\.php|setup\.php|api\.php)$">
+  <FilesMatch "^(index\.(html|php)|penalty\.html|freekick\.html|build\.php|setup\.php|api\.php)$">
     Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
     Header always set CDN-Cache-Control "no-store"
   </FilesMatch>
+</IfModule>
+# V108: eski sürüm giriş sayfaları tek kanonik sayfaya yönlendirilir.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^next90sim-v[0-9]+\.html$ index.html [R=301,L,QSA]
+  RewriteRule ^penalty-v[0-9]+\.html$ penalty.html [R=301,L,QSA]
+  RewriteRule ^(VERSION|AGENTS\.md|CLAUDE\.md)$ - [F,L]
+  RewriteRule ^(docs|tests|tools)/ - [F,L]
 </IfModule>
