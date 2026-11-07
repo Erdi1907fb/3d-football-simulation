@@ -1,7 +1,11 @@
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.SekmeJerseyPrint=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
 const hex=n=>'#'+Number(n).toString(16).padStart(6,'0');
 function shirtName(p={}){const explicit=p.shirtName||p.jerseyName||p.nameOnShirt;if(explicit)return String(explicit).normalize('NFC').trim().toUpperCase();const name=String(p.playingName||p.playerName||p.name||p.displayName||'').trim(),bits=name.split(/\s+/u);return (bits.length>1?bits.at(-1):name).normalize('NFC').toUpperCase();}
-function style(kit,keeper=false){const color=keeper?(kit.keeperSet?.number??0xffffff):(kit.number??0xffffff),outline=keeper?kit.keeperSet?.numberOutline:kit.numberOutline;return{color,outline:outline??(color===0xffffff?0x101924:0xffffff),font:kit.font||'condensed'};}
+// V108: readable shirt print. When a kit does not define its print colour the
+// colour is chosen from the shirt luminance, and the outline always contrasts
+// with the fill so names/numbers stay legible on any kit and at video scale.
+const luma=n=>{n=Number(n)||0;const r=n>>16&255,g=n>>8&255,b=n&255;return(.2126*r+.7152*g+.0722*b)/255;};
+function style(kit={},keeper=false){const shirt=keeper?(kit.keeperSet?.shirt??kit.keeper??kit.shirt):kit.shirt,explicit=keeper?kit.keeperSet?.number:kit.number,auto=shirt==null?0xffffff:luma(shirt)>.58?0x101924:0xffffff;let color=explicit??auto;if(shirt!=null&&Math.abs(luma(color)-luma(shirt))<.22)color=auto;const outline=(keeper?kit.keeperSet?.numberOutline:kit.numberOutline)??(luma(color)>.5?0x101924:0xffffff);return{color,outline:Math.abs(luma(outline)-luma(color))<.3?(luma(color)>.5?0x101924:0xffffff):outline,font:kit.font||'condensed'};}
 function paint(canvas,number,name,print){const s=print.resolution||1024;canvas.width=canvas.height=s;const c=canvas.getContext('2d');c.clearRect(0,0,s,s);c.scale(s/512,s/512);c.textAlign='center';c.textBaseline='middle';c.lineJoin='round';c.miterLimit=2;c.fillStyle=hex(print.color);c.strokeStyle=hex(print.outline);const text=number==null?'':String(number),label=String(name||'');
  // The complete source shirt name remains intact. Condense horizontally only
  // after reducing its font size; never clip long surnames or add invented names.

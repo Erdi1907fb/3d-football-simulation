@@ -1,0 +1,18 @@
+// V108 Free Kick Studio: physical outcome consistency, continuity and rules.
+const assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..');
+const F=require(root+'/assets/freekick-engine.js'),A=require(root+'/assets/ball-aero.js'),B=require(root+'/assets/stadium-boards.js');
+const reg=Object.values(require(root+'/assets/club-rosters-v75.json').teams),guests=require(root+'/assets/penalty-guests.json').players;
+// Aerodynamics sanity: curl bends the ball, topspin dips it, solver hits the target.
+const p0={x:30,y:A.R,z:0},target={x:52.5,y:1.9,z:-2.8},w={x:0,y:50,z:-10},v=A.solve(p0,target,1.0,w),hit=A.fly(p0,v,w,1.0);assert(Math.hypot(hit.x-target.x,hit.y-target.y,hit.z-target.z)<.02);
+const straight=A.fly(p0,{x:25,y:5,z:0},{x:0,y:0,z:0},.8),curled=A.fly(p0,{x:25,y:5,z:0},{x:0,y:50,z:0},.8),dipped=A.fly(p0,{x:25,y:5,z:0},{x:0,y:0,z:-60},.8);assert(curled.z<straight.z-.8,'right-foot curl moves to -z');assert(dipped.y<straight.y-.3,'topspin dips');assert(A.dragCoefficient(30)<A.dragCoefficient(6));
+const out={},tech=new Set();let kicks=0,matched=0,maxStep=0,early=0,sudden=0,samples=0;
+for(let seed=1;seed<=240;seed++){const duel=seed%3===0,format=['five','complete-five','three','single'][seed%4],c=F.create({seed,mode:duel?'duel':'team',format,spots:['varied','central','left','right','long'][seed%5],lineups:[reg[seed%reg.length].team,reg[(seed+17)%reg.length].team],shooters:duel?[guests[seed%guests.length],guests[(seed+7)%guests.length]]:undefined});
+ assert(c.winner===0||c.winner===1);const taken=[0,0];for(const k of c.kicks){taken[k.team]++;kicks++;out[k.outcome]=(out[k.outcome]||0)+1;tech.add(k.technique);if(k.outcome===k.desired||(k.desired==='over'&&k.outcome==='wide'))matched++;assert(k.ball.x<=35.6||Math.abs(k.ball.z)>=20.5,'spot outside the box');assert(k.wall.count>=3&&k.wall.count<=5);for(const p of k.wall.players)assert(Math.abs(Math.hypot(p.x-k.ball.x,p.z-k.ball.z)-9.15)<3.2);if(k.outcome==='goal')assert(k.contact.point.y<2.44&&Math.abs(k.contact.point.z)<3.66);}
+ assert(Math.abs(taken[0]-taken[1])<=1);if(c.kicks.length<c.rounds*2)early++;if(c.kicks.length>c.rounds*2)sudden++;
+ let prev=null;for(let t=0;t<=c.duration;t+=1/60){const f=c.sample(t);samples++;for(const v of [f.ball.x,f.ball.y,f.ball.z,f.shooter.x,f.shooter.z,f.goalkeeper.z])assert(Number.isFinite(v));assert(f.ball.y>=A.R-1e-9);if(prev&&prev.kick===f.kick&&!!prev.replay===!!f.replay){const d=Math.hypot(f.ball.x-prev.ball.x,f.ball.y-prev.ball.y,f.ball.z-prev.ball.z);maxStep=Math.max(maxStep,d);}prev=f;}}
+assert(matched/kicks>.97,'physical outcome search');assert(['goal','save','wall','post','wide'].every(k=>out[k]>0));assert(tech.size>=5);assert(maxStep<.75,'ball continuity at 60 FPS');assert(early>0&&sudden>0);
+// Studio boards carry the house brand, never a league name.
+let drawn=[];const ctx=new Proxy({},{get:(t,k)=>k==='fillText'?(s)=>drawn.push(String(s)):k==='measureText'?()=>({width:10}):typeof k==='string'&&/^(fill|stroke|font|textAlign|textBaseline|lineWidth|globalAlpha)/.test(k)&&k.length>8?undefined:()=>{},set:()=>true});
+B.paint(ctx,1024,256,{competitionId:'en.1'},null,'competition',null,false,true);assert(drawn.includes('NEXT 90 SIM'));assert(!drawn.some(s=>/Premier|League|Lig/i.test(s)));
+const report={PASS:true,version:108,contests:240,kicks,outcomes:out,techniques:[...tech],physicalMatch:+(matched/kicks).toFixed(4),earlyFinish:early,suddenDeath:sudden,samples,maxStep:+maxStep.toFixed(3),brandBoards:true};
+if(process.argv.includes('--save'))fs.writeFileSync(__dirname+'/freekick-results.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

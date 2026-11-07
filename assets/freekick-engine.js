@@ -1,0 +1,106 @@
+/* V108 Free Kick Studio engine. Seeded, deterministic, physics-first.
+ * Every outcome (goal, save, wall, woodwork, miss) is produced by the shared
+ * aerodynamic ball model (ball-aero.js) colliding with the wall, the
+ * goalkeeper's reach model, the woodwork and the net. A desired outcome is
+ * drawn from player-quality weights and then searched for among physically
+ * simulated candidate strikes; if no candidate produces it, the physical
+ * result wins (the ball is never teleported to fit a score).
+ * Probabilities are an entertainment model, not observed career statistics.
+ */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'),require('./open-football-adapter.js'),require('./preferred-foot.js'));else r.Next90FreeKicks=f(r.Next90BallAero,r.Next90OpenFootball,r.Next90PreferredFoot);})(typeof globalThis!=='undefined'?globalThis:this,function(Aero,OpenFootball,Feet){'use strict';
+const INTRO=3.2,KICK=8.8,FINAL=5.5,WHISTLE=1.25,RUN_START=1.55,CONTACT=2.6,REPLAY_FROM=5.35,REPLAY_RATE=.62,R=Aero.R,REC=1/120;
+const WALL_DISTANCE=9.15,WALL_GAP=.6,WALL_HEIGHT=1.84,KEEPER_X=51.95;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),smooth=x=>{x=clamp(x,0,1);return x*x*(3-2*x);},lerp=(a,b,t)=>a+(b-a)*t;
+function random(seed){let s=seed>>>0||1;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296;};}
+function natural(p){return p?.naturalRoles?.length?p.naturalRoles:p?.roles||[p?.position];}
+const norm=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/ı/g,'i').replace(/[^a-z]/g,'');
+// Editorial "renowned free-kick taker" tags (public reputation, not a statistic).
+const SPECIALISTS=new Set(['lionelmessi','cristianoronaldo','jameswardprowse','miralempjanic','trentalexanderarnold','hakancalhanoglu','paulodybala','neymar','neymarjr','lorenzoinsigne','antoinegriezmann','brunofernandes','tonikroos','davidbeckham','juninhopernambucano','robertocarlos','andreapirlo','ronaldinho','zico','michelplatini','diegomaradona','ardaguler','kevindebruyne','federicodimarco','alejandrogrimaldo','raphinha','ryadmahrez','christianeriksen','dominikszoboszlai','declanrice','martinodegaard','juanmata','sinisamihajlovic','rogerioceni','alessandrodelpiero','zinedinezidane','francescototti','thierryhenry','frankdelaney','steviegerrard','stevengerrard','frankpardo','wesleysneijder','mesutozil','rivaldo','hristostoichkov','marcusrashford','lucasvazquez','emrebelozoglu','alexdesouza','gheorghehagi','sergenyalcin','oguzhanozyakup']);
+function skill(p){const roles=natural(p),name=norm(p?.name),known=SPECIALISTS.has(name)||SPECIALISTS.has(norm(p?.playingName)),attack=roles.some(x=>['ST','LW','RW','AM','CF','CAM'].includes(x)),mid=roles.some(x=>['CM','DM','LM','RM','MID','CDM'].includes(x)),gk=roles.includes('GK');let v=attack?.55:mid?.58:gk?.18:.38;v+=(Math.sqrt(Math.max(.2,Number(p?.scoringWeight)||1))-1)*.12;if(known)v=Math.max(v,.86);return{value:clamp(v,.12,.95),specialist:known,basis:known?'editorial-specialist-tag':'role-and-available-player-data-estimate'};}
+function keeperSkill(p){return natural(p).includes('GK')?.62:.22;}
+function completeEleven(team){const seen=new Set(),out=[],pool=[...(team?.players||[]),...(team?.bench||[])];for(const p of pool){if(!p?.id||!p.name||seen.has(String(p.id)))continue;seen.add(String(p.id));out.push(p);if(out.length===11)break;}return out;}
+function takers(team){return completeEleven(team).filter(p=>!natural(p).includes('GK')).sort((a,b)=>skill(b).value-skill(a).value||String(a.id).localeCompare(String(b.id)));}
+// Spot inside the attacking third, always outside the penalty area.
+function spot(rng,preset){for(let i=0;i<200;i++){let d=18+rng()*12,a=(rng()*2-1)*.62;if(preset==='central')a=(rng()*2-1)*.16;if(preset==='left')a=-(.22+rng()*.42);if(preset==='right')a=.22+rng()*.42;if(preset==='long')d=26+rng()*6;const x=Aero.GOAL_X-d*Math.cos(a),z=d*Math.sin(a);if(x>35.6&&Math.abs(z)<20.5)continue;if(x<18)continue;return{x,y:R,z,distance:Math.hypot(Aero.GOAL_X-x,z),angle:a};}return{x:30,y:R,z:0,distance:22.5,angle:0};}
+function wallFor(ball,rng,nearSign){const d=ball.distance,count=d<21?5:d<25.5?4:3,ax=Aero.GOAL_X,az=nearSign*(Aero.POST_Z+.28),dx=ax-ball.x,dz=az-ball.z,l=Math.hypot(dx,dz),n={x:dx/l,z:dz/l},edge={x:ball.x+n.x*WALL_DISTANCE,z:ball.z+n.z*WALL_DISTANCE};let lat={x:-n.z,z:n.x};if((lat.z)*nearSign>0)lat={x:-lat.x,z:-lat.z};const players=[];for(let i=0;i<count;i++){const off=.26+i*WALL_GAP;players.push({x:edge.x+lat.x*off,z:edge.z+lat.z*off,lateral:off,jumps:rng()>.08,height:WALL_HEIGHT+(rng()-.5)*.1});}return{count,normal:n,lateral:lat,edge,players,nearSign,jumpAt:CONTACT+.03+rng()*.06,jumpHeight:.30+rng()*.08};}
+function wallJump(wall,p,age){if(!p.jumps)return 0;return wall.jumpHeight*Math.sin(Math.PI*clamp((age-wall.jumpAt)/.56,0,1));}
+const TECH={curl:{speed:[22.5,25.5],spinY:[40,56],spinZ:[-16,-6],label:['FALSO','CURLER']},outside:{speed:[24,27],spinY:[-44,-32],spinZ:[-10,-4],label:['DIŞ AYAK','TRIVELA']},dip:{speed:[24.5,27.5],spinY:[-6,8],spinZ:[-78,-58],label:['TOPSPIN DÜŞEN','DIPPING TOPSPIN']},knuckle:{speed:[27,31],spinY:[-2,2],spinZ:[-2,2],knuckle:true,label:['KNUCKLEBALL','KNUCKLEBALL']},power:{speed:[28.5,32],spinY:[8,16],spinZ:[-12,-4],label:['SERT VURUŞ','POWER DRIVE']},under:{speed:[22,25],spinY:[6,14],spinZ:[-8,-2],label:['BARAJ ALTI','UNDER THE WALL']}};
+function technique(rng,ball,specialist){const d=ball.distance,r=rng();if(d>26.5)return r<.48?'knuckle':r<.72?'power':r<.9?'dip':'curl';if(Math.abs(ball.z)<5)return r<.40?'curl':r<.64?'dip':r<.78?'knuckle':r<.88?'power':r<.95?'under':'outside';return r<.62?'curl':r<.74?'dip':r<.84?'power':r<.92?'outside':r<.97?'knuckle':'under';}
+// Full collision simulation of one strike.
+function simulate(ball,v0,w,opt,wall,keeper){
+ const b=Aero.state(ball,v0,w,{knuckle:opt.knuckle,seed:opt.seed});b.spin=0;const frames=[{t:0,x:b.x,y:b.y,z:b.z}],steps=Math.round(REC/Aero.STEP),limit=Math.round(3.4/Aero.STEP);let result=null,contact=null,netContact=null,keeperTouch=null,crossing=null,wallHit=null,woodwork=null,prevS=0,overWall=false;
+ for(let i=1;i<=limit;i++){const px=b.x,py=b.y,pz=b.z;Aero.step(b);const t=b.t,age=CONTACT+t;
+  if(!result){
+   // Wall: the plane WALL_DISTANCE from the ball along the wall normal.
+   const s=(b.x-ball.x)*wall.normal.x+(b.z-ball.z)*wall.normal.z;if(prevS<WALL_DISTANCE-.18&&s>=WALL_DISTANCE-.18){const u=(b.x-wall.edge.x)*wall.lateral.x+(b.z-wall.edge.z)*wall.lateral.z;for(const [k,p] of wall.players.entries()){const jump=wallJump(wall,p,age),bottom=jump,top=jump+p.height+.04;if(Math.abs(u-p.lateral)<.30+R&&b.y<top+R*.6&&b.y>bottom-R*.2){result='wall';wallHit={index:k,time:t,point:{x:b.x,y:b.y,z:b.z}};const side=Math.sign(u-p.lateral)||1,sp=Math.hypot(b.vx,b.vz);b.vx=-wall.normal.x*sp*(.18+.12*opt.r1)+wall.lateral.x*side*sp*.22;b.vz=-wall.normal.z*sp*(.18+.12*opt.r1)+wall.lateral.z*side*sp*.22;b.vy=1.4+opt.r2*2.6;b.wx=b.wy=b.wz=0;b.knuckle=false;break;}}if(!result)overWall=b.y>wall.players[0].height*.82;}prevS=s;
+   // Goalkeeper reach ellipse with reaction delay (screened when ball came over the wall).
+   if(!result&&px<keeper.x-.32&&b.x>=keeper.x-.32){const q=(keeper.x-.32-px)/Math.max(1e-6,b.x-px),cy=lerp(py,b.y,q),cz=lerp(pz,b.z,q),reaction=keeper.reaction+(overWall?.11:0),available=Math.max(0,t-reaction),span=Math.min(keeper.reach,.62+available*keeper.diveSpeed),vertical=Math.min(1.68,.95+available*2.4),dist=Math.hypot((cz-keeper.z)/span,(cy-1.0)/vertical);crossing={time:t,point:{x:keeper.x-.32,y:cy,z:cz},distance:dist,span,reaction};
+    if(dist<1){const sp=Math.hypot(b.vx,b.vy,b.vz),lateral=Math.abs(cz-keeper.z),side=Math.sign(cz-keeper.z)||1;let style=cy>1.78?'tipOver':lateral<.55&&sp<27&&cy>.35&&cy<1.75?'smother':lateral>1.05?'parryWide':cy<.5?'collapse':'reflex';
+     if(dist>.88&&sp>26.5&&Math.abs(cz)<Aero.POST_Z-.3&&cy<Aero.BAR_Y-.25){keeperTouch={time:t,point:{x:keeper.x-.32,y:cy,z:cz},style:'fingertips'};b.vx*=.74;b.vy*=.8;b.vz*=.85;}
+     else{result='save';contact={time:t,point:{x:keeper.x-.32,y:cy,z:cz},style,side};b.x=keeper.x-.32;b.y=cy;b.z=cz;b.wx=b.wy=b.wz=0;b.knuckle=false;
+      if(style==='smother'){b.vx=b.vy=b.vz=0;}else if(style==='tipOver'){b.vx=2.4;b.vy=5.2;b.vz=side*.9;}else if(style==='parryWide'){b.vx=1.2+opt.r1*2;b.vy=1.3;b.vz=side*(8+opt.r2*3);}else{b.vx=-(4+opt.r1*2.5);b.vy=1.6+opt.r2;b.vz=side*(2.5+opt.r2*2);}}}}
+   if(!result){const e=Aero.woodwork(b);if(e){woodwork={...e,time:t,point:{x:b.x,y:b.y,z:b.z}};}}
+   if(!result&&px<Aero.GOAL_X&&b.x>=Aero.GOAL_X){const q=(Aero.GOAL_X-px)/Math.max(1e-6,b.x-px),y=lerp(py,b.y,q),z=lerp(pz,b.z,q);if(Math.abs(z)<Aero.POST_Z-R*.6&&y<Aero.BAR_Y-R*.6){result='goal';contact={time:t,point:{x:Aero.GOAL_X,y,z}};}else if(!woodwork||t-woodwork.time>.25){result=woodwork?'post':(y>Aero.BAR_Y?'over':'wide');contact={time:t,point:{x:Aero.GOAL_X,y,z}};}}
+   if(!result&&woodwork&&(b.vx<0||t-woodwork.time>.35)){result='post';contact={time:woodwork.time,point:woodwork.point};}
+   if(!result&&b.x<ball.x-1){result='wide';contact={time:t,point:{x:b.x,y:b.y,z:b.z}};}
+  }
+  if(result==='goal'&&b.x>=Aero.GOAL_X){OpenFootball.containNet(b,Aero.STEP);if(!netContact&&(b.x>54.465||Math.abs(b.z)>3.525||b.y>2.305))netContact={time:t,point:{x:b.x,y:b.y,z:b.z}};}
+  else if(b.x>57.4){b.x=57.4;b.vx=-Math.abs(b.vx)*.25;}
+  if(Math.abs(b.z)>36){b.z=Math.sign(b.z)*36;b.vz=-b.vz*.2;}
+  if(i%steps===0)frames.push({t,x:b.x,y:b.y,z:b.z});
+  if(result&&contact&&t>contact.time+2.6)break;
+ }
+ if(!result){result=woodwork?'post':'wide';contact={time:woodwork?.time??frames.at(-1).t,point:woodwork?.point??frames.at(-1)};}
+ return{result,contact,frames,netContact,keeperTouch,crossing,wallHit,woodwork};
+}
+function pick(rng,[a,b]){return a+rng()*(b-a);}
+function candidate(rng,ball,tech,desired,keeper,wall,foot){
+ const T=TECH[tech],s=foot==='left'?-1:1,far=-wall.nearSign;let y,z;
+ const corner=side=>({z:side*(2.55+rng()*.85),y:1.15+rng()*1.0});
+ if(desired==='goal'){if(tech==='under'){z=(rng()*2-1)*2.6;y=.18+rng()*.32;}else{const side=rng()<.55?far:wall.nearSign,c=corner(side);z=c.z;y=tech==='knuckle'||tech==='power'?.35+rng()*1.85:c.y;}}
+ else if(desired==='save'){z=keeper.z+(rng()*2-1)*1.9;y=.3+rng()*1.7;}
+ else if(desired==='post'){if(rng()<.66){const side=rng()<.5?far:wall.nearSign;z=side*(Aero.POST_Z-(rng()-.35)*.14);y=.4+rng()*1.8;}else{z=(rng()*2-1)*3.1;y=Aero.BAR_Y-.02+(rng()-.4)*.12;}}
+ else if(desired==='wall'){z=wall.nearSign*(1.2+rng()*2.0);y=.9+rng()*.9;}
+ else{if(rng()<.55){z=(rng()*2-1)*3.2;y=Aero.BAR_Y+.25+rng()*.95;}else{z=(rng()<.5?far:wall.nearSign)*(Aero.POST_Z+.35+rng()*1.3);y=.4+rng()*1.8;}}
+ const target={x:Aero.GOAL_X,y,z},horizontal=Math.hypot(target.x-ball.x,target.z-ball.z),speed=pick(rng,T.speed)*(desired==='wall'?1.04:1),w={x:0,y:s*pick(rng,T.spinY),z:pick(rng,T.spinZ)},time=horizontal/(speed*(T.knuckle?.86:.83)),opt={knuckle:!!T.knuckle,seed:Math.floor(rng()*1e6),r1:rng(),r2:rng()};
+ const v=Aero.solve(ball,target,time,w,opt);return{target,v,w,time,opt};
+}
+function create(options){
+ const rng=random(options.seed),rosters=options.lineups,duel=options.mode==='duel',format=options.format||'five',rounds=format==='three'?3:format==='single'?1:5,clinch=format!=='complete-five';if(!Array.isArray(rosters)||rosters.length!==2)throw Error('Choose both sides');
+ const eligible=rosters.map(t=>takers(t)),squads=rosters.map(t=>completeEleven(t));if(eligible.some(t=>t.length<4))throw Error('Each side needs at least four outfield players');
+ const keepers=options.keepers||squads.map(ps=>ps.find(p=>natural(p).includes('GK'))||ps[0]);if(keepers.some(p=>!p?.id))throw Error('Choose both goalkeepers');
+ const shooters=options.shooters||eligible.map(t=>t[0]);if(shooters.some(p=>!p?.id))throw Error('Choose both shooters');
+ if(!duel)eligible.forEach((list,i)=>{if(!options.shooters)return;const at=list.findIndex(p=>String(p.id)===String(shooters[i].id));if(at>0)list.unshift(list.splice(at,1)[0]);else if(at<0)list.unshift(shooters[i]);});
+ const spots=[];const kicks=[],score=[0,0],taken=[0,0];let winner=null;
+ for(let k=0;k<60&&winner===null;k++){
+  const team=k%2,turn=taken[team],round=Math.floor(k/2);if(!spots[round])spots[round]=spot(rng,options.spots||'varied');const ball=spots[round],p=duel?shooters[team]:eligible[team][turn%Math.min(3,eligible[team].length)],keeperPlayer=keepers[1-team],q=skill(p),ks=keeperSkill(keeperPlayer);
+  const distancePenalty=(ball.distance-18)*.011+Math.abs(ball.angle)*.08,pGoal=clamp(.13+q.value*.36-distancePenalty-(ks-.62)*.25,.08,.58),r=rng(),miss=1-pGoal,desired=r<pGoal?'goal':r<pGoal+miss*.34?'save':r<pGoal+miss*.58?'wall':r<pGoal+miss*.68?'post':'over';
+  const nearSign=Math.abs(ball.z)>2?Math.sign(ball.z):(rng()<.5?-1:1),wall=wallFor(ball,rng,nearSign),footInfo=Feet.resolve(p),raw=footInfo.foot,foot=['left','l'].includes(raw)?'left':['both','b'].includes(raw)?(rng()<.5?'left':'right'):'right';
+  const lineZ=ball.z*(KEEPER_X-Aero.GOAL_X)/(ball.x-Aero.GOAL_X),keeper={x:KEEPER_X,z:clamp(lineZ-nearSign*(.55+rng()*.35),-1.6,1.6),reaction:.27-ks*.06+rng()*.05,reach:natural(keeperPlayer).includes('GK')?2.45:1.85,diveSpeed:natural(keeperPlayer).includes('GK')?5.6:4.2};
+  let tech=technique(rng,ball,q.specialist),chosen=null,sim=null,attempts=0;
+  for(;attempts<90;attempts++){if(attempts>0&&attempts%18===0)tech=technique(rng,ball,q.specialist);const c=candidate(rng,ball,tech,desired,keeper,wall,foot),s=simulate(ball,c.v,c.w,c.opt,wall,keeper);const ok=s.result===desired||(desired==='over'&&s.result==='wide')||(desired==='post'&&s.result==='post');if(!chosen||ok){chosen=c;sim=s;}if(ok)break;}
+  const outcome=sim.result==='over'?'wide':sim.result,flight=sim.contact?.time??1,launch=chosen.v,kick={index:k,team,round:turn+1,shooter:p,keeper:keeperPlayer,skill:q,keeperSkill:ks,desired,outcome,technique:tech,foot,footEvidence:footInfo,ball:{...ball},wall,keeperModel:keeper,launch,spin:chosen.w,target:chosen.target,speedKmh:Aero.speedKmh(launch),distance:Math.round(ball.distance*10)/10,flight,frames:sim.frames,contact:sim.contact,keeperTouch:sim.keeperTouch,crossing:sim.crossing,wallHit:sim.wallHit,woodwork:sim.woodwork,netContact:sim.netContact,goalKind:outcome==='goal'?(sim.keeperTouch?'keeper-touch':'clean'):null,saveKind:outcome==='save'?sim.contact.style:null,start:INTRO+k*KICK,attempts,physical:true,scoreBefore:score.slice(),suddenDeath:turn>=rounds};
+  kick.resolvedAge=CONTACT+flight;kick.resolvedAt=kick.start+kick.resolvedAge;kick.whistleAt=kick.start+WHISTLE;kick.contactAt=kick.start+CONTACT;kick.replay=['goal','save','post'].includes(outcome);
+  kicks.push(kick);taken[team]++;if(outcome==='goal')score[team]++;kick.scoreAfter=score.slice();
+  if(clinch&&taken[0]<=rounds&&taken[1]<=rounds){if(score[0]>score[1]+rounds-taken[1])winner=0;else if(score[1]>score[0]+rounds-taken[0])winner=1;}
+  if(taken[0]===taken[1]&&taken[0]>=rounds&&score[0]!==score[1])winner=score[0]>score[1]?0:1;
+ }
+ if(winner===null)throw Error('Free-kick contest exceeded safety limit; choose another scenario');
+ const finaleAt=INTRO+kicks.length*KICK,duration=finaleAt+FINAL;
+ function ballAt(kick,age){if(age<CONTACT)return{...kick.ball};const p=Aero.at(kick.frames,age-CONTACT);return{x:p.x,y:Math.max(R,p.y),z:p.z};}
+ function shooterAt(kick,age){const b=kick.ball,dir={x:kick.launch.x,z:kick.launch.z},l=Math.hypot(dir.x,dir.z)||1;dir.x/=l;dir.z/=l;const right={x:-dir.z,z:dir.x},s=kick.foot==='left'?-1:1,straight=['knuckle','power'].includes(kick.technique),run=straight?4.3:3.4,side=straight?.85:1.65,start={x:b.x-dir.x*run-right.x*side*s,z:b.z-dir.z*run-right.z*side*s},plant={x:b.x-dir.x*.42-right.x*.24*s,z:b.z-dir.z*.42-right.z*.24*s},u=clamp((age-RUN_START)/(CONTACT-RUN_START-.02),0,1),e=u*u*(3-2*u)*.35+u*.65,follow=smooth((age-CONTACT-.05)/.5);
+  let x=lerp(start.x,plant.x,e)+dir.x*.55*follow,z=lerp(start.z,plant.z,e)+dir.z*.55*follow;const mx=plant.x-start.x,mz=plant.z-start.z,runHeading=Math.atan2(mx,mz),kickHeading=Math.atan2(dir.x,dir.z),heading=age<RUN_START?Math.atan2(b.x-x,b.z-z):lerp(runHeading,kickHeading,smooth((age-CONTACT+.3)/.3)),speed=age>RUN_START&&age<CONTACT?Math.hypot(mx,mz)/(CONTACT-RUN_START)*(1.25-Math.abs(u-.5)):age>=CONTACT?2.2*(1-follow):0,finish=kick.technique==='dip'||kick.technique==='knuckle'||kick.technique==='power'?'driven':'curl';
+  return{x,z,heading,speed,gait:Math.max(0,age-RUN_START)*(straight?10.5:9.4),kicking:age>CONTACT-.22&&age<CONTACT+.32,kickPhase:clamp((age-CONTACT+.22)/.54,0,1),bodyLean:-s*.08*Math.sin(u*Math.PI),plantWeight:smooth((age-CONTACT+.2)/.2),runStyle:straight?'straight':'angled',strikeStyle:kick.technique==='curl'||kick.technique==='outside'?'inside-foot':kick.technique==='under'?'placed':'driven',finish,preferredFoot:kick.foot,kickFoot:kick.foot,strikePoint:{...b},setPiece:age<RUN_START};}
+ function keeperAt(kick,age){const k=kick.keeperModel,touch=kick.contact&&kick.outcome==='save'?kick.contact:kick.keeperTouch,cross=kick.crossing,aim=touch?.point||cross?.point||kick.contact?.point||{y:1,z:k.z},contactAge=CONTACT+(touch?.time??cross?.time??kick.flight),react=CONTACT+(cross?.reaction??k.reaction),reach=smooth((age-react)/Math.max(.12,contactAge-react)),dz=aim.z-k.z,canTouch=!!touch,miss=!canTouch&&kick.outcome==='goal',side=Math.abs(dz)<.45?0:Math.sign(dz),lateralTarget=canTouch?dz-side*.35:dz*(miss?.78:.9),rise=smooth((age-contactAge-.6)/.9),shuffle=age<CONTACT?Math.sin(age*5)*.05+(kick.wall.nearSign*-.05)*smooth(age/1.2):0,lift=Math.max(0,aim.y-.5)*.8,diveLift=age<=contactAge?reach*lift:Math.max(0,lift-.45*(age-contactAge)-4.9*(age-contactAge)**2),signal=canTouch?smooth((age-contactAge+.2)/.2)*(1-smooth((age-contactAge-.03)/.18)):0;
+  const pose={x:k.x+.06-.28*reach,z:k.z+shuffle+lateralTarget*reach*(1-rise*.2),heading:-Math.PI/2,keeper:true,keeperSet:age<react,dive:(side===0?.25:1)*reach*(1-rise),diveSide:side,saveStyle:kick.saveKind||(side===0?'reflex':aim.y>1.5?'fullStretch':'parryWide'),penaltyDive:true,diveLift,saveReach:signal,saveContact:canTouch&&Math.abs(age-contactAge)<.06,speed:0,gait:age*2.4};
+  if(kick.saveKind==='smother'&&age>contactAge){const hold=smooth((age-contactAge)/.5);pose.keeperHold=1;pose.saveReach=1;pose.keeperSet=false;pose.holdBlend=hold;}return pose;}
+ function wallAt(kick,age){const b=kick.ball;return kick.wall.players.map((p,i)=>({x:p.x,z:p.z,heading:Math.atan2(b.x-p.x,b.z-p.z),wallSet:age<CONTACT+.7,wallJump:wallJump(kick.wall,p,age),index:i,blocked:kick.wallHit?.index===i&&age>=CONTACT+kick.wallHit.time}));}
+ function frameAt(kick,age){let ball=ballAt(kick,age);const goalkeeper=keeperAt(kick,age);if(goalkeeper.keeperHold){const c=kick.contact.point,h=goalkeeper.holdBlend;ball={x:lerp(c.x,51.85,h),y:lerp(c.y,.85,h),z:lerp(c.z,goalkeeper.z,h)};}return{ball,shooter:shooterAt(kick,age),goalkeeper,wall:wallAt(kick,age)};}
+ function sample(time){time=clamp(time,0,duration);const i=clamp(Math.floor((time-INTRO+1e-9)/KICK),0,kicks.length-1),kick=kicks[i],age=clamp(time-kick.start,0,KICK),finished=time>=finaleAt;let replay=null,physicsAge=age;
+  if(!finished&&kick.replay&&age>=REPLAY_FROM&&age<KICK-.25){const r=age-REPLAY_FROM;physicsAge=CONTACT-.55+r*REPLAY_RATE;replay={age:r,physicsAge,rate:REPLAY_RATE};}
+  const f=frameAt(kick,physicsAge),reactionAge=age-kick.resolvedAge-.12,reaction=!replay&&reactionAge>=0&&!finished?{type:kick.outcome==='goal'?'goal':'miss',team:kick.team,age:reactionAge}:null;
+  return{time,intro:time<INTRO,finished,kick,age,physicsAge,replay,...f,reaction,score:finished?score.slice():time>=kick.resolvedAt?kick.scoreAfter.slice():kick.scoreBefore.slice(),winner:finished?winner:null,finale:finished?{winner,loser:1-winner,age:time-finaleAt,mode:duel?'duel':'team'}:null,revealed:kicks.filter(k=>time>=k.resolvedAt)};}
+ return{seed:options.seed>>>0,mode:duel?'duel':'team',format,rounds,kicks,score,winner,duration,finaleAt,sample,keepers,shooters,eligible,squads,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM},analysis:{basis:'aerodynamic-physics-search-with-entertainment-weights',specialists:kicks.filter(k=>k.skill.specialist).length,physicalOutcomes:kicks.filter(k=>k.outcome===k.desired||(k.desired==='over'&&k.outcome==='wide')).length}};
+}
+return{create,skill,takers,completeEleven,random,simulate,wallFor,TECH,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM}};
+});
