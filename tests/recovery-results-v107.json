@@ -1,0 +1,20 @@
+{
+  "PASS": true,
+  "recoveryCases": 80,
+  "recoveryKinds": {
+    "outlet-pass": 37,
+    "carry": 40,
+    "emergency-clearance": 3
+  },
+  "guestPlayers": 100,
+  "nationalDefaults": 100,
+  "duelsFinished": 100,
+  "ribbon": {
+    "x": 30,
+    "y": 1296,
+    "scale": 0.84,
+    "right": 908.64,
+    "bottom": 1517.76
+  },
+  "maxProjectedBootY": 1273.293699691916
+}

@@ -1,0 +1,47 @@
+/* Next90 Sim v104: shared field, photographic lighting/materials and bounded
+ * HDR finishing. Three.js r158 APIs; no result or simulation RNG ownership.
+ * FXAA neighbourhood strategy: Three.js examples FXAAShader (MIT).
+ * HDR finish ordering informed by acherm/fifacher's scene-linear broadcast chain.
+ */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'));else r.Next90BroadcastRemaster=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const vertex='varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}';
+const fragment=`uniform sampler2D frame;uniform vec2 texel;uniform float bloomStrength;varying vec2 vUv;
+float luminance(vec3 c){return dot(c,vec3(.2126,.7152,.0722));}
+void main(){vec3 center=texture2D(frame,vUv).rgb,n=texture2D(frame,vUv+vec2(0.,texel.y)).rgb,s=texture2D(frame,vUv-vec2(0.,texel.y)).rgb,e=texture2D(frame,vUv+vec2(texel.x,0.)).rgb,w=texture2D(frame,vUv-vec2(texel.x,0.)).rgb;
+float lc=luminance(center),ln=luminance(n),ls=luminance(s),le=luminance(e),lw=luminance(w),hi=max(lc,max(max(ln,ls),max(le,lw))),lo=min(lc,min(min(ln,ls),min(le,lw))),edge=smoothstep(.055,.22,(hi-lo)/max(.15,hi));
+vec3 horizontal=(e+w)*.5,vertical=(n+s)*.5;vec3 aa=abs(ln-ls)>abs(le-lw)?horizontal:vertical;
+vec3 color=mix(center,aa,edge*.32);vec3 glow=(max(n-vec3(1.8),0.)+max(s-vec3(1.8),0.)+max(e-vec3(1.8),0.)+max(w-vec3(1.8),0.))*.25;
+color+=glow*bloomStrength;float l=luminance(color);color=mix(vec3(l),color,1.035);color*=vec3(1.014,1.006,.988);
+gl_FragColor=vec4(max(color,0.),1.);
+#include <tonemapping_fragment>
+#include <colorspace_fragment>
+gl_FragColor.rgb=clamp((gl_FragColor.rgb-.5)*1.028+.5,0.,1.);
+}`;
+function create({scene,stadium,quality,lighting,actors,ball,canvasFactory}={}){
+ const owned={nodes:[],geometries:[],materials:[],textures:[]},info={build:106,lighting:'directional-key / sky-fill / stadium-rim',post:'pending-capability-check',grassInstances:0,extraFieldDraws:0,clothMaterials:0,skinMaterials:0,shadowMaps:quality.shadows?1:0,drawCalls:null,triangles:null},processed=new Set(),time={value:0},allActors=actors||[];let disposed=false,rt=null,postScene=null,postCamera=null,postMaterial=null,targetSize=new T.Vector2(),postSupported,checkedSize='';
+ const group=new T.Group();group.name='broadcast-remaster-v104';group.userData.noBatch=true;stadium.add(group);owned.nodes.push(group);
+ // One bounded orthographic field shadow replaces the coarse corner spotlight
+ // shadow. Crowd/roof lights remain fills and do not multiply shadow rendering.
+ const key=new T.DirectionalLight(0xfff0dc,quality.id==='low'?1.35:2.15);key.name='broadcast-key-v104';key.position.set(-32,48,-26);key.target.position.set(0,0,0);key.castShadow=!!quality.shadows;key.shadow.mapSize.set(quality.shadowSize||2048,quality.shadowSize||2048);Object.assign(key.shadow.camera,{left:-69,right:69,top:49,bottom:-49,near:1,far:140});key.shadow.radius=2.4;key.shadow.bias=-.00008;key.shadow.normalBias=.025;key.shadow.camera.updateProjectionMatrix();scene.add(key,key.target);owned.nodes.push(key,key.target);
+ const rim=new T.DirectionalLight(0xc5deff,quality.id==='low'?.30:.60);rim.name='broadcast-rim-v104';rim.position.set(24,30,40);scene.add(rim);owned.nodes.push(rim);
+ if(lighting?.ambient){lighting.ambient.intensity=quality.id==='low'?.65:.54;lighting.ambient.color.set(0xc9ddeb);lighting.ambient.groundColor.set(0x546446);}
+ for(const l of lighting?.lights||[]){l.castShadow=false;l.intensity=.38;l.color.set(0xe6f0ff);}
+ scene.fog=new T.FogExp2(0x101c2d,.0022);
+ // Continuous mipmapped PBR turf is used at every camera distance. The old
+ // moving blade patch caused a rectangular seam and dark sub-pixel speckle.
+ // Removing the redundant geometry also avoids screen-space dithering noise.
+ info.surface='continuous-PBR-turf';
+ const clothNormal=new T.DataTexture(new Uint8Array(64*64*4),64,64,T.RGBAFormat);for(let y=0;y<64;y++)for(let x=0;x<64;x++){const i=(y*64+x)*4;clothNormal.image.data.set([128+(x%4<2?18:-18),128+(y%4<2?14:-14),252,255],i);}clothNormal.wrapS=clothNormal.wrapT=T.RepeatWrapping;clothNormal.repeat.set(100,100);clothNormal.generateMipmaps=true;clothNormal.minFilter=T.LinearMipmapLinearFilter;clothNormal.needsUpdate=true;owned.textures.push(clothNormal);
+ // Material detail stays in fragment shading: no displaced knees, face seams
+ // or shadow/geometry disagreement. Existing authentic kit atlases are retained.
+ function refresh(){for(const a of allActors){const full=a.fullBody;if(!full)continue;for(const m of full.materials){if(!m||processed.has(m))continue;processed.add(m);if([full.shirt,full.shorts,full.socks].includes(m)){m.roughness=.78;m.envMapIntensity=.40;m.normalMap=clothNormal;m.normalScale=new T.Vector2(.11,.11);const old=m.onBeforeCompile;m.onBeforeCompile=s=>{old?.(s);s.uniforms.wosFabricTime104=time;s.vertexShader='varying vec3 vFabricPosition104;\n'+s.vertexShader;s.vertexShader=s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvFabricPosition104=position;');s.fragmentShader='varying vec3 vFabricPosition104;uniform float wosFabricTime104;\n'+s.fragmentShader;s.fragmentShader=s.fragmentShader.replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nfloat fold104=sin(vFabricPosition104.y*61.+sin(vFabricPosition104.x*24.)*1.5)*.025;roughnessFactor=clamp(roughnessFactor+fold104,.54,.94);');};m.customProgramCacheKey=()=> 'next90-athletic-fabric-v104';m.needsUpdate=true;info.clothMaterials++;}else if(m===full.skin){m.roughness=.56;m.envMapIntensity=.38;m.needsUpdate=true;info.skinMaterials++;}}full.mesh.receiveShadow=quality.shadows;full.hair.receiveShadow=quality.shadows;}}
+ function update(state,camera){if(disposed)return;const day=scene.userData.stadiumCustomization?.timeOfDay==='day';if(lighting?.ambient){lighting.ambient.intensity=day?.69:quality.id==='low'?.65:.54;}for(const l of lighting?.lights||[])l.intensity=day?.12:.38;key.intensity=day?1.85:quality.id==='low'?1.35:2.15;time.value=Number.isFinite(state.presentationTime)?state.presentationTime:state.time||state.t||0;}
+
+ function render(renderer,camera){if(disposed)return;const size=renderer.getDrawingBufferSize(targetSize);if(postSupported==null)postSupported=quality.id!=='low'&&renderer.capabilities.isWebGL2&&renderer.extensions.has('EXT_color_buffer_float');if(!postSupported){info.post='direct-safe';renderer.render(scene,camera);info.drawCalls=renderer.info.render.calls;info.triangles=renderer.info.render.triangles;return;}
+  if(!rt){rt=new T.WebGLRenderTarget(1,1,{type:T.HalfFloatType,format:T.RGBAFormat,depthBuffer:true,stencilBuffer:false});rt.texture.colorSpace=T.NoColorSpace;const gl=renderer.getContext(),samples=gl.getInternalformatParameter(gl.RENDERBUFFER,gl.RGBA16F,gl.SAMPLES);rt.samples=quality.id==='high'&&Array.from(samples||[]).includes(2)?2:0;postMaterial=new T.ShaderMaterial({uniforms:{frame:{value:rt.texture},texel:{value:new T.Vector2(1,1)},bloomStrength:{value:quality.id==='high'?.055:.025}},vertexShader:vertex,fragmentShader:fragment,depthTest:false,depthWrite:false,toneMapped:true});postScene=new T.Scene();postCamera=new T.Camera();const quad=new T.Mesh(new T.PlaneGeometry(2,2),postMaterial);quad.frustumCulled=false;postScene.add(quad);owned.geometries.push(quad.geometry);info.post='HDR / edge AA / restrained bloom / ACES';}
+  const w=Math.max(1,Math.round(size.x)),h=Math.max(1,Math.round(size.y));if(rt.width!==w||rt.height!==h){rt.setSize(w,h);postMaterial.uniforms.texel.value.set(1/w,1/h);}const prior=renderer.getRenderTarget();renderer.setRenderTarget(rt);if(checkedSize!==w+'x'+h){checkedSize=w+'x'+h;const gl=renderer.getContext();if(gl.checkFramebufferStatus(gl.FRAMEBUFFER)!==gl.FRAMEBUFFER_COMPLETE){renderer.setRenderTarget(prior);rt.dispose();rt=null;postSupported=false;info.post='direct-framebuffer-fallback';renderer.render(scene,camera);return;}}renderer.render(scene,camera);const calls=renderer.info.render.calls,triangles=renderer.info.render.triangles;renderer.setRenderTarget(prior);renderer.render(postScene,postCamera);info.drawCalls=calls+1;info.triangles=triangles+2;}
+ scene.userData.remaster=info;
+ return{info,refresh,update,render,dispose(){if(disposed)return;disposed=true;rt?.dispose();postMaterial?.dispose();key.shadow.map?.dispose();for(const n of owned.nodes)n.removeFromParent();owned.geometries.forEach(g=>g.dispose());owned.materials.forEach(m=>m.dispose());owned.textures.forEach(t=>t.dispose());}};
+}
+return{create,vertex,fragment};});

@@ -1,0 +1,9 @@
+NEXT90SIM v105
+ZIP içeriğini mevcut Hostinger public_html köküne dosyaların üzerine çıkar.
+Önce mevcut sitenin yedeğini al. Özel config.php, sunucudaki kayıtları,
+hazır videoları ve state dosyalarını silme. ZIP'te ilave üst klasör yoktur.
+Yükleme sonrası Hostinger/CDN önbelleğini temizleyip siteyi yenile.
+Ek kurulum, yeni cron veya sürekli çalışan Node/Python servisi gerekmez.
+Ana sayfa index.php/index.html; penaltı penalty.html.
+Doğrudan sürüm girişleri: next90sim-v105.html, penalty-v105.html.
+build.php yalnız isteğe bağlı dosya yükleme teşhisidir; kullanmak zorunlu değildir.

@@ -1,0 +1,190 @@
+{
+  "build": 104,
+  "render": {
+    "frame": {
+      "time": 32.46666666666667,
+      "phase": "playing",
+      "draws": 1,
+      "triangles": 2,
+      "remaster": {
+        "build": 104,
+        "lighting": "directional-key / sky-fill / stadium-rim",
+        "post": "HDR / edge AA / restrained bloom / ACES",
+        "grassInstances": 72000,
+        "extraFieldDraws": 1,
+        "clothMaterials": 66,
+        "skinMaterials": 22,
+        "shadowMaps": 1,
+        "drawCalls": 1198,
+        "triangles": 2394848
+      }
+    },
+    "errors": []
+  },
+  "penaltyBrowser": {
+    "team": {
+      "mode": "team",
+      "score": [
+        4,
+        1
+      ],
+      "kicks": 7,
+      "remaster": {
+        "build": 104,
+        "lighting": "directional-key / sky-fill / stadium-rim",
+        "post": "HDR / edge AA / restrained bloom / ACES",
+        "grassInstances": 72000,
+        "extraFieldDraws": 1,
+        "clothMaterials": 66,
+        "skinMaterials": 22,
+        "shadowMaps": 1,
+        "drawCalls": 1339,
+        "triangles": 2868694
+      }
+    },
+    "duel": {
+      "names": [
+        "Lionel Messi",
+        "Cristiano Ronaldo"
+      ],
+      "keepers": [
+        "Emiliano Martínez",
+        "Diogo Costa"
+      ],
+      "feet": [
+        "left",
+        "right"
+      ],
+      "score": [
+        4,
+        2
+      ],
+      "finished": true
+    },
+    "errors": []
+  },
+  "flagsWithBlockedAssetRequests": {
+    "report": {
+      "results": [
+        {
+          "label": "team-team",
+          "flags": [
+            {
+              "team": 0,
+              "colors": 428,
+              "width": 2048
+            },
+            {
+              "team": 0,
+              "colors": 428,
+              "width": 2048
+            },
+            {
+              "team": 1,
+              "colors": 290,
+              "width": 2048
+            },
+            {
+              "team": 1,
+              "colors": 290,
+              "width": 2048
+            }
+          ],
+          "finished": true
+        },
+        {
+          "label": "Ederson-Ugurcan",
+          "flags": [
+            {
+              "team": 0,
+              "colors": 428,
+              "width": 2048
+            },
+            {
+              "team": 0,
+              "colors": 428,
+              "width": 2048
+            },
+            {
+              "team": 1,
+              "colors": 290,
+              "width": 2048
+            },
+            {
+              "team": 1,
+              "colors": 290,
+              "width": 2048
+            }
+          ],
+          "finished": true
+        },
+        {
+          "label": "Messi-Ronaldo",
+          "flags": [
+            {
+              "team": 0,
+              "colors": 144,
+              "width": 2048
+            },
+            {
+              "team": 0,
+              "colors": 144,
+              "width": 2048
+            },
+            {
+              "team": 1,
+              "colors": 453,
+              "width": 2048
+            },
+            {
+              "team": 1,
+              "colors": 453,
+              "width": 2048
+            }
+          ],
+          "finished": true
+        }
+      ],
+      "embedded": 247
+    },
+    "errors": []
+  },
+  "embeddedDecode": {
+    "assets": 248,
+    "catalogTeams": 229,
+    "allDecoded": true
+  },
+  "encodes": {
+    "normal": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "60/1",
+      "duration": "0.300000",
+      "nb_frames": "18"
+    },
+    "concept": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "60/1",
+      "duration": "0.300000",
+      "nb_frames": "18"
+    },
+    "penalty": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "60/1",
+      "duration": "0.300000",
+      "nb_frames": "18"
+    }
+  },
+  "limitations": [
+    "Software WebGL2, not RTX frame-rate benchmarking",
+    "Short silent 0.30s encoding probes, not full-length audio export or physical mobile download tests"
+  ]
+}

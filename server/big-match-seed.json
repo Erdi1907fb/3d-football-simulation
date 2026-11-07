@@ -1,0 +1,2371 @@
+{
+    "version": 1,
+    "generatedAt": "2026-10-22T21:30:55+03:00",
+    "note": "Verified public schedule; additive forecasts only; existing server forecasts take precedence.",
+    "predictions": {
+        "4f0b86b64af636978150a4fc": {
+            "id": "4f0b86b64af636978150a4fc",
+            "date": "2026-10-26",
+            "kickoff": "2026-10-26T21:30:00+03:00",
+            "competition": "Süper Lig",
+            "competitionId": "tr.1",
+            "season": "2026-27",
+            "round": "TFF 317862",
+            "home": {
+                "id": "298947e5b1e12c64",
+                "name": "Galatasaray",
+                "espnId": "432",
+                "attack": 79.61976221636792,
+                "defense": 74.4282810967553,
+                "strength": 77.02402165656162
+            },
+            "away": {
+                "id": "0a1e2120a08df5e0",
+                "name": "Fenerbahçe",
+                "espnId": "436",
+                "attack": 82.47886369043138,
+                "defense": 78.27269773241312,
+                "strength": 80.37578071142225
+            },
+            "result": null,
+            "source": {
+                "name": "TFF",
+                "url": "https://www.tff.org/default.aspx?pageID=198",
+                "providerMatchId": "317862",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:31.103Z",
+                "cached": false
+            },
+            "sourceTimezone": "Europe/Istanbul",
+            "timeConfirmed": true,
+            "neutral": false,
+            "providerMatchId": "317862",
+            "espnEventId": "401888265",
+            "resultSource": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401888265",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:20:57.093Z",
+                "cached": false
+            },
+            "analysis": {
+                "version": "context-2.0-reliability",
+                "asOf": "2026-10-22T21:30:55+03:00",
+                "teams": {
+                    "home": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 2.076,
+                            "weightedGoalsAgainst": 1.845,
+                            "fourPlusMatches": 6
+                        },
+                        "venueGoalForm": {
+                            "matches": 5,
+                            "weightedGoalsFor": 1.914,
+                            "weightedGoalsAgainst": 1.953,
+                            "fourPlusMatches": 4
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-21",
+                                "venue": "away",
+                                "opponent": "LOSC",
+                                "goalsFor": 4,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-17",
+                                "venue": "away",
+                                "opponent": "Gençlerbirliği",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-13",
+                                "venue": "home",
+                                "opponent": "FC Barcelona",
+                                "goalsFor": 1,
+                                "goalsAgainst": 4,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-09",
+                                "venue": "home",
+                                "opponent": "Kasımpaşa",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-19",
+                                "venue": "away",
+                                "opponent": "Trabzonspor",
+                                "goalsFor": 0,
+                                "goalsAgainst": 4,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-13",
+                                "venue": "home",
+                                "opponent": "Kocaelispor",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-04",
+                                "venue": "away",
+                                "opponent": "Başakşehir",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-29",
+                                "venue": "home",
+                                "opponent": "Göztepe",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-13",
+                                "venue": "home",
+                                "opponent": "FC Barcelona",
+                                "goalsFor": 1,
+                                "goalsAgainst": 4,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-09",
+                                "venue": "home",
+                                "opponent": "Kasımpaşa",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-13",
+                                "venue": "home",
+                                "opponent": "Kocaelispor",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-29",
+                                "venue": "home",
+                                "opponent": "Göztepe",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-14",
+                                "venue": "home",
+                                "opponent": "Çorum FK",
+                                "goalsFor": 2,
+                                "goalsAgainst": 2,
+                                "outcome": "D"
+                            }
+                        ],
+                        "restDays": 5.1,
+                        "opponentAdjustedForm": 0.2674,
+                        "standings": {
+                            "played": 8,
+                            "points": 19,
+                            "goalsFor": 17,
+                            "goalsAgainst": 11,
+                            "rank": 1
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    },
+                    "away": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 2.383,
+                            "weightedGoalsAgainst": 1.503,
+                            "fourPlusMatches": 3
+                        },
+                        "venueGoalForm": {
+                            "matches": 5,
+                            "weightedGoalsFor": 1.148,
+                            "weightedGoalsAgainst": 1.975,
+                            "fourPlusMatches": 1
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "home",
+                                "opponent": "Slavia Prague",
+                                "goalsFor": 2,
+                                "goalsAgainst": 2,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-10-17",
+                                "venue": "home",
+                                "opponent": "Alanyaspor",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-14",
+                                "venue": "away",
+                                "opponent": "Aston Villa",
+                                "goalsFor": 0,
+                                "goalsAgainst": 6,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "away",
+                                "opponent": "Çaykur Rizespor",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-20",
+                                "venue": "home",
+                                "opponent": "Eyüpspor",
+                                "goalsFor": 8,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-14",
+                                "venue": "away",
+                                "opponent": "Gaziantep FK",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-05",
+                                "venue": "home",
+                                "opponent": "Beşiktaş",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-08-30",
+                                "venue": "away",
+                                "opponent": "Samsunspor",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-14",
+                                "venue": "away",
+                                "opponent": "Aston Villa",
+                                "goalsFor": 0,
+                                "goalsAgainst": 6,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "away",
+                                "opponent": "Çaykur Rizespor",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-14",
+                                "venue": "away",
+                                "opponent": "Gaziantep FK",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-08-30",
+                                "venue": "away",
+                                "opponent": "Samsunspor",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-15",
+                                "venue": "away",
+                                "opponent": "Gençlerbirliği",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            }
+                        ],
+                        "restDays": 6.1,
+                        "opponentAdjustedForm": 0.3728,
+                        "standings": {
+                            "played": 8,
+                            "points": 16,
+                            "goalsFor": 22,
+                            "goalsAgainst": 6,
+                            "rank": 3
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    }
+                },
+                "h2h": {
+                    "matches": 0,
+                    "homeWins": 0,
+                    "draws": 0,
+                    "awayWins": 0
+                },
+                "contextFactors": {
+                    "home": 1.01628,
+                    "away": 1.03159
+                },
+                "unavailable": [
+                    "morale",
+                    "injuries",
+                    "confirmedLineups",
+                    "subjectiveMotivation",
+                    "xG",
+                    "xGA",
+                    "verifiedPlayerPerformance",
+                    "verifiedInjuries",
+                    "verifiedSuspensions",
+                    "verifiedTacticalStyle"
+                ],
+                "coverage": {
+                    "goalForm": true,
+                    "recentForm": true,
+                    "opponentStrength": true,
+                    "homeAway": true,
+                    "restDays": true,
+                    "h2h": false,
+                    "standings": true,
+                    "marketOdds": false,
+                    "morale": false,
+                    "injuries": false,
+                    "confirmedLineups": false,
+                    "congestion": true,
+                    "reliabilityWeighting": true
+                },
+                "sources": [
+                    {
+                        "name": "Verified completed fixture history",
+                        "asOf": "2026-10-22T21:30:55+03:00"
+                    }
+                ],
+                "providerStatus": "unavailable",
+                "weighting": {
+                    "home": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5254,
+                        "venueSample": 5,
+                        "venueReliability": 0.3571,
+                        "latestMatchAgeDays": 0.9,
+                        "matchesLastNineDays": 1,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.00263
+                    },
+                    "away": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5167,
+                        "venueSample": 5,
+                        "venueReliability": 0.3571,
+                        "latestMatchAgeDays": 1.9,
+                        "matchesLastNineDays": 1,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.0073
+                    }
+                },
+                "modelNote": "Reliability-weighted goal/venue history; opposition adjustment, rest and margin-normalized market use the existing validated pipeline. Unavailable signals excluded."
+            },
+            "expectedGoals": {
+                "home": 1.766099186959118,
+                "away": 1.729135193577423
+            },
+            "quality": {
+                "status": "history",
+                "completedMatches": 72,
+                "homeMatches": 10,
+                "awayMatches": 10,
+                "inputs": {
+                    "weightedResults": true,
+                    "goalTailAudit": true,
+                    "marketOdds": false,
+                    "squads": false,
+                    "context": true
+                },
+                "modelVersion": "pp-poisson-3.1-reliability"
+            },
+            "probabilities": {
+                "home": 0.3961183620751287,
+                "draw": 0.22293470559210543,
+                "away": 0.3809469323327654,
+                "over25": 0.6782704568523824,
+                "over35": 0.46233863149065635,
+                "over45": 0.27365554652657714,
+                "over55": 0.14175722540814803,
+                "btts": 0.6819051195554549
+            },
+            "goalDistribution": [
+                0.0303416361142117,
+                0.10605112970812187,
+                0.18533677732528384,
+                0.21593182536172575,
+                0.18868308496407904,
+                0.13189832111842925,
+                0.07683592445136384,
+                0.03836565211467359,
+                0.016762118287863944,
+                0.006509725792262486,
+                0.002275301739698131,
+                0.000722973896971592,
+                0.00021058026841046595,
+                5.661749184699028e-5,
+                1.4135100288810554e-5,
+                3.293699233452176e-6,
+                7.19515674994306e-7,
+                1.4793387791617965e-7,
+                2.872575422992925e-8,
+                5.284360707352807e-9,
+                9.234699234422448e-10,
+                1.5367381713578167e-10,
+                2.4399128454547093e-11,
+                3.7013099135876145e-12,
+                5.368505973361032e-13,
+                7.444566700581344e-14,
+                9.86140456109717e-15,
+                1.2458165939326655e-15,
+                1.497600031059542e-16,
+                1.7079876920616885e-17,
+                1.8411181101340603e-18,
+                1.866294971770497e-19,
+                1.7657864022283363e-20,
+                1.5403864369484967e-21,
+                1.2107236269457599e-22,
+                8.136815290463968e-24,
+                3.9495688547968235e-25
+            ],
+            "scoreSelection": {
+                "policy": "most-likely-exact-score",
+                "probability": 0.09265802443909217,
+                "forcedHighScores": false
+            },
+            "mostLikelyScore": {
+                "home": 1,
+                "away": 1
+            },
+            "modelOdds": {
+                "home": 2.52,
+                "draw": 4.49,
+                "away": 2.63,
+                "label": "MODEL"
+            },
+            "publishedScore": {
+                "home": 1,
+                "away": 1
+            },
+            "engineVersion": "2.6.0",
+            "animationProfile": "expanded-v2",
+            "playerPolicy": "role-xi-v1",
+            "replayDuration": 35,
+            "replayPlan": {
+                "policy": "pre-match-likelihood-v1",
+                "candidates": 8
+            },
+            "context": {
+                "venue": "home"
+            },
+            "forecastSource": {
+                "name": "TFF",
+                "url": "https://www.tff.org/default.aspx?pageID=198",
+                "providerMatchId": "317862",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:31.103Z",
+                "cached": false
+            },
+            "seed": 790353970,
+            "createdAt": "2026-10-22T21:30:55+03:00",
+            "originalPublishedDate": "2026-10-26",
+            "inputSnapshot": {
+                "contextFactors": {
+                    "home": 1.01628,
+                    "away": 1.03159
+                }
+            }
+        },
+        "06093f4ce831d850dd0cd1b8": {
+            "id": "06093f4ce831d850dd0cd1b8",
+            "date": "2026-10-24",
+            "kickoff": "2026-10-24T16:30:00+00:00",
+            "competition": "Premier League",
+            "competitionId": "en.1",
+            "season": "2026-27",
+            "round": "ESPN 401878767",
+            "home": {
+                "id": "836530272c76ba56",
+                "name": "Chelsea",
+                "espnId": "363",
+                "attack": 81.24801981813599,
+                "defense": 72.72381642016221,
+                "strength": 76.98591811914909
+            },
+            "away": {
+                "id": "8ecab079109a5e37",
+                "name": "Tottenham Hotspur",
+                "espnId": "367",
+                "attack": 71.50305556153147,
+                "defense": 75.28307139869973,
+                "strength": 73.3930634801156
+            },
+            "result": null,
+            "source": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401878767",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:03.082Z",
+                "cached": false
+            },
+            "sourceTimezone": "UTC",
+            "timeConfirmed": true,
+            "neutral": false,
+            "providerMatchId": "401878767",
+            "espnEventId": "401878767",
+            "providerStatus": "STATUS_SCHEDULED",
+            "scheduleProvisional": false,
+            "analysis": {
+                "version": "context-2.0-reliability",
+                "asOf": "2026-10-22T21:30:55+03:00",
+                "teams": {
+                    "home": {
+                        "goalForm": {
+                            "matches": 7,
+                            "weightedGoalsFor": 2.41,
+                            "weightedGoalsAgainst": 1.574,
+                            "fourPlusMatches": 4
+                        },
+                        "venueGoalForm": {
+                            "matches": 3,
+                            "weightedGoalsFor": 3.743,
+                            "weightedGoalsAgainst": 1.869,
+                            "fourPlusMatches": 3
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-17",
+                                "venue": "away",
+                                "opponent": "Everton",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Bournemouth",
+                                "goalsFor": 5,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-18",
+                                "venue": "away",
+                                "opponent": "Brentford",
+                                "goalsFor": 0,
+                                "goalsAgainst": 3,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-12",
+                                "venue": "home",
+                                "opponent": "Hull City",
+                                "goalsFor": 2,
+                                "goalsAgainst": 2,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-06",
+                                "venue": "away",
+                                "opponent": "Arsenal",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-08-30",
+                                "venue": "home",
+                                "opponent": "Brighton",
+                                "goalsFor": 4,
+                                "goalsAgainst": 3,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-24",
+                                "venue": "away",
+                                "opponent": "Fulham",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Bournemouth",
+                                "goalsFor": 5,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-12",
+                                "venue": "home",
+                                "opponent": "Hull City",
+                                "goalsFor": 2,
+                                "goalsAgainst": 2,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-08-30",
+                                "venue": "home",
+                                "opponent": "Brighton",
+                                "goalsFor": 4,
+                                "goalsAgainst": 3,
+                                "outcome": "W"
+                            }
+                        ],
+                        "restDays": 7.2,
+                        "opponentAdjustedForm": 0.4506,
+                        "standings": {
+                            "played": 7,
+                            "points": 13,
+                            "goalsFor": 17,
+                            "goalsAgainst": 13,
+                            "rank": 4
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 7
+                    },
+                    "away": {
+                        "goalForm": {
+                            "matches": 7,
+                            "weightedGoalsFor": 1.238,
+                            "weightedGoalsAgainst": 1.317,
+                            "fourPlusMatches": 2
+                        },
+                        "venueGoalForm": {
+                            "matches": 3,
+                            "weightedGoalsFor": 0.401,
+                            "weightedGoalsAgainst": 1.211,
+                            "fourPlusMatches": 0
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-19",
+                                "venue": "home",
+                                "opponent": "Coventry City",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "away",
+                                "opponent": "Manchester United",
+                                "goalsFor": 1,
+                                "goalsAgainst": 1,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-19",
+                                "venue": "home",
+                                "opponent": "Aston Villa",
+                                "goalsFor": 2,
+                                "goalsAgainst": 3,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-12",
+                                "venue": "home",
+                                "opponent": "Everton",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-05",
+                                "venue": "away",
+                                "opponent": "Nottingham Forest",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-08-29",
+                                "venue": "home",
+                                "opponent": "Newcastle United",
+                                "goalsFor": 0,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-08-22",
+                                "venue": "away",
+                                "opponent": "Brentford",
+                                "goalsFor": 0,
+                                "goalsAgainst": 3,
+                                "outcome": "L"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-10",
+                                "venue": "away",
+                                "opponent": "Manchester United",
+                                "goalsFor": 1,
+                                "goalsAgainst": 1,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-05",
+                                "venue": "away",
+                                "opponent": "Nottingham Forest",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-08-22",
+                                "venue": "away",
+                                "opponent": "Brentford",
+                                "goalsFor": 0,
+                                "goalsAgainst": 3,
+                                "outcome": "L"
+                            }
+                        ],
+                        "restDays": 4.9,
+                        "opponentAdjustedForm": -0.1253,
+                        "standings": {
+                            "played": 7,
+                            "points": 6,
+                            "goalsFor": 6,
+                            "goalsAgainst": 10,
+                            "rank": 16
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 7
+                    }
+                },
+                "h2h": {
+                    "matches": 0,
+                    "homeWins": 0,
+                    "draws": 0,
+                    "awayWins": 0
+                },
+                "contextFactors": {
+                    "home": 1.05668,
+                    "away": 0.97307
+                },
+                "unavailable": [
+                    "morale",
+                    "injuries",
+                    "confirmedLineups",
+                    "subjectiveMotivation",
+                    "xG",
+                    "xGA",
+                    "verifiedPlayerPerformance",
+                    "verifiedInjuries",
+                    "verifiedSuspensions",
+                    "verifiedTacticalStyle"
+                ],
+                "coverage": {
+                    "goalForm": true,
+                    "recentForm": true,
+                    "opponentStrength": true,
+                    "homeAway": true,
+                    "restDays": true,
+                    "h2h": false,
+                    "standings": true,
+                    "marketOdds": false,
+                    "morale": false,
+                    "injuries": false,
+                    "confirmedLineups": false,
+                    "congestion": true,
+                    "reliabilityWeighting": true
+                },
+                "sources": [
+                    {
+                        "name": "Verified completed fixture history",
+                        "asOf": "2026-10-22T21:30:55+03:00"
+                    }
+                ],
+                "providerStatus": "unavailable",
+                "weighting": {
+                    "home": {
+                        "recentSample": 7,
+                        "recentReliability": 0.4608,
+                        "venueSample": 3,
+                        "venueReliability": 0.25,
+                        "latestMatchAgeDays": 4.9,
+                        "matchesLastNineDays": 1,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.0144
+                    },
+                    "away": {
+                        "recentSample": 7,
+                        "recentReliability": 0.4764,
+                        "venueSample": 3,
+                        "venueReliability": 0.25,
+                        "latestMatchAgeDays": 2.9,
+                        "matchesLastNineDays": 1,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 0.99632
+                    }
+                },
+                "modelNote": "Reliability-weighted goal/venue history; opposition adjustment, rest and margin-normalized market use the existing validated pipeline. Unavailable signals excluded."
+            },
+            "expectedGoals": {
+                "home": 2.163531517865488,
+                "away": 1.1677271146366623
+            },
+            "quality": {
+                "status": "limited",
+                "completedMatches": 70,
+                "homeMatches": 7,
+                "awayMatches": 7,
+                "inputs": {
+                    "weightedResults": true,
+                    "goalTailAudit": true,
+                    "marketOdds": false,
+                    "squads": false,
+                    "context": true
+                },
+                "modelVersion": "pp-poisson-3.1-reliability"
+            },
+            "probabilities": {
+                "home": 0.600572816130436,
+                "draw": 0.2019210052755863,
+                "away": 0.1975061785939778,
+                "over25": 0.6468124903791317,
+                "over35": 0.42655709125095537,
+                "over45": 0.2431251663257206,
+                "over55": 0.1209133296489856,
+                "btts": 0.6097563443983843
+            },
+            "goalDistribution": [
+                0.03574808304138891,
+                0.11908611022703056,
+                0.19835331635244907,
+                0.22025539912817532,
+                0.18343192492523516,
+                0.1222118366767352,
+                0.06785320598721951,
+                0.032290939741124514,
+                0.013446183970528476,
+                0.004976968491781668,
+                0.001657956925193889,
+                0.0005020984835789877,
+                0.00013938499231572852,
+                3.571749683792435e-5,
+                8.498872833764557e-6,
+                1.8874628996010793e-6,
+                3.929766923639772e-7,
+                7.700629404762595e-8,
+                1.4251548989064048e-8,
+                2.4980296542675627e-9,
+                4.1531823657319657e-10,
+                6.545938292893686e-11,
+                9.754703191786156e-12,
+                1.368943502544699e-12,
+                1.801860707101746e-13,
+                2.2173605550412335e-14,
+                2.546379343900028e-15,
+                2.727387005352123e-16,
+                2.7259794716639442e-17,
+                2.545288253423292e-18,
+                2.222934836220657e-19,
+                1.8170661779223318e-20,
+                1.3885317706920823e-21,
+                9.864248632194497e-23,
+                6.409974445645431e-24,
+                3.6393985727462877e-25,
+                1.5333925696856636e-26
+            ],
+            "scoreSelection": {
+                "policy": "most-likely-exact-score",
+                "probability": 0.09769910374389297,
+                "forcedHighScores": false
+            },
+            "mostLikelyScore": {
+                "home": 2,
+                "away": 1
+            },
+            "modelOdds": {
+                "home": 1.67,
+                "draw": 4.95,
+                "away": 5.06,
+                "label": "MODEL"
+            },
+            "publishedScore": {
+                "home": 2,
+                "away": 1
+            },
+            "engineVersion": "2.6.0",
+            "animationProfile": "expanded-v2",
+            "playerPolicy": "role-xi-v1",
+            "replayDuration": 35,
+            "replayPlan": {
+                "policy": "pre-match-likelihood-v1",
+                "candidates": 8
+            },
+            "context": {
+                "venue": "home"
+            },
+            "forecastSource": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401878767",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:03.082Z",
+                "cached": false
+            },
+            "seed": 3661443385,
+            "createdAt": "2026-10-22T21:30:55+03:00",
+            "originalPublishedDate": "2026-10-24",
+            "inputSnapshot": {
+                "contextFactors": {
+                    "home": 1.05668,
+                    "away": 0.97307
+                }
+            }
+        },
+        "df2a3cfd4d0b64953d16411c": {
+            "id": "df2a3cfd4d0b64953d16411c",
+            "date": "2026-10-25",
+            "kickoff": "2026-10-25T20:00:00+00:00",
+            "competition": "La Liga",
+            "competitionId": "es.1",
+            "season": "2026-27",
+            "round": "ESPN 401882832",
+            "home": {
+                "id": "09c58af5e0ed9ebb",
+                "name": "FC Barcelona",
+                "espnId": "83",
+                "attack": 89.97642531637676,
+                "defense": 77.92613427613496,
+                "strength": 83.95127979625586
+            },
+            "away": {
+                "id": "8df238f8673b71d0",
+                "name": "Real Madrid CF",
+                "espnId": "86",
+                "attack": 82.87201438515643,
+                "defense": 78.77990376188576,
+                "strength": 80.82595907352109
+            },
+            "result": null,
+            "source": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401882832",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:07.227Z",
+                "cached": false
+            },
+            "sourceTimezone": "UTC",
+            "timeConfirmed": true,
+            "neutral": false,
+            "providerMatchId": "401882832",
+            "espnEventId": "401882832",
+            "providerStatus": "STATUS_SCHEDULED",
+            "scheduleProvisional": false,
+            "analysis": {
+                "version": "context-2.0-reliability",
+                "asOf": "2026-10-22T21:30:55+03:00",
+                "teams": {
+                    "home": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 3.814,
+                            "weightedGoalsAgainst": 1.836,
+                            "fourPlusMatches": 7
+                        },
+                        "venueGoalForm": {
+                            "matches": 4,
+                            "weightedGoalsFor": 4.338,
+                            "weightedGoalsAgainst": 0.981,
+                            "fourPlusMatches": 2
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "away",
+                                "opponent": "Paris Saint-Germain",
+                                "goalsFor": 2,
+                                "goalsAgainst": 4,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-17",
+                                "venue": "away",
+                                "opponent": "Real Betis",
+                                "goalsFor": 5,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-13",
+                                "venue": "away",
+                                "opponent": "Galatasaray",
+                                "goalsFor": 4,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Getafe CF",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-19",
+                                "venue": "away",
+                                "opponent": "Sevilla FC",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-16",
+                                "venue": "home",
+                                "opponent": "R. Racing Club",
+                                "goalsFor": 7,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-13",
+                                "venue": "away",
+                                "opponent": "Levante UD",
+                                "goalsFor": 4,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-06",
+                                "venue": "away",
+                                "opponent": "Valencia CF",
+                                "goalsFor": 5,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Getafe CF",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-16",
+                                "venue": "home",
+                                "opponent": "R. Racing Club",
+                                "goalsFor": 7,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-31",
+                                "venue": "home",
+                                "opponent": "Rayo Vallecano",
+                                "goalsFor": 5,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-27",
+                                "venue": "home",
+                                "opponent": "Athletic Club",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "restDays": 5,
+                        "opponentAdjustedForm": 0.9217,
+                        "standings": {
+                            "played": 9,
+                            "points": 27,
+                            "goalsFor": 39,
+                            "goalsAgainst": 9,
+                            "rank": 1
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    },
+                    "away": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 3.009,
+                            "weightedGoalsAgainst": 1.366,
+                            "fourPlusMatches": 5
+                        },
+                        "venueGoalForm": {
+                            "matches": 5,
+                            "weightedGoalsFor": 2.214,
+                            "weightedGoalsAgainst": 1.999,
+                            "fourPlusMatches": 2
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-21",
+                                "venue": "home",
+                                "opponent": "RB Leipzig",
+                                "goalsFor": 4,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-18",
+                                "venue": "home",
+                                "opponent": "Sevilla FC",
+                                "goalsFor": 4,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-14",
+                                "venue": "away",
+                                "opponent": "Roma",
+                                "goalsFor": 4,
+                                "goalsAgainst": 3,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Villarreal CF",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-20",
+                                "venue": "away",
+                                "opponent": "Atlético de Madrid",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-15",
+                                "venue": "away",
+                                "opponent": "Elche CF",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-12",
+                                "venue": "home",
+                                "opponent": "Rayo Vallecano",
+                                "goalsFor": 4,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-04",
+                                "venue": "away",
+                                "opponent": "Real Betis",
+                                "goalsFor": 0,
+                                "goalsAgainst": 1,
+                                "outcome": "L"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-14",
+                                "venue": "away",
+                                "opponent": "Roma",
+                                "goalsFor": 4,
+                                "goalsAgainst": 3,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-20",
+                                "venue": "away",
+                                "opponent": "Atlético de Madrid",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-15",
+                                "venue": "away",
+                                "opponent": "Elche CF",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-04",
+                                "venue": "away",
+                                "opponent": "Real Betis",
+                                "goalsFor": 0,
+                                "goalsAgainst": 1,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-08-22",
+                                "venue": "away",
+                                "opponent": "RCD Espanyol",
+                                "goalsFor": 2,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            }
+                        ],
+                        "restDays": 4,
+                        "opponentAdjustedForm": 0.9461,
+                        "standings": {
+                            "played": 9,
+                            "points": 21,
+                            "goalsFor": 23,
+                            "goalsAgainst": 9,
+                            "rank": 3
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    }
+                },
+                "h2h": {
+                    "matches": 0,
+                    "homeWins": 0,
+                    "draws": 0,
+                    "awayWins": 0
+                },
+                "contextFactors": {
+                    "home": 1.06541,
+                    "away": 1.05629
+                },
+                "unavailable": [
+                    "morale",
+                    "injuries",
+                    "confirmedLineups",
+                    "subjectiveMotivation",
+                    "xG",
+                    "xGA",
+                    "verifiedPlayerPerformance",
+                    "verifiedInjuries",
+                    "verifiedSuspensions",
+                    "verifiedTacticalStyle"
+                ],
+                "coverage": {
+                    "goalForm": true,
+                    "recentForm": true,
+                    "opponentStrength": true,
+                    "homeAway": true,
+                    "restDays": true,
+                    "h2h": false,
+                    "standings": true,
+                    "marketOdds": false,
+                    "morale": false,
+                    "injuries": false,
+                    "confirmedLineups": false,
+                    "congestion": true,
+                    "reliabilityWeighting": true
+                },
+                "sources": [
+                    {
+                        "name": "Verified completed fixture history",
+                        "asOf": "2026-10-22T21:30:55+03:00"
+                    }
+                ],
+                "providerStatus": "unavailable",
+                "weighting": {
+                    "home": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5167,
+                        "venueSample": 4,
+                        "venueReliability": 0.3077,
+                        "latestMatchAgeDays": 1.9,
+                        "matchesLastNineDays": 2,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.02816
+                    },
+                    "away": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5254,
+                        "venueSample": 5,
+                        "venueReliability": 0.3571,
+                        "latestMatchAgeDays": 0.9,
+                        "matchesLastNineDays": 2,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.01976
+                    }
+                },
+                "modelNote": "Reliability-weighted goal/venue history; opposition adjustment, rest and margin-normalized market use the existing validated pipeline. Unavailable signals excluded."
+            },
+            "expectedGoals": {
+                "home": 2.878390857744644,
+                "away": 1.7233347195040931
+            },
+            "quality": {
+                "status": "history",
+                "completedMatches": 89,
+                "homeMatches": 11,
+                "awayMatches": 11,
+                "inputs": {
+                    "weightedResults": true,
+                    "goalTailAudit": true,
+                    "marketOdds": false,
+                    "squads": false,
+                    "context": true
+                },
+                "modelVersion": "pp-poisson-3.1-reliability"
+            },
+            "probabilities": {
+                "home": 0.6166234574661608,
+                "draw": 0.16851860473931274,
+                "away": 0.21485793779452747,
+                "over25": 0.8375447205514361,
+                "over35": 0.6745750181459906,
+                "over45": 0.4870895561770537,
+                "over55": 0.31453822703610124,
+                "btts": 0.7753393340318421
+            },
+            "goalDistribution": [
+                0.010034505485083445,
+                0.04617604054575124,
+                0.1062447334177291,
+                0.16296970240544587,
+                0.1874854619689388,
+                0.17255132914095225,
+                0.1323389774493642,
+                0.08699823677081188,
+                0.050042751415473326,
+                0.025587001016053785,
+                0.011774435702066413,
+                0.004925701993442702,
+                0.001888894070760864,
+                0.0006686286275487503,
+                0.0002197746755051289,
+                6.742284970023286e-5,
+                1.9391340747284936e-5,
+                5.249036981995689e-6,
+                1.3419237631096718e-6,
+                3.249650001636677e-7,
+                7.469847504346853e-8,
+                1.6309971473235014e-8,
+                3.3793610139774102e-9,
+                6.628598102588783e-10,
+                1.2271263901991286e-10,
+                2.1378398436426945e-11,
+                3.49726417707651e-12,
+                5.365410270430875e-13,
+                7.716448702052378e-14,
+                1.0404518066733833e-14,
+                1.3154782121459115e-15,
+                1.558681859503104e-16,
+                1.7262978167752562e-17,
+                1.774203023939785e-18,
+                1.661576066139822e-19,
+                1.3515652858090484e-20,
+                8.094000218583673e-22
+            ],
+            "scoreSelection": {
+                "policy": "most-likely-exact-score",
+                "probability": 0.07163663046128792,
+                "forcedHighScores": false
+            },
+            "mostLikelyScore": {
+                "home": 2,
+                "away": 1
+            },
+            "modelOdds": {
+                "home": 1.62,
+                "draw": 5.93,
+                "away": 4.65,
+                "label": "MODEL"
+            },
+            "publishedScore": {
+                "home": 2,
+                "away": 1
+            },
+            "engineVersion": "2.6.0",
+            "animationProfile": "expanded-v2",
+            "playerPolicy": "role-xi-v1",
+            "replayDuration": 35,
+            "replayPlan": {
+                "policy": "pre-match-likelihood-v1",
+                "candidates": 8
+            },
+            "context": {
+                "venue": "home"
+            },
+            "forecastSource": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401882832",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:07.227Z",
+                "cached": false
+            },
+            "seed": 2936903000,
+            "createdAt": "2026-10-22T21:30:55+03:00",
+            "originalPublishedDate": "2026-10-25",
+            "inputSnapshot": {
+                "contextFactors": {
+                    "home": 1.06541,
+                    "away": 1.05629
+                }
+            }
+        },
+        "7786e8e360ba6502495346a5": {
+            "id": "7786e8e360ba6502495346a5",
+            "date": "2026-10-24",
+            "kickoff": "2026-10-24T16:00:00+00:00",
+            "competition": "Serie A",
+            "competitionId": "it.1",
+            "season": "2026-27",
+            "round": "ESPN 401874948",
+            "home": {
+                "id": "8f51ddf7b345d519",
+                "name": "Napoli",
+                "espnId": "114",
+                "attack": 75.40943412837464,
+                "defense": 76.94561139415018,
+                "strength": 76.17752276126241
+            },
+            "away": {
+                "id": "7e325f21b5b5f026",
+                "name": "Roma",
+                "espnId": "104",
+                "attack": 80.59869544155453,
+                "defense": 82.51692823061038,
+                "strength": 81.55781183608245
+            },
+            "result": null,
+            "source": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401874948",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:18.516Z",
+                "cached": false
+            },
+            "sourceTimezone": "UTC",
+            "timeConfirmed": true,
+            "neutral": false,
+            "providerMatchId": "401874948",
+            "espnEventId": "401874948",
+            "providerStatus": "STATUS_SCHEDULED",
+            "scheduleProvisional": false,
+            "analysis": {
+                "version": "context-2.0-reliability",
+                "asOf": "2026-10-22T21:30:55+03:00",
+                "teams": {
+                    "home": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 1.811,
+                            "weightedGoalsAgainst": 1.742,
+                            "fourPlusMatches": 3
+                        },
+                        "venueGoalForm": {
+                            "matches": 4,
+                            "weightedGoalsFor": 2.524,
+                            "weightedGoalsAgainst": 1.348,
+                            "fourPlusMatches": 1
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "home",
+                                "opponent": "Bodø/Glimt",
+                                "goalsFor": 4,
+                                "goalsAgainst": 3,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-17",
+                                "venue": "away",
+                                "opponent": "Venezia",
+                                "goalsFor": 0,
+                                "goalsAgainst": 1,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-13",
+                                "venue": "away",
+                                "opponent": "Villarreal CF",
+                                "goalsFor": 1,
+                                "goalsAgainst": 3,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Frosinone",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-20",
+                                "venue": "away",
+                                "opponent": "Fiorentina",
+                                "goalsFor": 1,
+                                "goalsAgainst": 1,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-13",
+                                "venue": "home",
+                                "opponent": "Bologna",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-05",
+                                "venue": "away",
+                                "opponent": "Inter",
+                                "goalsFor": 2,
+                                "goalsAgainst": 3,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-08-30",
+                                "venue": "home",
+                                "opponent": "Como",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "home",
+                                "opponent": "Bodø/Glimt",
+                                "goalsFor": 4,
+                                "goalsAgainst": 3,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Frosinone",
+                                "goalsFor": 3,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-13",
+                                "venue": "home",
+                                "opponent": "Bologna",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-30",
+                                "venue": "home",
+                                "opponent": "Como",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            }
+                        ],
+                        "restDays": 3.9,
+                        "opponentAdjustedForm": -0.0306,
+                        "standings": {
+                            "played": 7,
+                            "points": 10,
+                            "goalsFor": 10,
+                            "goalsAgainst": 7,
+                            "rank": 9
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    },
+                    "away": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 2.468,
+                            "weightedGoalsAgainst": 0.882,
+                            "fourPlusMatches": 4
+                        },
+                        "venueGoalForm": {
+                            "matches": 3,
+                            "weightedGoalsFor": 1.737,
+                            "weightedGoalsAgainst": 0,
+                            "fourPlusMatches": 1
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "home",
+                                "opponent": "Slovan Bratislava",
+                                "goalsFor": 4,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-17",
+                                "venue": "home",
+                                "opponent": "Genoa",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-14",
+                                "venue": "home",
+                                "opponent": "Real Madrid",
+                                "goalsFor": 3,
+                                "goalsAgainst": 4,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-10-11",
+                                "venue": "away",
+                                "opponent": "Como",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-19",
+                                "venue": "home",
+                                "opponent": "Inter",
+                                "goalsFor": 2,
+                                "goalsAgainst": 2,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-14",
+                                "venue": "away",
+                                "opponent": "Torino",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-05",
+                                "venue": "home",
+                                "opponent": "Atalanta",
+                                "goalsFor": 2,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-31",
+                                "venue": "away",
+                                "opponent": "Lecce",
+                                "goalsFor": 4,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-11",
+                                "venue": "away",
+                                "opponent": "Como",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-14",
+                                "venue": "away",
+                                "opponent": "Torino",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-31",
+                                "venue": "away",
+                                "opponent": "Lecce",
+                                "goalsFor": 4,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "restDays": 3.9,
+                        "opponentAdjustedForm": 0.778,
+                        "standings": {
+                            "played": 7,
+                            "points": 17,
+                            "goalsFor": 16,
+                            "goalsAgainst": 3,
+                            "rank": 3
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    }
+                },
+                "h2h": {
+                    "matches": 0,
+                    "homeWins": 0,
+                    "draws": 0,
+                    "awayWins": 0
+                },
+                "contextFactors": {
+                    "home": 0.97968,
+                    "away": 1.08107
+                },
+                "unavailable": [
+                    "morale",
+                    "injuries",
+                    "confirmedLineups",
+                    "subjectiveMotivation",
+                    "xG",
+                    "xGA",
+                    "verifiedPlayerPerformance",
+                    "verifiedInjuries",
+                    "verifiedSuspensions",
+                    "verifiedTacticalStyle"
+                ],
+                "coverage": {
+                    "goalForm": true,
+                    "recentForm": true,
+                    "opponentStrength": true,
+                    "homeAway": true,
+                    "restDays": true,
+                    "h2h": false,
+                    "standings": true,
+                    "marketOdds": false,
+                    "morale": false,
+                    "injuries": false,
+                    "confirmedLineups": false,
+                    "congestion": true,
+                    "reliabilityWeighting": true
+                },
+                "sources": [
+                    {
+                        "name": "Verified completed fixture history",
+                        "asOf": "2026-10-22T21:30:55+03:00"
+                    }
+                ],
+                "providerStatus": "unavailable",
+                "weighting": {
+                    "home": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5167,
+                        "venueSample": 4,
+                        "venueReliability": 0.3077,
+                        "latestMatchAgeDays": 1.9,
+                        "matchesLastNineDays": 2,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.00514
+                    },
+                    "away": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5167,
+                        "venueSample": 3,
+                        "venueReliability": 0.25,
+                        "latestMatchAgeDays": 1.9,
+                        "matchesLastNineDays": 2,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.02872
+                    }
+                },
+                "modelNote": "Reliability-weighted goal/venue history; opposition adjustment, rest and margin-normalized market use the existing validated pipeline. Unavailable signals excluded."
+            },
+            "expectedGoals": {
+                "home": 1.137180297326712,
+                "away": 1.7041382532521858
+            },
+            "quality": {
+                "status": "limited",
+                "completedMatches": 70,
+                "homeMatches": 9,
+                "awayMatches": 9,
+                "inputs": {
+                    "weightedResults": true,
+                    "goalTailAudit": true,
+                    "marketOdds": false,
+                    "squads": false,
+                    "context": true
+                },
+                "modelVersion": "pp-poisson-3.1-reliability"
+            },
+            "probabilities": {
+                "home": 0.254130816800987,
+                "draw": 0.23954706067568943,
+                "away": 0.5063221225233239,
+                "over25": 0.5403370320021764,
+                "over35": 0.31726785646004224,
+                "over45": 0.15881520982748998,
+                "over55": 0.06877232097441166,
+                "btts": 0.5556974951258976
+            },
+            "goalDistribution": [
+                0.058348679535227564,
+                0.16578718556522534,
+                0.23552710289737042,
+                0.22306917554213448,
+                0.15845264663255182,
+                0.09004288885307847,
+                0.04264008840766095,
+                0.017307724884430185,
+                0.006147094972805937,
+                0.0019406505531559771,
+                0.0005514006416873277,
+                0.00014242771563884656,
+                3.372354254676924e-5,
+                7.37071746379786e-6,
+                1.495896875783193e-6,
+                2.8335463619438696e-7,
+                5.0318799013227896e-8,
+                8.410102181125621e-9,
+                1.327543296638682e-9,
+                1.9851290044487313e-10,
+                2.8188936183722144e-11,
+                3.806954995322663e-12,
+                4.891253995402101e-13,
+                5.973150346456751e-14,
+                6.920313303002352e-15,
+                7.589551508446004e-16,
+                7.862399801076395e-17,
+                7.680889436908176e-18,
+                7.067521086185099e-19,
+                6.119758489355523e-20,
+                4.981589528147959e-21,
+                3.804873238971126e-22,
+                2.715596356378671e-23,
+                1.7949699436988604e-24,
+                1.0770588421653741e-25,
+                5.58241352782831e-27,
+                2.115259842107222e-28
+            ],
+            "scoreSelection": {
+                "policy": "most-likely-exact-score",
+                "probability": 0.11307463225092568,
+                "forcedHighScores": false
+            },
+            "mostLikelyScore": {
+                "home": 1,
+                "away": 1
+            },
+            "modelOdds": {
+                "home": 3.93,
+                "draw": 4.17,
+                "away": 1.98,
+                "label": "MODEL"
+            },
+            "publishedScore": {
+                "home": 1,
+                "away": 1
+            },
+            "engineVersion": "2.6.0",
+            "animationProfile": "expanded-v2",
+            "playerPolicy": "role-xi-v1",
+            "replayDuration": 35,
+            "replayPlan": {
+                "policy": "pre-match-likelihood-v1",
+                "candidates": 8
+            },
+            "context": {
+                "venue": "home"
+            },
+            "forecastSource": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401874948",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:18.516Z",
+                "cached": false
+            },
+            "seed": 3177800597,
+            "createdAt": "2026-10-22T21:30:55+03:00",
+            "originalPublishedDate": "2026-10-24",
+            "inputSnapshot": {
+                "contextFactors": {
+                    "home": 0.97968,
+                    "away": 1.08107
+                }
+            }
+        },
+        "a170a4a4a88497f5c9295a07": {
+            "id": "a170a4a4a88497f5c9295a07",
+            "date": "2026-10-25",
+            "kickoff": "2026-10-25T19:45:00+00:00",
+            "competition": "Ligue 1",
+            "competitionId": "fr.1",
+            "season": "2026-27",
+            "round": "ESPN 401876422",
+            "home": {
+                "id": "47694a61db4fbb83",
+                "name": "Paris Saint-Germain",
+                "espnId": "160",
+                "attack": 80.15402654428556,
+                "defense": 76.4587830421416,
+                "strength": 78.30640479321357
+            },
+            "away": {
+                "id": "f7649082a8dc4a7d",
+                "name": "Olympique Lyonnais",
+                "espnId": "167",
+                "attack": 78.18022042866794,
+                "defense": 79.79068825256901,
+                "strength": 78.98545434061847
+            },
+            "result": null,
+            "source": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401876422",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:22.372Z",
+                "cached": false
+            },
+            "sourceTimezone": "UTC",
+            "timeConfirmed": true,
+            "neutral": false,
+            "providerMatchId": "401876422",
+            "espnEventId": "401876422",
+            "providerStatus": "STATUS_SCHEDULED",
+            "scheduleProvisional": false,
+            "analysis": {
+                "version": "context-2.0-reliability",
+                "asOf": "2026-10-22T21:30:55+03:00",
+                "teams": {
+                    "home": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 2.914,
+                            "weightedGoalsAgainst": 1.42,
+                            "fourPlusMatches": 5
+                        },
+                        "venueGoalForm": {
+                            "matches": 3,
+                            "weightedGoalsFor": 2.862,
+                            "weightedGoalsAgainst": 1.671,
+                            "fourPlusMatches": 2
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "home",
+                                "opponent": "FC Barcelona",
+                                "goalsFor": 4,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-17",
+                                "venue": "away",
+                                "opponent": "RC Strasbourg",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-14",
+                                "venue": "away",
+                                "opponent": "Manchester City",
+                                "goalsFor": 4,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Le Mans FC",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-20",
+                                "venue": "away",
+                                "opponent": "Olympique de Marseille",
+                                "goalsFor": 2,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-13",
+                                "venue": "away",
+                                "opponent": "Stade Brestois 29",
+                                "goalsFor": 1,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-04",
+                                "venue": "home",
+                                "opponent": "AS Monaco",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-08-28",
+                                "venue": "away",
+                                "opponent": "LOSC",
+                                "goalsFor": 2,
+                                "goalsAgainst": 2,
+                                "outcome": "D"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-20",
+                                "venue": "home",
+                                "opponent": "FC Barcelona",
+                                "goalsFor": 4,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-10",
+                                "venue": "home",
+                                "opponent": "Le Mans FC",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-04",
+                                "venue": "home",
+                                "opponent": "AS Monaco",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            }
+                        ],
+                        "restDays": 5,
+                        "opponentAdjustedForm": 0.958,
+                        "standings": {
+                            "played": 7,
+                            "points": 14,
+                            "goalsFor": 14,
+                            "goalsAgainst": 9,
+                            "rank": 2
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    },
+                    "away": {
+                        "goalForm": {
+                            "matches": 8,
+                            "weightedGoalsFor": 2.093,
+                            "weightedGoalsAgainst": 1.054,
+                            "fourPlusMatches": 3
+                        },
+                        "venueGoalForm": {
+                            "matches": 3,
+                            "weightedGoalsFor": 0.941,
+                            "weightedGoalsAgainst": 0.802,
+                            "fourPlusMatches": 0
+                        },
+                        "recent": [
+                            {
+                                "date": "2026-10-18",
+                                "venue": "home",
+                                "opponent": "OGC Nice",
+                                "goalsFor": 2,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-15",
+                                "venue": "home",
+                                "opponent": "Crystal Palace",
+                                "goalsFor": 3,
+                                "goalsAgainst": 2,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-10-09",
+                                "venue": "away",
+                                "opponent": "RC Lens",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-19",
+                                "venue": "home",
+                                "opponent": "Stade Rennais",
+                                "goalsFor": 4,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-09-12",
+                                "venue": "away",
+                                "opponent": "Paris FC",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-09-04",
+                                "venue": "home",
+                                "opponent": "AJ Auxerre",
+                                "goalsFor": 3,
+                                "goalsAgainst": 1,
+                                "outcome": "W"
+                            },
+                            {
+                                "date": "2026-08-29",
+                                "venue": "home",
+                                "opponent": "Havre AC",
+                                "goalsFor": 1,
+                                "goalsAgainst": 1,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-08-22",
+                                "venue": "away",
+                                "opponent": "Toulouse FC",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "venueRecent": [
+                            {
+                                "date": "2026-10-09",
+                                "venue": "away",
+                                "opponent": "RC Lens",
+                                "goalsFor": 1,
+                                "goalsAgainst": 2,
+                                "outcome": "L"
+                            },
+                            {
+                                "date": "2026-09-12",
+                                "venue": "away",
+                                "opponent": "Paris FC",
+                                "goalsFor": 0,
+                                "goalsAgainst": 0,
+                                "outcome": "D"
+                            },
+                            {
+                                "date": "2026-08-22",
+                                "venue": "away",
+                                "opponent": "Toulouse FC",
+                                "goalsFor": 2,
+                                "goalsAgainst": 0,
+                                "outcome": "W"
+                            }
+                        ],
+                        "restDays": 7,
+                        "opponentAdjustedForm": 0.3799,
+                        "standings": {
+                            "played": 7,
+                            "points": 14,
+                            "goalsFor": 13,
+                            "goalsAgainst": 5,
+                            "rank": 1
+                        },
+                        "standingsSource": "derived-partial-history",
+                        "sampleMatches": 8
+                    }
+                },
+                "h2h": {
+                    "matches": 0,
+                    "homeWins": 0,
+                    "draws": 0,
+                    "awayWins": 0
+                },
+                "contextFactors": {
+                    "home": 1.07026,
+                    "away": 1.02407
+                },
+                "unavailable": [
+                    "morale",
+                    "injuries",
+                    "confirmedLineups",
+                    "subjectiveMotivation",
+                    "xG",
+                    "xGA",
+                    "verifiedPlayerPerformance",
+                    "verifiedInjuries",
+                    "verifiedSuspensions",
+                    "verifiedTacticalStyle"
+                ],
+                "coverage": {
+                    "goalForm": true,
+                    "recentForm": true,
+                    "opponentStrength": true,
+                    "homeAway": true,
+                    "restDays": true,
+                    "h2h": false,
+                    "standings": true,
+                    "marketOdds": false,
+                    "morale": false,
+                    "injuries": false,
+                    "confirmedLineups": false,
+                    "congestion": true,
+                    "reliabilityWeighting": true
+                },
+                "sources": [
+                    {
+                        "name": "Verified completed fixture history",
+                        "asOf": "2026-10-22T21:30:55+03:00"
+                    }
+                ],
+                "providerStatus": "unavailable",
+                "weighting": {
+                    "home": {
+                        "recentSample": 8,
+                        "recentReliability": 0.5167,
+                        "venueSample": 3,
+                        "venueReliability": 0.25,
+                        "latestMatchAgeDays": 1.9,
+                        "matchesLastNineDays": 2,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.0204
+                    },
+                    "away": {
+                        "recentSample": 8,
+                        "recentReliability": 0.4998,
+                        "venueSample": 3,
+                        "venueReliability": 0.25,
+                        "latestMatchAgeDays": 3.9,
+                        "matchesLastNineDays": 1,
+                        "formSource": "verified-completed-results",
+                        "modelCorrection": 1.01596
+                    }
+                },
+                "modelNote": "Reliability-weighted goal/venue history; opposition adjustment, rest and margin-normalized market use the existing validated pipeline. Unavailable signals excluded."
+            },
+            "expectedGoals": {
+                "home": 1.7557569767028043,
+                "away": 1.5130688805066312
+            },
+            "quality": {
+                "status": "limited",
+                "completedMatches": 63,
+                "homeMatches": 9,
+                "awayMatches": 8,
+                "inputs": {
+                    "weightedResults": true,
+                    "goalTailAudit": true,
+                    "marketOdds": false,
+                    "squads": false,
+                    "context": true
+                },
+                "modelVersion": "pp-poisson-3.1-reliability"
+            },
+            "probabilities": {
+                "home": 0.43635774231292895,
+                "draw": 0.22975652734635493,
+                "away": 0.3338857303407162,
+                "over25": 0.6342744547725755,
+                "over35": 0.4127656102940563,
+                "over45": 0.2317471506860636,
+                "over55": 0.11340358640629858,
+                "btts": 0.6450416023525488
+            },
+            "goalDistribution": [
+                0.03805107825582377,
+                0.12438234849733645,
+                0.20329211847426423,
+                0.22150884447851965,
+                0.18101845960799212,
+                0.11834356427976528,
+                0.06447408382533729,
+                0.030107793189735874,
+                0.012302141610265348,
+                0.004468173177187499,
+                0.0014605680016080132,
+                0.0004340311318062714,
+                0.00011823101554018473,
+                2.9728969286298954e-5,
+                6.941344536517083e-6,
+                1.512669766984432e-6,
+                3.090408779836052e-7,
+                5.942357722867735e-8,
+                1.0791406987387906e-8,
+                1.8565764383673798e-9,
+                3.0342004325969576e-10,
+                4.721443091841299e-11,
+                7.007740278922807e-12,
+                9.932018164653705e-13,
+                1.3446279673104918e-13,
+                1.7381258496886336e-14,
+                2.142798575292012e-15,
+                2.5151512444197585e-16,
+                2.804724790834028e-17,
+                2.9635605354149506e-18,
+                2.9572510404307883e-19,
+                2.774151576557715e-20,
+                2.429540370610227e-21,
+                1.9631535409341944e-22,
+                1.4308362435269e-23,
+                8.929804496480576e-25,
+                4.031816548016703e-26
+            ],
+            "scoreSelection": {
+                "policy": "most-likely-exact-score",
+                "probability": 0.10108578077724976,
+                "forcedHighScores": false
+            },
+            "mostLikelyScore": {
+                "home": 1,
+                "away": 1
+            },
+            "modelOdds": {
+                "home": 2.29,
+                "draw": 4.35,
+                "away": 3,
+                "label": "MODEL"
+            },
+            "publishedScore": {
+                "home": 1,
+                "away": 1
+            },
+            "engineVersion": "2.6.0",
+            "animationProfile": "expanded-v2",
+            "playerPolicy": "role-xi-v1",
+            "replayDuration": 35,
+            "replayPlan": {
+                "policy": "pre-match-likelihood-v1",
+                "candidates": 8
+            },
+            "context": {
+                "venue": "home"
+            },
+            "forecastSource": {
+                "name": "ESPN",
+                "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=202610&limit=1000",
+                "providerMatchId": "401876422",
+                "license": "provider-terms",
+                "fetchedAt": "2026-10-22T18:21:22.372Z",
+                "cached": false
+            },
+            "seed": 681097538,
+            "createdAt": "2026-10-22T21:30:55+03:00",
+            "originalPublishedDate": "2026-10-25",
+            "inputSnapshot": {
+                "contextFactors": {
+                    "home": 1.07026,
+                    "away": 1.02407
+                }
+            }
+        }
+    }
+}

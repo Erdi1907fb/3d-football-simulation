@@ -1,0 +1,9 @@
+{
+  "matchSquads": [{
+    "date": "2026-10-21", "home": "Lille", "away": "Galatasaray", "team": "Galatasaray",
+    "source": "https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/maca-dogru-lille-galatasaray/61183",
+    "publishedAt": "2026-10-20T15:52:00+03:00", "kind": "official-travelling-squad",
+    "players": ["Uğurcan Çakır", "El Chadaille Bitshiabu", "Ismail Jakobs", "Davinson Sánchez", "Roland Sallai", "Gabriel Sara", "Leroy Sané", "Yunus Akgün", "Eren Elmalı", "Lesley Ugochukwu", "Günay Güvenç", "İlkay Gündoğan", "Deniz Gül", "Jankat Yılmaz", "Lucas Torreira", "Abdülkerim Bardakcı", "Victor Osimhen", "Barış Alper Yılmaz", "Berat Luş", "Renato Nhaga", "Aleksey Batrakov", "Wilfried Singo", "Mario Lemina"]
+  }],
+  "captains": [{"team":"Galatasaray","name":"Abdülkerim Bardakcı","validFrom":"2026-09-13","validUntil":"2026-12-31","source":"https://www.galatasaray.org/haber/futbol/davinson-sanchez-kaptanimiz-maci-kazandi/60956"}]
+}

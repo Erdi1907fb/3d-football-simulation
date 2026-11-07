@@ -1,0 +1,14 @@
+[
+  {
+    "file": "assets/animations/soccerviewer/clips.glb",
+    "bytes": 2121256,
+    "sha256": "36ca1f4e140dcc0601ba66e817bf85709c8c6dbd5657ab70435bdfe5f58c614b",
+    "verifiedGitBlob": "7b5c56487eed09f35b96c61bd131c889b0ad163d"
+  },
+  {
+    "file": "assets/tracking/source-phase406.jsonl.gz",
+    "bytes": 1926895,
+    "sha256": "eb10f537c5c3b3c80018d5670f16cb788b14a3529d0be0b36a077bd1b41aeb4a",
+    "verifiedGitBlob": "d778ddc2c0f1621c18f23fd2816351824f0ec647"
+  }
+]

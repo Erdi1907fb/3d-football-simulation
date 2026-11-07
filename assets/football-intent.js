@@ -1,0 +1,10 @@
+/* Pure, frame-rate independent geometry. No score RNG or published event writes. */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.Next90FootballIntent=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),angle=(a,b)=>Math.atan2(Math.sin(b-a),Math.cos(b-a));
+function facing(p,ball,attacking,owner,dt){const speed=Math.hypot(p.vx||0,p.vz||0),run=Math.atan2(p.vx||0,p.vz||0),watch=Math.atan2(ball.x-p.x,ball.z-p.z),gap=Math.hypot(ball.x-p.x,ball.z-p.z),track=owner!==p.id&&gap<32,weight=track?(attacking?clamp((3.4-speed)/3.4,0,.7):clamp((6-speed)/5,.12,.96)):0;
+ const target=speed>.22?run+angle(run,watch)*weight:watch,limit=(speed>5?3.2:5.5)*dt;return p.heading+clamp(angle(p.heading,target),-limit,limit);}
+function lead(p,receiver,pace=14){let t=.2,q={x:receiver.x,z:receiver.z};for(let i=0;i<3;i++){t=clamp(Math.hypot(q.x-p.x,q.z-p.z)/pace,.15,1.35);q={x:receiver.x+(receiver.vx||0)*t*.72,z:receiver.z+(receiver.vz||0)*t*.72};}return{x:clamp(q.x,-50,50),z:clamp(q.z,-32,32),arrival:t};}
+function control(p,ball,profile,enemies,dir){const close=enemies.filter(o=>!o.dismissed&&!o.keeper).sort((a,b)=>Math.hypot(a.x-p.x,a.z-p.z)-Math.hypot(b.x-p.x,b.z-p.z))[0],skill=clamp(profile?.control??.65,.1,1),away=close?Math.atan2(p.z-close.z,p.x-close.x):Math.atan2(p.vz||0,(p.vx||0)+dir*.01),progress=Math.atan2(p.vz||0,(p.vx||0)+dir*1.5),pressure=close?1-clamp(Math.hypot(close.x-p.x,close.z-p.z)/4,0,1):0,turn=angle(progress,away)*pressure*.65,heading=progress+turn,reach=.18+(1-skill)*.30+clamp(Math.hypot(p.vx||0,p.vz||0)/7,0,1)*.12;
+ return{duration:.16+(1-skill)*.22,offset:{x:Math.cos(heading)*reach,z:Math.sin(heading)*reach},pressure,skill};}
+function runAfterPass(p,receiver,ball,dir,role){if(['CB','GK'].includes(role))return null;const dx=receiver.x-p.x,dz=receiver.z-p.z,d=Math.hypot(dx,dz);if(d<4||d>20)return null;return{x:clamp(p.x+dir*(role==='DM'?3:6),-49,49),z:clamp(p.z+(Math.abs(dz)<2?(p.id%2?1:-1)*3:-Math.sign(dz)*2),-30,30)};}
+return{facing,lead,control,runAfterPass,angle};});

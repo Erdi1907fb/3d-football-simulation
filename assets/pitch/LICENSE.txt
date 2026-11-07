@@ -1,0 +1,5 @@
+TextureCan Ground0040
+Source:https://www.texturecan.com/details/469/
+License:Creative Commons CC0 1.0 Universal
+License evidence:https://www.texturecan.com/terms/ (checked2026-10-23)
+Converted to WebP for World of Simulation. turf-detail maps normalize lowfrequency color before recoloring; original maps included as turf-albedo. No attribution required; credit retained voluntarily.

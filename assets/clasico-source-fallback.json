@@ -1,0 +1,1578 @@
+{
+  "barcelona": {
+    "teamId": "83",
+    "formation": "4-2-3-1",
+    "players": [
+      {
+        "id": "ns-1428613",
+        "name": "Joan Garcia Pons",
+        "shortName": "Joan Garcia Pons",
+        "number": 1,
+        "roles": [
+          "GK"
+        ],
+        "position": "GK",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 7,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1428613"
+        },
+        "physical": {
+          "heightCm": 194,
+          "weightKg": 79,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "231692",
+        "name": "Jules Koundé",
+        "number": 23,
+        "position": "RB",
+        "heightCm": 180.3,
+        "weightKg": 83,
+        "sourceMeasurements": {
+          "heightInches": 71,
+          "weightPounds": 183
+        },
+        "portrait": "portrait.php?id=231692",
+        "shortName": "Jules Kounde",
+        "roles": [
+          "RB"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 3,
+        "appearances": 5,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "940560"
+        },
+        "physical": {
+          "heightCm": 178,
+          "weightKg": 70,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "ns-2487317",
+        "name": "Pau Cubarsi Paredes",
+        "shortName": "Pau Cubarsi Paredes",
+        "number": 5,
+        "roles": [
+          "CB"
+        ],
+        "position": "CB",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 5,
+        "appearances": 5,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2487317"
+        },
+        "physical": {
+          "heightCm": 183,
+          "weightKg": 76,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "312015",
+        "name": "Gerard Martín",
+        "number": 18,
+        "position": "CB",
+        "heightCm": 185.4,
+        "weightKg": 82.1,
+        "sourceMeasurements": {
+          "heightInches": 73,
+          "weightPounds": 181
+        },
+        "portrait": "portrait.php?id=312015",
+        "shortName": "Gerard Martin",
+        "roles": [
+          "CB"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 6,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2112836"
+        },
+        "physical": {
+          "heightCm": 186,
+          "weightKg": 80,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "ns-2691220",
+        "name": "Xavi Espart Font",
+        "shortName": "Xavi Espart Font",
+        "number": 12,
+        "roles": [
+          "LB"
+        ],
+        "position": "LB",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 6,
+        "appearances": 6,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2691220"
+        },
+        "physical": {
+          "heightCm": 175,
+          "weightKg": null,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "231828",
+        "name": "Rodri",
+        "number": 16,
+        "position": "DM",
+        "heightCm": 190.5,
+        "weightKg": 88.9,
+        "sourceMeasurements": {
+          "heightInches": 75,
+          "weightPounds": 196
+        },
+        "portrait": "portrait.php?id=231828",
+        "shortName": "Rodri",
+        "roles": [
+          "DM"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 5,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "844073"
+        },
+        "physical": {
+          "heightCm": 190,
+          "weightKg": 82,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "250465",
+        "name": "Pedri",
+        "number": 8,
+        "position": "DM",
+        "heightCm": 175.3,
+        "weightKg": 68,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 150
+        },
+        "portrait": "portrait.php?id=250465",
+        "shortName": "Pedri",
+        "roles": [
+          "DM"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 6,
+        "appearances": 8,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1860180"
+        },
+        "physical": {
+          "heightCm": 174,
+          "weightKg": 58,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "362150",
+        "name": "Lamine Yamal",
+        "number": 10,
+        "position": "RW",
+        "heightCm": 177.8,
+        "weightKg": 76.2,
+        "sourceMeasurements": {
+          "heightInches": 70,
+          "weightPounds": 168
+        },
+        "portrait": "portrait.php?id=362150",
+        "shortName": "Lamine Yamal",
+        "roles": [
+          "RW"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 8,
+        "appearances": 8,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2439417"
+        },
+        "physical": {
+          "heightCm": 183,
+          "weightKg": 72,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "354334",
+        "name": "Fermín López",
+        "number": 7,
+        "position": "AM",
+        "heightCm": 175.3,
+        "weightKg": 73,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 161
+        },
+        "portrait": "portrait.php?id=354334",
+        "shortName": "Fermín Lopez",
+        "roles": [
+          "AM"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 5,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2264489"
+        },
+        "physical": {
+          "heightCm": 174,
+          "weightKg": 70,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "274913",
+        "name": "Karim Adeyemi",
+        "number": 14,
+        "position": "LW",
+        "heightCm": 180.3,
+        "weightKg": 73.9,
+        "sourceMeasurements": {
+          "heightInches": 71,
+          "weightPounds": 163
+        },
+        "portrait": "portrait.php?id=274913",
+        "shortName": "Karim Adeyemi",
+        "roles": [
+          "LW"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 3,
+        "appearances": 8,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1421117"
+        },
+        "physical": {
+          "heightCm": 180,
+          "weightKg": 75,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "231050",
+        "name": "Raphinha",
+        "number": 11,
+        "position": "ST",
+        "heightCm": 175.3,
+        "weightKg": 63,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 139
+        },
+        "portrait": "portrait.php?id=231050",
+        "shortName": "Raphinha",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 6,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "956430"
+        },
+        "physical": {
+          "heightCm": 176,
+          "weightKg": 68,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      }
+    ],
+    "bench": [
+      {
+        "id": "187946",
+        "name": "Dominik Livakovic",
+        "number": 25,
+        "position": "GK",
+        "heightCm": 188,
+        "weightKg": 78,
+        "sourceMeasurements": {
+          "heightInches": 74,
+          "weightPounds": 172
+        },
+        "portrait": "portrait.php?id=187946",
+        "shortName": "Dominik Livakovic",
+        "roles": [
+          "GK"
+        ],
+        "naturalRoles": [
+          "GK"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 1,
+        "appearances": 1,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "190419"
+        },
+        "physical": {
+          "heightCm": 188,
+          "weightKg": 79,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "131634",
+        "name": "Wojciech Szczesny",
+        "number": 13,
+        "position": "GK",
+        "heightCm": 195.6,
+        "weightKg": 96.2,
+        "sourceMeasurements": {
+          "heightInches": 77,
+          "weightPounds": 212
+        },
+        "portrait": "portrait.php?id=131634",
+        "shortName": "Wojciech Szczesny",
+        "roles": [
+          "GK"
+        ],
+        "naturalRoles": [
+          "GK"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 1,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "50490"
+        },
+        "physical": {
+          "heightCm": 195,
+          "weightKg": 84,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "268782",
+        "name": "Anthony Gordon",
+        "number": 17,
+        "position": "ST",
+        "heightCm": 182.9,
+        "weightKg": 72.1,
+        "sourceMeasurements": {
+          "heightInches": 72,
+          "weightPounds": 159
+        },
+        "portrait": "portrait.php?id=268782",
+        "shortName": "Anthony Gordon",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 5,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1373595"
+        },
+        "physical": {
+          "heightCm": 183,
+          "weightKg": 72,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "376423",
+        "name": "Marc Bernal",
+        "number": 22,
+        "position": "MID",
+        "heightCm": 193,
+        "weightKg": 87.1,
+        "sourceMeasurements": {
+          "heightInches": 76,
+          "weightPounds": 192
+        },
+        "portrait": "portrait.php?id=376423",
+        "shortName": "Marc Bernal",
+        "roles": [
+          "MID"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 3,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2698884"
+        },
+        "physical": {
+          "heightCm": 188,
+          "weightKg": 82,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "176399",
+        "name": "João Cancelo",
+        "number": 2,
+        "position": "DEF",
+        "heightCm": 182.9,
+        "weightKg": 73,
+        "sourceMeasurements": {
+          "heightInches": 72,
+          "weightPounds": 161
+        },
+        "portrait": "portrait.php?id=176399",
+        "shortName": "Joao Cancelo",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 2,
+        "appearances": 6,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "138892"
+        },
+        "physical": {
+          "heightCm": 173,
+          "weightKg": 73,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "323702",
+        "name": "Gavi",
+        "number": 6,
+        "position": "MID",
+        "heightCm": 175.3,
+        "weightKg": 68,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 150
+        },
+        "portrait": "portrait.php?id=323702",
+        "shortName": "Gavi",
+        "roles": [
+          "MID"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 2,
+        "appearances": 4,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2203428"
+        },
+        "physical": {
+          "heightCm": 173,
+          "weightKg": 70,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "217289",
+        "name": "Gabriel Jesus",
+        "number": 9,
+        "position": "ST",
+        "heightCm": 175.3,
+        "weightKg": 73,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 161
+        },
+        "portrait": "portrait.php?id=217289",
+        "shortName": "Gabriel Jesus",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 2,
+        "appearances": 4,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "835751"
+        },
+        "physical": {
+          "heightCm": 175,
+          "weightKg": 73,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "399200",
+        "name": "Hamza Abdelkarim",
+        "number": 29,
+        "position": "ST",
+        "heightCm": 182.9,
+        "weightKg": 76.2,
+        "sourceMeasurements": {
+          "heightInches": 72,
+          "weightPounds": 168
+        },
+        "portrait": "portrait.php?id=399200",
+        "shortName": "Hamza Abdelkarim",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 2,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "3094906"
+        },
+        "physical": {
+          "heightCm": 182,
+          "weightKg": 84,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "323703",
+        "name": "Alejandro Balde",
+        "number": 3,
+        "position": "DEF",
+        "heightCm": 177.8,
+        "weightKg": 76.2,
+        "sourceMeasurements": {
+          "heightInches": 70,
+          "weightPounds": 168
+        },
+        "portrait": "portrait.php?id=323703",
+        "shortName": "Alejandro Balde",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 1,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1948530"
+        },
+        "physical": {
+          "heightCm": 175,
+          "weightKg": 69,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "ns-3067175",
+        "name": "Alex Cami",
+        "shortName": "Alex Cami",
+        "number": 41,
+        "roles": [
+          "DEF"
+        ],
+        "position": "DEF",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 0,
+        "appearances": 0,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "3067175"
+        }
+      },
+      {
+        "id": "416511",
+        "name": "Jordi Pesquer",
+        "number": 33,
+        "position": "DEF",
+        "heightCm": null,
+        "weightKg": null,
+        "sourceMeasurements": {
+          "heightInches": null,
+          "weightPounds": null
+        },
+        "portrait": "portrait.php?id=416511",
+        "shortName": "Jordi Pesquer",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 0,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "3201452"
+        }
+      },
+      {
+        "id": "ns-2716480",
+        "name": "Brian Farinas Perez",
+        "shortName": "Brian Farinas Perez",
+        "number": 4,
+        "roles": [
+          "MID"
+        ],
+        "position": "MID",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 0,
+        "appearances": 0,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2716480"
+        },
+        "physical": {
+          "heightCm": 180,
+          "weightKg": 75,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      }
+    ],
+    "coach": {
+      "name": "Hansi Flick",
+      "source": "Nesine"
+    },
+    "source": {
+      "name": "Nesine",
+      "status": "estimated-from-season-participation",
+      "selectionVersion": 6,
+      "asOf": "2026-10-23T14:28:26.704501+00:00",
+      "url": "https://istatistik.nesine.com/3239077/ozet",
+      "selectionBasis": "Nesine squad participation estimate: returned Raphinha 6 starts vs Jesus 2; not announced",
+      "announced": false
+    }
+  },
+  "real-madrid": {
+    "teamId": "86",
+    "formation": "4-2-3-1",
+    "players": [
+      {
+        "id": "134283",
+        "name": "Thibaut Courtois",
+        "number": 1,
+        "position": "GK",
+        "heightCm": 200.7,
+        "weightKg": 96.2,
+        "sourceMeasurements": {
+          "heightInches": 79,
+          "weightPounds": 212
+        },
+        "portrait": "portrait.php?id=134283",
+        "shortName": "Thibaut Courtois",
+        "roles": [
+          "GK"
+        ],
+        "naturalRoles": [
+          "GK"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 9,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "70988"
+        },
+        "physical": {
+          "heightCm": 199,
+          "weightKg": 96,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "235818",
+        "name": "Federico Valverde",
+        "number": 8,
+        "position": "RB",
+        "heightCm": 182.9,
+        "weightKg": 78,
+        "sourceMeasurements": {
+          "heightInches": 72,
+          "weightPounds": 172
+        },
+        "portrait": "portrait.php?id=235818",
+        "shortName": "Federico Valverde",
+        "roles": [
+          "RB"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 9,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "962433"
+        },
+        "physical": {
+          "heightCm": 182,
+          "weightKg": 78,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "251634",
+        "name": "Ibrahima Konaté",
+        "number": 16,
+        "position": "CB",
+        "heightCm": 193,
+        "weightKg": 93.9,
+        "sourceMeasurements": {
+          "heightInches": 76,
+          "weightPounds": 207
+        },
+        "portrait": "portrait.php?id=251634",
+        "shortName": "Ibrahima Konate",
+        "roles": [
+          "CB"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 8,
+        "appearances": 8,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "936572"
+        },
+        "physical": {
+          "heightCm": 194,
+          "weightKg": 84,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "356000",
+        "name": "Dean Huijsen",
+        "number": 4,
+        "position": "CB",
+        "heightCm": 195.6,
+        "weightKg": 87.1,
+        "sourceMeasurements": {
+          "heightInches": 77,
+          "weightPounds": 192
+        },
+        "portrait": "portrait.php?id=356000",
+        "shortName": "Dean Donny Huijsen",
+        "roles": [
+          "CB"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 7,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2354391"
+        },
+        "physical": {
+          "heightCm": 195,
+          "weightKg": 84,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "259910",
+        "name": "Marc Cucurella",
+        "number": 17,
+        "position": "LB",
+        "heightCm": 175.3,
+        "weightKg": 66.2,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 146
+        },
+        "portrait": "portrait.php?id=259910",
+        "shortName": "Marc Cucurella",
+        "roles": [
+          "LB"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 5,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "769505"
+        },
+        "physical": {
+          "heightCm": 173,
+          "weightKg": 66,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "291281",
+        "name": "Jude Bellingham",
+        "number": 5,
+        "position": "DM",
+        "heightCm": 185.4,
+        "weightKg": 73.9,
+        "sourceMeasurements": {
+          "heightInches": 73,
+          "weightPounds": 163
+        },
+        "portrait": "portrait.php?id=291281",
+        "shortName": "Jude Bellingham",
+        "roles": [
+          "DM"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 8,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1848612"
+        },
+        "physical": {
+          "heightCm": 183,
+          "weightKg": 75,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "265919",
+        "name": "Aurélien Tchouaméni",
+        "number": 14,
+        "position": "DM",
+        "heightCm": 188,
+        "weightKg": 81.2,
+        "sourceMeasurements": {
+          "heightInches": 74,
+          "weightPounds": 179
+        },
+        "portrait": "portrait.php?id=265919",
+        "shortName": "Aurelien Tchouameni",
+        "roles": [
+          "DM"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 4,
+        "appearances": 5,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1070898"
+        },
+        "physical": {
+          "heightCm": 188,
+          "weightKg": 81,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "346612",
+        "name": "Endrick",
+        "number": 9,
+        "position": "RW",
+        "heightCm": 172.7,
+        "weightKg": 67.1,
+        "sourceMeasurements": {
+          "heightInches": 68,
+          "weightPounds": 148
+        },
+        "portrait": "portrait.php?id=346612",
+        "shortName": "Endrick",
+        "roles": [
+          "RW"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 1,
+        "appearances": 2,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2448043"
+        },
+        "physical": {
+          "heightCm": 172,
+          "weightKg": 66,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "310452",
+        "name": "Arda Güler",
+        "number": 15,
+        "position": "AM",
+        "heightCm": 175.3,
+        "weightKg": 67.1,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 148
+        },
+        "portrait": "portrait.php?id=310452",
+        "shortName": "Arda Güler",
+        "roles": [
+          "AM"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 7,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2159140"
+        },
+        "physical": {
+          "heightCm": 175,
+          "weightKg": 71,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "402479",
+        "name": "Yan Diomande",
+        "number": 25,
+        "position": "LW",
+        "heightCm": 180.3,
+        "weightKg": 76.2,
+        "sourceMeasurements": {
+          "heightInches": 71,
+          "weightPounds": 168
+        },
+        "portrait": "portrait.php?id=402479",
+        "shortName": "Yan Diomande",
+        "roles": [
+          "LW"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 4,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2962951"
+        },
+        "physical": {
+          "heightCm": 180,
+          "weightKg": 76,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "231388",
+        "name": "Kylian Mbappé",
+        "number": 10,
+        "position": "ST",
+        "heightCm": 177.8,
+        "weightKg": 73.9,
+        "sourceMeasurements": {
+          "heightInches": 70,
+          "weightPounds": 163
+        },
+        "portrait": "portrait.php?id=231388",
+        "shortName": "Kylian Mbappe",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 9,
+        "appearances": 9,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "796046"
+        },
+        "physical": {
+          "heightCm": 180,
+          "weightKg": 75,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      }
+    ],
+    "bench": [
+      {
+        "id": "257237",
+        "name": "Andriy Lunin",
+        "number": 13,
+        "position": "GK",
+        "heightCm": 190.5,
+        "weightKg": 78.9,
+        "sourceMeasurements": {
+          "heightInches": 75,
+          "weightPounds": 174
+        },
+        "portrait": "portrait.php?id=257237",
+        "shortName": "Andriy Lunin",
+        "roles": [
+          "GK"
+        ],
+        "naturalRoles": [
+          "GK"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 0,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "935122"
+        },
+        "physical": {
+          "heightCm": 191,
+          "weightKg": 80,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "ns-2945289",
+        "name": "Javier Navarro Jimenez",
+        "shortName": "Javier Navarro Jimenez",
+        "number": 31,
+        "roles": [
+          "GK"
+        ],
+        "position": "GK",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 0,
+        "appearances": 0,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2945289"
+        }
+      },
+      {
+        "id": "213248",
+        "name": "Denzel Dumfries",
+        "number": 24,
+        "position": "DEF",
+        "heightCm": 188,
+        "weightKg": 78.9,
+        "sourceMeasurements": {
+          "heightInches": 74,
+          "weightPounds": 174
+        },
+        "portrait": {
+          "path": "assets/faces/portraits/213248.webp",
+          "source": "https://a.espncdn.com/i/headshots/soccer/players/full/213248.png",
+          "width": 256,
+          "height": 186,
+          "sourceSha256": "b7413d984c10f8ecdae626e9f3474f51d114d9b78ff4b882fa7ffbb3cf64c70a"
+        },
+        "shortName": "Denzel Dumfries",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 5,
+        "appearances": 6,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "759520"
+        },
+        "physical": {
+          "heightCm": 188,
+          "weightKg": 80,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "ns-2230174",
+        "name": "Alvaro Fernandez",
+        "shortName": "Alvaro Fernandez",
+        "number": 18,
+        "roles": [
+          "DEF"
+        ],
+        "position": "DEF",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 4,
+        "appearances": 4,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2230174"
+        },
+        "physical": {
+          "heightCm": 186,
+          "weightKg": 81,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "199833",
+        "name": "Bernardo Silva",
+        "number": 20,
+        "position": "MID",
+        "heightCm": 172.7,
+        "weightKg": 63,
+        "sourceMeasurements": {
+          "heightInches": 68,
+          "weightPounds": 139
+        },
+        "portrait": "portrait.php?id=199833",
+        "shortName": "Bernardo Silva",
+        "roles": [
+          "MID"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 3,
+        "appearances": 7,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "331209"
+        },
+        "physical": {
+          "heightCm": 173,
+          "weightKg": 64,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "223532",
+        "name": "Trent Alexander-Arnold",
+        "number": 12,
+        "position": "DEF",
+        "heightCm": 175.3,
+        "weightKg": 67.1,
+        "sourceMeasurements": {
+          "heightInches": 69,
+          "weightPounds": 148
+        },
+        "portrait": "portrait.php?id=223532",
+        "shortName": "Trent Alexander-Arnold",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 3,
+        "appearances": 5,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "779556"
+        },
+        "physical": {
+          "heightCm": 175,
+          "weightKg": 70,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "169438",
+        "name": "Antonio Rüdiger",
+        "number": 22,
+        "position": "DEF",
+        "heightCm": 190.5,
+        "weightKg": 83.9,
+        "sourceMeasurements": {
+          "heightInches": 75,
+          "weightPounds": 185
+        },
+        "portrait": "portrait.php?id=169438",
+        "shortName": "Antonio Rudiger",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 3,
+        "appearances": 4,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "142622"
+        },
+        "physical": {
+          "heightCm": 190,
+          "weightKg": 85,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "285150",
+        "name": "Eduardo Camavinga",
+        "number": 6,
+        "position": "MID",
+        "heightCm": 182.9,
+        "weightKg": 68,
+        "sourceMeasurements": {
+          "heightInches": 72,
+          "weightPounds": 150
+        },
+        "portrait": "portrait.php?id=285150",
+        "shortName": "Eduardo Camavinga",
+        "roles": [
+          "MID"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 2,
+        "appearances": 8,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "1692931"
+        },
+        "physical": {
+          "heightCm": 182,
+          "weightKg": 68,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "ns-3044555",
+        "name": "Martinez Sergio",
+        "shortName": "Martinez Sergio",
+        "number": 38,
+        "roles": [
+          "MID"
+        ],
+        "position": "MID",
+        "naturalRoles": [],
+        "appearance": null,
+        "portrait": null,
+        "identitySource": "Misli club-season-shirt identifier",
+        "seasonStarts": 2,
+        "appearances": 2,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "3044555"
+        },
+        "physical": {
+          "heightCm": 185,
+          "weightKg": 77,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "246532",
+        "name": "Brahim Díaz",
+        "number": 21,
+        "position": "ST",
+        "heightCm": 170.2,
+        "weightKg": 68,
+        "sourceMeasurements": {
+          "heightInches": 67,
+          "weightPounds": 150
+        },
+        "portrait": "portrait.php?id=246532",
+        "shortName": "Brahim Diaz",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "MID"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 1,
+        "appearances": 4,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "937374"
+        },
+        "physical": {
+          "heightCm": 170,
+          "weightKg": 59,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "380286",
+        "name": "Carlos Espí",
+        "number": 19,
+        "position": "ST",
+        "heightCm": 185.4,
+        "weightKg": 88.9,
+        "sourceMeasurements": {
+          "heightInches": 73,
+          "weightPounds": 196
+        },
+        "portrait": "portrait.php?id=380286",
+        "shortName": "Carlos Espi",
+        "roles": [
+          "ST"
+        ],
+        "naturalRoles": [
+          "FWD"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 5,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "2766565"
+        },
+        "physical": {
+          "heightCm": 194,
+          "weightKg": 87,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      },
+      {
+        "id": "228402",
+        "name": "Éder Militão",
+        "number": 3,
+        "position": "DEF",
+        "heightCm": 185.4,
+        "weightKg": 78,
+        "sourceMeasurements": {
+          "heightInches": 73,
+          "weightPounds": 172
+        },
+        "portrait": "portrait.php?id=228402",
+        "shortName": "Eder Militao",
+        "roles": [
+          "DEF"
+        ],
+        "naturalRoles": [
+          "DEF"
+        ],
+        "appearance": null,
+        "identitySource": "current-roster-name-and-number",
+        "seasonStarts": 0,
+        "appearances": 1,
+        "participationSource": "Nesine verified current-season squad",
+        "participationAsOf": "2026-10-23T17:35:00+03:00",
+        "providerIds": {
+          "nesine": "918726"
+        },
+        "physical": {
+          "heightCm": 186,
+          "weightKg": 78,
+          "verifiedMeasurements": true,
+          "source": "Nesine current squad SI measurements"
+        }
+      }
+    ],
+    "coach": {
+      "name": "Jose Mourinho",
+      "source": "Nesine"
+    },
+    "source": {
+      "name": "Nesine",
+      "status": "estimated-from-season-participation",
+      "selectionVersion": 6,
+      "asOf": "2026-10-23T14:28:26.704501+00:00",
+      "url": "https://istatistik.nesine.com/3239077/ozet",
+      "selectionBasis": "previous-same-tournament-XI",
+      "announced": false
+    }
+  }
+}

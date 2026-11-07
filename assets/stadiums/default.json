@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "model": "wos-modular-bowl",
+  "description": "Original modular architectural detail. Illustrative venue, not a reconstruction of a real stadium.",
+  "timeOfDay": "night",
+  "primarySeatColor": null,
+  "secondarySeatColor": null,
+  "stadiumName": "",
+  "standText": "",
+  "architecture": {"seats": true, "handrails": true, "identityPanels": true},
+  "teams": {}
+}

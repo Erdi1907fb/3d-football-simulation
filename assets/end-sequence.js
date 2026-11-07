@@ -1,0 +1,12 @@
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.SekmeEndSequence=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const DURATION=2,WHISTLE_AT=.4;
+const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
+function sample({kind,age,players,officials,score,seed=0}){
+ const a=Math.max(0,age),q=smooth((a-.12)/.45),winner=score[0]===score[1]?null:score[0]>score[1]?0:1,ref={...officials[0],x:3,z:0,y:0,heading:0,speed:0,gait:0,pose:'endWhistle',endKind:kind,endAge:a,collectBall:1-q,holdBall:q,whistling:a>=WHISTLE_AT&&a<(kind==='half'?1.264:1.768),signal:smooth((a-(kind==='half'?1.27:1.77))/.20)},result=kind==='full';const active=players.filter(p=>!p.keeper&&!p.dismissed),cx=Math.max(-33,Math.min(33,active.reduce((n,p)=>n+p.x,0)/Math.max(1,active.length))),cz=Math.max(-20,Math.min(20,active.reduce((n,p)=>n+p.z,0)/Math.max(1,active.length)));ref.x=cx;ref.z=cz;
+ const ps=players.map(p=>{const walk=!result||winner===null,variant=(seed+p.id)%4,elapsed=Math.max(0,a-(result?.9:.4)),speed=walk?1.2:0,tx=(p.team?1:-1)*2-p.x,tz=36-p.z,length=Math.hypot(tx,tz)||1,heading=walk?Math.atan2(tx,tz):p.heading;
+  return{...p,x:p.x+(walk?tx/length*Math.min(elapsed*speed,3):0),z:p.z+(walk?tz/length*Math.min(elapsed*speed,3):0),heading,speed,gait:elapsed*speed*3,lookAngle:0,bodyLean:0,backpedal:false,push:0,wallJump:0,aerialContest:0,keeperSet:false,fallAge:0,fall:0,tackle:0,dive:0,jump:0,saveReach:0,headingBall:false,receiving:false,kicking:false,wallSet:false,pressing:false,celebrate:result&&winner===p.team&&a>.72,celebrationTime:Math.max(0,a-.72),celebrationStage:'solo',celebrationStyle:['armsWide','fistPump','skyPoint','clapCrowd'][variant],goalScorer:true,disappointed:result&&winner!==null&&winner!==p.team&&a>.72,endReaction:!result?'walkOff':winner===null?'draw':winner===p.team?'win':['headDown','handsOnHips','crouch','headInHands'][variant],endReactionAge:Math.max(0,a-.72),moving:walk,goalCelebration:false};});
+ const refs=[ref,...officials.slice(1).map((p,i)=>({...p,x:i===0?ref.x-1.7:i===1?ref.x+1.7:p.x,z:i<2?ref.z-2:p.z,y:0,pose:i<2?'ceremony':p.pose,speed:0,gait:0}))];
+ return{kind,age:a,duration:DURATION,whistleAt:WHISTLE_AT,winner,players:ps,officials:refs,ball:{x:ref.x-.23*q,y:.11+(1.08-.11)*q,z:ref.z+.35},ballHeld:a>.30,focus:{x:ref.x,y:1,z:ref.z}};
+}
+return{DURATION,WHISTLE_AT,sample};
+});

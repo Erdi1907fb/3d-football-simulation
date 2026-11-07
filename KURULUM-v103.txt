@@ -1,0 +1,15 @@
+NEXT90SIM v103
+ZIP'in içeriğini mevcut futbol sitesi klasörüne yükle; aynı adlı dosyaları değiştir.
+Kendi config.php / render-config.php dosyalarını, state, özel ses ve hazır medya
+klasörlerini silme. Bu pakette özel API anahtarı bulunmaz.
+index.php veya index.html ana giriş; doğrudan alternatif next90sim-v103.html.
+Penaltı girişi penalty.html; doğrudan alternatif penalty-v103.html.
+build.php yanıtı build:103 ve filesMatch:true olmalı. Hostinger/CDN önbelleğin
+varsa temizle. Yeni video düzenini almak için videoyu yeniden üret; önceden
+indirilmiş MP4 dosyalarının görüntüsü kendiliğinden değişmez.
+Tek ZIP / statik yayın düzeni korunur. Sürekli Node/Python servisi gerekmez.
+Testler geliştirici içindir: node tests/presentation-v103.cjs;
+node tests/mechanics-v102.cjs; node tests/engine-test.cjs;
+node tests/actual-video-timeline.cjs; node tests/search-test.cjs.
+Yüz testinin yerel geliştirici bağımlılığı @napi-rs/canvas'tır; site bunu gerektirmez.
+CODEX_PRIMARY_RUNTIME_NODE_MODULES altında kurulu olduğunda node tests/faces-v103.cjs.

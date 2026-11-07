@@ -1,0 +1,50 @@
+WOS v83 — Güncel kadro, teknik direktör, ilk 11 ve yedek bağlantıları
+
+30 Ekim 2026 veri yenilemesi: dokuz organizasyonda 180 ayrı kulüp.
+Her kulüpte teknik direktör, 11 kişilik kadro ve yedek aday havuzu bulunur.
+FotMob'dan 178 kulüp; sayfası 500 hatası veren Shakhtar ve Sabah için
+ESPN kadro/son 11 + Maçkolik güncel teknik direktör kaydı kullanıldı.
+
+Önemli ayrım:
+- Açıklanan 11 ve maç yedekleri yalnız tam eşleşen kaynak bunu yayımladıysa gösterilir.
+- Kaynak muhtemel 11 veriyorsa bu ayrıca etiketlenir.
+- Son 11 / güncel kulüp kadrosu bir gelecekteki maçın açıklanmış 11'i değildir.
+- 14 kulüpte yeterli son 11 verisi olmadığı için mevcut uygun oyuncular ve doğal
+  mevkileriyle 4-2-3-1 model 11'i kuruldu. Ekran bunu model olarak belirtir.
+- Yedek havuzu açıklanmış maç yedeği değildir. Gösterim, lig/kupa yedek sınırına iner.
+
+Düzeltilen bağlantı sorunları:
+1. Teknik direktör, son oynanmış 11'den bağımsız güncel kulüp alanı olarak yenilenir.
+   Geçmiş maçların teknik direktörü korunur. Fenerbahçe'nin gelecek maç kaydı
+   Dirk Kuyt olarak güncellendi. Bu isim uygulama genelinde kalıcı sabitlenmedi.
+2. Yeni paket kaydı daha yeniyse eski data/private kulüp önbelleğinin önüne geçer.
+3. Tarayıcı kadro isteği 16 saniye; sunucu toplam kaynak araması en çok 12 saniye.
+   Arka plan görevinde daha kısa bütçe kullanılır. Eski 6,5/18 sn uyumsuzluğu giderildi.
+4. Kaynak sırası döner; tek yavaş kaynak diğerlerini sürekli engellemez.
+5. Nesine maç kimliği Maçkolik'in iddaaCode değerinden de bulunur.
+   Kimlik tek başına yeterli değildir: sezon, lig, tarih/saat ve iki takım doğrulanır.
+6. Nesine'nin ISML=false yanıtı açıklanan 11 sayılmaz; güncel teknik direktör MN
+   alanı ise ayrı okunur. Bu alan Fenerbahçe–Göztepe için canlı yanıtta Dirk Kuyt'tır.
+7. Takım adları için doğrulanan kaynak eşleştirmeleri genişletildi.
+8. Site açıkken yayımlanmış gelecek maçların kadroları tekli kuyrukla kontrol edilir.
+   Maç bekleme ekranında kadro yenilemesi devam eder. Tahmin skorları değiştirilmez.
+
+Kaynaklar:
+Maçkolik: güncel fikstür, tam eşleşen maç sayfası ve güncel kulüp teknik direktörü.
+Nesine: doğrulanmış HeadToHead Header / LineUps; açıklanma bilgisi ayrıca korunur.
+Misli: mevcut doğrulanmış eşleşme adaptörü sürer; bu çalışmadaki doğrudan istek
+zaman aşımına uğradığı için sürekli erişilebilir olduğu iddia edilmez.
+FotMob ve ESPN: güncel kadro / son 11 ve eksik sunum alanları için destek kaynaklar.
+Sofascore: bu ortamda 403/doğrulama engeli çıktı; çalışan bir bağlantı olarak sunulmaz.
+Bilyoner için yeni, doğrulanmış bir adaptör eklenmedi.
+
+Yeni kaynak paneli her takım için 11 türünü, kaynak tarihini, teknik direktörü,
+yedek sayısını ve mevcutsa teknik direktör kaynak bağlantısını gösterir.
+Kaynak yaşlıysa 'son kayıt' uyarısı görünür; yenilenmiş gibi tarihlenmez.
+
+Kurulum: ZIP'i public_html içine çıkar. data/private ve config.php korunmalı.
+Yükleme sonrası Ctrl+F5 ile yenile. API anahtarı girmek gerekmez.
+Site kapalıyken güncelleme için var olan cron görevinin çalışması gerekir;
+yalnız cron.php dosyasının yüklenmesi bir zamanlanmış görev kurmaz.
+PHP 8.1+, HTTPS ve sunucunun bu herkese açık kaynaklara erişebilmesi gerekir.
+Üçüncü tarafların yayın zamanı veya erişimi için kesintisiz/doğru veri garantisi yoktur.

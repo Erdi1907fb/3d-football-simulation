@@ -1,0 +1,63 @@
+{
+  "PASS": true,
+  "series": 1000,
+  "kicks": 10915,
+  "ballSamples": 65490,
+  "early": 443,
+  "sudden": 296,
+  "styles": [
+    "high-corner",
+    "chip",
+    "power-rise",
+    "placed",
+    "inside-foot",
+    "central",
+    "disguised",
+    "driven"
+  ],
+  "outcomes": [
+    "goal",
+    "save",
+    "wide",
+    "post"
+  ],
+  "misses": [
+    "high",
+    "right",
+    "upright",
+    "left",
+    "crossbar"
+  ],
+  "saves": [
+    "tip-over",
+    "parry-left",
+    "smother",
+    "parry-right"
+  ],
+  "footDataRecords": 63031,
+  "rosterFootCoverage": {
+    "known": 3812,
+    "total": 4600,
+    "knownGk": 424,
+    "gk": 491
+  },
+  "safeArea": {
+    "weekly": {
+      "x": 30,
+      "y": 245,
+      "scale": 0.81,
+      "width": 1080,
+      "height": 1560,
+      "right": 904.8,
+      "bottom": 1508.6
+    },
+    "penalty": {
+      "x": 30,
+      "y": 1165,
+      "scale": 0.82,
+      "right": 888,
+      "bottom": 1456.92
+    }
+  },
+  "deviceGPU": "Not tested; CPU model and layout tests only"
+}

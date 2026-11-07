@@ -1,0 +1,2484 @@
+[
+  {
+    "name": "Zlatan Ibrahimović",
+    "path": "assets/faces/players/icon106-f858113f68211a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1981-10-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Zlatan_Ibrahimovi%C4%87",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Zlatan_Ibrahimovi%C4%87_nyc.jpg/330px-Zlatan_Ibrahimovi%C4%87_nyc.jpg",
+    "sourceFaceBox": [
+      65,
+      56,
+      196,
+      196
+    ]
+  },
+  {
+    "name": "Ronaldinho",
+    "path": "assets/faces/players/icon106-c36cd75240d2f8.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1980-03-21",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Ronaldinho",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Ronaldinho_in_2019.jpg/330px-Ronaldinho_in_2019.jpg",
+    "sourceFaceBox": [
+      73,
+      74,
+      160,
+      160
+    ]
+  },
+  {
+    "name": "Zinedine Zidane",
+    "path": "assets/faces/players/icon106-4e56109a5b02cd.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1972-06-23",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Zinedine_Zidane",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Zinedine_Zidane_by_Tasnim_03.jpg/330px-Zinedine_Zidane_by_Tasnim_03.jpg",
+    "sourceFaceBox": [
+      33,
+      111,
+      157,
+      157
+    ]
+  },
+  {
+    "name": "Eden Hazard",
+    "path": "assets/faces/players/icon106-94448b3e5340bb.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1991-01-07",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Eden_Hazard",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Eden_Hazard_at_Baku_before_2019_UEFA_Europe_League_Final.jpg/330px-Eden_Hazard_at_Baku_before_2019_UEFA_Europe_League_Final.jpg",
+    "sourceFaceBox": [
+      24,
+      79,
+      222,
+      222
+    ]
+  },
+  {
+    "name": "Ronaldo",
+    "path": "assets/faces/players/icon106-c519e76f6719da.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-09-18",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Ronaldo_(Brazilian_footballer)",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/12.12.2025_%E2%80%93_Cerim%C3%B4nia_de_lan%C3%A7amento_do_SBT_News_-_54980664160_%28cropped2%29.jpg/330px-12.12.2025_%E2%80%93_Cerim%C3%B4nia_de_lan%C3%A7amento_do_SBT_News_-_54980664160_%28cropped2%29.jpg",
+    "sourceFaceBox": [
+      42,
+      77,
+      236,
+      236
+    ]
+  },
+  {
+    "name": "Kaká",
+    "path": "assets/faces/players/icon106-fc194afd56c3cb.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1982-04-22",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Kak%C3%A1",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Kak%C3%A1_visited_Stadium_St._Petersburg.jpg/330px-Kak%C3%A1_visited_Stadium_St._Petersburg.jpg",
+    "sourceFaceBox": [
+      114,
+      79,
+      201,
+      201
+    ]
+  },
+  {
+    "name": "Romário",
+    "path": "assets/faces/players/icon106-425147cd43d1fc.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1966-01-29",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Rom%C3%A1rio",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Senadores_da_57%C2%AA_Legislatura_%2852689451805%29_%28cropped_-_3x4%29.jpg/330px-Senadores_da_57%C2%AA_Legislatura_%2852689451805%29_%28cropped_-_3x4%29.jpg",
+    "sourceFaceBox": [
+      109,
+      75,
+      160,
+      160
+    ]
+  },
+  {
+    "name": "Zico",
+    "path": "assets/faces/players/icon106-81019e9c9d0354.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1953-03-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Zico_(footballer)",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Zico6.jpg/330px-Zico6.jpg",
+    "sourceFaceBox": [
+      143,
+      75,
+      104,
+      104
+    ]
+  },
+  {
+    "name": "Sócrates",
+    "path": "assets/faces/players/icon106-d9261867d6abc6.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1954-02-19",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/S%C3%B3crates",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Socrates_elgrafico_1983.jpg/330px-Socrates_elgrafico_1983.jpg",
+    "sourceFaceBox": [
+      128,
+      74,
+      71,
+      71
+    ]
+  },
+  {
+    "name": "Cafu",
+    "path": "assets/faces/players/icon106-63a3ab5f07be72.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1970-06-07",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Cafu",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Cafu_-_26.02.2026_-_Cerim%C3%B4nia_de_apresenta%C3%A7%C3%A3o_das_ta%C3%A7as_da_Copa_do_Mundo_de_2026.jpg/330px-Cafu_-_26.02.2026_-_Cerim%C3%B4nia_de_apresenta%C3%A7%C3%A3o_das_ta%C3%A7as_da_Copa_do_Mundo_de_2026.jpg",
+    "sourceFaceBox": [
+      72,
+      63,
+      148,
+      148
+    ]
+  },
+  {
+    "name": "Roberto Carlos",
+    "path": "assets/faces/players/icon106-754935de843e1a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-04-10",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Roberto_Carlos",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/LS3_1288_%2853332367864%29_%28cropped%29.jpg/330px-LS3_1288_%2853332367864%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      111,
+      61,
+      165,
+      165
+    ]
+  },
+  {
+    "name": "Jairzinho",
+    "path": "assets/faces/players/icon106-46c6adaa7fb087.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1944-12-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Jairzinho",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Jairzinho_1970s.jpg/330px-Jairzinho_1970s.jpg",
+    "sourceFaceBox": [
+      109,
+      69,
+      135,
+      135
+    ]
+  },
+  {
+    "name": "Bebeto",
+    "path": "assets/faces/players/icon106-dae4ab6e7f7667.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1964-02-16",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Bebeto",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/6/68/Bebeto_brazil_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      71,
+      71,
+      160,
+      160
+    ]
+  },
+  {
+    "name": "Dunga",
+    "path": "assets/faces/players/icon106-f2d29380dcf262.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1963-10-31",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Dunga",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Aecio_Neves_e_Dunga_-_17-06-2008_%288368243127%29_%28cropped%29.jpg/330px-Aecio_Neves_e_Dunga_-_17-06-2008_%288368243127%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      73,
+      50,
+      121,
+      121
+    ]
+  },
+  {
+    "name": "Pelé",
+    "path": "assets/faces/players/icon106-fe05a0bf144d64.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1940-10-23",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Pel%C3%A9",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Pele_con_brasil_%28cropped%29.jpg/330px-Pele_con_brasil_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      34,
+      56,
+      134,
+      134
+    ]
+  },
+  {
+    "name": "Juninho Pernambucano",
+    "path": "assets/faces/players/icon106-407d33d202c7ac.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1975-01-30",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Juninho_Pernambucano",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Juninho_Pernambucano.JPG/330px-Juninho_Pernambucano.JPG",
+    "sourceFaceBox": [
+      65,
+      85,
+      190,
+      190
+    ]
+  },
+  {
+    "name": "Robinho",
+    "path": "assets/faces/players/icon106-26e67713c612bf.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-01-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Robinho",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Robinho061115-2_%28cropped_2%29.jpg/330px-Robinho061115-2_%28cropped_2%29.jpg",
+    "sourceFaceBox": [
+      126,
+      79,
+      184,
+      184
+    ]
+  },
+  {
+    "name": "Gilberto Silva",
+    "path": "assets/faces/players/icon106-79db68244ddb3c.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-10-07",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gilberto_Silva",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/2021_-_Press_conferences_SM7_0168_%2851649502936%29_%28cropped%29.jpg/330px-2021_-_Press_conferences_SM7_0168_%2851649502936%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      18,
+      99,
+      183,
+      183
+    ]
+  },
+  {
+    "name": "Gabriel Batistuta",
+    "path": "assets/faces/players/icon106-ad9b2bdfcbbff4.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1969-02-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gabriel_Batistuta",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Omar_Batistuta_%282%29.jpg/330px-Omar_Batistuta_%282%29.jpg",
+    "sourceFaceBox": [
+      135,
+      51,
+      172,
+      172
+    ]
+  },
+  {
+    "name": "Hernán Crespo",
+    "path": "assets/faces/players/icon106-245eb282f94c20.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1975-07-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Hern%C3%A1n_Crespo",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Chelsea_Legends_1_Inter_Forever_4_%2827457022797%29.jpg/330px-Chelsea_Legends_1_Inter_Forever_4_%2827457022797%29.jpg",
+    "sourceFaceBox": [
+      129,
+      63,
+      67,
+      67
+    ]
+  },
+  {
+    "name": "Juan Román Riquelme",
+    "path": "assets/faces/players/icon106-4a7279c26970db.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1978-06-24",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Juan_Rom%C3%A1n_Riquelme",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Juan_Rom%C3%A1n_Riquelme_-_2019.jpg/330px-Juan_Rom%C3%A1n_Riquelme_-_2019.jpg",
+    "sourceFaceBox": [
+      57,
+      53,
+      224,
+      224
+    ]
+  },
+  {
+    "name": "Carlos Tevez",
+    "path": "assets/faces/players/icon106-411d5751acd7d4.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-02-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Carlos_Tevez",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Carlos_Tevez_with_Argentina_November_2014_%28cropped%29.jpg/330px-Carlos_Tevez_with_Argentina_November_2014_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      82,
+      19,
+      107,
+      107
+    ]
+  },
+  {
+    "name": "Ángel Di María",
+    "path": "assets/faces/players/icon106-0955e89ce8c2a8.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1988-02-14",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/%C3%81ngel_Di_Mar%C3%ADa",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/NIG-ARG_%285%29.jpg/330px-NIG-ARG_%285%29.jpg",
+    "sourceFaceBox": [
+      39,
+      51,
+      160,
+      160
+    ]
+  },
+  {
+    "name": "Sergio Agüero",
+    "path": "assets/faces/players/icon106-8cf718f9de6d8d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1988-06-02",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Sergio_Ag%C3%BCero",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Ag%C3%BCero_in_2018.jpg/330px-Ag%C3%BCero_in_2018.jpg",
+    "sourceFaceBox": [
+      75,
+      65,
+      201,
+      201
+    ]
+  },
+  {
+    "name": "Javier Mascherano",
+    "path": "assets/faces/players/icon106-38631ca2953b9d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-06-08",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Javier_Mascherano",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Javier_Mascherano_NE_Revolution_Inter_Miami_7.9.25-040_%28cropped%29.jpg/330px-Javier_Mascherano_NE_Revolution_Inter_Miami_7.9.25-040_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      76,
+      54,
+      164,
+      164
+    ]
+  },
+  {
+    "name": "Javier Zanetti",
+    "path": "assets/faces/players/icon106-580d10204e7f11.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-08-10",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Javier_Zanetti",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Metalist-Inter_%282%29.jpg/330px-Metalist-Inter_%282%29.jpg",
+    "sourceFaceBox": [
+      70,
+      123,
+      240,
+      240
+    ]
+  },
+  {
+    "name": "Javier Saviola",
+    "path": "assets/faces/players/icon106-7586d7984b0dcc.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1981-12-11",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Javier_Saviola",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Javier_Saviola_-_S.L._Benfica_player.jpg/330px-Javier_Saviola_-_S.L._Benfica_player.jpg",
+    "sourceFaceBox": [
+      52,
+      65,
+      201,
+      201
+    ]
+  },
+  {
+    "name": "Pablo Aimar",
+    "path": "assets/faces/players/icon106-c6b33c7ecb7838.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1979-11-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Pablo_Aimar",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Pablo_Aimar_Argentina_v_Egypt_7_July_2026-080.jpg/330px-Pablo_Aimar_Argentina_v_Egypt_7_July_2026-080.jpg",
+    "sourceFaceBox": [
+      65,
+      86,
+      143,
+      143
+    ]
+  },
+  {
+    "name": "Thierry Henry",
+    "path": "assets/faces/players/icon106-fea35f956f9caa.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1977-08-17",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Thierry_Henry",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Thierry_Henry_%2851649035951%29_%28cropped%29.jpg/330px-Thierry_Henry_%2851649035951%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      73,
+      52,
+      189,
+      189
+    ]
+  },
+  {
+    "name": "David Trezeguet",
+    "path": "assets/faces/players/icon106-e765daaec1608f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1977-10-15",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/David_Trezeguet",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/David_Trezeguet_became_Save_the_Dream_Ambassador%2C_2017_%28cropped%29.jpg/330px-David_Trezeguet_became_Save_the_Dream_Ambassador%2C_2017_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      128,
+      63,
+      170,
+      170
+    ]
+  },
+  {
+    "name": "Michel Platini",
+    "path": "assets/faces/players/icon106-8e81eade0e3fa3.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1955-06-21",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Michel_Platini",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/6/66/Michel_Platini_2010_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      68,
+      77,
+      201,
+      201
+    ]
+  },
+  {
+    "name": "Éric Cantona",
+    "path": "assets/faces/players/icon106-33b2e560f7c761.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1966-05-24",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Eric_Cantona",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Eric_Cantona_Cannes_2009.jpg/330px-Eric_Cantona_Cannes_2009.jpg",
+    "sourceFaceBox": [
+      13,
+      98,
+      221,
+      221
+    ]
+  },
+  {
+    "name": "Jean-Pierre Papin",
+    "path": "assets/faces/players/icon106-520f68a7c9b1c9.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1963-11-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Jean-Pierre_Papin",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/PapinJP1997_%28cropped%29.jpg/330px-PapinJP1997_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      54,
+      82,
+      209,
+      209
+    ]
+  },
+  {
+    "name": "Robert Pirès",
+    "path": "assets/faces/players/icon106-47f504a503b56f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-10-29",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Robert_Pires",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Robert_Pires_2011.jpg/330px-Robert_Pires_2011.jpg",
+    "sourceFaceBox": [
+      68,
+      95,
+      205,
+      205
+    ]
+  },
+  {
+    "name": "Patrick Vieira",
+    "path": "assets/faces/players/icon106-989d538de93ed3.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-06-23",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Patrick_Vieira",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Patrick_Vieira_NYCFC_%28cropped%29.JPG/330px-Patrick_Vieira_NYCFC_%28cropped%29.JPG",
+    "sourceFaceBox": [
+      92,
+      70,
+      146,
+      146
+    ]
+  },
+  {
+    "name": "Didier Deschamps",
+    "path": "assets/faces/players/icon106-2ae62bfc3ab621.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1968-10-15",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Didier_Deschamps",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Didier_Deschamps_France_v_Senegal_16_June_2026-294.jpg/330px-Didier_Deschamps_France_v_Senegal_16_June_2026-294.jpg",
+    "sourceFaceBox": [
+      76,
+      77,
+      130,
+      130
+    ]
+  },
+  {
+    "name": "Lilian Thuram",
+    "path": "assets/faces/players/icon106-149e56609082bd.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1972-01-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Lilian_Thuram",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Lilian_Thuram_-_F%C3%A9vrier_2013.jpg/330px-Lilian_Thuram_-_F%C3%A9vrier_2013.jpg",
+    "sourceFaceBox": [
+      68,
+      61,
+      190,
+      190
+    ]
+  },
+  {
+    "name": "Franck Ribéry",
+    "path": "assets/faces/players/icon106-3ff37654510d6f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1983-04-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Franck_Rib%C3%A9ry",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Franck_Ribery_2019_%28cropped%29.jpg/330px-Franck_Ribery_2019_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      117,
+      39,
+      105,
+      105
+    ]
+  },
+  {
+    "name": "Youri Djorkaeff",
+    "path": "assets/faces/players/icon106-4400948685e1fb.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1968-03-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Youri_Djorkaeff",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Youri_Djorkaeff_2011.jpg/330px-Youri_Djorkaeff_2011.jpg",
+    "sourceFaceBox": [
+      60,
+      94,
+      211,
+      211
+    ]
+  },
+  {
+    "name": "Emmanuel Petit",
+    "path": "assets/faces/players/icon106-3710f2409f615d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1970-09-22",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Emmanuel_Petit",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Emmanuel_Petit.jpg",
+    "sourceFaceBox": [
+      77,
+      105,
+      187,
+      187
+    ]
+  },
+  {
+    "name": "Nicolas Anelka",
+    "path": "assets/faces/players/icon106-e45e091f212446.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1979-03-14",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Nicolas_Anelka",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/3/36/Nicolas_Anelka_4720.jpg",
+    "sourceFaceBox": [
+      99,
+      58,
+      82,
+      82
+    ]
+  },
+  {
+    "name": "Johan Cruyff",
+    "path": "assets/faces/players/icon106-6571fd5655dd13.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1947-04-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Johan_Cruyff",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Johan_Cruijff_%281974%29.jpg/330px-Johan_Cruijff_%281974%29.jpg",
+    "sourceFaceBox": [
+      83,
+      87,
+      159,
+      159
+    ]
+  },
+  {
+    "name": "Marco van Basten",
+    "path": "assets/faces/players/icon106-64170aa1d051ac.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1964-10-31",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Marco_van_Basten",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Marco_van_Basten_%282%29_%28cropped%29.jpg/330px-Marco_van_Basten_%282%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      63,
+      104,
+      235,
+      235
+    ]
+  },
+  {
+    "name": "Dennis Bergkamp",
+    "path": "assets/faces/players/icon106-023f2d64aeffd0.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1969-05-10",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Dennis_Bergkamp",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/7/75/Dennis_Bergkamp_2014_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      65,
+      64,
+      178,
+      178
+    ]
+  },
+  {
+    "name": "Clarence Seedorf",
+    "path": "assets/faces/players/icon106-00e725e57cb326.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-04-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Clarence_Seedorf",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Clarence_Seedorf_Introductory_Press_Conferences%2C_2_June_2025_-_40_%28cropped%29.jpg/330px-Clarence_Seedorf_Introductory_Press_Conferences%2C_2_June_2025_-_40_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      34,
+      67,
+      182,
+      182
+    ]
+  },
+  {
+    "name": "Arjen Robben",
+    "path": "assets/faces/players/icon106-6935ce958467e3.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-01-23",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Arjen_Robben",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/2019147183036_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0196_-_B70I8495_%28cropped%29.jpg/330px-2019147183036_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0196_-_B70I8495_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      54,
+      82,
+      219,
+      219
+    ]
+  },
+  {
+    "name": "Wesley Sneijder",
+    "path": "assets/faces/players/icon106-ed145fcc7ab030.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-06-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Wesley_Sneijder",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Wesley_Sneijder_at_Sports_Festival_2025.jpg/330px-Wesley_Sneijder_at_Sports_Festival_2025.jpg",
+    "sourceFaceBox": [
+      103,
+      142,
+      88,
+      88
+    ]
+  },
+  {
+    "name": "Robin van Persie",
+    "path": "assets/faces/players/icon106-090d55b2d55860.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1983-08-06",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Robin_van_Persie",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Loco-Fener_%2810%29.jpg/330px-Loco-Fener_%2810%29.jpg",
+    "sourceFaceBox": [
+      79,
+      38,
+      147,
+      147
+    ]
+  },
+  {
+    "name": "Patrick Kluivert",
+    "path": "assets/faces/players/icon106-e3cd5ee881c5d0.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-07-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Patrick_Kluivert",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Patrick_Kluivert_at_Web_Summit_2024_%28cropped_2%29.jpg/330px-Patrick_Kluivert_at_Web_Summit_2024_%28cropped_2%29.jpg",
+    "sourceFaceBox": [
+      56,
+      70,
+      204,
+      204
+    ]
+  },
+  {
+    "name": "Frank Rijkaard",
+    "path": "assets/faces/players/icon106-7d5982c3070414.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1962-09-30",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Frank_Rijkaard",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/FrankRijkaard2.jpg/330px-FrankRijkaard2.jpg",
+    "sourceFaceBox": [
+      192,
+      110,
+      55,
+      55
+    ]
+  },
+  {
+    "name": "Roberto Baggio",
+    "path": "assets/faces/players/icon106-4ae0ca63ab5f04.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1967-02-18",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Roberto_Baggio",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/%D8%B1%D9%88%D8%A8%D8%B1%D8%AA%D9%88_%D8%A8%D8%A7%D8%AC%D9%88_%28cropped%29.jpg/330px-%D8%B1%D9%88%D8%A8%D8%B1%D8%AA%D9%88_%D8%A8%D8%A7%D8%AC%D9%88_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      98,
+      81,
+      195,
+      195
+    ]
+  },
+  {
+    "name": "Alessandro Del Piero",
+    "path": "assets/faces/players/icon106-ec4e770abb7c0e.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1974-11-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Alessandro_Del_Piero",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/25th_Laureus_World_Sports_Awards_-_Alessandro_Del_Piero_-_240421_155220_%28cropped%29_%28cropped%29.jpg/330px-25th_Laureus_World_Sports_Awards_-_Alessandro_Del_Piero_-_240421_155220_%28cropped%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      104,
+      121,
+      192,
+      192
+    ]
+  },
+  {
+    "name": "Francesco Totti",
+    "path": "assets/faces/players/icon106-74b74b7f4b1b5f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-09-27",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Francesco_Totti",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/KL-2018_%284%29.jpg/330px-KL-2018_%284%29.jpg",
+    "sourceFaceBox": [
+      172,
+      55,
+      110,
+      110
+    ]
+  },
+  {
+    "name": "Paolo Maldini",
+    "path": "assets/faces/players/icon106-bb0892ddb1ab2e.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1968-06-26",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Paolo_Maldini",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Paolo_Maldini_AC_Milan_Technical_director_2018.jpg/330px-Paolo_Maldini_AC_Milan_Technical_director_2018.jpg",
+    "sourceFaceBox": [
+      76,
+      84,
+      172,
+      172
+    ]
+  },
+  {
+    "name": "Alessandro Nesta",
+    "path": "assets/faces/players/icon106-0188ba6009ec31.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-03-19",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Alessandro_Nesta",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Alessandro_Nesta_as_Miami_FC_Manager.jpg/330px-Alessandro_Nesta_as_Miami_FC_Manager.jpg",
+    "sourceFaceBox": [
+      40,
+      76,
+      133,
+      133
+    ]
+  },
+  {
+    "name": "Fabio Cannavaro",
+    "path": "assets/faces/players/icon106-3143097a3ece9f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-09-13",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Fabio_Cannavaro",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Fabio_Cannavaro_2011.jpg/330px-Fabio_Cannavaro_2011.jpg",
+    "sourceFaceBox": [
+      40,
+      64,
+      160,
+      160
+    ]
+  },
+  {
+    "name": "Filippo Inzaghi",
+    "path": "assets/faces/players/icon106-2d9bef9e3d5729.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-08-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Filippo_Inzaghi",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Filippo_Inzaghi_2011.jpg/330px-Filippo_Inzaghi_2011.jpg",
+    "sourceFaceBox": [
+      112,
+      100,
+      190,
+      190
+    ]
+  },
+  {
+    "name": "Christian Vieri",
+    "path": "assets/faces/players/icon106-0e12ea26f495f9.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-07-12",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Christian_Vieri",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Christian_Vieri_%28cropped%29.jpg/330px-Christian_Vieri_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      38,
+      90,
+      248,
+      248
+    ]
+  },
+  {
+    "name": "Gianfranco Zola",
+    "path": "assets/faces/players/icon106-b5a20fea68c28b.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1966-07-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gianfranco_Zola",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Zola_2018_%28cropped%29.jpg/330px-Zola_2018_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      108,
+      51,
+      91,
+      91
+    ]
+  },
+  {
+    "name": "Gianluca Vialli",
+    "path": "assets/faces/players/icon106-7b8b6c1deddaf4.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1964-07-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gianluca_Vialli",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Gianluca_Vialli.jpg/330px-Gianluca_Vialli.jpg",
+    "sourceFaceBox": [
+      11,
+      72,
+      208,
+      208
+    ]
+  },
+  {
+    "name": "Lothar Matthäus",
+    "path": "assets/faces/players/icon106-bf931cb54a1d37.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1961-03-21",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Lothar_Matth%C3%A4us",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/2019_Lothar_Matth%C3%A4us.jpg/330px-2019_Lothar_Matth%C3%A4us.jpg",
+    "sourceFaceBox": [
+      92,
+      76,
+      159,
+      159
+    ]
+  },
+  {
+    "name": "Jürgen Klinsmann",
+    "path": "assets/faces/players/icon106-0374e1f5c840fb.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1964-07-30",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/J%C3%BCrgen_Klinsmann",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/J%C3%BCrgen_Klinsmann_14021113000678638425063004371092_64131.jpg/330px-J%C3%BCrgen_Klinsmann_14021113000678638425063004371092_64131.jpg",
+    "sourceFaceBox": [
+      82,
+      46,
+      155,
+      155
+    ]
+  },
+  {
+    "name": "Miroslav Klose",
+    "path": "assets/faces/players/icon106-7e6a2afb9a42f4.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1978-06-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Miroslav_Klose",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/2016209185719_2016-07-27_Champions_for_Charity_-_Sven_-_1D_X_-_0149_-_DV3P4742_mod.jpg/330px-2016209185719_2016-07-27_Champions_for_Charity_-_Sven_-_1D_X_-_0149_-_DV3P4742_mod.jpg",
+    "sourceFaceBox": [
+      17,
+      95,
+      185,
+      185
+    ]
+  },
+  {
+    "name": "Bastian Schweinsteiger",
+    "path": "assets/faces/players/icon106-db7d556d981de9.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-08-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Bastian_Schweinsteiger",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Re-publica_23_-_Tag_3_%2852957826298%29_%28cropped%29.jpg/330px-Re-publica_23_-_Tag_3_%2852957826298%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      132,
+      68,
+      115,
+      115
+    ]
+  },
+  {
+    "name": "Mesut Özil",
+    "path": "assets/faces/players/icon106-f0a30325359044.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1988-10-15",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Mesut_%C3%96zil",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Mesut_%C3%96zil_at_Baku_before_2019_UEFA_Europe_League_Final.jpg/330px-Mesut_%C3%96zil_at_Baku_before_2019_UEFA_Europe_League_Final.jpg",
+    "sourceFaceBox": [
+      108,
+      66,
+      199,
+      199
+    ]
+  },
+  {
+    "name": "Philipp Lahm",
+    "path": "assets/faces/players/icon106-1eaed55107b60a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1983-11-11",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Philipp_Lahm",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Philipp_Lahm_auf_der_Berlinale_2024%2C_Ausschnitt.jpg/330px-Philipp_Lahm_auf_der_Berlinale_2024%2C_Ausschnitt.jpg",
+    "sourceFaceBox": [
+      85,
+      83,
+      206,
+      206
+    ]
+  },
+  {
+    "name": "Michael Ballack",
+    "path": "assets/faces/players/icon106-c01b9fa1a2c360.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-09-26",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Michael_Ballack",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/10._Tag_der_Legenden_2014_69.jpg/330px-10._Tag_der_Legenden_2014_69.jpg",
+    "sourceFaceBox": [
+      92,
+      94,
+      215,
+      215
+    ]
+  },
+  {
+    "name": "Toni Kroos",
+    "path": "assets/faces/players/icon106-597e48f03fdd1f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1990-01-04",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Toni_Kroos",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Toni_Kroos_Real_Madrid_2021.jpg/330px-Toni_Kroos_Real_Madrid_2021.jpg",
+    "sourceFaceBox": [
+      108,
+      70,
+      153,
+      153
+    ]
+  },
+  {
+    "name": "Thomas Müller",
+    "path": "assets/faces/players/icon106-ccfc43954a50ef.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1989-09-13",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Thomas_M%C3%BCller",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/FC_Red_Bull_Salzburg_gegen_Bayern_M%C3%BCnchen_%282025-01-06_Testspiel%29_19.jpg/330px-FC_Red_Bull_Salzburg_gegen_Bayern_M%C3%BCnchen_%282025-01-06_Testspiel%29_19.jpg",
+    "sourceFaceBox": [
+      220,
+      50,
+      86,
+      86
+    ]
+  },
+  {
+    "name": "Andreas Brehme",
+    "path": "assets/faces/players/icon106-9ede63ce81963d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1960-11-09",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Andreas_Brehme",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/6/65/Andreas_Brehme_2008.jpg",
+    "sourceFaceBox": [
+      44,
+      67,
+      159,
+      159
+    ]
+  },
+  {
+    "name": "Karl-Heinz Rummenigge",
+    "path": "assets/faces/players/icon106-4ba9c831fd4433.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1955-09-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Karl-Heinz_Rummenigge",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/2015-02-06_Rummenigge_0370_%28cropped%29.JPG/330px-2015-02-06_Rummenigge_0370_%28cropped%29.JPG",
+    "sourceFaceBox": [
+      76,
+      102,
+      167,
+      167
+    ]
+  },
+  {
+    "name": "Andrés Iniesta",
+    "path": "assets/faces/players/icon106-771756e88fb06d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-05-11",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Andr%C3%A9s_Iniesta",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Andr%C3%A9s_Iniesta_Argentina_v_Spain_19_July_2026-034_%28cropped%29.jpg/330px-Andr%C3%A9s_Iniesta_Argentina_v_Spain_19_July_2026-034_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      60,
+      172,
+      76,
+      76
+    ]
+  },
+  {
+    "name": "Fernando Torres",
+    "path": "assets/faces/players/icon106-d65b2718ceda9c.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-03-20",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Fernando_Torres",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/5/57/Fernando_Torres_2017.jpg",
+    "sourceFaceBox": [
+      54,
+      84,
+      194,
+      194
+    ]
+  },
+  {
+    "name": "David Villa",
+    "path": "assets/faces/players/icon106-51c3a47ad88c40.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1981-12-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/David_Villa",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Spain-Tahiti%2C_Confederations_Cup_2013_%2802%29_%28Villa_crop%29.jpg/330px-Spain-Tahiti%2C_Confederations_Cup_2013_%2802%29_%28Villa_crop%29.jpg",
+    "sourceFaceBox": [
+      52,
+      81,
+      168,
+      168
+    ]
+  },
+  {
+    "name": "Raúl",
+    "path": "assets/faces/players/icon106-de9c80449aae3d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1977-06-27",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Ra%C3%BAl_Gonz%C3%A1lez",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/25th_Laureus_World_Sports_Awards_-_Ra%C3%BAl_-_240422_132916-2_%28cropped%29.jpg/330px-25th_Laureus_World_Sports_Awards_-_Ra%C3%BAl_-_240422_132916-2_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      114,
+      67,
+      177,
+      177
+    ]
+  },
+  {
+    "name": "Carles Puyol",
+    "path": "assets/faces/players/icon106-66e8efdadd5592.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1978-04-13",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Carles_Puyol",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Premios_Goya_2020_-_Carles_Pujol.jpg/330px-Premios_Goya_2020_-_Carles_Pujol.jpg",
+    "sourceFaceBox": [
+      123,
+      63,
+      93,
+      93
+    ]
+  },
+  {
+    "name": "Xabi Alonso",
+    "path": "assets/faces/players/icon106-c5a531d85db472.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1981-11-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Xabi_Alonso",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Los_Caminos_del_f%C3%BAtbol._Xabi_Alonso_%2839666778464%29_%28cropped%29.jpg/330px-Los_Caminos_del_f%C3%BAtbol._Xabi_Alonso_%2839666778464%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      42,
+      73,
+      242,
+      242
+    ]
+  },
+  {
+    "name": "Cesc Fàbregas",
+    "path": "assets/faces/players/icon106-09872793a2a16a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1987-05-04",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Cesc_F%C3%A0bregas",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/2023_-_Cesc_Fabregas_%28cropped%29.jpg/330px-2023_-_Cesc_Fabregas_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      98,
+      70,
+      185,
+      185
+    ]
+  },
+  {
+    "name": "David Silva",
+    "path": "assets/faces/players/icon106-fb7c22073523b6.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1986-01-08",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/David_Silva",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/David_Silva_2017.jpg/330px-David_Silva_2017.jpg",
+    "sourceFaceBox": [
+      19,
+      55,
+      236,
+      236
+    ]
+  },
+  {
+    "name": "Fernando Morientes",
+    "path": "assets/faces/players/icon106-d046622789c17e.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-04-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Fernando_Morientes",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Fernando_Morientes_-_53822470816.jpg/330px-Fernando_Morientes_-_53822470816.jpg",
+    "sourceFaceBox": [
+      95,
+      89,
+      120,
+      120
+    ]
+  },
+  {
+    "name": "Fernando Hierro",
+    "path": "assets/faces/players/icon106-e476487c48d8b1.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1968-03-23",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Fernando_Hierro",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Fernando_Hierro_in_Spain-Iran_press_conference_2018-06-19.jpg/330px-Fernando_Hierro_in_Spain-Iran_press_conference_2018-06-19.jpg",
+    "sourceFaceBox": [
+      22,
+      90,
+      264,
+      264
+    ]
+  },
+  {
+    "name": "Rui Costa",
+    "path": "assets/faces/players/icon106-593d4dc8411c5a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1972-03-29",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Rui_Costa",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Rui_Costa_2026.jpg/330px-Rui_Costa_2026.jpg",
+    "sourceFaceBox": [
+      48,
+      66,
+      173,
+      173
+    ]
+  },
+  {
+    "name": "Andreas Isaksson",
+    "path": "assets/faces/players/icon106-287e5d8596294d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1981-10-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Andreas_Isaksson",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Hammarby-Djurg%C3%A5rden-25.jpg/330px-Hammarby-Djurg%C3%A5rden-25.jpg",
+    "sourceFaceBox": [
+      131,
+      45,
+      81,
+      81
+    ]
+  },
+  {
+    "name": "Rogério Ceni",
+    "path": "assets/faces/players/icon106-2864365805af5f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1973-01-22",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Rog%C3%A9rio_Ceni",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Rogerio-Ceni-Sao-Paulo-Juventude-jun-2022_%28cropped%29.jpg/330px-Rogerio-Ceni-Sao-Paulo-Juventude-jun-2022_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      156,
+      53,
+      58,
+      58
+    ]
+  },
+  {
+    "name": "Fabien Barthez",
+    "path": "assets/faces/players/icon106-cb01357bcc4913.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1971-06-28",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Fabien_Barthez",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Fabien_Barthez_at_OM.jpg/330px-Fabien_Barthez_at_OM.jpg",
+    "sourceFaceBox": [
+      84,
+      48,
+      101,
+      101
+    ]
+  },
+  {
+    "name": "Bernard Lama",
+    "path": "assets/faces/players/icon106-335d5940c9d4b7.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1963-04-07",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Bernard_Lama",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/7/73/Bernard_Lama_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      34,
+      48,
+      111,
+      111
+    ]
+  },
+  {
+    "name": "Lionel Charbonnier",
+    "path": "assets/faces/players/icon106-12c4df86157c00.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1966-10-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Lionel_Charbonnier",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Lionel_Charbonnier.jpg",
+    "sourceFaceBox": [
+      18,
+      63,
+      94,
+      94
+    ]
+  },
+  {
+    "name": "Cláudio Taffarel",
+    "path": "assets/faces/players/icon106-a49ea3dcebda58.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1966-05-08",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Cl%C3%A1udio_Taffarel",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Taffarel_2018.png/330px-Taffarel_2018.png",
+    "sourceFaceBox": [
+      21,
+      95,
+      143,
+      143
+    ]
+  },
+  {
+    "name": "Zetti",
+    "path": "assets/faces/players/icon106-2fb5b5604d5fb1.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1965-01-10",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Zetti",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Armelino_Donizetti_Quagliato_%28Zetti%29_02_cropped.jpg",
+    "sourceFaceBox": [
+      15,
+      53,
+      214,
+      214
+    ]
+  },
+  {
+    "name": "Nery Pumpido",
+    "path": "assets/faces/players/icon106-a17cc52a824708.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1957-07-30",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Nery_Pumpido",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Pumpido_union_buzo_afa.jpg",
+    "sourceFaceBox": [
+      107,
+      43,
+      57,
+      57
+    ]
+  },
+  {
+    "name": "Franco Costanzo",
+    "path": "assets/faces/players/icon106-bee78a6f908029.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1980-09-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Franco_Costanzo",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Franco_Costanzo_5875.jpg",
+    "sourceFaceBox": [
+      119,
+      40,
+      55,
+      55
+    ]
+  },
+  {
+    "name": "Roberto Abbondanzieri",
+    "path": "assets/faces/players/icon106-6d8bf63c48c4a6.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1972-08-19",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Roberto_Abbondanzieri",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Roberto_Abbondanzieri.jpg/330px-Roberto_Abbondanzieri.jpg",
+    "sourceFaceBox": [
+      113,
+      59,
+      101,
+      101
+    ]
+  },
+  {
+    "name": "Leo Franco",
+    "path": "assets/faces/players/icon106-be89c49a620ce9.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1977-05-20",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Leo_Franco",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Leofranco.jpg",
+    "sourceFaceBox": [
+      48,
+      60,
+      80,
+      80
+    ]
+  },
+  {
+    "name": "Juan Pablo Carrizo",
+    "path": "assets/faces/players/icon106-c917fe06847c5d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1984-05-06",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Juan_Pablo_Carrizo",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Juan_Pablo_Carrizo.jpg/330px-Juan_Pablo_Carrizo.jpg",
+    "sourceFaceBox": [
+      151,
+      29,
+      71,
+      71
+    ]
+  },
+  {
+    "name": "Óscar Ustari",
+    "path": "assets/faces/players/icon106-8522dca84be39c.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1986-07-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Oscar_Ustari",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Oscar_Ustari_NYCFC_Miami_24_Sep_2025-025_%28cropped%29.jpg/330px-Oscar_Ustari_NYCFC_Miami_24_Sep_2025-025_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      106,
+      66,
+      173,
+      173
+    ]
+  },
+  {
+    "name": "Joël Bats",
+    "path": "assets/faces/players/icon106-039f5f325d501b.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1957-01-04",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Jo%C3%ABl_Bats",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Jo%C3%ABl_Bats.jpg",
+    "sourceFaceBox": [
+      31,
+      120,
+      172,
+      172
+    ]
+  },
+  {
+    "name": "Philippe Bergeroo",
+    "path": "assets/faces/players/icon106-6f4e5387ca2db5.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1954-01-13",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Philippe_Berger%C3%B4o",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Philippe_Bergeroo_2015_cropped.jpg/330px-Philippe_Bergeroo_2015_cropped.jpg",
+    "sourceFaceBox": [
+      101,
+      86,
+      131,
+      131
+    ]
+  },
+  {
+    "name": "Bruno Martini",
+    "path": "assets/faces/players/icon106-c4c0423deeb0b6.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1962-01-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Bruno_Martini",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Bruno_Martini_football_Juillet_2015_Grammont.jpg/330px-Bruno_Martini_football_Juillet_2015_Grammont.jpg",
+    "sourceFaceBox": [
+      164,
+      66,
+      104,
+      104
+    ]
+  },
+  {
+    "name": "Mickaël Landreau",
+    "path": "assets/faces/players/icon106-25d9d5ff97483f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1979-05-14",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Micka%C3%ABl_Landreau",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/RC_Lens_-_FC_Lorient_%2823-04-2019%29_41.jpg/330px-RC_Lens_-_FC_Lorient_%2823-04-2019%29_41.jpg",
+    "sourceFaceBox": [
+      108,
+      94,
+      110,
+      110
+    ]
+  },
+  {
+    "name": "Grégory Coupet",
+    "path": "assets/faces/players/icon106-40c76393a908bd.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1972-12-31",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gr%C3%A9gory_Coupet",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Lens_-_Dijon_%2815-08-2020%29_22.jpg/330px-Lens_-_Dijon_%2815-08-2020%29_22.jpg",
+    "sourceFaceBox": [
+      170,
+      40,
+      43,
+      43
+    ]
+  },
+  {
+    "name": "Sébastien Frey",
+    "path": "assets/faces/players/icon106-f6283adcbee345.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1980-03-18",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/S%C3%A9bastien_Frey",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/S%C3%A9bastien_Frey%2714.JPG/330px-S%C3%A9bastien_Frey%2714.JPG",
+    "sourceFaceBox": [
+      141,
+      19,
+      48,
+      48
+    ]
+  },
+  {
+    "name": "Jan Jongbloed",
+    "path": "assets/faces/players/icon106-d9e57495c857a7.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1940-11-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Jan_Jongbloed",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Jan_Jongbloed_1978.jpg/330px-Jan_Jongbloed_1978.jpg",
+    "sourceFaceBox": [
+      82,
+      79,
+      166,
+      166
+    ]
+  },
+  {
+    "name": "Edwin van der Sar",
+    "path": "assets/faces/players/icon106-3b666b6d129181.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1970-10-29",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Edwin_van_der_Sar",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Edwin_van_der_Sar_2015.jpg/330px-Edwin_van_der_Sar_2015.jpg",
+    "sourceFaceBox": [
+      141,
+      48,
+      103,
+      103
+    ]
+  },
+  {
+    "name": "Maarten Stekelenburg",
+    "path": "assets/faces/players/icon106-b498fcdcde9822.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1982-09-22",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Maarten_Stekelenburg",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/GAE_-_Ajax_-_52788476880_%28Maarten_Stekelenburg%29.jpg/330px-GAE_-_Ajax_-_52788476880_%28Maarten_Stekelenburg%29.jpg",
+    "sourceFaceBox": [
+      151,
+      55,
+      89,
+      89
+    ]
+  },
+  {
+    "name": "Michel Vorm",
+    "path": "assets/faces/players/icon106-fcac7e2f301b5f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1983-10-20",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Michel_Vorm",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Michelvorm.jpg/330px-Michelvorm.jpg",
+    "sourceFaceBox": [
+      87,
+      88,
+      208,
+      208
+    ]
+  },
+  {
+    "name": "Tim Krul",
+    "path": "assets/faces/players/icon106-6453e6175fd858.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1988-04-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Tim_Krul",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Tim_Krul_%28Professional_Footballer_%26_Investor%29_%2854920951061%29_%28cropped%29.jpg/330px-Tim_Krul_%28Professional_Footballer_%26_Investor%29_%2854920951061%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      52,
+      77,
+      175,
+      175
+    ]
+  },
+  {
+    "name": "Gianluigi Buffon",
+    "path": "assets/faces/players/icon106-cd12b1b6493b45.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1978-01-28",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gianluigi_Buffon",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Norway_Italy_-_June_2025_A_44_%28Gianluigi_Buffon%29.jpg/330px-Norway_Italy_-_June_2025_A_44_%28Gianluigi_Buffon%29.jpg",
+    "sourceFaceBox": [
+      73,
+      65,
+      144,
+      144
+    ]
+  },
+  {
+    "name": "Angelo Peruzzi",
+    "path": "assets/faces/players/icon106-9dd72c941d9229.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1970-02-16",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Angelo_Peruzzi",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Angelo_Peruzzi_%282019%29.jpg/330px-Angelo_Peruzzi_%282019%29.jpg",
+    "sourceFaceBox": [
+      113,
+      145,
+      216,
+      216
+    ]
+  },
+  {
+    "name": "Francesco Toldo",
+    "path": "assets/faces/players/icon106-bc2e98775dac97.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1971-12-02",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Francesco_Toldo",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Francesco_Toldo_-_Inter_Mailand_%281%29.jpg/330px-Francesco_Toldo_-_Inter_Mailand_%281%29.jpg",
+    "sourceFaceBox": [
+      116,
+      162,
+      157,
+      157
+    ]
+  },
+  {
+    "name": "Manuel Neuer",
+    "path": "assets/faces/players/icon106-ddd286e53068eb.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1986-03-27",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Manuel_Neuer",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Manuel_Neuer_Ecuador_v_Germany_25_June_2026-148.jpg/330px-Manuel_Neuer_Ecuador_v_Germany_25_June_2026-148.jpg",
+    "sourceFaceBox": [
+      127,
+      150,
+      190,
+      190
+    ]
+  },
+  {
+    "name": "Roman Weidenfeller",
+    "path": "assets/faces/players/icon106-ebf89749312ba3.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1980-08-06",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Roman_Weidenfeller",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Roman_Weidenfeller_2014_%28cropped%29.jpg/330px-Roman_Weidenfeller_2014_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      41,
+      79,
+      174,
+      174
+    ]
+  },
+  {
+    "name": "Oliver Kahn",
+    "path": "assets/faces/players/icon106-5a3c4864d44449.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1969-06-15",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Oliver_Kahn",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3179_by_Stepro.jpg/330px-2022-07-30_Fu%C3%9Fball%2C_M%C3%A4nner%2C_DFL-Supercup%2C_RB_Leipzig_-_FC_Bayern_M%C3%BCnchen_1DX_3179_by_Stepro.jpg",
+    "sourceFaceBox": [
+      96,
+      82,
+      149,
+      149
+    ]
+  },
+  {
+    "name": "Timo Hildebrand",
+    "path": "assets/faces/players/icon106-ee7195025edc2a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1979-04-05",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Timo_Hildebrand",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Timo_Hildebrand_%E2%80%93_Tag_der_Legenden_2016_02.jpg/330px-Timo_Hildebrand_%E2%80%93_Tag_der_Legenden_2016_02.jpg",
+    "sourceFaceBox": [
+      78,
+      73,
+      115,
+      115
+    ]
+  },
+  {
+    "name": "Harald Schumacher",
+    "path": "assets/faces/players/icon106-e3433d1f2916ca.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1954-03-06",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Toni_Schumacher",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Pressekonferenz_K%C3%B6lner_Sportjahr_2023-6218.jpg/330px-Pressekonferenz_K%C3%B6lner_Sportjahr_2023-6218.jpg",
+    "sourceFaceBox": [
+      107,
+      68,
+      106,
+      106
+    ]
+  },
+  {
+    "name": "Uli Stein",
+    "path": "assets/faces/players/icon106-b608722bc64c76.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1954-10-23",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Uli_Stein",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/2018-09-17_Eintracht_Frankfurt_Golf_Open_Uli_Stein-8875_%28cropped%29.jpg/330px-2018-09-17_Eintracht_Frankfurt_Golf_Open_Uli_Stein-8875_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      73,
+      73,
+      165,
+      165
+    ]
+  },
+  {
+    "name": "Iker Casillas",
+    "path": "assets/faces/players/icon106-a4bc1dcaf27a18.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1981-05-20",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Iker_Casillas",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Iker-Casillas-SportsTrade-2021-cropped.jpg/330px-Iker-Casillas-SportsTrade-2021-cropped.jpg",
+    "sourceFaceBox": [
+      126,
+      32,
+      96,
+      96
+    ]
+  },
+  {
+    "name": "Víctor Valdés",
+    "path": "assets/faces/players/icon106-96ec302d1d8910.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1982-01-14",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/V%C3%ADctor_Vald%C3%A9s",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/V%C3%ADctor_Vald%C3%A9s_%282010%29.jpg/330px-V%C3%ADctor_Vald%C3%A9s_%282010%29.jpg",
+    "sourceFaceBox": [
+      41,
+      62,
+      222,
+      222
+    ]
+  },
+  {
+    "name": "Pepe Reina",
+    "path": "assets/faces/players/icon106-f402e2fc0d0610.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1982-08-31",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Pepe_Reina",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Pepe_Reina_2017.jpg/330px-Pepe_Reina_2017.jpg",
+    "sourceFaceBox": [
+      57,
+      114,
+      148,
+      148
+    ]
+  },
+  {
+    "name": "Deco",
+    "path": "assets/faces/players/icon106-72545eb234b8ac.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1977-08-27",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Deco",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Deco_com_o_Fluminense_em_2013_%28cropped%29.jpg/330px-Deco_com_o_Fluminense_em_2013_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      111,
+      39,
+      94,
+      94
+    ]
+  },
+  {
+    "name": "David Beckham",
+    "path": "assets/faces/players/icon106-2ea002f12a1300.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1975-05-02",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/David_Beckham",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/David_Beckham_UNICEF_%28cropped2%29.jpg/330px-David_Beckham_UNICEF_%28cropped2%29.jpg",
+    "sourceFaceBox": [
+      68,
+      110,
+      188,
+      188
+    ]
+  },
+  {
+    "name": "Wayne Rooney",
+    "path": "assets/faces/players/icon106-6e309bc66778ce.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1985-10-24",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Wayne_Rooney",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Wayne_Rooney_%2850121495731%29_%28cropped%29.jpg/330px-Wayne_Rooney_%2850121495731%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      133,
+      39,
+      101,
+      101
+    ]
+  },
+  {
+    "name": "Michael Owen",
+    "path": "assets/faces/players/icon106-13f2170c3dd3f3.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1979-12-14",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Michael_Owen",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Michael_Owen.jpg/330px-Michael_Owen.jpg",
+    "sourceFaceBox": [
+      66,
+      97,
+      173,
+      173
+    ]
+  },
+  {
+    "name": "Alan Shearer",
+    "path": "assets/faces/players/icon106-2677929e02004a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1970-08-13",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Alan_Shearer",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Alan_Shearer_2008.jpg",
+    "sourceFaceBox": [
+      73,
+      41,
+      142,
+      142
+    ]
+  },
+  {
+    "name": "Frank Lampard",
+    "path": "assets/faces/players/icon106-b4a37cad51eb3d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1978-06-20",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Frank_Lampard",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Frank_Lampard_2019.jpg/330px-Frank_Lampard_2019.jpg",
+    "sourceFaceBox": [
+      58,
+      86,
+      213,
+      213
+    ]
+  },
+  {
+    "name": "Steven Gerrard",
+    "path": "assets/faces/players/icon106-824219e0a0ad33.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1980-05-30",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Steven_Gerrard",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Steven_Gerrard_2018.jpg/330px-Steven_Gerrard_2018.jpg",
+    "sourceFaceBox": [
+      44,
+      99,
+      166,
+      166
+    ]
+  },
+  {
+    "name": "Paul Scholes",
+    "path": "assets/faces/players/icon106-5b235956190b02.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1974-11-16",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Paul_Scholes",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/P_Scholes.jpg/330px-P_Scholes.jpg",
+    "sourceFaceBox": [
+      151,
+      63,
+      64,
+      64
+    ]
+  },
+  {
+    "name": "Paul Gascoigne",
+    "path": "assets/faces/players/icon106-195b7bf2c041bc.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1967-05-27",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Paul_Gascoigne",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Paul_Gascoigne_2021.png/330px-Paul_Gascoigne_2021.png",
+    "sourceFaceBox": [
+      63,
+      73,
+      175,
+      175
+    ]
+  },
+  {
+    "name": "Gary Lineker",
+    "path": "assets/faces/players/icon106-c2ddece58b9679.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1960-11-30",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Gary_Lineker",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Prime_Minister_Keir_Starmer_hosts_St_George%27s_Day_Reception_%2854470857860%29_%28cropped%29.jpg/330px-Prime_Minister_Keir_Starmer_hosts_St_George%27s_Day_Reception_%2854470857860%29_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      108,
+      76,
+      139,
+      139
+    ]
+  },
+  {
+    "name": "Rio Ferdinand",
+    "path": "assets/faces/players/icon106-97e3b1ed409925.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1978-11-07",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Rio_Ferdinand",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Web_Summit_2015_-_Dublin%2C_Ireland_-_22183056474_%28cropped%29.jpg/330px-Web_Summit_2015_-_Dublin%2C_Ireland_-_22183056474_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      45,
+      58,
+      241,
+      241
+    ]
+  },
+  {
+    "name": "Vincent Kompany",
+    "path": "assets/faces/players/icon106-cb4448e746904c.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1986-04-10",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Vincent_Kompany",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Vincent_Kompany_Bayern_Munich_%28cropped%29.jpg/330px-Vincent_Kompany_Bayern_Munich_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      134,
+      52,
+      127,
+      127
+    ]
+  },
+  {
+    "name": "Davor Šuker",
+    "path": "assets/faces/players/icon106-ba24f340228fad.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1968-01-01",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Davor_%C5%A0uker",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Football_against_poverty_2014_-_Davor_%C5%A0uker_%28cropped%29.jpg/330px-Football_against_poverty_2014_-_Davor_%C5%A0uker_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      74,
+      69,
+      182,
+      182
+    ]
+  },
+  {
+    "name": "Zvonimir Boban",
+    "path": "assets/faces/players/icon106-f0e97ef09bf842.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1968-10-08",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Zvonimir_Boban",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Zvonimir_Boban_in_2018.jpg/330px-Zvonimir_Boban_in_2018.jpg",
+    "sourceFaceBox": [
+      74,
+      61,
+      217,
+      217
+    ]
+  },
+  {
+    "name": "Diego Forlán",
+    "path": "assets/faces/players/icon106-a652e3b7512c8e.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1979-05-19",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Diego_Forl%C3%A1n",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/U10_Diego_Forl%C3%A1n_7524.jpg/330px-U10_Diego_Forl%C3%A1n_7524.jpg",
+    "sourceFaceBox": [
+      94,
+      115,
+      168,
+      168
+    ]
+  },
+  {
+    "name": "Edinson Cavani",
+    "path": "assets/faces/players/icon106-5204bc7b973058.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1987-02-14",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Edinson_Cavani",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/PALMEIRAS_X_BOCA_JUNIORS_-_COPA_LIBERTADORES_2023_-_53286889335_%28cropped_2%29.jpg/330px-PALMEIRAS_X_BOCA_JUNIORS_-_COPA_LIBERTADORES_2023_-_53286889335_%28cropped_2%29.jpg",
+    "sourceFaceBox": [
+      126,
+      64,
+      86,
+      86
+    ]
+  },
+  {
+    "name": "Alisson",
+    "path": "assets/faces/players/icon106-417dc1719a18d5.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1992-10-02",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Alisson_Becker",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Alisson_Becker_Brazil_V_Morocco_13_June_2026-117_%28cropped%29.jpg/330px-Alisson_Becker_Brazil_V_Morocco_13_June_2026-117_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      64,
+      76,
+      114,
+      114
+    ]
+  },
+  {
+    "name": "Vítor Baía",
+    "path": "assets/faces/players/icon106-cff44c20e5029f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1969-10-15",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/V%C3%ADtor_Ba%C3%ADa",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Vitor_baia_in_2016.jpg/330px-Vitor_baia_in_2016.jpg",
+    "sourceFaceBox": [
+      179,
+      52,
+      62,
+      62
+    ]
+  },
+  {
+    "name": "Robert Green",
+    "path": "assets/faces/players/icon106-2c54fd82b37d2a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1980-01-18",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Robert_Green",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Robert-Greenpp.jpg/330px-Robert-Greenpp.jpg",
+    "sourceFaceBox": [
+      112,
+      52,
+      145,
+      145
+    ]
+  },
+  {
+    "name": "David Seaman",
+    "path": "assets/faces/players/icon106-fe5e8bf317a263.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1963-09-19",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/David_Seaman",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/David_Seaman.jpg/330px-David_Seaman.jpg",
+    "sourceFaceBox": [
+      22,
+      95,
+      190,
+      190
+    ]
+  },
+  {
+    "name": "Tim Flowers",
+    "path": "assets/faces/players/icon106-a295251e53cc7d.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1967-02-03",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Tim_Flowers",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Tim_Flowers_December_2020.png/330px-Tim_Flowers_December_2020.png",
+    "sourceFaceBox": [
+      61,
+      42,
+      188,
+      188
+    ]
+  },
+  {
+    "name": "Fernando Muslera",
+    "path": "assets/faces/players/icon106-21e4922b0d1e8a.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1986-06-16",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Fernando_Muslera",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Fernando_Muslera_in_2021.jpg/330px-Fernando_Muslera_in_2021.jpg",
+    "sourceFaceBox": [
+      145,
+      31,
+      68,
+      68
+    ]
+  },
+  {
+    "name": "Martín Silva",
+    "path": "assets/faces/players/icon106-3dae59f2b78ad8.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1983-03-25",
+    "source": "Wikipedia summary identity + public portrait, face crop; not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Mart%C3%ADn_Silva",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/2/25/Martin_Silva_cropped.jpg",
+    "sourceFaceBox": [
+      83,
+      70,
+      45,
+      45
+    ]
+  },
+  {
+    "name": "Diego Maradona",
+    "path": "assets/faces/players/icon106-f1f442c34e114f.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1960-10-30",
+    "source": "Named footballer Wikipedia page + existing sourced biography; largest central face crop, not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Diego_Maradona",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Argentina_celebrando_copa_%28cropped%29.jpg/330px-Argentina_celebrando_copa_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      89,
+      33,
+      114,
+      114
+    ]
+  },
+  {
+    "name": "Juan Sebastián Verón",
+    "path": "assets/faces/players/icon106-484c91790da7d8.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1975-03-09",
+    "source": "Named footballer Wikipedia page + existing sourced biography; largest central face crop, not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Juan_Sebasti%C3%A1n_Ver%C3%B3n",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Juan_Sebastian_Veron_2017.jpg/330px-Juan_Sebastian_Veron_2017.jpg",
+    "sourceFaceBox": [
+      158,
+      28,
+      49,
+      49
+    ]
+  },
+  {
+    "name": "Ruud van Nistelrooy",
+    "path": "assets/faces/players/icon106-60f3d7129065ee.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1976-07-01",
+    "source": "Named footballer Wikipedia page + existing sourced biography; largest central face crop, not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Ruud_van_Nistelrooy",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Ruud_van_Nistelrooy_2017.jpg/330px-Ruud_van_Nistelrooy_2017.jpg",
+    "sourceFaceBox": [
+      147,
+      56,
+      93,
+      93
+    ]
+  },
+  {
+    "name": "Rudi Völler",
+    "path": "assets/faces/players/icon106-30db5e75d7e8ef.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1960-04-13",
+    "source": "Named footballer Wikipedia page + existing sourced biography; largest central face crop, not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Rudi_V%C3%B6ller",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Rudi_V%C3%B6ller_B%C3%BChne_%28cropped%29.jpg/330px-Rudi_V%C3%B6ller_B%C3%BChne_%28cropped%29.jpg",
+    "sourceFaceBox": [
+      145,
+      45,
+      89,
+      89
+    ]
+  },
+  {
+    "name": "Emiliano Martínez",
+    "path": "assets/faces/players/icon106-844e1f8eabbfc8.webp",
+    "width": 256,
+    "height": 288,
+    "hasAlpha": true,
+    "dateOfBirth": "1992-09-02",
+    "source": "Named footballer Wikipedia page + existing sourced biography; largest central face crop, not a 3D scan",
+    "photoPage": "https://en.wikipedia.org/wiki/Emiliano_Mart%C3%ADnez",
+    "photoURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Emiliano_Martinez_Argentina_v_Spain_19_July_2026-269.jpg/330px-Emiliano_Martinez_Argentina_v_Spain_19_July_2026-269.jpg",
+    "sourceFaceBox": [
+      136,
+      42,
+      112,
+      112
+    ]
+  }
+]

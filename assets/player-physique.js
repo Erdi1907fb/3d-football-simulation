@@ -1,0 +1,7 @@
+/* Verified measurements affect rendering only; body width is a bounded visual estimate. */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.SekmePhysique=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const clip=(x,a,b)=>Math.max(a,Math.min(b,x)),BASE_HEIGHT=1.914;
+function metrics(value){const p=value?.physical||value||{},trusted=p.verifiedMeasurements===true,height=trusted&&Number.isFinite(p.heightCm)&&p.heightCm>=145&&p.heightCm<=215?p.heightCm:null,weight=trusted&&Number.isFinite(p.weightKg)&&p.weightKg>=40&&p.weightKg<=125?p.weightKg:null;if(height===null)return{heightCm:null,weightKg:weight,heightScale:1,widthScale:1,depthScale:1,source:'generic',estimatedWidth:false};const h=height/100,scale=h/BASE_HEIGHT,bmi=weight===null?null:weight/(h*h),width=clip(Math.pow(scale,.25)*(bmi===null?1:Math.sqrt(bmi/23)),.86,1.16);return{heightCm:height,weightKg:weight,heightScale:scale,widthScale:width,depthScale:clip(1+(width-1)*.85,.88,1.14),source:p.source||'verified-measurement',estimatedWidth:weight!==null};}
+function apply(actor,identity={}){if(actor.official)return;const provided=metrics(identity),m=provided.heightCm===null?metrics(actor.root.userData.physicalFallback):provided,key=[m.heightCm,m.weightKg,m.source].join('|');if(actor.physiqueKey===key)return;actor.physiqueKey=key;actor.body.scale.set(m.widthScale,m.heightScale,m.depthScale);actor.root.userData.physique=m;}
+return{metrics,apply,BASE_HEIGHT};
+});

@@ -1,0 +1,26 @@
+Open Football — ZOXEXIVO/open-football
+Author: Artemov Ivan (ZOXEXIVO) and contributors
+Source: https://github.com/ZOXEXIVO/open-football
+Pinned commit: 9bb183af844980ff0c398597868b635aff191674
+License: Apache-2.0 (included as LICENSE).
+
+Next90sim v93 modifies/translates selected SupportOffer and pass-safety
+algorithms into assets/open-football-adapter.js. Original Rust modules
+are included here. Metres, centered X/Z coordinates and a stateless API
+replace the original engine context and native coordinate system.
+Bounded support targets and pass utility integration are Next90sim changes.
+The complete Rust match engine is not included or running in this website.
+
+Next90sim v94 expands the selected ports: pressure intensity and counter-press
+weights; tactical phase windows; primary/cover/help defence; marker evasion;
+dribble space and duel score; through-ball lead/race/corridor; arrival and
+pursuit steering; rolling decay, timed pass flight; body contact and goal-net
+progressive damping. Original modules are included alongside this notice.
+Changes include metre/second conversions, bounded anticipation, calibrated
+net dimensions, documented role-attribute proxies and constrained replay
+integration. Contextual transition stories and keeper spill handling are
+Next90sim additions, not represented as verbatim Open Football modules.
+
+The default live-possession generator (assets/possession-engine.js) is a
+Next90sim integration using the selected ports. It is not an upstream Rust
+module or a claim that the complete native match engine has been compiled.

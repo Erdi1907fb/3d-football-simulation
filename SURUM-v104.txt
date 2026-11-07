@@ -1,0 +1,73 @@
+NEXT90SIM v104 — Ortak 3D dönüşüm / 6 Kasım 2026
+Temel: çalışan v103 web sürümü. Normal maç, özel konsept ve penaltı aynı
+iyileştirilmiş sahne, karakter, yüz ve render altyapısını kullanır.
+
+GÖRÜNÜM VE PERFORMANS
+• Alanı kapsayan tek yönlü ana ışık/gölge, gökyüzü dolgusu, serin kenar ışığı,
+  gece/gündüz dengesi; uygun WebGL2 cihazlarda HDR ara tampon, kenar yumuşatma,
+  ölçülü parlama ve ACES renk çıkışı. Destek yoksa güvenli doğrudan render.
+• Kameranın yakınında yüksek ayarda 72.000, dengelide 28.000 geometrik çim
+  yaprağı: tek instanced çizim, hafif rüzgâr, top taşıyan oyuncu çevresinde ezilme.
+• Formalara kumaş normal dokusu ve kırışıklık pürüzlülüğü; ten ve saçın ışık
+  tepkisi, top panel aralıkları ve dikiş görünümü düzenlendi. Forma atlasları korundu.
+• Uzak taraftarlar kendi tam vücut karakterimizden üretilmiş 28 poz/görünüm
+  atlasıyla çizilir. Yakındaki taraftarlar eklemli 3D kalır. Takım renkleri,
+  reaksiyonlar, dalgalanma ve iki tarafın kimliği korunur. Atlas yüklenemezse
+  mevcut 3D tribün devrededir. Kullanılmayan eski uzak instance tamponları bırakılır.
+• Karakterin aynı malzemeyi kullanan geometri grupları birleştirildi: saha
+  oyuncusunda 20→13, kalecide 20→14. Kemikler, morflar ve formalar korunur.
+• Ön izleme piksel oranı ve kalite üst sınırları gereksiz büyütmeyi önler.
+  Video dışa aktarımı 1080×1920 / 60 FPS olarak kalır.
+
+OYUN VE ANİMASYON
+• Top konumu, rol, takım yönü ve baskıya göre destek adayları puanlanır:
+  savunma emniyeti, pivot, iç koridor, ters kanat genişliği, bindirme, arka direk
+  koşusu ve üçüncü oyuncu desteği. Sabit birkaç yeni atak sahnesi listesi değildir.
+• Bağlantılı savunma/orta saha/ön hatlar, sınırlı presçi ve gol tarafında örtme;
+  topun ve ikinci son savunmacının hattına göre topsuz ofsayt korunması.
+• Öngörülü karşılıklı kaçınma, sınırlı gövde ayrıştırma ve içeri kapanan hızın
+  azaltılmasıyla üst üste binmeler azaltıldı. Koşu, topa bakış, alma dengesi,
+  kaleci hazırlık/iniş hareketleri geliştirildi. Penaltının bot–top temas kilidi
+  normal ve konsept maçtaki ayak vuruşlarına da bağlandı.
+• Bunlar mevcut sonuç koruyan özet motorunun geliştirilmesidir. Kesintisiz,
+  Football Manager düzeyinde bağımsız 90 dakikalık yeni motor olduğu iddia edilmez.
+
+YÜZ VE BAYRAK DÜZELTMELERİ
+• Fotoğraf ayrı hareket eden maske olarak çizilmez; doğrudan morflu/skinned
+  kafa malzemesine uygulanır. Fotoğraf üstündeki ikinci göz, kaş, dudak ve sakal
+  katmanları kaldırılır; kimlik değişince kaynak malzemeler geri alınır.
+  Bu gerçek 3D yüz taraması değildir; kaynak fotoğraf ve temel kafa sınırı sürer.
+• 248 yerel logo/bayrak yedeği pakete gömülü; katalogdaki 229 takımın hepsi
+  kapsanıyor. Geç gelen resim bayrak dokusunu yeniden uygular. Bozuk PSV PNG'si
+  mevcut geçerli resimden onarıldı. Rastgele arma çizilmedi.
+• Ederson–Uğurcan, takım–takım ve Messi–Ronaldo tarayıcı testinde logo/ülke
+  bayrağı dosyalarının istekleri engellendi; dört bayrağın da amblemi doluydu.
+  248 gömülü resim ayrıca çözümlendi. Boş bayrak hatasına karşı kaynak bağımlılığı
+  kaldırıldı; gelecekte her cihazda hiç hata olmayacağı garantisi verilmez.
+• Penaltı sayfasının eski v97 sunum betiğini yükleyip overlayLayout hatası
+  oluşturması düzeltildi. Aktif motor/sunum/yüz/sahne bağlantıları v104'e alındı.
+  Kazanan kamerası oyuncuları alt panellerin üzerinde tutar; vuruş açısı korundu.
+  Milli kaleci etiketi ve kaleci forması seçili ülkeyle eşleşir.
+
+TESTLER
+• Mevcut motor regresyonu: 500 seri, 18 maç, 432 sonlu örnek, 54 korunan gol.
+• 1.000 penaltı serisi / 10.915 vuruş / 65.490 top örneği; 443 erken bitiş,
+  296 tekli uzatma; farklı vuruş, kurtarış, aut ve direk sonuçları geçti.
+• 270 taktik hedefi, ayna simetrisi, karşılıklı kaçınma ve çakışma çözümü geçti.
+• 30 oyuncu / 360 kafa pozu; gerçek kafa malzemesi ve ekstra yüz katmanı yokluğu.
+• 3.350 tarihsel kadro kontrolü, Türkçe/İngilizce arama regresyonu geçti.
+• Gerçek Chromium yazılımsal WebGL2: normal sahne, takım penaltısı, Messi–Ronaldo
+  ve Ederson–Uğurcan çizimleri; shader/page hatası görülmedi.
+• Normal, Portekiz 2016–Arjantin 2022 konsepti ve penaltıdan ayrı ayrı gerçek
+  0,30 saniye / 18 kare MP4 üretildi. ffprobe: H.264 / yuv420p / 1080×1920 / 60 FPS.
+  Bunlar sessiz kısa kodlama problarıdır; tam uzunlukta sesli video ve gerçek
+  iPhone/Android indirme testi değildir. Mevcut kodlayıcı değiştirilmedi.
+• Örnek normal sahne üçgeni yaklaşık 9,28 milyondan 2,39 milyona indi (~%74).
+  Bunlar örnek sahne sayaçlarıdır; RTX FPS veya bütün kameralarda sabit kazanç değildir.
+
+KORUNANLAR VE SINIRLAR
+Tahmin/sonuç/golcü kayıtları, kadro verileri, arşiv, fikstür, API/cron,
+video kodlayıcı ve diğer stüdyolar korunur. Bu pakette yeni kadro/API doğrulaması
+yapılmadı. GPU/telefon performansı cihaza bağlıdır. Yüksek ayar hâlâ ağır olabilir;
+dengeli/düşük seçenekleri ve destek denetimli doğrudan render bulunur.
+Hostinger statik ZIP düzeni sürer; sürekli Node/Python servisi gerekmez.

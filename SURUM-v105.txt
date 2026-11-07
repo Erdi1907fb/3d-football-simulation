@@ -1,0 +1,66 @@
+NEXT90SIM v105 — Daha doğal futbol hareketi / 6 Kasım 2026
+Temel: v104. Aynı web projesi, Hostinger ZIP düzeni ve video altyapısı.
+
+BU SÜRÜMDE EKLENENLER
+• Oyuncuların sahanın diğer yönüne çevrildiği pozisyonlarda hız vektörü de
+  konumla birlikte çevrilir. Eski konum düzeltmelerinden kalan hız yönleri,
+  normal hareketlerde gerçek örneklenen yolun türevinden alınır. Böylece
+  animasyonun yürüyüş yönü ile oyuncunun ilerlediği yönün ayrılması azaltılır.
+  Bu yalnız sunum hızıdır; fizik çözümleyicinin kayıtları ve top yolu değiştirilmez.
+• Canlı pozisyon gelişiminde savunmacılar topu izleyerek yan adım/geri koşu
+  kullanabilir. Baktıkları yön ve hareket yönü ayrıdır; dönüş hızı sınırlıdır.
+• Hareket eden alıcı için pas hedefi uçuş süresine göre iteratif öngörülür.
+  Ara pas kimliği korunur, hedef geçerli ofsayt hattıyla sınırlanır.
+• Kısa pas sonrası uygun rol ve geometride tekrar destek koşusu; güvenli geri
+  pas yolu açıksa duvar pası olasılığı artar. Savunma emniyetindeki CB/GK bu
+  koşulara katılmaz. Önceden yazılmış sabit bir atak sahnesi dizisi değildir.
+• İlk kontrolde oyuncunun kontrol özelliği, hareketi ve rakibin baskı yönüne
+  göre karşılama süresi ve küçük kontrol dokunuşu hesaplanır. Top kazanıldığında
+  takım organizasyonu bir sonraki adımda yeniden değerlendirilir.
+• Topu karşılama ayağı sağ/sol bilgiyle eşleşir. Erişilebilir alçak topa
+  karşılama ayağı IK ile yaklaşır; üst gövde ve denge kolu eşlik eder.
+  Topu izleme, yan koşu dengesi ve geri koşu gövdesi geliştirildi.
+• File artık yalnız arka yüzeyde titreşmez: yan ve tavan yüzeyinde de
+  darbe noktasından yayılan sönümlü tepki vardır. Ağız ve taban sabittir;
+  direkler esnetilmez. Hıza göre genlik, yayılma gecikmesi ve sönüm hesaplanır.
+  Örnek kalede 7.668 tekrarlı uç yerine 3.843 benzersiz düğüm değerlendirilir;
+  çizim tek LineSegments olarak kalır. Bu yaklaşık %50 daha az dalga hesabıdır,
+  bütün oyunda %50 FPS artışı anlamına gelmez.
+• Saha yakından görünürken ayrıntı dokusunun ana çimi tamamen ezmesi önlendi.
+  Mowing şeritleri, çim dipleri ve gölge dolgusu daha yumuşak/okunaklı yapıldı.
+  Ana gölgede yumuşatma yarıçapı ayarlandı. Mevcut modeller, formalar, yüzler,
+  tribün, stadyum, yayın panelleri ve kamera açıları korunur.
+
+KAPSAM
+Normal ve özel konsept maçlar ortak gelişmiş maç/sahne kodunu kullanır.
+Penaltılar ortak saha, yüz, karşılama/gövde ve file geliştirmelerini kullanır;
+canlı pas ve takım savunması penaltı atışı sırasında çalıştırılmaz.
+Haftalık tablo videolarının tasarımı, mevcut tahmin/sonuç/golcü kayıtları,
+arşiv kadroları ve video kodlayıcı korunur. Veritabanı veya API yenilemesi yapılmadı.
+
+DOĞRULAMA
+• 500 geometrik karar örneği, 210 file örneği; taban/ağız sabit,
+  yan/tavan hareketli; aynı zaman yeniden örneklenince aynı sonuç.
+• Dört saha yönünde 328 hareket örneği: hız ve konum değişimi yönü uyumlu.
+• 18 maç / 432 sonlu örnek / 54 korunan gol / 81 canlı pozisyon açılışı.
+  Ek 500 penaltı serisinin matematiksel bitişi geçti.
+• 1.000 seri: 10.915 vuruş, 65.490 top örneği; 443 erken bitiş ve 296 uzatma.
+• 270 taktik hedefi, materyal grupları, karakter çakışması ve yükleme bağlantıları.
+• 30 oyuncu / 360 kafa pozu; v104 gerçek kafa yüzeyi çözümü korunuyor.
+• 3.350 tarihsel kadro, Türkçe/İngilizce arama kontrolü geçti.
+• Fenerbahçe–Liverpool 1–3 zaman çizelgesinde 11.635 olay/video örneği geçti.
+• Chromium yazılımsal WebGL2: dengeli normal sahne ve takım/kaleci/yıldız
+  penaltı düelloları çizildi; shader ve sayfa hatası kaydedilmedi.
+  Ederson–Uğurcan ve Messi–Ronaldo dahil resim istekleri engellenirken dört
+  bayrakta da amblem doğrulandı. 248 gömülü varlık/229 takım kapsamı korunur.
+• Son normal sahneden gerçek 0,10 sn / 6 kare 1080×1920, 60 FPS H.264 yuv420p
+  MP4 üretildi ve ffprobe ile doğrulandı. Bu kısa sessiz kodlama probudur;
+  tam uzunlukta sesli video veya gerçek telefon indirme testi değildir.
+
+SINIRLAR
+Bu, mevcut motorun üzerine bir sonraki gelişim adımıdır. Football Manager'a
+ulaşıldığı/aşıldığı veya tüm animasyonların yeniden yapıldığı iddia edilmez.
+Mevcut skor koruyan son vuruş çözümleyicisi sürer. Fotoğraf yüzleri gerçek 3D
+tarama değildir. Fiziksel iPhone/Android/RTX FPS ölçülmedi. Yüksek kalite hâlâ
+cihaza göre ağır olabilir; dengeli/düşük seçenekler ve güvenli render korunur.
+Geçmiş raporlar kendi sürümlerine aittir; güncel kanıtlar tests/*v105 dosyalarıdır.

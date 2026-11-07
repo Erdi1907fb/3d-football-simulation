@@ -1,0 +1,407 @@
+{
+  "build": 106,
+  "data": {
+    "guests": 100,
+    "nationalDefaultMappings": 100,
+    "guestPortraits": 89,
+    "portraitFallbackNames": [
+      "Rivaldo",
+      "Adriano",
+      "Ruud Gullit",
+      "Edgar Davids",
+      "Andrea Pirlo",
+      "Lukas Podolski",
+      "Xavi",
+      "Luís Figo",
+      "Nani",
+      "Paulo Futre",
+      "Luis Suárez"
+    ],
+    "historicalPortraitAliases": 310,
+    "leftFootSourceOverrides": [
+      "Rivaldo",
+      "Roberto Carlos",
+      "Diego Maradona",
+      "Adriano",
+      "Christian Vieri",
+      "Davor Šuker",
+      "Edgar Davids",
+      "Raúl",
+      "Paulo Futre"
+    ],
+    "eraPolicy": "same national squad year as selected historical reference; not a claim of current starting goalkeeper",
+    "penaltyQualityPolicy": "existing role/available-record model, no invented historical conversion rates",
+    "matchingHistoricalSquadRows": 1590
+  },
+  "field": {
+    "report": {
+      "remaster": {
+        "build": 106,
+        "lighting": "directional-key / sky-fill / stadium-rim",
+        "post": "HDR / edge AA / restrained bloom / ACES",
+        "grassInstances": 0,
+        "extraFieldDraws": 0,
+        "clothMaterials": 66,
+        "skinMaterials": 22,
+        "shadowMaps": 1,
+        "drawCalls": 1166,
+        "triangles": 1796960,
+        "surface": "continuous-PBR-turf"
+      },
+      "score": [
+        3,
+        1
+      ],
+      "recoveries": [
+        {
+          "minute": 31,
+          "plan": {
+            "kind": "outlet-pass",
+            "receiver": 21,
+            "target": {
+              "x": 18.15438610728188,
+              "z": -21.342129042552198,
+              "y": 0.11
+            },
+            "flight": 1.0745737123621657,
+            "arc": 0.1,
+            "out": false,
+            "pressure": 0.7961745629585315
+          },
+          "ending": "possession_recovered",
+          "scoring": false
+        }
+      ]
+    },
+    "errors": []
+  },
+  "penaltyBrowser": {
+    "reports": [
+      {
+        "lang": "en",
+        "defaults": 100,
+        "search": {
+          "visible": true,
+          "matches": [
+            "Cristiano Ronaldo · Al-Nassr",
+            "Ronaldinho · Brazil 2002",
+            "Ronaldo · Brazil 2002"
+          ],
+          "placeholder": "Search and choose…"
+        },
+        "cases": [
+          {
+            "names": [
+              "Lionel Messi",
+              "Cristiano Ronaldo"
+            ],
+            "keepers": [
+              "Emiliano Martínez",
+              "Diogo Costa"
+            ],
+            "selected": [
+              "Emiliano Martínez · Argentina",
+              "Diogo Costa · Portugal"
+            ],
+            "renderedKeeperNames": [
+              "Emiliano Martínez",
+              "Diogo Costa"
+            ],
+            "finished": true,
+            "flags": [
+              36,
+              36,
+              137,
+              137
+            ]
+          },
+          {
+            "names": [
+              "Zlatan Ibrahimović",
+              "Ronaldinho"
+            ],
+            "keepers": [
+              "Andreas Isaksson",
+              "Marcos"
+            ],
+            "selected": [
+              "Andreas Isaksson · Sweden · 2016",
+              "Marcos · Brazil · 2002"
+            ],
+            "renderedKeeperNames": [
+              "Andreas Isaksson",
+              "Marcos"
+            ],
+            "finished": true,
+            "flags": [
+              8,
+              8,
+              115,
+              115
+            ]
+          },
+          {
+            "names": [
+              "Eden Hazard",
+              "David Beckham"
+            ],
+            "keepers": [
+              "Thibaut Courtois",
+              "Paul Robinson"
+            ],
+            "selected": [
+              "Thibaut Courtois · Belgium · 2018",
+              "Paul Robinson · England · 2005"
+            ],
+            "renderedKeeperNames": [
+              "Thibaut Courtois",
+              "Paul Robinson"
+            ],
+            "finished": true,
+            "flags": [
+              15,
+              15,
+              25,
+              25
+            ]
+          }
+        ],
+        "manual": {
+          "keeper": "Ederson",
+          "value": "176948"
+        }
+      },
+      {
+        "lang": "tr",
+        "defaults": 100,
+        "search": {
+          "visible": true,
+          "matches": [
+            "Cristiano Ronaldo · Al-Nassr",
+            "Ronaldinho · Brazil 2002",
+            "Ronaldo · Brazil 2002"
+          ],
+          "placeholder": "Yaz ve sonuçlardan seç…"
+        },
+        "cases": [
+          {
+            "names": [
+              "Lionel Messi",
+              "Cristiano Ronaldo"
+            ],
+            "keepers": [
+              "Emiliano Martínez",
+              "Diogo Costa"
+            ],
+            "selected": [
+              "Emiliano Martínez · Arjantin",
+              "Diogo Costa · Portekiz"
+            ],
+            "renderedKeeperNames": [
+              "Emiliano Martínez",
+              "Diogo Costa"
+            ],
+            "finished": true,
+            "flags": [
+              36,
+              36,
+              137,
+              137
+            ]
+          },
+          {
+            "names": [
+              "Zlatan Ibrahimović",
+              "Ronaldinho"
+            ],
+            "keepers": [
+              "Andreas Isaksson",
+              "Marcos"
+            ],
+            "selected": [
+              "Andreas Isaksson · İsveç · 2016",
+              "Marcos · Brezilya · 2002"
+            ],
+            "renderedKeeperNames": [
+              "Andreas Isaksson",
+              "Marcos"
+            ],
+            "finished": true,
+            "flags": [
+              8,
+              8,
+              115,
+              115
+            ]
+          },
+          {
+            "names": [
+              "Eden Hazard",
+              "David Beckham"
+            ],
+            "keepers": [
+              "Thibaut Courtois",
+              "Paul Robinson"
+            ],
+            "selected": [
+              "Thibaut Courtois · Belçika · 2018",
+              "Paul Robinson · İngiltere · 2005"
+            ],
+            "renderedKeeperNames": [
+              "Thibaut Courtois",
+              "Paul Robinson"
+            ],
+            "finished": true,
+            "flags": [
+              15,
+              15,
+              25,
+              25
+            ]
+          }
+        ],
+        "manual": {
+          "keeper": "Ederson",
+          "value": "176948"
+        }
+      }
+    ],
+    "errors": []
+  },
+  "actualExport": {
+    "reports": [
+      {
+        "placement": {
+          "footY": [
+            1349.4838221321395,
+            1354.8611119506375
+          ],
+          "ribbon": {
+            "x": 40,
+            "y": 1396,
+            "scale": 0.8,
+            "right": 904,
+            "bottom": 1508
+          },
+          "keepers": [
+            "Emiliano Martínez",
+            "Diogo Costa"
+          ],
+          "actualKeeper": "Diogo Costa",
+          "opposite": {
+            "name": "Emiliano Martínez",
+            "photo": true
+          }
+        },
+        "encoded": {
+          "bytes": 340913,
+          "ready": true
+        }
+      }
+    ],
+    "errors": []
+  },
+  "sameClubAndSharedKeeper": {
+    "reports": [
+      {
+        "cases": [
+          {
+            "mode": "duel",
+            "names": [
+              "Lionel Messi",
+              "Cristiano Ronaldo"
+            ],
+            "keepers": [
+              "Emiliano Martínez",
+              "Diogo Costa"
+            ],
+            "finished": true
+          },
+          {
+            "mode": "team",
+            "names": [
+              "Romelu Lukaku",
+              "Romelu Lukaku"
+            ],
+            "keepers": [
+              "Ederson",
+              "Ederson"
+            ],
+            "finished": true
+          },
+          {
+            "mode": "shared",
+            "names": [
+              "Lionel Messi",
+              "Lionel Messi"
+            ],
+            "keepers": [
+              "Emiliano Martínez",
+              "Emiliano Martínez"
+            ],
+            "finished": true
+          },
+          {
+            "mode": "outfield",
+            "names": [
+              "Lionel Messi",
+              "Cristiano Ronaldo"
+            ],
+            "keepers": [
+              "Nélson Semedo",
+              "Diogo Costa"
+            ],
+            "finished": true
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "codec": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "60/1",
+    "duration": "0.100000",
+    "nb_frames": "6"
+  },
+  "recoveryLive": {
+    "PASS": true,
+    "plans": [
+      {
+        "kind": "outlet-pass",
+        "out": false,
+        "received": true,
+        "ending": "possession_recovered"
+      },
+      {
+        "kind": "carry",
+        "out": false,
+        "received": false,
+        "ending": "possession_recovered"
+      },
+      {
+        "kind": "forward-space",
+        "out": false,
+        "received": false,
+        "ending": "possession_recovered"
+      },
+      {
+        "kind": "forward-space",
+        "out": false,
+        "received": false,
+        "ending": "possession_recovered"
+      },
+      {
+        "kind": "emergency-clearance",
+        "out": true,
+        "received": false,
+        "ending": "clearance_out"
+      }
+    ],
+    "samples": 535
+  },
+  "environment": "Chromium 131 software WebGL2; short silent encode probe; no physical mobile/RTX benchmark"
+}

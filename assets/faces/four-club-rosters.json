@@ -1,0 +1,1718 @@
+{
+  "version": 1,
+  "description": "Current source roster identities and explicitly supplied measurements. Missing values stay null; no synthesized measurements.",
+  "teams": [
+    {
+      "id": "galatasaray",
+      "name": "Galatasaray",
+      "providerTeamId": "432",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/teams/432/roster",
+      "retrievedAt": "2026-10-23",
+      "players": [
+        {
+          "id": "217267",
+          "name": "Günay Güvenc",
+          "number": "19",
+          "position": "G",
+          "heightCm": 188.0,
+          "weightKg": 83.0,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 183.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "222922",
+          "name": "Ugurcan Çakir",
+          "number": "1",
+          "position": "G",
+          "heightCm": 190.5,
+          "weightKg": 83.9,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 185.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "324895",
+          "name": "Jankat Yilmaz",
+          "number": "24",
+          "position": "G",
+          "heightCm": 193.0,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "407654",
+          "name": "Enes Büyük",
+          "number": "70",
+          "position": "G",
+          "heightCm": 188.0,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "415732",
+          "name": "Arda Yilmaz",
+          "number": "60",
+          "position": "G",
+          "heightCm": 188.0,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "159146",
+          "name": "Kaan Ayhan",
+          "number": "23",
+          "position": "D",
+          "heightCm": 185.4,
+          "weightKg": 87.1,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 192.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "193149",
+          "name": "Abdülkerim Bardakçi",
+          "number": "42",
+          "position": "D",
+          "heightCm": 185.4,
+          "weightKg": 91.2,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 201.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "197105",
+          "name": "Davinson Sánchez",
+          "number": "6",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 82.1,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 181.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "268796",
+          "name": "Ismail Jakobs",
+          "number": "4",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "286569",
+          "name": "Wilfried Singo",
+          "number": "90",
+          "position": "D",
+          "heightCm": 190.5,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "287678",
+          "name": "Eren Elmali",
+          "number": "17",
+          "position": "D",
+          "heightCm": 180.3,
+          "weightKg": 77.1,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 170.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "301345",
+          "name": "Kazimcan Karatas",
+          "number": "88",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "304740",
+          "name": "El Chadaille Bitshiabu",
+          "number": "3",
+          "position": "D",
+          "heightCm": 195.6,
+          "weightKg": 93.9,
+          "sourceMeasurements": {
+            "heightInches": 77.0,
+            "weightPounds": 207.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "357512",
+          "name": "Arda Ünyay",
+          "number": "91",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "131424",
+          "name": "Ilkay Gündogan",
+          "number": "20",
+          "position": "M",
+          "heightCm": 180.3,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "181729",
+          "name": "Mario Lemina",
+          "number": "99",
+          "position": "M",
+          "heightCm": 182.9,
+          "weightKg": 83.9,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 185.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "212973",
+          "name": "Lucas Torreira",
+          "number": "34",
+          "position": "M",
+          "heightCm": 165.1,
+          "weightKg": 64.0,
+          "sourceMeasurements": {
+            "heightInches": 65.0,
+            "weightPounds": 141.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "268478",
+          "name": "Gabriel Gomes",
+          "number": "8",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "309563",
+          "name": "Lesley Ugochukwu",
+          "number": "18",
+          "position": "M",
+          "heightCm": 190.5,
+          "weightKg": 72.1,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 159.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "346757",
+          "name": "Eyüp Aydin",
+          "number": "5",
+          "position": "M",
+          "heightCm": 180.3,
+          "weightKg": 62.1,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 137.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "355113",
+          "name": "Alexey Batrakov",
+          "number": "83",
+          "position": "M",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "400113",
+          "name": "Furkan Koçak",
+          "number": null,
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "402986",
+          "name": "Renato Nhaga",
+          "number": "74",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 66.2,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 146.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "415122",
+          "name": "Eyüp Karasu",
+          "number": null,
+          "position": "M",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "202641",
+          "name": "Leroy Sané",
+          "number": "10",
+          "position": "F",
+          "heightCm": 182.9,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "219444",
+          "name": "Roland Sallai",
+          "number": "7",
+          "position": "F",
+          "heightCm": 182.9,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "228296",
+          "name": "Victor Osimhen",
+          "number": "45",
+          "position": "F",
+          "heightCm": 185.4,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "258917",
+          "name": "Rafael Leão",
+          "number": "27",
+          "position": "F",
+          "heightCm": 188.0,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "266575",
+          "name": "Yunus Akgün",
+          "number": "11",
+          "position": "F",
+          "heightCm": 172.7,
+          "weightKg": 72.1,
+          "sourceMeasurements": {
+            "heightInches": 68.0,
+            "weightPounds": 159.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "322538",
+          "name": "Baris Alper Yilmaz",
+          "number": "53",
+          "position": "F",
+          "heightCm": 185.4,
+          "weightKg": 86.2,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 190.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "350513",
+          "name": "Deniz Gül",
+          "number": "21",
+          "position": "F",
+          "heightCm": 190.5,
+          "weightKg": 82.1,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 181.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "392690",
+          "name": "Berat Lus",
+          "number": "76",
+          "position": "F",
+          "heightCm": 177.8,
+          "weightKg": 68.9,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 152.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "403895",
+          "name": "Can Güner",
+          "number": "29",
+          "position": "F",
+          "heightCm": 177.8,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "407331",
+          "name": "Ada Yüzgec",
+          "number": null,
+          "position": "F",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        }
+      ]
+    },
+    {
+      "id": "fenerbahce",
+      "name": "Fenerbahce",
+      "providerTeamId": "436",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/teams/436/roster",
+      "retrievedAt": "2026-10-23",
+      "players": [
+        {
+          "id": "124880",
+          "name": "Mert Günok",
+          "number": "34",
+          "position": "G",
+          "heightCm": 195.6,
+          "weightKg": 92.1,
+          "sourceMeasurements": {
+            "heightInches": 77.0,
+            "weightPounds": 203.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "176948",
+          "name": "Ederson",
+          "number": "31",
+          "position": "G",
+          "heightCm": 188.0,
+          "weightKg": 88.9,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 196.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "275128",
+          "name": "Tarik Cetin",
+          "number": "13",
+          "position": "G",
+          "heightCm": 193.0,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "3126788",
+          "name": "Kuzey Sapaz",
+          "number": "75",
+          "position": "G",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "159248",
+          "name": "Nathan Aké",
+          "number": "15",
+          "position": "D",
+          "heightCm": 180.3,
+          "weightKg": 83.0,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 183.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "175195",
+          "name": "Milan Skriniar",
+          "number": "37",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 83.0,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 183.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "222670",
+          "name": "Nélson Semedo",
+          "number": "27",
+          "position": "D",
+          "heightCm": 177.8,
+          "weightKg": 66.2,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 146.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "266002",
+          "name": "Mert Müldür",
+          "number": "18",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "290511",
+          "name": "Munir Mercan",
+          "number": "22",
+          "position": "D",
+          "heightCm": 175.3,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "304866",
+          "name": "Jayden Oosterwolde",
+          "number": "24",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 81.2,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 179.0
+          },
+          "portrait": {
+            "path": "assets/faces/portraits/304866.webp",
+            "source": "https://a.espncdn.com/i/headshots/soccer/players/full/304866.png",
+            "width": 256,
+            "height": 186,
+            "sourceSha256": "06530a30ef0cffc34221e9ab0d29ac38db76cab62da82f82b3469bcd138c51f9"
+          }
+        },
+        {
+          "id": "320982",
+          "name": "Archie Brown",
+          "number": "3",
+          "position": "D",
+          "heightCm": 190.5,
+          "weightKg": 86.2,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 190.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "340186",
+          "name": "Yiğit Demir",
+          "number": "14",
+          "position": "D",
+          "heightCm": 193.0,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "357205",
+          "name": "Kojo Peprah Oppong",
+          "number": "21",
+          "position": "D",
+          "heightCm": 185.4,
+          "weightKg": 77.1,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 170.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "380332",
+          "name": "Ognjen Mimovic",
+          "number": "77",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "173556",
+          "name": "N'Golo Kanté",
+          "number": "91",
+          "position": "M",
+          "heightCm": 167.6,
+          "weightKg": 68.9,
+          "sourceMeasurements": {
+            "heightInches": 66.0,
+            "weightPounds": 152.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "195821",
+          "name": "Marco Asensio",
+          "number": "10",
+          "position": "M",
+          "heightCm": 182.9,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "211923",
+          "name": "Irfan Can Kahveci",
+          "number": "17",
+          "position": "M",
+          "heightCm": 180.3,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "248676",
+          "name": "Matteo Guendouzi",
+          "number": "6",
+          "position": "M",
+          "heightCm": 185.4,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "261302",
+          "name": "Mert Yandas",
+          "number": "8",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "305629",
+          "name": "Ismail Yüksek",
+          "number": "5",
+          "position": "M",
+          "heightCm": 182.9,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "311984",
+          "name": "Bartug Elmaz",
+          "number": "28",
+          "position": "M",
+          "heightCm": 177.8,
+          "weightKg": 72.1,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 159.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "139437",
+          "name": "Romelu Lukaku",
+          "number": "9",
+          "position": "F",
+          "heightCm": 190.5,
+          "weightKg": 102.1,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 225.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "240209",
+          "name": "Vedat Muriqi",
+          "number": "19",
+          "position": "F",
+          "heightCm": 193.0,
+          "weightKg": 92.1,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 203.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "276221",
+          "name": "Mason Greenwood",
+          "number": "11",
+          "position": "F",
+          "heightCm": 180.3,
+          "weightKg": 68.9,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 152.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "306789",
+          "name": "Kerem Aktürkoglu",
+          "number": "7",
+          "position": "F",
+          "heightCm": 172.7,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 68.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "322813",
+          "name": "Oguz Aydin",
+          "number": "70",
+          "position": "F",
+          "heightCm": 182.9,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "329486",
+          "name": "Nene Dorgeles",
+          "number": "45",
+          "position": "F",
+          "heightCm": 175.3,
+          "weightKg": 62.1,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 137.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "416476",
+          "name": "Alaettin Ekici",
+          "number": "54",
+          "position": "F",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        }
+      ]
+    },
+    {
+      "id": "barcelona",
+      "name": "Barcelona",
+      "providerTeamId": "83",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/83/roster",
+      "retrievedAt": "2026-10-23",
+      "players": [
+        {
+          "id": "131634",
+          "name": "Wojciech Szczesny",
+          "number": "13",
+          "position": "G",
+          "heightCm": 195.6,
+          "weightKg": 96.2,
+          "sourceMeasurements": {
+            "heightInches": 77.0,
+            "weightPounds": 212.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "187946",
+          "name": "Dominik Livakovic",
+          "number": "25",
+          "position": "G",
+          "heightCm": 188.0,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "297362",
+          "name": "Joan García",
+          "number": "1",
+          "position": "G",
+          "heightCm": 193.0,
+          "weightKg": 83.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 185.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "403576",
+          "name": "Iker Rodríguez",
+          "number": "35",
+          "position": "G",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "403587",
+          "name": "Eder Aller",
+          "number": "31",
+          "position": "G",
+          "heightCm": 193.0,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "94947",
+          "name": "Álex Campos",
+          "number": null,
+          "position": "D",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "128714",
+          "name": "Eric García",
+          "number": "24",
+          "position": "D",
+          "heightCm": 180.3,
+          "weightKg": 77.1,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 170.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "176399",
+          "name": "João Cancelo",
+          "number": "2",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "186430",
+          "name": "Andreas Christensen",
+          "number": "15",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 83.0,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 183.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "231692",
+          "name": "Jules Koundé",
+          "number": "23",
+          "position": "D",
+          "heightCm": 180.3,
+          "weightKg": 83.0,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 183.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "312015",
+          "name": "Gerard Martín",
+          "number": "18",
+          "position": "D",
+          "heightCm": 185.4,
+          "weightKg": 82.1,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 181.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "323703",
+          "name": "Alejandro Balde",
+          "number": "3",
+          "position": "D",
+          "heightCm": 177.8,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "368992",
+          "name": "Pau Cubarsí",
+          "number": "5",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "403582",
+          "name": "Xavi Espart",
+          "number": "12",
+          "position": "D",
+          "heightCm": 175.3,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "416511",
+          "name": "Jordi Pesquer",
+          "number": "33",
+          "position": "D",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "219022",
+          "name": "Frenkie de Jong",
+          "number": "21",
+          "position": "M",
+          "heightCm": 180.3,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "227765",
+          "name": "Dani Olmo",
+          "number": "20",
+          "position": "M",
+          "heightCm": 182.9,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "231828",
+          "name": "Rodri",
+          "number": "16",
+          "position": "M",
+          "heightCm": 190.5,
+          "weightKg": 88.9,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 196.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "250465",
+          "name": "Pedri",
+          "number": "8",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "323702",
+          "name": "Gavi",
+          "number": "6",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "354334",
+          "name": "Fermín López",
+          "number": "7",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "376423",
+          "name": "Marc Bernal",
+          "number": "22",
+          "position": "M",
+          "heightCm": 193.0,
+          "weightKg": 87.1,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 192.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "403575",
+          "name": "Brian Fariñas",
+          "number": "4",
+          "position": "M",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "217289",
+          "name": "Gabriel Jesus",
+          "number": "9",
+          "position": "F",
+          "heightCm": 175.3,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "231050",
+          "name": "Raphinha",
+          "number": "11",
+          "position": "F",
+          "heightCm": 175.3,
+          "weightKg": 63.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 139.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "268782",
+          "name": "Anthony Gordon",
+          "number": "17",
+          "position": "F",
+          "heightCm": 182.9,
+          "weightKg": 72.1,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 159.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "274913",
+          "name": "Karim Adeyemi",
+          "number": "14",
+          "position": "F",
+          "heightCm": 180.3,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "331152",
+          "name": "Roony Bardghji",
+          "number": "19",
+          "position": "F",
+          "heightCm": 172.7,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 68.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "362150",
+          "name": "Lamine Yamal",
+          "number": "10",
+          "position": "F",
+          "heightCm": 177.8,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "365318",
+          "name": "Jesse Bisiwu",
+          "number": "27",
+          "position": "F",
+          "heightCm": 180.3,
+          "weightKg": 66.2,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 146.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "399200",
+          "name": "Hamza Abdelkarim",
+          "number": "29",
+          "position": "F",
+          "heightCm": 182.9,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        }
+      ]
+    },
+    {
+      "id": "real-madrid",
+      "name": "Real Madrid",
+      "providerTeamId": "86",
+      "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/86/roster",
+      "retrievedAt": "2026-10-23",
+      "players": [
+        {
+          "id": "84349",
+          "name": "Javier Navarro",
+          "number": "31",
+          "position": "G",
+          "heightCm": 180.3,
+          "weightKg": 74.8,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 165.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "134283",
+          "name": "Thibaut Courtois",
+          "number": "1",
+          "position": "G",
+          "heightCm": 200.7,
+          "weightKg": 96.2,
+          "sourceMeasurements": {
+            "heightInches": 79.0,
+            "weightPounds": 212.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "257237",
+          "name": "Andriy Lunin",
+          "number": "13",
+          "position": "G",
+          "heightCm": 190.5,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "350351",
+          "name": "Sergio Mestre",
+          "number": "26",
+          "position": "G",
+          "heightCm": 193.0,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 174.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "169438",
+          "name": "Antonio Rüdiger",
+          "number": "22",
+          "position": "D",
+          "heightCm": 190.5,
+          "weightKg": 83.9,
+          "sourceMeasurements": {
+            "heightInches": 75.0,
+            "weightPounds": 185.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "213248",
+          "name": "Denzel Dumfries",
+          "number": "24",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 78.9,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 174.0
+          },
+          "portrait": {
+            "path": "assets/faces/portraits/213248.webp",
+            "source": "https://a.espncdn.com/i/headshots/soccer/players/full/213248.png",
+            "width": 256,
+            "height": 186,
+            "sourceSha256": "b7413d984c10f8ecdae626e9f3474f51d114d9b78ff4b882fa7ffbb3cf64c70a"
+          }
+        },
+        {
+          "id": "217475",
+          "name": "Ferland Mendy",
+          "number": "23",
+          "position": "D",
+          "heightCm": 180.3,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "223532",
+          "name": "Trent Alexander-Arnold",
+          "number": "12",
+          "position": "D",
+          "heightCm": 175.3,
+          "weightKg": 67.1,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 148.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "228402",
+          "name": "Éder Militão",
+          "number": "3",
+          "position": "D",
+          "heightCm": 185.4,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "251634",
+          "name": "Ibrahima Konaté",
+          "number": "16",
+          "position": "D",
+          "heightCm": 193.0,
+          "weightKg": 93.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 207.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "259910",
+          "name": "Marc Cucurella",
+          "number": "17",
+          "position": "D",
+          "heightCm": 175.3,
+          "weightKg": 66.2,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 146.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "310637",
+          "name": "Álvaro Carreras",
+          "number": "18",
+          "position": "D",
+          "heightCm": 185.4,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "330352",
+          "name": "Mario Rivas",
+          "number": "33",
+          "position": "D",
+          "heightCm": 188.0,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "356000",
+          "name": "Dean Huijsen",
+          "number": "4",
+          "position": "D",
+          "heightCm": 195.6,
+          "weightKg": 87.1,
+          "sourceMeasurements": {
+            "heightInches": 77.0,
+            "weightPounds": 192.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "388338",
+          "name": "Raúl Asencio",
+          "number": "2",
+          "position": "D",
+          "heightCm": 182.9,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "388339",
+          "name": "Joan Martínez",
+          "number": "30",
+          "position": "D",
+          "heightCm": 193.0,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 76.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "405544",
+          "name": "Jesús Fortea",
+          "number": "28",
+          "position": "D",
+          "heightCm": 175.3,
+          "weightKg": 62.1,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 137.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "199833",
+          "name": "Bernardo Silva",
+          "number": "20",
+          "position": "M",
+          "heightCm": 172.7,
+          "weightKg": 63.0,
+          "sourceMeasurements": {
+            "heightInches": 68.0,
+            "weightPounds": 139.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "235818",
+          "name": "Federico Valverde",
+          "number": "8",
+          "position": "M",
+          "heightCm": 182.9,
+          "weightKg": 78.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 172.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "246532",
+          "name": "Brahim Díaz",
+          "number": "21",
+          "position": "M",
+          "heightCm": 170.2,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 67.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "265919",
+          "name": "Aurélien Tchouaméni",
+          "number": "14",
+          "position": "M",
+          "heightCm": 188.0,
+          "weightKg": 81.2,
+          "sourceMeasurements": {
+            "heightInches": 74.0,
+            "weightPounds": 179.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "285150",
+          "name": "Eduardo Camavinga",
+          "number": "6",
+          "position": "M",
+          "heightCm": 182.9,
+          "weightKg": 68.0,
+          "sourceMeasurements": {
+            "heightInches": 72.0,
+            "weightPounds": 150.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "291281",
+          "name": "Jude Bellingham",
+          "number": "5",
+          "position": "M",
+          "heightCm": 185.4,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "310452",
+          "name": "Arda Güler",
+          "number": "15",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 67.1,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 148.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "409019",
+          "name": "Thiago Pitarch",
+          "number": "27",
+          "position": "M",
+          "heightCm": 175.3,
+          "weightKg": 66.2,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 146.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "409318",
+          "name": "Sergio Martínez",
+          "number": "38",
+          "position": "M",
+          "heightCm": 185.4,
+          "weightKg": 77.1,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 170.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "415478",
+          "name": "Jorge Cestero",
+          "number": "29",
+          "position": "M",
+          "heightCm": 180.3,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "3117407",
+          "name": "Alexis Ciria",
+          "number": "36",
+          "position": "M",
+          "heightCm": null,
+          "weightKg": null,
+          "sourceMeasurements": {
+            "heightInches": null,
+            "weightPounds": null
+          },
+          "portrait": null
+        },
+        {
+          "id": "231388",
+          "name": "Kylian Mbappé",
+          "number": "10",
+          "position": "F",
+          "heightCm": 177.8,
+          "weightKg": 73.9,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 163.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "252107",
+          "name": "Vinícius Júnior",
+          "number": "7",
+          "position": "F",
+          "heightCm": 175.3,
+          "weightKg": 77.1,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 170.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "267804",
+          "name": "Rodrygo",
+          "number": "11",
+          "position": "F",
+          "heightCm": 175.3,
+          "weightKg": 63.0,
+          "sourceMeasurements": {
+            "heightInches": 69.0,
+            "weightPounds": 139.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "346612",
+          "name": "Endrick",
+          "number": "9",
+          "position": "F",
+          "heightCm": 172.7,
+          "weightKg": 67.1,
+          "sourceMeasurements": {
+            "heightInches": 68.0,
+            "weightPounds": 148.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "376422",
+          "name": "Daniel Yañez",
+          "number": "35",
+          "position": "F",
+          "heightCm": 177.8,
+          "weightKg": 73.0,
+          "sourceMeasurements": {
+            "heightInches": 70.0,
+            "weightPounds": 161.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "380286",
+          "name": "Carlos Espí",
+          "number": "19",
+          "position": "F",
+          "heightCm": 185.4,
+          "weightKg": 88.9,
+          "sourceMeasurements": {
+            "heightInches": 73.0,
+            "weightPounds": 196.0
+          },
+          "portrait": null
+        },
+        {
+          "id": "402479",
+          "name": "Yan Diomande",
+          "number": "25",
+          "position": "F",
+          "heightCm": 180.3,
+          "weightKg": 76.2,
+          "sourceMeasurements": {
+            "heightInches": 71.0,
+            "weightPounds": 168.0
+          },
+          "portrait": null
+        }
+      ]
+    }
+  ]
+}

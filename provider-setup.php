@@ -1,0 +1,24 @@
+<?php
+declare(strict_types=1);
+require __DIR__.'/server/lib.php';
+header('Cache-Control: no-store, private');header('X-Content-Type-Options: nosniff');header('Referrer-Policy: no-referrer');header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'");
+$en=($_GET['lang']??'')==='en';$tr=fn($a,$b)=>$en?$b:$a;$cfg=pp_config();$error='';$saved=false;
+session_set_cookie_params(['httponly'=>true,'secure'=>!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off','samesite'=>'Strict']);session_start();$_SESSION['bsd_setup_csrf']??=bin2hex(random_bytes(24));
+// Only the account key used for this installation may claim the initial setup.
+$expected=require __DIR__.'/server/bsd-installation.php';
+if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
+ try{
+  if(bsd_key($cfg)!=='')throw new RuntimeException($tr('Bağlantı zaten kurulmuş.','Connection is already configured.'));
+  if(empty($_SERVER['HTTPS'])||$_SERVER['HTTPS']==='off')throw new RuntimeException($tr('Bu sayfayı HTTPS adresinden aç.','Open this page over HTTPS.'));
+  if(!is_string($_POST['csrf']??null)||!hash_equals($_SESSION['bsd_setup_csrf'],$_POST['csrf']))throw new RuntimeException('Session expired');
+  if(($_SERVER['HTTP_SEC_FETCH_SITE']??'')==='cross-site')throw new RuntimeException('Same site only');
+  if(isset($_SERVER['HTTP_ORIGIN'])&&strcasecmp(parse_url($_SERVER['HTTP_ORIGIN'],PHP_URL_HOST)??'',explode(':',$_SERVER['HTTP_HOST']??'')[0])!==0)throw new RuntimeException('Same site only');
+  $key=is_string($_POST['key']??null)?trim($_POST['key']):'';
+  if(!preg_match('/^[a-zA-Z0-9_-]{32,160}$/D',$key)||!hash_equals($expected,hash('sha256',$key)))throw new RuntimeException($tr('Bu kurulum için verilen API anahtarıyla eşleşmiyor.','This does not match the API key supplied for this installation.'));
+  $test=$cfg;$test['bsd_api_key']=$key;$now=new DateTimeImmutable('now');bsd_json('/api/v2/leagues/?limit=200',$test,$now,0);pp_write($cfg['storage_dir'].'/bsd-credentials.json',['key'=>$key,'configuredAt'=>$now->format(DATE_ATOM)]);$key='';$saved=true;
+ }catch(Throwable $e){$error=$e->getMessage();}
+}
+$configured=bsd_key($cfg)!=='';$h=fn($s)=>htmlspecialchars($s,ENT_QUOTES,'UTF-8');$faces=pp_read(__DIR__.'/assets/faces/player-portraits.json')['summary']??[];
+?><!doctype html><html lang="<?=$en?'en':'tr'?>"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Next90 Sim · API</title><style>body{font:17px Arial;background:#0b1b25;color:#ecf6fc;margin:0;padding:24px}main{max-width:650px;margin:40px auto;padding:28px;border:1px solid #355160;border-radius:16px;background:#142c39}h1{font-size:30px}p{line-height:1.6}a{color:#b7e7f5}input{box-sizing:border-box;width:100%;padding:14px;background:#071721;border:1px solid #466a7b;color:white;border-radius:8px;font:inherit;margin:12px 0}button{padding:14px 20px;background:#b5e8cf;border:0;border-radius:8px;font-weight:bold;font-size:17px}.good{color:#9be4bc}.error{color:#ffaaaa}</style></head><body><main><a href="index.html"><?=$h($tr('Ana sayfa','Home'))?></a><h1>Next90 Sim · <?=$h($tr('Veri bağlantısı','Data connection'))?></h1>
+<?php if($configured):?><p class="good"><?=$h($tr('API bağlantısı yapılandırıldı. Anahtar ziyaretçilere gösterilmez.','API connection configured. The key is not exposed to visitors.'))?></p><p><?=$h($tr('Mevcut cron görevi veri güncellemelerini yürütür. İkinci bir cron ekleme.','The existing cron task runs the data updates. Do not add a second cron.'))?></p><?php else:?><p><?=$h($tr('API anahtarını bir kez buraya gir. Korunan veri klasörüne kaydedilir; site güncellemesi sırasında config.php değiştirmen gerekmez.','Enter your API key once. It is saved in protected storage; no config.php change is needed.'))?></p><form method="post"><input type="hidden" name="csrf" value="<?=$h($_SESSION['bsd_setup_csrf'])?>"><label for="key">API key</label><input id="key" type="password" name="key" autocomplete="off" spellcheck="false" required minlength="32" maxlength="160"><button type="submit"><?=$h($tr('Bağlantıyı kur','Connect'))?></button></form><?php endif;?>
+<?php if($error):?><p class="error" role="alert"><?=$h($error)?></p><?php endif;?><p><?=$h($tr('Paketteki yüzler: ','Faces included: '))?><?=(int)($faces['downloaded']??0)?> / <?=(int)($faces['players']??0)?></p><p><?=$h($tr('Çelişkili teknik direktör bilgisi otomatik uygulanmaz. Kesin kadro ile tahmini kadro ayrı tutulur.','Conflicting manager data is not automatically applied. Confirmed and predicted lineups remain separate.'))?></p><p><a href="face-coverage.html<?=$en?'?lang=en':''?>"><?=$h($tr('Takım ve oyuncu yüz kapsamı','Club and player face coverage'))?></a></p><a href="setup.php"><?=$h($tr('Güncelleme durumunu kontrol et','Check update status'))?></a></main></body></html>

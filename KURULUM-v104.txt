@@ -1,0 +1,10 @@
+NEXT90SIM v104 KURULUM
+ZIP içeriğini mevcut public_html köküne dosyaların üzerine çıkar.
+Önce mevcut sitenin yedeğini al; özel config.php, sunucudaki veri kayıtları,
+hazır videolar ve state dosyalarını silme. ZIP içinde kök klasör katmanı yoktur.
+Yükleme bitince Hostinger/CDN önbelleğini temizleyip sayfayı sert yenile.
+Ana sayfa: index.php / index.html. Penaltı: penalty.html.
+Kontrol: build.php → build:104, filesMatch:true. false ise mismatches listesindeki
+dosyalar eksik/eski kalmış olabilir; tam ZIP'i yeniden üzerine çıkar.
+Doğrudan sürüm adresleri: next90sim-v104.html, penalty-v104.html.
+Mevcut cron ayarlarını değiştirmek veya yeni Node servisi kurmak gerekmez.

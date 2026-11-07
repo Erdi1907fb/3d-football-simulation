@@ -1,0 +1,15 @@
+/* Metres, seconds. Shared deterministic movement: acceleration, braking and turn radius. */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.SekmePlayerMotion=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function velocity(p,desired,profile,energy,dt){const vx=p.vx||0,vz=p.vz||0,speed=Math.hypot(vx,vz),want=Math.hypot(desired.x,desired.z),pace=(profile?.pace|| (p.keeper?4.7:6.4))*(.83+.17*energy);let x=desired.x,z=desired.z;if(want>pace){x*=pace/want;z*=pace/want;}
+ const base=(profile?.acceleration||8.5)*energy;if(speed<.2){const d=Math.hypot(x-vx,z-vz),k=d?Math.min(1,base*dt/d):0;return{x:vx+(x-vx)*k,z:vz+(z-vz)*k};}
+ const nx=vx/speed,nz=vz/speed,forward=(x-vx)*nx+(z-vz)*nz,side=-(x-vx)*nz+(z-vz)*nx,accel=base*(1-.28*clamp(speed/Math.max(1,pace),0,1)),brake=base*1.22,lateral=base*(.70-.22*clamp(speed/Math.max(1,pace),0,1)),a=clamp(forward,-brake*dt,accel*dt),b=clamp(side,-lateral*dt,lateral*dt);let ax=nx*a-nz*b,az=nz*a+nx*b;
+ const max=base*1.22*dt,n=Math.hypot(ax,az);if(n>max){ax*=max/n;az*=max/n;}const out={x:vx+ax,z:vz+az},v=Math.hypot(out.x,out.z);if(v>pace){out.x*=pace/v;out.z*=pace/v;}return out;}
+function ballAtFoot(p){const speed=Math.hypot(p.vx||0,p.vz||0),moving=clamp(speed/5,0,1),cycle=((p.travel||0)/1.85)%1,release=.5-.5*Math.cos(cycle*Math.PI*2),reach=.28+moving*(.12+.38*release),heading=p.heading||0,foot=Math.sin(cycle*Math.PI*2+(p.id||0)*Math.PI)*(.045+moving*.025);return{x:p.x+Math.sin(heading)*reach+Math.cos(heading)*foot,z:p.z+Math.cos(heading)*reach-Math.sin(heading)*foot,y:.11};}
+function turnLean(p,prior,dt=.08){const speed=Math.hypot(p.vx||0,p.vz||0);if(speed<.5||!prior)return 0;const ax=(p.vx-prior.vx)/dt,az=(p.vz-prior.vz)/dt;return clamp((p.vx*az-p.vz*ax)/Math.max(.5,speed)/9.81,-.18,.18);}
+// Capsule-width positional constraint supplements predictive steering only
+// after integration. Bounded correction prevents overlapping bodies without
+// teleporting the carrier or moving the authoritative ball.
+function resolveBodies(players,dt=1/60){let contacts=0;const max=.045*(dt*60);for(let i=0;i<players.length;i++)for(let j=i+1;j<players.length;j++){const a=players[i],b=players[j];if(a.dismissed||b.dismissed)continue;let dx=b.x-a.x,dz=b.z-a.z,d=Math.hypot(dx,dz);if(d>=.56)continue;if(d<1e-5){const q=(a.id+1)*2.399963;dx=Math.cos(q)*.0001;dz=Math.sin(q)*.0001;d=.0001;}const nx=dx/d,nz=dz/d,push=Math.min(max,(.56-Math.min(d,.56))*.5);a.x-=nx*push;a.z-=nz*push;b.x+=nx*push;b.z+=nz*push;const relative=((a.vx||0)-(b.vx||0))*nx+((a.vz||0)-(b.vz||0))*nz;if(relative>0){a.vx-=nx*relative*.18;a.vz-=nz*relative*.18;b.vx+=nx*relative*.18;b.vz+=nz*relative*.18;}a.speed=Math.hypot(a.vx||0,a.vz||0);b.speed=Math.hypot(b.vx||0,b.vz||0);contacts++;}return contacts;}
+return{resolveBodies,velocity,ballAtFoot,turnLean,version:'capsule-and-athletic-touch-v104'};
+});

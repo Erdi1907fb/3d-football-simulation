@@ -1,0 +1,33 @@
+{
+  "rejectedPaths": [
+    "assets/faces/players/icon106-7d5982c3070414.webp",
+    "assets/faces/players/icon106-d9261867d6abc6.webp",
+    "assets/faces/players/icon106-ddd286e53068eb.webp"
+  ],
+  "removedBindings": [
+    {
+      "id": "icon-br-socrates",
+      "name": "Sócrates",
+      "path": "assets/faces/players/icon106-d9261867d6abc6.webp",
+      "reason": "visual-audit: cropped torso or ear instead of a usable face"
+    },
+    {
+      "id": "icon-nl-frankrijkaard",
+      "name": "Frank Rijkaard",
+      "path": "assets/faces/players/icon106-7d5982c3070414.webp",
+      "reason": "visual-audit: cropped torso or ear instead of a usable face"
+    },
+    {
+      "id": "national-de-2014-manuelneuer",
+      "name": "Manuel Neuer",
+      "path": "assets/faces/players/icon106-ddd286e53068eb.webp",
+      "reason": "visual-audit: cropped torso or ear instead of a usable face"
+    },
+    {
+      "id": "nft-17936",
+      "name": "Sócrates",
+      "path": "assets/faces/players/icon106-d9261867d6abc6.webp",
+      "reason": "visual-audit: cropped torso or ear instead of a usable face"
+    }
+  ]
+}

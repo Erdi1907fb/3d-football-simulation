@@ -1,0 +1,6 @@
+ZIP içeriğini mevcut Hostinger public_html köküne dosyaların üzerine çıkar.
+Önce yedek al. Özel config, hazır videolar ve sunucudaki veri kayıtlarını silme.
+Hostinger/CDN önbelleğini temizleyip siteyi yenile. Yeni görünüm için videoyu
+tekrar hazırla. Yeni servis veya cron kurulumu gerekmez. Ana sayfa index.html /
+index.php, penaltı penalty.html. İstersen next90sim-v107.html ve penalty-v107.html
+sürüm girişleri de vardır. Ek doğrulama sayfası açman gerekmez.

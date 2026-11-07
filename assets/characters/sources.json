@@ -1,0 +1,129 @@
+{
+  "retrievedAt": "2026-10-23",
+  "source": "https://github.com/kblood/CharacterCreator",
+  "sourceCommit": "852e48f316b90a0937234886630e4fb4cdfd1f78",
+  "license": "CC0-1.0 for generated output assets; GPL program code is not imported",
+  "primaryLicenseEvidence": [
+    "https://github.com/kblood/CharacterCreator/blob/master/LICENSE-NOTES.md",
+    "https://www.makehumancommunity.org/about/license.html"
+  ],
+  "files": [
+    {
+      "path": "CC0-1.0.txt",
+      "bytes": 6962,
+      "sha256": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c"
+    },
+    {
+      "path": "LICENSE-NOTES.md",
+      "bytes": 18771,
+      "sha256": "18af8d071bcb1cab2260263991ad49c314dc616facf7f33b0ab19bee78d4ec13"
+    },
+    {
+      "path": "animations/fall.json",
+      "bytes": 51079,
+      "sha256": "7f066acbae434f3b06901bfce87554ea5c35b711b027f28ee7306ade3a68c2d1"
+    },
+    {
+      "path": "animations/idle.json",
+      "bytes": 357363,
+      "sha256": "ea4936dd38e97da15ceafd66e4c35390c12b28d76d4fd6d2a52416f466a006ac"
+    },
+    {
+      "path": "animations/idle_breathe.json",
+      "bytes": 369495,
+      "sha256": "39b97c06f70ed01ffe20d219d55f4cf200fe7160ef2f2da81de1e9dcafd1a027"
+    },
+    {
+      "path": "animations/idle_fidget.json",
+      "bytes": 386397,
+      "sha256": "6fac73c452df585dae0d97a879aba90e6e108814264e3675d301fd8cee15d809"
+    },
+    {
+      "path": "animations/idle_look.json",
+      "bytes": 426259,
+      "sha256": "6445441403e3740bc158cf453ed4cf7ab85e2f274a9369f5e644ce9d33f5bf4e"
+    },
+    {
+      "path": "animations/index.json",
+      "bytes": 1952,
+      "sha256": "7016f5cfacf57131947d57ae2ed8b5812e8266708d4d622b01e4fdef3d934a36"
+    },
+    {
+      "path": "animations/jump.json",
+      "bytes": 84142,
+      "sha256": "ca27f9d6b4925e89a2e247407ffb7210bcb2f694ccf719ae3eeb1918c4f93173"
+    },
+    {
+      "path": "animations/land.json",
+      "bytes": 44979,
+      "sha256": "120205c932a0ae9c7a6a61047ca5591b632512fe1b43f42a0087b7b182805b09"
+    },
+    {
+      "path": "animations/run.json",
+      "bytes": 36680,
+      "sha256": "6ea8ba77d6c0605186ec10f45278e6291320152b9161a7ddccdfc533b67c5920"
+    },
+    {
+      "path": "animations/strafe_left.json",
+      "bytes": 42661,
+      "sha256": "ce2d1520feea7ea95473096dc461623f2e81a06321a0e128ff3296ae1e83e688"
+    },
+    {
+      "path": "animations/strafe_right.json",
+      "bytes": 42462,
+      "sha256": "994bec85c11fffef84bad2081e496743d18be51b78045eaa89cad330a3842a7e"
+    },
+    {
+      "path": "animations/walk.json",
+      "bytes": 50063,
+      "sha256": "85f1b23bfdd52024808e4f111d8868c3df68c9d92688a26941ca164b38f9a383"
+    },
+    {
+      "path": "animations/walk_back.json",
+      "bytes": 52000,
+      "sha256": "c5966c5d5120a64f575041bd31deddfb1d1f6dacb8639f2c44fb256ca6cea605"
+    },
+    {
+      "path": "asset_licenses.json",
+      "bytes": 7730,
+      "sha256": "b18bbc7f45fe7c28bcf3b119f44f7b8425d3b4c871f99c694b181b5603f4758e"
+    },
+    {
+      "path": "base_body.glb",
+      "bytes": 7234380,
+      "sha256": "b5b450af89f6fbf8debf387eda8da40cd0a8c3253a2d59871c730ce7e7f46469"
+    },
+    {
+      "path": "base_body.joints.json",
+      "bytes": 45258,
+      "sha256": "47c40fcaeb9f089f0f32ba781e2a0ac7d7a925a47b6db3c46102f0091a53a839"
+    },
+    {
+      "path": "base_body_anim.glb",
+      "bytes": 8212156,
+      "sha256": "0eb271d4adea12b7f6bb1d4d8f7398db702f9449479be559ab9f019b5ab30b0f"
+    },
+    {
+      "path": "match-anatomy.json",
+      "bytes": 794619,
+      "sha256": "ab4724cbaa8ab2ec0d4779ac593c5e16593e873e56bf3f5272a16b343132816d"
+    },
+    {
+      "path": "shared-match-anatomy.glb",
+      "bytes": 412072,
+      "sha256": "e4145ec8f61c14e73e0776da6944889e4718363043d8aa63b5f7f635acca3712"
+    }
+  ],
+  "runtime": {
+    "active": "match-anatomy.json and shared-match-anatomy.glb are a 12-joint adapter derived from MPFB exposed anatomy. Runtime creates actual SkinnedMesh geometry from the JSON equivalent. Existing football pose groups drive bones; existing kit UVs and identity remain unchanged.",
+    "fullBody": "base_body.glb 53-bone MPFB body with 92 shape targets, provided for development. It is NOT the active full-body match renderer.",
+    "animations": "base_body_anim.glb and animations/*.json contain 12 CC0 procedural locomotion clips. Supplied for future retargeting; not active match mocap. Match still uses original football procedural animation, now skin-bound.",
+    "limitations": [
+      "Arm/leg/torso length config retained but not activated due to established IK segment constants",
+      "Face and hair remain stylized appearance, not likeness scans",
+      "Keeper uses identical 12-bone skin adapter for legs, original kit sleeves and gloves retained",
+      "No Mixamo FBX downloaded; Adobe ID login required",
+      "MakeHuman and MPFB are build-time tools, not running in browser"
+    ]
+  }
+}

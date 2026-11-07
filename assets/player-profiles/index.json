@@ -1,0 +1,1611 @@
+{
+  "schema": 1,
+  "asOf": "2026-10-24",
+  "description": "Selected-team local physical and reviewed appearance metadata; never a lineup replacement.",
+  "teams": {
+    "lask": {
+      "file": "assets/player-profiles/lask.json",
+      "players": 29,
+      "heightKnown": 23,
+      "weightKnown": 18,
+      "appearanceReviewed": 0
+    },
+    "salzburg": {
+      "file": "assets/player-profiles/salzburg.json",
+      "players": 32,
+      "heightKnown": 29,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "sturm-graz": {
+      "file": "assets/player-profiles/sturm-graz.json",
+      "players": 33,
+      "heightKnown": 30,
+      "weightKnown": 20,
+      "appearanceReviewed": 0
+    },
+    "anderlecht": {
+      "file": "assets/player-profiles/anderlecht.json",
+      "players": 33,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "club-brugge": {
+      "file": "assets/player-profiles/club-brugge.json",
+      "players": 32,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "gent": {
+      "file": "assets/player-profiles/gent.json",
+      "players": 33,
+      "heightKnown": 21,
+      "weightKnown": 13,
+      "appearanceReviewed": 0
+    },
+    "sint-truidense": {
+      "file": "assets/player-profiles/sint-truidense.json",
+      "players": 27,
+      "heightKnown": 22,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "union-saint-gilloise": {
+      "file": "assets/player-profiles/union-saint-gilloise.json",
+      "players": 30,
+      "heightKnown": 23,
+      "weightKnown": 20,
+      "appearanceReviewed": 0
+    },
+    "agf": {
+      "file": "assets/player-profiles/agf.json",
+      "players": 33,
+      "heightKnown": 24,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "copenhagen": {
+      "file": "assets/player-profiles/copenhagen.json",
+      "players": 30,
+      "heightKnown": 23,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "midtjylland": {
+      "file": "assets/player-profiles/midtjylland.json",
+      "players": 31,
+      "heightKnown": 26,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "nordsjaelland": {
+      "file": "assets/player-profiles/nordsjaelland.json",
+      "players": 31,
+      "heightKnown": 16,
+      "weightKnown": 13,
+      "appearanceReviewed": 0
+    },
+    "bournemouth": {
+      "file": "assets/player-profiles/bournemouth.json",
+      "players": 29,
+      "heightKnown": 28,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "arsenal": {
+      "file": "assets/player-profiles/arsenal.json",
+      "players": 29,
+      "heightKnown": 24,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "aston-villa": {
+      "file": "assets/player-profiles/aston-villa.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "brentford": {
+      "file": "assets/player-profiles/brentford.json",
+      "players": 29,
+      "heightKnown": 29,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "brighton": {
+      "file": "assets/player-profiles/brighton.json",
+      "players": 34,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "chelsea": {
+      "file": "assets/player-profiles/chelsea.json",
+      "players": 30,
+      "heightKnown": 28,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "coventry-city": {
+      "file": "assets/player-profiles/coventry-city.json",
+      "players": 29,
+      "heightKnown": 29,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "crystal-palace": {
+      "file": "assets/player-profiles/crystal-palace.json",
+      "players": 33,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "everton": {
+      "file": "assets/player-profiles/everton.json",
+      "players": 24,
+      "heightKnown": 22,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "fulham": {
+      "file": "assets/player-profiles/fulham.json",
+      "players": 29,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "hull-city": {
+      "file": "assets/player-profiles/hull-city.json",
+      "players": 34,
+      "heightKnown": 31,
+      "weightKnown": 30,
+      "appearanceReviewed": 0
+    },
+    "ipswich-town": {
+      "file": "assets/player-profiles/ipswich-town.json",
+      "players": 29,
+      "heightKnown": 28,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "leeds-united": {
+      "file": "assets/player-profiles/leeds-united.json",
+      "players": 29,
+      "heightKnown": 24,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "liverpool": {
+      "file": "assets/player-profiles/liverpool.json",
+      "players": 34,
+      "heightKnown": 32,
+      "weightKnown": 32,
+      "appearanceReviewed": 0
+    },
+    "man-city": {
+      "file": "assets/player-profiles/man-city.json",
+      "players": 27,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "man-utd": {
+      "file": "assets/player-profiles/man-utd.json",
+      "players": 33,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "newcastle": {
+      "file": "assets/player-profiles/newcastle.json",
+      "players": 31,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "nottingham-forest": {
+      "file": "assets/player-profiles/nottingham-forest.json",
+      "players": 24,
+      "heightKnown": 24,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "sunderland": {
+      "file": "assets/player-profiles/sunderland.json",
+      "players": 33,
+      "heightKnown": 29,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "tottenham": {
+      "file": "assets/player-profiles/tottenham.json",
+      "players": 30,
+      "heightKnown": 30,
+      "weightKnown": 29,
+      "appearanceReviewed": 0
+    },
+    "deportivo-alaves": {
+      "file": "assets/player-profiles/deportivo-alaves.json",
+      "players": 28,
+      "heightKnown": 27,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "athletic": {
+      "file": "assets/player-profiles/athletic.json",
+      "players": 31,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "atletico": {
+      "file": "assets/player-profiles/atletico.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "barcelona": {
+      "file": "assets/player-profiles/barcelona.json",
+      "players": 31,
+      "heightKnown": 27,
+      "weightKnown": 26,
+      "appearanceReviewed": 27
+    },
+    "rc-celta": {
+      "file": "assets/player-profiles/rc-celta.json",
+      "players": 30,
+      "heightKnown": 28,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "rc-deportivo": {
+      "file": "assets/player-profiles/rc-deportivo.json",
+      "players": 30,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "elche-cf": {
+      "file": "assets/player-profiles/elche-cf.json",
+      "players": 29,
+      "heightKnown": 28,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "rcd-espanyol": {
+      "file": "assets/player-profiles/rcd-espanyol.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "getafe-cf": {
+      "file": "assets/player-profiles/getafe-cf.json",
+      "players": 33,
+      "heightKnown": 28,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "levante-ud": {
+      "file": "assets/player-profiles/levante-ud.json",
+      "players": 28,
+      "heightKnown": 23,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "malaga-cf": {
+      "file": "assets/player-profiles/malaga-cf.json",
+      "players": 32,
+      "heightKnown": 30,
+      "weightKnown": 30,
+      "appearanceReviewed": 0
+    },
+    "ca-osasuna": {
+      "file": "assets/player-profiles/ca-osasuna.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "r-racing-club": {
+      "file": "assets/player-profiles/r-racing-club.json",
+      "players": 29,
+      "heightKnown": 26,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "rayo-vallecano": {
+      "file": "assets/player-profiles/rayo-vallecano.json",
+      "players": 33,
+      "heightKnown": 31,
+      "weightKnown": 30,
+      "appearanceReviewed": 0
+    },
+    "real-betis": {
+      "file": "assets/player-profiles/real-betis.json",
+      "players": 28,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "real-madrid": {
+      "file": "assets/player-profiles/real-madrid.json",
+      "players": 35,
+      "heightKnown": 34,
+      "weightKnown": 34,
+      "appearanceReviewed": 26
+    },
+    "real-sociedad": {
+      "file": "assets/player-profiles/real-sociedad.json",
+      "players": 31,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "sevilla-fc": {
+      "file": "assets/player-profiles/sevilla-fc.json",
+      "players": 32,
+      "heightKnown": 30,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "valencia-cf": {
+      "file": "assets/player-profiles/valencia-cf.json",
+      "players": 34,
+      "heightKnown": 30,
+      "weightKnown": 30,
+      "appearanceReviewed": 0
+    },
+    "villarreal-cf": {
+      "file": "assets/player-profiles/villarreal-cf.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "algeria": {
+      "file": "assets/player-profiles/algeria.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "argentina": {
+      "file": "assets/player-profiles/argentina.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "australia": {
+      "file": "assets/player-profiles/australia.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "austria": {
+      "file": "assets/player-profiles/austria.json",
+      "players": 25,
+      "heightKnown": 25,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "belgium": {
+      "file": "assets/player-profiles/belgium.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "bosnia-and-herzegovina": {
+      "file": "assets/player-profiles/bosnia-and-herzegovina.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "brazil": {
+      "file": "assets/player-profiles/brazil.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "canada": {
+      "file": "assets/player-profiles/canada.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "cabo-verde": {
+      "file": "assets/player-profiles/cabo-verde.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "colombia": {
+      "file": "assets/player-profiles/colombia.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "congo-dr": {
+      "file": "assets/player-profiles/congo-dr.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "croatia": {
+      "file": "assets/player-profiles/croatia.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "curacao": {
+      "file": "assets/player-profiles/curacao.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "czechia": {
+      "file": "assets/player-profiles/czechia.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "ecuador": {
+      "file": "assets/player-profiles/ecuador.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "egypt": {
+      "file": "assets/player-profiles/egypt.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "england": {
+      "file": "assets/player-profiles/england.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "france": {
+      "file": "assets/player-profiles/france.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "germany": {
+      "file": "assets/player-profiles/germany.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "ghana": {
+      "file": "assets/player-profiles/ghana.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "haiti": {
+      "file": "assets/player-profiles/haiti.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "iran": {
+      "file": "assets/player-profiles/iran.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "iraq": {
+      "file": "assets/player-profiles/iraq.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "cote-divoire": {
+      "file": "assets/player-profiles/cote-divoire.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "japan": {
+      "file": "assets/player-profiles/japan.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "jordan": {
+      "file": "assets/player-profiles/jordan.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "mexico": {
+      "file": "assets/player-profiles/mexico.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "morocco": {
+      "file": "assets/player-profiles/morocco.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "netherlands": {
+      "file": "assets/player-profiles/netherlands.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "new-zealand": {
+      "file": "assets/player-profiles/new-zealand.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "norway": {
+      "file": "assets/player-profiles/norway.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "panama": {
+      "file": "assets/player-profiles/panama.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "paraguay": {
+      "file": "assets/player-profiles/paraguay.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "portugal": {
+      "file": "assets/player-profiles/portugal.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "qatar": {
+      "file": "assets/player-profiles/qatar.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "saudi-arabia": {
+      "file": "assets/player-profiles/saudi-arabia.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "scotland": {
+      "file": "assets/player-profiles/scotland.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "senegal": {
+      "file": "assets/player-profiles/senegal.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "south-africa": {
+      "file": "assets/player-profiles/south-africa.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "korea-republic": {
+      "file": "assets/player-profiles/korea-republic.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "spain": {
+      "file": "assets/player-profiles/spain.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "sweden": {
+      "file": "assets/player-profiles/sweden.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "switzerland": {
+      "file": "assets/player-profiles/switzerland.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "tunisia": {
+      "file": "assets/player-profiles/tunisia.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "turkiye": {
+      "file": "assets/player-profiles/turkiye.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "united-states": {
+      "file": "assets/player-profiles/united-states.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "uruguay": {
+      "file": "assets/player-profiles/uruguay.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "uzbekistan": {
+      "file": "assets/player-profiles/uzbekistan.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "aj-auxerre": {
+      "file": "assets/player-profiles/aj-auxerre.json",
+      "players": 35,
+      "heightKnown": 26,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "monaco": {
+      "file": "assets/player-profiles/monaco.json",
+      "players": 30,
+      "heightKnown": 24,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "angers-sco": {
+      "file": "assets/player-profiles/angers-sco.json",
+      "players": 25,
+      "heightKnown": 21,
+      "weightKnown": 19,
+      "appearanceReviewed": 0
+    },
+    "stade-brestois-29": {
+      "file": "assets/player-profiles/stade-brestois-29.json",
+      "players": 27,
+      "heightKnown": 22,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "havre-ac": {
+      "file": "assets/player-profiles/havre-ac.json",
+      "players": 29,
+      "heightKnown": 26,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "le-mans-fc": {
+      "file": "assets/player-profiles/le-mans-fc.json",
+      "players": 29,
+      "heightKnown": 15,
+      "weightKnown": 12,
+      "appearanceReviewed": 0
+    },
+    "rc-lens": {
+      "file": "assets/player-profiles/rc-lens.json",
+      "players": 30,
+      "heightKnown": 29,
+      "weightKnown": 29,
+      "appearanceReviewed": 0
+    },
+    "losc": {
+      "file": "assets/player-profiles/losc.json",
+      "players": 28,
+      "heightKnown": 27,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "fc-lorient": {
+      "file": "assets/player-profiles/fc-lorient.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "olympique-lyonnais": {
+      "file": "assets/player-profiles/olympique-lyonnais.json",
+      "players": 32,
+      "heightKnown": 25,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "marseille": {
+      "file": "assets/player-profiles/marseille.json",
+      "players": 32,
+      "heightKnown": 26,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "ogc-nice": {
+      "file": "assets/player-profiles/ogc-nice.json",
+      "players": 31,
+      "heightKnown": 26,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "paris-fc": {
+      "file": "assets/player-profiles/paris-fc.json",
+      "players": 25,
+      "heightKnown": 25,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "psg": {
+      "file": "assets/player-profiles/psg.json",
+      "players": 25,
+      "heightKnown": 23,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "stade-rennais": {
+      "file": "assets/player-profiles/stade-rennais.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "rc-strasbourg": {
+      "file": "assets/player-profiles/rc-strasbourg.json",
+      "players": 33,
+      "heightKnown": 26,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "toulouse-fc": {
+      "file": "assets/player-profiles/toulouse-fc.json",
+      "players": 26,
+      "heightKnown": 21,
+      "weightKnown": 18,
+      "appearanceReviewed": 0
+    },
+    "estac-troyes": {
+      "file": "assets/player-profiles/estac-troyes.json",
+      "players": 29,
+      "heightKnown": 21,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "union-berlin": {
+      "file": "assets/player-profiles/union-berlin.json",
+      "players": 32,
+      "heightKnown": 28,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "leverkusen": {
+      "file": "assets/player-profiles/leverkusen.json",
+      "players": 29,
+      "heightKnown": 28,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "bayern": {
+      "file": "assets/player-profiles/bayern.json",
+      "players": 27,
+      "heightKnown": 24,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "dortmund": {
+      "file": "assets/player-profiles/dortmund.json",
+      "players": 32,
+      "heightKnown": 28,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "borussia-monchengladbach": {
+      "file": "assets/player-profiles/borussia-monchengladbach.json",
+      "players": 32,
+      "heightKnown": 29,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "eintracht-frankfurt": {
+      "file": "assets/player-profiles/eintracht-frankfurt.json",
+      "players": 27,
+      "heightKnown": 25,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "fc-augsburg": {
+      "file": "assets/player-profiles/fc-augsburg.json",
+      "players": 27,
+      "heightKnown": 25,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "1-fc-koln": {
+      "file": "assets/player-profiles/1-fc-koln.json",
+      "players": 31,
+      "heightKnown": 27,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "hamburger-sv": {
+      "file": "assets/player-profiles/hamburger-sv.json",
+      "players": 30,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "mainz-05": {
+      "file": "assets/player-profiles/mainz-05.json",
+      "players": 27,
+      "heightKnown": 24,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "leipzig": {
+      "file": "assets/player-profiles/leipzig.json",
+      "players": 29,
+      "heightKnown": 29,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "sc-freiburg": {
+      "file": "assets/player-profiles/sc-freiburg.json",
+      "players": 28,
+      "heightKnown": 27,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "sc-paderborn": {
+      "file": "assets/player-profiles/sc-paderborn.json",
+      "players": 32,
+      "heightKnown": 29,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "sv-elversberg": {
+      "file": "assets/player-profiles/sv-elversberg.json",
+      "players": 27,
+      "heightKnown": 25,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "schalke-04": {
+      "file": "assets/player-profiles/schalke-04.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "tsg-hoffenheim": {
+      "file": "assets/player-profiles/tsg-hoffenheim.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "vfb-stuttgart": {
+      "file": "assets/player-profiles/vfb-stuttgart.json",
+      "players": 31,
+      "heightKnown": 30,
+      "weightKnown": 29,
+      "appearanceReviewed": 0
+    },
+    "werder-bremen": {
+      "file": "assets/player-profiles/werder-bremen.json",
+      "players": 31,
+      "heightKnown": 27,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "aek-athens": {
+      "file": "assets/player-profiles/aek-athens.json",
+      "players": 32,
+      "heightKnown": 23,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "ofi": {
+      "file": "assets/player-profiles/ofi.json",
+      "players": 36,
+      "heightKnown": 22,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "olympiacos": {
+      "file": "assets/player-profiles/olympiacos.json",
+      "players": 35,
+      "heightKnown": 28,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "panathinaikos": {
+      "file": "assets/player-profiles/panathinaikos.json",
+      "players": 34,
+      "heightKnown": 23,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "milan": {
+      "file": "assets/player-profiles/milan.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "roma": {
+      "file": "assets/player-profiles/roma.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "atalanta": {
+      "file": "assets/player-profiles/atalanta.json",
+      "players": 36,
+      "heightKnown": 30,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "bologna": {
+      "file": "assets/player-profiles/bologna.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "cagliari": {
+      "file": "assets/player-profiles/cagliari.json",
+      "players": 31,
+      "heightKnown": 28,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "como": {
+      "file": "assets/player-profiles/como.json",
+      "players": 28,
+      "heightKnown": 27,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "fiorentina": {
+      "file": "assets/player-profiles/fiorentina.json",
+      "players": 28,
+      "heightKnown": 23,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "frosinone": {
+      "file": "assets/player-profiles/frosinone.json",
+      "players": 29,
+      "heightKnown": 29,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "genoa": {
+      "file": "assets/player-profiles/genoa.json",
+      "players": 34,
+      "heightKnown": 29,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "inter": {
+      "file": "assets/player-profiles/inter.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "juventus": {
+      "file": "assets/player-profiles/juventus.json",
+      "players": 38,
+      "heightKnown": 33,
+      "weightKnown": 30,
+      "appearanceReviewed": 0
+    },
+    "lazio": {
+      "file": "assets/player-profiles/lazio.json",
+      "players": 32,
+      "heightKnown": 29,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "lecce": {
+      "file": "assets/player-profiles/lecce.json",
+      "players": 34,
+      "heightKnown": 29,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "monza": {
+      "file": "assets/player-profiles/monza.json",
+      "players": 32,
+      "heightKnown": 28,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "napoli": {
+      "file": "assets/player-profiles/napoli.json",
+      "players": 28,
+      "heightKnown": 26,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "parma": {
+      "file": "assets/player-profiles/parma.json",
+      "players": 32,
+      "heightKnown": 25,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "sassuolo": {
+      "file": "assets/player-profiles/sassuolo.json",
+      "players": 35,
+      "heightKnown": 32,
+      "weightKnown": 29,
+      "appearanceReviewed": 0
+    },
+    "torino": {
+      "file": "assets/player-profiles/torino.json",
+      "players": 33,
+      "heightKnown": 28,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "udinese": {
+      "file": "assets/player-profiles/udinese.json",
+      "players": 28,
+      "heightKnown": 27,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "venezia": {
+      "file": "assets/player-profiles/venezia.json",
+      "players": 36,
+      "heightKnown": 29,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "az-alkmaar": {
+      "file": "assets/player-profiles/az-alkmaar.json",
+      "players": 32,
+      "heightKnown": 30,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "ajax": {
+      "file": "assets/player-profiles/ajax.json",
+      "players": 33,
+      "heightKnown": 30,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "twente": {
+      "file": "assets/player-profiles/twente.json",
+      "players": 29,
+      "heightKnown": 24,
+      "weightKnown": 18,
+      "appearanceReviewed": 0
+    },
+    "feyenoord": {
+      "file": "assets/player-profiles/feyenoord.json",
+      "players": 33,
+      "heightKnown": 26,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "nec-nijmegen": {
+      "file": "assets/player-profiles/nec-nijmegen.json",
+      "players": 31,
+      "heightKnown": 25,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "psv": {
+      "file": "assets/player-profiles/psv.json",
+      "players": 31,
+      "heightKnown": 27,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "bodo-glimt": {
+      "file": "assets/player-profiles/bodo-glimt.json",
+      "players": 36,
+      "heightKnown": 18,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "lillestrom": {
+      "file": "assets/player-profiles/lillestrom.json",
+      "players": 30,
+      "heightKnown": 12,
+      "weightKnown": 10,
+      "appearanceReviewed": 0
+    },
+    "brann": {
+      "file": "assets/player-profiles/brann.json",
+      "players": 30,
+      "heightKnown": 21,
+      "weightKnown": 14,
+      "appearanceReviewed": 0
+    },
+    "viking": {
+      "file": "assets/player-profiles/viking.json",
+      "players": 40,
+      "heightKnown": 23,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "benfica": {
+      "file": "assets/player-profiles/benfica.json",
+      "players": 31,
+      "heightKnown": 31,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "sc-braga": {
+      "file": "assets/player-profiles/sc-braga.json",
+      "players": 29,
+      "heightKnown": 27,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "porto": {
+      "file": "assets/player-profiles/porto.json",
+      "players": 34,
+      "heightKnown": 33,
+      "weightKnown": 29,
+      "appearanceReviewed": 0
+    },
+    "sporting": {
+      "file": "assets/player-profiles/sporting.json",
+      "players": 31,
+      "heightKnown": 30,
+      "weightKnown": 28,
+      "appearanceReviewed": 0
+    },
+    "celtic": {
+      "file": "assets/player-profiles/celtic.json",
+      "players": 33,
+      "heightKnown": 26,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "hearts": {
+      "file": "assets/player-profiles/hearts.json",
+      "players": 35,
+      "heightKnown": 26,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "lugano": {
+      "file": "assets/player-profiles/lugano.json",
+      "players": 33,
+      "heightKnown": 33,
+      "weightKnown": 33,
+      "appearanceReviewed": 0
+    },
+    "thun": {
+      "file": "assets/player-profiles/thun.json",
+      "players": 25,
+      "heightKnown": 25,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "mjallby": {
+      "file": "assets/player-profiles/mjallby.json",
+      "players": 30,
+      "heightKnown": 15,
+      "weightKnown": 13,
+      "appearanceReviewed": 0
+    },
+    "alanyaspor": {
+      "file": "assets/player-profiles/alanyaspor.json",
+      "players": 28,
+      "heightKnown": 23,
+      "weightKnown": 20,
+      "appearanceReviewed": 0
+    },
+    "amed-sk": {
+      "file": "assets/player-profiles/amed-sk.json",
+      "players": 28,
+      "heightKnown": 19,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "besiktas": {
+      "file": "assets/player-profiles/besiktas.json",
+      "players": 30,
+      "heightKnown": 27,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "caykur-rizespor": {
+      "file": "assets/player-profiles/caykur-rizespor.json",
+      "players": 29,
+      "heightKnown": 24,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "erzurumspor-fk": {
+      "file": "assets/player-profiles/erzurumspor-fk.json",
+      "players": 27,
+      "heightKnown": 18,
+      "weightKnown": 14,
+      "appearanceReviewed": 0
+    },
+    "eyupspor": {
+      "file": "assets/player-profiles/eyupspor.json",
+      "players": 28,
+      "heightKnown": 23,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "fenerbahce": {
+      "file": "assets/player-profiles/fenerbahce.json",
+      "players": 30,
+      "heightKnown": 27,
+      "weightKnown": 24,
+      "appearanceReviewed": 29
+    },
+    "galatasaray": {
+      "file": "assets/player-profiles/galatasaray.json",
+      "players": 34,
+      "heightKnown": 32,
+      "weightKnown": 26,
+      "appearanceReviewed": 32
+    },
+    "gaziantep-fk": {
+      "file": "assets/player-profiles/gaziantep-fk.json",
+      "players": 31,
+      "heightKnown": 23,
+      "weightKnown": 18,
+      "appearanceReviewed": 0
+    },
+    "genclerbirligi": {
+      "file": "assets/player-profiles/genclerbirligi.json",
+      "players": 30,
+      "heightKnown": 23,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "goztepe": {
+      "file": "assets/player-profiles/goztepe.json",
+      "players": 26,
+      "heightKnown": 24,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "basaksehir": {
+      "file": "assets/player-profiles/basaksehir.json",
+      "players": 27,
+      "heightKnown": 25,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "kasimpasa": {
+      "file": "assets/player-profiles/kasimpasa.json",
+      "players": 30,
+      "heightKnown": 24,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "kocaelispor": {
+      "file": "assets/player-profiles/kocaelispor.json",
+      "players": 31,
+      "heightKnown": 25,
+      "weightKnown": 20,
+      "appearanceReviewed": 0
+    },
+    "konyaspor": {
+      "file": "assets/player-profiles/konyaspor.json",
+      "players": 28,
+      "heightKnown": 25,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "samsunspor": {
+      "file": "assets/player-profiles/samsunspor.json",
+      "players": 28,
+      "heightKnown": 28,
+      "weightKnown": 20,
+      "appearanceReviewed": 0
+    },
+    "trabzonspor": {
+      "file": "assets/player-profiles/trabzonspor.json",
+      "players": 34,
+      "heightKnown": 30,
+      "weightKnown": 27,
+      "appearanceReviewed": 0
+    },
+    "corum-fk": {
+      "file": "assets/player-profiles/corum-fk.json",
+      "players": 29,
+      "heightKnown": 25,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "sabah": {
+      "file": "assets/player-profiles/sabah.json",
+      "players": 32,
+      "heightKnown": 19,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "shakhtar-donetsk": {
+      "file": "assets/player-profiles/shakhtar-donetsk.json",
+      "players": 33,
+      "heightKnown": 22,
+      "weightKnown": 21,
+      "appearanceReviewed": 0
+    },
+    "slavia-prague": {
+      "file": "assets/player-profiles/slavia-prague.json",
+      "players": 37,
+      "heightKnown": 17,
+      "weightKnown": 13,
+      "appearanceReviewed": 0
+    },
+    "slovan-bratislava": {
+      "file": "assets/player-profiles/slovan-bratislava.json",
+      "players": 36,
+      "heightKnown": 23,
+      "weightKnown": 18,
+      "appearanceReviewed": 0
+    },
+    "italy": {
+      "file": "assets/player-profiles/italy.json",
+      "players": 26,
+      "heightKnown": 26,
+      "weightKnown": 26,
+      "appearanceReviewed": 0
+    },
+    "borac": {
+      "file": "assets/player-profiles/borac.json",
+      "players": 29,
+      "heightKnown": 15,
+      "weightKnown": 14,
+      "appearanceReviewed": 0
+    },
+    "cska-sofia": {
+      "file": "assets/player-profiles/cska-sofia.json",
+      "players": 28,
+      "heightKnown": 16,
+      "weightKnown": 15,
+      "appearanceReviewed": 0
+    },
+    "u-craiova": {
+      "file": "assets/player-profiles/u-craiova.json",
+      "players": 27,
+      "heightKnown": 20,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "egnatia": {
+      "file": "assets/player-profiles/egnatia.json",
+      "players": 27,
+      "heightKnown": 8,
+      "weightKnown": 6,
+      "appearanceReviewed": 0
+    },
+    "hajduk-split": {
+      "file": "assets/player-profiles/hajduk-split.json",
+      "players": 30,
+      "heightKnown": 16,
+      "weightKnown": 14,
+      "appearanceReviewed": 0
+    },
+    "iberia": {
+      "file": "assets/player-profiles/iberia.json",
+      "players": 34,
+      "heightKnown": 7,
+      "weightKnown": 6,
+      "appearanceReviewed": 0
+    },
+    "inter-escaldes": {
+      "file": "assets/player-profiles/inter-escaldes.json",
+      "players": 30,
+      "heightKnown": 15,
+      "weightKnown": 12,
+      "appearanceReviewed": 0
+    },
+    "jablonec": {
+      "file": "assets/player-profiles/jablonec.json",
+      "players": 33,
+      "heightKnown": 17,
+      "weightKnown": 16,
+      "appearanceReviewed": 0
+    },
+    "kairat": {
+      "file": "assets/player-profiles/kairat.json",
+      "players": 27,
+      "heightKnown": 8,
+      "weightKnown": 8,
+      "appearanceReviewed": 0
+    },
+    "kauno-zalgiris": {
+      "file": "assets/player-profiles/kauno-zalgiris.json",
+      "players": 30,
+      "heightKnown": 17,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "kups": {
+      "file": "assets/player-profiles/kups.json",
+      "players": 33,
+      "heightKnown": 14,
+      "weightKnown": 12,
+      "appearanceReviewed": 0
+    },
+    "lincoln-red-imps": {
+      "file": "assets/player-profiles/lincoln-red-imps.json",
+      "players": 25,
+      "heightKnown": 13,
+      "weightKnown": 10,
+      "appearanceReviewed": 0
+    },
+    "pafos": {
+      "file": "assets/player-profiles/pafos.json",
+      "players": 35,
+      "heightKnown": 23,
+      "weightKnown": 24,
+      "appearanceReviewed": 0
+    },
+    "crvena-zvezda": {
+      "file": "assets/player-profiles/crvena-zvezda.json",
+      "players": 30,
+      "heightKnown": 20,
+      "weightKnown": 15,
+      "appearanceReviewed": 0
+    },
+    "riga": {
+      "file": "assets/player-profiles/riga.json",
+      "players": 41,
+      "heightKnown": 20,
+      "weightKnown": 16,
+      "appearanceReviewed": 0
+    },
+    "ararat-armenia": {
+      "file": "assets/player-profiles/ararat-armenia.json",
+      "players": 31,
+      "heightKnown": 18,
+      "weightKnown": 17,
+      "appearanceReviewed": 0
+    },
+    "dinamo-zagreb": {
+      "file": "assets/player-profiles/dinamo-zagreb.json",
+      "players": 39,
+      "heightKnown": 23,
+      "weightKnown": 16,
+      "appearanceReviewed": 0
+    },
+    "ferencvaros": {
+      "file": "assets/player-profiles/ferencvaros.json",
+      "players": 34,
+      "heightKnown": 23,
+      "weightKnown": 20,
+      "appearanceReviewed": 0
+    },
+    "hapoel-beer-sheva": {
+      "file": "assets/player-profiles/hapoel-beer-sheva.json",
+      "players": 35,
+      "heightKnown": 22,
+      "weightKnown": 16,
+      "appearanceReviewed": 0
+    },
+    "jagiellonia": {
+      "file": "assets/player-profiles/jagiellonia.json",
+      "players": 36,
+      "heightKnown": 27,
+      "weightKnown": 23,
+      "appearanceReviewed": 0
+    },
+    "lech-poznan": {
+      "file": "assets/player-profiles/lech-poznan.json",
+      "players": 31,
+      "heightKnown": 23,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "levski": {
+      "file": "assets/player-profiles/levski.json",
+      "players": 30,
+      "heightKnown": 20,
+      "weightKnown": 13,
+      "appearanceReviewed": 0
+    },
+    "celje": {
+      "file": "assets/player-profiles/celje.json",
+      "players": 29,
+      "heightKnown": 19,
+      "weightKnown": 16,
+      "appearanceReviewed": 0
+    },
+    "omonoia": {
+      "file": "assets/player-profiles/omonoia.json",
+      "players": 35,
+      "heightKnown": 22,
+      "weightKnown": 19,
+      "appearanceReviewed": 0
+    },
+    "sparta-praha": {
+      "file": "assets/player-profiles/sparta-praha.json",
+      "players": 33,
+      "heightKnown": 26,
+      "weightKnown": 22,
+      "appearanceReviewed": 0
+    },
+    "torreense": {
+      "file": "assets/player-profiles/torreense.json",
+      "players": 40,
+      "heightKnown": 32,
+      "weightKnown": 25,
+      "appearanceReviewed": 0
+    },
+    "viktoria-plzen": {
+      "file": "assets/player-profiles/viktoria-plzen.json",
+      "players": 28,
+      "heightKnown": 19,
+      "weightKnown": 15,
+      "appearanceReviewed": 0
+    }
+  },
+  "appearanceFile": "assets/player-profiles/reviewed-appearance.json"
+}

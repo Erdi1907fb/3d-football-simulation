@@ -1,0 +1,63 @@
+NEXT90SIM v103 — Web sürümü / 6 Kasım 2026
+Temel: v102 Grafik, Oynanış ve Tarihsel Arşiv. Sıfırdan oyun yapılmadı.
+
+UYGULANANLAR
+• Haftalık toplu tahmin, takım başka ligde ve sezon devamı videolarının dikey yayın
+  düzeni Shorts/Reels arayüzü için ortak güvenli alana alındı. Lig logosu/adı,
+  next90sim logosu/adı, hafta, maçlar ve tablonun son puan sütunu içeri taşındı.
+  Stadyum / turnuva arka planı tam ekran devam eder; siyah kenarlık eklenmedi.
+  Tablonun tüm satırları korunur; soldaki maç listesi geçerli maçı takip eder.
+• Penaltıdaki oyuncu–kaleci kartı ve seri skor kartı iki ayrı hizalı paneldir.
+  Skor, gol/kaçan vuruş işaretleri ve marka artık oyuncu–kaleci kartının altındadır.
+  Giriş ve kazanan kartı da aynı bölgede çalışır. Mevcut penaltı kamera açısı korundu.
+• Anatomik sağ bacak 0, sol bacak 1 eşlemesi düzeltildi. Temel sol vuruş pozu
+  sağ ayak için yalnızca bir kez aynalanır. Destek ayağı düzeltmesi vuran ayağı
+  ezmez. Penaltıda gerçek bot–top temas IK kilidi eklendi; koşu yolu ve dikiliş
+  sağ ayak için topun solunda, sol ayak için sağında başlar.
+• Ayak veri çözümleyicisi normal, konsept ve penaltı sunumunda ortaktır.
+  63.031 kaynak oyuncu profili; mevcut 4.600 kadro kaydının 3.812'si eşleşiyor.
+  491 kaleci kaydının 424'ünde veri bulunuyor. Yinelenen kadro kayıtları dahildir;
+  bunlar benzersiz oyuncu sayısı değildir. İsim, doğum tarihi/yılı ve benzersiz
+  kaynak kimliği kontrol edilir. Mevcut açık oyuncu kaydı önceliklidir.
+  Kalan 788 kayıtta sağ ayak animasyon varsayımı açıkça estimated olarak işaretli;
+  hepsinin gerçek ayağı doğrulandı denmez. İki ayaklı kayıtta seri tohumu belirler.
+• Penaltılar sekiz ağırlıklı vuruş tekniği kullanır: plase, iç ayak, sert,
+  yükselen sert, üst köşe, Panenka, merkez ve aldatıcı/duraklamalı plase.
+  Sol/sağ/yüksek aut, yan/üst direk, tutma, iki yana/üste çelme ve kaleciye
+  değip gol çeşitleri aynı sonuca bağlı hareketlerle korunur. Penaltı artık
+  pas animasyonu olarak sınıflandırılmaz. Erken bitiş ve tekli uzatmalar korunur.
+• Fotoğraf yüzeyleri sabit oval yerine oyuncunun morflu kafa üçgenlerine
+  bir defa izdüşürülür; burun/yanak kesişmesi azaltılır. Yüz kemiğine sabit bağlı
+  kalır, kameraya dönmez. Fotoğrafın yeniden ten rengiyle koyulaştırılması önlendi;
+  kendi gölgesi ve şeffaf katmanın derinlik yazımı kapatıldı. Fotoğrafta pişmiş
+  aydınlatma ikinci kez ışıklandırılmaz. Bu bir 3D yüz taraması değildir.
+  Düzeltme bütün takımların yüz sisteminde geçerlidir, Fenerbahçe'ye özel değildir.
+• v102 stadyum, çim, tam vücut, hareket, kolektif oyun ve 3.350 tarihsel takım/yıl
+  arşivi aynen korunur. Tahmin ve veri dosyaları, API ve video kodlayıcı değişmedi.
+
+DOĞRULAMA
+• 1.000 seri, 10.915 vuruş, 65.490 sonlu top örneği; 443 erken bitiş,
+  296 tekli uzatma. Sekiz teknik, dört ana sonuç, beş kaçırma/direk ve dört
+  kurtarış türü oluştu; bitmiş seri yeniden başlamadı.
+• Messi sol/Ronaldo sağ gerçek 3D bot temasları ölçüldü: dört kontakta hedef
+  erişim hatası 0. 14 sahne karesinde oyuncu matrisleri sonlu.
+• 30 farklı oyuncu / 360 kafa pozu; kafa kemiğine sabit bağ, beyaz fotoğraf
+  çarpanı, sonlu yüz geometrisi ve gölge ayarları kontrol edildi. En düşük
+  izdüşürülen yüz örneği 415/625. Kerem ayrıca 60 kafa pozunda kontrol edildi.
+• 9 turnuva × 2 dil × 3 zaman: 54 Canvas çizimi / 10.026 yazı yerleşimi.
+• Mevcut motor testi: 500 ek seri, 18 maç, 432 örnek, korunan 54 gol.
+  Eski testteki her maç mutlaka formation99 kullanmalı varsayımı düzeltildi:
+  güvenli klasik geri dönüşte de skor korunması denetlenir.
+• Fenerbahçe–Liverpool 1–3 video zaman çizelgesinde 12.302 örnek, olay/video
+  tutarlılığı geçti. Bu yeni MP4 kodlama testi değildir; veri sonucu değiştirilmedi.
+• Türkçe/İngilizce arama testi geçti. Hareket, HDR çözme ve shader kaynak
+  sözleşmesi testleri geçti. Shader GPU derlemesi test edilmiş sayılmaz.
+
+SINIRLAMALAR
+Gerçek iPhone/Android, Instagram/YouTube arayüzünün bütün sürümleri ve GPU
+görüntüsü bu ortamda doğrulanamadı. Güvenli alan platform arayüzünün yaygın
+yerleşimi için ayrıldı; uzun/açılmış açıklama katmanını hiçbir sabit düzen tam
+engelleyemez. Yeni MP4 üretimi gerçek GPU cihazında uçtan uca test edilmedi.
+Yüzün fotoğrafla benzerliği ve ışık bütünlüğü tarama kalitesinde garanti edilmez.
+Ayak verisi bütün oyuncularda mevcut değildir. Geçmiş maç sonuçları/tahminler
+ve API kadroları bu sürümde yeniden yazılmadı.

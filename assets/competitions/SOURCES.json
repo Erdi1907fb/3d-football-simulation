@@ -1,0 +1,119 @@
+[
+  {
+    "id": "tr.1",
+    "page": "https://football-logos.cc/turkey/super-lig/",
+    "asset": "https://assets.football-logos.cc/logos/turkey/1500x1500/super-lig.6e4f33be.png",
+    "file": "assets/competitions/tr.1.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 47332,
+    "sha256": "0663e6d9ba9692d02c26fd309154b8f1754d96e7f08dcc286ddc8ed6facf3001"
+  },
+  {
+    "id": "en.1",
+    "page": "https://football-logos.cc/england/english-premier-league/",
+    "asset": "https://assets.football-logos.cc/logos/england/1500x1500/english-premier-league.4d68127f.png",
+    "file": "assets/competitions/en.1.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 88116,
+    "sha256": "4bc054f0c81a0785ce373f29cb66919088ee89d14a28cb626960fb6db1985eee"
+  },
+  {
+    "id": "es.1",
+    "page": "https://football-logos.cc/spain/la-liga/",
+    "asset": "https://assets.football-logos.cc/logos/spain/1500x1500/la-liga.07ed875e.png",
+    "file": "assets/competitions/es.1.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 54362,
+    "sha256": "68c6c3cdb5596ca4af98c28d4516fe0d68a9d1ee43383a4641e70b265ac6f9ac"
+  },
+  {
+    "id": "de.1",
+    "page": "https://football-logos.cc/germany/bundesliga/",
+    "asset": "https://assets.football-logos.cc/logos/germany/1500x1500/bundesliga.77719ba2.png",
+    "file": "assets/competitions/de.1.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 76404,
+    "sha256": "51f566440cf0f28d22170b2058fa9186aeda3f18fd268b570569d3eeee31466a"
+  },
+  {
+    "id": "it.1",
+    "page": "https://football-logos.cc/italy/serie-a/",
+    "asset": "https://assets.football-logos.cc/logos/italy/1500x1500/serie-a.0e7a37ed.png",
+    "file": "assets/competitions/it.1.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 80332,
+    "sha256": "92fdd403b19d939e95ee708ce6c410ab2dbc0f10a3e76f45d4781a56eede70b6"
+  },
+  {
+    "id": "fr.1",
+    "page": "https://football-logos.cc/france/ligue-1/",
+    "asset": "https://assets.football-logos.cc/logos/france/1500x1500/ligue-1.0cc44ebd.png",
+    "file": "assets/competitions/fr.1.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 59042,
+    "sha256": "a1753b63745e2d421249a0036923c0ddc824beec63a885c7659db798559ae41b"
+  },
+  {
+    "id": "ucl",
+    "page": "https://football-logos.cc/tournaments/uefa-champions-league/",
+    "asset": "https://assets.football-logos.cc/logos/tournaments/1500x1500/uefa-champions-league.47d48d4e.png",
+    "file": "assets/competitions/ucl.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 84156,
+    "sha256": "79f8e63e54cb393c581cd99d56e1ea08a151dee24ad610c5a2666b98a2924e31"
+  },
+  {
+    "id": "uel",
+    "page": "https://football-logos.cc/tournaments/uefa-europa-league/",
+    "asset": "https://assets.football-logos.cc/logos/tournaments/1500x1500/uefa-europa-league.a5dfd022.png",
+    "file": "assets/competitions/uel.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 69472,
+    "sha256": "55ffffa191b65dca68a92fd5dba0189730ba84e20a2a8567a6ae36033a89f45d"
+  },
+  {
+    "id": "uecl",
+    "page": "https://football-logos.cc/tournaments/uefa-conference-league/",
+    "asset": "https://assets.football-logos.cc/logos/tournaments/1500x1500/uefa-conference-league.7fce1e15.png",
+    "file": "assets/competitions/uecl.png",
+    "format": "png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 86593,
+    "sha256": "85a99c0800e52332b56eb45957b27c426a5e6f3554acd3a2b263467c94a63e54"
+  }
+]

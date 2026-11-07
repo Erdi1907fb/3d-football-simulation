@@ -1,0 +1,335 @@
+{
+  "teamId": "432",
+  "formation": "4-2-3-1",
+  "players": [
+    {
+      "id": "222922",
+      "name": "Uğurcan Çakır",
+      "number": 1,
+      "roles": [
+        "GK"
+      ],
+      "position": "GK",
+      "physical": {
+        "heightCm": 190.5,
+        "weightKg": 83.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "219444",
+      "name": "Roland Sallai",
+      "number": 7,
+      "roles": [
+        "RB"
+      ],
+      "position": "RB",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": 73.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "197105",
+      "name": "Davinson Sánchez",
+      "number": 6,
+      "roles": [
+        "CB"
+      ],
+      "position": "CB",
+      "physical": {
+        "heightCm": 188.0,
+        "weightKg": 82.1,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "193149",
+      "name": "Abdülkerim Bardakcı",
+      "number": 42,
+      "roles": [
+        "CB"
+      ],
+      "position": "CB",
+      "physical": {
+        "heightCm": 185.4,
+        "weightKg": 91.2,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "268796",
+      "name": "Ismail Jakobs",
+      "number": 4,
+      "roles": [
+        "LB"
+      ],
+      "position": "LB",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": 73.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "212973",
+      "name": "Lucas Torreira",
+      "number": 34,
+      "roles": [
+        "DM"
+      ],
+      "position": "DM",
+      "physical": {
+        "heightCm": 165.1,
+        "weightKg": 64.0,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "268478",
+      "name": "Gabriel Sara",
+      "number": 8,
+      "roles": [
+        "DM"
+      ],
+      "position": "DM",
+      "physical": {
+        "heightCm": 188.0,
+        "weightKg": 78.0,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "202641",
+      "name": "Leroy Sané",
+      "number": 10,
+      "roles": [
+        "RW"
+      ],
+      "position": "RW",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": 78.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "266575",
+      "name": "Yunus Akgün",
+      "number": 11,
+      "roles": [
+        "AM"
+      ],
+      "position": "AM",
+      "physical": {
+        "heightCm": 172.7,
+        "weightKg": 72.1,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "322538",
+      "name": "Barış Alper Yılmaz",
+      "number": 53,
+      "roles": [
+        "LW"
+      ],
+      "position": "LW",
+      "physical": {
+        "heightCm": 185.4,
+        "weightKg": 86.2,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "228296",
+      "name": "Victor Osimhen",
+      "number": 45,
+      "roles": [
+        "ST"
+      ],
+      "position": "ST",
+      "physical": {
+        "heightCm": 185.4,
+        "weightKg": 78.0,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    }
+  ],
+  "bench": [
+    {
+      "id": "324895",
+      "name": "Jankat Yilmaz",
+      "number": 24,
+      "roles": [
+        "GK"
+      ],
+      "position": "GK",
+      "physical": {
+        "heightCm": 193.0,
+        "weightKg": 73.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "304740",
+      "name": "El Chadaille Bitshiabu",
+      "number": 3,
+      "roles": [
+        "CB"
+      ],
+      "position": "CB",
+      "physical": {
+        "heightCm": 195.6,
+        "weightKg": 93.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "181729",
+      "name": "Mario Lemina",
+      "number": 99,
+      "roles": [
+        "DM"
+      ],
+      "position": "DM",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": 83.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "287678",
+      "name": "Eren Elmali",
+      "number": 17,
+      "roles": [
+        "LB"
+      ],
+      "position": "LB",
+      "physical": {
+        "heightCm": 180.3,
+        "weightKg": 77.1,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "131424",
+      "name": "Ilkay Gündogan",
+      "number": 20,
+      "roles": [
+        "CM"
+      ],
+      "position": "CM",
+      "physical": {
+        "heightCm": 180.3,
+        "weightKg": 78.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "402986",
+      "name": "Renato Nhaga",
+      "number": 74,
+      "roles": [
+        "CM"
+      ],
+      "position": "CM",
+      "physical": {
+        "heightCm": 175.3,
+        "weightKg": 66.2,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "309563",
+      "name": "Lesley Ugochukwu",
+      "number": 18,
+      "roles": [
+        "CM"
+      ],
+      "position": "CM",
+      "physical": {
+        "heightCm": 190.5,
+        "weightKg": 72.1,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "350513",
+      "name": "Deniz Gül",
+      "number": 21,
+      "roles": [
+        "ST"
+      ],
+      "position": "ST",
+      "physical": {
+        "heightCm": 190.5,
+        "weightKg": 82.1,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "286569",
+      "name": "Wilfried Singo",
+      "number": 90,
+      "roles": [
+        "RB"
+      ],
+      "position": "RB",
+      "physical": {
+        "heightCm": 190.5,
+        "weightKg": 78.9,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "355113",
+      "name": "Alexey Batrakov",
+      "number": 83,
+      "roles": [
+        "AM"
+      ],
+      "position": "AM",
+      "physical": {
+        "heightCm": null,
+        "weightKg": null,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    }
+  ],
+  "coach": {
+    "name": "Okan Buruk"
+  },
+  "captainId": "193149",
+  "source": {
+    "name": "Nesine",
+    "status": "estimated-from-season-participation",
+    "selectionVersion": 6,
+    "asOf": "2026-10-23T14:28:28.114744+00:00",
+    "url": "https://istatistik.nesine.com/3241596/ozet",
+    "selectionBasis": "Restored previous presentation XI, checked against current Nesine squad and season starts; not announced"
+  }
+}

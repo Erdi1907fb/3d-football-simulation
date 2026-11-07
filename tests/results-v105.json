@@ -1,0 +1,36 @@
+{
+  "PASS": true,
+  "tacticalTargets": 270,
+  "intents": [
+    "inverted-cover",
+    "rest-defence",
+    "overlap",
+    "pivot",
+    "half-space",
+    "weak-side-width",
+    "wide-offer",
+    "pin-and-run",
+    "goal-side-cover",
+    "back-line",
+    "midfield-line",
+    "front-screen",
+    "fullback-width",
+    "screen-pivot",
+    "far-post-run"
+  ],
+  "mirrorInvariant": true,
+  "reciprocalAvoidance": true,
+  "coincidentBodiesRecovered": true,
+  "materialGroups": [
+    {
+      "before": 20,
+      "after": 14
+    },
+    {
+      "before": 20,
+      "after": 13
+    }
+  ],
+  "deployBindings": "normal/concept/penalty",
+  "shaderContract": true
+}

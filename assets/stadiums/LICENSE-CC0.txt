@@ -1,0 +1,7 @@
+World of Simulation modular-detail.glb and original generated stadium architecture data.
+Created for this project, 2026-10-23. Dedicated under CC0 1.0 Universal.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The GLB is an original procedural additive stadium-detail asset, not a downloaded Sketchfab/CGTrader model or a faithful reconstruction of a real venue. It contains no third-party textures. Existing club logos, sponsors and team assets elsewhere in this project retain their existing rights and are not covered by this dedication.
+
+Runtime code uses the existing local Three.js r150 installation; its MIT license remains in the project's vendor notices.

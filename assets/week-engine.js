@@ -1,0 +1,13 @@
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./season-engine.js'));else r.SekmeWeek=f(r.SekmeSeason);})(typeof globalThis==='object'?globalThis:this,function(Season){'use strict';
+const cancelled=m=>['cancelled','canceled'].includes(m.bsdStatus),chronological=ms=>ms.map((m,i)=>({m,i})).sort((a,b)=>(Date.parse(a.m.kickoff||a.m.date)||0)-(Date.parse(b.m.kickoff||b.m.date)||0)||a.i-b.i).map(x=>x.m);
+function active(data){const rounds=[...new Set(data.matches.filter(m=>!m.stage).map(m=>m.round))].sort((a,b)=>a-b);return rounds.find(w=>data.matches.some(m=>!m.stage&&m.round===w&&m.score==null&&!cancelled(m)))??null;}
+function project(data,week=active(data)){const rows=data.baseline.map(t=>({...t})),index=new Map(rows.map(t=>[t.id,t])),matches=chronological(data.matches.filter(m=>!m.stage&&m.round===week&&!cancelled(m))),missing=[],steps=[],revealed=new Map(),competition=Season.competitions.find(c=>c.id===data.competitionId)||{};let previous=rows.map(t=>({...t}));
+ const rank=()=>{const ranked=Season.table(data.teams,data.matches.map(m=>m.score==null&&revealed.has(m.id)?{...m,score:revealed.get(m.id)}:m),competition),rankOrder=new Map(ranked.map(t=>[t.id,t.rank]));rows.forEach(t=>t.gd=t.gf-t.ga);rows.sort((a,b)=>b.pts-a.pts||(rankOrder.get(a.id)-rankOrder.get(b.id)));return rows.map((t,i)=>({...t,rank:i+1}));};
+ for(const m of matches){const before=previous.map(t=>({...t}));if(!m.score&&!m.forecast){missing.push(m.id);steps.push({match:m,before,table:before,alreadyCounted:false,missing:true});continue;}
+ // baseline is the real current table: completed results are already included.
+ // Only future forecasts are added. Never count a completed fixture twice.
+ if(!m.score){const h=index.get(m.home),a=index.get(m.away),[x,y]=m.forecast;if(!h||!a)throw Error('Weekly fixture team missing from table');revealed.set(m.id,m.forecast);h.p++;a.p++;h.gf+=x;h.ga+=y;a.gf+=y;a.ga+=x;if(x>y){h.w++;a.l++;h.pts+=3;}else if(x<y){a.w++;h.l++;a.pts+=3;}else{h.d++;a.d++;h.pts++;a.pts++;}}
+ const ranked=rank(),old=new Map(before.map(t=>[t.id,t.rank]));previous=ranked.map(t=>({...t,previousRank:old.get(t.id),move:old.get(t.id)-t.rank}));steps.push({match:m,before,table:previous,alreadyCounted:!!m.score,missing:false});
+ }
+ const original=new Map(data.baseline.map(t=>[t.id,t.rank]));return{week,matches,missing,complete:missing.length===0,backlog:data.matches.filter(m=>m.round<week&&m.score==null&&!cancelled(m)),baseline:data.baseline,steps,projected:previous.map(t=>({...t,previousRank:original.get(t.id),move:original.get(t.id)-t.rank}))};}
+return{active,project,chronological};});

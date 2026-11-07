@@ -1,0 +1,354 @@
+{
+  "teamId": "436",
+  "formation": "4-2-3-1",
+  "players": [
+    {
+      "id": "176948",
+      "name": "Ederson",
+      "number": 31,
+      "roles": [
+        "GK"
+      ],
+      "position": "GK",
+      "physical": {
+        "heightCm": 188.0,
+        "weightKg": 88.9,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "320982",
+      "name": "Archie Brown",
+      "number": 3,
+      "roles": [
+        "LB"
+      ],
+      "position": "LB",
+      "physical": {
+        "heightCm": 190.5,
+        "weightKg": 86.2,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "175195",
+      "name": "Milan Skriniar",
+      "number": 37,
+      "roles": [
+        "CB"
+      ],
+      "position": "CB",
+      "physical": {
+        "heightCm": 188.0,
+        "weightKg": 83.0,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": true
+    },
+    {
+      "id": "357205",
+      "name": "Kojo Peprah Oppong",
+      "number": 21,
+      "roles": [
+        "CB"
+      ],
+      "position": "CB",
+      "physical": {
+        "heightCm": 185.4,
+        "weightKg": 77.1,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "222670",
+      "name": "Nélson Semedo",
+      "number": 27,
+      "roles": [
+        "RB"
+      ],
+      "position": "RB",
+      "physical": {
+        "heightCm": 177.8,
+        "weightKg": 66.2,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "173556",
+      "name": "N'Golo Kanté",
+      "number": 91,
+      "roles": [
+        "DM"
+      ],
+      "position": "DM",
+      "physical": {
+        "heightCm": 167.6,
+        "weightKg": 68.9,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "248676",
+      "name": "Matteo Guendouzi",
+      "number": 6,
+      "roles": [
+        "DM"
+      ],
+      "position": "DM",
+      "physical": {
+        "heightCm": 185.4,
+        "weightKg": 68.0,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "306789",
+      "name": "Kerem Aktürkoğlu",
+      "number": 7,
+      "roles": [
+        "LW"
+      ],
+      "position": "LW",
+      "physical": {
+        "heightCm": 172.7,
+        "weightKg": 68.0,
+        "verifiedMeasurements": true,
+        "source": "Existing source roster"
+      }
+    },
+    {
+      "id": "276221",
+      "name": "Mason Greenwood",
+      "number": 11,
+      "roles": [
+        "AM"
+      ],
+      "position": "AM",
+      "physical": {
+        "heightCm": 180.3,
+        "weightKg": 68.9,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "322813",
+      "name": "Oğuz Aydın",
+      "number": 70,
+      "roles": [
+        "RW"
+      ],
+      "position": "RW",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": 76.2,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "240209",
+      "name": "Vedat Muriqi",
+      "number": 19,
+      "roles": [
+        "ST"
+      ],
+      "position": "ST",
+      "physical": {
+        "heightCm": 193.0,
+        "weightKg": 92.1,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    }
+  ],
+  "bench": [
+    {
+      "id": "124880",
+      "name": "Mert Günok",
+      "number": 34,
+      "roles": [
+        "GK"
+      ],
+      "position": "GK",
+      "physical": {
+        "heightCm": 195.6,
+        "weightKg": 92.1,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "340186",
+      "name": "Yiğit Demir",
+      "number": 14,
+      "roles": [
+        "DEF"
+      ],
+      "position": "DEF",
+      "physical": {
+        "heightCm": 193.0,
+        "weightKg": 78.9,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "380332",
+      "name": "Ognjen Mimovic",
+      "number": 77,
+      "roles": [
+        "DEF"
+      ],
+      "position": "DEF",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": null,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "290511",
+      "name": "Munir Mercan",
+      "number": 22,
+      "roles": [
+        "DEF"
+      ],
+      "position": "DEF",
+      "physical": {
+        "heightCm": 175.3,
+        "weightKg": 68.0,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "311984",
+      "name": "Bartug Elmaz",
+      "number": 28,
+      "roles": [
+        "MID"
+      ],
+      "position": "MID",
+      "physical": {
+        "heightCm": 177.8,
+        "weightKg": 72.1,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "261302",
+      "name": "Mert Yandas",
+      "number": 8,
+      "roles": [
+        "MID"
+      ],
+      "position": "MID",
+      "physical": {
+        "heightCm": 175.3,
+        "weightKg": 68.0,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "305629",
+      "name": "Ismail Yüksek",
+      "number": 5,
+      "roles": [
+        "MID"
+      ],
+      "position": "MID",
+      "physical": {
+        "heightCm": 182.9,
+        "weightKg": 73.9,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "211923",
+      "name": "İrfan Can Kahveci",
+      "number": 17,
+      "roles": [
+        "RW"
+      ],
+      "position": "RW",
+      "physical": {
+        "heightCm": 180.3,
+        "weightKg": 78.0,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "139437",
+      "name": "Romelu Lukaku",
+      "number": 9,
+      "roles": [
+        "FWD"
+      ],
+      "position": "FWD",
+      "physical": {
+        "heightCm": 190.5,
+        "weightKg": 102.1,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    },
+    {
+      "id": "329486",
+      "name": "Nene Dorgeles",
+      "number": 45,
+      "roles": [
+        "FWD"
+      ],
+      "position": "FWD",
+      "physical": {
+        "heightCm": 175.3,
+        "weightKg": 62.1,
+        "verifiedMeasurements": true,
+        "source": "Existing ESPN roster"
+      },
+      "captain": false
+    }
+  ],
+  "coach": {
+    "name": "İsmail Kartal"
+  },
+  "captainId": "175195",
+  "source": {
+    "name": "User fixture selection",
+    "status": "manual-lineup",
+    "fixtureLocked": true,
+    "selectionVersion": 6,
+    "selectionBasis": "Explicit user selection for this fixture; remote lineup refresh disabled"
+  }
+}

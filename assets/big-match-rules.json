@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "aheadDays": 5,
+  "competitions": {
+    "tr.1": ["Galatasaray", "Fenerbahçe", "Beşiktaş", "Trabzonspor"],
+    "en.1": ["Arsenal", "Chelsea", "Liverpool", "Manchester City", "Manchester United", "Tottenham Hotspur"],
+    "es.1": ["FC Barcelona", "Real Madrid", "Atlético de Madrid"],
+    "it.1": ["AC Milan", "Inter", "Juventus", "AS Roma", "Lazio", "Napoli", "Atalanta"],
+    "de.1": ["Bayern München", "Borussia Dortmund", "Bayer Leverkusen", "RB Leipzig"],
+    "fr.1": ["Paris Saint-Germain", "Olympique de Marseille", "Olympique Lyonnais", "AS Monaco"],
+    "ucl": [], "uel": [], "uecl": []
+  },
+  "derbies": [
+    {"teams":["Galatasaray","Fenerbahçe"],"tr":"Kıtalararası Derbi","en":"Intercontinental Derby"},
+    {"teams":["Galatasaray","Beşiktaş"],"tr":"İstanbul Derbisi","en":"Istanbul Derby"},
+    {"teams":["Fenerbahçe","Beşiktaş"],"tr":"İstanbul Derbisi","en":"Istanbul Derby"},
+    {"teams":["FC Barcelona","Real Madrid"],"tr":"El Clásico","en":"El Clásico"},
+    {"teams":["Real Madrid","Atlético de Madrid"],"tr":"Madrid Derbisi","en":"Madrid Derby"},
+    {"teams":["Sevilla FC","Real Betis"],"tr":"Sevilla Derbisi","en":"Seville Derby"},
+    {"teams":["Athletic Club","Real Sociedad"],"tr":"Bask Derbisi","en":"Basque Derby"},
+    {"teams":["FC Barcelona","RCD Espanyol"],"tr":"Barcelona Derbisi","en":"Barcelona Derby"},
+    {"teams":["Manchester City","Manchester United"],"tr":"Manchester Derbisi","en":"Manchester Derby"},
+    {"teams":["Arsenal","Tottenham Hotspur"],"tr":"Kuzey Londra Derbisi","en":"North London Derby"},
+    {"teams":["Liverpool","Everton"],"tr":"Merseyside Derbisi","en":"Merseyside Derby"},
+    {"teams":["Liverpool","Manchester United"],"tr":"Kuzeybatı Derbisi","en":"North West Derby"},
+    {"teams":["AC Milan","Inter"],"tr":"Milano Derbisi","en":"Derby della Madonnina"},
+    {"teams":["Juventus","Inter"],"tr":"Derby d’Italia","en":"Derby d’Italia"},
+    {"teams":["AS Roma","Lazio"],"tr":"Roma Derbisi","en":"Derby della Capitale"},
+    {"teams":["Bayern München","Borussia Dortmund"],"tr":"Der Klassiker","en":"Der Klassiker"},
+    {"teams":["Paris Saint-Germain","Olympique de Marseille"],"tr":"Le Classique","en":"Le Classique"},
+    {"teams":["LOSC Lille","RC Lens"],"tr":"Kuzey Derbisi","en":"Derby du Nord"}
+  ]
+}

@@ -1,0 +1,29 @@
+NEXT90SIM v102 — KONSEPT ARŞİVİ KAPSAMI
+
+Toplam 3350 takım/yıl seçeneği.
+Millî: mevcut 16 ülke için 1980–2026 aralığında her yıl; Hırvatistan 1990–2026 (ayrı milli takım başlangıcı).
+Yıllık kayıtlar, o takvim yılında oynayan oyunculardır. Her yılın tek ve değişmez resmî bir kadrosu yoktur. Turnuva kadrosu varsa o sürüm korunur; eksik yıllara yıllık katılım kaydı eklenir.
+526 yıllık seçenek + 69 eksik senior turnuva seçeneği eklendi.
+Portekiz 2016: 23 kişilik EURO kadrosu, finalin gerçek 11’i ve Fernando Santos. Arjantin 2022: var olan 26 kişilik Dünya Kupası kaydı korunur.
+
+Kulüpler: kaynakta bulunan sezon snapshotları; 96 grupta 2153 kayıt içe alındı/düzeltildi, 1391 yeni seçenek eklendi.
+Fenerbahçe 2013–14: Volkan, Caner, Egemen, Bruno Alves, Gökhan, Topal, Meireles, Emre, Sow, Emenike, Kuyt temsili 11’i; Ersun Yanal ve tam sezon havuzu.
+Kaynakta sadece genel D/M/F mevkii varsa oyun yerleşimi model tarafından belirlenir ve seçim doğrulanmış maç 11’i olarak sunulmaz.
+Forma numarası/TD kaynakta yoksa uydurulmaz; numara boş, teknik direktör — görünür.
+Kulüp arşivinin 1980’den itibaren her yıl tamamlandığı iddia edilmez. Özellikle 1990’lar öncesinde alınamayan sezonlar vardır.
+
+Örnek kesintisiz aralıklar:
+Fenerbahçe: 2004–2026; aralık içi eksikler: yok
+Galatasaray: 2004–2026; aralık içi eksikler: yok
+Beşiktaş: 2004–2026; aralık içi eksikler: yok
+Real Madrid: 1995–2026; aralık içi eksikler: yok
+FC Barcelona: 1995–2026; aralık içi eksikler: yok
+Arsenal: 1993–2026; aralık içi eksikler: yok
+Liverpool: 1993–2026; aralık içi eksikler: yok
+Bayern München: 1995–2026; aralık içi eksikler: yok
+Juventus: 1995–2026; aralık içi eksikler: yok
+Paris Saint-Germain: 1998–2026; aralık içi eksikler: yok
+
+Tüm grup/yıl listesi assets/concept/history-coverage.json dosyasındadır.
+Yeni veriler çevrimdışı JSON/JS olarak pakettedir. Günlük güncel kadro API verisi değiştirilmedi.
+Tarihî ilk 11’lerin kayda geçmiş bir maçtan mı yoksa temsili seçimden mi geldiği source alanında tutulur.

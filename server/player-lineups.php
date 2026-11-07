@@ -1,0 +1,114 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__.'/player-sources.php';
+require_once __DIR__.'/lineup-freshness.php';
+require_once __DIR__.'/misli-lineups.php';
+require_once __DIR__.'/mackolik-lineups.php';
+require_once __DIR__.'/nesine-sources.php';
+require_once __DIR__.'/club-rosters.php';
+require_once __DIR__.'/bsd-provider.php';
+require_once __DIR__.'/sofascore-lineups.php';
+/* Additive player snapshots. Scores and previously published forecasts are never rewritten. */
+function pp_preserve_team(?array $fresh,?array $old):?array {
+ if(!$old)return $fresh;if(!$fresh||count($fresh['players']??[])!==11)return count($old['players']??[])===11?$old:$fresh;
+ if(!empty($fresh['teamId'])&&!empty($old['teamId'])&&(string)$fresh['teamId']!==(string)$old['teamId'])return $fresh;
+ $retained=[];if(empty($fresh['coach'])&&!empty($old['coach'])){$fresh['coach']=$old['coach'];$retained[]='coach';}
+ if(empty($fresh['bench'])&&!empty($old['bench'])&&($fresh['source']['benchStatus']??'')!=='match-bench'){$starters=array_column($fresh['players'],'id');$fresh['bench']=array_values(array_filter($old['bench'],fn($p)=>!in_array($p['id'],$starters,true)));$retained[]='bench';}
+ $prior=[];foreach(array_merge($old['players']??[],$old['bench']??[])as$p)$prior[(string)$p['id']]=$p;
+ foreach(['players','bench']as$key)foreach($fresh[$key]??[]as$i=>$p){$oldPlayer=$prior[(string)$p['id']]??null;if(!$oldPlayer)continue;foreach(['physical','appearance','portrait','shirtName','dateOfBirth']as$field)if(empty($p[$field])&&!empty($oldPlayer[$field]))$fresh[$key][$i][$field]=$oldPlayer[$field];}
+ if($retained)$fresh['source']['retainedFields']=['fields'=>$retained,'asOf'=>$old['source']['asOf']??null,'reason'=>'provider-field-unavailable'];return $fresh;
+}
+function pp_players_enabled(array $m):bool{return ($m['date']??'')>='2026-10-21';}
+function pp_players_code(array $m):?string{return ['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf'][$m['competitionId']??'']??null;}
+function pp_players_json(string $url,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):array{
+ static $requests=0,$started=null;$started=$started??microtime(true);$path=$cfg['storage_dir'].'/players-source-'.hash('sha256',$url).'.json';$cache=pp_read($path);$stamp=strtotime($cache['fetchedAt']??'');
+ $ttl=strpos($url,'/summary?')!==false?90:(strpos($url,'/roster')!==false?900:1800);
+ if($stamp&&$stamp<=$now->getTimestamp()&&$now->getTimestamp()-$stamp<$ttl)return $cache['document']+['_wosSource'=>['url'=>$url,'asOf'=>$cache['fetchedAt']]];
+ if(isset($cfg['_lineup_deadline'])&&microtime(true)>$cfg['_lineup_deadline']-1)throw new RuntimeException('Lineup deadline');
+ if(++$requests>($cfg['players_request_budget']??12)||microtime(true)-$started>($cfg['players_max_seconds']??35))throw new RuntimeException('Player source budget exhausted');
+ $net=$cfg;$net['request_timeout_seconds']=min(isset($cfg['_lineup_deadline'])?max(1,(int)($cfg['_lineup_deadline']-microtime(true))):5,(int)($cfg['request_timeout_seconds']??5));$net['max_download_bytes']=2500000;$doc=$fetcher?$fetcher($url,$net):pp_fetch($url,$net);if(!is_array($doc))throw new RuntimeException('Invalid player source');
+ pp_write($path,['fetchedAt'=>$now->format(DATE_ATOM),'document'=>$doc]);return $doc+['_wosSource'=>['url'=>$url,'asOf'=>$now->format(DATE_ATOM)]];
+}
+function pp_players_role(string $value):?string{
+ return ['G'=>'GK','GK'=>'GK','CD'=>'CB','CD-L'=>'CB','CD-R'=>'CB','CB'=>'CB','LB'=>'LB','RB'=>'RB','LWB'=>'LWB','RWB'=>'RWB','DM'=>'DM','DM-L'=>'DM','DM-R'=>'DM','CM'=>'CM','CM-L'=>'CM','CM-R'=>'CM','AM'=>'AM','AM-L'=>'LW','AM-R'=>'RW','LM'=>'LM','RM'=>'RM','LF'=>'LW','RF'=>'RW','LW'=>'LW','RW'=>'RW','F'=>'ST','CF'=>'ST','ST'=>'ST','D'=>'DEF','M'=>'MID'][$value]??null;
+}
+function pp_players_coach($value):?array{
+ if(!is_array($value))return null;if(isset($value['name'])||isset($value['displayName'])||isset($value['firstName']))$value=[$value];
+ $active=array_values(array_filter($value,fn($c)=>is_array($c)&&(($c['isHeadCoach']??false)||($c['current']??false)||($c['active']??false))));
+ // Some provider lists contain several historical managers; never pick the first.
+ if(count($active)===1)$value=$active;if(count($value)!==1||!is_array($value[0]))return null;$c=$value[0];$name=trim((string)($c['displayName']??$c['name']??trim(($c['firstName']??'').' '.($c['lastName']??''))));
+ return $name!==''&&strlen($name)<=160?['id'=>(string)($c['id']??''),'name'=>$name,'source'=>'ESPN']:null;
+}
+function pp_players_extras(array $doc,string $teamId,array $current=[]):array{
+ $bench=[];$coach=null;foreach($doc['rosters']??[]as$r){if((string)($r['team']['id']??'')!==$teamId)continue;$coach=pp_players_coach($r['coach']??$r['coaches']??[]);$seen=[];foreach($r['roster']??[]as$p){if(($p['starter']??null)!==false)continue;$a=$p['athlete']??[];$id=(string)($a['id']??'');$name=trim((string)($a['displayName']??$a['fullName']??''));if(!preg_match('/^\d{1,12}$/',$id)||!$name||strlen($name)>160||isset($seen[$id])||$current&&(!isset($current[$id])||!($current[$id]['available']??false)))continue;$seen[$id]=true;$number=(string)($current[$id]['number']??$p['jersey']??$a['jersey']??'');$bench[]=['id'=>$id,'name'=>$name,'shortName'=>$a['shortName']??$name,'number'=>preg_match('/^\d{1,3}$/',$number)?(int)$number:null];if(count($bench)>=23)break;}}
+ $v=$doc['gameInfo']['venue']??$doc['header']['competitions'][0]['venue']??[];$name=trim((string)($v['fullName']??$v['name']??''));$venue=$name!==''&&strlen($name)<=200?['id'=>(string)($v['id']??''),'fullName'=>$name,'city'=>$v['address']['city']??null,'country'=>$v['address']['country']??null,'source'=>'ESPN']:null;
+ return ['bench'=>$bench,'coach'=>$coach,'venue'=>$venue];
+}
+function pp_players_extract(array $doc,string $teamId,DateTimeImmutable $now,string $status,array $current=[]):?array{
+ $supported=['4-2-3-1','4-3-3','4-4-2','4-1-4-1','4-3-1-2','4-3-2-1','3-5-2','3-4-3','4-4-1-1','4-2-2-2','5-3-2','5-4-1','3-4-2-1','3-4-1-2','3-1-4-2','4-5-1','4-2-1-3'];
+ foreach($doc['rosters']??[]as$r){if((string)($r['team']['id']??'')!==$teamId)continue;$formation=(string)($r['formation']??'');if(!in_array($formation,$supported,true))return null;$players=[];$ids=[];$gk=0;
+  foreach($r['roster']??[]as$p){if(($p['starter']??false)!==true)continue;$a=$p['athlete']??[];$id=(string)($a['id']??'');$name=trim((string)($a['displayName']??$a['fullName']??''));$role=pp_players_role((string)($p['position']['abbreviation']??$a['position']['abbreviation']??''));if(!preg_match('/^\d{1,12}$/',$id)||!$name||strlen($name)>160||!$role||isset($ids[$id]))return null;
+   if($current&&(!isset($current[$id])||!($current[$id]['available']??false)))return null;$ids[$id]=true;$gk+=(int)($role==='GK');$roles=[$role];if(in_array($role,['LM','RM'],true)&&!in_array($formation,['4-4-2','4-1-4-1','4-4-1-1','5-4-1'],true))$roles=array_merge($roles,['CM','DM']);
+   $number=(string)($current[$id]['number']??$p['jersey']??$a['jersey']??'');$players[]=['id'=>$id,'name'=>$name,'shortName'=>$a['shortName']??$name,'number'=>preg_match('/^\d{1,3}$/',$number)?(int)$number:null,'physical'=>$current[$id]['physical']??null,'roles'=>$roles,'position'=>$role,'formationPlace'=>$p['formationPlace']??null,'captain'=>(bool)($p['isCaptain']??$p['captain']??$a['isCaptain']??false),'dateOfBirth'=>$current[$id]['dateOfBirth']??$a['dateOfBirth']??null,'appearance'=>null,'portrait'=>'portrait.php?id='.$id];
+  }if(count($players)!==11||$gk!==1)return null;
+  $extra=pp_players_extras($doc,$teamId,$current);if($extra['coach'])$extra['coach']+=['asOf'=>$doc['_wosSource']['asOf']??$now->format(DATE_ATOM),'basis'=>$status==='provider-lineup'?'exact-match':'previous-match','url'=>$doc['_wosSource']['url']??null];return ['formation'=>$formation,'teamId'=>$teamId,'players'=>$players,'bench'=>$extra['bench'],'coach'=>$extra['coach'],'source'=>['selectionVersion'=>PP_LINEUP_SELECTION_VERSION,'name'=>'ESPN','status'=>$status,'asOf'=>$now->format(DATE_ATOM),'basisEventId'=>(string)($doc['header']['id']??'')],'setPieceTakers'=>[]];
+ }return null;
+}
+function pp_players_event_ok(array $doc,string $event,array $m):bool{
+ if((string)($doc['header']['id']??'')!==$event)return false;$teams=[];foreach($doc['header']['competitions'][0]['competitors']??[]as$t)$teams[(string)($t['homeAway']??'')]=(string)($t['team']['id']??'');
+ $kick=strtotime($m['kickoff']??'');$remote=strtotime($doc['header']['competitions'][0]['date']??'');return $kick&&$remote&&abs($kick-$remote)<61&&($teams['home']??'')===(string)($m['home']['espnId']??'')&&($teams['away']??'')===(string)($m['away']['espnId']??'');
+}
+function pp_players_recent(array $m,string $side,string $code,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):?array{
+ $team=(string)($m[$side]['espnId']??'');if(!preg_match('/^\d{1,12}$/',$team))return null;$root='https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/teams/'.$team;
+ $currentDoc=pp_players_json($root.'/roster',$cfg,$now,$fetcher);if((string)($currentDoc['team']['id']??'')!==$team)return null;$current=[];foreach($currentDoc['athletes']??[]as$a){$id=(string)($a['id']??'');$current[$id]=['available'=>!in_array(strtolower($a['status']['type']??'active'),['inactive','injured','suspended','out'],true)&&!($a['injured']??false),'dateOfBirth'=>$a['dateOfBirth']??null,'number'=>preg_match('/^\d{1,3}$/',(string)($a['jersey']??''))?(int)$a['jersey']:null,'physical'=>['heightCm'=>isset($a['height'])&&$a['height']>=55&&$a['height']<=90?round($a['height']*2.54,1):null,'weightKg'=>isset($a['weight'])&&$a['weight']>=90&&$a['weight']<=300?round($a['weight']*.45359237,1):null,'source'=>'ESPN roster','verifiedMeasurements'=>true]];}if(count(array_filter($current,fn($p)=>$p['available']))<11)return null;
+ $schedule=pp_players_json($root.'/schedule',$cfg,$now,$fetcher);if((string)($schedule['team']['id']??'')!==$team)return null;$events=[];$cut=min($now->getTimestamp(),strtotime($m['kickoff']??$m['date'])?:0);
+ foreach($schedule['events']??[]as$e){$at=strtotime($e['date']??'');$c=$e['competitions'][0]??[];$members=array_map(fn($t)=>(string)($t['team']['id']??$t['id']??''),$c['competitors']??[]);if($at&&$at+7200<$cut&&$cut-$at<45*86400&&($c['status']['type']['completed']??false)&&in_array($team,$members,true))$events[]=$e;}
+ usort($events,fn($a,$b)=>strcmp($b['date'],$a['date']));foreach(array_slice($events,0,3)as$e){$id=(string)($e['id']??'');if(!preg_match('/^\d{1,15}$/',$id))continue;$doc=pp_players_json('https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/summary?event='.$id,$cfg,$now,$fetcher);$c=$doc['header']['competitions'][0]??[];if((string)($doc['header']['id']??'')!==$id||!($c['status']['type']['completed']??false))continue;$lineup=pp_players_extract($doc,$team,$now,'estimated-from-recent-start',$current);if($lineup){$lineup['coach']=pp_players_coach($currentDoc['coach']??$currentDoc['coaches']??$currentDoc['team']['coach']??$currentDoc['team']['coaches']??[])??$lineup['coach'];if(!empty($lineup['coach']))$lineup['coach']+=['asOf'=>$currentDoc['_wosSource']['asOf']??$now->format(DATE_ATOM),'basis'=>'current-club','url'=>$root.'/roster'];$lineup['source']['basisDate']=$e['date'];return $lineup;}}
+ return null;
+}
+function pp_players_team_codes(array $m,string $side,array $cfg):array{
+ $codes=[pp_players_code($m)];$team=(string)($m[$side]['espnId']??'');
+ // European fixtures can use the team's domestic recent XI, too.
+ $state=pp_read($cfg['storage_dir'].'/state.json');
+ foreach($state['matches']??[]as$p){if(in_array($p['competitionId']??'',['ucl','uel','uecl'],true))continue;foreach(['home','away']as$s)if($team!==''&&(string)($p[$s]['espnId']??'')===$team)$codes[]=pp_players_code($p);}
+ $codes=array_values(array_unique(array_filter($codes)));if(strpos($codes[0]??'','uefa.')===0&&count($codes)>1){$cup=array_shift($codes);$codes[]=$cup;}return $codes;
+}
+function pp_players_warm(array $cfg,DateTimeImmutable $now):void{
+ $state=pp_read($cfg['storage_dir'].'/state.json');$today=pp_bulletin_day($now);$end=(new DateTimeImmutable($today))->modify('+5 days')->format('Y-m-d');$queue=[];
+ foreach($state['predictions']??[]as$p){if(!pp_players_enabled($p)||($p['date']<$today||$p['date']>$end)||strtotime($p['kickoff']??'')<=$now->getTimestamp())continue;$s=pp_read($cfg['storage_dir'].'/players-match-'.$p['id'].'.json');$confirmed=count(array_filter($s['teams']??[],fn($t)=>($t['source']['status']??'')==='provider-lineup'))===2;$at=strtotime($s['asOf']??'')?:0;if($now->getTimestamp()-$at<90&&($s['version']??0)>=5&&($s['selectionVersion']??0)>=PP_LINEUP_SELECTION_VERSION)continue;$queue[]=['match'=>$p,'at'=>$at];}
+ usort($queue,fn($a,$b)=>($a['at']===0?0:1)<=>($b['at']===0?0:1)?:strcmp($a['match']['kickoff']??$a['match']['date'],$b['match']['kickoff']??$b['match']['date']));$cfg['players_request_budget']=10;$cfg['players_max_seconds']=20;
+ foreach(array_slice($queue,0,1)as$item)pp_players_snapshot($item['match'],$cfg,$now);
+}
+function pp_players_preferred_complete(array $teams,int $kick,DateTimeImmutable $now):bool{
+ $preferred=count(array_filter($teams,fn($t)=>in_array($t['source']['name']??'',['SofaScore','Misli','Nesine'],true)&&in_array($t['source']['status']??'',['provider-lineup','provider-predicted'],true)&&!($t['source']['stale']??false)&&($at=strtotime($t['source']['asOf']??''))&&$at<=$now->getTimestamp()&&$now->getTimestamp()-$at<900))===2;
+ $confirmed=count(array_filter($teams,fn($t)=>($t['source']['status']??'')==='provider-lineup'))===2;return $preferred&&($now->getTimestamp()<$kick-7200||$confirmed);
+}
+function pp_players_snapshot(array $m,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):array{
+ pp_lineup_trace('__reset');
+ foreach(['home','away']as$side)if(empty($m[$side]['espnId'])){$club=pp_club_entry($m[$side]);if($club)$m[$side]['espnId']=$club['espnId'];}
+ $none=['version'=>1,'status'=>'unavailable','teams'=>[null,null],'asOf'=>$now->format(DATE_ATOM)];if(!pp_players_enabled($m))return array_merge($none,['status'=>'legacy']);$id=(string)($m['id']??'');$code=pp_players_code($m);$cfg['_lineup_deadline']=microtime(true)+min(20,(int)($cfg['players_max_seconds']??20));if(!preg_match('/^[a-f0-9]{24}$/',$id)||!$code)return $none;
+ $file=$cfg['storage_dir'].'/players-match-'.$id.'.json';$cached=pp_read($file);$hadCached=!empty($cached);$cached=pp_club_complete(pp_source_fixture_fallback($cached?:$none,$m),$m,$cfg,$now);$cached['version']=$cached['version']??0;$cached['selectionVersion']=$cached['selectionVersion']??0;
+
+ // Starter identities may arrive late. They do not rewrite the analysis/score;
+ // current-match goals or other post-kickoff performance are never imported.
+ $kick=strtotime($m['kickoff']??($m['date'].'T00:00:00+03:00'));if(!$kick)return pp_coaches_finalize(pp_bench_snapshot($cached?:$none,$m),$m,$cfg,$now);
+ // v1 locked estimated XIs too early. Migrate them without touching forecasts.
+ $confirmed=fn($s)=>count(array_filter($s['teams']??[],fn($t)=>($t['source']['status']??'')==='provider-lineup'))===2;
+ if($now->getTimestamp()>=$kick&&($cached['locked']??false)&&$confirmed($cached)&&($cached['version']??0)>=6&&($cached['presentationComplete']??false))return pp_coaches_finalize(pp_bench_snapshot($cached,$m),$m,$cfg,$now);
+ $failed=strtotime($cached['asOf']??'');if($hadCached&&$failed&&$now->getTimestamp()-$failed<90&&($cached['version']??0)>=6&&($cached['selectionVersion']??0)>=PP_LINEUP_SELECTION_VERSION&&count(array_filter($cached['teams']??[],fn($t)=>count($t['players']??[])===11&&!empty($t['coach'])&&!empty($t['bench'])))===2)return pp_coaches_finalize(pp_bench_snapshot($cached,$m),$m,$cfg,$now);
+ $lock=fopen($file.'.lock','c');if(!$lock||!flock($lock,LOCK_EX|LOCK_NB)){if($lock)fclose($lock);return pp_coaches_finalize(pp_bench_snapshot($cached?:$none,$m),$m,$cfg,$now);}
+ try{$again=pp_read($file);if($now->getTimestamp()>=$kick&&($again['locked']??false)&&$confirmed($again)&&($again['version']??0)>=6&&($again['presentationComplete']??false))return pp_coaches_finalize(pp_bench_snapshot($again,$m),$m,$cfg,$now);$base=pp_club_complete(['teams'=>$again['teams']??$cached['teams']??[null,null]],$m,$cfg,$now,false,$fetcher);$teams=$base['teams'];$sofaCfg=$cfg;$sofaCfg['sofascore_enabled']=true;$sofaCfg['_lineup_deadline']=min($cfg['_lineup_deadline'],microtime(true)+7);$teams=pp_sofa_enrich($m,$teams,$sofaCfg,$now,$fetcher);$bsdCfg=$cfg;$bsdCfg['_lineup_deadline']=min($cfg['_lineup_deadline'],microtime(true)+4);if(count(array_filter($teams,fn($t)=>pp_sofa_fresh($t,$now)))<2)$teams=bsd_lineups($m,$teams,$bsdCfg,$now,$fetcher);$fallback=pp_sofa_fotmob($m,$teams,$cfg,$now,$fetcher);$teams=$fallback['teams'];$preferredTeams=$teams;$cursor=(int)($again['providerCursor']??$cached['providerCursor']??0);$providers=['Nesine'=>'pp_nesine_enrich','Misli'=>'pp_misli_enrich'];$keys=array_keys($providers);$keys=array_merge(array_slice($keys,$cursor%count($providers)),array_slice($keys,0,$cursor%count($providers)));foreach($keys as$key){if(count(array_filter($teams,fn($t)=>pp_secondary_fresh($t,$now)))===2)break;$local=$cfg;$local['_lineup_deadline']=min($cfg['_lineup_deadline'],microtime(true)+4);pp_lineup_trace($key,'checking');$teams=$providers[$key]($m,$teams,$local,$now,$fetcher);$traces=array_column(pp_lineup_trace(),null,'provider');if(($traces[$key]['status']??'')==='checking')pp_lineup_trace($key,count(array_filter($teams,fn($t)=>($t['source']['name']??'')===$key))?'matched':'no-exact-lineup');}$hasPreferred=pp_players_preferred_complete($teams,$kick,$now);$public=['teams'=>$teams,'venue'=>$fallback['venue']??$cached['venue']??null];$teams=$public['teams'];foreach([0,1]as$i)if(pp_secondary_fresh($preferredTeams[$i]??null,$now)&&(($preferredTeams[$i]['source']['status']??'')==='provider-lineup'||($teams[$i]['source']['status']??'')!=='provider-lineup'))$teams[$i]=$preferredTeams[$i];$event=(string)($m['espnEventId']??(($m['source']['name']??'')==='ESPN'?($m['source']['providerMatchId']??''):''));$doc=[];
+  if(!$event){try{$board=pp_players_json('https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/scoreboard?dates='.str_replace('-','',$m['date']).'&limit=1000',$cfg,$now,$fetcher);foreach($board['events']??[]as$e){$candidate=['header'=>['id'=>$e['id']??'','competitions'=>$e['competitions']??[]]];if(pp_players_event_ok($candidate,(string)($e['id']??''),$m)){$event=(string)$e['id'];break;}}}catch(Throwable $e){}}
+  try{if(preg_match('/^\d{1,15}$/',$event)){$doc=pp_players_json('https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/summary?event='.$event,$cfg,$now,$fetcher);if(!pp_players_event_ok($doc,$event,$m)||!in_array($doc['header']['competitions'][0]['status']['type']['state']??'',['pre','in','post'],true))$doc=[];}}catch(Throwable $e){}
+  foreach(['home','away']as$i=>$side){try{$teamId=(string)($m[$side]['espnId']??'');$exact=pp_players_extract($doc,$teamId,$now,'provider-lineup');if($exact){if($confirmed($cached)&&isset($teams[$i])){if(!empty($exact['bench']))$teams[$i]['bench']=$exact['bench'];if(!empty($exact['coach']))$teams[$i]['coach']=$exact['coach'];}else $teams[$i]=$exact;continue;}
+    if(($teams[$i]['source']['status']??'')==='provider-lineup')continue;
+    if(in_array($teams[$i]['source']['name']??'',['SofaScore','Misli','Nesine','FotMob'],true)&&($teams[$i]['source']['selectionVersion']??0)>=PP_LINEUP_SELECTION_VERSION&&$now->getTimestamp()-(strtotime($teams[$i]['source']['asOf']??'')?:0)<900)continue;
+    if($teams[$i]&&($teams[$i]['source']['selectionVersion']??0)>=PP_LINEUP_SELECTION_VERSION&&$now->getTimestamp()-(strtotime($teams[$i]['source']['asOf']??'')?:0)<21600)continue;
+    foreach(pp_players_team_codes($m,$side,$cfg)as$recentCode){try{$recent=pp_players_recent($m,$side,$recentCode,$cfg,$now,$fetcher);if($recent){$teams[$i]=$recent;break;}}catch(Throwable $e){}}
+   }catch(Throwable $e){/* Keep the last validated XI through source failures. */}}
+  foreach($teams as&$xi){if(!$xi)continue;foreach($now->getTimestamp()<$kick?($doc['leaders']??[]):[]as$group){if((string)($group['team']['id']??'')!==$xi['teamId'])continue;foreach($group['leaders']??[]as$category){if(!in_array($category['name']??'',['goals','goalsLeaders'],true))continue;foreach($category['leaders']??[]as$leader){if(!preg_match('/Goals:\s*(\d{1,2})\b/i',(string)($leader['displayValue']??''),$count))continue;foreach($xi['players']as&$player)if($player['id']===(string)($leader['athlete']['id']??'')){$player['scoringWeight']=round(min(2.5,sqrt(1+(int)$count[1]/5)),3);$player['scoringEvidence']=['source'=>'ESPN pre-match goals leader','goals'=>(int)$count[1]];}unset($player);}}}}unset($xi);
+  $venue=pp_players_extras($doc,(string)($m['home']['espnId']??''))['venue']??$public['venue']??$cached['venue']??null;foreach(['home','away']as$i=>$side){if(!$teams[$i]||!empty($teams[$i]['coach']))continue;try{$roster=pp_players_json('https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/teams/'.(string)($m[$side]['espnId']??'').'/roster',$cfg,$now,$fetcher);if((string)($roster['team']['id']??'')===(string)($m[$side]['espnId']??''))$teams[$i]['coach']=pp_players_coach($roster['coach']??$roster['coaches']??[]);}catch(Throwable $e){}}foreach([0,1]as$i)$teams[$i]=pp_preserve_team($teams[$i]??null,$cached['teams'][$i]??null);$out=['providerCursor'=>($cursor+1)%count($providers),'version'=>7,'selectionVersion'=>PP_LINEUP_SELECTION_VERSION,'venue'=>$venue,'status'=>$teams[0]&&$teams[1]?'ready':($teams[0]||$teams[1]?'partial':'unavailable'),'locked'=>false,'date'=>$m['date'],'teams'=>$teams,'asOf'=>$now->format(DATE_ATOM),'refreshAfterSeconds'=>90];$out['locked']=$confirmed($out);$out['presentationComplete']=$venue&&count(array_filter($teams,fn($t)=>!empty($t['bench'])&&!empty($t['coach'])))===2;$out=pp_club_complete($out,$m,$cfg,$now);$out=pp_coaches_finalize($out,$m,$cfg,$now);$out['presentationComplete']=count(array_filter($out['teams'],fn($t)=>count($t['players']??[])===11&&!empty($t['coach'])&&!empty($t['bench'])))===2;pp_write($file,$out);
+  // Registry bounds portrait fetching to identities actually found in a validated XI.
+  foreach($teams as$t)foreach(array_merge($t['players']??[],$t['bench']??[])as$p){$path=$cfg['storage_dir'].'/player-'.$p['id'].'.json';if(!is_file($path))pp_write($path,['id'=>$p['id'],'name'=>$p['name'],'dateOfBirth'=>$p['dateOfBirth']??null]);}return $out;
+ }finally{flock($lock,LOCK_UN);fclose($lock);}
+}

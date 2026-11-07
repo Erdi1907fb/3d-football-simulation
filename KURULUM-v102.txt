@@ -1,0 +1,12 @@
+NEXT90SIM WEB v102 — Tam ZIP
+
+1. public_html içindeki çalışan özel config/state dosyalarını, üretilmiş medya ve kayıtları silme.
+2. Bu ZIP’in içeriğini public_html içine çıkar; aynı adlı uygulama dosyalarının üzerine yaz. ZIP içinde ikinci bir site102 klasörü yoktur.
+3. https://alan-adin/next90sim-v102.html veya index.html aç. Penaltı: penalty-v102.html.
+4. build.php sonucu build:102 ve filesMatch:true olmalıdır.
+5. Masaüstünde yeni varsayılan Yüksek/Video; telefonda Düşük/Mobil. Dengeli ayar seçilebilir. HDR ışık WebGL2 ve düşük dışı ayarlarda açılır.
+6. Yeni arşiv yerel dosyalarla çalışır. Güncel maç API/cron ayarları mevcut yapılandırmanı kullanır; yeni bir anahtar veya sürekli Node servisi eklenmedi.
+
+Güncelleme öncesi oluşturulmuş MP4 dosyaları kendiliğinden yeniden çizilmez; yeni görünüm için videoyu bu sürümde yeniden üret.
+İlk yeni sürüm açılışında eski sayfa açık kaldıysa sekmeyi kapatıp v102 bağlantısını yeniden aç.
+GPU/video ve gerçek cihaz doğrulamasının sınırları SURUM-v102.txt içinde açıkça yazılıdır.

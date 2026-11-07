@@ -1,0 +1,41 @@
+NEXT90SIM WEB v102 — v99 tabanından tam web paketi
+
+GÖRÜNÜM / ORTAK 3D KATMAN
+- Her 3D maçta açık merkezli yeni çatı, 336 çelik taşıyıcı, LED kuşakları, localar ve ince korkuluklar. Bu mimari 14 çizim grubunda instancing ile eklenir. Normal/konsept/penaltı aynı sahne katmanını kullanır.
+- Poly Haven Stadium 01 gerçek HDR ortamı; kumaş/top yüzey ayrıntısı, tenin ışık tepkisi, daha az düz görünen Lambert tribün gölgelendirmesi. Mevcut arma, forma, bayrak, taraftar dağılımı ve yüz sistemi korunur.
+- Masaüstünde varsayılan Yüksek/Video; telefonda Düşük/Mobil. HDR yalnız WebGL2 ve düşük dışı kalite ayarlarında. Yüksek ayarda 2048 px projektör gölgesi. İskeletli futbolcular normal yayın mesafelerinde de tutulur; görüntü tekrar basit silindir modele erken düşmez.
+- v101 zemin yuvarlanması/sekmesi, filede temas noktasından yayılan tepki ve kale ağzı aşınması korunur.
+
+HAREKET / OYNANIŞ
+- Yeni locomotion uyarlaması: destek/salınım ayak fazları, mesafe tabanlı adım, koşu/yan koşu/ters koşu, pelvis ve kol karşı hareketi. Mevcut kesin vuruş/baş/el/top temasları son otorite olarak kalır.
+- Vuruş sonrası denge, kaleci hazır duruşu, yana/yükseğe uzanırken bacak itişi ve toparlanma pozları.
+- Rol şeritlerini, boş alanı, pas kanalını, rest defence ve eşsiz markaj görevlerini değerlendiren kolektif oyun katmanı. Taşıyıcının boşluğa yönelmesinde rakip hareketi ve dönüş maliyeti de hesaplanır; sadece düz ileri gitme kısıtı azaltılır.
+- Top sürme dokunuşunda kısa kontrollü salım ve yan ayak ofseti. Sonuç ve olay zamanları aynı simülasyondan gelir.
+- v101 tarayıcı factory'sinde yönlenme modülüne verilmeyen argüman düzeltildi. Node testi dışında tarayıcı UMD bağlantısı da sınandı.
+
+KONSEPT ARŞİVİ
+3350 seçenek; detay ARSIV-v102.txt ve history-coverage.json içinde.
+16 millî takımda 1980–2026 yılları; Hırvatistan ayrı millî takım döneminden dolayı 1990–2026. Kayıtlar turnuva listeleri ve yıllık gerçek katılımlar olarak ayrılır.
+69 turnuva ve 526 yıllık seçenek eklendi. Portekiz EURO 2016 finalinin gerçek 11'i + 23 kişilik kadro + Fernando Santos; Arjantin 2022 korunur.
+96 kulüp grubunda 2153 sezon snapshotı işlendi; 1391 yeni seçenek eklendi. Fenerbahçe 2013–14 eksik deneyimli oyuncularıyla yeniden tamamlandı.
+Bütün kulüpler için 1980'den itibaren her yıl tamamlandı denmez. Kaynakta bulunan aralıklar listelenir; komşu yıl kadrosu kopyalanmadı. İlk 11 seçimi ayrıca doğrulanmadıysa temsili olarak gösterilir; bilinmeyen numara boş, bilinmeyen TD — kalır.
+Konsept takım/yıl seçimlerine TR/EN görünür arama sonuçları eklendi.
+
+VİDEO / KORUNAN SİSTEMLER
+Ön izleme ve indirme aynı maç sonucunu kullanır. Dışa aktarımda masaüstünün seçtiği grafik ayarı kullanılır; telefon/yazılım yedek kodlama dengeli yola geçebilir.
+Eski görünümde hazırlanmış video cache anahtarının tekrar kullanılmasını önlemek için sürüm anahtarı değiştirildi. Eski MP4'ler kendiliğinden yeniden üretilmez.
+Video-core/H.264 kodlayıcı, transfer ve maç veri API dosyaları değiştirilmedi. Video-ui'de sadece görünüm cache sürümü yenilendi. Kayıtlı tahminler veya özel config/state dosyaları üzerine yeni özel veri yazılmaz. Güncel veri kaynakları/cron mevcut kurulumdan devam eder.
+Windows/Godot veya gerçek maç rekonstrüksiyonu bu paket kapsamında değildir.
+
+TEST SONUÇLARI
+18 maç / 576 örnek: hedef skor ve golcü kayıtları korundu, 82 canlı hücum açılışı, sıfır klasik motora hata geri dönüşü.
+500 takım/oyuncu penaltı serisi: sonuç/vuruş sayısı korunur; 218 erken bitiş, 153 uzatma.
+Ek 120 Messi/Ronaldo düellosu / 6575 top örneği: bütün gol, kurtarış, direk, dışarı sonuçları ve 5 şut stili; bitiş ve kimlikler doğru.
+3350 arşiv seçeneği gerçek kadro atama fonksiyonundan geçti; 0 hata.
+Portekiz 2016–Arjantin 2022 ve Fenerbahçe 2013–14–Barcelona 2011 motor pilotları: 514 zaman örneği; hedef skorlar korunur, sayısal hareketler sonlu.
+Düşük/yüksek ayarda 72 CPU sahne güncellemesi; matrisler sonlu. Yeni mimari ve HDR decode kontrolleri geçti. Shader kaynak sözleşmesi geçti; bu bir GPU derleme testi değildir.
+Tarayıcıda İngilizce konsept analiz ekranı ve millî kalecileriyle Messi/Ronaldo hazırlandı. Bu ortamda WebGL context kapalıdır; penaltı kontrolü şematik uyumlu ön izlemede yapılabildi.
+
+SINIRLAR
+GPU shader çıktısı, yeni görünümün ekrandaki kalitesi, gerçek FPS ve 1080p/60 MP4 üretimi bu ortamda uçtan uca doğrulanamadı. Fiziksel iPhone/Android testi yapılmadı. Her cihazda ve gelecekte her maçta hatasızlık garantisi verilmez.
+Yeni taranmış AAA model veya tam mocap paketi eklenmedi. FM/FC kalitesine ulaşıldığı veya tüm futbol fiziğinin yeniden yazıldığı iddia edilmez. Kendi yeni katmanlarımız ve kullanılan gerçek kaynaklar KAYNAKLAR-v102.md'de açıkça belirtilmiştir.

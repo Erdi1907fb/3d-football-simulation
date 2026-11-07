@@ -1,0 +1,90 @@
+NEXT90SIM v107 — Okunur penaltılar ve yeni senaryolar
+6 Kasım 2026. Çalışan v106 web sürümü üzerine uygulandı.
+
+YAYIN GÖRÜNÜMÜ
+Vurucu/kaleci adları 32 yerine 44 birim, skor satırındaki adlar 25 yerine 34,
+skorlar 30 yerine 45 birim oldu. Logolar ve portreler büyüdü. Rol, isim ve takım
+ayrı satırlara taşındı. İki bant 1080×1920'de Y=1296–1518, sağ kenar X≈909
+aralığındadır. Koşu alanı açık kalır: kamera genişletilmeden bakış yüksekliği
+ayarlandı. Geometrik kontrolde en aşağı koşu botu Y≈1273 kalır; gerçek 3D botlar
+da panel üstünde ölçüldü. Aynı çizim ön izleme ve MP4'e uygulanır. Düşük DPI
+ön izleme yoğunluğu artırıldı. Yüz/misafir/kaleci listeleri yeni önbellek anahtarıyla
+alınır; eski v106 listesi yeni modüle taşınmaz. Her Reels/Shorts açıklama boyu garanti edilmez.
+
+FORMA VE YÜZ
+Forma isimleri/numaraları büyüdü; uzun adların kenarları kesilmesin diye genişlik
+sınırı düzenlendi. Kontur inceltildi, forma renkleri korundu. Aktif HTML artık
+eski v97 forma yazıcısı yerine v107 yazıcısını kullanır. Yakın forma dokusu
+mevcut yüksek çözünürlük seviyelerini korur; kaynakta olmayan ayrıntı eklenmez.
+Önceden kırpılmış ikon yüzleri ikinci kez kırpılmaz; alın ve çene kaybı azaltılır.
+Yüzün yan kenarları başın tenine yumuşak geçer. Gereksiz koyulaştırma azaltıldı.
+Fotoğraf ayrı hareketli bir yüz kabuğuna değil, kafanın kendi malzemesine ve
+iskeletine bağlı kalır. Görsel incelemede yüz yerine gövde/kulak içeren üç kaynak
+kırpması canlı eşlemelerden çıkarıldı. Yanlış fotoğraf yerine standart model
+kullanılır. 100 misafirin 88'inde geçerli portre var, 12'si standart modeldir.
+Messi/Ronaldo ve bazı ikonların saç profilleri bağlı fotoğrafa göre yaklaşık
+ayarlandı. Bunlar gerçek 3D yüz taraması değildir; kaynak yaşı, açısı ve düşük
+çözünürlük hâlâ benzerliği sınırlar. Bütün açılarda kusursuzluk iddia edilmez.
+
+TEKLİ PENALTILAR
+Resmî biçim IFAB Law 10 ile karşılaştırıldı: ilk beşer vuruşta bir tarafın geri
+dönmesi matematiksel olarak imkânsızsa seri biter. Eşitlikte karşılıklı tek
+vuruşlar sürer; aynı sayıda vuruş tamamlanmadan kazanan ilan edilmez. Takımda
+11 oyuncunun sırası bitince sıra başa döner. Mevcut gösteri seçeneği beşer
+vuruşu bilerek tamamlar; resmî erken bitiş bu seçenekten ayrı tutulur.
+İlk beş işaret ekranda korunur. Ayraç ve boşluktan sonra ek vuruşlar yeşil/kırmızı
+olarak devam eder. Çok uzarsa son dört ek vuruş ve sıra aralığı gösterilir;
+önceki vuruşlar silinmez, maç kaydı ve önceki video karelerinde korunur.
+18 turluk/36 vuruşluk bir senaryo bulundu; seri tamamlanıp kazanan belirlendi.
+
+HER ANALİZDE YENİ SENARYO
+Penaltı stüdyosu her hazırlamada yeni rastgele tohum kullanır. Konsept maçların
+rastgele analizi de aynı katmana bağlandı. Güç/kadro ve varsa gözlenen penaltı
+verileri sonucu ağırlıklandırmaya devam eder. Veri olmayan oyuncularda mevcut
+rol önseli sürer; uydurma kariyer yüzdesi eklenmez. Şans bu olasılıklardan sonuç
+örnekler. Aynı eşleşmenin hemen önceki skorunu çeken senaryo en fazla 32 kez
+yeniden denenir. Bu bir içerik çeşitliliği filtresidir, ham istatistik dağılımıyla
+aynı değildir. Kazanan zorla sırayla değiştirilmez: aynı taraf farklı skorla
+yine kazanabilir; zayıf tarafın kazanma ihtimali de vardır.
+Hazırlanan tek senaryonun ön izlemesi, tekrar oynatması ve MP4'ü aynı sonucu
+korur. Yeni analizde eski video/indirme bağlantısı kaldırılır; eski MP4 yeni
+sonuç gibi sunulmaz. Senaryo alanı yeni numarayı otomatik gösterir.
+Günlük/haftalık tahmin dosyaları ve kayıtlı sonuçlar bu akışa bağlanmadı.
+
+FİZİK
+İç ayak/plase tarzına hafif yan kavis eklendi; başlangıç, kaleci/direk temas
+noktası ve sonuç korunur. Top yolu süreklidir. File dalgasının yayılma hızı şut
+hızına, sönümlemesi darbe uzaklığına bağlandı. Kale ağzı/zemin sabitleri korunur.
+Mevcut kaleci tutma, yanlara/üstten çelme, ters köşe, direk, aut, Panenka ve
+sert şut türleri sürer. Yeni bir harici tam fizik motoru alınmış değildir.
+Normal maçların beğenilen atak/gol sonuçları gereksiz yere yeniden üretilmedi.
+
+TEST KAPSAMI
+• Yeniden uygulanan kaynakta 1.000 resmî seri: 11.254 vuruş / 67.524 top örneği;
+  398 erken bitiş / 367 uzatma, 8 vuruş stili, 4 sonuç; kaçırma/çelme yönleri.
+• Ek 300 seri: 676.401 adet 120 Hz top adımı; en büyük adım yaklaşık 0,265 m;
+  sonlu değer/süreklilik ve eşit sayıda tekli vuruş kontrolleri geçti.
+• 100 yeni penaltı ve 100 yeni konsept analizi: ardışık skor tekrarı yok;
+  her iki penaltı galibi, konseptte ev/deplasman galibi ve beraberlik gözlendi.
+• 100 misafir oyuncu düellosu tamamlandı; 100 milli kaleci eşlemesi korundu.
+• 30 fotoğraflı oyuncuda 360 kafa pozu: ayrı yüz kabuğu çizilmez; bağlar sonlu
+  ve sabit. 500 konum / 210 file örneği, 80 baskı/çıkış kararı kontrol edildi.
+• Bu sohbetin ilk test turunda 18 normal maç / 432 sonlu örnek / 54 korunan gol,
+  ayrıca 500 penaltı serisi geçti. Çalışma alanı yenilenince v107 değişiklikleri
+  kayıtlı v106 üzerine yeniden uygulandı; yukarıdaki deterministik testler
+  aynı vuruş ve fizik sayılarıyla yeniden geçti.
+• Yeniden uygulama sonrası gerçek Chromium EN/TR arayüzü, milli kaleciler,
+  yeni skorlar, geç tekli vuruşlar, bot/panel yerleşimi, kısa sessiz MP4 ve yeni
+  analizde eski indirme bağlantısının gizlenmesi kontrol edildi. Ayrıntıları
+  tests/browser-results-v107.json içinde. Fiziksel telefon testi değildir.
+• Kodlayıcı, kaynak kadrolar, konsept arşivi, fikstür ve tahmin veri dosyaları
+  byte karşılaştırmasıyla korundu. Yerel HTML referansları ve ZIP CRC kontrolü.
+
+SINIRLAR
+Tarayıcı kontrolleri Chromium/SwiftShader yazılımsal WebGL2 ortamındadır;
+fiziksel iPhone/Android, Instagram uygulaması veya gerçek RTX FPS ölçümü değildir.
+MP4 kontrolü kısa ve sessizdir; bütün tam süreli sesli videolar test edilmiş
+sayılmaz. Her cihazda hiçbir hata olmayacağı garantisi verilmez. 12 misafirde
+gerçek fotoğraf yoktur. Kaynak fotoğraflar gerçek yüz taraması değildir.
+Hostinger ZIP yayın düzeni, diğer oyunlar ve mevcut özel ayarlar korunur.
+Yeni sürekli Node/Python servisi veya ek cron gerekmez.

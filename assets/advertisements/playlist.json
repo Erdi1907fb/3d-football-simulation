@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "intervalSeconds": 12,
+  "nightBrightness": 0.82,
+  "background": "#08271f",
+  "items": [],
+  "help": "Add {id,label,src,kind} items. src must be a local project path or a data:image URL. kind is optional: instagram, youtube, competition. Empty items preserve current next90sim branding. Images are contained, never stretched. Local uploads can be configured in the studio."
+}

@@ -1,0 +1,106 @@
+{
+  "reports": [
+    {
+      "lang": "en",
+      "control": {
+        "variants": [
+          {
+            "seed": 2806281432,
+            "score": "3:4"
+          },
+          {
+            "seed": 594821593,
+            "score": "4:3"
+          },
+          {
+            "seed": 109504379,
+            "score": "4:2"
+          }
+        ],
+        "bootY": [
+          1241.1267855745762,
+          1241.9684005275317
+        ],
+        "ribbon": {
+          "x": 30,
+          "y": 1296,
+          "scale": 0.84,
+          "right": 908.64,
+          "bottom": 1517.76
+        },
+        "longRounds": 18,
+        "longScore": [
+          17,
+          16
+        ],
+        "photographicHeads": 3
+      },
+      "exported": {
+        "bytes": 356486,
+        "staleVideoCleared": true
+      }
+    },
+    {
+      "lang": "tr",
+      "control": {
+        "variants": [
+          {
+            "seed": 2232310589,
+            "score": "4:5"
+          },
+          {
+            "seed": 2862790490,
+            "score": "3:1"
+          },
+          {
+            "seed": 3823710340,
+            "score": "5:6"
+          }
+        ],
+        "bootY": [
+          1241.9423271039254,
+          1257.7973389180368
+        ],
+        "ribbon": {
+          "x": 30,
+          "y": 1296,
+          "scale": 0.84,
+          "right": 908.64,
+          "bottom": 1517.76
+        },
+        "longRounds": 18,
+        "longScore": [
+          17,
+          16
+        ],
+        "photographicHeads": 3
+      },
+      "exported": {
+        "bytes": 357084,
+        "staleVideoCleared": true
+      }
+    }
+  ],
+  "errors": [],
+  "environment": "Chromium 131 SwiftShader; EN desktop and TR narrow viewport; short silent export, not physical mobile",
+  "codec": {
+    "en": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "60/1",
+      "duration": "0.100000",
+      "nb_frames": "6"
+    },
+    "tr": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "60/1",
+      "duration": "0.100000",
+      "nb_frames": "6"
+    }
+  }
+}

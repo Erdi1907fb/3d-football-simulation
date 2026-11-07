@@ -1,0 +1,1154 @@
+[
+  {
+    "name": "Milan",
+    "path": "/italy/milan/",
+    "comp": "uel",
+    "id": "milan",
+    "file": "assets/logos/milan.png",
+    "canonical": "AC Milan",
+    "page": "https://football-logos.cc/italy/milan/",
+    "asset": "https://assets.football-logos.cc/logos/italy/1500x1500/milan.6b4c62be.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 102832,
+    "sha256": "a5bb312ceff03d303078f4e6996f916f9fb52d0ffe72044451e4c10f2c588b3f"
+  },
+  {
+    "name": "Juventus",
+    "path": "/italy/juventus/",
+    "comp": "uel",
+    "id": "juventus",
+    "file": "assets/logos/juventus.png",
+    "canonical": "Juventus",
+    "page": "https://football-logos.cc/italy/juventus/",
+    "asset": "https://assets.football-logos.cc/logos/italy/1500x1500/juventus.309408e0.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 44221,
+    "sha256": "de1d91a51aeb93f0e863b07078fefa4f640555218d724a075dea44db52d83cb6"
+  },
+  {
+    "name": "Bayer Leverkusen",
+    "path": "/germany/bayer-leverkusen/",
+    "comp": "uel",
+    "id": "leverkusen",
+    "file": "assets/logos/leverkusen.png",
+    "canonical": "Bayer Leverkusen",
+    "page": "https://football-logos.cc/germany/bayer-leverkusen/",
+    "asset": "https://assets.football-logos.cc/logos/germany/1500x1500/bayer-leverkusen.ada32552.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 242662,
+    "sha256": "cd355e4dd5209f9d31efbff8925f3ce56002500acee7e9f1e05f99b762f40beb"
+  },
+  {
+    "name": "Hoffenheim",
+    "path": "/germany/hoffenheim/",
+    "comp": "uel",
+    "id": "tsg-hoffenheim",
+    "file": "assets/logos/tsg-hoffenheim.png",
+    "canonical": "TSG Hoffenheim",
+    "page": "https://football-logos.cc/germany/hoffenheim/",
+    "asset": "https://assets.football-logos.cc/logos/germany/1500x1500/hoffenheim.2f2360de.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 90028,
+    "sha256": "16f6da4ca1a6be7019c2d95909bdd27acd0ce088b766e14484b02c3d055487ca"
+  },
+  {
+    "name": "Real Sociedad",
+    "path": "/spain/real-sociedad/",
+    "comp": "uel",
+    "id": "real-sociedad",
+    "file": "assets/logos/real-sociedad.png",
+    "canonical": "Real Sociedad",
+    "page": "https://football-logos.cc/spain/real-sociedad/",
+    "asset": "https://assets.football-logos.cc/logos/spain/1500x1500/real-sociedad.7d3dbc7c.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 136617,
+    "sha256": "a54ba9549f2f04c8265729b5c701e0a1871c8735f38b40ceb2fb859c5b08e285"
+  },
+  {
+    "name": "Celta",
+    "path": "/spain/celta/",
+    "comp": "uel",
+    "id": "rc-celta",
+    "file": "assets/logos/rc-celta.png",
+    "canonical": "RC Celta",
+    "page": "https://football-logos.cc/spain/celta/",
+    "asset": "https://assets.football-logos.cc/logos/spain/1500x1500/celta.06769d38.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 70679,
+    "sha256": "fb3700f4e1c0ca0ecfce79c67e37b740ff8b421ac21f98a30b738656c70fe1c6"
+  },
+  {
+    "name": "Marseille",
+    "path": "/france/marseille/",
+    "comp": "uel",
+    "id": "marseille",
+    "file": "assets/logos/marseille.png",
+    "canonical": "Olympique de Marseille",
+    "page": "https://football-logos.cc/france/marseille/",
+    "asset": "https://assets.football-logos.cc/logos/france/1500x1500/marseille.6f770410.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 94275,
+    "sha256": "3640bf0759cb6ac29e6086ec7b2fea61d6a38b51b6eefce6062855bc8a3f079d"
+  },
+  {
+    "name": "Rennes",
+    "path": "/france/rennes/",
+    "comp": "uel",
+    "id": "stade-rennais",
+    "file": "assets/logos/stade-rennais.png",
+    "canonical": "Stade Rennais",
+    "page": "https://football-logos.cc/france/rennes/",
+    "asset": "https://assets.football-logos.cc/logos/france/1500x1500/rennes.f07dde44.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 141986,
+    "sha256": "f65b425cb574d5a1408c4079022cd539dc3fe642ed320d28091823da9380f059"
+  },
+  {
+    "name": "Bournemouth",
+    "path": "/england/bournemouth/",
+    "comp": "uel",
+    "id": "bournemouth",
+    "file": "assets/logos/bournemouth.png",
+    "canonical": "Bournemouth",
+    "page": "https://football-logos.cc/england/bournemouth/",
+    "asset": "https://assets.football-logos.cc/logos/england/1500x1500/bournemouth.5d240278.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 93477,
+    "sha256": "71e456a448ab7203d3ff43166b6d30afaf692f93eaf0397bfce28a4afc69307e"
+  },
+  {
+    "name": "Sunderland",
+    "path": "/england/sunderland/",
+    "comp": "uel",
+    "id": "sunderland",
+    "file": "assets/logos/sunderland.png",
+    "canonical": "Sunderland",
+    "page": "https://football-logos.cc/england/sunderland/",
+    "asset": "https://assets.football-logos.cc/logos/england/1500x1500/sunderland.4cec0d39.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 164369,
+    "sha256": "5ab80eab391be777d71e6be57332fb3d0a1677ea11fe88317adc6b8635e7949b"
+  },
+  {
+    "name": "Crystal Palace",
+    "path": "/england/crystal-palace/",
+    "comp": "uel",
+    "id": "crystal-palace",
+    "file": "assets/logos/crystal-palace.png",
+    "canonical": "Crystal Palace",
+    "page": "https://football-logos.cc/england/crystal-palace/",
+    "asset": "https://assets.football-logos.cc/logos/england/1500x1500/crystal-palace.e3552a3a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 152487,
+    "sha256": "c76fd0c2626766bcad939b59c4a9352bb11d8fcaab92bd6683cf340c817991b0"
+  },
+  {
+    "name": "AZ Alkmaar",
+    "path": "/netherlands/az-alkmaar/",
+    "comp": "uel",
+    "id": "az-alkmaar",
+    "file": "assets/logos/fl-az-alkmaar.png",
+    "canonical": "AZ Alkmaar",
+    "page": "https://football-logos.cc/netherlands/az-alkmaar/",
+    "asset": "https://assets.football-logos.cc/logos/netherlands/1500x1500/az-alkmaar.8ae443c1.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 58290,
+    "sha256": "85c0c391eaaff78eab627314f956d7a585f646b20bcab0a083db084d7861e417"
+  },
+  {
+    "name": "S.C.U. Torreense",
+    "path": "/portugal/torreense/",
+    "comp": "uel",
+    "id": "torreense",
+    "file": "assets/logos/fl-torreense.png",
+    "canonical": "S.C.U. Torreense",
+    "page": "https://football-logos.cc/portugal/torreense/",
+    "asset": "https://assets.football-logos.cc/logos/portugal/1500x1500/torreense.ad602ae0.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 269389,
+    "sha256": "e510017fd915ac39b47d6f83af52647f93f9beedb07af8cfb6d7d8507ca870e7"
+  },
+  {
+    "name": "Union Saint-Gilloise",
+    "path": "/belgium/union-saint-gilloise/",
+    "comp": "uel",
+    "id": "union-saint-gilloise",
+    "file": "assets/logos/fl-union-saint-gilloise.png",
+    "canonical": "Union Saint-Gilloise",
+    "page": "https://football-logos.cc/belgium/union-saint-gilloise/",
+    "asset": "https://assets.football-logos.cc/logos/belgium/1500x1500/union-saint-gilloise.41e8808a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 109123,
+    "sha256": "27bd9a80896d0fad1f886ac5206f14bb0f0818fbef0e0a542d3a86b421b4c740"
+  },
+  {
+    "name": "AC Sparta Praha",
+    "path": "/czech-republic/sparta-praha/",
+    "comp": "uel",
+    "id": "sparta-praha",
+    "file": "assets/logos/fl-sparta-praha.png",
+    "canonical": "AC Sparta Praha",
+    "page": "https://football-logos.cc/czech-republic/sparta-praha/",
+    "asset": "https://assets.football-logos.cc/logos/czech-republic/1500x1500/sparta-praha.47c5f852.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 82352,
+    "sha256": "1583b1ce98fc7d1054e19ce9123113dc2baafd6c157ae473b608f68d42ac6e66"
+  },
+  {
+    "name": "Olympiacos",
+    "path": "/greece/olympiacos/",
+    "comp": "uel",
+    "id": "olympiacos",
+    "file": "assets/logos/fl-olympiacos.png",
+    "canonical": "Olympiacos",
+    "page": "https://football-logos.cc/greece/olympiacos/",
+    "asset": "https://assets.football-logos.cc/logos/greece/1500x1500/olympiacos.236ecf0f.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 221024,
+    "sha256": "45ef11f243a480e600ffb74cacf5dd58127e4dd4a9d8011648a23239abbc1ed5"
+  },
+  {
+    "name": "Sturm Graz",
+    "path": "/austria/sturm-graz/",
+    "comp": "uel",
+    "id": "sturm-graz",
+    "file": "assets/logos/fl-sturm-graz.png",
+    "canonical": "Sturm Graz",
+    "page": "https://football-logos.cc/austria/sturm-graz/",
+    "asset": "https://assets.football-logos.cc/logos/austria/1500x1500/sturm-graz.a67c9799.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 144370,
+    "sha256": "f35aa9811fd9e523f4b3867086a54f98f31dc1792a4208f02ad747d958888d38"
+  },
+  {
+    "name": "Celtic",
+    "path": "/scotland/celtic/",
+    "comp": "uel",
+    "id": "celtic",
+    "file": "assets/logos/fl-celtic.png",
+    "canonical": "Celtic",
+    "page": "https://football-logos.cc/scotland/celtic/",
+    "asset": "https://assets.football-logos.cc/logos/scotland/1500x1500/celtic.66db57b5.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 181037,
+    "sha256": "fa38b7a9973b8ceb6476d9f1c83b6b29fea5f14e27aaa5d7156234147e363415"
+  },
+  {
+    "name": "Hapoel Be'er Sheva",
+    "path": "/israel/hapoel-beer-sheva/",
+    "comp": "uel",
+    "id": "hapoel-beer-sheva",
+    "file": "assets/logos/fl-hapoel-beer-sheva.png",
+    "canonical": "Hapoel Be'er Sheva",
+    "page": "https://football-logos.cc/israel/hapoel-beer-sheva/",
+    "asset": "https://assets.football-logos.cc/logos/israel/1500x1500/hapoel-beer-sheva.f7af9d44.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 147266,
+    "sha256": "6bcee962f065800059c6ba8162bb3de65a37cf008365d46f189a3d77fc86e507"
+  },
+  {
+    "name": "N.E.C. Nijmegen",
+    "path": "/netherlands/nec-nijmegen/",
+    "comp": "uel",
+    "id": "nec-nijmegen",
+    "file": "assets/logos/fl-nec-nijmegen.png",
+    "canonical": "N.E.C. Nijmegen",
+    "page": "https://football-logos.cc/netherlands/nec-nijmegen/",
+    "asset": "https://assets.football-logos.cc/logos/netherlands/1500x1500/nec-nijmegen.2b23a93e.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 142345,
+    "sha256": "0dde6a52ff393fe7caa9ef88e7c5c562708c1376a631908955567c6a4b3f58a2"
+  },
+  {
+    "name": "Levski Sofia",
+    "path": "/bulgaria/levski/",
+    "comp": "uel",
+    "id": "levski",
+    "file": "assets/logos/fl-levski.png",
+    "canonical": "Levski Sofia",
+    "page": "https://football-logos.cc/bulgaria/levski/",
+    "asset": "https://assets.football-logos.cc/logos/bulgaria/1500x1500/levski.ebc9b2a8.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 37871,
+    "sha256": "c82b15b9c8f6176031945235a512a65b5013a8ba06e922d6f94e13e0074bb635"
+  },
+  {
+    "name": "GNK Dinamo Zagreb",
+    "path": "/croatia/dinamo-zagreb/",
+    "comp": "uel",
+    "id": "dinamo-zagreb",
+    "file": "assets/logos/fl-dinamo-zagreb.png",
+    "canonical": "GNK Dinamo Zagreb",
+    "page": "https://football-logos.cc/croatia/dinamo-zagreb/",
+    "asset": "https://assets.football-logos.cc/logos/croatia/1500x1500/dinamo-zagreb.b8055cdf.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 135669,
+    "sha256": "3a9cff387e431b87746a916d9e77b8cb66b9d445985575d7ea9f7a99b0bad9cb"
+  },
+  {
+    "name": "Celje",
+    "path": "/slovenia/celje/",
+    "comp": "uel",
+    "id": "celje",
+    "file": "assets/logos/fl-celje.png",
+    "canonical": "Celje",
+    "page": "https://football-logos.cc/slovenia/celje/",
+    "asset": "https://assets.football-logos.cc/logos/slovenia/1500x1500/celje.d488c8be.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 119448,
+    "sha256": "bc84cf71407cf52f290bb302df978f531f80ae8040cbb1c2fbc5c5daa98c929b"
+  },
+  {
+    "name": "Olympique Lyonnais",
+    "path": "/france/lyon/",
+    "comp": "uel",
+    "id": "olympique-lyonnais",
+    "file": "assets/logos/olympique-lyonnais.png",
+    "canonical": "Olympique Lyonnais",
+    "page": "https://football-logos.cc/france/lyon/",
+    "asset": "https://assets.football-logos.cc/logos/france/1500x1500/lyon.05fe1f9a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 81535,
+    "sha256": "0f7f5f1b18d340cd8099d402c7070716f9c9d2b52fca0b5fe439aad283014f21"
+  },
+  {
+    "name": "Ararat-Armenia",
+    "path": "/armenia/ararat-armenia/",
+    "comp": "uel",
+    "id": "ararat-armenia",
+    "file": "assets/logos/fl-ararat-armenia.png",
+    "canonical": "Ararat-Armenia",
+    "page": "https://football-logos.cc/armenia/ararat-armenia/",
+    "asset": "https://assets.football-logos.cc/logos/armenia/1500x1500/ararat-armenia.9e60fed5.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 79921,
+    "sha256": "2412d89925e18d7ccc15ab25f3ee8dd3cb9826dbc50756fe14ece2f5176774ea"
+  },
+  {
+    "name": "Jagiellonia Białystok",
+    "path": "/poland/jagiellonia/",
+    "comp": "uel",
+    "id": "jagiellonia",
+    "file": "assets/logos/fl-jagiellonia.png",
+    "canonical": "Jagiellonia Białystok",
+    "page": "https://football-logos.cc/poland/jagiellonia/",
+    "asset": "https://assets.football-logos.cc/logos/poland/1500x1500/jagiellonia.6848e31a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 76516,
+    "sha256": "8115d691a62274701d1771b02c3ad91cc4f2637f1ab91d5da1a2f470abb95322"
+  },
+  {
+    "name": "Omonoia Nicosia",
+    "path": "/cyprus/omonoia/",
+    "comp": "uel",
+    "id": "omonoia",
+    "file": "assets/logos/fl-omonoia.png",
+    "canonical": "Omonoia Nicosia",
+    "page": "https://football-logos.cc/cyprus/omonoia/",
+    "asset": "https://assets.football-logos.cc/logos/cyprus/1500x1500/omonoia.e6ab0b77.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 194224,
+    "sha256": "20b2f37b9c5715319315deef73565ce8db997b67531adf93936a515bb7c9c4e3"
+  },
+  {
+    "name": "Viktoria Plzeň",
+    "path": "/czech-republic/viktoria-plzen/",
+    "comp": "uel",
+    "id": "viktoria-plzen",
+    "file": "assets/logos/fl-viktoria-plzen.png",
+    "canonical": "Viktoria Plzeň",
+    "page": "https://football-logos.cc/czech-republic/viktoria-plzen/",
+    "asset": "https://assets.football-logos.cc/logos/czech-republic/1500x1500/viktoria-plzen.05eafdc2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 113523,
+    "sha256": "2fc9049347f0e28f002b29bbe4f7d17f09c0bcb0bbada759d50c26013240d461"
+  },
+  {
+    "name": "Lillestrøm",
+    "path": "/norway/lillestrom/",
+    "comp": "uel",
+    "id": "lillestrom",
+    "file": "assets/logos/fl-lillestrom.png",
+    "canonical": "Lillestrøm",
+    "page": "https://football-logos.cc/norway/lillestrom/",
+    "asset": "https://assets.football-logos.cc/logos/norway/1500x1500/lillestrom.e45f157b.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 63772,
+    "sha256": "665892ee4f0c8834f5d904db23775d736f91bcbdcc2b0a7e06698082e9f70e4f"
+  },
+  {
+    "name": "Salzburg",
+    "path": "/austria/salzburg/",
+    "comp": "uel",
+    "id": "salzburg",
+    "file": "assets/logos/fl-salzburg.png",
+    "canonical": "Salzburg",
+    "page": "https://football-logos.cc/austria/salzburg/",
+    "asset": "https://assets.football-logos.cc/logos/austria/1500x1500/salzburg.f0af30d9.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 191667,
+    "sha256": "c2602ada53838e74a2d7365fcae3b6c8f84bc01a4e9b6a9473382b147f6d3aa0"
+  },
+  {
+    "name": "Beşiktaş",
+    "path": "/turkey/besiktas/",
+    "comp": "uel",
+    "id": "besiktas",
+    "file": "assets/logos/besiktas.png",
+    "canonical": "Beşiktaş",
+    "page": "https://football-logos.cc/turkey/besiktas/",
+    "asset": "https://assets.football-logos.cc/logos/turkey/1500x1500/besiktas.e05ee6ce.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 97466,
+    "sha256": "b5794714948dfd8433faa14583a856fcad68f386579434273fe99045e7205d29"
+  },
+  {
+    "name": "Lech Poznań",
+    "path": "/poland/lech-poznan/",
+    "comp": "uel",
+    "id": "lech-poznan",
+    "file": "assets/logos/fl-lech-poznan.png",
+    "canonical": "Lech Poznań",
+    "page": "https://football-logos.cc/poland/lech-poznan/",
+    "asset": "https://assets.football-logos.cc/logos/poland/1500x1500/lech-poznan.72f5ce3c.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 149417,
+    "sha256": "c7ca5177603d10b27e62c5c3ddf02fa7c354b357f2ecbee662d8946fa0357397"
+  },
+  {
+    "name": "Benfica",
+    "path": "/portugal/benfica/",
+    "comp": "uel",
+    "id": "benfica",
+    "file": "assets/logos/benfica.png",
+    "canonical": "Benfica",
+    "page": "https://football-logos.cc/portugal/benfica/",
+    "asset": "https://assets.football-logos.cc/logos/portugal/1500x1500/benfica.0e20d1a2.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 200805,
+    "sha256": "8775b8c1cb9f129090e3e27e5ff1bb54e8682d32ff8a7a96dc1809123286721a"
+  },
+  {
+    "name": "OFI",
+    "path": "/greece/ofi/",
+    "comp": "uel",
+    "id": "ofi",
+    "file": "assets/logos/fl-ofi.png",
+    "canonical": "OFI",
+    "page": "https://football-logos.cc/greece/ofi/",
+    "asset": "https://assets.football-logos.cc/logos/greece/1500x1500/ofi.5255fa77.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 124967,
+    "sha256": "6fe879d7d705845fb9e886b65df851930f6b04ed7f041f72781dd031ec6c09b7"
+  },
+  {
+    "name": "Ferencváros",
+    "path": "/hungary/ferencvaros/",
+    "comp": "uel",
+    "id": "ferencvaros",
+    "file": "assets/logos/fl-ferencvaros.png",
+    "canonical": "Ferencváros",
+    "page": "https://football-logos.cc/hungary/ferencvaros/",
+    "asset": "https://assets.football-logos.cc/logos/hungary/1500x1500/ferencvaros.9964e366.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 209295,
+    "sha256": "d9371972930b8c1408ca319cb2cef9192d9499e8d4b27c37e8f18eadd3339978"
+  },
+  {
+    "name": "RSC Anderlecht",
+    "path": "/belgium/anderlecht/",
+    "comp": "uel",
+    "id": "anderlecht",
+    "file": "assets/logos/fl-anderlecht.png",
+    "canonical": "RSC Anderlecht",
+    "page": "https://football-logos.cc/belgium/anderlecht/",
+    "asset": "https://assets.football-logos.cc/logos/belgium/1500x1500/anderlecht.c417e19a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 133630,
+    "sha256": "88ea0054a59764f4f133ae28fb7d7821c0299c70aff808529bf8b513c23446ce"
+  },
+  {
+    "name": "Ajax",
+    "path": "/netherlands/ajax/",
+    "comp": "uecl",
+    "id": "ajax",
+    "file": "assets/logos/ajax.png",
+    "canonical": "Ajax",
+    "page": "https://football-logos.cc/netherlands/ajax/",
+    "asset": "https://assets.football-logos.cc/logos/netherlands/1500x1500/ajax.ba64e68a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 441062,
+    "sha256": "c02555bfc655155880eef06929634932f4c550ecd73039453ba711911bf54e74"
+  },
+  {
+    "name": "Atalanta",
+    "path": "/italy/atalanta/",
+    "comp": "uecl",
+    "id": "atalanta",
+    "file": "assets/logos/atalanta.png",
+    "canonical": "Atalanta",
+    "page": "https://football-logos.cc/italy/atalanta/",
+    "asset": "https://assets.football-logos.cc/logos/italy/1500x1500/atalanta.fff93c78.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 79896,
+    "sha256": "4f46c7181da8de03aa99f815259dc3132bf0161a4b3b123723872488014d9099"
+  },
+  {
+    "name": "Borac Banja Luka",
+    "path": "/bosnia-and-herzegovina/borac/",
+    "comp": "uecl",
+    "id": "borac",
+    "file": "assets/logos/fl-borac.png",
+    "canonical": "Borac Banja Luka",
+    "page": "https://football-logos.cc/bosnia-and-herzegovina/borac/",
+    "asset": "https://assets.football-logos.cc/logos/bosnia-and-herzegovina/1500x1500/borac.c5a06044.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 213731,
+    "sha256": "e7226d72b324eb9e61932f341b5ea47d59c9d06ba976d0029130dc1fabc4e450"
+  },
+  {
+    "name": "SC Braga",
+    "path": "/portugal/sc-braga/",
+    "comp": "uecl",
+    "id": "sc-braga",
+    "file": "assets/logos/fl-sc-braga.png",
+    "canonical": "SC Braga",
+    "page": "https://football-logos.cc/portugal/sc-braga/",
+    "asset": "https://assets.football-logos.cc/logos/portugal/1500x1500/sc-braga.8eb466f0.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 137475,
+    "sha256": "f6a01b01c88b4319d43a5ea249955a6949778f646af8e95b38f2ad6f7bc6d3dc"
+  },
+  {
+    "name": "Brann",
+    "path": "/norway/brann/",
+    "comp": "uecl",
+    "id": "brann",
+    "file": "assets/logos/fl-brann.png",
+    "canonical": "Brann",
+    "page": "https://football-logos.cc/norway/brann/",
+    "asset": "https://assets.football-logos.cc/logos/norway/1500x1500/brann.bead92dd.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 56374,
+    "sha256": "c13b6c48a90904c4c0459cd5d0dbccb18e016ad608f345b0a0f4356aa220011a"
+  },
+  {
+    "name": "Brighton",
+    "path": "/england/brighton/",
+    "comp": "uecl",
+    "id": "brighton",
+    "file": "assets/logos/brighton.png",
+    "canonical": "Brighton",
+    "page": "https://football-logos.cc/england/brighton/",
+    "asset": "https://assets.football-logos.cc/logos/england/1500x1500/brighton.f54f0b50.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 96676,
+    "sha256": "11c6080606060b54bc67732e7e71c1f1bef970e875af085fe46f0512a9161822"
+  },
+  {
+    "name": "F.C. Copenhagen",
+    "path": "/denmark/copenhagen/",
+    "comp": "uecl",
+    "id": "copenhagen",
+    "file": "assets/logos/fl-copenhagen.png",
+    "canonical": "F.C. Copenhagen",
+    "page": "https://football-logos.cc/denmark/copenhagen/",
+    "asset": "https://assets.football-logos.cc/logos/denmark/1500x1500/copenhagen.70464c49.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 112327,
+    "sha256": "6feb5faba726fceee34901398c4fdf46cde14a2f475ed96ab8dc0beb582ed912"
+  },
+  {
+    "name": "Freiburg",
+    "path": "/germany/freiburg/",
+    "comp": "uecl",
+    "id": "sc-freiburg",
+    "file": "assets/logos/sc-freiburg.png",
+    "canonical": "SC Freiburg",
+    "page": "https://football-logos.cc/germany/freiburg/",
+    "asset": "https://assets.football-logos.cc/logos/germany/1500x1500/freiburg.54adc1be.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 110075,
+    "sha256": "b85c37eab179af67e5c4e867f3b91f2bd23c13be6ddf61a12f2383bd342d33fe"
+  },
+  {
+    "name": "KAA Gent",
+    "path": "/belgium/gent/",
+    "comp": "uecl",
+    "id": "gent",
+    "file": "assets/logos/fl-gent.png",
+    "canonical": "KAA Gent",
+    "page": "https://football-logos.cc/belgium/gent/",
+    "asset": "https://assets.football-logos.cc/logos/belgium/1500x1500/gent.ef1b017e.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 286264,
+    "sha256": "1303e358d92661ec0299059d5856451fdaf673da45c3cc3a83f7d0b141f79568"
+  },
+  {
+    "name": "Getafe",
+    "path": "/spain/getafe/",
+    "comp": "uecl",
+    "id": "getafe-cf",
+    "file": "assets/logos/getafe-cf.png",
+    "canonical": "Getafe CF",
+    "page": "https://football-logos.cc/spain/getafe/",
+    "asset": "https://assets.football-logos.cc/logos/spain/1500x1500/getafe.5aed3f74.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 237339,
+    "sha256": "2ebc69020951d6730940e5f596a279c952ae6e117119b93c84462e681d8b8f5b"
+  },
+  {
+    "name": "Hajduk Split",
+    "path": "/croatia/hajduk-split/",
+    "comp": "uecl",
+    "id": "hajduk-split",
+    "file": "assets/logos/fl-hajduk-split.png",
+    "canonical": "Hajduk Split",
+    "page": "https://football-logos.cc/croatia/hajduk-split/",
+    "asset": "https://assets.football-logos.cc/logos/croatia/1500x1500/hajduk-split.f1c14870.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 95971,
+    "sha256": "9561441f854619cdd557b4b664b1f90291ac5ffa9d59f268ac41fe6896387625"
+  },
+  {
+    "name": "Hearts",
+    "path": "/scotland/hearts/",
+    "comp": "uecl",
+    "id": "hearts",
+    "file": "assets/logos/fl-hearts.png",
+    "canonical": "Hearts",
+    "page": "https://football-logos.cc/scotland/hearts/",
+    "asset": "https://assets.football-logos.cc/logos/scotland/1500x1500/hearts.59115ecc.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 150092,
+    "sha256": "39f0c904464920ef90f451dae066a7722b2c99bfd4a28845070eb97a491b25fc"
+  },
+  {
+    "name": "Inter Escaldes",
+    "path": "/andorra/inter-escaldes/",
+    "comp": "uecl",
+    "id": "inter-escaldes",
+    "file": "assets/logos/fl-inter-escaldes.png",
+    "canonical": "Inter Escaldes",
+    "page": "https://football-logos.cc/andorra/inter-escaldes/",
+    "asset": "https://assets.football-logos.cc/logos/andorra/1500x1500/inter-escaldes.f6492059.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 85882,
+    "sha256": "97648bf68a931c3e6496b889dfa5d8cc420b42f883ee22a0edbb4acaae07be61"
+  },
+  {
+    "name": "Jablonec",
+    "path": "/czech-republic/jablonec/",
+    "comp": "uecl",
+    "id": "jablonec",
+    "file": "assets/logos/fl-jablonec.png",
+    "canonical": "Jablonec",
+    "page": "https://football-logos.cc/czech-republic/jablonec/",
+    "asset": "https://assets.football-logos.cc/logos/czech-republic/1500x1500/jablonec.984b98b9.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 56383,
+    "sha256": "cefcbdcbd64f683de3b46bf1e023ca863886680e2d5103187b56f4ac3c40ae40"
+  },
+  {
+    "name": "KuPS",
+    "path": "/finland/kups/",
+    "comp": "uecl",
+    "id": "kups",
+    "file": "assets/logos/fl-kups.png",
+    "canonical": "KuPS",
+    "page": "https://football-logos.cc/finland/kups/",
+    "asset": "https://assets.football-logos.cc/logos/finland/1500x1500/kups.21757560.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 99868,
+    "sha256": "58f20691ac6d0bcfa78eda819bc33a5e8c0787b5b5250249d66e1509fd8c6878"
+  },
+  {
+    "name": "Lincoln Red Imps",
+    "path": "/gibraltar/lincoln-red-imps/",
+    "comp": "uecl",
+    "id": "lincoln-red-imps",
+    "file": "assets/logos/fl-lincoln-red-imps.png",
+    "canonical": "Lincoln Red Imps",
+    "page": "https://football-logos.cc/gibraltar/lincoln-red-imps/",
+    "asset": "https://assets.football-logos.cc/logos/gibraltar/1500x1500/lincoln-red-imps.05f58f59.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 199707,
+    "sha256": "b65e4b75cd62df142ec4f6938d859322768f4b9ee403e3d44ac19e14e37db454"
+  },
+  {
+    "name": "Lugano",
+    "path": "/switzerland/lugano/",
+    "comp": "uecl",
+    "id": "lugano",
+    "file": "assets/logos/fl-lugano.png",
+    "canonical": "Lugano",
+    "page": "https://football-logos.cc/switzerland/lugano/",
+    "asset": "https://assets.football-logos.cc/logos/switzerland/1500x1500/lugano.34f4e608.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 64299,
+    "sha256": "c9e0bc7285ea32f95ed738e8c7e73aad784ddd8ed45390bf88b5b99efb96fff4"
+  },
+  {
+    "name": "FC Midtjylland",
+    "path": "/denmark/midtjylland/",
+    "comp": "uecl",
+    "id": "midtjylland",
+    "file": "assets/logos/fl-midtjylland.png",
+    "canonical": "FC Midtjylland",
+    "page": "https://football-logos.cc/denmark/midtjylland/",
+    "asset": "https://assets.football-logos.cc/logos/denmark/1500x1500/midtjylland.b0a8da1c.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 155578,
+    "sha256": "191ae6c2304baf5bad074fc5b1e9cf25220b26dc04aff234b3929d04a3257164"
+  },
+  {
+    "name": "AS Monaco",
+    "path": "/france/as-monaco/",
+    "comp": "uecl",
+    "id": "monaco",
+    "file": "assets/logos/monaco.png",
+    "canonical": "AS Monaco",
+    "page": "https://football-logos.cc/france/as-monaco/",
+    "asset": "https://assets.football-logos.cc/logos/france/1500x1500/as-monaco.1d58091e.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 129185,
+    "sha256": "348f4a1f32177a2c63a0427bc2dce891a318b9e1b00af4d08c36c01c9a48a743"
+  },
+  {
+    "name": "FC Nordsjælland",
+    "path": "/denmark/nordsjaelland/",
+    "comp": "uecl",
+    "id": "nordsjaelland",
+    "file": "assets/logos/fl-nordsjaelland.png",
+    "canonical": "FC Nordsjælland",
+    "page": "https://football-logos.cc/denmark/nordsjaelland/",
+    "asset": "https://assets.football-logos.cc/logos/denmark/1500x1500/nordsjaelland.d25fd4ca.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 95130,
+    "sha256": "0a87a28875a31b00f12340d63ba182e0af165a7626d40fc780103d8923dd0fa1"
+  },
+  {
+    "name": "Pafos",
+    "path": "/cyprus/pafos/",
+    "comp": "uecl",
+    "id": "pafos",
+    "file": "assets/logos/fl-pafos.png",
+    "canonical": "Pafos",
+    "page": "https://football-logos.cc/cyprus/pafos/",
+    "asset": "https://assets.football-logos.cc/logos/cyprus/1500x1500/pafos.bcf708f9.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 118301,
+    "sha256": "711d0a13d3f29a4c4c5ccdb5432dced089427302c819d8806e0b4303a9013742"
+  },
+  {
+    "name": "Panathinaikos",
+    "path": "/greece/panathinaikos/",
+    "comp": "uecl",
+    "id": "panathinaikos",
+    "file": "assets/logos/fl-panathinaikos.png",
+    "canonical": "Panathinaikos",
+    "page": "https://football-logos.cc/greece/panathinaikos/",
+    "asset": "https://assets.football-logos.cc/logos/greece/1500x1500/panathinaikos.1d386dd4.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 217244,
+    "sha256": "56439a24e09c6abc8a04c89dfbda2eadf394391ac1de0a7c04a6a20aab1aca34"
+  },
+  {
+    "name": "Riga",
+    "path": "/latvia/riga/",
+    "comp": "uecl",
+    "id": "riga",
+    "file": "assets/logos/fl-riga.png",
+    "canonical": "Riga",
+    "page": "https://football-logos.cc/latvia/riga/",
+    "asset": "https://assets.football-logos.cc/logos/latvia/1500x1500/riga.cb8666fa.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 190684,
+    "sha256": "fcf81767bcd786acf5a38f10ca7518418cbd0ba3d10d3d6fa24c40b8be1f1a44"
+  },
+  {
+    "name": "Twente",
+    "path": "/netherlands/twente/",
+    "comp": "uecl",
+    "id": "twente",
+    "file": "assets/logos/fl-twente.png",
+    "canonical": "Twente",
+    "page": "https://football-logos.cc/netherlands/twente/",
+    "asset": "https://assets.football-logos.cc/logos/netherlands/1500x1500/twente.ebf3d03a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 177740,
+    "sha256": "f7d926b6b928603dfbacd30885f9bd048497f92e5c134438b6c7e1e19c5077d4"
+  },
+  {
+    "name": "Universitatea Craiova",
+    "path": "/romania/u-craiova/",
+    "comp": "uecl",
+    "id": "u-craiova",
+    "file": "assets/logos/fl-u-craiova.png",
+    "canonical": "Universitatea Craiova",
+    "page": "https://football-logos.cc/romania/u-craiova/",
+    "asset": "https://assets.football-logos.cc/logos/romania/1500x1500/u-craiova.91d5e80e.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 146675,
+    "sha256": "1d08d9ff88d9b89dee2fbef483f64757dbd5b0f36c75b934cf662200895a6887"
+  },
+  {
+    "name": "Iberia",
+    "path": "/georgia/iberia/",
+    "comp": "uecl",
+    "id": "iberia",
+    "file": "assets/logos/fl-iberia.png",
+    "canonical": "Iberia",
+    "page": "https://football-logos.cc/georgia/iberia/",
+    "asset": "https://assets.football-logos.cc/logos/georgia/1500x1500/iberia.65d7fe64.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 89781,
+    "sha256": "05f6103cefe2df2ca33dcf7134bc6722a13fdcbc2898d2a6b4635abae92b0944"
+  },
+  {
+    "name": "Sint-Truidense VV",
+    "path": "/belgium/sint-truidense/",
+    "comp": "uecl",
+    "id": "sint-truidense",
+    "file": "assets/logos/fl-sint-truidense.png",
+    "canonical": "Sint-Truidense VV",
+    "page": "https://football-logos.cc/belgium/sint-truidense/",
+    "asset": "https://assets.football-logos.cc/logos/belgium/1500x1500/sint-truidense.8f4afcf8.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 107573,
+    "sha256": "b8ae75f855a199e0dcbf9edba449d9c68db6de370a3b75703006b0420823537f"
+  },
+  {
+    "name": "Crvena Zvezda",
+    "path": "/serbia/crvena-zvezda/",
+    "comp": "uecl",
+    "id": "crvena-zvezda",
+    "file": "assets/logos/fl-crvena-zvezda.png",
+    "canonical": "Crvena Zvezda",
+    "page": "https://football-logos.cc/serbia/crvena-zvezda/",
+    "asset": "https://assets.football-logos.cc/logos/serbia/1500x1500/crvena-zvezda.4501615b.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 65298,
+    "sha256": "d17ea95a74e9db41324a9c240572703ca3e51dcb5c075501b5ff0ea423c5f772"
+  },
+  {
+    "name": "Egnatia",
+    "path": "/albania/egnatia/",
+    "comp": "uecl",
+    "id": "egnatia",
+    "file": "assets/logos/fl-egnatia.png",
+    "canonical": "Egnatia",
+    "page": "https://football-logos.cc/albania/egnatia/",
+    "asset": "https://assets.football-logos.cc/logos/albania/1500x1500/egnatia.daa88724.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 122510,
+    "sha256": "37cd0d41c283280ace81955b29e3571dac836269c3e23fa28654dfacc3c426f9"
+  },
+  {
+    "name": "Mjällby",
+    "path": "/sweden/mjallby/",
+    "comp": "uecl",
+    "id": "mjallby",
+    "file": "assets/logos/fl-mjallby.png",
+    "canonical": "Mjällby",
+    "page": "https://football-logos.cc/sweden/mjallby/",
+    "asset": "https://assets.football-logos.cc/logos/sweden/1500x1500/mjallby.a0e1819a.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 221171,
+    "sha256": "f646f027c9653a446e2a265c3d474a7751fbdddeee79a9353ab22096e569ed90"
+  },
+  {
+    "name": "Kauno Žalgiris",
+    "path": "/lithuania/kauno-zalgiris/",
+    "comp": "uecl",
+    "id": "kauno-zalgiris",
+    "file": "assets/logos/fl-kauno-zalgiris.png",
+    "canonical": "Kauno Žalgiris",
+    "page": "https://football-logos.cc/lithuania/kauno-zalgiris/",
+    "asset": "https://assets.football-logos.cc/logos/lithuania/1500x1500/kauno-zalgiris.1e39cdcb.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 90514,
+    "sha256": "16a63ad9331f91e96dc099e96557f2f4f5f3b907799d602b718f0fc48ee13975"
+  },
+  {
+    "name": "Thun",
+    "path": "/switzerland/thun/",
+    "comp": "uecl",
+    "id": "thun",
+    "file": "assets/logos/fl-thun.png",
+    "canonical": "Thun",
+    "page": "https://football-logos.cc/switzerland/thun/",
+    "asset": "https://assets.football-logos.cc/logos/switzerland/1500x1500/thun.27756fb8.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 99595,
+    "sha256": "022e73bcf59ed6ef4bbd56d007701388e1af71ac5634a949e5f8c3e88e504ec4"
+  },
+  {
+    "name": "AGF",
+    "path": "/denmark/agf/",
+    "comp": "uecl",
+    "id": "agf",
+    "file": "assets/logos/fl-agf.png",
+    "canonical": "AGF",
+    "page": "https://football-logos.cc/denmark/agf/",
+    "asset": "https://assets.football-logos.cc/logos/denmark/1500x1500/agf.760eec43.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 186175,
+    "sha256": "1f7dfc33f83ba5929cf7afb2b10f37531dae8eb3d89427e4f8a60d9b680bcdea"
+  },
+  {
+    "name": "CSKA-Sofia",
+    "path": "/bulgaria/cska-sofia/",
+    "comp": "uecl",
+    "id": "cska-sofia",
+    "file": "assets/logos/fl-cska-sofia.png",
+    "canonical": "CSKA-Sofia",
+    "page": "https://football-logos.cc/bulgaria/cska-sofia/",
+    "asset": "https://assets.football-logos.cc/logos/bulgaria/1500x1500/cska-sofia.f4f63462.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 158366,
+    "sha256": "0f49de6070100e4313bb63643b22eb8dcb42966754151cfe73c6d7faf323f334"
+  },
+  {
+    "name": "Trabzonspor",
+    "path": "/turkey/trabzonspor/",
+    "comp": "uecl",
+    "id": "trabzonspor",
+    "file": "assets/logos/trabzonspor.png",
+    "canonical": "Trabzonspor",
+    "page": "https://football-logos.cc/turkey/trabzonspor/",
+    "asset": "https://assets.football-logos.cc/logos/turkey/1500x1500/trabzonspor.dea11b78.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 61907,
+    "sha256": "db7378645557f614c15fa42baa74ca269d87ed1fc6c378988b687f434fbdcb45"
+  },
+  {
+    "name": "Kairat",
+    "path": "/kazakhstan/kairat/",
+    "comp": "uecl",
+    "id": "kairat",
+    "file": "assets/logos/fl-kairat.png",
+    "canonical": "Kairat",
+    "page": "https://football-logos.cc/kazakhstan/kairat/",
+    "asset": "https://assets.football-logos.cc/logos/kazakhstan/1500x1500/kairat.16f76df5.png",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "bytes": 86109,
+    "sha256": "f7c0a9114e7f238d42fd28a8accce5796aff820e8b531ece79548e22dd7337c9"
+  }
+]
