@@ -1,17 +1,17 @@
 {
  "version": "V113",
- "ranAt": "2026-11-08T09:13:11.404Z",
+ "ranAt": "2026-11-08T09:28:01.348Z",
  "results": [
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 21,
+   "seconds": 17.2,
    "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2075,\"outcomes\":{\"goal\":528,\"save\":511,\"wide\":480,\"post\":169,\"wall\":387},\"techniques\":[\"knuckle\",\"curl\",\"dip\",\"power\",\"outside\",\"under\"],\"physicalMatch\":0.9966,\"earlyFinish\":51,\"suddenDeath\":102,\"samples\":1278683,\"maxStep\":0.581,\"brandBoards\":true,\"sameSpotRounds\":1152,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":316,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1265,\"keeperCatches\":{\"clear\":20,\"rain\":16}}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 5,
+   "seconds": 4.4,
    "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4596,\"techniques\":{\"high-corner\":778,\"chip\":388,\"power-rise\":357,\"placed\":774,\"disguised\":194,\"driven\":776,\"central\":379,\"inside-foot\":730,\"outside-foot\":220},\"speedKmh\":{\"min\":53,\"median\":82,\"max\":107},\"maxStep60fps\":0.568,\"aeroKicks\":655,\"maxCurlMetres\":0.302}"
   },
   {
@@ -35,31 +35,31 @@
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 1.8,
+   "seconds": 1.7,
    "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
   },
   {
    "test": "forecast.php",
    "pass": true,
-   "seconds": 0,
+   "seconds": 0.1,
    "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
   },
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 4.8,
+   "seconds": 4,
    "summary": "{"
   },
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.4,
+   "seconds": 4.3,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 1.2,
+   "seconds": 1,
    "summary": "{"
   },
   {
@@ -84,12 +84,6 @@
    "test": "search-test.cjs",
    "pass": true,
    "seconds": 0,
-   "summary": "{"
-  },
-  {
-   "test": "engine-test.cjs",
-   "pass": true,
-   "seconds": 138.4,
    "summary": "{"
   }
  ],
