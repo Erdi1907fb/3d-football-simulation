@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V131 → V132 (kararlı)
+- **İstek:** millî maç analizinde hazırlık maçları az etkili; kıta elemeleri/şampiyonaları, kupalar, form, oyuncu
+  istatistikleri ve kadro gücü daha etkili olsun.
+- **Yapılanlar:** PROJECT_STATE 4y. Her millî ara öncesi `python3 tools/national-ratings.py` çalıştırıp
+  `assets/national-ratings.json`'u commit et (sunucu bu dosyayı okur).
+
+---
+
 ## [2026-11-08] Claude Code · V130 → V131 (kararlı)
 - **İstek:** UNL/hazırlık maçları "analiz hazırlanıyor"da kalıyor; mevcut verilerle tahmin üretilip oynanabilsin.
 - **Yapılanlar:** PROJECT_STATE 4x. Sunucuda ilk güncellemede önceki ay beslemeleri çekilmeli (Hostinger'da kontrol).

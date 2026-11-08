@@ -1,0 +1,1251 @@
+{
+ "version": 1,
+ "asOf": "2026-11-08",
+ "from": "2023-03",
+ "matches": 3349,
+ "method": "World-Football-Elo style; K: World Cup 60, EURO/Copa 50, other continental finals 45, WC/EURO qualifiers 40, Nations Leagues 35/30, friendlies 15; title bonus decays (half-life 2 y); squad = mean FotMob rating of best 16 matched national-roster players.",
+ "teams": {
+  "Albania": {
+   "elo": 1660.9,
+   "eloBase": 1660.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 40,
+   "competitive": 30,
+   "form": 1.426,
+   "squad": {
+    "rating": 6.864,
+    "matched": 9
+   },
+   "espnId": "585",
+   "rank": 51
+  },
+  "Algeria": {
+   "elo": 1740.1,
+   "eloBase": 1740.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 40,
+   "competitive": 22,
+   "form": 1.208,
+   "squad": {
+    "rating": 6.953,
+    "matched": 10
+   },
+   "espnId": "624",
+   "rank": 33
+  },
+  "Andorra": {
+   "elo": 1198.2,
+   "eloBase": 1198.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 39,
+   "competitive": 25,
+   "form": 0.452,
+   "squad": null,
+   "espnId": "587",
+   "rank": 82
+  },
+  "Argentina": {
+   "elo": 2123.4,
+   "eloBase": 2107.8,
+   "titleBonus": 15.7,
+   "titles": [
+    {
+     "competition": "Copa América",
+     "year": 2024,
+     "kind": "major",
+     "date": "2024-07-15"
+    }
+   ],
+   "matches": 50,
+   "competitive": 32,
+   "form": 2.613,
+   "squad": {
+    "rating": 7.364,
+    "matched": 22
+   },
+   "espnId": "202",
+   "rank": 3
+  },
+  "Armenia": {
+   "elo": 1408.4,
+   "eloBase": 1408.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 37,
+   "competitive": 26,
+   "form": 0.557,
+   "squad": null,
+   "espnId": "579",
+   "rank": 74
+  },
+  "Australia": {
+   "elo": 1776.1,
+   "eloBase": 1776.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 25,
+   "form": 1.273,
+   "squad": {
+    "rating": 6.582,
+    "matched": 5
+   },
+   "espnId": "628",
+   "rank": 29
+  },
+  "Austria": {
+   "elo": 1868.7,
+   "eloBase": 1868.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 45,
+   "competitive": 36,
+   "form": 1.488,
+   "squad": {
+    "rating": 7.253,
+    "matched": 21
+   },
+   "espnId": "474",
+   "rank": 18
+  },
+  "Azerbaijan": {
+   "elo": 1384.0,
+   "eloBase": 1384.0,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 37,
+   "competitive": 23,
+   "form": 1.25,
+   "squad": null,
+   "espnId": "581",
+   "rank": 77
+  },
+  "Belarus": {
+   "elo": 1516.5,
+   "eloBase": 1516.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 26,
+   "form": 1.696,
+   "squad": null,
+   "espnId": "583",
+   "rank": 66
+  },
+  "Belgium": {
+   "elo": 1949.6,
+   "eloBase": 1949.6,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 48,
+   "competitive": 38,
+   "form": 1.74,
+   "squad": {
+    "rating": 7.329,
+    "matched": 22
+   },
+   "espnId": "459",
+   "rank": 8
+  },
+  "Bosnia and Herzegovina": {
+   "elo": 1710.7,
+   "eloBase": 1710.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 35,
+   "form": 1.341,
+   "squad": {
+    "rating": 7.044,
+    "matched": 15
+   },
+   "espnId": "452",
+   "rank": 42
+  },
+  "Brazil": {
+   "elo": 1948.3,
+   "eloBase": 1948.3,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 45,
+   "competitive": 27,
+   "form": 2.12,
+   "squad": {
+    "rating": 7.115,
+    "matched": 17
+   },
+   "espnId": "205",
+   "rank": 9
+  },
+  "Bulgaria": {
+   "elo": 1471.1,
+   "eloBase": 1471.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 26,
+   "form": 1.304,
+   "squad": null,
+   "espnId": "462",
+   "rank": 69
+  },
+  "Cameroon": {
+   "elo": 1628.8,
+   "eloBase": 1628.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 29,
+   "competitive": 20,
+   "form": 1.657,
+   "squad": {
+    "rating": 6.719,
+    "matched": 7
+   },
+   "espnId": "656",
+   "rank": 55
+  },
+  "Canada": {
+   "elo": 1749.2,
+   "eloBase": 1749.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 52,
+   "competitive": 30,
+   "form": 1.52,
+   "squad": {
+    "rating": 6.682,
+    "matched": 8
+   },
+   "espnId": "206",
+   "rank": 32
+  },
+  "Chile": {
+   "elo": 1661.4,
+   "eloBase": 1661.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 39,
+   "competitive": 21,
+   "form": 1.8,
+   "squad": {
+    "rating": 6.796,
+    "matched": 8
+   },
+   "espnId": "207",
+   "rank": 50
+  },
+  "China PR": {
+   "elo": 1397.5,
+   "eloBase": 1397.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 19,
+   "form": 1.629,
+   "squad": null,
+   "espnId": "658",
+   "rank": 75
+  },
+  "Colombia": {
+   "elo": 1946.1,
+   "eloBase": 1946.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 50,
+   "competitive": 29,
+   "form": 2.16,
+   "squad": {
+    "rating": 6.866,
+    "matched": 10
+   },
+   "espnId": "208",
+   "rank": 10
+  },
+  "Costa Rica": {
+   "elo": 1607.2,
+   "eloBase": 1607.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 48,
+   "competitive": 36,
+   "form": 0.904,
+   "squad": null,
+   "espnId": "214",
+   "rank": 59
+  },
+  "Croatia": {
+   "elo": 1870.8,
+   "eloBase": 1870.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 46,
+   "competitive": 37,
+   "form": 1.244,
+   "squad": {
+    "rating": 7.354,
+    "matched": 26
+   },
+   "espnId": "477",
+   "rank": 16
+  },
+  "Cyprus": {
+   "elo": 1423.7,
+   "eloBase": 1423.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 26,
+   "form": 1.373,
+   "squad": null,
+   "espnId": "445",
+   "rank": 72
+  },
+  "Czechia": {
+   "elo": 1640.9,
+   "eloBase": 1640.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 34,
+   "form": 0.487,
+   "squad": {
+    "rating": 7.036,
+    "matched": 16
+   },
+   "espnId": "450",
+   "rank": 54
+  },
+  "Côte d’Ivoire": {
+   "elo": 1790.6,
+   "eloBase": 1782.8,
+   "titleBonus": 7.7,
+   "titles": [
+    {
+     "competition": "Africa Cup of Nations",
+     "year": 2024,
+     "kind": "continental",
+     "date": "2024-02-11"
+    }
+   ],
+   "matches": 40,
+   "competitive": 26,
+   "form": 1.615,
+   "squad": {
+    "rating": 6.824,
+    "matched": 18
+   },
+   "espnId": "4789",
+   "rank": 27
+  },
+  "Denmark": {
+   "elo": 1850.1,
+   "eloBase": 1850.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 42,
+   "competitive": 34,
+   "form": 1.424,
+   "squad": {
+    "rating": 7.034,
+    "matched": 17
+   },
+   "espnId": "479",
+   "rank": 19
+  },
+  "Ecuador": {
+   "elo": 1816.2,
+   "eloBase": 1816.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 26,
+   "form": 1.227,
+   "squad": {
+    "rating": 6.734,
+    "matched": 6
+   },
+   "espnId": "209",
+   "rank": 21
+  },
+  "Egypt": {
+   "elo": 1754.2,
+   "eloBase": 1754.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 26,
+   "form": 1.24,
+   "squad": null,
+   "espnId": "2620",
+   "rank": 31
+  },
+  "England": {
+   "elo": 2148.5,
+   "eloBase": 2148.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 53,
+   "competitive": 41,
+   "form": 2.43,
+   "squad": {
+    "rating": 7.474,
+    "matched": 24
+   },
+   "espnId": "448",
+   "rank": 2
+  },
+  "Estonia": {
+   "elo": 1393.2,
+   "eloBase": 1393.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 36,
+   "competitive": 27,
+   "form": 1.016,
+   "squad": null,
+   "espnId": "444",
+   "rank": 76
+  },
+  "Faroe Islands": {
+   "elo": 1465.2,
+   "eloBase": 1465.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 33,
+   "competitive": 26,
+   "form": 1.788,
+   "squad": null,
+   "espnId": "447",
+   "rank": 70
+  },
+  "Finland": {
+   "elo": 1528.5,
+   "eloBase": 1528.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 29,
+   "form": 1.373,
+   "squad": {
+    "rating": 6.779,
+    "matched": 7
+   },
+   "espnId": "458",
+   "rank": 65
+  },
+  "France": {
+   "elo": 2081.2,
+   "eloBase": 2081.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 52,
+   "competitive": 42,
+   "form": 2.14,
+   "squad": {
+    "rating": 7.491,
+    "matched": 22
+   },
+   "espnId": "478",
+   "rank": 4
+  },
+  "Georgia": {
+   "elo": 1650.9,
+   "eloBase": 1650.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 32,
+   "form": 0.679,
+   "squad": {
+    "rating": 6.649,
+    "matched": 10
+   },
+   "espnId": "584",
+   "rank": 52
+  },
+  "Germany": {
+   "elo": 1905.3,
+   "eloBase": 1905.3,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 48,
+   "competitive": 29,
+   "form": 1.671,
+   "squad": {
+    "rating": 7.547,
+    "matched": 23
+   },
+   "espnId": "481",
+   "rank": 14
+  },
+  "Ghana": {
+   "elo": 1726.1,
+   "eloBase": 1726.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 31,
+   "competitive": 17,
+   "form": 0.773,
+   "squad": {
+    "rating": 6.66,
+    "matched": 13
+   },
+   "espnId": "4469",
+   "rank": 37
+  },
+  "Gibraltar": {
+   "elo": 1195.5,
+   "eloBase": 1195.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 26,
+   "form": 0.786,
+   "squad": null,
+   "espnId": "16721",
+   "rank": 83
+  },
+  "Greece": {
+   "elo": 1798.1,
+   "eloBase": 1798.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 28,
+   "form": 1.679,
+   "squad": {
+    "rating": 7.135,
+    "matched": 16
+   },
+   "espnId": "455",
+   "rank": 23
+  },
+  "Hungary": {
+   "elo": 1720.9,
+   "eloBase": 1720.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 29,
+   "form": 1.839,
+   "squad": {
+    "rating": 6.912,
+    "matched": 9
+   },
+   "espnId": "480",
+   "rank": 39
+  },
+  "Iceland": {
+   "elo": 1616.4,
+   "eloBase": 1616.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 30,
+   "form": 1.216,
+   "squad": {
+    "rating": 6.626,
+    "matched": 10
+   },
+   "espnId": "470",
+   "rank": 56
+  },
+  "Iran": {
+   "elo": 1712.9,
+   "eloBase": 1712.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 25,
+   "form": 1.053,
+   "squad": null,
+   "espnId": "469",
+   "rank": 40
+  },
+  "Israel": {
+   "elo": 1589.7,
+   "eloBase": 1589.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 35,
+   "competitive": 29,
+   "form": 0.869,
+   "squad": null,
+   "espnId": "461",
+   "rank": 62
+  },
+  "Italia": {
+   "elo": 1913.1,
+   "eloBase": 1913.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 42,
+   "competitive": 36,
+   "form": 1.864,
+   "squad": {
+    "rating": 7.119,
+    "matched": 27
+   },
+   "espnId": "162",
+   "rank": 13
+  },
+  "Japan": {
+   "elo": 1900.1,
+   "eloBase": 1900.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 46,
+   "competitive": 25,
+   "form": 1.727,
+   "squad": {
+    "rating": 6.911,
+    "matched": 19
+   },
+   "espnId": "627",
+   "rank": 15
+  },
+  "Kazakhstan": {
+   "elo": 1449.4,
+   "eloBase": 1449.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 40,
+   "competitive": 29,
+   "form": 0.843,
+   "squad": null,
+   "espnId": "2619",
+   "rank": 71
+  },
+  "Korea Republic": {
+   "elo": 1727.9,
+   "eloBase": 1727.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 48,
+   "competitive": 25,
+   "form": 1.316,
+   "squad": null,
+   "espnId": "451",
+   "rank": 35
+  },
+  "Kosovo": {
+   "elo": 1730.2,
+   "eloBase": 1730.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 37,
+   "competitive": 30,
+   "form": 1.515,
+   "squad": {
+    "rating": 6.896,
+    "matched": 10
+   },
+   "espnId": "18272",
+   "rank": 34
+  },
+  "Latvia": {
+   "elo": 1317.5,
+   "eloBase": 1317.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 34,
+   "competitive": 28,
+   "form": 0.87,
+   "squad": null,
+   "espnId": "456",
+   "rank": 81
+  },
+  "Liechtenstein": {
+   "elo": 1099.5,
+   "eloBase": 1099.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 24,
+   "form": 0.333,
+   "squad": null,
+   "espnId": "589",
+   "rank": 84
+  },
+  "Lithuania": {
+   "elo": 1354.7,
+   "eloBase": 1354.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 34,
+   "competitive": 27,
+   "form": 0.86,
+   "squad": null,
+   "espnId": "460",
+   "rank": 79
+  },
+  "Luxembourg": {
+   "elo": 1419.1,
+   "eloBase": 1419.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 39,
+   "competitive": 29,
+   "form": 1.125,
+   "squad": null,
+   "espnId": "582",
+   "rank": 73
+  },
+  "Mali": {
+   "elo": 1606.2,
+   "eloBase": 1606.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 30,
+   "competitive": 20,
+   "form": 1.062,
+   "squad": {
+    "rating": 6.934,
+    "matched": 12
+   },
+   "espnId": "2849",
+   "rank": 60
+  },
+  "Malta": {
+   "elo": 1330.5,
+   "eloBase": 1330.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 37,
+   "competitive": 25,
+   "form": 1.517,
+   "squad": null,
+   "espnId": "453",
+   "rank": 80
+  },
+  "Mexico": {
+   "elo": 1869.4,
+   "eloBase": 1850.5,
+   "titleBonus": 18.9,
+   "titles": [
+    {
+     "competition": "CONCACAF Gold Cup",
+     "year": 2023,
+     "kind": "continental",
+     "date": "2023-07-16"
+    },
+    {
+     "competition": "CONCACAF Gold Cup",
+     "year": 2025,
+     "kind": "continental",
+     "date": "2025-07-06"
+    }
+   ],
+   "matches": 66,
+   "competitive": 32,
+   "form": 2.12,
+   "squad": {
+    "rating": 6.62,
+    "matched": 5
+   },
+   "espnId": "203",
+   "rank": 17
+  },
+  "Moldova": {
+   "elo": 1359.4,
+   "eloBase": 1359.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 24,
+   "form": 0.607,
+   "squad": null,
+   "espnId": "483",
+   "rank": 78
+  },
+  "Montenegro": {
+   "elo": 1514.2,
+   "eloBase": 1514.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 26,
+   "form": 2.054,
+   "squad": {
+    "rating": 6.674,
+    "matched": 6
+   },
+   "espnId": "6775",
+   "rank": 67
+  },
+  "Morocco": {
+   "elo": 1981.8,
+   "eloBase": 1981.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 25,
+   "form": 1.857,
+   "squad": {
+    "rating": 7.074,
+    "matched": 20
+   },
+   "espnId": "2869",
+   "rank": 6
+  },
+  "Netherlands": {
+   "elo": 1952.3,
+   "eloBase": 1952.3,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 48,
+   "competitive": 40,
+   "form": 1.963,
+   "squad": {
+    "rating": 7.293,
+    "matched": 22
+   },
+   "espnId": "449",
+   "rank": 7
+  },
+  "Nigeria": {
+   "elo": 1768.8,
+   "eloBase": 1768.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 43,
+   "competitive": 26,
+   "form": 1.688,
+   "squad": {
+    "rating": 6.722,
+    "matched": 6
+   },
+   "espnId": "657",
+   "rank": 30
+  },
+  "North Macedonia": {
+   "elo": 1547.0,
+   "eloBase": 1547.0,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 27,
+   "form": 0.161,
+   "squad": {
+    "rating": 6.67,
+    "matched": 7
+   },
+   "espnId": "463",
+   "rank": 64
+  },
+  "Northern Ireland": {
+   "elo": 1684.6,
+   "eloBase": 1684.6,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 27,
+   "form": 1.508,
+   "squad": null,
+   "espnId": "586",
+   "rank": 47
+  },
+  "Norway": {
+   "elo": 1922.1,
+   "eloBase": 1922.1,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 32,
+   "form": 1.65,
+   "squad": {
+    "rating": 7.217,
+    "matched": 21
+   },
+   "espnId": "464",
+   "rank": 12
+  },
+  "Panama": {
+   "elo": 1644.6,
+   "eloBase": 1644.6,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 58,
+   "competitive": 42,
+   "form": 0.474,
+   "squad": {
+    "rating": 6.79,
+    "matched": 5
+   },
+   "espnId": "2659",
+   "rank": 53
+  },
+  "Paraguay": {
+   "elo": 1816.7,
+   "eloBase": 1816.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 40,
+   "competitive": 26,
+   "form": 1.28,
+   "squad": null,
+   "espnId": "210",
+   "rank": 20
+  },
+  "Peru": {
+   "elo": 1597.3,
+   "eloBase": 1597.3,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 21,
+   "form": 0.8,
+   "squad": null,
+   "espnId": "211",
+   "rank": 61
+  },
+  "Poland": {
+   "elo": 1694.8,
+   "eloBase": 1694.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 33,
+   "form": 1.318,
+   "squad": {
+    "rating": 7.116,
+    "matched": 14
+   },
+   "espnId": "471",
+   "rank": 45
+  },
+  "Portugal": {
+   "elo": 2015.8,
+   "eloBase": 2015.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 49,
+   "competitive": 40,
+   "form": 2.077,
+   "squad": {
+    "rating": 7.303,
+    "matched": 25
+   },
+   "espnId": "482",
+   "rank": 5
+  },
+  "Qatar": {
+   "elo": 1513.9,
+   "eloBase": 1506.2,
+   "titleBonus": 7.7,
+   "titles": [
+    {
+     "competition": "AFC Asian Cup",
+     "year": 2024,
+     "kind": "continental",
+     "date": "2024-02-10"
+    }
+   ],
+   "matches": 46,
+   "competitive": 32,
+   "form": 0.746,
+   "squad": null,
+   "espnId": "4398",
+   "rank": 68
+  },
+  "Republic of Ireland": {
+   "elo": 1699.4,
+   "eloBase": 1699.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 39,
+   "competitive": 27,
+   "form": 1.625,
+   "squad": {
+    "rating": 6.726,
+    "matched": 8
+   },
+   "espnId": "476",
+   "rank": 43
+  },
+  "Romania": {
+   "elo": 1610.9,
+   "eloBase": 1610.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 42,
+   "competitive": 33,
+   "form": 0.59,
+   "squad": {
+    "rating": 6.962,
+    "matched": 12
+   },
+   "espnId": "473",
+   "rank": 57
+  },
+  "San Marino": {
+   "elo": 1082.5,
+   "eloBase": 1082.5,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 26,
+   "form": 0.059,
+   "squad": null,
+   "espnId": "588",
+   "rank": 85
+  },
+  "Saudi Arabia": {
+   "elo": 1607.6,
+   "eloBase": 1607.6,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 49,
+   "competitive": 29,
+   "form": 0.789,
+   "squad": null,
+   "espnId": "655",
+   "rank": 58
+  },
+  "Scotland": {
+   "elo": 1712.2,
+   "eloBase": 1712.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 32,
+   "form": 1.123,
+   "squad": {
+    "rating": 6.882,
+    "matched": 16
+   },
+   "espnId": "580",
+   "rank": 41
+  },
+  "Senegal": {
+   "elo": 1793.5,
+   "eloBase": 1778.3,
+   "titleBonus": 15.1,
+   "titles": [
+    {
+     "competition": "Africa Cup of Nations",
+     "year": 2025,
+     "kind": "continental",
+     "date": "2026-01-18"
+    }
+   ],
+   "matches": 44,
+   "competitive": 25,
+   "form": 0.917,
+   "squad": {
+    "rating": 6.812,
+    "matched": 8
+   },
+   "espnId": "654",
+   "rank": 25
+  },
+  "Serbia": {
+   "elo": 1679.8,
+   "eloBase": 1679.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 31,
+   "form": 0.589,
+   "squad": {
+    "rating": 6.838,
+    "matched": 14
+   },
+   "espnId": "6757",
+   "rank": 48
+  },
+  "Slovakia": {
+   "elo": 1724.8,
+   "eloBase": 1724.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 42,
+   "competitive": 33,
+   "form": 1.885,
+   "squad": {
+    "rating": 6.959,
+    "matched": 13
+   },
+   "espnId": "468",
+   "rank": 38
+  },
+  "Slovenia": {
+   "elo": 1727.0,
+   "eloBase": 1727.0,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 43,
+   "competitive": 32,
+   "form": 1.232,
+   "squad": {
+    "rating": 6.649,
+    "matched": 6
+   },
+   "espnId": "472",
+   "rank": 36
+  },
+  "Spain": {
+   "elo": 2322.4,
+   "eloBase": 2275.2,
+   "titleBonus": 47.1,
+   "titles": [
+    {
+     "competition": "FIFA World Cup",
+     "year": 2026,
+     "kind": "world",
+     "date": "2026-07-19"
+    },
+    {
+     "competition": "UEFA EURO",
+     "year": 2024,
+     "kind": "major",
+     "date": "2024-07-14"
+    }
+   ],
+   "matches": 53,
+   "competitive": 45,
+   "form": 3.0,
+   "squad": {
+    "rating": 7.49,
+    "matched": 27
+   },
+   "espnId": "164",
+   "rank": 1
+  },
+  "Sweden": {
+   "elo": 1794.9,
+   "eloBase": 1794.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 43,
+   "competitive": 30,
+   "form": 1.476,
+   "squad": {
+    "rating": 7.232,
+    "matched": 21
+   },
+   "espnId": "466",
+   "rank": 24
+  },
+  "Switzerland": {
+   "elo": 1942.4,
+   "eloBase": 1942.4,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 49,
+   "competitive": 37,
+   "form": 2.16,
+   "squad": {
+    "rating": 7.168,
+    "matched": 22
+   },
+   "espnId": "475",
+   "rank": 11
+  },
+  "Tunisia": {
+   "elo": 1586.7,
+   "eloBase": 1586.7,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 20,
+   "form": 0.4,
+   "squad": null,
+   "espnId": "659",
+   "rank": 63
+  },
+  "Türkiye": {
+   "elo": 1780.9,
+   "eloBase": 1780.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 46,
+   "competitive": 36,
+   "form": 1.0,
+   "squad": {
+    "rating": 7.159,
+    "matched": 17
+   },
+   "espnId": "465",
+   "rank": 28
+  },
+  "Ukraine": {
+   "elo": 1696.2,
+   "eloBase": 1696.2,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 41,
+   "competitive": 32,
+   "form": 1.148,
+   "squad": {
+    "rating": 6.691,
+    "matched": 6
+   },
+   "espnId": "457",
+   "rank": 44
+  },
+  "United States": {
+   "elo": 1790.8,
+   "eloBase": 1790.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 61,
+   "competitive": 31,
+   "form": 1.92,
+   "squad": {
+    "rating": 6.911,
+    "matched": 14
+   },
+   "espnId": "660",
+   "rank": 26
+  },
+  "Uruguay": {
+   "elo": 1811.9,
+   "eloBase": 1811.9,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 44,
+   "competitive": 27,
+   "form": 0.895,
+   "squad": {
+    "rating": 6.917,
+    "matched": 14
+   },
+   "espnId": "212",
+   "rank": 22
+  },
+  "Venezuela": {
+   "elo": 1664.3,
+   "eloBase": 1664.3,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 40,
+   "competitive": 22,
+   "form": 1.2,
+   "squad": {
+    "rating": 6.639,
+    "matched": 8
+   },
+   "espnId": "213",
+   "rank": 49
+  },
+  "Wales": {
+   "elo": 1693.8,
+   "eloBase": 1693.8,
+   "titleBonus": 0.0,
+   "titles": [],
+   "matches": 38,
+   "competitive": 29,
+   "form": 1.361,
+   "squad": {
+    "rating": 6.567,
+    "matched": 10
+   },
+   "espnId": "578",
+   "rank": 46
+  }
+ }
+}

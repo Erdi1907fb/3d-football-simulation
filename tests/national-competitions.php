@@ -56,8 +56,15 @@ $tb=null;foreach($hist as $m)if($m['home']['name']==='Türkiye'&&$m['away']['nam
 $clock=new DateTimeImmutable('2026-11-10T12:00:00+03:00');$check(pp_history_ready($tb,$hist,$clock),'national match ready to forecast');
 $pred=pp_build_prediction($tb,$hist,$clock);$xg=$pred['expectedGoals'];
 $check($xg['home']>.4&&$xg['home']<3.2&&$xg['away']>.4&&$xg['away']<3.2,'plausible xG '.json_encode($xg));
-$check(isset($pred['publishedScore']['home'],$pred['publishedScore']['away'])&&isset($pred['quality']['inputs']['nationalStrengthPrior']),'published score + strength prior');
+$check(isset($pred['publishedScore']['home'],$pred['publishedScore']['away'])&&isset($pred['quality']['inputs']['nationalModel']),'published score + strength prior');
 $es=null;foreach($hist as $m)if(!$m['result']&&in_array('Spain',[$m['home']['name'],$m['away']['name']],true)&&in_array('Czechia',[$m['home']['name'],$m['away']['name']],true))$es=$m;
 if($es){$pe=pp_build_prediction($es,$hist,$clock);$sp=$es['home']['name']==='Spain'?'home':'away';$cz=$sp==='home'?'away':'home';$check($pe['expectedGoals'][$sp]>$pe['expectedGoals'][$cz],'Spain favoured over Czechia');}
-echo json_encode(['PASS'=>$fail===0,'turkiyeBelgium'=>$pred['publishedScore']??null,'xg'=>$xg??null,'turkiyeXI'=>array_map(fn($p)=>$p['name'],$xi['players']??[]),'unl'=>count($out['unl']),'intl'=>count($out['intl']),'sample'=>array_slice($names,0,4)],JSON_UNESCAPED_UNICODE),"\n";
+// V132 national ratings: tournament-weighted Elo + titles + squad.
+$nr=json_decode((string)file_get_contents(__DIR__.'/../assets/national-ratings.json'),true);
+$check(($nr['matches']??0)>=1000&&count($nr['teams'])>=80,'national ratings built from competitive history');
+$check(($nr['teams']['Spain']['rank']??99)<=5&&($nr['teams']['San Marino']['rank']??0)>60,'ratings order (Spain top-5, San Marino near bottom)');
+$check(!empty($nr['teams']['Argentina']['titles']),'title history recorded');
+$sample=[];foreach($hist as $m)if(!$m['result']&&$m['competitionId']==='unl'&&count($sample)<6){$pp=pp_build_prediction($m,$hist,$clock);$sample[]=$m['home']['name'].' '.round($pp['expectedGoals']['home'],2).'-'.round($pp['expectedGoals']['away'],2).' '.$m['away']['name'];}
+foreach($hist as $m)if(!$m['result']&&$m['home']['name']==='England'&&$m['away']['name']==='Croatia'){$pp=pp_build_prediction($m,$hist,$clock);$check($pp['expectedGoals']['home']>$pp['expectedGoals']['away'],'England favoured at home to Croatia');}
+echo json_encode(['PASS'=>$fail===0,'forecasts'=>$sample??[],'turkiyeBelgium'=>$pred['publishedScore']??null,'xg'=>$xg??null,'turkiyeXI'=>array_map(fn($p)=>$p['name'],$xi['players']??[]),'unl'=>count($out['unl']),'intl'=>count($out['intl']),'sample'=>array_slice($names,0,4)],JSON_UNESCAPED_UNICODE),"\n";
 exit($fail?1:0);

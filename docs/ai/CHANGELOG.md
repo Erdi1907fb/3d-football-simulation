@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V132 — 2026-11-08 (Claude Code) · kararlı
+- **Millî takım analizi:** son 3,5 yılın 3.349 millî maçı turnuva ağırlığıyla (Dünya Kupası > kıta şampiyonaları >
+  elemeler ve Uluslar Ligi > hazırlık) reytinge dönüştürüldü; kazanılan kupalar, son form ve kadrodaki oyuncuların
+  kulüp reytingleri eklendi. Uluslar Ligi ve hazırlık maçı tahminleri bu modelle yapılır.
+
 ## V131 — 2026-11-08 (Claude Code) · kararlı
 - **Uluslar Ligi ve hazırlık maçları artık açılıyor:** Eylül–Ekim millî maç sonuçları + takım gücüyle tahmin üretilir;
   maçlar izlenebilir ve indirilebilir. Kadrolar/ilk 11 açıklandıkça mevcut sistemle güncellenir.

@@ -157,6 +157,7 @@ function pp_forecast(array $match, array $history, DateTimeImmutable $now): arra
     foreach($valid as [$m,$w]){
         $comp=$m['competitionId'];$r=$m['result'];$meanGoals=($means[$comp]['goals']+1.34*30)/($means[$comp]['weight']+30);
         if($comp!==$match['competitionId'])$w*=.65;
+        if($comp==='intl')$w*=.5; // V132: friendlies count, at half weight
         foreach(['home','away']as$side){$id=pp_club_key($m[$side]);$other=$side==='home'?'away':'home';
             if(!isset($stats[$id]))$stats[$id]=['w'=>0.0,'gf'=>0.0,'ga'=>0.0,'n'=>0];
             $stats[$id]['w']+=$w;$stats[$id]['gf']+=$w*$r[$side]/$meanGoals;$stats[$id]['ga']+=$w*$r[$other]/$meanGoals;$stats[$id]['n']++;
@@ -179,9 +180,19 @@ function pp_forecast(array $match, array $history, DateTimeImmutable $now): arra
         if (isset($in['squadFactors'])) { $h *= $in['squadFactors']['home']; $a *= $in['squadFactors']['away']; $inputs['squads'] = true; }
         if(isset($in['marketOdds'])&&pp_market_valid($in['marketOdds'])){$blend=.65;if(($match['date']??'')>='2026-10-24'){$evidence=$match['analysis']??[];$rel=min((float)($evidence['weighting']['home']['recentReliability']??0),(float)($evidence['weighting']['away']['recentReliability']??0));$stamp=strtotime($evidence['market']['capturedAt']??'');$age=$stamp?max(0,$now->getTimestamp()-$stamp):21600;$blend=max(.15,min(.60,(.30+.30*$rel)*exp(-$age/43200)));}$inputs['marketWeight']=round($blend,4);[$h,$a]=pp_market_fit($h,$a,$in['marketOdds'],$blend);$inputs['marketOdds']=true;}
     }
-    // V131 national-team prior: internationals are sparse, so blend in the catalogue squad strength
-    // (assets/national-teams.json, editorial 40-90 scale). 10 points ~ 20% more expected goals for the stronger side.
-    if(in_array($match['competitionId']??'',['unl','intl'],true)){static $nat=null;if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');$sh=(float)($nat['strength'][$match['home']['name']]??70);$sa=(float)($nat['strength'][$match['away']['name']]??70);$few=1-min(1,min($ratings['home']['matches'],$ratings['away']['matches'])/8);$k=.018*(.45+.55*$few);$h*=exp(($sh-$sa)*$k);$a*=exp(($sa-$sh)*$k);$inputs['nationalStrengthPrior']=['home'=>$sh,'away'=>$sa,'weight'=>round($k/.018,3)];}
+    // V132 national-team model: assets/national-ratings.json (tools/national-ratings.py) - Elo from World Cup,
+    // every confederation's WC qualifiers, continental finals + qualifiers, Nations Leagues and (lightly) friendlies,
+    // plus decaying title bonus, recent form and squad quality (club ratings of the national roster). It carries 70%
+    // of the expected goals; the recent internationals inside this model (friendlies at half weight) carry 30%.
+    if(in_array($match['competitionId']??'',['unl','intl'],true)){static $nr=null,$nat=null;if($nr===null)$nr=pp_read(__DIR__.'/../assets/national-ratings.json');if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');
+     $th=$nr['teams'][$match['home']['name']]??null;$ta=$nr['teams'][$match['away']['name']]??null;
+     if($th&&$ta){$sq=fn($t)=>isset($t['squad']['rating'])?(float)$t['squad']['rating']:null;$fm=fn($t)=>isset($t['form'])?(float)$t['form']:1.35;
+      $dr=(float)$th['elo']-(float)$ta['elo']+(($match['neutral']??false)?0:80);
+      if($sq($th)!==null&&$sq($ta)!==null)$dr+=($sq($th)-$sq($ta))*120;   // 0.1 squad-rating points ~ 12 Elo
+      $dr+=($fm($th)-$fm($ta))*25;                                         // short-term form
+      $total=max(1.9,min(3.4,$baseH+$baseA));$sup=max(-3.2,min(3.2,$dr*.0048));$eh=max(.25,($total+$sup)/2);$ea=max(.25,($total-$sup)/2);
+      $h=.7*$eh+.3*$h;$a=.7*$ea+.3*$a;$inputs['nationalModel']=['eloDiff'=>round($dr,1),'homeElo'=>$th['elo'],'awayElo'=>$ta['elo'],'homeRank'=>$th['rank']??null,'awayRank'=>$ta['rank']??null,'squad'=>[$sq($th),$sq($ta)],'form'=>[$th['form']??null,$ta['form']??null],'titles'=>[array_map(fn($t)=>$t['competition'].' '.$t['year'],$th['titles']??[]),array_map(fn($t)=>$t['competition'].' '.$t['year'],$ta['titles']??[])],'asOf'=>$nr['asOf']??null,'weight'=>.7];}
+     else{$sh=(float)($nat['strength'][$match['home']['name']]??70);$sa=(float)($nat['strength'][$match['away']['name']]??70);$h*=exp(($sh-$sa)*.018);$a*=exp(($sa-$sh)*.018);$inputs['nationalStrengthPrior']=['home'=>$sh,'away'=>$sa];}}
     $h = max(.2,min(4.5,$h)); $a=max(.2,min(4.5,$a));
     
     $profiles=[]; foreach (['home','away'] as $side) { $attack=max(40,min(95,75+24*log($ratings[$side]['attack']))); $defense=max(40,min(95,75-24*log($ratings[$side]['defence']))); $profiles[$side]=['attack'=>$attack,'defense'=>$defense,'strength'=>($attack+$defense)/2]; }

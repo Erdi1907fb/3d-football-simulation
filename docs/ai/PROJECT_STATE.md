@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V131** · 2026-11-08 · Claude Code
+> Son güncelleme: **V132** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V131** (`VERSION`) |
+| Kararlı sürüm | **V132** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -292,6 +292,18 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   `pp_history_ready` millî maçlarda her zaman true; `pp_forecast` millî maçlarda katalog gücünden önsel çarpan
   (10 puan ≈ %20 gol beklentisi; az maçlı takımlarda ağırlık artar, `quality.inputs.nationalStrengthPrior`).
   Yayınlanan skor tüm liglerdeki gibi seeded senaryo. Test: `national-competitions.php` (Eyl/Eki/Kas ESPN örnekleri).
+
+## 4y. V132 (millî takım güç modeli)
+- `tools/national-ratings.py` → `assets/national-ratings.json`: ESPN'den Mart 2023'ten bugüne 3.349 millî maç
+  (Dünya Kupası, tüm kıtaların DK elemeleri, EURO + elemeleri, Copa América, Gold Cup, AFCON, Asya Kupası,
+  UEFA/CONCACAF Uluslar Ligi, hazırlık). Elo: K = DK 60, EURO/Copa 50, diğer kıta finalleri 45, elemeler 40,
+  Uluslar Ligi 35/30, hazırlık 15; gol farkı çarpanı; ev sahibi +100. Kupa bonusu (DK/EURO/Copa 35, diğer 20; 2 yılda
+  yarıya iner), son 10 maç form, kadro kalitesi (ESPN millî kadro × bizim kulüp kadrolarındaki FotMob reytingleri,
+  en iyi 16). Önbellek `tools/.national-cache` (git dışı). Her millî aradan önce yeniden çalıştırılmalı.
+- `pp_forecast` (unl/intl): Elo farkı + kadro (0,1 reyting ≈ 12 Elo) + form → gol üstünlüğü (Elo×0,0048), toplam gol
+  lig ortamından; %70 bu model, %30 modeldeki son millî maçlar (hazırlık maçları yarı ağırlık). Katalogda olmayan
+  takım için eski güç önseli. `quality.inputs.nationalModel` ayrıntıları taşır.
+- Kadro piyasa değeri kaynağı yok (eklenmedi).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
