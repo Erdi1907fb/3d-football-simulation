@@ -2,6 +2,15 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V124 — 2026-11-08 (Claude Code) · kararlı
+- **Yeni lig: UEFA Uluslar Ligi** ve **Uluslararası Hazırlık Maçları** (büyük ülkeler) — ESPN'den fikstür, açıklanan
+  ya da muhtemel ilk 11, forma numaraları, pozisyonlar, dizilişler; bayraklar logo olarak.
+- Kendi yayın temaları: Uluslar Ligi (lacivert/camgöbeği) ve Hazırlık Maçı (antrasit/altın) skor tabelası, kadro
+  ekranı, seremoni, devre ve maç sonu istatistikleri.
+- 45 yeni millî takım ve bayrağı (toplam 85).
+- Düzeltme: 3'lü defans + kanat bek dizilişleri (ör. Türkiye 3-4-2-1) reddediliyordu; ESPN CF-L/CF-R pozisyonları.
+- Seremonide tribünlerde telefon feneri ışık şovu; kameraya göre değişen çim biçme şeritleri.
+
 ## V123 — 2026-11-08 (Claude Code) · kararlı
 - **Saç:** ışığı tutam tutam alan parlak saç (tel kabartması + parlaklık), artık mat kask gibi değil.
 - **Cilt:** daha yumuşak, canlı cilt ışıltısı.

@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V123** · 2026-11-08 · Claude Code
+> Son güncelleme: **V124** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V123** (`VERSION`) |
+| Kararlı sürüm | **V124** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -214,6 +214,23 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Cilt: MeshPhysical + sıcak sheen (pürüzlülük .58 korunur).
 - Görüntü zinciri: RenderPass'ten hemen sonra SANITIZE (NaN/Inf → 0, HDR ≤ 64). Bloom artık tek hatalı pikseli
   tüm kareye yayamaz; hata bilerek geri getirilerek doğrulandı (siyah kare %0,5–1,6, normal).
+
+## 4q. V124 (millî takım organizasyonları)
+- Yeni yarışmalar: `unl` (UEFA Uluslar Ligi / UEFA Nations League, ESPN `uefa.nations`) ve `intl` (Uluslararası
+  Hazırlık Maçı / International Friendly, ESPN `fifa.friendly`). Fikstür: `server/live-sources.php` aylık ESPN işleri;
+  `pp_national_allowed` yalnız `assets/national-teams.json` ülkelerini kabul eder; hazırlık maçında en az bir taraf
+  güç ≥ 72 (büyük ülke). Ayarlar: `unl_enabled`, `intl_enabled` (varsayılan açık).
+- Kadro/ilk 11: mevcut ESPN akışı (açıklanan 11 → `provider-lineup`; yoksa son 3 maçtan `estimated-from-recent-start`;
+  millî takımlar için kodlar uefa.nations + fifa.friendly + fifa.worldq.uefa). Teknik direktör: ESPN vermiyor →
+  FotMob lig sayfası (`pp_public_leagues` unl 9806 / intl 114; FotMob UNL tablosu yalnız A ligini listeler).
+- Düzeltmeler (kulüpleri de etkiler): ESPN `CF-L/CF-R` pozisyonları (3-4-2-1'de 10 numara); istemci dizilişinde
+  LM↔LWB, RM↔RWB eşleşmesi (3'lü defansta kanat bekler reddediliyordu).
+- Katalog: 85 millî takım (54 UEFA + büyük ülkeler), bayraklar flagcdn'den mevcut dalgalı stilde
+  (`tools/national-teams.py`), `crest-fallbacks.js` ve `competition-data.js` gömülü kopyaları güncellendi.
+- Yayın: `broadcast.js` temaları `unl` (lacivert + camgöbeği, çapraz şerit) ve `intl` (antrasit + altın, küre çizgileri).
+  Amblemler proje çizimi (`tools/competition-emblems.py`); resmî UNL logosu gelirse aynı araçla değiştirilir.
+- Görsel: seremonide telefon feneri ışık şovu (instanced; Points tabanlı efektler SwiftShader'da görünmüyor),
+  kameraya bağlı çim biçme şeritleri.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

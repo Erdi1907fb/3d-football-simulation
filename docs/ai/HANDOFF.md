@@ -17,6 +17,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V123 → V124 (kararlı)
+- **İstek:** UEFA Uluslar Ligi + dostluk maçları yeni lig olarak (API'den fikstür, kadro, TD, muhtemel/kesin 11,
+  numaralar, pozisyonlar, bayraklar, uygun scoreboard/seremoni/istatistik şablonu); ayrıca büyük görsel/fizik sıçraması.
+- **Yapılanlar:** CHANGELOG V124 / PROJECT_STATE 4q. Test: `php tests/national-competitions.php` (çevrimdışı ESPN örnekleri).
+- **Eksik/kısmi:** resmî UNL logosu indirilemedi (football-logos.cc dosya sunucusu bot korumalı; aşılmadı) → proje
+  amblemi kullanılıyor. Teknik direktör yalnız FotMob'da bulunan takımlar için. Fizik tarafında bu sürümde büyük
+  değişiklik yok. Gerçek sunucuda (Hostinger) ilk cron çalışmasında fikstürlerin geldiği kontrol edilmeli.
+- **Dikkat:** Points tabanlı efektler (flaş) SwiftShader'da görünmüyor; yeni efektlerde instanced mesh kullan.
+
+---
+
 ## [2026-11-08] Claude Code · V122 → V123 (kararlı)
 - **İstek:** kalan grafik/animasyon/görünüm geliştirmelerine devam.
 - **Yapılanlar:** CHANGELOG V123 (saç, cilt, NaN güvenlik adımı).
