@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V117** · 2026-11-08 · Claude Code
+> Son güncelleme: **V118** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V117** (`VERSION`) |
+| Kararlı sürüm | **V118** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -165,6 +165,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   ileri eksen etrafında yatırdığı için vücut baraj hattına paralel uzanır, sırtı baraja döner. Test: `tests/freekick.cjs`.
 - Kaleci dirsek pedi (`lowerarm_*` kemiğinde dolgulu halka), daha belirgin V-gövde (`athleticShape` x ölçeği),
   çim aşınması (`scene.js` prosedürel kanvas dokulu `pitch-wear` düzlemleri: kale ağzı, penaltı noktası, orta nokta).
+
+## 4k. V118
+- Yatan oyuncu tur bazlı: `create()` içinde ayrı tohumlu `lierRounds` (%38, mesafe < 25,5 m şartıyla) →
+  `wallFor(ball,rng,nearSign,lierRound)`. Aynı turda iki taraf da aynı baraj düzenini görür (~%23 tur).
+  Ana `rng` akışı korunur (`lierRoll` yine çekilir).
+- Yağmurda `smother` (tutma) denemelerinin %40'ı `reflex`e döner (ıslak top eldivenden kaçar).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

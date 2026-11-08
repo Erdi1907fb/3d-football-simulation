@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V117 → V118 (kararlı)
+- **İstek:** yatan oyuncu her vuruşta olmasın; bazı vuruşlarda olsun ama o tur iki taraf için de olsun.
+- **Yapılanlar:** CHANGELOG V118 (`lierRounds`, tur bazlı karar; yağmurda ıslak top kaçırma).
+- **Dikkat:** `wallFor` 4. parametre verilmezse eski olasılık (%45) kullanılır (testler doğrudan çağırıyor).
+  Yatan oyuncu yüzünden sonuç akışı değişince eski "wet ball" testi gürültüye düştü → gerçek fizik etkisi eklendi.
+- **Testler:** `node tests/run-all.cjs --quick` 14/14 PASS (motor dosyasına dokunulmadı).
+
+---
+
 ## [2026-11-08] Claude Code · V116 → V117 (kararlı)
 - **İstek:** sıradakilere geç; frikikte yerde yatan oyuncu baraja dik yatıyor → baraj hizasına paralel, arkasında yatsın.
 - **Yapılanlar:** CHANGELOG V117. Yatan oyuncu yönü düzeltildi + test; kaleci dirsek pedi; V-gövde; çim aşınması.

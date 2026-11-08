@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V118 — 2026-11-08 (Claude Code) · kararlı
+- **Frikik – yatan oyuncu:** her vuruşta değil, turların yaklaşık dörtte birinde; o turda iki takım/iki oyuncu için de
+  aynı (adil ve tutarlı). Testle korunuyor.
+- **Yağmur:** ıslak top kalecinin eldiveninden daha sık kaçıyor (tutma ~%35 daha az); test örneklemi büyütüldü.
+
 ## V117 — 2026-11-08 (Claude Code) · kararlı
 - **Frikik barajı – yatan oyuncu:** artık baraj hizasına paralel, barajın hemen arkasında yatıyor (sırtı baraja dönük);
   önceden baraja dik uzanıyordu. Testle korunuyor.
