@@ -71,9 +71,7 @@ function player(team,index,official=false,roster=M.teams,identity=null,canvasFac
   // V116 modern boot: slim low-profile upper with a tapered toe, heel counter, contrasting side stripe,
   // white plate with six studs (reads at close range, stays light: shared cached geometry/materials).
   sphere(boot,1,bootCol,0,0,.012).scale.set(.05,.04,.148);sphere(boot,1,bootCol,0,.004,-.07).scale.set(.046,.044,.05);const sole=sphere(boot,1,0xe8ecec,0,-.031,.008);sole.scale.set(.052,.011,.152);
-  for(const sgn of[-1,1]){const stripe=box(boot,.004,.012,.11,accent,sgn*.047,.006,.01);stripe.rotation.x=-.12;}
-  for(const [sx,sz] of[[-.026,.08],[.026,.08],[-.028,.03],[.028,.03],[-.022,-.075],[.022,-.075]])cylinder(boot,.007,.009,.014,0xd9dede,sx,-.045,sz);
-  for(const z of[-.03,-.005,.02]){const lace=box(boot,.042,.005,.007,bootLight?0x111418:0xe5e9e9,0,.039,z);lace.rotation.y=side*.13;}
+  // V128: stripes/studs/laces removed (11 hidden meshes per boot; the full-body model draws the boots).
   legs.push({hip,knee,boot,sole});
  }
  if(shortNumberLabel){legs[1].hip.add(shortNumberLabel);shortNumberLabel.position.set(0,-.025,0);}

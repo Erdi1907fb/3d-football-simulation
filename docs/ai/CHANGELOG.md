@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V128 — 2026-11-08 (Claude Code) · kararlı
+- **Telefon:** asıl sebep bulundu — kenardaki 50 görevli de ağır tam vücut modele geçmişti (çizim yükü ikiye
+  katlanmıştı). Yük V107 seviyesine indirildi; telefonda yalnız oyuncular ve orta hakem tam vücut.
+- **Şort numaraları:** taşma/kesilme düzeltildi.
+
 ## V127 — 2026-11-08 (Claude Code) · kararlı
 - **Resmî UEFA Uluslar Ligi logosu:** seremoni orta bayrağı, skor tabelası, kadro, devre ve maç sonu ekranları;
   tema logodaki renkli bayrak deseniyle.

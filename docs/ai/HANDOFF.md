@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V127 → V128 (kararlı)
+- **İstek:** şort numaraları kesik; telefonda çalışma V107 (kullanıcının son çalışan sürümü) ile kıyaslanarak düzelsin.
+- **Yapılanlar:** CHANGELOG V128 / PROJECT_STATE 4u (ölçümler orada).
+- **Dikkat:** `FullBody.attach`'e yeni aktör türü eklerken kemik maliyetini düşün; kenar görevlilerini tam vücut yapma.
+
+---
+
 ## [2026-11-08] Claude Code · V126 → V127 (kararlı)
 - **İstek:** resmî UNL logosunu her yere yerleştir; telefonda penaltı/frikik/maç indirme çöküyor (siyah ekran, yeniden yükleme).
 - **Yapılanlar:** CHANGELOG V127 / PROJECT_STATE 4t.

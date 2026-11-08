@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V127** · 2026-11-08 · Claude Code
+> Son güncelleme: **V128** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V127** (`VERSION`) |
+| Kararlı sürüm | **V128** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -258,6 +258,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   zorla 'high'ı yalnız masaüstünde), sinematik zincir HDR→ACES→grade (bloom/DOF/SMAA/sharpen/sanitize yok),
   saç/cilt MeshStandard, gölge 1024, seremoni fenerleri yok. iPhone 13 emülasyonu: JS bellek V120 ile aynı
   (318/315 MB), kare süresi ~%35 kısa. GERÇEK CİHAZDA DOĞRULANMADI.
+
+## 4u. V128 (telefon = V107 yükü)
+- Kök neden: V116'da `FullBody.attach` içindeki `actor.official` engeli kaldırılınca 50 kenar görevlisi (steward, top
+  toplayıcı, basın, teknik ekip) de 53 kemikli tam vücut oldu: 51 → 101 karakter, 2.703 → 5.353 kemik/kare.
+  Şimdi yalnız oyuncular + maç hakemleri (`staffRole` referee/assistant/fourth-official); telefonda yalnız orta hakem.
+- Krampon çivi/şerit/bağcık nesneleri kaldırıldı (tam vücut modelde zaten gizliydi; oyuncu başına 22 nesne).
+- iPhone 13 emülasyonu, penaltı stüdyosu V107'ye karşı: tam vücut 52/51, kemik 2756/2703, nesne 12356/12743,
+  malzeme 2797/2748, JS bellek 298/280 MB; telefonda bloom/SMAA yok (V107'de vardı). Gerçek cihazda test edilmedi.
+- Şort numarası baskı alanının düz ortasına küçültüldü (`jersey-print.js paintShort`), iki haneli numaralar kesilmiyor.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
