@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V130** · 2026-11-08 · Claude Code
+> Son güncelleme: **V131** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V130** (`VERSION`) |
+| Kararlı sürüm | **V131** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -284,6 +284,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - INTRO=0 (penaltı + frikik motorları): video ilk vuruşla başlar (frikik: topu yere koyma). Penaltıda ilk vuruşta
   hakem düdük ara planı yok.
 - Frikik gol tekrarı: vurucunun arkasından yüksek yayın açısı; uçuş ve topun ağa girdiği nokta (netContact) aynı kadrajda.
+
+## 4x. V131 (millî maç tahminleri)
+- Kök neden: `pp_history_ready` aynı organizasyonda ≥3 tamamlanmış maç istiyordu; UNL/hazırlık için yalnız bu ayın
+  (oynanmamış) fikstürü çekiliyordu → tahmin hiç üretilmiyor, bülten "analiz hazırlanıyor"da kalıyordu.
+- Çözüm: `pp_live_jobs` UNL ve hazırlık için önceki 2 ayın ESPN beslemesini de çeker (`live-prev1/2`, günlük);
+  `pp_history_ready` millî maçlarda her zaman true; `pp_forecast` millî maçlarda katalog gücünden önsel çarpan
+  (10 puan ≈ %20 gol beklentisi; az maçlı takımlarda ağırlık artar, `quality.inputs.nationalStrengthPrior`).
+  Yayınlanan skor tüm liglerdeki gibi seeded senaryo. Test: `national-competitions.php` (Eyl/Eki/Kas ESPN örnekleri).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

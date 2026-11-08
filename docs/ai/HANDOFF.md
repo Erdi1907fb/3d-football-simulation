@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V130 → V131 (kararlı)
+- **İstek:** UNL/hazırlık maçları "analiz hazırlanıyor"da kalıyor; mevcut verilerle tahmin üretilip oynanabilsin.
+- **Yapılanlar:** PROJECT_STATE 4x. Sunucuda ilk güncellemede önceki ay beslemeleri çekilmeli (Hostinger'da kontrol).
+
+---
+
 ## [2026-11-08] Claude Code · V129 → V130 (kararlı)
 - **İstek:** telefonda stüdyolar açılmıyor; frikik gol tekrarı golü göstermiyor; ara sahne kalksın, video topun yere
   konmasıyla başlasın.

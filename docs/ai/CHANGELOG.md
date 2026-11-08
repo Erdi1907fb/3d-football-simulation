@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V131 — 2026-11-08 (Claude Code) · kararlı
+- **Uluslar Ligi ve hazırlık maçları artık açılıyor:** Eylül–Ekim millî maç sonuçları + takım gücüyle tahmin üretilir;
+  maçlar izlenebilir ve indirilebilir. Kadrolar/ilk 11 açıklandıkça mevcut sistemle güncellenir.
+
 ## V130 — 2026-11-08 (Claude Code) · kararlı
 - **Telefon:** penaltı ve serbest vuruş stüdyoları telefonda açılırken donup sayfayı yeniliyordu. Önizleme artık hafif,
   video indirilirken en yüksek kalitede ayrı sahne kurulur (normal maç sayfası gibi) — video kalitesi düşmedi.

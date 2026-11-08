@@ -179,6 +179,9 @@ function pp_forecast(array $match, array $history, DateTimeImmutable $now): arra
         if (isset($in['squadFactors'])) { $h *= $in['squadFactors']['home']; $a *= $in['squadFactors']['away']; $inputs['squads'] = true; }
         if(isset($in['marketOdds'])&&pp_market_valid($in['marketOdds'])){$blend=.65;if(($match['date']??'')>='2026-10-24'){$evidence=$match['analysis']??[];$rel=min((float)($evidence['weighting']['home']['recentReliability']??0),(float)($evidence['weighting']['away']['recentReliability']??0));$stamp=strtotime($evidence['market']['capturedAt']??'');$age=$stamp?max(0,$now->getTimestamp()-$stamp):21600;$blend=max(.15,min(.60,(.30+.30*$rel)*exp(-$age/43200)));}$inputs['marketWeight']=round($blend,4);[$h,$a]=pp_market_fit($h,$a,$in['marketOdds'],$blend);$inputs['marketOdds']=true;}
     }
+    // V131 national-team prior: internationals are sparse, so blend in the catalogue squad strength
+    // (assets/national-teams.json, editorial 40-90 scale). 10 points ~ 20% more expected goals for the stronger side.
+    if(in_array($match['competitionId']??'',['unl','intl'],true)){static $nat=null;if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');$sh=(float)($nat['strength'][$match['home']['name']]??70);$sa=(float)($nat['strength'][$match['away']['name']]??70);$few=1-min(1,min($ratings['home']['matches'],$ratings['away']['matches'])/8);$k=.018*(.45+.55*$few);$h*=exp(($sh-$sa)*$k);$a*=exp(($sa-$sh)*$k);$inputs['nationalStrengthPrior']=['home'=>$sh,'away'=>$sa,'weight'=>round($k/.018,3)];}
     $h = max(.2,min(4.5,$h)); $a=max(.2,min(4.5,$a));
     
     $profiles=[]; foreach (['home','away'] as $side) { $attack=max(40,min(95,75+24*log($ratings[$side]['attack']))); $defense=max(40,min(95,75-24*log($ratings[$side]['defence']))); $profiles[$side]=['attack'=>$attack,'defense'=>$defense,'strength'=>($attack+$defense)/2]; }
@@ -306,6 +309,8 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
     }finally{flock($lock,LOCK_UN);fclose($lock);}
 }
 function pp_history_ready(array $match,array $history,DateTimeImmutable $now):bool {
+    // V131: national teams are always forecast (recent internationals + squad-strength prior in pp_forecast).
+    if(in_array($match['competitionId']??'',['unl','intl'],true))return true;
     $n=0;foreach($history as$m){if(($m['competitionId']??'')!==$match['competitionId']||empty($m['result']))continue;$at=!empty($m['kickoff'])?(new DateTimeImmutable($m['kickoff']))->modify('+150 minutes'):new DateTimeImmutable($m['date'].'T23:59:59+03:00');if($at<$now&&++$n>=3)return true;}return false;
 }
 function pp_forecast_eligible(array $m,DateTimeImmutable $now):bool {

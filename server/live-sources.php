@@ -11,6 +11,8 @@ function pp_live_jobs(array $cfg,DateTimeImmutable $now):array {
   $key=($i?'live-next/':'live/').$league;$year=(int)substr($month,0,4)-((int)substr($month,4,2)<7?1:0);
   $jobs[$key]=['key'=>$key,'url'=>'https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/scoreboard?dates='.$month.'&limit=1000','format'=>'espn-month','league'=>$league,'code'=>$code,'month'=>$month,'season'=>$year.'-'.substr((string)($year+1),-2),'meta'=>['name'=>$cfg['leagues'][$league]['name']??$names[$league],'timezone'=>'UTC'],'current'=>true,'interval'=>1800];
  }
+ // V131 national teams play only a few windows a year: the two previous months give the model real recent results.
+ foreach(['unl'=>'uefa.nations','intl'=>'fifa.friendly'] as$league=>$code){if(!($cfg[$league.'_enabled']??false))continue;foreach([1,2] as$back){$month=$local->modify('first day of this month')->modify('-'.$back.' month')->format('Ym');$key='live-prev'.$back.'/'.$league;$year=(int)substr($month,0,4)-((int)substr($month,4,2)<7?1:0);$jobs[$key]=['key'=>$key,'url'=>'https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/scoreboard?dates='.$month.'&limit=1000','format'=>'espn-month','league'=>$league,'code'=>$code,'month'=>$month,'season'=>$year.'-'.substr((string)($year+1),-2),'meta'=>['name'=>$names[$league],'timezone'=>'UTC'],'current'=>false,'interval'=>86400];}}
  if(isset($cfg['leagues']['tr.1']))$jobs['tff/tr.1']=['key'=>'tff/tr.1','url'=>'https://www.tff.org/default.aspx?pageID=198','format'=>'tff-week','league'=>'tr.1','meta'=>['name'=>'Süper Lig · TFF','timezone'=>'Europe/Istanbul'],'current'=>true,'interval'=>1800];
  return $jobs;
 }
