@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V121** · 2026-11-08 · Claude Code
+> Son güncelleme: **V122** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V121** (`VERSION`) |
+| Kararlı sürüm | **V122** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -196,6 +196,17 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Hakem santrada oyuncuların üstünde durmaz (`match.js matchClearOfficial`, test `kickoff-referee.cjs`).
 - Tribün görevlileri hiç tezahürat yapmaz; kollar aşağıda, eller önde (`crowd-lod.js poseBase`).
 - Meksika dalgası: 72 sn döngüde 30 sn, dalga dışındakiler oturur (`scene.js mexicanWave`).
+
+## 4o. V122 (serbest vuruş)
+- Vurucu seçimi (`freekick-engine.js skill`): editoryal uzman listesi (genişletildi: İrfan Can, Greenwood, Sara,
+  Rafa Silva, Orkun, Olise, Palmer, Wirtz…) + rol tabanı (AM/kanat > CM > ST > DM > CB), rating, iri/uzun santrfor
+  cezası. Gol ağırlığı (scoringWeight) artık etkisiz.
+- Sonuç dağılımı: baraj ~%6 (önce ~%16); kaçanların çoğu üstten/yandan aut. Teknik seçimi uzman/uzaklık/açıya göre.
+- Vuruş süresi değişken: `kick.length` (gol 8,8 sn tekrar dahil; kaçan ≈ resolvedAge+1,75). `kick.start` birikimli,
+  `sample()` sıralı arama yapar. Tekrar yalnız gollerde.
+- Varsayılan kamera ('behind'): penaltı stüdyosu kadrajı — vurucunun sırtı (isim/numara) ortada, baraj+kale arkada,
+  grafik bandının üstünde; uçuşta nişan topu izler. 2B top izi (`ballTrail`) canlı + tekrar.
+- Kaçan vuruş: vurucunun yerinde orta plan kısa tepki, kaleci yakın planı yok.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

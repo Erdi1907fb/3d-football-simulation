@@ -2,6 +2,15 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V122 — 2026-11-08 (Claude Code) · kararlı
+- **Serbest vuruş vurucuları:** takım düellosunda gerçek frikikçiler (ör. Fenerbahçe: Greenwood, İrfan Can, Oğuz
+  Aydın); Lukaku/Kanté/Brown gibi oyuncular artık seçilmiyor.
+- **Daha az baraj:** baraja takılan oran ~%16 → ~%6; kaçan vuruşlar çoğunlukla üstten ya da direğin yanından.
+- **Vuruş stilleri:** uzmanlar falso/düşen top, diğerleri sert/knuckleball; uzaklık ve açıya göre.
+- **Kamera:** penaltıdaki gibi açılış — vurucunun sırtı, numarası, baraj ve kale aynı karede, skor tablosu ayrı.
+  Top uçarken kamera onu izler ve topun arkasında ince bir iz bırakır: barajı geçince nereye gittiği net.
+- **Akış:** tekrar yalnız gollerde; kaçan vuruşta vurucunun yerinde ~1 sn tepki, sonra hemen sonraki vuruş.
+
 ## V121 — 2026-11-08 (Claude Code) · kararlı
 - **Video:** her cihazda (telefon dahil) Yüksek kalite + gölgelerle çizilen 1080×1920 / tam 60 FPS dışa aktarma
   (maç, penaltı, serbest vuruş, konsept maçlar). Önceden telefonda Düşük/Dengeli ve gölgesiz çiziliyordu.

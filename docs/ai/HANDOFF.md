@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V121 → V122 (kararlı)
+- **İstek:** frikik: mantıklı vurucular, daha az baraj, net top takibi, penaltı gibi açılış kadrajı, yalnız golde tekrar,
+  kaçanda kısa yerinde tepki, daha iyi vuruş stilleri.
+- **Yapılanlar:** CHANGELOG V122 / PROJECT_STATE 4o. Testler: `tests/freekick.cjs` V122 bloğu.
+- **Dikkat:** FK varsayılan kamerası `cameraPlan` içindeki son dönüş ('behind'); 'player' omuz üstüdür. Vuruşlar
+  artık sabit 8,8 sn değil — `kick.start/length` kullan, KICK ile çarpma.
+- **Sırada:** kaleci uçuş animasyonlarında çeşitlilik, kafa üstü/köşeye yakın gol varyasyonları.
+
+---
+
 ## [2026-11-08] Claude Code · V120 → V121 (kararlı)
 - **İstek:** görevliler kollar aşağıda; her modda her zaman 1080p 60 FPS, sabit kalite; hakem-oyuncu santra
   çakışması; seremoni çok parlak; yalnız parlaklık/kontrast değil gerçek görsel sıçrama.
