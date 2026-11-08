@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V116 → V117 (kararlı)
+- **İstek:** sıradakilere geç; frikikte yerde yatan oyuncu baraja dik yatıyor → baraj hizasına paralel, arkasında yatsın.
+- **Yapılanlar:** CHANGELOG V117. Yatan oyuncu yönü düzeltildi + test; kaleci dirsek pedi; V-gövde; çim aşınması.
+- **Dikkat:** `lieDown` gövdeyi actor'ün ileri ekseni etrafında 90° yatırır → yatış yönü heading'e diktir. Heading'i
+  hizaya paralel verirsen oyuncu hizaya dik yatar.
+- **Testler:** `node tests/run-all.cjs` 15/15 PASS; tarayıcıda yatan oyuncu ve penaltı kareleri kontrol edildi.
+- **Sırada:** kaleci hazır duruş çeşitleri (T-231), çim rüzgârı (T-233), tribün animasyonları (T-234).
+
+---
+
 ## [2026-11-08] Claude Code · V115 → V116 (kararlı)
 - **İstek:** "Sıradakileri yap" → ışık kontrastı, bacak/krampon, koşu ağırlığı, taraftar çeşitliliği.
 - **Yapılanlar:** CHANGELOG V116. Ek olarak hakem/yan hakemler tam vücut modele geçti (`OFFICIAL_KIT`).

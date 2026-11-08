@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V116** · 2026-11-08 · Claude Code
+> Son güncelleme: **V117** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V116** (`VERSION`) |
+| Kararlı sürüm | **V117** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -159,6 +159,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   (`athleticShape`), modern krampon (`scene.js` boot), hıza bağlı koşu eğimi, taraftar kıyafet çeşitliliği.
 - Hakem ve yan hakemler de tam vücut MPFB modeli (`OFFICIAL_KIT`, `allVisualActors` resmî görevlileri içerir);
   `actor.uniform` resmîlerde null → `actor.official` koruması zorunlu.
+
+## 4j. V117
+- Frikikte yatan oyuncu yönü: `freekick-engine.js wallAt` → heading = baraj normali (kaleye bakar); `lieDown` gövdeyi
+  ileri eksen etrafında yatırdığı için vücut baraj hattına paralel uzanır, sırtı baraja döner. Test: `tests/freekick.cjs`.
+- Kaleci dirsek pedi (`lowerarm_*` kemiğinde dolgulu halka), daha belirgin V-gövde (`athleticShape` x ölçeği),
+  çim aşınması (`scene.js` prosedürel kanvas dokulu `pitch-wear` düzlemleri: kale ağzı, penaltı noktası, orta nokta).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

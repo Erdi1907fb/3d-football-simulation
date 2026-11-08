@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V117 — 2026-11-08 (Claude Code) · kararlı
+- **Frikik barajı – yatan oyuncu:** artık baraj hizasına paralel, barajın hemen arkasında yatıyor (sırtı baraja dönük);
+  önceden baraja dik uzanıyordu. Testle korunuyor.
+- **Kaleci:** ön kolun üst kısmında dolgulu dirsek pedi (forma renginin koyusu).
+- **Gövde:** daha belirgin V şekli — omuzlar geniş, bel ince (fıçı görünümü azaldı).
+- **Çim aşınması:** kale ağzında, penaltı noktasında ve orta noktada yıpranmış, seyrelmiş çim lekeleri.
+
 ## V116 — 2026-11-08 (Claude Code) · kararlı
 - **Hakemler tam vücut:** hakem ve yan hakemler artık oyuncularla aynı MPFB modelinde (sarı forma, siyah şort/çorap);
   önceki manken görünümü gitti.

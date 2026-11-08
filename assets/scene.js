@@ -150,6 +150,11 @@ function create(options={}){
  scene.userData.turf=pitchDetail.info;
  const turfMeshes=[];for(let i=0;i<14;i++)turfMeshes.push(box(stadium,105/14,.035,68,turf[i%2],-52.5+(i+.5)*105/14,-.015,0));for(const m of turfMeshes){m.userData.noBatch=true;m.receiveShadow=quality.shadows;}const turfReady=pitchDetail.bind(turf,turfMeshes);for(const m of turf)if(m?.userData)m.userData.broadcastSurface=true;if(pitchDetail.tufts?.material)pitchDetail.tufts.material.userData.broadcastSurface=true;turfReady.then(()=>weather?.refresh()).catch(()=>{});
  rect(stadium,-52.5,-34,105,68);pitchStroke(stadium,[[0,.04,-34],[0,.04,34]]);
+ // Pitch wear: scuffed, thinner turf where play concentrates (goalmouths, penalty spots, centre spot).
+ if(typeof document!=='undefined'){const cv=document.createElement('canvas');cv.width=cv.height=256;const g=cv.getContext('2d');let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;for(let i=0;i<420;i++){const r=4+rnd()*22,d=Math.pow(rnd(),.7)*92,a=rnd()*Math.PI*2,x=128+Math.cos(a)*d,y=128+Math.sin(a)*d*.9,k=1-d/110,gr=g.createRadialGradient(x,y,0,x,y,r),c=rnd()<.5?'96,92,58':'112,118,66';gr.addColorStop(0,`rgba(${c},${(.15*k).toFixed(3)})`);gr.addColorStop(1,`rgba(${c},0)`);g.fillStyle=gr;g.fillRect(x-r,y-r,2*r,2*r);}
+  const wearTex=new T.CanvasTexture(cv);wearTex.colorSpace=T.SRGBColorSpace;const wearMat=new T.MeshStandardMaterial({map:wearTex,transparent:true,depthWrite:false,roughness:1,polygonOffset:true,polygonOffsetFactor:-2});wearMat.userData.broadcastSurface=true;
+  const wear=(x,z,w,h,rot=0)=>{const m=new T.Mesh(new T.PlaneGeometry(w,h),wearMat);m.rotation.x=-Math.PI/2;m.rotation.z=rot;m.position.set(x,.021,z);m.receiveShadow=quality.shadows;m.userData.noBatch=true;m.name='pitch-wear';stadium.add(m);};
+  for(const sign of[-1,1]){wear(sign*50.4,0,5.2,9.5,Math.PI/2);wear(sign*41.5,0,3.6,3.2,sign*.6);wear(sign*47.6,sign*.8,3.4,4.6,1.1);}wear(0,0,3.2,3.2,.4);}
  const circle=(x,z,r,a=0,b=2*Math.PI)=>pitchStroke(stadium,Array.from({length:65},(_,i)=>[x+Math.cos(a+(b-a)*i/64)*r,.045,z+Math.sin(a+(b-a)*i/64)*r]));circle(0,0,9.15);sphere(stadium,.12,0xe9f0de,0,.04,0).scale.y=.15;
  for(const sign of[-1,1]){
   rect(stadium,sign<0?-52.5:36,-20.16,16.5,40.32);rect(stadium,sign<0?-52.5:47,-9.16,5.5,18.32);sphere(stadium,.12,0xe9f0de,sign*41.5,.04,0).scale.y=.15;

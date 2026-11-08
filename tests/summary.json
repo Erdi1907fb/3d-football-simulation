@@ -1,17 +1,17 @@
 {
  "version": "V116",
- "ranAt": "2026-11-08T10:12:42.342Z",
+ "ranAt": "2026-11-08T10:22:55.003Z",
  "results": [
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 22.3,
+   "seconds": 22.2,
    "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2075,\"outcomes\":{\"goal\":528,\"save\":511,\"wide\":480,\"post\":169,\"wall\":387},\"techniques\":[\"knuckle\",\"curl\",\"dip\",\"power\",\"outside\",\"under\"],\"physicalMatch\":0.9966,\"earlyFinish\":51,\"suddenDeath\":102,\"samples\":1278683,\"maxStep\":0.581,\"brandBoards\":true,\"sameSpotRounds\":1152,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":316,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1265,\"keeperCatches\":{\"clear\":20,\"rain\":16}}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 5.4,
+   "seconds": 5.2,
    "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4596,\"techniques\":{\"high-corner\":778,\"chip\":388,\"power-rise\":357,\"placed\":774,\"disguised\":194,\"driven\":776,\"central\":379,\"inside-foot\":730,\"outside-foot\":220},\"speedKmh\":{\"min\":53,\"median\":82,\"max\":107},\"maxStep60fps\":0.568,\"aeroKicks\":655,\"maxCurlMetres\":0.302}"
   },
   {
@@ -47,19 +47,19 @@
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 4.6,
+   "seconds": 4.7,
    "summary": "{"
   },
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.8,
+   "seconds": 5.3,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 1.2,
+   "seconds": 1.3,
    "summary": "{"
   },
   {
@@ -84,6 +84,12 @@
    "test": "search-test.cjs",
    "pass": true,
    "seconds": 0,
+   "summary": "{"
+  },
+  {
+   "test": "engine-test.cjs",
+   "pass": true,
+   "seconds": 139.3,
    "summary": "{"
   }
  ],
