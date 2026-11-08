@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V128** · 2026-11-08 · Claude Code
+> Son güncelleme: **V129** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V128** (`VERSION`) |
+| Kararlı sürüm | **V129** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -267,6 +267,13 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - iPhone 13 emülasyonu, penaltı stüdyosu V107'ye karşı: tam vücut 52/51, kemik 2756/2703, nesne 12356/12743,
   malzeme 2797/2748, JS bellek 298/280 MB; telefonda bloom/SMAA yok (V107'de vardı). Gerçek cihazda test edilmedi.
 - Şort numarası baskı alanının düz ortasına küçültüldü (`jersey-print.js paintShort`), iki haneli numaralar kesilmiyor.
+
+## 4v. V129
+- Kullanıcı isteği: telefonda kalite düşürülmesin. V127'deki telefon "lite" profili kapatıldı: telefon da tam sinematik
+  zincir (DOF, bloom, SMAA, keskinleştirme), fiziksel saç/cilt, 4096 gölge, fenerler, tüm maç hakemleri tam vücut;
+  her dışa aktarma (telefon dahil) 'high'. Acil durum için yalnız `window.SEKME_LITE_RENDER=true` lite yolu açar.
+- Telefon yükü V128'deki asıl düzeltmeyle (kenar görevlileri hafif rigde) V107'ye yakın: iPhone 13 emülasyonu
+  tam vücut 55/51, kemik 2915/2703, JS bellek 302/280 MB. Gerçek cihazda doğrulanmadı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V128 → V129 (kararlı)
+- **İstek:** sorunu kalite düşürerek çözme; telefonda da en yüksek kaliteyle indirme.
+- **Yapılanlar:** PROJECT_STATE 4v. Telefon = masaüstü kalitesi. Kullanıcıdan gerçek cihaz geri bildirimi bekleniyor.
+
+---
+
 ## [2026-11-08] Claude Code · V127 → V128 (kararlı)
 - **İstek:** şort numaraları kesik; telefonda çalışma V107 (kullanıcının son çalışan sürümü) ile kıyaslanarak düzelsin.
 - **Yapılanlar:** CHANGELOG V128 / PROJECT_STATE 4u (ölçümler orada).

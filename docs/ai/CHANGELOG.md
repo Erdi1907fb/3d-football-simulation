@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V129 — 2026-11-08 (Claude Code) · kararlı
+- Telefonda kalite düşürme geri alındı: telefon da bilgisayarla aynı en yüksek kalitede çizer ve video indirir
+  (çökmenin asıl nedeni V128'de giderildi).
+
 ## V128 — 2026-11-08 (Claude Code) · kararlı
 - **Telefon:** asıl sebep bulundu — kenardaki 50 görevli de ağır tam vücut modele geçmişti (çizim yükü ikiye
   katlanmıştı). Yük V107 seviyesine indirildi; telefonda yalnız oyuncular ve orta hakem tam vücut.

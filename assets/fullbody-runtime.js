@@ -46,7 +46,7 @@ const groupedBody=new Map();
 function bodyGroups(materials,keeper){if(groupedBody.has(keeper))return groupedBody.get(keeper);const unique=[],mapping=[],buckets=[];for(let i=0;i<materials.length;i++){let at=unique.indexOf(materials[i]);if(at<0){at=unique.length;unique.push(materials[i]);buckets.push([]);}mapping[i]=at;}for(const gr of asset.geometry.groups)for(let i=gr.start;i<gr.start+gr.count;i++)buckets[mapping[gr.materialIndex]].push(asset.geometry.index.getX(i));const g=asset.geometry.clone(),indices=[];g.clearGroups();buckets.forEach((row,i)=>{g.addGroup(indices.length,row.length,i);indices.push(...row);});g.setIndex(indices);const result={geometry:g,materialIndices:unique.map(m=>materials.indexOf(m)),groupsBefore:asset.geometry.groups.length,groupsAfter:unique.length};groupedBody.set(keeper,result);return result;}
 const OFFICIAL_KIT={shirt:0xd9ed53,shorts:0x111418,socks:0x111418,stripe:0x14232d,keeper:0xd9ed53};
 // V127: phones keep MeshStandard for hair/skin (fewer, lighter shader programs).
-const LITE_GPU=!!(globalThis.SekmeGraphics?.mobile||(typeof navigator!=='undefined'&&/iPhone|iPad|iPod|Android|Mobile/i.test(navigator.userAgent||'')));
+const LITE_GPU=!!globalThis.SEKME_LITE_RENDER;/* V129: phones get the full materials and all match officials */
 function attach(actor,options={}){if(!asset||!actor||actor.fullBody)return;
  // V128: only players and the match referees get the skinned full body. Sideline officials (stewards, ball crew,
  // staff) stay on the light rig, as in V107; on phones only the main referee is upgraded (bone cost per frame).
