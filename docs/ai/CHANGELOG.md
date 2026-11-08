@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V126 — 2026-11-08 (Claude Code) · kararlı
+- **Gerçek oyuncu görünümü:** büyük takımlardaki 889 oyuncunun fotoğrafı tek tek incelendi: kel, kazınmış, kısa,
+  uzun, kıvırcık, örgülü, açılmış alın + sakal yoğunluğu; ten ve saç rengi fotoğraftan ölçüldü (ör. Lukaku kel ve
+  sakallı, Kanté/Mbappé kazınmış, Guendouzi/Cucurella/Haaland uzun, Sané örgülü).
+- Düzeltme: maç günü açıklanan kadrolarda oyuncuların görünüm verisi kullanılmıyordu.
+
 ## V125 — 2026-11-08 (Claude Code) · kararlı
 - **Millî kadro:** güncel davet listesine göre muhtemel 11 (Kasım: İrfan Can, Kerem, Altay yok); davet edilmeyen
   oyuncu aynı mevkiden davetliyle değişir; TD Sergen Yalçın; Türkçe karakterli oyuncu adları.

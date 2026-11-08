@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V125** · 2026-11-08 · Claude Code
+> Son güncelleme: **V126** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V125** (`VERSION`) |
+| Kararlı sürüm | **V126** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -241,6 +241,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Millî takım adları dile göre: katalog `names:{tr,en}` (İtalya/Italy, Türkiye/Turkey, İngiltere/England…);
   `SekmeCatalog.team()` arayüz diline göre ad verir, `localName()`, dil değişince maç takımları güncellenir.
   Kanonik `name` (sağlayıcı eşleşmesi, ör. "Italia") değişmedi. FotMob TD eşleşmesi sağlayıcı takma adlarıyla.
+
+## 4s. V126 (oyuncu görünümü)
+- 38 büyük kulüpte (her ligin büyükleri + UCL) 889 oyuncunun saç tipi ve sakalı FotMob portrelerine bakılarak elle
+  etiketlendi (`tools/appearance-labels-v126.json`); ten ve saç rengi aynı fotoğraftan ölçülür
+  (`tools/appearance-from-photos.py`, foto önbelleği git dışı). Sonuç `club-rosters-v75.json` appearance.profile,
+  `appearanceSource: fotmob-headshot-v126-reviewed`. Stiller: short, cropped, long, coils, twists, bald, receding.
+- `club-rosters.js withLooks`: maç günü sağlayıcı (ESPN) 11'lerinde de oyuncu görünümü id/ad ile kadro verisinden
+  gelir (önce yalnız tüm takım kadro dosyasından geldiğinde kullanılıyordu). Önbellek `?v=126`.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

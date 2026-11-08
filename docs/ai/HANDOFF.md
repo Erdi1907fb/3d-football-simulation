@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V125 → V126 (kararlı)
+- **İstek:** büyük takım oyuncularının saç/ten/kel vb. doğru olsun; grafik sıçramasına devam.
+- **Yapılanlar:** CHANGELOG V126 / PROJECT_STATE 4s. Test: `crests.cjs` (Lukaku kel, Kanté kazınmış…, ≥850 incelenmiş).
+- **Kısmi:** yalnız büyük kulüpler; diğer takımlar eski tahmin/portre yolu. 'short' saç modeli hâlâ kask gibi
+  duruyor (geometri sınırı) — sıradaki iş saç geometrisi çeşitliliği.
+- **Dikkat:** yeni oyuncular için `python3 tools/appearance-from-photos.py` (etiket dosyasına eklenmeyenler atlanır;
+  `--all` ile otomatik tahmin).
+
+---
+
 ## [2026-11-08] Claude Code · V124 → V125 (kararlı)
 - **İstek:** İrfan Can millî takıma seçilmedi; UNL logosu football-logos.cc sayfasından; doğru TR/EN ülke adları.
 - **Yapılanlar:** CHANGELOG V125 / PROJECT_STATE 4r. Testler: `national-competitions.php` (davet listesi), `crests.cjs` (adlar).

@@ -4,4 +4,8 @@ const ui=fs.readFileSync(root+'/assets/penalty-ui.js','utf8');assert(ui.includes
 // V125 national-team display names: Turkish exonyms in TR, English names in EN; every national team has both.
 for(const t of C.all.filter(t=>t.league==='Millî / National'))assert(t.names?.tr&&t.names?.en,t.id+' localized names');
 assert.equal(C.localName('Italia','tr'),'İtalya');assert.equal(C.localName('Italia','en'),'Italy');assert.equal(C.localName('Türkiye','en'),'Turkey');assert.equal(C.localName('Türkiye','tr'),'Türkiye');assert.equal(C.localName('Germany','tr'),'Almanya');assert.equal(C.find('İngiltere')?.id,'england');assert.equal(C.localName('Galatasaray','en'),'Galatasaray');
+// V126 reviewed player looks (FotMob headshots): known cases and coverage of big-club squads.
+{const R=JSON.parse(fs.readFileSync(root+'/assets/club-rosters-v75.json','utf8')).teams,find=n=>{for(const t of Object.values(R))for(const p of[...t.team.players,...(t.team.bench||[])])if(p.name===n)return p.appearance?.profile;};
+ assert.equal(find('Romelu Lukaku').hairStyle,'bald');assert.equal(find("N'Golo Kanté").hairStyle,'cropped');assert.equal(find('Mattéo Guendouzi').hairStyle,'long');assert.equal(find('Ederson').hairStyle,'coils');assert.equal(find('Leroy Sané').hairStyle,'twists');
+ let reviewed=0;for(const t of Object.values(R))for(const p of[...t.team.players,...(t.team.bench||[])])if(String(p.appearance?.appearanceSource||'').endsWith('-reviewed'))reviewed++;assert(reviewed>=850,'reviewed looks '+reviewed);}
 console.log(JSON.stringify({PASS:true,catalogTeams:C.all.length,embeddedAssets:F.count,lateImageRefresh:true}));
