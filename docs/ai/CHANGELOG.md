@@ -8,6 +8,8 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Hava durumu seçeneği (Açık / Yağmurlu / Karlı) normal maç, penaltı ve serbest vuruşta; ön izleme ve 1080×1920 MP4’te.
   Yağmur: damlalar, zeminde sıçrama halkaları, ıslak çim ve formalar, pus. Kar: kar taneleri, beyazlaşan çim, açık sis.
 - Kalite ayarına göre parçacık bütçesi (Yüksek/Dengeli/Hızlı).
+- Serbest vuruşta hakem geri geldi: her vuruşta ana kameradan kadraja sığan (grafik bandının üstünde, şut yolunu ve
+  barajı kapatmayan) ilk gerçekçi noktaya yerleşir — çoğunlukla barajın dış ucunda; sığmazsa gösterilmez. Düdük pozu korunur.
 
 ### Görsel iyileştirmeler
 - Clearcoat’lu maç topu; cilalı, daha yuvarlak kale çerçevesi (gölge düşürür); 10 renkli krampon paleti.

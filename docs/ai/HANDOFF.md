@@ -22,7 +22,8 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 - **Dal / commit:** `claude/great-curie-v7xiuc` → `main`. Commit: “V111: …”.
 - **Kullanıcı isteği:** tüm öğelerde grafik seviyesi atlatma (oyuncu, kaleci, top, kale/file, stadyum, taraftar, çim,
   krampon, forma/şort, yüz), uygun repo/kaynak araştırması; üç modda ve videoda Açık/Yağmurlu/Karlı seçeneği.
-- **Yapılanlar:** `weather.js`, `weather-ui.js` ve sahne/sayfa bağlantıları; clearcoat top ve kale; krampon paleti;
+- **Yapılanlar:** `weather.js`, `weather-ui.js` ve sahne/sayfa bağlantıları; frikikte kadraja sığarsa görünen hakem
+  (`freekick-ui.js refereeSpot`, aday noktaları ana kamerayla izdüşümle sınar, vuruş başına önbellek); clearcoat top ve kale; krampon paleti;
   ıslak forma; `research/GRAPHICS-SOURCES.md`; `tests/weather.cjs`.
 - **Yapılmayan/sonraya:** post-process bloom/SMAA (T-220), taraftar yağmurluk (T-221), file ipi normal haritası (T-222).
   Yüz fotoğrafları bu sürümde değişmedi (V107 yüz düzeltmeleri sürüyor).

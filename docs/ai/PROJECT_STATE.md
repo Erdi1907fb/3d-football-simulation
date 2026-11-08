@@ -88,7 +88,7 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   ayak dışı vuruşta falso ters yöne. Sonuç modeli ve rastgele akış değişmedi (testler aynı sayıları verir).
 
 ## 4c. V110 eklemeleri
-- **Serbest vuruş sahnesi:** ekranda yalnız baraj, kaleci ve vurucu; hakem kadraj dışında. Vurucu topu yerleştirir,
+- **Serbest vuruş sahnesi:** ekranda baraj, kaleci ve vurucu; hakem yalnız kadraja sığıyorsa görünür (V111, `refereeSpot`). Vurucu topu yerleştirir,
   geri çekilir, odaklanır; kaleci önce yakın direkte barajı yönetir (kol işareti), sonra yan adımla açıortay
   konumuna geçer (League-Soccer `goalie_default` uyarlaması). Kısa mesafede bazen barajın arkasına bir oyuncu yatar
   ve alçak şutları fiziksel olarak keser. Taraftar: “eşit” seçilirse stadyum uzun eksen (z=0) boyunca tam ikiye
