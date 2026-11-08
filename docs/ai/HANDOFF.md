@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V134 → V135 (kararlı)
+- **İstek:** yalnız UNL'nin iki maçı değil; tüm millî maçlar lig sistemindeki gibi kalıcı geçmiş olarak birikip
+  gelecekteki her millî maç analizine etki etsin.
+- **Yapılanlar:** PROJECT_STATE 4ab. Test: back-fill + kapalı ay kontrolü (`national-competitions.php`).
+
+---
+
 ## [2026-11-08] Claude Code · V133 → V134 (kararlı)
 - **İstek:** millî reytingler site tarafından otomatik güncellensin; grubun ilk maçının sonucu son maçın tahminini etkilesin.
 - **Yapılanlar:** PROJECT_STATE 4aa. Test: `national-competitions.php` (PHP=Python, sonuç etkisi, geçici tahmin, uçtan uca güncelleyici).

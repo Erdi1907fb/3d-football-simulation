@@ -19,17 +19,21 @@ function pp_nr_current(array $cfg=[]):array{
 function pp_nr_name(string $espn,array $canon):string{$n=function_exists('pp_provider_name')?pp_provider_name($espn):$espn;return $canon[pp_public_name($n)]??$canon[pp_public_name($espn)]??$n;}
 /* Fetch the recent months; returns ['games'=>rows,'fetched'=>n,'complete'=>bool]. */
 function pp_nr_fetch(array $cfg,DateTimeImmutable $now,?callable $fetcher=null,int $budget=32):array{
- $dir=$cfg['storage_dir'];$utc=$now->setTimezone(new DateTimeZone('UTC'));$months=[$utc->format('Ym'),$utc->modify('first day of this month')->modify('-1 month')->format('Ym')];
+ $dir=$cfg['storage_dir'];$utc=$now->setTimezone(new DateTimeZone('UTC'));
+ // Every month from the seed date to now is covered: recent months refresh, older months are fetched once and kept,
+ // so a server pause of any length is back-filled and every international result ever played stays in the model.
+ $seedAsOf=(string)(pp_nr_seed()['asOf']??'2026-11-01');$cursor=(new DateTimeImmutable(substr($seedAsOf,0,7).'-01',new DateTimeZone('UTC')))->modify('-1 month');$months=[];
+ for($m=$utc->modify('first day of this month');$m>=$cursor&&count($months)<120;$m=$m->modify('-1 month'))$months[]=$m->format('Ym');
  $nat=pp_read(__DIR__.'/../assets/national-teams.json');$canon=[];foreach(array_keys($nat['strength']??[])as$n)$canon[pp_public_name($n)]=$n;
  $rows=[];$fetched=0;$complete=true;
  foreach(pp_nr_comps() as$slug=>$meta)foreach($months as$i=>$month){
-  $path=$dir.'/national-feed-'.$slug.'-'.$month.'.json';$cache=pp_read($path);$age=$now->getTimestamp()-(strtotime($cache['fetchedAt']??'')?:0);$ttl=$i===0?3*3600:12*3600;
+  $path=$dir.'/national-feed-'.$slug.'-'.$month.'.json';$cache=pp_read($path);$age=$now->getTimestamp()-(strtotime($cache['fetchedAt']??'')?:0);$ttl=$i===0?3*3600:($i===1?12*3600:($cache&&($cache['finalAt']??null)?PHP_INT_MAX:24*3600));
   if((!$cache||$age>$ttl)&&$fetched<$budget){
    $url='https://site.api.espn.com/apis/site/v2/sports/soccer/'.$slug.'/scoreboard?dates='.$month.'&limit=1000';$fetched++;
    try{$doc=$fetcher?$fetcher($url,$cfg):pp_fetch($url,$cfg);if(!is_array($doc)||!isset($doc['events'])||!is_array($doc['events']))throw new RuntimeException('bad feed');
     $events=[];foreach($doc['events'] as$e){$c=$e['competitions'][0]??[];if(!(($c['status']['type']['completed']??false)===true))continue;$s=[];foreach($c['competitors']??[]as$t)$s[$t['homeAway']??'']=$t;if(!isset($s['home'],$s['away']))continue;$h=$s['home']['score']??null;$a=$s['away']['score']??null;if(!is_scalar($h)||!is_scalar($a)||!preg_match('/^\d+$/',(string)$h)||!preg_match('/^\d+$/',(string)$a))continue;
      $events[]=[substr((string)($c['date']??$e['date']??''),0,16),$slug,pp_nr_name((string)($s['home']['team']['displayName']??''),$canon),pp_nr_name((string)($s['away']['team']['displayName']??''),$canon),(int)$h,(int)$a,($c['neutralSite']??false)?1:0,($s['home']['winner']??false)?pp_nr_name((string)$s['home']['team']['displayName'],$canon):((($s['away']['winner']??false))?pp_nr_name((string)$s['away']['team']['displayName'],$canon):null),(string)($e['id']??'')];}
-    $cache=['fetchedAt'=>$now->format(DATE_ATOM),'events'=>$events];pp_write($path,$cache);
+    $cache=['fetchedAt'=>$now->format(DATE_ATOM),'events'=>$events];if($i>=2)$cache['finalAt']=$now->format(DATE_ATOM);/* closed month: never refetched */pp_write($path,$cache);
    }catch(Throwable $e){$complete=false;}
   }elseif(!$cache)$complete=false;
   foreach($cache['events']??[]as$r)$rows[]=$r;
@@ -67,8 +71,9 @@ function pp_nr_update(array $cfg,DateTimeImmutable $now,?callable $fetcher=null,
 }
 /* A national prediction is provisional while either team still has an earlier, unplayed international in the window. */
 function pp_nr_pending_before(array $m,array $matches):bool{
- if(!in_array($m['competitionId']??'',['unl','intl'],true))return false;$at=$m['kickoff']??$m['date'];
- foreach($matches as$o){if(($o['id']??'')===($m['id']??'')||!in_array($o['competitionId']??'',['unl','intl'],true)||!empty($o['result']))continue;$oat=$o['kickoff']??$o['date'];if($oat>=$at||strtotime($at)-strtotime($oat)>10*86400)continue;
+ $nr=pp_nr_current(['storage_dir'=>$GLOBALS['pp_nr_storage']??null]);$nat=fn($x)=>in_array($x['competitionId']??'',['unl','intl'],true)||(isset($nr['teams'][$x['home']['name']??''])&&isset($nr['teams'][$x['away']['name']??'']));
+ if(!$nat($m))return false;$at=$m['kickoff']??$m['date'];
+ foreach($matches as$o){if(($o['id']??'')===($m['id']??'')||!$nat($o)||!empty($o['result']))continue;$oat=$o['kickoff']??$o['date'];if($oat>=$at||strtotime($at)-strtotime($oat)>10*86400)continue;
   foreach(['home','away']as$s)foreach(['home','away']as$t)if(pp_club_key($o[$s])===pp_club_key($m[$t]))return true;}
  return false;
 }

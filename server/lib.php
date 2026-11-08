@@ -185,7 +185,9 @@ function pp_forecast(array $match, array $history, DateTimeImmutable $now): arra
     // every confederation's WC qualifiers, continental finals + qualifiers, Nations Leagues and (lightly) friendlies,
     // plus decaying title bonus, recent form and squad quality (club ratings of the national roster). It carries 70%
     // of the expected goals; the recent internationals inside this model (friendlies at half weight) carry 30%.
-    if(in_array($match['competitionId']??'',['unl','intl'],true)){static $nat=null;$nr=pp_nr_current(['storage_dir'=>$GLOBALS['pp_nr_storage']??null]);if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');
+    $nrAll=pp_nr_current(['storage_dir'=>$GLOBALS['pp_nr_storage']??null]);$isNational=in_array($match['competitionId']??'',['unl','intl'],true)||(isset($nrAll['teams'][$match['home']['name']])&&isset($nrAll['teams'][$match['away']['name']]));
+    // Any fixture between two rated national teams (Nations League, friendlies, and any future qualifier or tournament fixture).
+    if($isNational){static $nat=null;$nr=pp_nr_current(['storage_dir'=>$GLOBALS['pp_nr_storage']??null]);if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');
      $th=$nr['teams'][$match['home']['name']]??null;$ta=$nr['teams'][$match['away']['name']]??null;
      if($th&&$ta){$sq=fn($t)=>isset($t['squad']['rating'])?(float)$t['squad']['rating']:null;$fm=fn($t)=>isset($t['form'])?(float)$t['form']:1.35;
       $dr=(float)$th['elo']-(float)$ta['elo']+(($match['neutral']??false)?0:80);

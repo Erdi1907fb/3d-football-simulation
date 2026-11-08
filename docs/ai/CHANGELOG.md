@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V135 — 2026-11-08 (Claude Code) · kararlı
+- **Millî maç hafızası:** oynanan her millî maç (Dünya Kupası, elemeler, kıta turnuvaları, Uluslar Ligi'ler,
+  hazırlık) kalıcı olarak birikir ve sonraki tüm millî maç analizlerini etkiler — lig sistemindeki gibi. Sunucu
+  uzun süre kapalı kalsa bile eksik aylar otomatik tamamlanır.
+
 ## V134 — 2026-11-08 (Claude Code) · kararlı
 - **Millî reytingler artık kendiliğinden güncellenir:** site, normal güncelleme döngüsünde son millî maç sonuçlarını
   ESPN'den çekip reytingleri yeniden hesaplar.

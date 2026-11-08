@@ -80,9 +80,15 @@ $tmpU=sys_get_temp_dir().'/n90-nru-'.getmypid();@mkdir($tmpU);$feed=json_decode(
 foreach($feed['events'] as &$ev){if(($ev['name']??'')==='Belgium at Türkiye'){$ev['competitions'][0]['status']['type']=['name'=>'STATUS_FULL_TIME','state'=>'post','completed'=>true];foreach($ev['competitions'][0]['competitors'] as &$c){$c['score']=$c['homeAway']==='home'?'3':'0';$c['winner']=$c['homeAway']==='home';}unset($c);}}unset($ev);
 $calls=0;$fake=function(string $url)use($feed,&$calls){$calls++;return str_contains($url,'uefa.nations')&&str_contains($url,'202611')?$feed:['events'=>[]];};
 $u=pp_nr_update(['storage_dir'=>$tmpU,'unl_enabled'=>true]+$cfg,new DateTimeImmutable('2026-11-13T09:00:00Z'),$fake,false);$live=json_decode((string)file_get_contents($tmpU.'/national-ratings.json'),true);
-$check(($u['status']??'')==='updated'&&($u['newResults']??0)>=1&&$calls===32,'server updater fetched feeds and found the new result '.json_encode($u));
+$check(($u['status']??'')==='updated'&&($u['newResults']??0)>=1&&$calls>=32,'server updater fetched feeds and found the new result '.json_encode($u));
 $check(($live['teams']['Türkiye']['elo']??0)>$seed['teams']['Türkiye']['elo'],'stored ratings include Türkiye 3-0 Belgium');
-$u2=pp_nr_update(['storage_dir'=>$tmpU,'unl_enabled'=>true]+$cfg,new DateTimeImmutable('2026-11-13T10:00:00Z'),$fake,false);$check(($u2['status']??'')==='current'&&$calls===32,'cached: no refetch within the refresh interval');
+$u2=pp_nr_update(['storage_dir'=>$tmpU,'unl_enabled'=>true]+$cfg,new DateTimeImmutable('2026-11-13T10:00:00Z'),$fake,false);$c1=$calls;$check(($u2['status']??'')==='current'&&$calls===$c1,'cached: no refetch within the refresh interval');
+// V135 back-fill: after a long pause every missed month is fetched once (bounded per run), closed months are never refetched.
+$tmpB=sys_get_temp_dir().'/n90-nrb-'.getmypid();@mkdir($tmpB);$months=[];$spy=function(string $url)use(&$months){if(preg_match('/dates=(\d{6})/',$url,$mm))$months[$mm[1]]=true;return ['events'=>[]];};
+pp_nr_update(['storage_dir'=>$tmpB,'unl_enabled'=>true]+$cfg,new DateTimeImmutable('2027-03-20T09:00:00Z'),$spy,false);for($k=0;$k<20;$k++)pp_nr_update(['storage_dir'=>$tmpB,'unl_enabled'=>true]+$cfg,new DateTimeImmutable('2027-03-20T09:00:00Z'),$spy,false);
+foreach(['202611','202612','202701','202702','202703'] as $mm)$check(isset($months[$mm]),"back-filled month $mm");
+$before=count($months);$n0=0;$spy2=function(string $url)use(&$n0){if(!preg_match('/dates=(20270[23])/',$url))$n0++;return ['events'=>[]];};pp_nr_update(['storage_dir'=>$tmpB,'unl_enabled'=>true]+$cfg,new DateTimeImmutable('2027-03-25T09:00:00Z'),$spy2,false);$check($n0===0,'closed months are not refetched');
+
 unset($GLOBALS['pp_nr_storage']);
 echo json_encode(['PASS'=>$fail===0,'forecasts'=>$sample??[],'turkiyeBelgium'=>$pred['publishedScore']??null,'xg'=>$xg??null,'turkiyeXI'=>array_map(fn($p)=>$p['name'],$xi['players']??[]),'unl'=>count($out['unl']),'intl'=>count($out['intl']),'sample'=>array_slice($names,0,4)],JSON_UNESCAPED_UNICODE),"\n";
 exit($fail?1:0);

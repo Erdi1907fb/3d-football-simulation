@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V134** · 2026-11-08 · Claude Code
+> Son güncelleme: **V135** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V134** (`VERSION`) |
+| Kararlı sürüm | **V135** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -322,6 +322,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   yayınlanırsa `nationalProvisional`; o maç(lar) oynanınca ve başlama saatinden önce güncel reytinglerle yeniden
   üretilir (`revision`, `revisedAt`, `previousPublishedScore`). 22–23 Ekim kilitli tahminlere dokunulmaz.
 - Kadro kalitesi (squad) tohumdan gelir; yeni millî kadrolar için ara sıra `python3 tools/national-ratings.py`.
+
+## 4ab. V135
+- Millî reyting hafızası kalıcı ve kesintisiz: `pp_nr_fetch` tohum tarihinden bugüne HER ayı kapsar (bu ay 3 sa,
+  önceki ay 12 sa, daha eski aylar bir kez çekilip `finalAt` ile kapanır); uzun sunucu duraklamaları otomatik
+  tamamlanır. Tüm sonuçlar `storage_dir/national-ratings.json` `games` listesinde birikir; Elo her seferinde tüm
+  geçmişten hesaplanır (kulüp liglerindeki geçmiş sonuç mantığıyla aynı).
+- Model ve geçici-tahmin kuralı yalnız unl/intl değil, iki taraf da reytingli millî takım olan HER fikstüre uygulanır
+  (ileride bültene eklenecek eleme/turnuva fikstürleri dahil).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
