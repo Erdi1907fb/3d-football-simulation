@@ -7,6 +7,8 @@ return [
     'auto_refresh_on_visit' => true,
     'uel_enabled' => true,
     'uecl_enabled' => true,
+    'unl_enabled' => true,
+    'intl_enabled' => true,
     'fixture_scope' => 'all',
     // No per-day cap while fixture_scope is all.
     'max_daily_matches' => 0,

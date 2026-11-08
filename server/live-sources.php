@@ -3,8 +3,8 @@ declare(strict_types=1);
 // Small cached monthly feeds. Date ranges are not supported by this soccer endpoint.
 function pp_live_jobs(array $cfg,DateTimeImmutable $now):array {
  if(!($cfg['live_sources_enabled']??false))return [];
- $codes=['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf'];
- $names=['ucl'=>'Şampiyonlar Ligi','uel'=>'Avrupa Ligi','uecl'=>'Konferans Ligi'];$jobs=[];
+ $codes=['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf','unl'=>'uefa.nations','intl'=>'fifa.friendly'];
+ $names=['ucl'=>'Şampiyonlar Ligi','uel'=>'Avrupa Ligi','uecl'=>'Konferans Ligi','unl'=>'UEFA Uluslar Ligi','intl'=>'Uluslararası Hazırlık Maçı'];$jobs=[];
  $local=$now->setTimezone(new DateTimeZone('Europe/Istanbul'));$months=[$local->format('Ym')];foreach([$local->setTime(0,0)->setTimezone(new DateTimeZone('UTC'))->format('Ym'),$local->modify('+5 days')->setTime(23,59)->setTimezone(new DateTimeZone('UTC'))->format('Ym')]as$month)if(!in_array($month,$months,true))$months[]=$month;
  foreach($months as$i=>$month)foreach($codes as$league=>$code){
   if(!isset($cfg['leagues'][$league])&&!($cfg[$league.'_enabled']??false))continue;
@@ -14,6 +14,8 @@ function pp_live_jobs(array $cfg,DateTimeImmutable $now):array {
  if(isset($cfg['leagues']['tr.1']))$jobs['tff/tr.1']=['key'=>'tff/tr.1','url'=>'https://www.tff.org/default.aspx?pageID=198','format'=>'tff-week','league'=>'tr.1','meta'=>['name'=>'Süper Lig · TFF','timezone'=>'Europe/Istanbul'],'current'=>true,'interval'=>1800];
  return $jobs;
 }
+// V124 national-team competitions: only nations in assets/national-teams.json; friendlies need at least one major nation.
+function pp_national_allowed(string $league,string $home,string $away):bool{static $n=null;if($n===null)$n=pp_read(__DIR__.'/../assets/national-teams.json');if(!in_array($league,['unl','intl'],true))return true;$list=$n[$league]??[];if(!in_array($home,$list,true)||!in_array($away,$list,true))return false;if($league==='unl')return true;$s=$n['strength']??[];return max((int)($s[$home]??0),(int)($s[$away]??0))>=72;}
 function pp_provider_name(string $name):string {static $a=null;if($a===null)$a=pp_read(__DIR__.'/../assets/provider-team-aliases.json');return $a[$name]??pp_team($name)['name'];}
 function pp_espn_month(array $doc,array $job):array {
  if(($doc['leagues'][0]['slug']??'')!==$job['code']||!isset($doc['events'])||!is_array($doc['events'])||count($doc['events'])>=1000)throw new RuntimeException('Wrong or truncated live competition feed');
@@ -25,6 +27,7 @@ function pp_espn_month(array $doc,array $job):array {
   $monthStart=DateTimeImmutable::createFromFormat('!Ym',$job['month'],new DateTimeZone('UTC'));$eventTime=new DateTimeImmutable($stamp);if(!$monthStart||$eventTime<$monthStart->modify('-7 days')||$eventTime>=$monthStart->modify('+1 month')->modify('+14 days'))throw new RuntimeException('Live event outside adjacent schedule boundary');
   $dt=new DateTimeImmutable($stamp);$sides=[];foreach($c['competitors']??[]as$t)if(in_array($t['homeAway']??'',['home','away'],true))$sides[$t['homeAway']]=$t;
   if(count($sides)!==2)throw new RuntimeException('Live event missing teams');
+  if(!pp_national_allowed($job['league'],pp_provider_name($sides['home']['team']['displayName']??''),pp_provider_name($sides['away']['team']['displayName']??'')))continue;
   $row=['date'=>$dt->format('Y-m-d'),'time'=>$dt->format('H:i'),'team1'=>pp_provider_name($sides['home']['team']['displayName']??''),'team2'=>pp_provider_name($sides['away']['team']['displayName']??''),'round'=>'ESPN '.$id,'neutral'=>($c['neutralSite']??false)===true];
   $status=$c['status']['type']??$e['status']['type']??[];
   // Only explicit FT includes a regulation-time result. AET/PEN never substitute for90min.
@@ -36,7 +39,7 @@ function pp_espn_month(array $doc,array $job):array {
   $rows=pp_normalize(['matches'=>[$row]],$job['league'],$job['season'],$job['meta'],$job['url']);if(count($rows)!==1)throw new RuntimeException('Invalid live fixture');$m=$rows[0];
   $m['id']=substr(hash('sha256','espn|'.$job['league'].'|'.$id),0,24);$m['providerMatchId']=$id;$m['espnEventId']=$id;foreach(['home','away']as$side)if(isset($sides[$side]['team']['id']))$m[$side]['espnId']=(string)$sides[$side]['team']['id'];$m['source']=['name'=>'ESPN','url'=>$job['url'],'providerMatchId'=>$id,'license'=>'provider-terms'];if(!empty($job['observedAt'])&&($status['state']??'')==='pre'&&!empty($c['odds'])){try{$observed=new DateTimeImmutable($job['observedAt']);$marketOdds=$c['odds'];foreach($marketOdds as&$price){if(!isset($price['homeTeamOdds'])&&isset($price['moneyline'])){$money=$price['moneyline'];$converted=[];$valid=true;foreach(['home','draw','away']as$side){$v=$money[$side]['close']??null;if(!is_array($v)||!isset($v['odds'])){$valid=false;break;}$tracking=$v['link']['tracking']['tags']??[];if(isset($tracking['gameId'])&&(string)$tracking['gameId']!==$id){$valid=false;break;}if(isset($tracking['betSide'])&&$tracking['betSide']!==$side){$valid=false;break;}$converted[$side]=$v['odds'];}if($valid){$price['homeTeamOdds']=['team'=>['id'=>(string)($sides['home']['team']['id']??'')],'moneyLine'=>$converted['home']];$price['awayTeamOdds']=['team'=>['id'=>(string)($sides['away']['team']['id']??'')],'moneyLine'=>$converted['away']];$price['drawOdds']=['moneyLine'=>$converted['draw']];}}}unset($price);$marketDoc=['header'=>['id'=>$id,'competitions'=>[$c]],'odds'=>$marketOdds];$extra=pp_analysis_summary($marketDoc,$m,$observed);if($extra['marketOdds'])$m['marketSnapshot']=['odds'=>$extra['marketOdds'],'provider'=>$extra['marketProvider'],'capturedAt'=>$observed->format(DATE_ATOM),'eventId'=>$id];}catch(Throwable $e){}}$m['providerStatus']=$status['name']??'unknown';$m['scheduleProvisional']=!($c['timeValid']??true);$out[]=$m;$ids[$id]=true;
  }
- $calendar=$doc['leagues'][0]['calendar']??[];foreach($calendar as$day)if(is_string($day)&&substr(str_replace('-','',$day),0,6)===$job['month']){
+ $calendar=in_array($job['league'],['unl','intl'],true)?[]:($doc['leagues'][0]['calendar']??[]);foreach($calendar as$day)if(is_string($day)&&substr(str_replace('-','',$day),0,6)===$job['month']){
   $found=false;foreach($out as$m)if(substr($m['kickoff'],0,10)===substr($day,0,10)){$found=true;break;}if(!$found)throw new RuntimeException('Live calendar day missing all events; previous cache retained');
  }
  return $out;

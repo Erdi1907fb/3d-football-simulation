@@ -19,7 +19,7 @@ function pp_preserve_team(?array $fresh,?array $old):?array {
  if($retained)$fresh['source']['retainedFields']=['fields'=>$retained,'asOf'=>$old['source']['asOf']??null,'reason'=>'provider-field-unavailable'];return $fresh;
 }
 function pp_players_enabled(array $m):bool{return ($m['date']??'')>='2026-10-21';}
-function pp_players_code(array $m):?string{return ['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf'][$m['competitionId']??'']??null;}
+function pp_players_code(array $m):?string{return ['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf','unl'=>'uefa.nations','intl'=>'fifa.friendly'][$m['competitionId']??'']??null;}
 function pp_players_json(string $url,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):array{
  static $requests=0,$started=null;$started=$started??microtime(true);$path=$cfg['storage_dir'].'/players-source-'.hash('sha256',$url).'.json';$cache=pp_read($path);$stamp=strtotime($cache['fetchedAt']??'');
  $ttl=strpos($url,'/summary?')!==false?90:(strpos($url,'/roster')!==false?900:1800);
@@ -30,7 +30,7 @@ function pp_players_json(string $url,array $cfg,DateTimeImmutable $now,?callable
  pp_write($path,['fetchedAt'=>$now->format(DATE_ATOM),'document'=>$doc]);return $doc+['_wosSource'=>['url'=>$url,'asOf'=>$now->format(DATE_ATOM)]];
 }
 function pp_players_role(string $value):?string{
- return ['G'=>'GK','GK'=>'GK','CD'=>'CB','CD-L'=>'CB','CD-R'=>'CB','CB'=>'CB','LB'=>'LB','RB'=>'RB','LWB'=>'LWB','RWB'=>'RWB','DM'=>'DM','DM-L'=>'DM','DM-R'=>'DM','CM'=>'CM','CM-L'=>'CM','CM-R'=>'CM','AM'=>'AM','AM-L'=>'LW','AM-R'=>'RW','LM'=>'LM','RM'=>'RM','LF'=>'LW','RF'=>'RW','LW'=>'LW','RW'=>'RW','F'=>'ST','CF'=>'ST','ST'=>'ST','D'=>'DEF','M'=>'MID'][$value]??null;
+ return ['G'=>'GK','GK'=>'GK','CD'=>'CB','CD-L'=>'CB','CD-R'=>'CB','CB'=>'CB','LB'=>'LB','RB'=>'RB','LWB'=>'LWB','RWB'=>'RWB','DM'=>'DM','DM-L'=>'DM','DM-R'=>'DM','CM'=>'CM','CM-L'=>'CM','CM-R'=>'CM','AM'=>'AM','AM-L'=>'LW','AM-R'=>'RW','LM'=>'LM','RM'=>'RM','LF'=>'LW','RF'=>'RW','LW'=>'LW','RW'=>'RW','F'=>'ST','CF'=>'ST','CF-L'=>'ST','CF-R'=>'ST','ST'=>'ST','D'=>'DEF','M'=>'MID'][$value]??null;
 }
 function pp_players_coach($value):?array{
  if(!is_array($value))return null;if(isset($value['name'])||isset($value['displayName'])||isset($value['firstName']))$value=[$value];
@@ -47,7 +47,7 @@ function pp_players_extras(array $doc,string $teamId,array $current=[]):array{
 function pp_players_extract(array $doc,string $teamId,DateTimeImmutable $now,string $status,array $current=[]):?array{
  $supported=['4-2-3-1','4-3-3','4-4-2','4-1-4-1','4-3-1-2','4-3-2-1','3-5-2','3-4-3','4-4-1-1','4-2-2-2','5-3-2','5-4-1','3-4-2-1','3-4-1-2','3-1-4-2','4-5-1','4-2-1-3'];
  foreach($doc['rosters']??[]as$r){if((string)($r['team']['id']??'')!==$teamId)continue;$formation=(string)($r['formation']??'');if(!in_array($formation,$supported,true))return null;$players=[];$ids=[];$gk=0;
-  foreach($r['roster']??[]as$p){if(($p['starter']??false)!==true)continue;$a=$p['athlete']??[];$id=(string)($a['id']??'');$name=trim((string)($a['displayName']??$a['fullName']??''));$role=pp_players_role((string)($p['position']['abbreviation']??$a['position']['abbreviation']??''));if(!preg_match('/^\d{1,12}$/',$id)||!$name||strlen($name)>160||!$role||isset($ids[$id]))return null;
+  foreach($r['roster']??[]as$p){if(($p['starter']??false)!==true)continue;$a=$p['athlete']??[];$id=(string)($a['id']??'');$name=trim((string)($a['displayName']??$a['fullName']??''));$role=pp_players_role((string)($p['position']['abbreviation']??$a['position']['abbreviation']??''));if(in_array((string)($p['position']['abbreviation']??''),['CF-L','CF-R'],true)&&in_array($formation,['3-4-2-1','4-3-2-1'],true))$role='AM';/* the two behind the striker */if(!preg_match('/^\d{1,12}$/',$id)||!$name||strlen($name)>160||!$role||isset($ids[$id]))return null;
    if($current&&(!isset($current[$id])||!($current[$id]['available']??false)))return null;$ids[$id]=true;$gk+=(int)($role==='GK');$roles=[$role];if(in_array($role,['LM','RM'],true)&&!in_array($formation,['4-4-2','4-1-4-1','4-4-1-1','5-4-1'],true))$roles=array_merge($roles,['CM','DM']);
    $number=(string)($current[$id]['number']??$p['jersey']??$a['jersey']??'');$players[]=['id'=>$id,'name'=>$name,'shortName'=>$a['shortName']??$name,'number'=>preg_match('/^\d{1,3}$/',$number)?(int)$number:null,'physical'=>$current[$id]['physical']??null,'roles'=>$roles,'position'=>$role,'formationPlace'=>$p['formationPlace']??null,'captain'=>(bool)($p['isCaptain']??$p['captain']??$a['isCaptain']??false),'dateOfBirth'=>$current[$id]['dateOfBirth']??$a['dateOfBirth']??null,'appearance'=>null,'portrait'=>'portrait.php?id='.$id];
   }if(count($players)!==11||$gk!==1)return null;
@@ -71,7 +71,9 @@ function pp_players_team_codes(array $m,string $side,array $cfg):array{
  // European fixtures can use the team's domestic recent XI, too.
  $state=pp_read($cfg['storage_dir'].'/state.json');
  foreach($state['matches']??[]as$p){if(in_array($p['competitionId']??'',['ucl','uel','uecl'],true))continue;foreach(['home','away']as$s)if($team!==''&&(string)($p[$s]['espnId']??'')===$team)$codes[]=pp_players_code($p);}
- $codes=array_values(array_unique(array_filter($codes)));if(strpos($codes[0]??'','uefa.')===0&&count($codes)>1){$cup=array_shift($codes);$codes[]=$cup;}return $codes;
+ // National teams: recent XIs come from Nations League and friendlies alike.
+ if(in_array($m['competitionId']??'',['unl','intl'],true)){$codes[]='uefa.nations';$codes[]='fifa.friendly';$codes[]='fifa.worldq.uefa';}
+ $codes=array_values(array_unique(array_filter($codes)));if(strpos($codes[0]??'','uefa.')===0&&($m['competitionId']??'')!=='unl'&&count($codes)>1){$cup=array_shift($codes);$codes[]=$cup;}return $codes;
 }
 function pp_players_warm(array $cfg,DateTimeImmutable $now):void{
  $state=pp_read($cfg['storage_dir'].'/state.json');$today=pp_bulletin_day($now);$end=(new DateTimeImmutable($today))->modify('+5 days')->format('Y-m-d');$queue=[];

@@ -3,7 +3,7 @@ declare(strict_types=1);
 require_once __DIR__.'/bench-policy.php';
 require_once __DIR__.'/lineup-selection.php';
 /* Public, server-rendered football pages. No account, token or bypass is used. */
-function pp_public_leagues():array{return ['tr.1'=>[71,'super-lig'],'en.1'=>[47,'premier-league'],'es.1'=>[87,'laliga'],'de.1'=>[54,'bundesliga'],'it.1'=>[55,'serie-a'],'fr.1'=>[53,'ligue-1'],'ucl'=>[42,'champions-league'],'uel'=>[73,'europa-league'],'uecl'=>[10216,'conference-league']];}
+function pp_public_leagues():array{return ['tr.1'=>[71,'super-lig'],'en.1'=>[47,'premier-league'],'es.1'=>[87,'laliga'],'de.1'=>[54,'bundesliga'],'it.1'=>[55,'serie-a'],'fr.1'=>[53,'ligue-1'],'ucl'=>[42,'champions-league'],'uel'=>[73,'europa-league'],'uecl'=>[10216,'conference-league'],'unl'=>[9806,'uefa-nations-league'],'intl'=>[114,'friendlies']];}
 function pp_public_name(string $s):string{
  $s=strtr(mb_strtolower_safe($s),['ı'=>'i','ğ'=>'g','ş'=>'s','ç'=>'c','ö'=>'o','ü'=>'u','é'=>'e','è'=>'e','á'=>'a','à'=>'a','ã'=>'a','ø'=>'o','å'=>'a','æ'=>'ae','ñ'=>'n','í'=>'i','ó'=>'o','ú'=>'u']);
  $s=preg_replace('/\b(fc|cf|ac|afc|sk|fk|as|aş|calcio|club|football|futbol)\b/u',' ',$s);$s=preg_replace('/[^a-z0-9]/','',$s);

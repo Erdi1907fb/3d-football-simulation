@@ -27,7 +27,7 @@ const formations=Object.freeze({
 });Object.values(formations).forEach(Object.freeze);
 function cost(slotRole,playerRole){if(slotRole===playerRole)return 0;if(slotRole==='GK'||playerRole==='GK')return Infinity;
  if(playerRole==='DEF')return roles[slotRole].band==='defence'?2:Infinity;if(playerRole==='MID')return roles[slotRole].band==='midfield'?2:Infinity;if(playerRole==='FWD')return roles[slotRole].band==='attack'?2:Infinity;
- for(const group of [['LB','LWB'],['RB','RWB'],['LW','LM'],['RW','RM'],['DM','CM'],['CM','AM']])if(group.includes(slotRole)&&group.includes(playerRole))return 1;
+ for(const group of [['LB','LWB'],['RB','RWB'],['LW','LM'],['RW','RM'],['LM','LWB'],['RM','RWB'],['DM','CM'],['CM','AM']])if(group.includes(slotRole)&&group.includes(playerRole))return 1;
  if(['AM','ST'].includes(slotRole)&&['AM','ST'].includes(playerRole))return 2;
  if(['LW','RW','ST'].includes(slotRole)&&['LW','RW','ST'].includes(playerRole))return 3;return Infinity;
 }

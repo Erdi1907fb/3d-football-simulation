@@ -628,6 +628,8 @@ const competitionNames={
  ucl:['UEFA Şampiyonlar Ligi','UEFA Champions League','Şampiyonlar Ligi'],
  uel:['UEFA Avrupa Ligi','UEFA Europa League','Avrupa Ligi'],
  uecl:['UEFA Konferans Ligi','UEFA Conference League','Konferans Ligi'],
+ unl:['UEFA Uluslar Ligi','UEFA Nations League','Uluslar Ligi','Nations League'],
+ intl:['Uluslararası Hazırlık Maçı','International Friendly','Hazırlık Maçı','International Friendlies','Friendly'],
  concept:['Özel Konsept Maçlar','Concept Matches'],
  world:['Dünya Kupası','FIFA World Cup']
 };

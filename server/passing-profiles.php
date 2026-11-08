@@ -22,7 +22,7 @@ function pp_passing_from_summaries(array $documents,string $teamId,DateTimeImmut
 /* Receives the already validated pre-match summary. Never fetches a season endpoint that returns empty results. */
 function pp_passing_enrich(array $match,array $history,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):array{
  static $requests=0,$started=null;if($started===null)$started=microtime(true);$kick=strtotime((string)($match['kickoff']??''));if(!$kick||$kick<=$now->getTimestamp())return $match;
- $map=['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf'];$code=$map[$match['competitionId']??'']??null;if(!$code)return $match;
+ $map=['tr.1'=>'tur.1','en.1'=>'eng.1','de.1'=>'ger.1','it.1'=>'ita.1','es.1'=>'esp.1','fr.1'=>'fra.1','ucl'=>'uefa.champions','uel'=>'uefa.europa','uecl'=>'uefa.europa.conf','unl'=>'uefa.nations','intl'=>'fifa.friendly'];$code=$map[$match['competitionId']??'']??null;if(!$code)return $match;
  // Reuse the existing pre-publication summary cache; no extra upcoming-summary request.
  $eventId=(string)($match['espnEventId']??(($match['source']['name']??'')==='ESPN'?($match['source']['providerMatchId']??''):''));
  $analysisPath=rtrim($cfg['storage_dir'],'/').'/analysis-'.hash('sha256',$code.'|'.$eventId.'|'.$match['kickoff'].'|'.pp_club_key($match['home']).'|'.pp_club_key($match['away'])).'.json';

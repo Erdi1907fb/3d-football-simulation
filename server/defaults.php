@@ -33,6 +33,8 @@ return [
     'ucl_enabled' => true,
     'uel_enabled' => true,
     'uecl_enabled' => true,
+    'unl_enabled' => true,
+    'intl_enabled' => true,
     'leagues' => [
         'tr.1' => ['expected_matches'=>306, 'name' => 'Süper Lig', 'timezone' => 'Europe/Istanbul', 'all' => true],
         'en.1' => ['expected_matches'=>380, 'name' => 'Premier League', 'timezone' => 'Europe/London'],

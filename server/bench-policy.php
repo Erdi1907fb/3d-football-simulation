@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__.'/availability.php';
-function pp_bench_limit(string $competition):int{return ['ucl'=>12,'uel'=>12,'uecl'=>12,'tr.1'=>10,'en.1'=>9,'de.1'=>9,'fr.1'=>9,'es.1'=>12,'it.1'=>15][$competition]??12;}
+function pp_bench_limit(string $competition):int{return ['ucl'=>12,'uel'=>12,'uecl'=>12,'unl'=>12,'intl'=>15,'tr.1'=>10,'en.1'=>9,'de.1'=>9,'fr.1'=>9,'es.1'=>12,'it.1'=>15][$competition]??12;}
 function pp_bench_evidence():array{static $doc=null;return $doc??=json_decode(file_get_contents(__DIR__.'/../assets/squad-evidence.json'),true);}
 function pp_bench_travel(array $m,string $side):?array{
  foreach(pp_bench_evidence()['matchSquads']??[]as$e)if(($e['date']??'')===($m['date']??'')&&pp_public_name($e['home'])===pp_public_name($m['home']['name']??'')&&pp_public_name($e['away'])===pp_public_name($m['away']['name']??'')&&pp_public_name($e['team'])===pp_public_name($m[$side]['name']??''))return $e;return null;

@@ -12,7 +12,7 @@ function pp_big_match_info(array $m):?array {
     if(!array_key_exists($league,$rules['competitions']??[]))return null;
     $pair=[pp_big_key($m['home']??[]),pp_big_key($m['away']??[])];sort($pair);
     foreach($rules['derbies']??[]as$r){$teams=array_map(fn($n)=>pp_big_key(['name'=>$n]),$r['teams']);sort($teams);if($pair===$teams)return ['type'=>'derby','tr'=>$r['tr'],'en'=>$r['en']];}
-    $top=$rules['competitions'][$league];
+    $top=$rules['competitions'][$league]??[];
     if(in_array($league,['ucl','uel','uecl'],true))$top=array_merge(...array_values($rules['competitions']));
     $top=array_unique(array_map(fn($n)=>pp_big_key(['name'=>$n]),$top));
     return count(array_intersect($pair,$top))===2?['type'=>'big','tr'=>'Büyük Maç','en'=>'Big Match']:null;

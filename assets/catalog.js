@@ -2086,7 +2086,9 @@ const all=[
     "short": "MX",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/mexico.png",
     "group": "A"
@@ -2120,7 +2122,9 @@ const all=[
     "short": "KR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/korea-republic.png",
     "group": "A"
@@ -2137,7 +2141,10 @@ const all=[
     "short": "CZ",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/czechia.png",
     "group": "A"
@@ -2154,7 +2161,9 @@ const all=[
     "short": "CA",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/canada.png",
     "group": "B"
@@ -2171,7 +2180,10 @@ const all=[
     "short": "CH",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/switzerland.png",
     "group": "B"
@@ -2188,7 +2200,9 @@ const all=[
     "short": "QA",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/qatar.png",
     "group": "B"
@@ -2205,7 +2219,10 @@ const all=[
     "short": "BA",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/bosnia-and-herzegovina.png",
     "group": "B"
@@ -2222,7 +2239,9 @@ const all=[
     "short": "BR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/brazil.png",
     "group": "C"
@@ -2239,7 +2258,9 @@ const all=[
     "short": "MA",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/morocco.png",
     "group": "C"
@@ -2273,7 +2294,10 @@ const all=[
     "short": "GB-SCT",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/scotland.png",
     "group": "C"
@@ -2290,7 +2314,9 @@ const all=[
     "short": "US",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/united-states.png",
     "group": "D"
@@ -2307,7 +2333,9 @@ const all=[
     "short": "PY",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/paraguay.png",
     "group": "D"
@@ -2324,7 +2352,9 @@ const all=[
     "short": "AU",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/australia.png",
     "group": "D"
@@ -2341,7 +2371,10 @@ const all=[
     "short": "TR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/turkiye.png",
     "group": "D"
@@ -2358,7 +2391,10 @@ const all=[
     "short": "DE",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/germany.png",
     "group": "E"
@@ -2392,7 +2428,9 @@ const all=[
     "short": "CI",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/cote-divoire.png",
     "group": "E"
@@ -2409,7 +2447,9 @@ const all=[
     "short": "EC",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/ecuador.png",
     "group": "E"
@@ -2426,7 +2466,10 @@ const all=[
     "short": "NL",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/netherlands.png",
     "group": "F"
@@ -2443,7 +2486,9 @@ const all=[
     "short": "JP",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/japan.png",
     "group": "F"
@@ -2460,7 +2505,9 @@ const all=[
     "short": "TN",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/tunisia.png",
     "group": "F"
@@ -2477,7 +2524,10 @@ const all=[
     "short": "SE",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/sweden.png",
     "group": "F"
@@ -2494,7 +2544,10 @@ const all=[
     "short": "BE",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/belgium.png",
     "group": "G"
@@ -2511,7 +2564,9 @@ const all=[
     "short": "EG",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/egypt.png",
     "group": "G"
@@ -2528,7 +2583,9 @@ const all=[
     "short": "IR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/iran.png",
     "group": "G"
@@ -2562,7 +2619,10 @@ const all=[
     "short": "ES",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/spain.png",
     "group": "H"
@@ -2596,7 +2656,9 @@ const all=[
     "short": "SA",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/saudi-arabia.png",
     "group": "H"
@@ -2613,7 +2675,9 @@ const all=[
     "short": "UY",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/uruguay.png",
     "group": "H"
@@ -2630,7 +2694,10 @@ const all=[
     "short": "FR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/france.png",
     "group": "I"
@@ -2647,7 +2714,9 @@ const all=[
     "short": "SN",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/senegal.png",
     "group": "I"
@@ -2664,7 +2733,10 @@ const all=[
     "short": "NO",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/norway.png",
     "group": "I"
@@ -2698,7 +2770,9 @@ const all=[
     "short": "AR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/argentina.png",
     "group": "J"
@@ -2715,7 +2789,9 @@ const all=[
     "short": "DZ",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/algeria.png",
     "group": "J"
@@ -2732,7 +2808,10 @@ const all=[
     "short": "AT",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/austria.png",
     "group": "J"
@@ -2766,7 +2845,10 @@ const all=[
     "short": "PT",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/portugal.png",
     "group": "K"
@@ -2800,7 +2882,9 @@ const all=[
     "short": "CO",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/colombia.png",
     "group": "K"
@@ -2834,7 +2918,10 @@ const all=[
     "short": "GB-ENG",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/england.png",
     "group": "L"
@@ -2851,7 +2938,10 @@ const all=[
     "short": "HR",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/croatia.png",
     "group": "L"
@@ -2868,7 +2958,9 @@ const all=[
     "short": "GH",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/ghana.png",
     "group": "L"
@@ -2885,7 +2977,9 @@ const all=[
     "short": "PA",
     "quality": "editorial",
     "competitions": [
-      "worldcup"
+      "worldcup",
+      "national",
+      "intl"
     ],
     "logo": "assets/logos/panama.png",
     "group": "L"
@@ -2936,7 +3030,9 @@ const all=[
     "short": "IT",
     "quality": "editorial",
     "competitions": [
-      "national"
+      "national",
+      "unl",
+      "intl"
     ],
     "logo": "assets/logos/italy.png"
   },
@@ -3755,6 +3851,808 @@ const all=[
       "uecl"
     ],
     "logo": "assets/logos/fl-kairat.png"
+  },
+  {
+    "id": "albania",
+    "name": "Albania",
+    "league": "Millî / National",
+    "strength": 70,
+    "attack": 69,
+    "defense": 71,
+    "color": "#e41e20",
+    "secondary": "#111111",
+    "short": "ALB",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/albania.png"
+  },
+  {
+    "id": "andorra",
+    "name": "Andorra",
+    "league": "Millî / National",
+    "strength": 50,
+    "attack": 49,
+    "defense": 51,
+    "color": "#10069f",
+    "secondary": "#fedf00",
+    "short": "AND",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/andorra.png"
+  },
+  {
+    "id": "armenia",
+    "name": "Armenia",
+    "league": "Millî / National",
+    "strength": 62,
+    "attack": 61,
+    "defense": 63,
+    "color": "#d90012",
+    "secondary": "#f2a800",
+    "short": "ARM",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/armenia.png"
+  },
+  {
+    "id": "azerbaijan",
+    "name": "Azerbaijan",
+    "league": "Millî / National",
+    "strength": 58,
+    "attack": 57,
+    "defense": 59,
+    "color": "#00b5e2",
+    "secondary": "#ef3340",
+    "short": "AZE",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/azerbaijan.png"
+  },
+  {
+    "id": "belarus",
+    "name": "Belarus",
+    "league": "Millî / National",
+    "strength": 58,
+    "attack": 57,
+    "defense": 59,
+    "color": "#c8313e",
+    "secondary": "#ffffff",
+    "short": "BLR",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/belarus.png"
+  },
+  {
+    "id": "bulgaria",
+    "name": "Bulgaria",
+    "league": "Millî / National",
+    "strength": 60,
+    "attack": 59,
+    "defense": 61,
+    "color": "#ffffff",
+    "secondary": "#00966e",
+    "short": "BUL",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/bulgaria.png"
+  },
+  {
+    "id": "cyprus",
+    "name": "Cyprus",
+    "league": "Millî / National",
+    "strength": 55,
+    "attack": 54,
+    "defense": 56,
+    "color": "#2f5aa8",
+    "secondary": "#ffffff",
+    "short": "CYP",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/cyprus.png"
+  },
+  {
+    "id": "denmark",
+    "name": "Denmark",
+    "league": "Millî / National",
+    "strength": 80,
+    "attack": 79,
+    "defense": 81,
+    "color": "#c60c30",
+    "secondary": "#ffffff",
+    "short": "DEN",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/denmark.png"
+  },
+  {
+    "id": "estonia",
+    "name": "Estonia",
+    "league": "Millî / National",
+    "strength": 52,
+    "attack": 51,
+    "defense": 53,
+    "color": "#0072ce",
+    "secondary": "#111111",
+    "short": "EST",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/estonia.png"
+  },
+  {
+    "id": "faroe-islands",
+    "name": "Faroe Islands",
+    "league": "Millî / National",
+    "strength": 52,
+    "attack": 51,
+    "defense": 53,
+    "color": "#ffffff",
+    "secondary": "#005eb8",
+    "short": "FRO",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/faroe-islands.png"
+  },
+  {
+    "id": "finland",
+    "name": "Finland",
+    "league": "Millî / National",
+    "strength": 64,
+    "attack": 63,
+    "defense": 65,
+    "color": "#ffffff",
+    "secondary": "#002f6c",
+    "short": "FIN",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/finland.png"
+  },
+  {
+    "id": "georgia",
+    "name": "Georgia",
+    "league": "Millî / National",
+    "strength": 70,
+    "attack": 69,
+    "defense": 71,
+    "color": "#ffffff",
+    "secondary": "#da291c",
+    "short": "GEO",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/georgia.png"
+  },
+  {
+    "id": "gibraltar",
+    "name": "Gibraltar",
+    "league": "Millî / National",
+    "strength": 45,
+    "attack": 44,
+    "defense": 46,
+    "color": "#da000c",
+    "secondary": "#ffffff",
+    "short": "GIB",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/gibraltar.png"
+  },
+  {
+    "id": "greece",
+    "name": "Greece",
+    "league": "Millî / National",
+    "strength": 72,
+    "attack": 71,
+    "defense": 73,
+    "color": "#0d5eaf",
+    "secondary": "#ffffff",
+    "short": "GRE",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/greece.png"
+  },
+  {
+    "id": "hungary",
+    "name": "Hungary",
+    "league": "Millî / National",
+    "strength": 73,
+    "attack": 72,
+    "defense": 74,
+    "color": "#ce2939",
+    "secondary": "#ffffff",
+    "short": "HUN",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/hungary.png"
+  },
+  {
+    "id": "iceland",
+    "name": "Iceland",
+    "league": "Millî / National",
+    "strength": 63,
+    "attack": 62,
+    "defense": 64,
+    "color": "#02529c",
+    "secondary": "#ffffff",
+    "short": "ISL",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/iceland.png"
+  },
+  {
+    "id": "israel",
+    "name": "Israel",
+    "league": "Millî / National",
+    "strength": 62,
+    "attack": 61,
+    "defense": 63,
+    "color": "#0038b8",
+    "secondary": "#ffffff",
+    "short": "ISR",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/israel.png"
+  },
+  {
+    "id": "kazakhstan",
+    "name": "Kazakhstan",
+    "league": "Millî / National",
+    "strength": 57,
+    "attack": 56,
+    "defense": 58,
+    "color": "#00afca",
+    "secondary": "#fec50c",
+    "short": "KAZ",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/kazakhstan.png"
+  },
+  {
+    "id": "kosovo",
+    "name": "Kosovo",
+    "league": "Millî / National",
+    "strength": 60,
+    "attack": 59,
+    "defense": 61,
+    "color": "#244aa5",
+    "secondary": "#d0a650",
+    "short": "KOS",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/kosovo.png"
+  },
+  {
+    "id": "latvia",
+    "name": "Latvia",
+    "league": "Millî / National",
+    "strength": 50,
+    "attack": 49,
+    "defense": 51,
+    "color": "#9e3039",
+    "secondary": "#ffffff",
+    "short": "LVA",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/latvia.png"
+  },
+  {
+    "id": "liechtenstein",
+    "name": "Liechtenstein",
+    "league": "Millî / National",
+    "strength": 45,
+    "attack": 44,
+    "defense": 46,
+    "color": "#002b7f",
+    "secondary": "#ce1126",
+    "short": "LIE",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/liechtenstein.png"
+  },
+  {
+    "id": "lithuania",
+    "name": "Lithuania",
+    "league": "Millî / National",
+    "strength": 52,
+    "attack": 51,
+    "defense": 53,
+    "color": "#fdb913",
+    "secondary": "#006a44",
+    "short": "LTU",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/lithuania.png"
+  },
+  {
+    "id": "luxembourg",
+    "name": "Luxembourg",
+    "league": "Millî / National",
+    "strength": 56,
+    "attack": 55,
+    "defense": 57,
+    "color": "#ed2939",
+    "secondary": "#ffffff",
+    "short": "LUX",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/luxembourg.png"
+  },
+  {
+    "id": "malta",
+    "name": "Malta",
+    "league": "Millî / National",
+    "strength": 48,
+    "attack": 47,
+    "defense": 49,
+    "color": "#cf142b",
+    "secondary": "#ffffff",
+    "short": "MLT",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/malta.png"
+  },
+  {
+    "id": "moldova",
+    "name": "Moldova",
+    "league": "Millî / National",
+    "strength": 48,
+    "attack": 47,
+    "defense": 49,
+    "color": "#0046ae",
+    "secondary": "#ffd200",
+    "short": "MDA",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/moldova.png"
+  },
+  {
+    "id": "montenegro",
+    "name": "Montenegro",
+    "league": "Millî / National",
+    "strength": 60,
+    "attack": 59,
+    "defense": 61,
+    "color": "#c40308",
+    "secondary": "#d4af3a",
+    "short": "MNE",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/montenegro.png"
+  },
+  {
+    "id": "north-macedonia",
+    "name": "North Macedonia",
+    "league": "Millî / National",
+    "strength": 58,
+    "attack": 57,
+    "defense": 59,
+    "color": "#d20000",
+    "secondary": "#ffe600",
+    "short": "MKD",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/north-macedonia.png"
+  },
+  {
+    "id": "northern-ireland",
+    "name": "Northern Ireland",
+    "league": "Millî / National",
+    "strength": 62,
+    "attack": 61,
+    "defense": 63,
+    "color": "#00843d",
+    "secondary": "#ffffff",
+    "short": "NIR",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/northern-ireland.png"
+  },
+  {
+    "id": "poland",
+    "name": "Poland",
+    "league": "Millî / National",
+    "strength": 75,
+    "attack": 74,
+    "defense": 76,
+    "color": "#f4f4f2",
+    "secondary": "#dc143c",
+    "short": "POL",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/poland.png"
+  },
+  {
+    "id": "republic-of-ireland",
+    "name": "Republic of Ireland",
+    "league": "Millî / National",
+    "strength": 65,
+    "attack": 64,
+    "defense": 66,
+    "color": "#169b62",
+    "secondary": "#ffffff",
+    "short": "IRL",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/republic-of-ireland.png"
+  },
+  {
+    "id": "romania",
+    "name": "Romania",
+    "league": "Millî / National",
+    "strength": 68,
+    "attack": 67,
+    "defense": 69,
+    "color": "#fcd116",
+    "secondary": "#002b7f",
+    "short": "ROU",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/romania.png"
+  },
+  {
+    "id": "san-marino",
+    "name": "San Marino",
+    "league": "Millî / National",
+    "strength": 40,
+    "attack": 40,
+    "defense": 41,
+    "color": "#5eb6e4",
+    "secondary": "#ffffff",
+    "short": "SMR",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/san-marino.png"
+  },
+  {
+    "id": "serbia",
+    "name": "Serbia",
+    "league": "Millî / National",
+    "strength": 74,
+    "attack": 73,
+    "defense": 75,
+    "color": "#c6363c",
+    "secondary": "#0c4076",
+    "short": "SRB",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/serbia.png"
+  },
+  {
+    "id": "slovakia",
+    "name": "Slovakia",
+    "league": "Millî / National",
+    "strength": 70,
+    "attack": 69,
+    "defense": 71,
+    "color": "#0b4ea2",
+    "secondary": "#ffffff",
+    "short": "SVK",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/slovakia.png"
+  },
+  {
+    "id": "slovenia",
+    "name": "Slovenia",
+    "league": "Millî / National",
+    "strength": 69,
+    "attack": 68,
+    "defense": 70,
+    "color": "#ffffff",
+    "secondary": "#2a9d4b",
+    "short": "SVN",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/slovenia.png"
+  },
+  {
+    "id": "ukraine",
+    "name": "Ukraine",
+    "league": "Millî / National",
+    "strength": 73,
+    "attack": 72,
+    "defense": 74,
+    "color": "#ffd500",
+    "secondary": "#005bbb",
+    "short": "UKR",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/ukraine.png"
+  },
+  {
+    "id": "wales",
+    "name": "Wales",
+    "league": "Millî / National",
+    "strength": 68,
+    "attack": 67,
+    "defense": 69,
+    "color": "#c8102e",
+    "secondary": "#ffffff",
+    "short": "WAL",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "unl",
+      "intl"
+    ],
+    "logo": "assets/logos/wales.png"
+  },
+  {
+    "id": "chile",
+    "name": "Chile",
+    "league": "Millî / National",
+    "strength": 70,
+    "attack": 69,
+    "defense": 71,
+    "color": "#d52b1e",
+    "secondary": "#0039a6",
+    "short": "CHI",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/chile.png"
+  },
+  {
+    "id": "peru",
+    "name": "Peru",
+    "league": "Millî / National",
+    "strength": 68,
+    "attack": 67,
+    "defense": 69,
+    "color": "#ffffff",
+    "secondary": "#d91023",
+    "short": "PER",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/peru.png"
+  },
+  {
+    "id": "venezuela",
+    "name": "Venezuela",
+    "league": "Millî / National",
+    "strength": 66,
+    "attack": 65,
+    "defense": 67,
+    "color": "#7b1d32",
+    "secondary": "#ffcc00",
+    "short": "VEN",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/venezuela.png"
+  },
+  {
+    "id": "costa-rica",
+    "name": "Costa Rica",
+    "league": "Millî / National",
+    "strength": 64,
+    "attack": 63,
+    "defense": 65,
+    "color": "#ce1126",
+    "secondary": "#002b7f",
+    "short": "CRC",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/costa-rica.png"
+  },
+  {
+    "id": "nigeria",
+    "name": "Nigeria",
+    "league": "Millî / National",
+    "strength": 72,
+    "attack": 71,
+    "defense": 73,
+    "color": "#008751",
+    "secondary": "#ffffff",
+    "short": "NGA",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/nigeria.png"
+  },
+  {
+    "id": "cameroon",
+    "name": "Cameroon",
+    "league": "Millî / National",
+    "strength": 68,
+    "attack": 67,
+    "defense": 69,
+    "color": "#007a5e",
+    "secondary": "#fcd116",
+    "short": "CMR",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/cameroon.png"
+  },
+  {
+    "id": "mali",
+    "name": "Mali",
+    "league": "Millî / National",
+    "strength": 66,
+    "attack": 65,
+    "defense": 67,
+    "color": "#14b53a",
+    "secondary": "#fcd116",
+    "short": "MLI",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/mali.png"
+  },
+  {
+    "id": "china",
+    "name": "China PR",
+    "league": "Millî / National",
+    "strength": 58,
+    "attack": 57,
+    "defense": 59,
+    "color": "#de2910",
+    "secondary": "#ffde00",
+    "short": "CHN",
+    "quality": "editorial",
+    "competitions": [
+      "national",
+      "intl"
+    ],
+    "logo": "assets/logos/china.png"
   }
 ],aliases={
   "Hoffenheim":"TSG Hoffenheim", "Celta":"RC Celta", "Rennes":"Stade Rennais", "Freiburg":"SC Freiburg",
