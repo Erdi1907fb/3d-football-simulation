@@ -1,17 +1,17 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V114** · 2026-11-08 · Claude Code
+> Son güncelleme: **V115** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V114** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V115** |
+| Kararlı sürüm | **V115** (`VERSION`) |
+| Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v114.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Sürüm doğrulama | `build.php` → `assets/release-v115.json` (sha256 listesi, `tools/make-release.cjs`) |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -149,6 +149,10 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - **Atmosfer:** 4 projektör kulesinden yumuşak ışık hüzmeleri (yağmurda ×2,1, karda ×1,7); tribünlerde telefon flaşları
   (açık oyunda seyrek, gol/sevinç/finalde yoğun).
 - **Araç:** stüdyolarda `snapshot(t,w,h)` → 1080×1920 tam çözünürlük kare.
+
+## 4h. V115
+- `fullbody-runtime.js athleticShape()` (yükleme anında, kemik ağırlıklı gövde şekillendirme), fizik tabanlı sheen kumaş,
+  belirgin çim şeritleri (`pitch-detail.js applyPBR`). Kullanıcı beklentisi: her sürümde göze çarpan büyük görsel sıçrama.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

@@ -4,7 +4,7 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V115
+## Aktif hedef: V116
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
@@ -16,7 +16,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-222 | Fileye ip normal haritası; ıslakken file sarkması | todo | — | scene.js netGoals |
 | T-223 | Çim yapraklarına rüzgâr salınımı (GrassSystemThreeJS tekniği, MIT) | todo | — | pitch-detail.js |
 | T-224 | Normal maç ve penaltı tribününde de koridor/görevli seçeneği | todo | — | scene.js |
-| T-230 | Oyuncu gövde modeli: forma/şort kesimi (göğüs-bel oranı), daha atletik bacak ve kramponda taban/çivi ayrıntısı | todo | — | fullbody-runtime.js, scene.js — kendi geliştirmemiz (D-019) |
+| T-230 | Oyuncu gövde modeli: forma/şort kesimi (göğüs-bel oranı), daha atletik bacak ve kramponda taban/çivi ayrıntısı | partial (V115: gövde + kumaş; bacak/krampon sırada) | — | fullbody-runtime.js, scene.js — kendi geliştirmemiz (D-019) |
 | T-231 | Kaleci: büyük eldiven (manşet + avuç ayrı renk), kaleci forması dolgulu dirsek, kale çizgisinde hazır duruş varyasyonları | todo | — | fullbody-runtime.js, football-animation.js |
 | T-232 | Animasyon: koşu-sprint geçişinde ivme eğimi, yön değişiminde ayak bastırma, top sürerken kısa adım | todo | — | athlete-motion.js, football-clips.js |
 | T-233 | Çim: rüzgâr salınımı, kale önü ve orta sahada aşınmış çim lekeleri, maç ilerledikçe kramponla açılan izler | todo | — | pitch-detail.js |

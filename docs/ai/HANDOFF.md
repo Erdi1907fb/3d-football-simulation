@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V114 → V115 (kararlı)
+- **İstek:** her güncelleme “ağız açık kalacak” büyüklükte görsel/animasyon/fizik sıçraması olmalı.
+- **Yapılanlar:** atletik gövde yeniden şekillendirme, sheen kumaş, canlı cilt, belirgin çim şeritleri (CHANGELOG V115).
+  Önce/sonra kareleri 1080×1920 ile karşılaştırıldı (penaltı finali: belirgin daha atletik gövdeler).
+- **Hata/öğrenim:** beyaz sheen koyu formaları griye çevirdi → sheen rengi forma renginden türetildi.
+- **Sıradaki büyük adımlar:** bacak/baldır kası ve krampon tabanı (T-230 devam), ışık kontrastı (oyuncu gölgeleri), taraftar
+  çeşitliliği (T-234), koşu animasyonu ağırlık hissi (T-232).
+
+---
+
 ## [2026-11-08] Claude Code · V113 → V114 (kararlı)
 - **İstek:** dış repolar olmadan, yalnız Claude + Codex ile sürekli görsel/animasyon/fizik kalite artışı; profesyonel
   yayın görünümü hedefi. Küçük dokunuşlar ve büyük adımlar.

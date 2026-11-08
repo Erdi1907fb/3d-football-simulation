@@ -2,6 +2,14 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V115 — 2026-11-08 (Claude Code) · kararlı
+- **Atletik gövde:** tam vücut modeli yüklenirken kemik ağırlığına göre yeniden şekillenir — karın öne çıkıntısı %22 azalır,
+  bel incelir, göğüs/sırt ve omuz başları dolgunlaşır (forma, şort ve isim/numara katmanları aynı tepe noktalarını izler).
+  Ön profil: göğüs 0,193 > bel 0,166 > karın 0,154 m (önce karın 0,177 ile bele göre öndeydi).
+- **Kumaş:** forma ve şort `MeshPhysicalMaterial` + forma rengine bağlı sheen (projektör altında spor kumaşı ışıltısı).
+- **Cilt:** biraz daha canlı (pürüzlülük 0,58).
+- **Çim:** yayındaki gibi belirgin biçme şeritleri.
+
 ## V114 — 2026-11-08 (Claude Code) · kararlı
 - Yön: dış kaynak yok, yalnız kendi geliştirmemiz (D-019).
 - Sinematik zincire alan derinliği (yakın çekim) ve yayın renk ayarı eklendi.
