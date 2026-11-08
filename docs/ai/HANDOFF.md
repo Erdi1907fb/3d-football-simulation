@@ -17,6 +17,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V120 → V121 (kararlı)
+- **İstek:** görevliler kollar aşağıda; her modda her zaman 1080p 60 FPS, sabit kalite; hakem-oyuncu santra
+  çakışması; seremoni çok parlak; yalnız parlaklık/kontrast değil gerçek görsel sıçrama.
+- **Yapılanlar:** CHANGELOG V121 / PROJECT_STATE 4n.
+- **Dikkat:** dışa aktarmada kaliteyi düşürme (kullanıcı videoları Instagram/YouTube'a yüklüyor). Telefonda bellek
+  sorunu görülürse önce gölge haritasını düşür, önayarı değil. Meksika dalgası tarayıcıda görsel olarak
+  doğrulanmadı (yakalanan anlar sevinç/finale denk geldi).
+- **Testler:** `node tests/run-all.cjs` 16/16 PASS (yeni `kickoff-referee.cjs`).
+
+---
+
 ## [2026-11-08] Claude Code · V119 → V120 (kararlı)
 - **İstek:** görevliler turuncu steward yelekli olsun, camın iki yanında, iki takım taraftarının yanında.
 - **Yapılanlar:** CHANGELOG V120. `buildSegregation` her sınırda a ve b koltuğunu aynı sıralarda 'vest' yapar.

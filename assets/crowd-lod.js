@@ -56,9 +56,11 @@ function poseBase(rig,fan,time){const id=fan.slot.id,pose=fan.displayPose??0,pha
   if(pose===4){a.shoulder.rotation.set(-2.25,0,k*.28);a.elbow.rotation.x=-1.52;}
   if(pose===5){a.shoulder.rotation.set(-1.21+Math.sin(phase*2.3)*.12,0,k*.41);a.elbow.rotation.x=-.65;}
  }
+ // Stand stewards: upright, arms down with hands loosely together in front, no gestures.
+ if(fan.steward==='vest'){for(const a of rig.arms){a.shoulder.rotation.set(-.34,0,a.side*.04);a.elbow.rotation.set(-.62,0,0);}rig.body.rotation.set(0,0,0);rig.head.rotation.set(0,Math.sin(phase*.3)*.25,0);}
  if(rig.scarf){rig.scarf.visible=pose===3;rig.scarf.rotation.z=Math.sin(phase)*.035;rig.scarf.position.y=1.52+Math.sin(phase)*.018;if(pose===3)for(let i=0;i<2;i++)fanReach(rig,i,[rig.arms[i].side*.34,rig.scarf.position.y,.11]);}
  if(pose===2){const gap=.037+.026*(1+Math.sin(time*(7.3+(id%5)*.27)+phase*.13));for(let i=0;i<2;i++)fanReach(rig,i,[rig.arms[i].side*gap,1.10,.32]);}
- if(rig.flag){rig.flag.visible=(pose===1||pose===5)&&id%17===0;rig.flag.rotation.z=Math.sin(phase*2.3)*.12;rig.flag.rotation.y=Math.sin(phase*1.9)*.35;if(rig.flag.visible)fanReach(rig,1,[.31,1.38,.12]);}
+ if(rig.flag){rig.flag.visible=(pose===1||pose===5)&&id%17===0&&!fan.steward;rig.flag.rotation.z=Math.sin(phase*2.3)*.12;rig.flag.rotation.y=Math.sin(phase*1.9)*.35;if(rig.flag.visible)fanReach(rig,1,[.31,1.38,.12]);}
  rig.root.updateMatrixWorld(true);return rig;
 }
 // Arm IK keeps clapping hands and scarf ends attached to the spectators.

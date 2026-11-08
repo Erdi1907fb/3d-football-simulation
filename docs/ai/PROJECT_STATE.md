@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V120** · 2026-11-08 · Claude Code
+> Son güncelleme: **V121** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V120** (`VERSION`) |
+| Kararlı sürüm | **V121** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -184,6 +184,18 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 ## 4m. V120
 - Tribün görevlileri turuncu yüksek görünürlük yeleği (0xfb6a1c, gri reflektif şerit), camın İKİ yanında (her 3 sıra).
   Saha kenarı görevlileriyle aynı turuncu. Impostor renkleri applyVenue'da yenilenir (`spriteTeam104=null`).
+
+## 4n. V121
+- **Video kalitesi kilidi:** dışa aktarma her cihazda `high` önayarıyla çizilir (maç `app.js prepareExport`
+  quality:'high' + gölge açık; penaltı/frikik dünyası quality:'high', `configureRenderer(renderer,T,'high')`).
+  Telefonlarda high önayarı 2048 gölge haritası kullanır (`graphics-settings.js get`). Kodlama zaten kare-kare
+  (draw(i/60)) → 1080×1920, tam 60 FPS zaman damgası, 18 Mbps (mobil 16). Sezon videosundaki 6 Mbps kaldırıldı.
+- Görüntü zinciri: S-eğrisi kontrast + vinyet (GRADE), SMAA sonrası keskinleştirme (SHARPEN).
+- Çim: kameraya yakın ince çim teli gürültüsü (`pitch-detail.js` shader, önbellek anahtarı v121).
+- Seremoni bezleri ışıklı kumaş (MeshPhysical + sheen, her karede normal), artık parlayan düz disk değil.
+- Hakem santrada oyuncuların üstünde durmaz (`match.js matchClearOfficial`, test `kickoff-referee.cjs`).
+- Tribün görevlileri hiç tezahürat yapmaz; kollar aşağıda, eller önde (`crowd-lod.js poseBase`).
+- Meksika dalgası: 72 sn döngüde 30 sn, dalga dışındakiler oturur (`scene.js mexicanWave`).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

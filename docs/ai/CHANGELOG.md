@@ -2,6 +2,16 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V121 — 2026-11-08 (Claude Code) · kararlı
+- **Video:** her cihazda (telefon dahil) Yüksek kalite + gölgelerle çizilen 1080×1920 / tam 60 FPS dışa aktarma
+  (maç, penaltı, serbest vuruş, konsept maçlar). Önceden telefonda Düşük/Dengeli ve gölgesiz çiziliyordu.
+- **Görüntü:** gerçek kontrast eğrisi, vinyet ve keskinleştirme (sosyal medya sıkıştırmasından sonra netlik);
+  kameraya yakın çimde ince çim dokusu.
+- **Seremoni:** sahadaki takım/turnuva bezleri artık parlayan disk değil, ışığı alan kıvrımlı kumaş.
+- **Düzeltme:** santrada hakem oyuncuyla aynı noktada duruyordu → serbest bir noktaya geçer (yeni test).
+- **Görevliler:** kollar aşağıda, hareketsiz, gerçek steward duruşu.
+- **Tribün:** dönem dönem stadyumda dönen meksika dalgası.
+
 ## V120 — 2026-11-08 (Claude Code) · kararlı
 - Tribün güvenlik görevlileri turuncu reflektif yelekli (steward), ayırıcı camın iki yanında, her iki takımın
   taraftarlarının yanında.
