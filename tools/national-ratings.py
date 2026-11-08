@@ -158,8 +158,10 @@ def main():
     for i, n in enumerate(ranked): out[n]['rank'] = i + 1
     doc = {'version': 1, 'asOf': today.isoformat(), 'from': '%04d-%02d' % start, 'matches': len(games),
            'method': 'World-Football-Elo style; K: World Cup 60, EURO/Copa 50, other continental finals 45, WC/EURO qualifiers 40, Nations Leagues 35/30, friendlies 15; title bonus decays (half-life 2 y); squad = mean FotMob rating of best 16 matched national-roster players.',
-           'teams': out}
-    json.dump(doc, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+           'teams': out,
+           # V134 seed for the PHP updater (server/national-ratings.php): every rated match, compact rows.
+           'games': [[g['date'][:16], g['slug'], g['home'], g['away'], g['hs'], g['as'], 1 if g['neutral'] else 0, g['winner'], str(g['id'])] for g in games]}
+    json.dump(doc, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     print(json.dumps({'games': len(games), 'teams': len(out), 'top': [(n, out[n]['elo'], out[n]['squad']['rating'] if out[n]['squad'] else None) for n in ranked[:12]],
                       'turkiye': out.get('Türkiye'), 'titles': {n: [t['competition'] + ' ' + str(t['year']) for t in v] for n, v in titles.items() if n in strength}}, ensure_ascii=False))
 

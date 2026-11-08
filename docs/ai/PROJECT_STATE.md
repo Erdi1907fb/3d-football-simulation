@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V133** · 2026-11-08 · Claude Code
+> Son güncelleme: **V134** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V133** (`VERSION`) |
+| Kararlı sürüm | **V134** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -312,6 +312,16 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Kodlayıcı: WebCodecs `latencyMode` önce 'quality' (realtime yalnız yedek); kamera kesmelerinde anahtar kare
   (`job.isCut`, maç `prepareExport` + penaltı/frikik draw: kamera >2,5 m sıçrar, yön >~20° döner ya da FOV >6
   değişirse). Yazılım kodlayıcı (telefon yedeği) speed 6→4. Worker önbelleği `?v=133`.
+
+## 4aa. V134 (kendi güncellenen millî reytingler)
+- `server/national-ratings.php` (Python aracının PHP karşılığı; çıktı Python ile ≤1 Elo aynı). `pp_update` her
+  çalışmada `pp_nr_update`: 16 millî organizasyonun bu ay + önceki ay ESPN beslemesi (bu ay 3 sa, önceki 12 sa
+  önbellek; web isteğinde en çok 6, cron'da 32 istek), tohum maçlarla birleşir, Elo/kupa/form yeniden hesaplanır →
+  `storage_dir/national-ratings.json`; `pp_forecast` onu okur (yoksa `assets/national-ratings.json` tohumu).
+- Geçici tahmin: millî maç tahmini, iki takımdan birinin 10 gün içinde daha önce oynanmamış millî maçı varken
+  yayınlanırsa `nationalProvisional`; o maç(lar) oynanınca ve başlama saatinden önce güncel reytinglerle yeniden
+  üretilir (`revision`, `revisedAt`, `previousPublishedScore`). 22–23 Ekim kilitli tahminlere dokunulmaz.
+- Kadro kalitesi (squad) tohumdan gelir; yeni millî kadrolar için ara sıra `python3 tools/national-ratings.py`.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V133 → V134 (kararlı)
+- **İstek:** millî reytingler site tarafından otomatik güncellensin; grubun ilk maçının sonucu son maçın tahminini etkilesin.
+- **Yapılanlar:** PROJECT_STATE 4aa. Test: `national-competitions.php` (PHP=Python, sonuç etkisi, geçici tahmin, uçtan uca güncelleyici).
+
+---
+
 ## [2026-11-08] Claude Code · V132 → V133 (kararlı)
 - **İstek:** yayın kamerasında aralıklı siyahlık ve geçişlerde kalite düşüşü (tüm modlar, indirilen video).
 - **Yapılanlar:** PROJECT_STATE 4z. Gerçek telefonda indirme testi kullanıcıda.

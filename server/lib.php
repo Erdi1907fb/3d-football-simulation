@@ -10,6 +10,7 @@ require_once __DIR__.'/passing-profiles.php';
 require_once __DIR__.'/read-cache.php';
 require_once __DIR__.'/player-lineups.php';
 require_once __DIR__.'/big-matches.php';
+require_once __DIR__.'/national-ratings.php';
 
 function pp_config(): array {
     $cfg = require __DIR__ . '/defaults.php';
@@ -184,14 +185,14 @@ function pp_forecast(array $match, array $history, DateTimeImmutable $now): arra
     // every confederation's WC qualifiers, continental finals + qualifiers, Nations Leagues and (lightly) friendlies,
     // plus decaying title bonus, recent form and squad quality (club ratings of the national roster). It carries 70%
     // of the expected goals; the recent internationals inside this model (friendlies at half weight) carry 30%.
-    if(in_array($match['competitionId']??'',['unl','intl'],true)){static $nr=null,$nat=null;if($nr===null)$nr=pp_read(__DIR__.'/../assets/national-ratings.json');if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');
+    if(in_array($match['competitionId']??'',['unl','intl'],true)){static $nat=null;$nr=pp_nr_current(['storage_dir'=>$GLOBALS['pp_nr_storage']??null]);if($nat===null)$nat=pp_read(__DIR__.'/../assets/national-teams.json');
      $th=$nr['teams'][$match['home']['name']]??null;$ta=$nr['teams'][$match['away']['name']]??null;
      if($th&&$ta){$sq=fn($t)=>isset($t['squad']['rating'])?(float)$t['squad']['rating']:null;$fm=fn($t)=>isset($t['form'])?(float)$t['form']:1.35;
       $dr=(float)$th['elo']-(float)$ta['elo']+(($match['neutral']??false)?0:80);
       if($sq($th)!==null&&$sq($ta)!==null)$dr+=($sq($th)-$sq($ta))*120;   // 0.1 squad-rating points ~ 12 Elo
       $dr+=($fm($th)-$fm($ta))*25;                                         // short-term form
       $total=max(1.9,min(3.4,$baseH+$baseA));$sup=max(-3.2,min(3.2,$dr*.0048));$eh=max(.25,($total+$sup)/2);$ea=max(.25,($total-$sup)/2);
-      $h=.7*$eh+.3*$h;$a=.7*$ea+.3*$a;$inputs['nationalModel']=['eloDiff'=>round($dr,1),'homeElo'=>$th['elo'],'awayElo'=>$ta['elo'],'homeRank'=>$th['rank']??null,'awayRank'=>$ta['rank']??null,'squad'=>[$sq($th),$sq($ta)],'form'=>[$th['form']??null,$ta['form']??null],'titles'=>[array_map(fn($t)=>$t['competition'].' '.$t['year'],$th['titles']??[]),array_map(fn($t)=>$t['competition'].' '.$t['year'],$ta['titles']??[])],'asOf'=>$nr['asOf']??null,'weight'=>.7];}
+      $h=.7*$eh+.3*$h;$a=.7*$ea+.3*$a;$inputs['nationalModel']=['eloDiff'=>round($dr,1),'homeElo'=>$th['elo'],'awayElo'=>$ta['elo'],'homeRank'=>$th['rank']??null,'awayRank'=>$ta['rank']??null,'squad'=>[$sq($th),$sq($ta)],'form'=>[$th['form']??null,$ta['form']??null],'titles'=>[array_map(fn($t)=>$t['competition'].' '.$t['year'],$th['titles']??[]),array_map(fn($t)=>$t['competition'].' '.$t['year'],$ta['titles']??[])],'asOf'=>$nr['asOf']??null,'lastResult'=>$nr['lastResult']??null,'ratedMatches'=>$nr['matches']??null,'weight'=>.7];}
      else{$sh=(float)($nat['strength'][$match['home']['name']]??70);$sa=(float)($nat['strength'][$match['away']['name']]??70);$h*=exp(($sh-$sa)*.018);$a*=exp(($sa-$sh)*.018);$inputs['nationalStrengthPrior']=['home'=>$sh,'away'=>$sa];}}
     $h = max(.2,min(4.5,$h)); $a=max(.2,min(4.5,$a));
     
@@ -293,7 +294,12 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
         // A policy migration must never regenerate an already shared match.
         foreach($history as $m)if($m['result']&&$m['date']<$bulletinDay)foreach(['home','away']as$side){$id=$m[$side]['id'];$other=$side==='home'?'away':'home';$rank[$m['competitionId']][$id]=($rank[$m['competitionId']][$id]??0)+($m['result'][$side]>$m['result'][$other]?3:($m['result'][$side]===$m['result'][$other]?1:0));}
         foreach($rank as &$r)arsort($r);unset($r);$limit=(new DateTimeImmutable($bulletinDay))->modify('+'.(int)$cfg['publish_ahead_days'].' days')->format('Y-m-d');usort($history,fn($a,$b)=>strcmp($a['date'].($a['kickoff']??''),$b['date'].($b['kickoff']??'')));$dayCount=[];foreach($predictions as$p)$dayCount[$p['date']]=($dayCount[$p['date']]??0)+1;
+        $GLOBALS['pp_nr_storage']=$cfg['storage_dir'];try{$nrStatus=pp_nr_update($cfg,$now,$fetcher,$web);}catch(Throwable $e){$nrStatus=['status'=>'error','message'=>$e->getMessage()];}
         foreach($history as $m){$id=$m['id'];if(isset($predictions[$id])){
+            // V134: a national forecast published while a team still had an earlier international to play is provisional;
+            // once that match is played (and before this kick-off) it is rebuilt from the updated ratings.
+            if(!empty($predictions[$id]['nationalProvisional'])&&empty($m['result'])&&pp_forecast_eligible($m,$now)&&!pp_nr_pending_before($m,$history)&&!pp_forecast_protected($predictions[$id])){
+                $keep=$predictions[$id];$m['analysis']=$keep['analysis']??($m['analysis']??null);$fresh=pp_build_prediction($m,$history,$now);$fresh['nationalProvisional']=false;$fresh['revision']=(int)($keep['revision']??0)+1;$fresh['revisedAt']=$now->format(DATE_ATOM);$fresh['previousPublishedScore']=$keep['publishedScore']??null;$fresh['createdAt']=$fresh['createdAt']??$keep['createdAt']??$now->format(DATE_ATOM);$predictions[$id]=$fresh;continue;}
             $oldResult=$predictions[$id]['result']??null;
             foreach(['date','kickoff','result','source','timeConfirmed','scheduleProvisional']as$field)if(array_key_exists($field,$m))$predictions[$id][$field]=$m[$field];
             if($m['result']&&$m['result']!==$oldResult){$predictions[$id]['resultReceivedAt']=$predictions[$id]['resultReceivedAt']??$now->format(DATE_ATOM);$predictions[$id]['resultUpdatedAt']=$now->format(DATE_ATOM);}
@@ -309,7 +315,7 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
             if(!$m['kickoff']&&$now>=pp_date_only_deadline($m))continue;
             if((($cfg['fixture_scope']??'all')!=='all' && (int)$cfg['max_daily_matches']>0 && ($dayCount[$m['date']]??0)>=$cfg['max_daily_matches'])||!pp_is_featured($m,$rank,$cfg))continue;
             $analysisCfg=$cfg;if($web){$analysisCfg['analysis_timeout_seconds']=2;$analysisCfg['analysis_max_seconds']=3;$analysisCfg['passing_request_budget']=0;}if($fetcher!==null){$analysisCfg['analysis_enabled']=false;$analysisCfg['analysis_network_enabled']=false;}try{$m=pp_analysis_enrich($m,$history,$analysisCfg,$now);$m=pp_passing_enrich($m,$history,$analysisCfg,$now);$m=pp_analysis_v44($m,$now);}catch(Throwable $e){$m['analysis']=['version'=>'evidence-v1','status'=>'unavailable','asOf'=>$now->format(DATE_ATOM),'sources'=>[],'missing'=>['analysis']];}
-            $prediction=pp_build_prediction($m,$history,$now);$predictions[$id]=$prediction;$published++;$dayCount[$m['date']]=($dayCount[$m['date']]??0)+1;
+            $prediction=pp_build_prediction($m,$history,$now);if(pp_nr_pending_before($m,$history))$prediction['nationalProvisional']=true;$predictions[$id]=$prediction;$published++;$dayCount[$m['date']]=($dayCount[$m['date']]??0)+1;
         }
         $oldest=$now->modify('-'.(int)$cfg['keep_archive_days'].' days')->format('Y-m-d');foreach($predictions as$id=>$p)if($p['date']<$oldest&&!pp_forecast_protected($p))unset($predictions[$id]);
         $currentChecks=array_filter($checks,fn($v,$key)=>$jobs[$key]['current'],ARRAY_FILTER_USE_BOTH);$ok=count(array_filter($currentChecks,fn($v)=>in_array($v['status'],['ok','recent'],true)));$coverage=[];

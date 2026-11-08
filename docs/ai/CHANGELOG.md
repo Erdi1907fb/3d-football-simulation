@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V134 — 2026-11-08 (Claude Code) · kararlı
+- **Millî reytingler artık kendiliğinden güncellenir:** site, normal güncelleme döngüsünde son millî maç sonuçlarını
+  ESPN'den çekip reytingleri yeniden hesaplar.
+- **Grubun son maçı ilk maçın sonucunu bilir:** bir takımın önünde oynanmamış bir millî maç varken yayınlanan tahmin
+  geçicidir; o maç oynanınca yeni reytinglerle yeniden hesaplanır (ör. Türkiye–Belçika sonucu Türkiye'nin sonraki
+  maçını etkiler).
+
 ## V133 — 2026-11-08 (Claude Code) · kararlı
 - **Siyahlık giderildi:** pozisyon geçişlerinde ekranı kısa süre karartan perde kaldırıldı (maç, konsept maç).
 - **Geçişlerde kalite:** video kodlayıcı canlı yayın modundan kalite moduna alındı; her kamera kesmesinde yeni anahtar
