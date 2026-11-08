@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V122 → V123 (kararlı)
+- **İstek:** kalan grafik/animasyon/görünüm geliştirmelerine devam.
+- **Yapılanlar:** CHANGELOG V123 (saç, cilt, NaN güvenlik adımı).
+- **Dikkat:** MeshPhysical `anisotropy` bu modelde NaN üretir (teğet yok). SANITIZE adımını kaldırma.
+- **Testler:** `node tests/run-all.cjs --quick` 15/15 PASS; penaltı 1080×1920 kareleri kontrol edildi.
+
+---
+
 ## [2026-11-08] Claude Code · V121 → V122 (kararlı)
 - **İstek:** frikik: mantıklı vurucular, daha az baraj, net top takibi, penaltı gibi açılış kadrajı, yalnız golde tekrar,
   kaçanda kısa yerinde tepki, daha iyi vuruş stilleri.

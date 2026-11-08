@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V122** · 2026-11-08 · Claude Code
+> Son güncelleme: **V123** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V122** (`VERSION`) |
+| Kararlı sürüm | **V123** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -207,6 +207,13 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Varsayılan kamera ('behind'): penaltı stüdyosu kadrajı — vurucunun sırtı (isim/numara) ortada, baraj+kale arkada,
   grafik bandının üstünde; uçuşta nişan topu izler. 2B top izi (`ballTrail`) canlı + tekrar.
 - Kaçan vuruş: vurucunun yerinde orta plan kısa tepki, kaleci yakın planı yok.
+
+## 4p. V123
+- Saç: MeshPhysical + tel kabartması (bumpMap = saç haritası) + saç rengine bağlı sheen; mat "kask" görünümü bitti.
+  ANİZOTROPİ KULLANMA: MPFB modelinde teğet yok → NaN.
+- Cilt: MeshPhysical + sıcak sheen (pürüzlülük .58 korunur).
+- Görüntü zinciri: RenderPass'ten hemen sonra SANITIZE (NaN/Inf → 0, HDR ≤ 64). Bloom artık tek hatalı pikseli
+  tüm kareye yayamaz; hata bilerek geri getirilerek doğrulandı (siyah kare %0,5–1,6, normal).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

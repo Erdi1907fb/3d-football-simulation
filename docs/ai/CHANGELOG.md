@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V123 — 2026-11-08 (Claude Code) · kararlı
+- **Saç:** ışığı tutam tutam alan parlak saç (tel kabartması + parlaklık), artık mat kask gibi değil.
+- **Cilt:** daha yumuşak, canlı cilt ışıltısı.
+- **Güvenlik:** videoda tek bir hatalı piksel artık bütün kareyi karartamaz (NaN temizleme adımı).
+
 ## V122 — 2026-11-08 (Claude Code) · kararlı
 - **Serbest vuruş vurucuları:** takım düellosunda gerçek frikikçiler (ör. Fenerbahçe: Greenwood, İrfan Can, Oğuz
   Aydın); Lukaku/Kanté/Brown gibi oyuncular artık seçilmiyor.
