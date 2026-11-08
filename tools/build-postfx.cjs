@@ -3,7 +3,7 @@
 //   npm pack three@0.160.0 && tar xzf three-0.160.0.tgz
 //   node tools/build-postfx.cjs path/to/package
 const fs=require('fs'),path=require('path');const pkg=process.argv[2];if(!pkg)throw Error('usage: node tools/build-postfx.cjs <three package dir>');
-const order=['postprocessing/Pass','shaders/CopyShader','postprocessing/ShaderPass','postprocessing/MaskPass','postprocessing/EffectComposer','postprocessing/RenderPass','shaders/LuminosityHighPassShader','postprocessing/UnrealBloomPass','shaders/OutputShader','postprocessing/OutputPass','shaders/SMAAShader','postprocessing/SMAAPass'];
+const order=['postprocessing/Pass','shaders/CopyShader','postprocessing/ShaderPass','postprocessing/MaskPass','postprocessing/EffectComposer','postprocessing/RenderPass','shaders/LuminosityHighPassShader','postprocessing/UnrealBloomPass','shaders/OutputShader','postprocessing/OutputPass','shaders/SMAAShader','postprocessing/SMAAPass','shaders/BokehShader','postprocessing/BokehPass'];
 let out=`/* three.js r160 post-processing examples (MIT, (c) 2010-2023 three.js authors, see THREE-LICENSE.txt),
  * repackaged for the global THREE build by tools/build-postfx.cjs. Exposes THREE.PostFX. */
 (function(root){'use strict';const THREE=root.THREE||(typeof require==='function'?require('./three.min.js'):null);if(!THREE)return;const P={};\n`;

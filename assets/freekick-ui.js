@@ -100,7 +100,10 @@ function cameraPlan(f){const k=f.kick,b=k.ball,dir={x:k.launch.x,z:k.launch.z},l
  if(choice==='broadcast'){const side=b.z>0?-1:1;return{fov:40,position:[b.x+8,11.5,side*30],aim:[lerp((b.x+52.5)/2,ball.x,follow),.8,lerp(b.z*.4,ball.z,follow*.6)]};}
  if(choice==='goal')return{fov:38,position:[57.2,2.3,b.z*.12],aim:[lerp(b.x,ball.x,follow),1.0,lerp(b.z,ball.z,follow)]};
  const back=age<1.4?9.6-smooth(age/1.4)*1.2:8.4;return{fov:45,position:[b.x-dir.x*back+right.x*s*1.25,4.1,b.z-dir.z*back+right.z*s*1.25],aim:[lerp(lerp(b.x,52.5,.36),ball.x,follow*.5),lerp(-1.6,ball.y-1.8,follow*.4),lerp(lerp(b.z,0,.36),ball.z,follow*.5)]};}
-function configureCamera(f){const c=world.camera,p=cameraPlan(f);c.aspect=screen.width/screen.height;c.fov=p.fov;c.position.set(...p.position);c.lookAt(...p.aim);c.updateProjectionMatrix();c.updateMatrixWorld();world.refreshFaceLOD?.();return p;}
+// V114 broadcast camera feel: close shots get a shallow depth of field focused on the subject
+// and a tiny deterministic handheld drift (seeded by time, so preview and MP4 match).
+function cinematicCamera(c,plan,t){const p=plan.position,a=plan.aim,dist=Math.hypot(p[0]-a[0],p[1]-a[1],p[2]-a[2]),close=dist<13&&!plan.wide&&!plan.replay;if(close){const k=Math.min(1,(13-dist)/7),ox=Math.sin(t*1.31)*.012+Math.sin(t*2.7+1.3)*.005,oy=Math.sin(t*1.73+.4)*.009,oz=Math.cos(t*1.17)*.012;c.position.set(p[0]+ox*k,p[1]+oy*k,p[2]+oz*k);c.lookAt(a[0]+ox*1.6*k,a[1]+oy*1.4*k,a[2]+oz*1.6*k);c.userData.dof={focus:dist,aperture:.0008*k+.00012,maxblur:.0095};}else{c.userData.dof=null;}}
+function configureCamera(f){const c=world.camera,p=cameraPlan(f);c.aspect=screen.width/screen.height;c.fov=p.fov;c.position.set(...p.position);c.lookAt(...p.aim);cinematicCamera(c,p,f.time??0);c.updateProjectionMatrix();c.updateMatrixWorld();world.refreshFaceLOD?.();return p;}
 
 function text(s,x,y,size=24,color='#fff',align='left',max=10000,weight='bold'){ctx.fillStyle=color;ctx.font=`${weight} ${size}px Arial, sans-serif`;ctx.textAlign=align;ctx.textBaseline='middle';ctx.fillText(String(s),x,y,max);}
 function panel(x,y,w,h,color='#071420e8',r=8){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}

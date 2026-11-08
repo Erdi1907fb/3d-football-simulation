@@ -1,17 +1,17 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V113** · 2026-11-08 · Claude Code
+> Son güncelleme: **V114** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V113** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V114** |
+| Kararlı sürüm | **V114** (`VERSION`) |
+| Sonraki geliştirme hedefi | **V115** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v113.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Sürüm doğrulama | `build.php` → `assets/release-v114.json` (sha256 listesi, `tools/make-release.cjs`) |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -137,6 +137,18 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - **Lisans politikası:** ticari mağaza varlıkları (Fab/Unity, ücretli mocap) hesap/satın alma ister ve çoğu motor dışı ya da
   herkese açık dağıtımı yasaklar; ajanlar satın alamaz. Kullanıcı kendi hesabıyla indirip verirse
   `assets/private-licensed/` altında (repo dışı tutulması önerilir) entegre edilir — bkz. DECISIONS D-018.
+
+## 4g. V114 — yön değişikliği ve eklemeler
+- **Kullanıcı kararı (2026-11-08):** dış repo/varlık aranmayacak; geliştirme yalnız Claude Code + Codex’in kendi
+  kodlamasıyla. Nihai hedef: “profesyonel yayın” görüntüsü (oyuncu, kaleci, top, çim, kale, taraftar, tribün, atmosfer,
+  animasyon). Küçük dokunuşlar + büyük kalite adımları.
+- **Sinematik zincir:** RenderPass → BokehPass (alan derinliği, yalnız yakın çekim) → UnrealBloom → OutputPass (ACES) →
+  yayın renk ayarı (kontrast 1,05, doygunluk 1,07, sıcak parlak / serin gölge) → SMAA.
+- **Kamera:** stüdyolarda yakın plan (<13 m) çekimlerde odak = özne mesafesi, hafif zaman-tabanlı el kamerası salınımı
+  (`cinematicCamera`), tekrar ve geniş açıda kapalı. `camera.userData.dof` arayüzü ana maç kamerasına da açık.
+- **Atmosfer:** 4 projektör kulesinden yumuşak ışık hüzmeleri (yağmurda ×2,1, karda ×1,7); tribünlerde telefon flaşları
+  (açık oyunda seyrek, gol/sevinç/finalde yoğun).
+- **Araç:** stüdyolarda `snapshot(t,w,h)` → 1080×1920 tam çözünürlük kare.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

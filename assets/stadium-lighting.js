@@ -44,6 +44,9 @@ function create(scene,stadium){
   }
   part(head,new T.PlaneGeometry(10.6,5.4),haloMaterial,0,0,.22);
   const light=new T.SpotLight(0xe4efff,1.75,190,Math.PI*.285,.72,0);light.name='pitch-floodlight-'+sx+'-'+sz;light.position.copy(root.position).add(new T.Vector3(0,45.2,0));light.target.position.copy(target);light.castShadow=false;scene.add(light,light.target);lights.push(light);
+  // V114 atmospheric beam: a soft additive light shaft from the projector array towards the
+  // pitch (fades along its length and towards silhouette edges; stronger in rain/snow haze).
+  {const from=root.position.clone().add(new T.Vector3(0,45.2,0)),dir=target.clone().sub(from),len=dir.length()*.82,geo=new T.CylinderGeometry(2.6,13,len,32,1,true);geo.translate(0,-len/2,0);const mat=new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,side:T.DoubleSide,fog:false,toneMapped:false,uniforms:{strength:{value:.05},tint:{value:new T.Color(0xcfe2ff)}},vertexShader:'varying float vAlong;varying vec3 vN;varying vec3 vV;void main(){vAlong=uv.y;vec4 wp=modelMatrix*vec4(position,1.);vN=normalize(mat3(modelMatrix)*normal);vV=normalize(cameraPosition-wp.xyz);gl_Position=projectionMatrix*viewMatrix*wp;}',fragmentShader:'uniform float strength;uniform vec3 tint;varying float vAlong;varying vec3 vN;varying vec3 vV;void main(){float edge=pow(abs(dot(normalize(vN),normalize(vV))),1.6);float a=strength*pow(vAlong,1.4)*edge;gl_FragColor=vec4(tint*a,a);}'});const beam=new T.Mesh(geo,mat);beam.position.copy(from);beam.quaternion.setFromUnitVectors(new T.Vector3(0,-1,0),dir.normalize());beam.renderOrder=6;beam.frustumCulled=false;beam.userData.noBatch=true;beam.userData.floodBeam=true;beam.name='floodlight-beam';scene.add(beam);root.userData.beam=beam;}
   towers.push({root,head,panels,light,target:target.clone(),height:45.2});
  }
  // Steady architectural strips remain below the tower brightness; no strobe or auto exposure.

@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V113 → V114 (kararlı)
+- **İstek:** dış repolar olmadan, yalnız Claude + Codex ile sürekli görsel/animasyon/fizik kalite artışı; profesyonel
+  yayın görünümü hedefi. Küçük dokunuşlar ve büyük adımlar.
+- **Yapılanlar:** CHANGELOG V114. Sıradaki büyük adımlar TASKS T-230…T-234 (oyuncu gövdesi, kaleci donanımı, koşu
+  animasyonu, çim aşınması, tribün animasyonları).
+- **Dikkat:** `broadcast-remaster.js` efekt zinciri yalnız Yüksek kalitede. Yeni efektler `cinematic()` içine eklenir;
+  hata olursa `composerFailed` ile eski yola düşer. Kameraya `userData.dof={focus,aperture,maxblur}` verilirse DOF açılır.
+
+---
+
 ## [2026-11-08] Claude Code · V112 → V113 (kararlı)
 - **İstek:** ticari lisanslılar da kullanılabilir (test/video, para kazanma yok); fizik ve grafiği geliştir.
 - **Yapılanlar:** CHANGELOG V113; D-018 (ticari varlık politikası). Erişim: Poly Haven/ambientCG/npm açık; Fab/Rokoko

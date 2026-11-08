@@ -2,6 +2,14 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V114 — 2026-11-08 (Claude Code) · kararlı
+- Yön: dış kaynak yok, yalnız kendi geliştirmemiz (D-019).
+- Sinematik zincire alan derinliği (yakın çekim) ve yayın renk ayarı eklendi.
+- Stüdyo yakın çekimlerinde odak + hafif el kamerası hareketi.
+- Projektör ışık hüzmeleri (hava durumuna duyarlı) ve tribünde telefon flaşları.
+- Stüdyolarda 1080×1920 tam çözünürlük kare alma (`snapshot`).
+- Kaleci eldiveni: iri avuç yastığı + zıt renkli bilek manşeti (tam vücut el kemiklerine bağlı).
+
 ## V113 — 2026-11-08 (Claude Code) · kararlı
 - Top havada fiziksel dönüşüyle görünür şekilde döner (frikik + penaltı).
 - Frikikte hava fiziği: yağmurda kayan/az seken top, karda çabuk duran top; yağmurda kaleci daha az tutar.

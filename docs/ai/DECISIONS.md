@@ -105,3 +105,8 @@ içinde kullanım ve ham dosyayı herkese açık dağıtmama şartı taşır; we
 konmaz. Kullanıcı kendi hesabıyla indirip lisansını onaylayarak verirse, `assets/private-licensed/` (gitignore) üzerinden
 yerelde/sunucuda yüklenebilecek bir yol kurulur. Erişilebilen en iyi açık kaynaklar (Poly Haven, ambientCG CC0; three.js MIT)
 kullanılmaya devam eder.
+
+## D-019 · 2026-11-08 · claude · kabul — Dış kaynak yok, kendi geliştirmemiz
+**Karar (kullanıcı):** Bundan sonra harici repo/varlık aranmaz ve eklenmez; grafik, animasyon ve fizik Claude Code ve Codex
+tarafından projenin içinde geliştirilir. Mevcut lisanslı içerikler (three.js MIT, CC0 varlıklar, GameplayFootball klipleri)
+yerinde kalır. Öncelik: görsel kalite (profesyonel yayın hissi), animasyon, oyuncu/kaleci donanımı, atmosfer.
