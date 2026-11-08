@@ -4,7 +4,7 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V111
+## Aktif hedef: V112
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
@@ -12,6 +12,9 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-215 | Sevinçlerde gerçek motion-capture (kullanıcı Mixamo’dan indirip verirse) | todo | — | D-005 |
 | T-216 | Kalecinin “ulaşılabilir en iyi hedef” taramasını League-Soccer’dan uyarlamak (maç + stüdyolar) | todo | — | research/LEAGUE-SOCCER.md |
 | T-217 | Ofsayt çizgisine rakip hareket öngörüsü (0,1–0,15 sn) | todo | — | collective-play.js |
+| T-220 | Bloom + SMAA post-process (pmndrs/postprocessing vendoring) | todo | — | GRAPHICS-SOURCES.md |
+| T-221 | Taraftarlarda yağmurluk/kapüşon varyasyonu, karda çatıda birikme | todo | — | crowd-*.js, weather.js |
+| T-222 | Fileye ip normal haritası; ıslakken file sarkması | todo | — | scene.js netGoals |
 | T-213 | Sevinçler için gerçek motion-capture klipleri (kullanıcı Mixamo’dan indirirse retarget) | todo | — | `celebration-clips.js`, D-005 |
 
 ## Tamamlananlar
@@ -30,6 +33,8 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-211 | Frikik kalite ayarı | V110 | claude |
 | T-214 | Kalecinin barajı yönetme jesti | V110 | claude |
 | T-212 | Kumaş normal haritası, şort numarası | V110 | claude |
+| T-118 | Hava durumu (açık/yağmur/kar) üç modda + MP4 | V111 | claude |
+| T-119 | Top/kale/krampon görsel yükseltmesi, grafik kaynak araştırması | V111 | claude |
 | T-109 | Sevinç paketi: 100 gol sevinci + 14 takım rutini, tüm modlar | V109 | claude |
 | T-110 | Serbest vuruş ayna nokta takvimi + aynı nokta/tur | V109 | claude |
 | T-111 | Millî forma düellosunda millî kadro barajı (isim+numara) | V109 | claude |

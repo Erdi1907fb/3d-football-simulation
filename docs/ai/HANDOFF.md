@@ -17,6 +17,20 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V110 → V111 (kararlı)
+
+- **Dal / commit:** `claude/great-curie-v7xiuc` → `main`. Commit: “V111: …”.
+- **Kullanıcı isteği:** tüm öğelerde grafik seviyesi atlatma (oyuncu, kaleci, top, kale/file, stadyum, taraftar, çim,
+  krampon, forma/şort, yüz), uygun repo/kaynak araştırması; üç modda ve videoda Açık/Yağmurlu/Karlı seçeneği.
+- **Yapılanlar:** `weather.js`, `weather-ui.js` ve sahne/sayfa bağlantıları; clearcoat top ve kale; krampon paleti;
+  ıslak forma; `research/GRAPHICS-SOURCES.md`; `tests/weather.cjs`.
+- **Yapılmayan/sonraya:** post-process bloom/SMAA (T-220), taraftar yağmurluk (T-221), file ipi normal haritası (T-222).
+  Yüz fotoğrafları bu sürümde değişmedi (V107 yüz düzeltmeleri sürüyor).
+- **Dikkat:** `scene.js` dönüş nesnesinde `weather` ve `setWeather(v)` var. Yeni malzeme hava durumundan etkilensin
+  istenirse `userData.broadcastSurface` (zemin) veya `userData.weatherFabric` (kumaş) işaretle.
+
+---
+
 ## [2026-11-08] Claude Code · V109 → V110 (kararlı)
 
 - **Dal / commit:** `claude/great-curie-v7xiuc` → `main` (hızlı ileri). Commit: “V110: …”.

@@ -92,3 +92,8 @@ skorlar `forecast-physics` ile fiziksel olarak yeniden çözülür, değişmez.
 ## D-016 · 2026-11-08 · claude · kabul — Frikik taraftar bölünmesi uzun eksende
 **Karar:** Frikik kamerası her turda farklı açıdan baktığı için bölünme penaltı kamera ışını yerine sahanın uzun ekseninde
 (z=0) yapılır: kalenin arkasındaki tribün tam ortadan ikiye ayrılır.
+
+## D-017 · 2026-11-08 · claude · kabul — Hava durumu GPU’da, zaman tabanlı, tek tercih
+**Karar:** Yağış parçacıkları shader’da sunum zamanından hesaplanır; kamera çevresinde sarılan dünya-sabit hacim.
+Tercih tek yerde (`Next90Weather.preference`) tutulur ve tüm sahneler okur. **Gerekçe:** MP4 kare kare çizilir;
+CPU tabanlı parçacık durumu ileri/geri sarmada ve dışa aktarmada tutarsızlık üretirdi. Ek kütüphane yok (0 KB).

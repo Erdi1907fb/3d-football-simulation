@@ -1,0 +1,51 @@
+/* V111 shared weather for the normal match, Penalty Studio and Free Kick Studio.
+ * clear | rain | snow. Precipitation is computed on the GPU from the presentation time
+ * (no per-frame CPU state), so seeking, preview and MP4 export draw identical frames.
+ * Techniques: world-stable wrapped particle volume around the camera (three.js examples /
+ * GPU particle practice), soft disc sprites, ring splashes, wet-surface roughness and
+ * colour response, distance fog. Original Next90 implementation, no external assets.
+ */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'));else r.Next90Weather=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';
+const TYPES=['clear','rain','snow'],KEY='next90.weather.v1',live=new Set();
+const norm=v=>TYPES.includes(v)?v:'clear';
+function preference(){try{return norm(localStorage.getItem(KEY));}catch{return'clear';}}
+function setPreference(v){v=norm(v);try{localStorage.setItem(KEY,v);}catch{}for(const w of live)w.set(v);return v;}
+const COUNTS={rain:{high:9000,balanced:5500,low:2600},splash:{high:1600,balanced:900,low:400},snow:{high:7000,balanced:4200,low:2000}};
+const RAND=n=>{let s=n>>>0||1;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296;};};
+function seeds(count,per,rng){const a=new Float32Array(count*per*4);for(let i=0;i<count;i++){const x=rng(),y=rng(),z=rng(),w=rng();for(let k=0;k<per;k++)a.set([x,y,z,w],(i*per+k)*4);}return a;}
+const commonVS=`uniform float uTime;uniform vec3 uCam;uniform vec3 uBox;uniform vec3 uVel;attribute vec4 aSeed;
+vec3 wrapped(vec3 drift){vec3 base=uCam-uBox*.5;return mod(aSeed.xyz*uBox+drift-base,uBox)+base;}`;
+function rainMesh(count){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(count*2*3),3));g.setAttribute('aSeed',new T.BufferAttribute(seeds(count,2,RAND(9187)),4));const end=new Float32Array(count*2);for(let i=0;i<count;i++)end[i*2+1]=1;g.setAttribute('aEnd',new T.BufferAttribute(end,1));
+ const m=new T.ShaderMaterial({transparent:true,depthWrite:false,fog:false,uniforms:{uTime:{value:0},uCam:{value:new T.Vector3()},uBox:{value:new T.Vector3(64,30,64)},uVel:{value:new T.Vector3(1.6,-15.5,.9)},uLen:{value:.82},uColor:{value:new T.Color(0xd6dfeb)},uOpacity:{value:.5}},
+  vertexShader:commonVS+`uniform float uLen;attribute float aEnd;varying float vA;void main(){vec3 p=wrapped(uVel*uTime*(.86+.28*aSeed.w));p-=normalize(uVel)*uLen*aEnd*(.7+.6*aSeed.w);vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;float d=length(mv.xyz);vA=mix(1.,.15,aEnd)*smoothstep(46.,6.,d)*smoothstep(.6,2.4,d);}`,
+  fragmentShader:`uniform vec3 uColor;uniform float uOpacity;varying float vA;void main(){gl_FragColor=vec4(uColor,uOpacity*vA);}`});
+ const mesh=new T.LineSegments(g,m);mesh.frustumCulled=false;mesh.renderOrder=20;mesh.userData.noBatch=true;mesh.onBeforeRender=(r,s,cam)=>m.uniforms.uCam.value.copy(cam.position);return mesh;}
+function splashMesh(count){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(count*3),3));g.setAttribute('aSeed',new T.BufferAttribute(seeds(count,1,RAND(331)),4));
+ const m=new T.ShaderMaterial({transparent:true,depthWrite:false,fog:false,uniforms:{uTime:{value:0},uCam:{value:new T.Vector3()},uBox:{value:new T.Vector3(46,1,46)},uVel:{value:new T.Vector3()},uScale:{value:600},uOpacity:{value:.26}},
+  vertexShader:commonVS+`uniform float uScale;varying float vPhase;varying float vFade;float h(float n){return fract(sin(n)*43758.5453);}void main(){float c=uTime*1.7+aSeed.w*7.;float cyc=floor(c);vPhase=fract(c);vec3 jitter=vec3(h(cyc+aSeed.x*91.),0.,h(cyc*1.7+aSeed.z*57.))*uBox*.35;vec3 p=wrapped(jitter);p.y=.025;vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;float d=-mv.z;vFade=smoothstep(34.,5.,d);gl_PointSize=clamp(uScale*(.018+.06*vPhase)/max(d,.5),1.,18.);}`,
+  fragmentShader:`uniform float uOpacity;varying float vPhase;varying float vFade;void main(){float d=length(gl_PointCoord-.5);float ring=smoothstep(.5,.42,d)*smoothstep(.22,.36,d);gl_FragColor=vec4(.86,.9,.96,ring*(1.-vPhase)*uOpacity*vFade);}`});
+ const mesh=new T.Points(g,m);mesh.frustumCulled=false;mesh.renderOrder=19;mesh.userData.noBatch=true;mesh.onBeforeRender=(r,s,cam)=>{m.uniforms.uCam.value.copy(cam.position);const h=r.getDrawingBufferSize?r.getDrawingBufferSize(new T.Vector2()).y:960;m.uniforms.uScale.value=h*.5*(cam.projectionMatrix?.elements[5]||1.7);};return mesh;}
+function snowMesh(count){const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(count*3),3));g.setAttribute('aSeed',new T.BufferAttribute(seeds(count,1,RAND(7723)),4));
+ const m=new T.ShaderMaterial({transparent:true,depthWrite:false,fog:false,uniforms:{uTime:{value:0},uCam:{value:new T.Vector3()},uBox:{value:new T.Vector3(56,28,56)},uVel:{value:new T.Vector3(.35,-1.15,.18)},uScale:{value:600},uOpacity:{value:.9}},
+  vertexShader:commonVS+`uniform float uScale;varying float vA;void main(){float t=uTime*(.8+.4*aSeed.w);vec3 drift=uVel*t+vec3(sin(t*.9+aSeed.w*6.28)*.55,0.,cos(t*.7+aSeed.x*6.28)*.45);vec3 p=wrapped(drift);vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;float d=-mv.z;vA=smoothstep(42.,5.,d)*smoothstep(.4,1.6,d);gl_PointSize=clamp(uScale*(.05+.07*aSeed.w)/max(d,.4),1.5,30.);}`,
+  fragmentShader:`uniform float uOpacity;varying float vA;void main(){float d=length(gl_PointCoord-.5);float a=smoothstep(.5,.12,d);gl_FragColor=vec4(.97,.98,1.,a*uOpacity*vA);}`});
+ const mesh=new T.Points(g,m);mesh.frustumCulled=false;mesh.renderOrder=20;mesh.userData.noBatch=true;mesh.onBeforeRender=(r,s,cam)=>{m.uniforms.uCam.value.copy(cam.position);const h=r.getDrawingBufferSize?r.getDrawingBufferSize(new T.Vector2()).y:960;m.uniforms.uScale.value=h*.5*(cam.projectionMatrix?.elements[5]||1.7);};return mesh;}
+// Surface/atmosphere look. Original values are stored once and restored for "clear".
+const LOOK={clear:null,
+ rain:{light:.84,fog:0x1e2731,fogScale:2.0,surface:{rough:.74,tint:[.8,.85,.82],env:1.12},exposure:.95},
+ snow:{light:.95,fog:0xc4ccd6,fogScale:1.9,surface:{rough:1.05,tint:[.94,.96,.98],frost:[.17,.18,.21],env:1},exposure:1.02}};
+function create(scene,options={}){const quality=['high','balanced','low'].includes(options.quality)?options.quality:'balanced';let type='clear',want=norm(options.weather??preference()),applied=false,fx=[],time=0;const saved={lights:new Map(),mats:new Map(),fog:null};
+ function remember(){scene.traverse(o=>{if(o.isLight&&!saved.lights.has(o))saved.lights.set(o,o.intensity);const ms=o.material?(Array.isArray(o.material)?o.material:[o.material]):[];for(const m of ms)if((m?.userData?.broadcastSurface||m?.userData?.weatherFabric)&&!saved.mats.has(m))saved.mats.set(m,{color:m.color.clone(),roughness:m.roughness,env:m.envMapIntensity,emissive:m.emissive?m.emissive.clone():null,fabric:!!m.userData.weatherFabric});});if(!saved.fog&&scene.fog)saved.fog={color:scene.fog.color.clone(),near:scene.fog.near,far:scene.fog.far,density:scene.fog.density};}
+ function restore(){for(const [l,i] of saved.lights)l.intensity=i;for(const [m,v] of saved.mats){m.color.copy(v.color);m.roughness=v.roughness;if(v.emissive&&m.emissive)m.emissive.copy(v.emissive);if(v.env!=null)m.envMapIntensity=v.env;m.needsUpdate=true;}if(saved.fog&&scene.fog){scene.fog.color.copy(saved.fog.color);if(saved.fog.near!=null)scene.fog.near=saved.fog.near;if(saved.fog.far!=null)scene.fog.far=saved.fog.far;if(saved.fog.density!=null)scene.fog.density=saved.fog.density;}}
+ function look(m,v,kind){const L=LOOK[kind];if(!L)return;if(v.fabric){if(kind==='rain'){m.color.setRGB(v.color.r*.9,v.color.g*.9,v.color.b*.9);m.roughness=v.roughness*.62;m.needsUpdate=true;}return;}const s=L.surface;m.color.setRGB(v.color.r*s.tint[0],v.color.g*s.tint[1],v.color.b*s.tint[2]);if(s.frost&&m.emissive)m.emissive.setRGB(s.frost[0],s.frost[1],s.frost[2]);m.roughness=Math.min(1,v.roughness*s.rough);if(v.env!=null)m.envMapIntensity=v.env*s.env;m.needsUpdate=true;}
+ // Players' full-body kits load asynchronously: pick up late materials without a rebuild.
+ function adopt(){const before=new Set(saved.mats.keys());remember();for(const [m,v] of saved.mats)if(!before.has(m))look(m,v,type);}
+ let ticks=0;
+ function apply(kind){remember();restore();for(const m of fx){scene.remove(m);m.geometry.dispose();m.material.dispose();}fx=[];const L=LOOK[kind];type=kind;scene.userData.weather=kind;if(!L)return;
+  for(const [l,i] of saved.lights)l.intensity=i*L.light;for(const [m,v] of saved.mats)look(m,v,kind);
+  if(scene.fog&&saved.fog){scene.fog.color.setHex(L.fog);if(saved.fog.density!=null)scene.fog.density=saved.fog.density*L.fogScale;else{scene.fog.near=saved.fog.near/L.fogScale*.35;scene.fog.far=saved.fog.far/L.fogScale*.5;}}
+  if(kind==='rain'){fx.push(rainMesh(COUNTS.rain[quality]),splashMesh(COUNTS.splash[quality]));}if(kind==='snow')fx.push(snowMesh(COUNTS.snow[quality]));for(const m of fx){m.material.uniforms.uTime.value=time;scene.add(m);}}
+ const api={refresh(){if(applied&&type!=='clear')adopt();},get type(){return applied?type:want;},set(kind){want=norm(kind);if(applied&&want!==type)apply(want);},update(t){time=Number.isFinite(t)?t:time;if(!applied){applied=true;apply(want);}else if(type!=='clear'&&(++ticks<30||ticks%45===0))adopt();for(const m of fx)m.material.uniforms.uTime.value=time;},get particles(){return fx.reduce((n,m)=>n+m.geometry.attributes.aSeed.count,0);},exposure(){return LOOK[type]?.exposure??1;},dispose(){restore();for(const m of fx){scene.remove(m);m.geometry.dispose();m.material.dispose();}fx=[];live.delete(api);}};
+ live.add(api);return api;}
+return{TYPES,create,preference,setPreference,labels:{clear:['Açık hava','Clear'],rain:['Yağmurlu','Rain'],snow:['Karlı','Snow']},version:'weather-v111'};
+});

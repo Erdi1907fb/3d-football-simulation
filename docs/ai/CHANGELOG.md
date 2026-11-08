@@ -2,6 +2,20 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V111 — 2026-11-08 (Claude Code) · kararlı
+
+### Yeni
+- Hava durumu seçeneği (Açık / Yağmurlu / Karlı) normal maç, penaltı ve serbest vuruşta; ön izleme ve 1080×1920 MP4’te.
+  Yağmur: damlalar, zeminde sıçrama halkaları, ıslak çim ve formalar, pus. Kar: kar taneleri, beyazlaşan çim, açık sis.
+- Kalite ayarına göre parçacık bütçesi (Yüksek/Dengeli/Hızlı).
+
+### Görsel iyileştirmeler
+- Clearcoat’lu maç topu; cilalı, daha yuvarlak kale çerçevesi (gölge düşürür); 10 renkli krampon paleti.
+- `docs/ai/research/GRAPHICS-SOURCES.md` kaynak/lisans değerlendirmesi.
+
+### Testler
+- `tests/weather.cjs` (uygula/geri yükle, geç yüklenen formalar, kalite ölçeği, zaman tabanlı yağış) → run-all 14 test.
+
 ## V110 — 2026-11-08 (Claude Code) · kararlı
 
 ### Yeni
