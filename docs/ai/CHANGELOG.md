@@ -2,6 +2,15 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V116 — 2026-11-08 (Claude Code) · kararlı
+- **Hakemler tam vücut:** hakem ve yan hakemler artık oyuncularla aynı MPFB modelinde (sarı forma, siyah şort/çorap);
+  önceki manken görünümü gitti.
+- **Işık:** Yüksek kalitede daha güçlü projektör ana ışığı, daha yumuşak/koyu gölgeler, kontur ışığı → derinlik.
+- **Gövde/bacak:** göğüs ve karın düzleşti (yuvarlak göğüs yok), baldır kası arkada dolgun, bilek üstü ince.
+- **Krampon:** ince modern üst, topuk desteği, beyaz taban + 6 çivi, yan şeritler ve bağcık.
+- **Koşu:** hızlandıkça gövde öne eğilir, dönüşte içe yatar.
+- **Taraftar:** kulüp rengi + ikinci renk, koyu mont, beyaz tişört karışımı (tek düze blok yerine gerçek kalabalık).
+
 ## V115 — 2026-11-08 (Claude Code) · kararlı
 - **Atletik gövde:** tam vücut modeli yüklenirken kemik ağırlığına göre yeniden şekillenir — karın öne çıkıntısı %22 azalır,
   bel incelir, göğüs/sırt ve omuz başları dolgunlaşır (forma, şort ve isim/numara katmanları aynı tepe noktalarını izler).

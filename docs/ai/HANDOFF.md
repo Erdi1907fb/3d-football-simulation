@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V115 → V116 (kararlı)
+- **İstek:** "Sıradakileri yap" → ışık kontrastı, bacak/krampon, koşu ağırlığı, taraftar çeşitliliği.
+- **Yapılanlar:** CHANGELOG V116. Ek olarak hakem/yan hakemler tam vücut modele geçti (`OFFICIAL_KIT`).
+- **Dikkat:** resmî görevlilerde `actor.uniform` null; fullbody-runtime içinde `actor.official` kontrolü korunmalı.
+  Göğüs için dar "bump" genişletmesi kadınsı şişkinlik yaptı → göğüs sıkıştırma kullanıldı (genişletme yalnız yanlara).
+- **Testler:** `node tests/run-all.cjs` (engine dahil) PASS; 1080×1920 penaltı + frikik kareleri karşılaştırıldı.
+- **Sırada:** kaleci (dirsek pedi, hazır duruş çeşitleri T-231), çim aşınması/rüzgâr (T-233), tribün animasyonları (T-234).
+
+---
+
 ## [2026-11-08] Claude Code · V114 → V115 (kararlı)
 - **İstek:** her güncelleme “ağız açık kalacak” büyüklükte görsel/animasyon/fizik sıçraması olmalı.
 - **Yapılanlar:** atletik gövde yeniden şekillendirme, sheen kumaş, canlı cilt, belirgin çim şeritleri (CHANGELOG V115).

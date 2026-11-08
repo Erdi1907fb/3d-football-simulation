@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V115** · 2026-11-08 · Claude Code
+> Son güncelleme: **V116** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V115** (`VERSION`) |
+| Kararlı sürüm | **V116** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -153,6 +153,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 ## 4h. V115
 - `fullbody-runtime.js athleticShape()` (yükleme anında, kemik ağırlıklı gövde şekillendirme), fizik tabanlı sheen kumaş,
   belirgin çim şeritleri (`pitch-detail.js applyPBR`). Kullanıcı beklentisi: her sürümde göze çarpan büyük görsel sıçrama.
+
+## 4i. V116
+- Yüksek kalitede güçlü ana ışık/gölge kontrastı (`broadcast-remaster.js`), baldır kası + düzleştirilmiş göğüs/karın
+  (`athleticShape`), modern krampon (`scene.js` boot), hıza bağlı koşu eğimi, taraftar kıyafet çeşitliliği.
+- Hakem ve yan hakemler de tam vücut MPFB modeli (`OFFICIAL_KIT`, `allVisualActors` resmî görevlileri içerir);
+  `actor.uniform` resmîlerde null → `actor.official` koruması zorunlu.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
