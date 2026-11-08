@@ -638,7 +638,7 @@ function competitionKey(fixture){
  return id&&competitionNames[id]?id:Object.keys(competitionNames).find(k=>competitionNames[k].some(n=>n.toLocaleLowerCase('tr-TR').replace(/^(uefa|fifa)\s+/,'')===name.trim().toLocaleLowerCase('tr-TR').replace(/^(uefa|fifa)\s+/,'')))||null;
 }
 function competitionName(fixture,lang='tr'){const key=competitionKey(fixture);return key?competitionNames[key][lang==='en'?1:0]:typeof fixture==='string'?fixture:fixture?.competition||'';}
-function competitionLogo(fixture,thumbnail=false){const key=competitionKey(fixture);if(key==='concept')return 'assets/concept/trophy.png?v=79';if(!key||key==='world')return null;const path='assets/competitions/'+(thumbnail?'thumbs/':'')+key+'.png';return (typeof window!=='undefined'&&window.SEKME_COMPETITION_LOGOS?.[path])||path+'?v=39';}
+function competitionLogo(fixture,thumbnail=false){const key=competitionKey(fixture);if(key==='concept')return 'assets/concept/trophy.png?v=79';if(!key||key==='world')return null;const path='assets/competitions/'+(thumbnail?'thumbs/':'')+key+'.png';return (typeof window!=='undefined'&&window.SEKME_COMPETITION_LOGOS?.[path])||path+'?v=126';}
 const goalLedgerCache=new Map();
 function safeBuild(seed,options={}){
  if((options.presentationRevision??99)>=95&&options.engineVersion!=='classic'&&Array.isArray(options.targetScore)&&!options.goalLedger){

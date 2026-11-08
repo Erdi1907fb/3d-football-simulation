@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V126** · 2026-11-08 · Claude Code
+> Son güncelleme: **V127** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V126** (`VERSION`) |
+| Kararlı sürüm | **V127** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -249,6 +249,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   `appearanceSource: fotmob-headshot-v126-reviewed`. Stiller: short, cropped, long, coils, twists, bald, receding.
 - `club-rosters.js withLooks`: maç günü sağlayıcı (ESPN) 11'lerinde de oyuncu görünümü id/ad ile kadro verisinden
   gelir (önce yalnız tüm takım kadro dosyasından geldiğinde kullanılıyordu). Önbellek `?v=126`.
+
+## 4t. V127
+- Resmî UEFA Nations League logosu (kullanıcı verdi: `assets/competitions/source/unl-official.png`) → unl.png, thumbs,
+  broadcast light (koyu yazılar beyaza çevrildi) / dark, `competition-data.js` gömülü kopyaları. Logo önbelleği ?v=126.
+  UNL teması: logodaki renkli üçgen bayrak motifi + skor tabelası altında çok renkli şerit.
+- Telefon profili (`SekmeGraphics.mobile`, preset `lite`): telefonda kullanıcının seçtiği ön ayar kullanılır (V121'in
+  zorla 'high'ı yalnız masaüstünde), sinematik zincir HDR→ACES→grade (bloom/DOF/SMAA/sharpen/sanitize yok),
+  saç/cilt MeshStandard, gölge 1024, seremoni fenerleri yok. iPhone 13 emülasyonu: JS bellek V120 ile aynı
+  (318/315 MB), kare süresi ~%35 kısa. GERÇEK CİHAZDA DOĞRULANMADI.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

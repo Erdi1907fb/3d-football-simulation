@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V127 — 2026-11-08 (Claude Code) · kararlı
+- **Resmî UEFA Uluslar Ligi logosu:** seremoni orta bayrağı, skor tabelası, kadro, devre ve maç sonu ekranları;
+  tema logodaki renkli bayrak deseniyle.
+- **Telefon düzeltmesi:** stüdyolar ve video indirme telefonda sayfayı yeniden başlatıyordu (bellek). Telefonlar artık
+  hafif görüntü zinciri ve hafif malzemeler kullanır; seçilen kalite ayarına uyulur.
+
 ## V126 — 2026-11-08 (Claude Code) · kararlı
 - **Gerçek oyuncu görünümü:** büyük takımlardaki 889 oyuncunun fotoğrafı tek tek incelendi: kel, kazınmış, kısa,
   uzun, kıvırcık, örgülü, açılmış alın + sakal yoğunluğu; ten ve saç rengi fotoğraftan ölçüldü (ör. Lukaku kel ve

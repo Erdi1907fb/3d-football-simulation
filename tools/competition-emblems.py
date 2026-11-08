@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""V124 project-drawn competition emblems for 'unl' (UEFA Nations League placeholder) and 'intl'
+"""V124 project-drawn competition emblems (V127: unl now uses the official logo, assets/competitions/source/unl-official.png) for 'unl' (UEFA Nations League placeholder) and 'intl'
 (International Friendly). These are original marks, not official logos: replace assets/competitions/unl.png
 with the official file when it is supplied (keep the same names; broadcast/light+dark and thumbs are derived).
 Usage: python3 tools/competition-emblems.py [path-to-official-unl.png]"""

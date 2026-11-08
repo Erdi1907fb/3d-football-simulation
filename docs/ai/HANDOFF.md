@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V126 → V127 (kararlı)
+- **İstek:** resmî UNL logosunu her yere yerleştir; telefonda penaltı/frikik/maç indirme çöküyor (siyah ekran, yeniden yükleme).
+- **Yapılanlar:** CHANGELOG V127 / PROJECT_STATE 4t.
+- **Dikkat:** telefona yeni efekt eklerken `quality.lite` / `SekmeGraphics.mobile` kontrol et; tam çözünürlüklü ek
+  render hedefi ekleme. Gerçek iPhone'da test edilmedi — kullanıcı geri bildirimi bekleniyor.
+
+---
+
 ## [2026-11-08] Claude Code · V125 → V126 (kararlı)
 - **İstek:** büyük takım oyuncularının saç/ten/kel vb. doğru olsun; grafik sıçramasına devam.
 - **Yapılanlar:** CHANGELOG V126 / PROJECT_STATE 4s. Test: `crests.cjs` (Lukaku kel, Kanté kazınmış…, ≥850 incelenmiş).
