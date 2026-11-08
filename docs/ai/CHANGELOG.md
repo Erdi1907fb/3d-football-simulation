@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V120 — 2026-11-08 (Claude Code) · kararlı
+- Tribün güvenlik görevlileri turuncu reflektif yelekli (steward), ayırıcı camın iki yanında, her iki takımın
+  taraftarlarının yanında.
+
 ## V119 — 2026-11-08 (Claude Code) · kararlı
 - **Taraftar ayrımı (frikik, penaltı, maç):** iki taraftar grubunun buluştuğu her yerde önden arkaya uzanan
   basamaklı cam panel, çelik alt plaka, eğimli korkuluk; arada örtülü boş koltuk koridoru ve her 3 sırada yelekli

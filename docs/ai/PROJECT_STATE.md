@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V119** · 2026-11-08 · Claude Code
+> Son güncelleme: **V120** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V119** (`VERSION`) |
+| Kararlı sürüm | **V120** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -180,6 +180,10 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   Sınırın iki yanında 2'şer koltuk boş (`f.segHidden` → `crowd-lod.js` lodHidden), her 3 sırada yelekli görevli.
   `crowdInfo.segregation` sınır çizgilerini verir. V112 frikik koridoru ve maçtaki eski deplasman bariyeri kaldırıldı.
 - Kaleci hazır duruşu kaleciye göre 3 imza (klasik / alçak-geniş / eller yüksek) + parmak ucu sekme ve ağırlık aktarımı.
+
+## 4m. V120
+- Tribün görevlileri turuncu yüksek görünürlük yeleği (0xfb6a1c, gri reflektif şerit), camın İKİ yanında (her 3 sıra).
+  Saha kenarı görevlileriyle aynı turuncu. Impostor renkleri applyVenue'da yenilenir (`spriteTeam104=null`).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

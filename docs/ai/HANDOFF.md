@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V119 → V120 (kararlı)
+- **İstek:** görevliler turuncu steward yelekli olsun, camın iki yanında, iki takım taraftarının yanında.
+- **Yapılanlar:** CHANGELOG V120. `buildSegregation` her sınırda a ve b koltuğunu aynı sıralarda 'vest' yapar.
+- **Testler:** `node tests/run-all.cjs --quick` 14/14 PASS; frikik + penaltı kareleri kontrol edildi.
+
+---
+
 ## [2026-11-08] Claude Code · V118 → V119 (kararlı)
 - **İstek:** sıradakiler + frikik/penaltı/maçta iki taraftar arasına kaba olmayan, düzgün geçişli bir duvar.
 - **Yapılanlar:** CHANGELOG V119 (genel ayrım yapısı + kaleci hazır duruşları).
