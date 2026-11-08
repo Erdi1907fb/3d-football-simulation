@@ -1,23 +1,23 @@
 {
- "version": "V117",
- "ranAt": "2026-11-08T10:30:27.338Z",
+ "version": "V118",
+ "ranAt": "2026-11-08T10:59:13.516Z",
  "results": [
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 23.7,
+   "seconds": 25.6,
    "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2016,\"outcomes\":{\"goal\":520,\"save\":545,\"wide\":464,\"post\":150,\"wall\":337},\"techniques\":[\"knuckle\",\"curl\",\"dip\",\"power\",\"outside\",\"under\"],\"physicalMatch\":0.998,\"earlyFinish\":50,\"suddenDeath\":84,\"samples\":1247544,\"maxStep\":0.581,\"brandBoards\":true,\"sameSpotRounds\":1139,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":295,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1249,\"keeperCatches\":{\"clear\":30,\"rain\":19}}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 4.9,
+   "seconds": 6.8,
    "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4596,\"techniques\":{\"high-corner\":778,\"chip\":388,\"power-rise\":357,\"placed\":774,\"disguised\":194,\"driven\":776,\"central\":379,\"inside-foot\":730,\"outside-foot\":220},\"speedKmh\":{\"min\":53,\"median\":82,\"max\":107},\"maxStep60fps\":0.568,\"aeroKicks\":655,\"maxCurlMetres\":0.302}"
   },
   {
    "test": "celebrations.cjs",
    "pass": true,
-   "seconds": 0.3,
+   "seconds": 0.6,
    "summary": "{\"PASS\":true,\"celebrations\":106,\"small\":19,\"finaleSlideShare\":0.8,\"goalSlideShare\":0.41,\"runArmVariants\":35,\"moves\":45,\"arrivals\":8,\"teamRoutines\":14,\"posesChecked\":15264,\"posesWithMotion\":14852,\"planPackShare\":0.851,\"distinctPicked\":106}"
   },
   {
@@ -35,19 +35,19 @@
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 1.9,
+   "seconds": 2.4,
    "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
   },
   {
    "test": "forecast.php",
    "pass": true,
-   "seconds": 0,
+   "seconds": 0.1,
    "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
   },
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 4.3,
+   "seconds": 5.1,
    "summary": "{"
   },
   {
@@ -59,7 +59,7 @@
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 1.1,
+   "seconds": 1.2,
    "summary": "{"
   },
   {
@@ -71,7 +71,7 @@
   {
    "test": "remaster.cjs",
    "pass": true,
-   "seconds": 0.9,
+   "seconds": 1.1,
    "summary": "{\"PASS\":true,\"tacticalTargets\":270,\"intents\":[\"inverted-cover\",\"rest-defence\",\"overlap\",\"pivot\",\"half-space\",\"weak-side-width\",\"wide-offer\",\"pin-and-run\",\"back-line\",\"goal-side-cover\",\"front-screen\",\"midfield-line\",\"fullback-width\",\"screen-pivot\",\"far-post-run\"],\"mirrorInvariant\":true,\"reciprocalAvoidance\":true,\"coincidentBodiesRecovered\":true,\"materialGroups\":[{\"before\":20,\"after\":14},{\"before\":20,\"after\":13}],\"deployBindings\":\"normal/concept/penalty\",\"shaderContract\":true}"
   },
   {
@@ -84,6 +84,12 @@
    "test": "search-test.cjs",
    "pass": true,
    "seconds": 0,
+   "summary": "{"
+  },
+  {
+   "test": "engine-test.cjs",
+   "pass": true,
+   "seconds": 143.4,
    "summary": "{"
   }
  ],

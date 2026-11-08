@@ -17,6 +17,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V118 → V119 (kararlı)
+- **İstek:** sıradakiler + frikik/penaltı/maçta iki taraftar arasına kaba olmayan, düzgün geçişli bir duvar.
+- **Yapılanlar:** CHANGELOG V119 (genel ayrım yapısı + kaleci hazır duruşları).
+- **Dikkat:** ayrım yalnız temel 15104 koltuklu düzende çalışır (`BASE_SLOTS`); stadyum profili ek koltukları hariç.
+  Gizli koltuklar `segHidden` → crowd-lod her karede `lodHidden=segHidden` yapar; LOD kodunu değiştirirsen koru.
+  İnce şerit geometrilerinde sıfır alanlı üçgen bırakma (NaN normal + bloom = siyah ekran bloğu).
+- **Testler:** `node tests/run-all.cjs` 15/15 PASS; tarayıcıda frikik + penaltı kareleri, maçta sınır çizgileri doğrulandı.
+- **Sırada:** çim rüzgârı (T-233), tribün animasyonları (T-234).
+
+---
+
 ## [2026-11-08] Claude Code · V117 → V118 (kararlı)
 - **İstek:** yatan oyuncu her vuruşta olmasın; bazı vuruşlarda olsun ama o tur iki taraf için de olsun.
 - **Yapılanlar:** CHANGELOG V118 (`lierRounds`, tur bazlı karar; yağmurda ıslak top kaçırma).

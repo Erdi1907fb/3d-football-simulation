@@ -72,9 +72,9 @@ function create({fans=[],farBatches=[],scene,quality='balanced',loadJSON}={}){if
  for(const f of fans)if(f.body&&!f.baseMatrix)f.baseMatrix=f.root.matrixWorld.clone();
  const ready=settings.near?loadHead(loadJSON).then(data=>{if(!disposed&&data)info.anatomicalHeads=near.installHead(data);}):Promise.resolve();
  const info={anatomicalHeads:false,quality:typeof quality==='string'?quality:quality?.id||'balanced',total:fans.length,near:0,middle:0,far:candidates.length,baselineArticulated:fans.filter(f=>f.body).length,tiers:3,gpuMicroMotion:true,gestureIK:true,reactionBlend:true,asset:'original-instanced-crowd',estimatedFrameRate:null};
- function prepare(state,camera,time){if(disposed)return;const now=Number.isFinite(time)?time:state?.presentationTime??state?.time??0;gpu.update(now);for(const f of candidates)f.lodHidden=false;
+ function prepare(state,camera,time){if(disposed)return;const now=Number.isFinite(time)?time:state?.presentationTime??state?.time??0;gpu.update(now);for(const f of candidates)f.lodHidden=!!f.segHidden;
   camera.updateMatrixWorld();projection.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse);frustum.setFromProjectionMatrix(projection);const visible=[];
-  for(const f of candidates){point.set(f.slot.x,f.slot.y+.9,f.slot.z);const distance=camera.position.distanceTo(point);if(distance>settings.middleDistance||!frustum.containsPoint(point))continue;visible.push({f,distance});}
+  for(const f of candidates){if(f.segHidden)continue;point.set(f.slot.x,f.slot.y+.9,f.slot.z);const distance=camera.position.distanceTo(point);if(distance>settings.middleDistance||!frustum.containsPoint(point))continue;visible.push({f,distance});}
   visible.sort((a,b)=>a.distance-b.distance||a.f.slot.id-b.f.slot.id);const n=[],m=[];for(const {f,distance}of visible){if(distance<settings.nearDistance&&n.length<settings.near)n.push(f);else if(m.length<settings.middle)m.push(f);else continue;f.lodHidden=true;}
   near.write(n,now);middle.write(m,now);info.near=n.length;info.middle=m.length;info.far=candidates.length-n.length-m.length;scene.userData.crowdLOD={...info};
  }

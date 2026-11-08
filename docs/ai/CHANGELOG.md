@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V119 — 2026-11-08 (Claude Code) · kararlı
+- **Taraftar ayrımı (frikik, penaltı, maç):** iki taraftar grubunun buluştuğu her yerde önden arkaya uzanan
+  basamaklı cam panel, çelik alt plaka, eğimli korkuluk; arada örtülü boş koltuk koridoru ve her 3 sırada yelekli
+  görevli. Sınır otomatik bulunur (eşit bölünme, deplasman köşesi, tek taraf vb. hepsinde).
+- **Kaleci:** her kalecinin kendi hazır duruşu (klasik / alçak-geniş / eller yüksek), parmak ucunda hafif sekme.
+- Düzeltme: ince cam şeridin dejenere üçgenleri yüksek kalitede ekranda siyah dikdörtgen oluşturuyordu.
+
 ## V118 — 2026-11-08 (Claude Code) · kararlı
 - **Frikik – yatan oyuncu:** her vuruşta değil, turların yaklaşık dörtte birinde; o turda iki takım/iki oyuncu için de
   aynı (adil ve tutarlı). Testle korunuyor.

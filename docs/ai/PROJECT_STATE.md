@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V118** · 2026-11-08 · Claude Code
+> Son güncelleme: **V119** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V118** (`VERSION`) |
+| Kararlı sürüm | **V119** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -171,6 +171,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   `wallFor(ball,rng,nearSign,lierRound)`. Aynı turda iki taraf da aynı baraj düzenini görür (~%23 tur).
   Ana `rng` akışı korunur (`lierRoll` yine çekilir).
 - Yağmurda `smother` (tutma) denemelerinin %40'ı `reflex`e döner (ıslak top eldivenden kaçar).
+
+## 4l. V119
+- Taraftar ayrımı tüm modlarda (`scene.js buildSegregation`): her sıra için tribün halkası (`ringOf`, 944 koltuk:
+  güney yan → köşe → doğu kale arkası → … ) üzerinde takım değişimi aranır, sıralar arası eşleştirilip doğrusal
+  uydurulur. Her sınıra: basamaklı cam panel + çelik alt plaka (`strip`, sabit normal; sıfır genişlikli üçgen YOK —
+  NaN normal bloom'da siyah dikdörtgen yapıyordu), eğimli üst korkuluk, direkler, örtülü basamaklar (instanced).
+  Sınırın iki yanında 2'şer koltuk boş (`f.segHidden` → `crowd-lod.js` lodHidden), her 3 sırada yelekli görevli.
+  `crowdInfo.segregation` sınır çizgilerini verir. V112 frikik koridoru ve maçtaki eski deplasman bariyeri kaldırıldı.
+- Kaleci hazır duruşu kaleciye göre 3 imza (klasik / alçak-geniş / eller yüksek) + parmak ucu sekme ve ağırlık aktarımı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
