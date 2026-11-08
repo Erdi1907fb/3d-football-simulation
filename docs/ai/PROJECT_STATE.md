@@ -1,17 +1,17 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V111** · 2026-11-08 · Claude Code
+> Son güncelleme: **V112** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V111** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V112** |
+| Kararlı sürüm | **V112** (`VERSION`) |
+| Sonraki geliştirme hedefi | **V113** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v111.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Sürüm doğrulama | `build.php` → `assets/release-v112.json` (sha256 listesi, `tools/make-release.cjs`) |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -114,6 +114,18 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   (`exportRecipe`) `weather` eklendi.
 - **Grafik:** cilalı top (clearcoat), 32 kenarlı cilalı kale çerçevesi, 10 renkli krampon paleti, yağmurda ıslak
   forma/çim. Kaynak araştırması: `docs/ai/research/GRAPHICS-SOURCES.md`.
+
+## 4e. V112 eklemeleri
+- **Sinematik görüntü (Yüksek kalite):** `broadcast-remaster.js` → three.js r160 EffectComposer: HDR RenderPass →
+  UnrealBloom (ölçülü; yağmurda biraz güçlü) → OutputPass (ACES/sRGB) → SMAA. Paket: `assets/vendor/three-postfx.js`
+  (`tools/build-postfx.cjs`). Hata olursa eski tek geçişli efekt yoluna kalıcı düşer. Dengeli/Hızlı kalitede eski yol.
+- **Adım tepkisi:** yağmurda/karda kramponun yere değdiği an (`scene.js` adım algılama) yağmurda su sıçraması, karda kar
+  bulutu + kalıcı ayak izi (`weather.js stepFx`, geri sarınca temizlenir).
+- **Frikik tribünü:** eşit taraftarda iki grup arasında boş koridor, yelekli güvenlik görevlileri, şeffaf ayırıcı panel +
+  korkuluk; taraftarlar takım modunda kulübün asıl renklerini giyer; her takıma kale arkasında 2 dalgalanan bayrak
+  (kulüp arması / millî bayrak).
+- **Oyuncu donanımı:** tam vücut modelde oyuncuya özel krampon rengi (önceden sabit lacivertti), kaleciye özel eldiven rengi.
+- **Diziliş:** üçlü stoper (−10,5/0/+10,5 m), kanat beki hücumda önde, savunmada beşli; ikili stoper sol/sağ şeride ayrılır.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

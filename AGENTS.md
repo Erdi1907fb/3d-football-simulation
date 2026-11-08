@@ -68,6 +68,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
 | `node tests/penalty.cjs` | Penaltı teknikleri (9 tür), hız aralığı, ayak dışı falso, süreklilik | ~3 sn |
 | `node tests/weather.cjs` | Hava durumu: uygula/geri yükle, geç kumaşlar, kalite ölçeği, zaman tabanlı yağış | <1 sn |
+| `node tests/graphics.cjs` | Post-process paketi, kar izi/yağmur sıçraması, geri sarma, diziliş şeritleri | <1 sn |
 | `node tests/celebrations.cjs` | 100 sevinç + 14 takım rutini, 14.400 poz sonlu/geçerli, planlayıcı dağılımı | <1 sn |
 | `node tests/forecast.cjs` | Konsept analiz (1X2 toplamı, simetri, ev avantajı), sezon motoru (fikstür, puan, tohum) | ~2 sn |
 | `php tests/forecast.php` | Sunucu tahmin modeli: determinizm, xG sınırları, gelecek veri sızıntısı yok, piyasa oranı, kilit özeti | <1 sn |

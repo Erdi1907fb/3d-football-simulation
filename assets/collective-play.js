@@ -8,11 +8,15 @@ function role(p,profiles){return profiles[p.id]?.role||'CM';}
 function targets(players,ball,side,dir,profiles,tactics,primary,owner,context={}){
  const rows=players.map(p=>({...p,x:p.x*dir,z:p.z*dir,vx:(p.vx||0)*dir,vz:(p.vz||0)*dir})),b={x:ball.x*dir,z:ball.z*dir},attack=rows.filter(p=>p.team===side&&!p.dismissed&&!p.keeper),defend=rows.filter(p=>p.team!==side&&!p.dismissed&&!p.keeper),out={},offers=[],width=clamp(tactics[side]?.width??.7,.35,.95),carrier=rows.find(p=>p.id===owner),carrierRole=carrier?role(carrier,profiles):'',wide=Math.abs(b.z)>17,ballSign=Math.sign(b.z)||1,line=rows.filter(p=>p.team!==side&&!p.dismissed).map(p=>p.x).sort((a,b)=>b-a)[1]??52.5,onside=Math.max(0,b.x,line)-1.05;
  const signOf=p=>{const r=role(p,profiles);return ['LB','LWB','LW','LM'].includes(r)?-1:['RB','RWB','RW','RM'].includes(r)?1:Math.sign(p.z)||((p.id%11)%2?1:-1);};
- const roleLane=p=>{const r=role(p,profiles),sign=signOf(p);return r==='CB'?sign*7.4:['LB','RB','LWB','RWB'].includes(r)?sign*(20+width*7):['LW','RW','LM','RM'].includes(r)?sign*(19+width*10):r==='ST'||r==='CF'?sign*3.8:r==='DM'?sign*5.5:sign*10.5;};
+ // V112 formation awareness: a back three spreads its centre-backs (left/centre/right),
+ // wing-backs then play higher in possession and drop into a back five without the ball.
+ const cbs=t=>rows.filter(p=>p.team===t&&!p.dismissed&&role(p,profiles)==='CB').sort((a,b)=>a.z-b.z),threeAt=new Map();for(const t of[0,1]){const list=cbs(t);if(list.length>=3)list.forEach((p,i)=>threeAt.set(p.id,[-10.5,0,10.5][Math.min(2,Math.round(i*2/(list.length-1)))]));else if(list.length===2)list.forEach((p,i)=>threeAt.set(p.id,i?7.4:-7.4));}
+ const backThree=t=>cbs(t).length>=3;
+ const roleLane=p=>{const r=role(p,profiles),sign=signOf(p);if(r==='CB'&&threeAt.has(p.id))return threeAt.get(p.id);return r==='CB'?sign*7.4:['LB','RB','LWB','RWB'].includes(r)?sign*(20+width*7):['LW','RW','LM','RM'].includes(r)?sign*(19+width*10):r==='ST'||r==='CF'?sign*3.8:r==='DM'?sign*5.5:sign*10.5;};
  // Spatial roles create combinations from the current carrier, pressure and
  // pass lane, rather than selecting a predetermined sequence of attacks.
  for(const p of attack){if(p.id===owner)continue;const r=role(p,profiles),sign=signOf(p),same=sign===ballSign,back=r==='CB',anchor=r==='DM',fb=['LB','RB','LWB','RWB'].includes(r),wing=['LW','RW','LM','RM'].includes(r),striker=['ST','CF'].includes(r),mid=!back&&!anchor&&!fb&&!wing&&!striker;
-  let intent=back?'rest-defence':anchor?'pivot':fb?'fullback-width':wing?'wide-offer':striker?'pin-and-run':'half-space',x=back?clamp(b.x*.40-18,-36,-4):anchor?clamp(b.x*.65-12,-31,23):fb?clamp(b.x-13,-30,37):striker?b.x+9:wing?b.x+4:b.x-2,z=roleLane(p);
+  let intent=back?'rest-defence':anchor?'pivot':fb?(backThree(side)?'wing-back':'fullback-width'):wing?'wide-offer':striker?'pin-and-run':'half-space',x=back?clamp(b.x*.40-18,-36,-4):anchor?clamp(b.x*.65-12,-31,23):fb?clamp(b.x-(backThree(side)?5:13),-30,40):striker?b.x+9:wing?b.x+4:b.x-2,z=roleLane(p);
   if(back)z+=clamp(b.z*.16,-3,3);if(anchor)z=clamp(z+b.z*.20,-11,11);if(mid)z+=clamp(b.z*.12,-3,3);
   if(fb&&wide){if(same&&carrierRole!=='LB'&&carrierRole!=='RB'){x=b.x+3.4;z=sign*30;intent='overlap';}else{x=b.x-18;z=sign*15;intent='inverted-cover';}}
   if(wing&&wide&&same&&['LB','RB','LWB','RWB'].includes(carrierRole)){z=sign*13;x=b.x+7;intent='underlap';}
@@ -44,4 +48,4 @@ function targets(players,ball,side,dir,profiles,tactics,primary,owner,context={}
 }
 function gap2(a,b){return Math.hypot(a.x-b.x,a.z-b.z);}
 function carry(player,enemies,profile,dir=1){const p={x:player.x*dir,z:player.z*dir},vx=(player.vx||0)*dir,vz=(player.vz||0)*dir,goalAngle=Math.atan2(-p.z,52.5-p.x),speed=Math.hypot(vx,vz),momentum=speed>.3?Math.atan2(vz,vx):goalAngle;let best=null;for(let i=-8;i<=8;i++){const angle=goalAngle+i*.115,step=2.2+(profile?.pace||6.5)*.14,q={x:p.x+Math.cos(angle)*step,z:p.z+Math.sin(angle)*step};if(Math.abs(q.z)>31.2||q.x>50.5)continue;let clearance=10,frontRisk=0;for(const e of enemies){const o={x:e.x*dir+(e.vx||0)*dir*.25,z:e.z*dir+(e.vz||0)*dir*.25};clearance=Math.min(clearance,d(q,o));const rx=o.x-p.x,rz=o.z-p.z,along=rx*Math.cos(angle)+rz*Math.sin(angle),across=Math.abs(-rx*Math.sin(angle)+rz*Math.cos(angle));if(along>0&&along<step+1.3)frontRisk=Math.max(frontRisk,clamp(1-across/1.6,0,1));}const turn=Math.abs(Math.atan2(Math.sin(angle-momentum),Math.cos(angle-momentum))),score=clamp(clearance,0,6)*.22-frontRisk*1.3+Math.cos(angle-goalAngle)*.65-turn*.13-Math.abs(q.z)*.003;if(!best||score>best.score)best={...q,score};}return best?{x:best.x*dir,z:best.z*dir}:null;}
-return{targets,lane,carry,version:'spatial-organization-v110'};});
+return{targets,lane,carry,version:'spatial-organization-v112'};});

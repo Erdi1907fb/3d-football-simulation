@@ -2,6 +2,22 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V112 — 2026-11-08 (Claude Code) · kararlı
+
+### Yeni
+- Sinematik görüntü zinciri (Yüksek kalite): UnrealBloom + ACES + SMAA (three.js r160 resmî modülleri, MIT).
+- Yağmur/kar adım tepkisi: su sıçraması, kar bulutu, karda kalıcı ayak izleri.
+- Frikikte taraftar ayrımı: koridor, güvenlik görevlileri, şeffaf panel ve korkuluk; takım başına 2 dalgalanan bayrak.
+- Diziliş farkındalığı: üçlü stoper ve kanat bekleri, ikili stoperin sol/sağ ayrımı.
+
+### Düzeltmeler
+- Tam vücut oyuncu modeli krampon rengini yok sayıyordu → oyuncuya özel renk; kaleci eldiveni rengi.
+- Frikikte taraftarlar değişik formanın (ör. 3. forma) rengini giyip karışık görünüyordu → kulüp renkleri.
+- Hava “Açık”a dönünce adım efektleri temizlenmiyordu (test yakaladı).
+
+### Testler
+- `tests/graphics.cjs` (post-process paketi, kar izi/yağmur sıçraması, geri sarma temizliği, diziliş şeritleri) → run-all 15 test.
+
 ## V111 — 2026-11-08 (Claude Code) · kararlı
 
 ### Yeni

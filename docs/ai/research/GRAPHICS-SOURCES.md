@@ -11,7 +11,8 @@ lisansı temiz kaynaklarla yükseltmek. “Kullanıldı” = bu sürümde koda/v
 | MPFB (MakeHuman) gövde, Quaternius, KayKit | CC0 | Tam vücut oyuncu, sevinç klipleri, taraftar atlası | Projede mevcut |
 | Poly Haven — HDRI (gece stadyumu), çim/kumaş dokuları | CC0 | Ortam ışığı, PBR doku | Değerlendirildi; projede RGBE yükleyici ve `assets/environment` var. Yeni 4K doku eklenmedi (dosya boyutu/mobil bellek) |
 | ambientCG — kumaş, file, beton dokuları | CC0 | Forma örgüsü, file | Değerlendirildi; forma örgüsü **prosedürel** üretildi (`fullbody-runtime.js fabricNormal`, indirme yok) |
-| pmndrs/postprocessing (bloom, SMAA, renk derecelendirme) | Zlib | Projektör parlaması, kenar yumuşatma | **V112 adayı**: ES modül + three sürüm uyumu gerekir; mevcut UMD `three.min.js` ile vendoring işi |
+| three.js r160 resmî post-processing örnekleri (EffectComposer, UnrealBloomPass, OutputPass, SMAAPass) | MIT | Projektör parlaması, ACES, kenar yumuşatma | **V112’de kullanıldı**: `tools/build-postfx.cjs` ile global THREE paketine dönüştürüldü (`assets/vendor/three-postfx.js`), Yüksek kalitede devrede |
+| pmndrs/postprocessing | Zlib | Aynı amaç | Gerek kalmadı (resmî örnekler yeterli, sürüm uyumlu) |
 | three.quarks / three-nebula parçacık kütüphaneleri | MIT | Hava efektleri | Değerlendirildi; aynı etki 0 KB ek kütüphaneyle GPU shader’da yapıldı |
 | Adobe Mixamo | Adobe şartları | Animasyon | Kapsam dışı (D-005) |
 
@@ -29,3 +30,12 @@ lisansı temiz kaynaklarla yükseltmek. “Kullanıldı” = bu sürümde koda/v
 - Bloom + SMAA post-process (pmndrs/postprocessing vendoring).
 - Kale direklerine clearcoat, fileye ince ip normal haritası.
 - Taraftar atlasına yağmurlukta/kapüşonlu varyasyon; karda tribün çatısına kar birikimi.
+
+## V112 internet araştırması (kaynaklar)
+| Kaynak | Lisans | Değerlendirme |
+|---|---|---|
+| [achrefelouafi/GrassSystemThreeJS](https://github.com/achrefelouafi/GrassSystemThreeJS) | MIT | GPU instanced çim, rüzgâr vertex shader’da. Bizde 24.000 instanced çim yaprağı zaten var; rüzgâr salınımı V113 adayı |
+| [al-ro grass](https://al-ro.github.io/projects/grass) · [Codrops fluffy grass](https://tympanus.net/codrops/?p=83092) | lisans belirtilmemiş | Teknik referans (Eddie Lee “realistic real-time grass”); kod alınmadı |
+| [Rokoko 12 free sports mocap](https://rokoko.com/resources/rokoko-mocap-12-free-sports-animations), [Xsens free assets](https://www.xsens.com/entertainment/free-xsens-motion-capture-animation-assets), [80.lv soccer mocap pack](https://80.lv/articles/get-this-free-soccer-mocap-animation-pack-with-dribbles-juggling-more/) | lisans sayfada net değil | Dağıtım hakkı netleşmeden repoya konmaz (kullanıcı indirip lisansı onaylarsa entegre edilebilir) |
+| [CMU / UPenn mocap](https://fling.seas.upenn.edu/~mocap/cgi-bin/i.php) | serbest kullanım | Futbola özel içerik az; koşu/zıplama klipleri için V113 adayı |
+| Unity “Stadium Crowd Generator” (Fab) | ticari | Yalnız teknik fikir: animasyonu dokuya pişirip (VAT) instanced kalabalıkta oynatmak — bizim taraftar sistemi zaten instanced + impostor |

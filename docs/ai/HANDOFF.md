@@ -17,6 +17,18 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V111 → V112 (kararlı)
+
+- **Kullanıcı isteği:** yağmur/karda adımlara zemin tepkisi; tüm 3D sahnelerde daha iyi kaynaklarla grafik/kalite sıçraması;
+  oyuncuların birlikte hareketi, diziliş/mevkiye göre tepkiler; frikikte taraftarların karışmaması, bayraklar, koridor +
+  güvenlik/duvar ayrımı. Ayrıca “bu kareler en gelişmiş hali mi, siteye yükleyince mi görünür” sorusu.
+- **Yapılanlar:** CHANGELOG V112. Post-process paketi `tools/build-postfx.cjs` ile üretildi (three 0.160.0 npm paketinden).
+- **Testler:** `node tests/run-all.cjs` (15 test) + tarayıcı: frikik karda (sinematik zincir aktif mi, koridor, bayrak, iz).
+- **Dikkat:** `scene.userData.remaster.post` hangi efekt yolunun çalıştığını yazar. Adım algılama yalnız hava açık değilken
+  ve kameraya 40 m içindeki oyuncular için çalışır (performans).
+
+---
+
 ## [2026-11-08] Claude Code · V110 → V111 (kararlı)
 
 - **Dal / commit:** `claude/great-curie-v7xiuc` → `main`. Commit: “V111: …”.
