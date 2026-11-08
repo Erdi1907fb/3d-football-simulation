@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V125 — 2026-11-08 (Claude Code) · kararlı
+- **Millî kadro:** güncel davet listesine göre muhtemel 11 (Kasım: İrfan Can, Kerem, Altay yok); davet edilmeyen
+  oyuncu aynı mevkiden davetliyle değişir; TD Sergen Yalçın; Türkçe karakterli oyuncu adları.
+- **Çeviri:** Türkçe'de İtalya, Türkiye, İngiltere, Almanya…; İngilizce'de Italy, Turkey, England, Germany…
+  (94 millî takım).
+
 ## V124 — 2026-11-08 (Claude Code) · kararlı
 - **Yeni lig: UEFA Uluslar Ligi** ve **Uluslararası Hazırlık Maçları** (büyük ülkeler) — ESPN'den fikstür, açıklanan
   ya da muhtemel ilk 11, forma numaraları, pozisyonlar, dizilişler; bayraklar logo olarak.

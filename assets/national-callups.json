@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "note": "Current national-team call-ups (editorial, from the federation announcement as reported by the press). Used only for estimated XIs: players outside the call-up are replaced by called-up players of the same position group. Announced match-day XIs from the provider are always used unchanged. Keyed by ESPN team id.",
+ "teams": {
+  "465": {
+   "name": "Türkiye",
+   "window": "2026-11",
+   "validFrom": "2026-11-02",
+   "validTo": "2026-11-18",
+   "coach": "Sergen Yalçın",
+   "source": "TFF aday kadro, 26 oyuncu (Belçika 12 Kasım İzmir, Fransa 15 Kasım) — aksiyon.com.tr, hurriyet.com.tr, milliyet.com.tr",
+   "players": [
+    "Berke Özer", "Ersin Destanoğlu", "Serhat Öztaşdelen", "Uğurcan Çakır",
+    "Abdülkerim Bardakcı", "Ahmetcan Kaplan", "Emirhan Topçu", "Eren Elmalı", "Ferdi Kadıoğlu", "Merih Demiral", "Mustafa Eskihellaç", "Ozan Kabak", "Zeki Çelik",
+    "Arda Güler", "Can Uzun", "Hakan Çalhanoğlu", "İsmail Yüksek", "Orkun Kökçü", "Salih Özcan",
+    "Aral Şimşir", "Barış Alper Yılmaz", "Deniz Gül", "Enes Ünal", "İlhan Fakılı", "Oğuz Aydın", "Yunus Akgün"
+   ]
+  }
+ }
+}

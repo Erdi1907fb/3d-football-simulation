@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V124** · 2026-11-08 · Claude Code
+> Son güncelleme: **V125** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V124** (`VERSION`) |
+| Kararlı sürüm | **V125** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -231,6 +231,16 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   Amblemler proje çizimi (`tools/competition-emblems.py`); resmî UNL logosu gelirse aynı araçla değiştirilir.
 - Görsel: seremonide telefon feneri ışık şovu (instanced; Points tabanlı efektler SwiftShader'da görünmüyor),
   kameraya bağlı çim biçme şeritleri.
+
+## 4r. V125
+- Millî davet listesi: `assets/national-callups.json` (ESPN takım id → tarih aralığı, oyuncu listesi, TD, kaynak).
+  `pp_national_callup_apply` ESPN geniş havuzunda listede olmayanları "uygun değil" yapar; tahmini 11'de bu oyuncu
+  aynı mevki grubundan (G/D/M/F) davetli biriyle değiştirilir; yedekler davetlilerle tamamlanır; TD listeden; adlar
+  federasyon yazımıyla (Şimşir, Çalhanoğlu). Maç günü sağlayıcının açıkladığı 11 olduğu gibi kullanılır.
+  Her millî ara öncesi bu dosya güncellenmeli (şu an: Türkiye, Kasım 2026, 26 kişi).
+- Millî takım adları dile göre: katalog `names:{tr,en}` (İtalya/Italy, Türkiye/Turkey, İngiltere/England…);
+  `SekmeCatalog.team()` arayüz diline göre ad verir, `localName()`, dil değişince maç takımları güncellenir.
+  Kanonik `name` (sağlayıcı eşleşmesi, ör. "Italia") değişmedi. FotMob TD eşleşmesi sağlayıcı takma adlarıyla.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

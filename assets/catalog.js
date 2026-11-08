@@ -2091,7 +2091,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/mexico.png",
-    "group": "A"
+    "group": "A",
+    "names": {
+      "tr": "Meksika",
+      "en": "Mexico"
+    }
   },
   {
     "id": "south-africa",
@@ -2108,7 +2112,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/south-africa.png",
-    "group": "A"
+    "group": "A",
+    "names": {
+      "tr": "Güney Afrika",
+      "en": "South Africa"
+    }
   },
   {
     "id": "korea-republic",
@@ -2127,7 +2135,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/korea-republic.png",
-    "group": "A"
+    "group": "A",
+    "names": {
+      "tr": "Güney Kore",
+      "en": "South Korea"
+    }
   },
   {
     "id": "czechia",
@@ -2147,7 +2159,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/czechia.png",
-    "group": "A"
+    "group": "A",
+    "names": {
+      "tr": "Çekya",
+      "en": "Czechia"
+    }
   },
   {
     "id": "canada",
@@ -2166,7 +2182,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/canada.png",
-    "group": "B"
+    "group": "B",
+    "names": {
+      "tr": "Kanada",
+      "en": "Canada"
+    }
   },
   {
     "id": "switzerland",
@@ -2186,7 +2206,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/switzerland.png",
-    "group": "B"
+    "group": "B",
+    "names": {
+      "tr": "İsviçre",
+      "en": "Switzerland"
+    }
   },
   {
     "id": "qatar",
@@ -2205,7 +2229,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/qatar.png",
-    "group": "B"
+    "group": "B",
+    "names": {
+      "tr": "Katar",
+      "en": "Qatar"
+    }
   },
   {
     "id": "bosnia-and-herzegovina",
@@ -2225,7 +2253,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/bosnia-and-herzegovina.png",
-    "group": "B"
+    "group": "B",
+    "names": {
+      "tr": "Bosna-Hersek",
+      "en": "Bosnia and Herzegovina"
+    }
   },
   {
     "id": "brazil",
@@ -2244,7 +2276,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/brazil.png",
-    "group": "C"
+    "group": "C",
+    "names": {
+      "tr": "Brezilya",
+      "en": "Brazil"
+    }
   },
   {
     "id": "morocco",
@@ -2263,7 +2299,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/morocco.png",
-    "group": "C"
+    "group": "C",
+    "names": {
+      "tr": "Fas",
+      "en": "Morocco"
+    }
   },
   {
     "id": "haiti",
@@ -2280,7 +2320,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/haiti.png",
-    "group": "C"
+    "group": "C",
+    "names": {
+      "tr": "Haiti",
+      "en": "Haiti"
+    }
   },
   {
     "id": "scotland",
@@ -2300,7 +2344,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/scotland.png",
-    "group": "C"
+    "group": "C",
+    "names": {
+      "tr": "İskoçya",
+      "en": "Scotland"
+    }
   },
   {
     "id": "united-states",
@@ -2319,7 +2367,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/united-states.png",
-    "group": "D"
+    "group": "D",
+    "names": {
+      "tr": "ABD",
+      "en": "United States"
+    }
   },
   {
     "id": "paraguay",
@@ -2338,7 +2390,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/paraguay.png",
-    "group": "D"
+    "group": "D",
+    "names": {
+      "tr": "Paraguay",
+      "en": "Paraguay"
+    }
   },
   {
     "id": "australia",
@@ -2357,7 +2413,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/australia.png",
-    "group": "D"
+    "group": "D",
+    "names": {
+      "tr": "Avustralya",
+      "en": "Australia"
+    }
   },
   {
     "id": "turkiye",
@@ -2377,7 +2437,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/turkiye.png",
-    "group": "D"
+    "group": "D",
+    "names": {
+      "tr": "Türkiye",
+      "en": "Turkey"
+    }
   },
   {
     "id": "germany",
@@ -2397,7 +2461,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/germany.png",
-    "group": "E"
+    "group": "E",
+    "names": {
+      "tr": "Almanya",
+      "en": "Germany"
+    }
   },
   {
     "id": "curacao",
@@ -2414,7 +2482,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/curacao.png",
-    "group": "E"
+    "group": "E",
+    "names": {
+      "tr": "Curaçao",
+      "en": "Curaçao"
+    }
   },
   {
     "id": "cote-divoire",
@@ -2433,7 +2505,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/cote-divoire.png",
-    "group": "E"
+    "group": "E",
+    "names": {
+      "tr": "Fildişi Sahili",
+      "en": "Ivory Coast"
+    }
   },
   {
     "id": "ecuador",
@@ -2452,7 +2528,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/ecuador.png",
-    "group": "E"
+    "group": "E",
+    "names": {
+      "tr": "Ekvador",
+      "en": "Ecuador"
+    }
   },
   {
     "id": "netherlands",
@@ -2472,7 +2552,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/netherlands.png",
-    "group": "F"
+    "group": "F",
+    "names": {
+      "tr": "Hollanda",
+      "en": "Netherlands"
+    }
   },
   {
     "id": "japan",
@@ -2491,7 +2575,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/japan.png",
-    "group": "F"
+    "group": "F",
+    "names": {
+      "tr": "Japonya",
+      "en": "Japan"
+    }
   },
   {
     "id": "tunisia",
@@ -2510,7 +2598,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/tunisia.png",
-    "group": "F"
+    "group": "F",
+    "names": {
+      "tr": "Tunus",
+      "en": "Tunisia"
+    }
   },
   {
     "id": "sweden",
@@ -2530,7 +2622,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/sweden.png",
-    "group": "F"
+    "group": "F",
+    "names": {
+      "tr": "İsveç",
+      "en": "Sweden"
+    }
   },
   {
     "id": "belgium",
@@ -2550,7 +2646,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/belgium.png",
-    "group": "G"
+    "group": "G",
+    "names": {
+      "tr": "Belçika",
+      "en": "Belgium"
+    }
   },
   {
     "id": "egypt",
@@ -2569,7 +2669,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/egypt.png",
-    "group": "G"
+    "group": "G",
+    "names": {
+      "tr": "Mısır",
+      "en": "Egypt"
+    }
   },
   {
     "id": "iran",
@@ -2588,7 +2692,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/iran.png",
-    "group": "G"
+    "group": "G",
+    "names": {
+      "tr": "İran",
+      "en": "Iran"
+    }
   },
   {
     "id": "new-zealand",
@@ -2605,7 +2713,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/new-zealand.png",
-    "group": "G"
+    "group": "G",
+    "names": {
+      "tr": "Yeni Zelanda",
+      "en": "New Zealand"
+    }
   },
   {
     "id": "spain",
@@ -2625,7 +2737,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/spain.png",
-    "group": "H"
+    "group": "H",
+    "names": {
+      "tr": "İspanya",
+      "en": "Spain"
+    }
   },
   {
     "id": "cabo-verde",
@@ -2642,7 +2758,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/cabo-verde.png",
-    "group": "H"
+    "group": "H",
+    "names": {
+      "tr": "Yeşil Burun Adaları",
+      "en": "Cape Verde"
+    }
   },
   {
     "id": "saudi-arabia",
@@ -2661,7 +2781,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/saudi-arabia.png",
-    "group": "H"
+    "group": "H",
+    "names": {
+      "tr": "Suudi Arabistan",
+      "en": "Saudi Arabia"
+    }
   },
   {
     "id": "uruguay",
@@ -2680,7 +2804,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/uruguay.png",
-    "group": "H"
+    "group": "H",
+    "names": {
+      "tr": "Uruguay",
+      "en": "Uruguay"
+    }
   },
   {
     "id": "france",
@@ -2700,7 +2828,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/france.png",
-    "group": "I"
+    "group": "I",
+    "names": {
+      "tr": "Fransa",
+      "en": "France"
+    }
   },
   {
     "id": "senegal",
@@ -2719,7 +2851,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/senegal.png",
-    "group": "I"
+    "group": "I",
+    "names": {
+      "tr": "Senegal",
+      "en": "Senegal"
+    }
   },
   {
     "id": "norway",
@@ -2739,7 +2875,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/norway.png",
-    "group": "I"
+    "group": "I",
+    "names": {
+      "tr": "Norveç",
+      "en": "Norway"
+    }
   },
   {
     "id": "iraq",
@@ -2756,7 +2896,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/iraq.png",
-    "group": "I"
+    "group": "I",
+    "names": {
+      "tr": "Irak",
+      "en": "Iraq"
+    }
   },
   {
     "id": "argentina",
@@ -2775,7 +2919,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/argentina.png",
-    "group": "J"
+    "group": "J",
+    "names": {
+      "tr": "Arjantin",
+      "en": "Argentina"
+    }
   },
   {
     "id": "algeria",
@@ -2794,7 +2942,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/algeria.png",
-    "group": "J"
+    "group": "J",
+    "names": {
+      "tr": "Cezayir",
+      "en": "Algeria"
+    }
   },
   {
     "id": "austria",
@@ -2814,7 +2966,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/austria.png",
-    "group": "J"
+    "group": "J",
+    "names": {
+      "tr": "Avusturya",
+      "en": "Austria"
+    }
   },
   {
     "id": "jordan",
@@ -2831,7 +2987,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/jordan.png",
-    "group": "J"
+    "group": "J",
+    "names": {
+      "tr": "Ürdün",
+      "en": "Jordan"
+    }
   },
   {
     "id": "portugal",
@@ -2851,7 +3011,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/portugal.png",
-    "group": "K"
+    "group": "K",
+    "names": {
+      "tr": "Portekiz",
+      "en": "Portugal"
+    }
   },
   {
     "id": "uzbekistan",
@@ -2868,7 +3032,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/uzbekistan.png",
-    "group": "K"
+    "group": "K",
+    "names": {
+      "tr": "Özbekistan",
+      "en": "Uzbekistan"
+    }
   },
   {
     "id": "colombia",
@@ -2887,7 +3055,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/colombia.png",
-    "group": "K"
+    "group": "K",
+    "names": {
+      "tr": "Kolombiya",
+      "en": "Colombia"
+    }
   },
   {
     "id": "congo-dr",
@@ -2904,7 +3076,11 @@ const all=[
       "worldcup"
     ],
     "logo": "assets/logos/congo-dr.png",
-    "group": "K"
+    "group": "K",
+    "names": {
+      "tr": "Kongo DC",
+      "en": "DR Congo"
+    }
   },
   {
     "id": "england",
@@ -2924,7 +3100,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/england.png",
-    "group": "L"
+    "group": "L",
+    "names": {
+      "tr": "İngiltere",
+      "en": "England"
+    }
   },
   {
     "id": "croatia",
@@ -2944,7 +3124,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/croatia.png",
-    "group": "L"
+    "group": "L",
+    "names": {
+      "tr": "Hırvatistan",
+      "en": "Croatia"
+    }
   },
   {
     "id": "ghana",
@@ -2963,7 +3147,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/ghana.png",
-    "group": "L"
+    "group": "L",
+    "names": {
+      "tr": "Gana",
+      "en": "Ghana"
+    }
   },
   {
     "id": "panama",
@@ -2982,7 +3170,11 @@ const all=[
       "intl"
     ],
     "logo": "assets/logos/panama.png",
-    "group": "L"
+    "group": "L",
+    "names": {
+      "tr": "Panama",
+      "en": "Panama"
+    }
   },
   {
     "id": "benfica",
@@ -3034,7 +3226,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/italy.png"
+    "logo": "assets/logos/italy.png",
+    "names": {
+      "tr": "İtalya",
+      "en": "Italy"
+    }
   },
   {
     "id": "az-alkmaar",
@@ -3868,7 +4064,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/albania.png"
+    "logo": "assets/logos/albania.png",
+    "names": {
+      "tr": "Arnavutluk",
+      "en": "Albania"
+    }
   },
   {
     "id": "andorra",
@@ -3886,7 +4086,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/andorra.png"
+    "logo": "assets/logos/andorra.png",
+    "names": {
+      "tr": "Andorra",
+      "en": "Andorra"
+    }
   },
   {
     "id": "armenia",
@@ -3904,7 +4108,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/armenia.png"
+    "logo": "assets/logos/armenia.png",
+    "names": {
+      "tr": "Ermenistan",
+      "en": "Armenia"
+    }
   },
   {
     "id": "azerbaijan",
@@ -3922,7 +4130,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/azerbaijan.png"
+    "logo": "assets/logos/azerbaijan.png",
+    "names": {
+      "tr": "Azerbaycan",
+      "en": "Azerbaijan"
+    }
   },
   {
     "id": "belarus",
@@ -3940,7 +4152,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/belarus.png"
+    "logo": "assets/logos/belarus.png",
+    "names": {
+      "tr": "Belarus",
+      "en": "Belarus"
+    }
   },
   {
     "id": "bulgaria",
@@ -3958,7 +4174,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/bulgaria.png"
+    "logo": "assets/logos/bulgaria.png",
+    "names": {
+      "tr": "Bulgaristan",
+      "en": "Bulgaria"
+    }
   },
   {
     "id": "cyprus",
@@ -3976,7 +4196,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/cyprus.png"
+    "logo": "assets/logos/cyprus.png",
+    "names": {
+      "tr": "Güney Kıbrıs",
+      "en": "Cyprus"
+    }
   },
   {
     "id": "denmark",
@@ -3994,7 +4218,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/denmark.png"
+    "logo": "assets/logos/denmark.png",
+    "names": {
+      "tr": "Danimarka",
+      "en": "Denmark"
+    }
   },
   {
     "id": "estonia",
@@ -4012,7 +4240,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/estonia.png"
+    "logo": "assets/logos/estonia.png",
+    "names": {
+      "tr": "Estonya",
+      "en": "Estonia"
+    }
   },
   {
     "id": "faroe-islands",
@@ -4030,7 +4262,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/faroe-islands.png"
+    "logo": "assets/logos/faroe-islands.png",
+    "names": {
+      "tr": "Faroe Adaları",
+      "en": "Faroe Islands"
+    }
   },
   {
     "id": "finland",
@@ -4048,7 +4284,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/finland.png"
+    "logo": "assets/logos/finland.png",
+    "names": {
+      "tr": "Finlandiya",
+      "en": "Finland"
+    }
   },
   {
     "id": "georgia",
@@ -4066,7 +4306,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/georgia.png"
+    "logo": "assets/logos/georgia.png",
+    "names": {
+      "tr": "Gürcistan",
+      "en": "Georgia"
+    }
   },
   {
     "id": "gibraltar",
@@ -4084,7 +4328,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/gibraltar.png"
+    "logo": "assets/logos/gibraltar.png",
+    "names": {
+      "tr": "Cebelitarık",
+      "en": "Gibraltar"
+    }
   },
   {
     "id": "greece",
@@ -4102,7 +4350,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/greece.png"
+    "logo": "assets/logos/greece.png",
+    "names": {
+      "tr": "Yunanistan",
+      "en": "Greece"
+    }
   },
   {
     "id": "hungary",
@@ -4120,7 +4372,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/hungary.png"
+    "logo": "assets/logos/hungary.png",
+    "names": {
+      "tr": "Macaristan",
+      "en": "Hungary"
+    }
   },
   {
     "id": "iceland",
@@ -4138,7 +4394,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/iceland.png"
+    "logo": "assets/logos/iceland.png",
+    "names": {
+      "tr": "İzlanda",
+      "en": "Iceland"
+    }
   },
   {
     "id": "israel",
@@ -4156,7 +4416,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/israel.png"
+    "logo": "assets/logos/israel.png",
+    "names": {
+      "tr": "İsrail",
+      "en": "Israel"
+    }
   },
   {
     "id": "kazakhstan",
@@ -4174,7 +4438,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/kazakhstan.png"
+    "logo": "assets/logos/kazakhstan.png",
+    "names": {
+      "tr": "Kazakistan",
+      "en": "Kazakhstan"
+    }
   },
   {
     "id": "kosovo",
@@ -4192,7 +4460,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/kosovo.png"
+    "logo": "assets/logos/kosovo.png",
+    "names": {
+      "tr": "Kosova",
+      "en": "Kosovo"
+    }
   },
   {
     "id": "latvia",
@@ -4210,7 +4482,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/latvia.png"
+    "logo": "assets/logos/latvia.png",
+    "names": {
+      "tr": "Letonya",
+      "en": "Latvia"
+    }
   },
   {
     "id": "liechtenstein",
@@ -4228,7 +4504,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/liechtenstein.png"
+    "logo": "assets/logos/liechtenstein.png",
+    "names": {
+      "tr": "Lihtenştayn",
+      "en": "Liechtenstein"
+    }
   },
   {
     "id": "lithuania",
@@ -4246,7 +4526,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/lithuania.png"
+    "logo": "assets/logos/lithuania.png",
+    "names": {
+      "tr": "Litvanya",
+      "en": "Lithuania"
+    }
   },
   {
     "id": "luxembourg",
@@ -4264,7 +4548,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/luxembourg.png"
+    "logo": "assets/logos/luxembourg.png",
+    "names": {
+      "tr": "Lüksemburg",
+      "en": "Luxembourg"
+    }
   },
   {
     "id": "malta",
@@ -4282,7 +4570,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/malta.png"
+    "logo": "assets/logos/malta.png",
+    "names": {
+      "tr": "Malta",
+      "en": "Malta"
+    }
   },
   {
     "id": "moldova",
@@ -4300,7 +4592,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/moldova.png"
+    "logo": "assets/logos/moldova.png",
+    "names": {
+      "tr": "Moldova",
+      "en": "Moldova"
+    }
   },
   {
     "id": "montenegro",
@@ -4318,7 +4614,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/montenegro.png"
+    "logo": "assets/logos/montenegro.png",
+    "names": {
+      "tr": "Karadağ",
+      "en": "Montenegro"
+    }
   },
   {
     "id": "north-macedonia",
@@ -4336,7 +4636,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/north-macedonia.png"
+    "logo": "assets/logos/north-macedonia.png",
+    "names": {
+      "tr": "Kuzey Makedonya",
+      "en": "North Macedonia"
+    }
   },
   {
     "id": "northern-ireland",
@@ -4354,7 +4658,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/northern-ireland.png"
+    "logo": "assets/logos/northern-ireland.png",
+    "names": {
+      "tr": "Kuzey İrlanda",
+      "en": "Northern Ireland"
+    }
   },
   {
     "id": "poland",
@@ -4372,7 +4680,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/poland.png"
+    "logo": "assets/logos/poland.png",
+    "names": {
+      "tr": "Polonya",
+      "en": "Poland"
+    }
   },
   {
     "id": "republic-of-ireland",
@@ -4390,7 +4702,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/republic-of-ireland.png"
+    "logo": "assets/logos/republic-of-ireland.png",
+    "names": {
+      "tr": "İrlanda",
+      "en": "Republic of Ireland"
+    }
   },
   {
     "id": "romania",
@@ -4408,7 +4724,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/romania.png"
+    "logo": "assets/logos/romania.png",
+    "names": {
+      "tr": "Romanya",
+      "en": "Romania"
+    }
   },
   {
     "id": "san-marino",
@@ -4426,7 +4746,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/san-marino.png"
+    "logo": "assets/logos/san-marino.png",
+    "names": {
+      "tr": "San Marino",
+      "en": "San Marino"
+    }
   },
   {
     "id": "serbia",
@@ -4444,7 +4768,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/serbia.png"
+    "logo": "assets/logos/serbia.png",
+    "names": {
+      "tr": "Sırbistan",
+      "en": "Serbia"
+    }
   },
   {
     "id": "slovakia",
@@ -4462,7 +4790,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/slovakia.png"
+    "logo": "assets/logos/slovakia.png",
+    "names": {
+      "tr": "Slovakya",
+      "en": "Slovakia"
+    }
   },
   {
     "id": "slovenia",
@@ -4480,7 +4812,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/slovenia.png"
+    "logo": "assets/logos/slovenia.png",
+    "names": {
+      "tr": "Slovenya",
+      "en": "Slovenia"
+    }
   },
   {
     "id": "ukraine",
@@ -4498,7 +4834,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/ukraine.png"
+    "logo": "assets/logos/ukraine.png",
+    "names": {
+      "tr": "Ukrayna",
+      "en": "Ukraine"
+    }
   },
   {
     "id": "wales",
@@ -4516,7 +4856,11 @@ const all=[
       "unl",
       "intl"
     ],
-    "logo": "assets/logos/wales.png"
+    "logo": "assets/logos/wales.png",
+    "names": {
+      "tr": "Galler",
+      "en": "Wales"
+    }
   },
   {
     "id": "chile",
@@ -4533,7 +4877,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/chile.png"
+    "logo": "assets/logos/chile.png",
+    "names": {
+      "tr": "Şili",
+      "en": "Chile"
+    }
   },
   {
     "id": "peru",
@@ -4550,7 +4898,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/peru.png"
+    "logo": "assets/logos/peru.png",
+    "names": {
+      "tr": "Peru",
+      "en": "Peru"
+    }
   },
   {
     "id": "venezuela",
@@ -4567,7 +4919,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/venezuela.png"
+    "logo": "assets/logos/venezuela.png",
+    "names": {
+      "tr": "Venezuela",
+      "en": "Venezuela"
+    }
   },
   {
     "id": "costa-rica",
@@ -4584,7 +4940,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/costa-rica.png"
+    "logo": "assets/logos/costa-rica.png",
+    "names": {
+      "tr": "Kosta Rika",
+      "en": "Costa Rica"
+    }
   },
   {
     "id": "nigeria",
@@ -4601,7 +4961,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/nigeria.png"
+    "logo": "assets/logos/nigeria.png",
+    "names": {
+      "tr": "Nijerya",
+      "en": "Nigeria"
+    }
   },
   {
     "id": "cameroon",
@@ -4618,7 +4982,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/cameroon.png"
+    "logo": "assets/logos/cameroon.png",
+    "names": {
+      "tr": "Kamerun",
+      "en": "Cameroon"
+    }
   },
   {
     "id": "mali",
@@ -4635,7 +5003,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/mali.png"
+    "logo": "assets/logos/mali.png",
+    "names": {
+      "tr": "Mali",
+      "en": "Mali"
+    }
   },
   {
     "id": "china",
@@ -4652,7 +5024,11 @@ const all=[
       "national",
       "intl"
     ],
-    "logo": "assets/logos/china.png"
+    "logo": "assets/logos/china.png",
+    "names": {
+      "tr": "Çin",
+      "en": "China"
+    }
   }
 ],aliases={
   "Hoffenheim":"TSG Hoffenheim", "Celta":"RC Celta", "Rennes":"Stade Rennais", "Freiburg":"SC Freiburg",
@@ -5019,7 +5395,10 @@ const all=[
   "BEŞİKTAŞ A.Ş.": "Beşiktaş"
 }
 ,fold=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i').toLowerCase().replace(/[^a-z0-9]/g,'');
-function find(input){const name=typeof input==='string'?input:input.name,key=Object.keys(provider).find(k=>fold(k)===fold(name)),provided=provider[name]||provider[key]||name,canonical=aliases[provided]||provided;return all.find(t=>fold(t.name)===fold(canonical)||fold(t.id)===fold(canonical))||null;}
+function find(input){const name=typeof input==='string'?input:input.name,key=Object.keys(provider).find(k=>fold(k)===fold(name)),provided=provider[name]||provider[key]||name,canonical=aliases[provided]||provided;return all.find(t=>fold(t.name)===fold(canonical)||fold(t.id)===fold(canonical))||all.find(t=>t.names&&(fold(t.names.tr)===fold(canonical)||fold(t.names.en)===fold(canonical)))||null;}
+// V125 display language for national-team names (TR: İtalya, Türkiye · EN: Italy, Turkey).
+function uiLang(){try{const l=globalThis.Sekme3D?.lang||(typeof document!=='undefined'&&document.documentElement?.lang)||'tr';return String(l).startsWith('en')?'en':'tr';}catch{return 'tr';}}
+function localName(input,lang=uiLang()){const t=typeof input==='object'&&input?.names?input:find(input||'');const raw=typeof input==='string'?input:input?.name;return t?.names?.[lang==='en'?'en':'tr']||raw||t?.name||'';}
 // Club identities, not a claim to reproduce every season's licensed shirt.
 const kitIdentity={
  'viking':{style:'solid',shirt:0x102d4b,stripe:0xf4f1e8,shorts:0xf4f1e8,socks:0x102d4b,number:0xffffff},
@@ -5036,11 +5415,11 @@ const kitIdentity={
  'psg':{style:'centre'},'celtic':{style:'hoops',shirt:0x007f45,stripe:0xffffff,shorts:0xffffff,socks:0xffffff,number:0x15222c},'sporting':{style:'hoops'},
  'rayo-vallecano':{style:'sash'}
 };
-function team(input,index=0){if(input?.conceptTeam)return{...input,kit:{...input.kit}};const source=typeof input==='string'?{name:input}:input,t=find(source)||{},primary=kitIdentity[t.id]?.shirt??parseInt((t.color||'#385b72').slice(1),16),secondary=kitIdentity[t.id]?.stripe??parseInt((t.secondary||'#f2f3ee').slice(1),16),name=t.name||source.name;return{...t,...source,id:t.id||source.id,name,short:t.short||name.slice(0,3).toUpperCase(),strength:source.strength||t.strength||75,primary,secondary,logo:t.logo||null,kit:{shirt:primary,stripe:secondary,shorts:primary,socks:primary,number:primary>0xaaaaaa?0x15222c:0xffffff,keeper:index?0x2f9d98:0xe4a137,style:'solid',...(kitIdentity[t.id]||{})}};}
+function team(input,index=0){if(input?.conceptTeam)return{...input,kit:{...input.kit}};const source=typeof input==='string'?{name:input}:input,t=find(source)||{},primary=kitIdentity[t.id]?.shirt??parseInt((t.color||'#385b72').slice(1),16),secondary=kitIdentity[t.id]?.stripe??parseInt((t.secondary||'#f2f3ee').slice(1),16),name=t.names?.[uiLang()]||t.name||source.name;return{...t,...source,id:t.id||source.id,name,short:t.short||name.slice(0,3).toUpperCase(),strength:source.strength||t.strength||75,primary,secondary,logo:t.logo||null,kit:{shirt:primary,stripe:secondary,shorts:primary,socks:primary,number:primary>0xaaaaaa?0x15222c:0xffffff,keeper:index?0x2f9d98:0xe4a137,style:'solid',...(kitIdentity[t.id]||{})}};}
 const alternates={galatasaray:[{shirt:0x303239,stripe:0xc14734,shorts:0x303239,socks:0x303239,style:'solid',number:0xffffff},{shirt:0xf5f4ee,stripe:0xa90432,shorts:0xf5f4ee,socks:0xf5f4ee,style:'solid',number:0x20252b}]};
 function colorDistance(a,b){const rgb=n=>[n>>16&255,n>>8&255,n&255],x=rgb(a),y=rgb(b);return Math.hypot(...x.map((v,i)=>v-y[i]));}
 function kitOptions(t){const home={...t.kit,variant:'home'},supplied=t.kits||{},custom=[supplied.away,supplied.third].filter(Boolean),fallback=alternates[t.id]||[{shirt:0xf4f4ee,stripe:t.primary,shorts:0xf4f4ee,socks:0xf4f4ee,style:'solid',number:0x17232e},{shirt:0x172331,stripe:t.secondary,shorts:0x172331,socks:0x172331,style:'solid',number:0xffffff}];return K.variants(t,[home,...(custom.length?custom:fallback).map((k,i)=>({...home,...k,variant:i?'third':'away'}))]);}
 function pair(home,away){const ts=[team(home,0),team(away,1)];return K.select(ts,ts.map(kitOptions));}
 
 function logo(t,thumbnail=false){const embedded=typeof window!=='undefined'&&(window.PULSE_LOGOS?.[t.logo]||window.Next90CrestFallbacks?.get(t.logo));const value=embedded||(thumbnail&&t.logo?.endsWith('.png')?t.logo.replace('/logos/','/logos/thumbs/'):t.logo)||null;return value?.startsWith('assets/')?value+'?v=39':value;}
-return{all,find,team,pair,logo,kitOptions,colorDistance};});
+return{all,find,team,pair,logo,kitOptions,colorDistance,localName,uiLang};});

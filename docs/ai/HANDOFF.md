@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V124 → V125 (kararlı)
+- **İstek:** İrfan Can millî takıma seçilmedi; UNL logosu football-logos.cc sayfasından; doğru TR/EN ülke adları.
+- **Yapılanlar:** CHANGELOG V125 / PROJECT_STATE 4r. Testler: `national-competitions.php` (davet listesi), `crests.cjs` (adlar).
+- **Eksik:** resmî UNL logosu otomatik indirilemiyor (dosya sunucusu bot korumalı; aşılmadı). Kullanıcı PNG'yi
+  verirse: `python3 tools/competition-emblems.py <dosya.png>` → tüm boyutlar + `competition-data.js` gömülüsünü
+  (unl anahtarları) yeniden üret.
+- **Dikkat:** davet listeleri editoryal; yeni millî arada `assets/national-callups.json` güncellenmeli.
+
+---
+
 ## [2026-11-08] Claude Code · V123 → V124 (kararlı)
 - **İstek:** UEFA Uluslar Ligi + dostluk maçları yeni lig olarak (API'den fikstür, kadro, TD, muhtemel/kesin 11,
   numaralar, pozisyonlar, bayraklar, uygun scoreboard/seremoni/istatistik şablonu); ayrıca büyük görsel/fizik sıçraması.
