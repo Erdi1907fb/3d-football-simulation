@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V132 → V133 (kararlı)
+- **İstek:** yayın kamerasında aralıklı siyahlık ve geçişlerde kalite düşüşü (tüm modlar, indirilen video).
+- **Yapılanlar:** PROJECT_STATE 4z. Gerçek telefonda indirme testi kullanıcıda.
+
+---
+
 ## [2026-11-08] Claude Code · V131 → V132 (kararlı)
 - **İstek:** millî maç analizinde hazırlık maçları az etkili; kıta elemeleri/şampiyonaları, kupalar, form, oyuncu
   istatistikleri ve kadro gücü daha etkili olsun.

@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V133 — 2026-11-08 (Claude Code) · kararlı
+- **Siyahlık giderildi:** pozisyon geçişlerinde ekranı kısa süre karartan perde kaldırıldı (maç, konsept maç).
+- **Geçişlerde kalite:** video kodlayıcı canlı yayın modundan kalite moduna alındı; her kamera kesmesinde yeni anahtar
+  kare → kesme anında bloklanma/bulanıklık yok (maç, penaltı, serbest vuruş). Telefon yedek kodlayıcısı daha kaliteli.
+
 ## V132 — 2026-11-08 (Claude Code) · kararlı
 - **Millî takım analizi:** son 3,5 yılın 3.349 millî maçı turnuva ağırlığıyla (Dünya Kupası > kıta şampiyonaları >
   elemeler ve Uluslar Ligi > hazırlık) reytinge dönüştürüldü; kazanılan kupalar, son form ve kadrodaki oyuncuların

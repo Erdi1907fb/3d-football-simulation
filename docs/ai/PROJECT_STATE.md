@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V132** · 2026-11-08 · Claude Code
+> Son güncelleme: **V133** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V132** (`VERSION`) |
+| Kararlı sürüm | **V133** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -304,6 +304,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   lig ortamından; %70 bu model, %30 modeldeki son millî maçlar (hazırlık maçları yarı ağırlık). Katalogda olmayan
   takım için eski güç önseli. `quality.inputs.nationalModel` ayrıntıları taşır.
 - Kadro piyasa değeri kaynağı yok (eklenmedi).
+
+## 4z. V133 (geçişlerde siyahlık / kalite)
+- Siyahlık: `broadcast.js` her pozisyon başında/sonunda ve aksiyon anında `state.transition` ile tam ekrana
+  rgba(8,22,31,≤.55) perde çiziyordu → kaldırıldı (gol sting'i duruyor). Ölçüm: eski perde anlarında parlaklık
+  1 sn sonrasıyla aynı.
+- Kodlayıcı: WebCodecs `latencyMode` önce 'quality' (realtime yalnız yedek); kamera kesmelerinde anahtar kare
+  (`job.isCut`, maç `prepareExport` + penaltı/frikik draw: kamera >2,5 m sıçrar, yön >~20° döner ya da FOV >6
+  değişirse). Yazılım kodlayıcı (telefon yedeği) speed 6→4. Worker önbelleği `?v=133`.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

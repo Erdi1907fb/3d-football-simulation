@@ -14,4 +14,8 @@ w.set('clear');assert(!w.stepping);
 const mk=r=>{const pl=[];for(let t=0;t<2;t++)for(let i=0;i<11;i++)pl.push({id:t*11+i,team:t,x:(t?1:-1)*(8+i*3),z:(i-5)*4.5,vx:0,vz:0,keeper:i===0});const prof={};pl.forEach(p=>prof[p.id]={role:r[p.id%11]});return{pl,prof};};
 let m=mk(['GK','CB','CB','CB','LWB','RWB','CM','CM','AM','ST','ST']),t=C.targets(m.pl,{x:5,z:0},0,1,m.prof,[{press:.5},{press:.5}],12,7,{time:1});assert(t[1].z<-6&&Math.abs(t[2].z)<4&&t[3].z>6,'back three spread');assert.equal(t[4].intent,'wing-back');
 m=mk(['GK','LB','CB','CB','RB','DM','CM','CM','LW','ST','RW']);t=C.targets(m.pl,{x:5,z:0},0,1,m.prof,[{press:.5},{press:.5}],12,7,{time:1});assert(t[2].z<0&&t[3].z>0,'back four CBs either side');
+// V133 export quality: no full-frame dark dip between camera cuts; offline encoder rate control; key frame on cuts.
+{const fs=require('fs'),R=n=>fs.readFileSync(__dirname+'/../assets/'+n,'utf8');assert(!R('broadcast.js').includes('rgba(8,22,31,${state.transition'),'no dark transition veil');
+ const v=R('video-core.js');assert(v.includes("for(const latencyMode of['quality','realtime'])"),'quality latency first');assert(v.includes('job.isCut?.('),'key frame on camera cut');
+ for(const f of['app.js','penalty-ui.js','freekick-ui.js'])assert(R(f).includes('__cut'),f+' reports camera cuts');}
 console.log(JSON.stringify({PASS:true,postfx:Object.keys(PF).length,snowPrints:30,rewindClears:true,rainSplash:true,backThree:true,backFour:true}));
