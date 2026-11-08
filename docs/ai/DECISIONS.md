@@ -97,3 +97,11 @@ skorlar `forecast-physics` ile fiziksel olarak yeniden çözülür, değişmez.
 **Karar:** Yağış parçacıkları shader’da sunum zamanından hesaplanır; kamera çevresinde sarılan dünya-sabit hacim.
 Tercih tek yerde (`Next90Weather.preference`) tutulur ve tüm sahneler okur. **Gerekçe:** MP4 kare kare çizilir;
 CPU tabanlı parçacık durumu ileri/geri sarmada ve dışa aktarmada tutarsızlık üretirdi. Ek kütüphane yok (0 KB).
+
+## D-018 · 2026-11-08 · claude · kabul — Ticari lisanslı varlıklar
+**Bağlam:** Kullanıcı ticari lisanslıların da kullanılabileceğini söyledi (para kazanmayan test/video).
+**Karar:** Ajanlar satın alma/hesap gerektiren varlıkları indiremez. Unity/Fab “Standard License” varlıkları yalnız Unreal/Unity
+içinde kullanım ve ham dosyayı herkese açık dağıtmama şartı taşır; web sitesi ve GitHub reposu dağıtım sayılır. Bu yüzden repoya
+konmaz. Kullanıcı kendi hesabıyla indirip lisansını onaylayarak verirse, `assets/private-licensed/` (gitignore) üzerinden
+yerelde/sunucuda yüklenebilecek bir yol kurulur. Erişilebilen en iyi açık kaynaklar (Poly Haven, ambientCG CC0; three.js MIT)
+kullanılmaya devam eder.

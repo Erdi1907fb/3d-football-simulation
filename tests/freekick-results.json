@@ -37,5 +37,9 @@
   "nationalWallCountries": 16,
   "lyingWallPlayers": 347,
   "lyingPlayerBlocks": 1,
-  "setPieceChecks": 1308
+  "setPieceChecks": 1308,
+  "keeperCatches": {
+    "clear": 17,
+    "rain": 15
+  }
 }

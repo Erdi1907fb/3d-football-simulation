@@ -38,7 +38,7 @@ const TECH={curl:{speed:[22.5,25.5],spinY:[40,56],spinZ:[-16,-6],label:['FALSO',
 function technique(rng,ball,specialist){const d=ball.distance,r=rng();if(d>26.5)return r<.48?'knuckle':r<.72?'power':r<.9?'dip':'curl';if(Math.abs(ball.z)<5)return r<.40?'curl':r<.64?'dip':r<.78?'knuckle':r<.88?'power':r<.95?'under':'outside';return r<.62?'curl':r<.74?'dip':r<.84?'power':r<.92?'outside':r<.97?'knuckle':'under';}
 // Full collision simulation of one strike.
 function simulate(ball,v0,w,opt,wall,keeper){
- const b=Aero.state(ball,v0,w,{knuckle:opt.knuckle,seed:opt.seed});b.spin=0;const frames=[{t:0,x:b.x,y:b.y,z:b.z}],steps=Math.round(REC/Aero.STEP),limit=Math.round(3.4/Aero.STEP);let result=null,contact=null,netContact=null,keeperTouch=null,crossing=null,wallHit=null,woodwork=null,prevS=0,overWall=false;
+ const b=Aero.state(ball,v0,w,{knuckle:opt.knuckle,seed:opt.seed,surface:opt.surface});b.spin=0;const frames=[{t:0,x:b.x,y:b.y,z:b.z}],steps=Math.round(REC/Aero.STEP),limit=Math.round(3.4/Aero.STEP);let result=null,contact=null,netContact=null,keeperTouch=null,crossing=null,wallHit=null,woodwork=null,prevS=0,overWall=false;
  for(let i=1;i<=limit;i++){const px=b.x,py=b.y,pz=b.z;Aero.step(b);const t=b.t,age=CONTACT+t;
   if(!result){
    // Wall: the plane WALL_DISTANCE from the ball along the wall normal.
@@ -47,7 +47,7 @@ function simulate(ball,v0,w,opt,wall,keeper){
    prevS=s;
    // Goalkeeper reach ellipse with reaction delay (screened when ball came over the wall).
    if(!result&&px<keeper.x-.32&&b.x>=keeper.x-.32){const q=(keeper.x-.32-px)/Math.max(1e-6,b.x-px),cy=lerp(py,b.y,q),cz=lerp(pz,b.z,q),reaction=keeper.reaction+(overWall?.11:0),available=Math.max(0,t-reaction),span=Math.min(keeper.reach,.62+available*keeper.diveSpeed),vertical=Math.min(1.68,.95+available*2.4),dist=Math.hypot((cz-keeper.z)/span,(cy-1.0)/vertical);crossing={time:t,point:{x:keeper.x-.32,y:cy,z:cz},distance:dist,span,reaction};
-    if(dist<1){const sp=Math.hypot(b.vx,b.vy,b.vz),lateral=Math.abs(cz-keeper.z),side=Math.sign(cz-keeper.z)||1;let style=cy>1.78?'tipOver':lateral<.55&&sp<27&&cy>.35&&cy<1.75?'smother':lateral>1.05?'parryWide':cy<.5?'collapse':'reflex';
+    if(dist<1){const sp=Math.hypot(b.vx,b.vy,b.vz),lateral=Math.abs(cz-keeper.z),side=Math.sign(cz-keeper.z)||1;let style=cy>1.78?'tipOver':lateral<.55&&sp<(opt.surface==='rain'?21:27)&&cy>.35&&cy<1.75?'smother':lateral>1.05?'parryWide':cy<.5?'collapse':'reflex';
      if(dist>.88&&sp>26.5&&Math.abs(cz)<Aero.POST_Z-.3&&cy<Aero.BAR_Y-.25){keeperTouch={time:t,point:{x:keeper.x-.32,y:cy,z:cz},style:'fingertips'};b.vx*=.74;b.vy*=.8;b.vz*=.85;}
      else{result='save';contact={time:t,point:{x:keeper.x-.32,y:cy,z:cz},style,side};b.x=keeper.x-.32;b.y=cy;b.z=cz;b.wx=b.wy=b.wz=0;b.knuckle=false;
       if(style==='smother'){b.vx=b.vy=b.vz=0;}else if(style==='tipOver'){b.vx=2.4;b.vy=5.2;b.vz=side*.9;}else if(style==='parryWide'){b.vx=1.2+opt.r1*2;b.vy=1.3;b.vz=side*(8+opt.r2*3);}else{b.vx=-(4+opt.r1*2.5);b.vy=1.6+opt.r2;b.vz=side*(2.5+opt.r2*2);}}}}
@@ -66,7 +66,7 @@ function simulate(ball,v0,w,opt,wall,keeper){
  return{result,contact,frames,netContact,keeperTouch,crossing,wallHit,woodwork};
 }
 function pick(rng,[a,b]){return a+rng()*(b-a);}
-function candidate(rng,ball,tech,desired,keeper,wall,foot){
+function candidate(rng,ball,tech,desired,keeper,wall,foot,surface='clear'){
  const T=TECH[tech],s=foot==='left'?-1:1,far=-wall.nearSign;let y,z;
  const corner=side=>({z:side*(2.55+rng()*.85),y:1.15+rng()*1.0});
  if(desired==='goal'){if(tech==='under'){z=(rng()*2-1)*2.6;y=.18+rng()*.32;}else{const side=rng()<.55?far:wall.nearSign,c=corner(side);z=c.z;y=tech==='knuckle'||tech==='power'?.35+rng()*1.85:c.y;}}
@@ -74,7 +74,7 @@ function candidate(rng,ball,tech,desired,keeper,wall,foot){
  else if(desired==='post'){if(rng()<.66){const side=rng()<.5?far:wall.nearSign;z=side*(Aero.POST_Z-(rng()-.35)*.14);y=.4+rng()*1.8;}else{z=(rng()*2-1)*3.1;y=Aero.BAR_Y-.02+(rng()-.4)*.12;}}
  else if(desired==='wall'){z=wall.nearSign*(1.2+rng()*2.0);y=.9+rng()*.9;}
  else{if(rng()<.55){z=(rng()*2-1)*3.2;y=Aero.BAR_Y+.25+rng()*.95;}else{z=(rng()<.5?far:wall.nearSign)*(Aero.POST_Z+.35+rng()*1.3);y=.4+rng()*1.8;}}
- const target={x:Aero.GOAL_X,y,z},horizontal=Math.hypot(target.x-ball.x,target.z-ball.z),speed=pick(rng,T.speed)*(desired==='wall'?1.04:1),w={x:0,y:s*pick(rng,T.spinY),z:pick(rng,T.spinZ)},time=horizontal/(speed*(T.knuckle?.86:.83)),opt={knuckle:!!T.knuckle,seed:Math.floor(rng()*1e6),r1:rng(),r2:rng()};
+ const target={x:Aero.GOAL_X,y,z},horizontal=Math.hypot(target.x-ball.x,target.z-ball.z),speed=pick(rng,T.speed)*(desired==='wall'?1.04:1),w={x:0,y:s*pick(rng,T.spinY),z:pick(rng,T.spinZ)},time=horizontal/(speed*(T.knuckle?.86:.83)),opt={knuckle:!!T.knuckle,seed:Math.floor(rng()*1e6),r1:rng(),r2:rng(),surface};
  const v=Aero.solve(ball,target,time,w,opt);return{target,v,w,time,opt};
 }
 function create(options){
@@ -90,7 +90,7 @@ function create(options){
   const nearSign=ball.nearSign,wall=wallFor(ball,rng,nearSign),footInfo=Feet.resolve(p),raw=footInfo.foot,foot=['left','l'].includes(raw)?'left':['both','b'].includes(raw)?(rng()<.5?'left':'right'):'right';
   const lineZ=bisectorZ(ball),keeper={x:KEEPER_X,z:clamp(lineZ-nearSign*(.45+rng()*.3),-1.9,1.9),reaction:.27-ks*.06+rng()*.05,reach:natural(keeperPlayer).includes('GK')?2.45:1.85,diveSpeed:natural(keeperPlayer).includes('GK')?5.6:4.2};
   let tech=technique(rng,ball,q.specialist),chosen=null,sim=null,attempts=0;
-  for(;attempts<90;attempts++){if(attempts>0&&attempts%18===0)tech=technique(rng,ball,q.specialist);const c=candidate(rng,ball,tech,desired,keeper,wall,foot),s=simulate(ball,c.v,c.w,c.opt,wall,keeper);const ok=s.result===desired||(desired==='over'&&s.result==='wide')||(desired==='post'&&s.result==='post');if(!chosen||ok){chosen=c;sim=s;}if(ok)break;}
+  for(;attempts<90;attempts++){if(attempts>0&&attempts%18===0)tech=technique(rng,ball,q.specialist);const c=candidate(rng,ball,tech,desired,keeper,wall,foot,options.weather||'clear'),s=simulate(ball,c.v,c.w,c.opt,wall,keeper);const ok=s.result===desired||(desired==='over'&&s.result==='wide')||(desired==='post'&&s.result==='post');if(!chosen||ok){chosen=c;sim=s;}if(ok)break;}
   const outcome=sim.result==='over'?'wide':sim.result,flight=sim.contact?.time??1,launch=chosen.v,kick={index:k,team,round:turn+1,shooter:p,keeper:keeperPlayer,skill:q,keeperSkill:ks,desired,outcome,technique:tech,foot,footEvidence:footInfo,ball:{...ball},wall,keeperModel:keeper,launch,spin:chosen.w,target:chosen.target,speedKmh:Aero.speedKmh(launch),distance:Math.round(ball.distance*10)/10,flight,frames:sim.frames,contact:sim.contact,keeperTouch:sim.keeperTouch,crossing:sim.crossing,wallHit:sim.wallHit,woodwork:sim.woodwork,netContact:sim.netContact,goalKind:outcome==='goal'?(sim.keeperTouch?'keeper-touch':'clean'):null,saveKind:outcome==='save'?sim.contact.style:null,start:INTRO+k*KICK,attempts,physical:true,scoreBefore:score.slice(),suddenDeath:turn>=rounds};
   kick.resolvedAge=CONTACT+flight;kick.resolvedAt=kick.start+kick.resolvedAge;kick.whistleAt=kick.start+WHISTLE;kick.contactAt=kick.start+CONTACT;kick.replay=['goal','save','post'].includes(outcome);
   kicks.push(kick);taken[team]++;if(outcome==='goal')score[team]++;kick.scoreAfter=score.slice();
@@ -112,7 +112,7 @@ function create(options){
   if(!finished&&kick.replay&&age>=REPLAY_FROM&&age<KICK-.25){const r=age-REPLAY_FROM;physicsAge=CONTACT-.55+r*REPLAY_RATE;replay={age:r,physicsAge,rate:REPLAY_RATE};}
   const f=frameAt(kick,physicsAge),reactionAge=age-kick.resolvedAge-.12,reaction=!replay&&reactionAge>=0&&!finished?{type:kick.outcome==='goal'?'goal':'miss',team:kick.team,age:reactionAge}:null;
   return{time,intro:time<INTRO,finished,kick,age,physicsAge,replay,...f,reaction,score:finished?score.slice():time>=kick.resolvedAt?kick.scoreAfter.slice():kick.scoreBefore.slice(),winner:finished?winner:null,finale:finished?{winner,loser:1-winner,age:time-finaleAt,mode:duel?'duel':'team'}:null,revealed:kicks.filter(k=>time>=k.resolvedAt)};}
- return{seed:options.seed>>>0,mode:duel?'duel':'team',format,rounds,kicks,score,winner,duration,finaleAt,sample,keepers,shooters,eligible,squads,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM},analysis:{basis:'aerodynamic-physics-search-with-entertainment-weights',specialists:kicks.filter(k=>k.skill.specialist).length,physicalOutcomes:kicks.filter(k=>k.outcome===k.desired||(k.desired==='over'&&k.outcome==='wide')).length}};
+ return{seed:options.seed>>>0,weather:options.weather||'clear',mode:duel?'duel':'team',format,rounds,kicks,score,winner,duration,finaleAt,sample,keepers,shooters,eligible,squads,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM},analysis:{basis:'aerodynamic-physics-search-with-entertainment-weights',specialists:kicks.filter(k=>k.skill.specialist).length,physicalOutcomes:kicks.filter(k=>k.outcome===k.desired||(k.desired==='over'&&k.outcome==='wide')).length}};
 }
 return{create,bisectorZ,schedule,spot,skill,takers,completeEleven,random,simulate,wallFor,TECH,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM}};
 });

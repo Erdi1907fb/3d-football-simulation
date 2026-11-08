@@ -14,7 +14,10 @@ function dragCoefficient(speed,knuckle=false){const t=clamp((speed-9)/8,0,1),cd=
 // Lift coefficient from spin parameter S=rω/v (bounded empirical fit).
 function liftCoefficient(S){S=Math.max(0,S);return clamp(S/(2.02*S+.42),0,.34);}
 function knuckleForce(t,seed,speed){if(speed<14)return{y:0,z:0};const a=K*speed*speed*.035,f1=4.6+(seed%7)*.35,f2=7.1+(seed%5)*.4,p=(seed%97)*.13;return{y:a*Math.sin(t*f1*2*Math.PI+p)*.55,z:a*(Math.sin(t*f1*2*Math.PI+p*1.7)+.55*Math.sin(t*f2*2*Math.PI+p))};}
-function state(p,v,w,opt={}){return{x:p.x,y:p.y??R,z:p.z,vx:v.x,vy:v.y,vz:v.z,wx:w?.x||0,wy:w?.y||0,wz:w?.z||0,t:0,knuckle:!!opt.knuckle,seed:opt.seed|0,bounces:0};}
+// V113 surface response: wet turf skids (lower bounce, faster roll), snow grabs the ball
+// (low bounce, strong rolling resistance). Values are relative to dry broadcast turf.
+const SURFACES={clear:{bounce:1,roll:1,grip:1},rain:{bounce:.82,roll:.55,grip:1.07},snow:{bounce:.68,roll:2.1,grip:.86}};
+function state(p,v,w,opt={}){return{x:p.x,y:p.y??R,z:p.z,vx:v.x,vy:v.y,vz:v.z,wx:w?.x||0,wy:w?.y||0,wz:w?.z||0,t:0,knuckle:!!opt.knuckle,seed:opt.seed|0,bounces:0,surface:SURFACES[opt.surface]||SURFACES.clear};}
 // One integration step in free air or on the turf; returns events.
 function step(b,dt=STEP){
  const speed=Math.hypot(b.vx,b.vy,b.vz),air=b.y>R+.002||b.vy>.05;let ax=0,ay=0,az=0;
@@ -26,7 +29,7 @@ function step(b,dt=STEP){
  // Spin decays slowly in air (time constant ≈ 9 s) and quickly while rolling.
  const decay=Math.exp(-dt*(air?.11:2.2));b.wx*=decay;b.wy*=decay;b.wz*=decay;
  let event=null;
- if(b.y<R){const impact=-b.vy;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6);b.vy=impact*e;const grip=clamp(.86-impact*.008,.72,.86);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-(.55*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
+ if(b.y<R){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-(.55*sf.roll*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
  return event;
 }
 // Woodwork: two uprights (vertical cylinders) and the crossbar (horizontal).
@@ -46,5 +49,5 @@ function solve(p,target,time,w,opt={}){let v={x:(target.x-p.x)/time,y:(target.y-
 // Samples a recorded path (array of {t,x,y,z}) at any time.
 function at(frames,time){if(!frames.length)return null;if(time<=frames[0].t)return{...frames[0]};const last=frames[frames.length-1];if(time>=last.t)return{x:last.x,y:last.y,z:last.z,t:time};let lo=0,hi=frames.length-1;while(hi-lo>1){const m=(lo+hi)>>1;if(frames[m].t<=time)lo=m;else hi=m;}const a=frames[lo],b=frames[hi],q=(time-a.t)/Math.max(1e-9,b.t-a.t);return{x:a.x+(b.x-a.x)*q,y:a.y+(b.y-a.y)*q,z:a.z+(b.z-a.z)*q,t:time};}
 function speedKmh(v){return Math.round(Math.hypot(v.x,v.y,v.z)*3.6);}
-return{R,MASS,STEP,G,GOAL_X,POST_Z,BAR_Y,POST_R,dragCoefficient,liftCoefficient,state,step,woodwork,fly,solve,at,speedKmh,version:'aero-v108'};
+return{SURFACES,R,MASS,STEP,G,GOAL_X,POST_Z,BAR_Y,POST_R,dragCoefficient,liftCoefficient,state,step,woodwork,fly,solve,at,speedKmh,version:'aero-v108'};
 });

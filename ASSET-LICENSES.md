@@ -100,3 +100,8 @@ Original Rust files and license remain in assets/vendor/open-football/.
 The live-possession generator in assets/possession-engine.js is Next90sim
 integration code using these selected algorithms, not an additional verbatim
 Open Football module. The exact source-to-integration mapping is documented.
+
+## V112–V113 additions
+- `assets/environment/stadium_01_2k.hdr` — Poly Haven “Stadium 01” by Sergej Majboroda, CC0 1.0 (https://polyhaven.com/a/stadium_01). High-quality reflections only.
+- `assets/vendor/three-postfx.js` — three.js r160 example post-processing modules (EffectComposer, RenderPass, ShaderPass, MaskPass, UnrealBloomPass, OutputPass, SMAAPass and shaders), MIT, © three.js authors; repackaged by `tools/build-postfx.cjs`.
+- `assets/national-walls.json` — derived from `assets/concept/teams.js` national line-ups (existing sources).

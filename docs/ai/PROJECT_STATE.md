@@ -1,17 +1,17 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V112** · 2026-11-08 · Claude Code
+> Son güncelleme: **V113** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V112** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V113** |
+| Kararlı sürüm | **V113** (`VERSION`) |
+| Sonraki geliştirme hedefi | **V114** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v112.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Sürüm doğrulama | `build.php` → `assets/release-v113.json` (sha256 listesi, `tools/make-release.cjs`) |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -126,6 +126,17 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   (kulüp arması / millî bayrak).
 - **Oyuncu donanımı:** tam vücut modelde oyuncuya özel krampon rengi (önceden sabit lacivertti), kaleciye özel eldiven rengi.
 - **Diziliş:** üçlü stoper (−10,5/0/+10,5 m), kanat beki hücumda önde, savunmada beşli; ikili stoper sol/sağ şeride ayrılır.
+
+## 4f. V113 eklemeleri
+- **Görünür top dönüşü:** frikik/penaltıda top havadayken fiziksel spin vektörü (rad/s) kadar döner (`state.ballSpin`,
+  `scene.js` quaternion); ilk temasa kadar.
+- **Hava fiziği (frikik):** `ball-aero.js SURFACES` — yağmur: düşük sekme, hızlı kayma; kar: düşük sekme, yüksek yuvarlanma
+  direnci. Yağmurda ıslak top kalecinin elinden daha sık seker. Frikik senaryosu seçili hava ile kurulur (hava değişince
+  yeniden hazırlanır).
+- **Yansımalar:** Yüksek kalitede Poly Haven Stadium 01 **2K** HDRI (CC0).
+- **Lisans politikası:** ticari mağaza varlıkları (Fab/Unity, ücretli mocap) hesap/satın alma ister ve çoğu motor dışı ya da
+  herkese açık dağıtımı yasaklar; ajanlar satın alamaz. Kullanıcı kendi hesabıyla indirip verirse
+  `assets/private-licensed/` altında (repo dışı tutulması önerilir) entegre edilir — bkz. DECISIONS D-018.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

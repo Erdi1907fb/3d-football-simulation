@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V112 → V113 (kararlı)
+- **İstek:** ticari lisanslılar da kullanılabilir (test/video, para kazanma yok); fizik ve grafiği geliştir.
+- **Yapılanlar:** CHANGELOG V113; D-018 (ticari varlık politikası). Erişim: Poly Haven/ambientCG/npm açık; Fab/Rokoko
+  satın alma/hesap ister.
+- **Testler:** `node tests/run-all.cjs` + tarayıcıda yağmurlu frikik düellosu.
+- **Dikkat:** frikik `E.create({weather})` — hava değişince sahne değil senaryo da yenilenir.
+
+---
+
 ## [2026-11-08] Claude Code · V111 → V112 (kararlı)
 
 - **Kullanıcı isteği:** yağmur/karda adımlara zemin tepkisi; tüm 3D sahnelerde daha iyi kaynaklarla grafik/kalite sıçraması;

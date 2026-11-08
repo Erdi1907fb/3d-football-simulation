@@ -3,3 +3,4 @@ https://polyhaven.com/a/stadium_01
 https://polyhaven.com/license
 CC0 1.0. The original 1K HDR file is used as a reflection/lighting environment, not as match footage.
 Downloaded 2026-11-05.
+stadium_01_2k.hdr — same Poly Haven asset at 2K (CC0 1.0), used for sharper reflections on High quality only. Downloaded 2026-11-08 (V113).

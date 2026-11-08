@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V113 — 2026-11-08 (Claude Code) · kararlı
+- Top havada fiziksel dönüşüyle görünür şekilde döner (frikik + penaltı).
+- Frikikte hava fiziği: yağmurda kayan/az seken top, karda çabuk duran top; yağmurda kaleci daha az tutar.
+- Yüksek kalitede 2K stadyum HDRI (CC0) ile daha keskin yansımalar.
+- Testler: frikik testine yüzey/hava fiziği ve ıslak top kontrolleri eklendi.
+
 ## V112 — 2026-11-08 (Claude Code) · kararlı
 
 ### Yeni
