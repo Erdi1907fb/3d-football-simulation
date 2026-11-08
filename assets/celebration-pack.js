@@ -91,11 +91,11 @@ const LIST=NAMES.map(([id,tr,en,arrival,move],i)=>({id,index:i,tr,en,arrival,mov
 const BY_ID=new Map(LIST.map(c=>[c.id,c]));
 // Team routines for non-scorers during the group stage.
 const TEAM=['huddle','pileOn','jumpTogether','pointAtScorer','bowToScorer','clapCircle','armsLinked','fistBump','liftScorer','skyTogether','waveCrowd','danceLine','highFive','slideTogether'];
-const SLIDES=LIST.filter(c=>['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)),KNEE=LIST.filter(c=>c.arrival==='kneeSlide'),OTHERS=LIST.filter(c=>!SLIDES.includes(c));
+const JUMPS=LIST.filter(c=>['jumpTurn','leap'].includes(c.arrival)),SLIDES=LIST.filter(c=>['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)),KNEE=LIST.filter(c=>c.arrival==='kneeSlide'),OTHERS=LIST.filter(c=>!SLIDES.includes(c));
 // Small, on-the-spot reactions for a single penalty/free-kick goal (no runs, no slides).
 const SMALL=LIST.filter(c=>c.arrival==='none'&&['fistPump','doublePump','armsWide','skyPoint','skyPointOne','earCup','shush','heart','badgeKiss','clap','calma','coolArms','flex','meChest','crossArmsSky','clipNormal','wave','disbelief','fingerGuns'].includes(c.move));
 const hash=(seed,index)=>(Math.imul((seed>>>0)^0x9e3779b9,2654435761)+Math.imul(index+1,40503))>>>0;
-function choose(n,mode){const r=n%100,m=n>>>7;if(mode==='small')return SMALL[m%SMALL.length];if(mode==='big')return r<45?KNEE[m%KNEE.length]:r<65?SLIDES[m%SLIDES.length]:LIST[m%LIST.length];return r<28?KNEE[m%KNEE.length]:r<40?SLIDES[m%SLIDES.length]:OTHERS[m%OTHERS.length];}
+function choose(n,mode){const r=n%100,m=n>>>7;if(mode==='small')return SMALL[m%SMALL.length];if(mode==='big')return r<55?KNEE[m%KNEE.length]:r<80?SLIDES[m%SLIDES.length]:JUMPS[m%JUMPS.length];return r<28?KNEE[m%KNEE.length]:r<40?SLIDES[m%SLIDES.length]:OTHERS[m%OTHERS.length];}
 function pick(seed,index=0,exclude=null,mode='goal'){const n=hash(seed,index);let c=choose(n,mode);if(exclude&&c.id===exclude)c=choose(n+977,mode);return{style:c.style,id:c.id,variant:(n>>>8)%6,team:TEAM[(n>>>4)%TEAM.length],soloSeconds:c.arrival==='none'?3.0:3.6,name:c};}
 function get(style){return typeof style==='string'&&style.startsWith('pack:')?BY_ID.get(style.slice(5))||null:null;}
 // Scorer: called by scene.js after the legacy style block.
@@ -104,7 +104,7 @@ function apply(a,p,state){const c=get(p.celebrationStyle);if(!c||!a?.arms||!a.le
  if(stage!=='solo'&&stage!=='group')return false;
  const t=stage==='solo'?Math.max(0,age-(p.celebrationSoloStart||0)):(state?.celebration?.groupAge||age),arr=ARRIVALS[c.arrival];let busy=0;
  if(arr&&stage==='solo'&&['jumpTurn','leap'].includes(c.arrival))busy=arr(a,t);
- else if(arr&&stage==='solo'&&!p.celebrationSlideEnd&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)&&t<2.4){arr(a,t);busy=1;const h=p.heading||0,d=1.9*smooth(t/1.15);if(a.root){a.root.position.x+=Math.sin(h)*d;a.root.position.z+=Math.cos(h)*d;}slideMark(a,p,t,c);}else if(stage==='solo'&&!p.celebrationSlideEnd&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)){const h=p.heading||0;if(a.root){a.root.position.x+=Math.sin(h)*1.9;a.root.position.z+=Math.cos(h)*1.9;}}
+ else if(arr&&stage==='solo'&&!p.celebrationSlideEnd&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)&&t<2.4){arr(a,t);busy=1;const h=p.heading||0,d=1.0*smooth(t/1.15);if(a.root){a.root.position.x+=Math.sin(h)*d;a.root.position.z+=Math.cos(h)*d;}slideMark(a,p,t,c);}else if(stage==='solo'&&!p.celebrationSlideEnd&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)){const h=p.heading||0;if(a.root){a.root.position.x+=Math.sin(h)*1.0;a.root.position.z+=Math.cos(h)*1.0;}}
  if(!busy){const m=MOVES[c.move];if(m)m(a,Math.max(0,t-(['jumpTurn','leap'].includes(c.arrival)?1.1:!p.celebrationSlideEnd&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)?2.4:0)),v);}
  if(c.arrival==='kneelDown'||KNEEL_MOVES.has(c.move)&&c.arrival!=='oneKnee')kneel(a,smooth(t/.5));else if(c.arrival==='oneKnee')kneel(a,smooth(t/.5),true);
  return true;}
@@ -144,6 +144,9 @@ function gesture(a,p){if(!a?.arms||!a.legs)return false;const t=p.gestureTime||0
  case'focus':{both(a,-.15,.25,-.35);a.body.position.y=S(t*1.6)*.015;a.head.rotation.x=.08;break;}
  case'lieDown':{a.waist.position.y=.16;a.body.rotation.z=PI/2;a.body.rotation.x=0;both(a,-.3,.2,-.4);legs(a,-.05,.1,0);break;}
  case'wallCover':{both(a,-.35,-.25,-1.45);break;}
+ // Disciplined free-kick wall: upright, square to the ball, shoulder to shoulder, hands
+ // covering, legs together; the jump is a straight tuck, landing back into the same stance.
+ case'wall':{const j=Math.max(0,p.wallJump||0),tuck=Math.min(1,j/.3);a.body.rotation.set(0,0,0);a.body.position.y=j;a.waist.rotation.set(0,0,0);a.waist.position.y=.923-.03*tuck;a.head.rotation.set(-.04-.08*tuck,0,0);a.legs.forEach((l,k)=>{l.hip.rotation.set(-.05*tuck,0,(k?1:-1)*.025);l.knee.rotation.set(.08+.32*tuck,0,0);l.boot.rotation.set(-.03-.2*tuck,0,0);});a.arms.forEach((m,k)=>{m.shoulder.rotation.set(-.38-.12*tuck,0,(k?1:-1)*-.2);m.elbow.rotation.set(-1.42,0,0);});break;}
  case'sad':{const C=globalThis.SekmeFootballClips;if(C?.apply)C.apply(a,'sad',Math.min(t,2.4),1,{});else{a.body.rotation.x=.25;both(a,-2.4,-.3,-1.9);}break;}
  default:return false;}return true;}
 return{list:LIST,small:SMALL,useTrails,gesture,teamRoutines:TEAM,moves:Object.keys(MOVES),arrivals:Object.keys(ARRIVALS),pick,get,apply,team,version:'celebration-pack-v109'};

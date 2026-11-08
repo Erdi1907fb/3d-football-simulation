@@ -7,6 +7,10 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Frikikte hava fiziği: yağmurda kayan/az seken top, karda çabuk duran top; yağmurda kaleci daha az tutar.
 - Yüksek kalitede 2K stadyum HDRI (CC0) ile daha keskin yansımalar.
 - Testler: frikik testine yüzey/hava fiziği ve ıslak top kontrolleri eklendi.
+- Frikik barajı: tek ortak yön (topa kare), dik ve omuz omuza duruş, eller koruma pozisyonunda, düz zıplama ve aynı
+  duruşa iniş; diğer animasyon katmanlarından sonra uygulanır; topa çarpan oyuncuya öne atılma pozu verilmez.
+- Frikik golünde yerinde ~1,3 sn kısa sevinç; final bölümü 9,5 sn — kazanan köşede ~5,6 sn uzun ve yalnız gösterişli
+  sevinç (diz/göğüs/yan kayış, zıplayıp dönme, sıçrama), kayış kadrajda kalacak kadar (1 m).
 
 ## V112 — 2026-11-08 (Claude Code) · kararlı
 

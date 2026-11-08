@@ -23,6 +23,8 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
   satın alma/hesap ister.
 - **Testler:** `node tests/run-all.cjs` + tarayıcıda yağmurlu frikik düellosu.
 - **Dikkat:** frikik `E.create({weather})` — hava değişince sahne değil senaryo da yenilenir.
+- **Ek (aynı gün):** baraj duruşu `gesture:'wall'` (`celebration-pack.js`) sahnede en son katman olarak uygulanır
+  (`scene.js`, penaltyDive satırından sonra). Frikik FINAL=9,5 sn; gol tepkisi 1,3 sn.
 
 ---
 
