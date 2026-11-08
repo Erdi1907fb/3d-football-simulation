@@ -1,6 +1,6 @@
 /* Seeded shoot-out model. Records are observed evidence, not guaranteed outcomes. */
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./football-physics.js'),require('./preferred-foot.js'),require('./ball-aero.js'));else r.Next90Penalties=f(r.SekmeFootballPhysics,r.Next90PreferredFoot,r.Next90BallAero);})(typeof globalThis!=='undefined'?globalThis:this,function(Physics,Feet,Aero){'use strict';
-const INTRO=3.2,KICK=5.1,FINAL=5.5,G=9.81,R=.11,FROM={x:41.5,y:R,z:0};
+const INTRO=0,KICK=5.1,FINAL=5.5,G=9.81,R=.11,FROM={x:41.5,y:R,z:0};
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),smooth=x=>{x=clamp(x,0,1);return x*x*(3-2*x);};
 function random(seed){let s=seed>>>0||1;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296;};}
 function natural(p){return p.naturalRoles?.length?p.naturalRoles:p.roles||[p.position];}

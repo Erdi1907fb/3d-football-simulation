@@ -3,10 +3,10 @@
   "penaltyAnalyses": 100,
   "conceptAnalyses": 100,
   "winners": [
-    0,
-    1
+    1,
+    0
   ],
-  "scores": 20,
+  "scores": 23,
   "conceptResultSigns": [
     -1,
     0,
@@ -16,5 +16,5 @@
   "longest": 18,
   "longSeed": 267,
   "physicsSamples": 676401,
-  "maxStep": 0.28517530400534374
+  "maxStep": 0.285175304005374
 }

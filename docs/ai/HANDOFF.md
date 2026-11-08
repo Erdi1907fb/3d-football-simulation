@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-08] Claude Code · V129 → V130 (kararlı)
+- **İstek:** telefonda stüdyolar açılmıyor; frikik gol tekrarı golü göstermiyor; ara sahne kalksın, video topun yere
+  konmasıyla başlasın.
+- **Yapılanlar:** CHANGELOG V130 / PROJECT_STATE 4w. Gerçek telefonda test edilmedi (iPhone 13 emülasyonu).
+
+---
+
 ## [2026-11-08] Claude Code · V128 → V129 (kararlı)
 - **İstek:** sorunu kalite düşürerek çözme; telefonda da en yüksek kaliteyle indirme.
 - **Yapılanlar:** PROJECT_STATE 4v. Telefon = masaüstü kalitesi. Kullanıcıdan gerçek cihaz geri bildirimi bekleniyor.

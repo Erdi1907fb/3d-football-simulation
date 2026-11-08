@@ -1,17 +1,17 @@
 {
- "version": "V128",
- "ranAt": "2026-11-08T19:45:00.525Z",
+ "version": "V129",
+ "ranAt": "2026-11-08T20:11:14.642Z",
  "results": [
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 19.3,
-   "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2061,\"outcomes\":{\"goal\":579,\"wide\":692,\"wall\":125,\"save\":521,\"post\":144},\"techniques\":[\"dip\",\"knuckle\",\"curl\",\"outside\",\"power\",\"under\"],\"physicalMatch\":0.9995,\"earlyFinish\":51,\"suddenDeath\":86,\"samples\":970586,\"maxStep\":0.569,\"brandBoards\":true,\"sameSpotRounds\":1128,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":308,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1322,\"keeperCatches\":{\"clear\":29,\"rain\":12}}"
+   "seconds": 18.6,
+   "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2061,\"outcomes\":{\"goal\":579,\"wide\":692,\"wall\":125,\"save\":521,\"post\":144},\"techniques\":[\"dip\",\"knuckle\",\"curl\",\"outside\",\"power\",\"under\"],\"physicalMatch\":0.9995,\"earlyFinish\":51,\"suddenDeath\":86,\"samples\":924506,\"maxStep\":0.569,\"brandBoards\":true,\"sameSpotRounds\":1128,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":308,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1322,\"keeperCatches\":{\"clear\":29,\"rain\":12}}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 4.7,
+   "seconds": 4.5,
    "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4596,\"techniques\":{\"high-corner\":778,\"chip\":388,\"power-rise\":357,\"placed\":774,\"disguised\":194,\"driven\":776,\"central\":379,\"inside-foot\":730,\"outside-foot\":220},\"speedKmh\":{\"min\":53,\"median\":82,\"max\":107},\"maxStep60fps\":0.568,\"aeroKicks\":655,\"maxCurlMetres\":0.302}"
   },
   {
@@ -35,43 +35,43 @@
   {
    "test": "kickoff-referee.cjs",
    "pass": true,
-   "seconds": 33.9,
+   "seconds": 29.9,
    "summary": "{\"PASS\":true,\"samples\":360,\"minGap\":12.51}"
   },
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 2.1,
+   "seconds": 1.7,
    "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
   },
   {
    "test": "forecast.php",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0,
    "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
   },
   {
    "test": "national-competitions.php",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0,
    "summary": "{\"PASS\":true,\"turkiyeXI\":[\"Uğurcan Çakır\",\"Ozan Kabak\",\"Abdülkerim Bardakcı\",\"Zeki Çelik\",\"İsmail Yüksek\",\"Salih Özcan\",\"Eren Elmalı\",\"Ferdi Kadıoğlu\",\"Yunus Akgün\",\"Aral Şimşir\",\"Hakan Çalhanoğlu\"],\"unl\":52,\"intl\":11,\"sample\":[\"Armenia v Cyprus\",\"Türkiye v Belgium\",\"Albania v Finland\",\"Czechia v Spain\"]}"
   },
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 4.6,
+   "seconds": 4,
    "summary": "{"
   },
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.1,
+   "seconds": 4.8,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 1,
+   "seconds": 1.1,
    "summary": "{"
   },
   {
@@ -95,7 +95,13 @@
   {
    "test": "search-test.cjs",
    "pass": true,
-   "seconds": 0,
+   "seconds": 0.1,
+   "summary": "{"
+  },
+  {
+   "test": "engine-test.cjs",
+   "pass": true,
+   "seconds": 127.1,
    "summary": "{"
   }
  ],

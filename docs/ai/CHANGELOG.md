@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V130 — 2026-11-08 (Claude Code) · kararlı
+- **Telefon:** penaltı ve serbest vuruş stüdyoları telefonda açılırken donup sayfayı yeniliyordu. Önizleme artık hafif,
+  video indirilirken en yüksek kalitede ayrı sahne kurulur (normal maç sayfası gibi) — video kalitesi düşmedi.
+- **Açılış:** ara sahne kaldırıldı; videolar doğrudan ilk vuruşla (frikikte topun yere konduğu an) başlar.
+- **Frikik gol tekrarı:** topun barajı aşıp ağlara girdiği an kadrajda.
+
 ## V129 — 2026-11-08 (Claude Code) · kararlı
 - Telefonda kalite düşürme geri alındı: telefon da bilgisayarla aynı en yüksek kalitede çizer ve video indirir
   (çökmenin asıl nedeni V128'de giderildi).

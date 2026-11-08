@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V129** · 2026-11-08 · Claude Code
+> Son güncelleme: **V130** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V129** (`VERSION`) |
+| Kararlı sürüm | **V130** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -274,6 +274,16 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   her dışa aktarma (telefon dahil) 'high'. Acil durum için yalnız `window.SEKME_LITE_RENDER=true` lite yolu açar.
 - Telefon yükü V128'deki asıl düzeltmeyle (kenar görevlileri hafif rigde) V107'ye yakın: iPhone 13 emülasyonu
   tam vücut 55/51, kemik 2915/2703, JS bellek 302/280 MB. Gerçek cihazda doğrulanmadı.
+
+## 4w. V130
+- Telefon stüdyoları (penaltı + frikik) maç sayfasıyla aynı modelde: `PHONE_STUDIO` iken önizleme sahnesi
+  quality:'balanced', compact (gölge/sinematik zincir yok); dışa aktarmada `sceneTier('export')` önizleme sahnesini
+  atıp high + compact:false sahne kurar (DOF/bloom/SMAA/sharpen), video bitince `sceneTier('preview')`. Video kalitesi
+  masaüstüyle aynı. Kök neden: V121'den beri stüdyolar telefonda açılışta high sahneyi canlı önizlemede çiziyordu
+  (8,6 sn kilit, 57 MB yükleme); şimdi 4,8 sn, 42 MB. API: `sceneTier()`, `sceneTierName`.
+- INTRO=0 (penaltı + frikik motorları): video ilk vuruşla başlar (frikik: topu yere koyma). Penaltıda ilk vuruşta
+  hakem düdük ara planı yok.
+- Frikik gol tekrarı: vurucunun arkasından yüksek yayın açısı; uçuş ve topun ağa girdiği nokta (netContact) aynı kadrajda.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

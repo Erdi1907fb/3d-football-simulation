@@ -8,7 +8,7 @@
  * Probabilities are an entertainment model, not observed career statistics.
  */
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'),require('./open-football-adapter.js'),require('./preferred-foot.js'));else r.Next90FreeKicks=f(r.Next90BallAero,r.Next90OpenFootball,r.Next90PreferredFoot);})(typeof globalThis!=='undefined'?globalThis:this,function(Aero,OpenFootball,Feet){'use strict';
-const INTRO=3.2,KICK=8.8,FINAL=9.5,WHISTLE=1.25,RUN_START=1.55,CONTACT=2.6,REPLAY_FROM=5.35,REPLAY_RATE=.62,R=Aero.R,REC=1/120;
+const INTRO=0,KICK=8.8,FINAL=9.5,WHISTLE=1.25,RUN_START=1.55,CONTACT=2.6,REPLAY_FROM=5.35,REPLAY_RATE=.62,R=Aero.R,REC=1/120;
 const WALL_DISTANCE=9.15,WALL_GAP=.6,WALL_HEIGHT=1.84,KEEPER_X=51.95;
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),smooth=x=>{x=clamp(x,0,1);return x*x*(3-2*x);},lerp=(a,b,t)=>a+(b-a)*t;
 function random(seed){let s=seed>>>0||1;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296;};}
