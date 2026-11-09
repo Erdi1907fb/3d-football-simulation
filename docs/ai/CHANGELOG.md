@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V143 — 2026-11-09 (Claude Code) · kararlı
+- **Seremoni:** sahadaki bayrak/logo bezleri eskisi gibi net; parlama yok, turnuva logosu ve bayraklar kendi renkleriyle.
+- **Düelloda istediğin takımın forması:** “Seçtiğin takımın forması” seçeneğiyle ör. Messi & Yamal Barcelona, Ronaldo &
+  Mbappé Real Madrid formasıyla, her biri kendi numarasıyla oynar (ikonlar ve yıldızlar dahil).
+
 ## V142 — 2026-11-09 (Claude Code) · kararlı
 - **iPhone'da penaltı/serbest vuruş MP4:** sekme bellek yetmediği için kapanıyordu (“bu sayfada birçok kez sorun oluştu”).
   iPhone'da sahne artık bir kez kuruluyor, video için ikinci sahne açılmıyor; görüntü zinciri iPhone'a uygun. Yine

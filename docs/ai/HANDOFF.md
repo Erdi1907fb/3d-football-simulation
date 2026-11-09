@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V142 → V143 (kararlı)
+- **İstek:** aday kadro dışı oyuncular (İrfan Can, Kerem, Altay, Şengezer) yedekte bile olmasın; seremoni logoları eski
+  netlikte; düelloda istenen takımın forması.
+- **Yapılanlar:** PROJECT_STATE 4aj. Canlı site hâlâ build 140'tı → V141 aday kadro filtresi yüklenmemişti.
+- **Testler:** quick 19/19; seremoni önce/sonra görüntüsü; iPhone 13 emülasyonunda 2v2 Barcelona/Real Madrid formaları.
+
+---
+
 ## [2026-11-09] Claude Code · V141 → V142 (kararlı)
 - **İstek:** iPhone 13'te stüdyolardan MP4 inmiyor, Safari “birçok kez sorun oluştu” (sekme çöküşü).
 - **Yapılanlar:** PROJECT_STATE 4ai. **Asla** iOS'ta tam sinematik zinciri ya da iki sahneli katman değişimini geri açma.

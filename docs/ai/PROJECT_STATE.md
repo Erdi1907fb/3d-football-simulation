@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V142** · 2026-11-09 · Claude Code
+> Son güncelleme: **V143** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V142** (`VERSION`) |
+| Kararlı sürüm | **V143** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -402,6 +402,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   iOS'ta LITE zincir (HDR→ACES→grade). Android katmanlı modelde kalır.
 - Çöküş koruması: `sessionStorage['next90-export-<sayfa>']` hazırlık/export sırasında set edilir; sekme ölürse sonraki
   açılışta hafif (balanced, compact) sahne kullanılır.
+
+## 4aj. V143 (seremoni logoları + düelloda takım forması)
+- `pregame-ceremony.js`: seremoni bezleri yeniden ışıksız `MeshBasicMaterial` (V107 görünümü), renk 0xd6d6d6 → beyaz bloom
+  eşiğinin (0.74) altında, logolar kendi renk/kontrastıyla; logo büyütüldü (690→760 px), halka inceldi. V121'deki ışıklı
+  kumaş + sheen, floodlight ve ACES ile logoları yıkıyordu.
+- Düello/2v2 forma: penaltı `penaltyGuestKit` ve FK `fkKit0/1`'e `team` seçeneği (“Seçtiğin takımın forması (Kadro)”):
+  forma, isim ve arma seçilen kadro takımından; oyuncu kendi numarasıyla (Messi 10, Yamal 10, Ronaldo 7, Mbappé 10).
+  2v2 vitrin ön ayarı artık Barcelona / Real Madrid formasıyla açılır.
+- Not: kullanıcı V141'i (aday kadro filtresi) yüklememişti; canlı `build.php` 140 gösteriyordu.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
