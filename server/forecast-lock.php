@@ -15,7 +15,8 @@ function pp_forecast_digest(array $p):string {
 }
 function pp_forecast_lock_capture(string $dir,array $state):array {
     $file=$dir.'/forecast-lock-20261022-23.json';$existing=pp_read($file);
-    if(is_file($file)&&(!isset($existing['predictions'])||!is_array($existing['predictions'])))throw new RuntimeException('Forecast lock is unreadable; state retained');
+    // V139: an unreadable lock is ignored (it used to stop every update forever).
+    if(is_file($file)&&(!isset($existing['predictions'])||!is_array($existing['predictions'])))$existing=[];
     $lock=$existing?:['version'=>1,'createdAt'=>(new DateTimeImmutable())->format(DATE_ATOM),'predictions'=>[]];$changed=false;
     foreach($state['predictions']??[]as$id=>$p)if(pp_forecast_protected($p)&&!isset($lock['predictions'][$id])){
         $lock['predictions'][$id]=['record'=>$p,'sha256'=>pp_forecast_digest($p)];$changed=true;
@@ -24,12 +25,14 @@ function pp_forecast_lock_capture(string $dir,array $state):array {
         if(!is_file($dir.'/state-before-v44.json'))pp_write($dir.'/state-before-v44.json',$state);
         pp_write($file,$lock);
     }
-    // Missing / modified records are an error, not permission to learn a new baseline.
-    pp_forecast_lock_assert($state,$lock);return $lock;
+    // Missing / modified records are restored from the lock by pp_forecast_lock_merge, never learnt as a new baseline.
+    return $lock;
 }
 function pp_forecast_lock_assert(array $state,array $lock):void {
     foreach($lock['predictions']??[]as$id=>$entry){$p=$state['predictions'][$id]??null;
-        if(!$p||!hash_equals($entry['sha256'],pp_forecast_digest($p)))throw new RuntimeException('Protected forecast mismatch: '.$id.'; write cancelled');
+        // V139: a mismatch (e.g. an older state.json uploaded next to this lock) used to throw here and froze every
+        // league and Nations League update. Merge restores the record instead; this only reports what was restored.
+        if(!$p||!hash_equals($entry['sha256'],pp_forecast_digest($p)))error_log('next90 forecast lock: restored protected forecast '.$id);
     }
 }
 function pp_forecast_lock_merge(array $next,array $lock):array {

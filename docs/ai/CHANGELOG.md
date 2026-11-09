@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V140 — 2026-11-09 (Claude Code) · kararlı
+- **Maçlar ve Uluslar Ligi geri geliyor (kök neden):** sunucudaki eski tahmin kilidi dosyası, veri dosyasıyla uyuşmayınca
+  bütün güncellemeleri iptal ediyordu. Artık kilit yalnız korunan eski tahminleri geri koyar, güncellemeyi durdurmaz.
+
 ## V139 — 2026-11-09 (Claude Code) · kararlı
 - **Sunucu durumu sayfası (`durum.php`):** maçların neden görünmediğini gösterir (veri klasörü izinleri, cron, kaynak
   hataları, ESPN bağlantısı) ve “Verileri şimdi topla” düğmesiyle cron olmadan tüm kaynakları toplar.

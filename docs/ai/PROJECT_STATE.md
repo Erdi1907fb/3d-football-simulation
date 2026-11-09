@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V139** · 2026-11-09 · Claude Code
+> Son güncelleme: **V140** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V139** (`VERSION`) |
+| Kararlı sürüm | **V140** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -373,6 +373,16 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Stüdyolar (telefon): ses bağlamı MP4 düğmesine basıldığı anda açılır (iOS uzun sahne kurulumundan sonra sesi başlatmıyor,
   5 sn sonra “zaman aşımı” ile export iptal oluyordu); ses başlamazsa video sessiz hazırlanır. Sahne hazırlığı telefonda
   120 sn'ye kadar bekler; yüz/portre/arma ve kadro zenginleştirme zaman aşımı artık ölümcül değil.
+
+## 4ag. V140 (KÖK NEDEN: korunan tahmin kilidi tüm güncellemeleri durduruyordu)
+- `server/forecast-lock.php`: veri klasöründeki `forecast-lock-20261022-23.json` (22–23 Ekim tahminleri) `state.json` ile
+  uyuşmayınca `pp_forecast_lock_capture/assert` RuntimeException atıyordu → `pp_update` her istekte iptal (api 503),
+  hiçbir lig/Uluslar Ligi yazılamıyordu. V110–V135 paketlerindeki eski `state.json` sunucudakinin üstüne yazılınca bu
+  durum oluştu; sonradan V107 datası konsa da kilit dosyası kaldığı için düzelmedi. Artık assert yalnız günlüğe yazar,
+  okunamayan kilit yok sayılır, `pp_update` başta `pp_forecast_lock_merge` ile korunan kayıtları geri koyar.
+- Yayın döngüsünde tek bir maçın tahmin hatası artık tüm güncellemeyi durdurmaz (try/catch, maç atlanır).
+- Test: `tests/forecast-lock.php`. Kullanıcı durumunun kopyası (V110 state + uyuşmayan kilit, cron yok) 12 ziyarette
+  bültene 26 UNL + 6 hazırlık maçı getiriyor.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V139 → V140 (kararlı, ACİL)
+- **İstek:** V139 sonrası da maç yok, Uluslar Ligi de yok; V107 datası da çalışmıyor.
+- **Kök neden ve çözüm:** PROJECT_STATE 4ag (forecast-lock RuntimeException → her güncelleme 503). Kilit artık geri yükler,
+  durdurmaz; tek maç hatası yayını durdurmaz. Kullanıcı hiçbir dosya silmeden V140'ı yüklemeli.
+- **Testler:** quick 18/18 (yeni `tests/forecast-lock.php`); kullanıcı senaryosu yerelde 26 UNL + 6 hazırlık.
+
+---
+
 ## [2026-11-09] Claude Code · V138 → V139 (kararlı)
 - **İstek:** canlı sitede maçlar (Uluslar Ligi dahil) gelmiyor, V107 ya da bizim data konunca da düzelmedi; telefonda stüdyolar
   yüklenirken hata veriyor, MP4 inmiyor.
