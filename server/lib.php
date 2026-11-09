@@ -254,14 +254,14 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
         if(!$due&&!$rollover&&!pp_pending_forecasts($state,$now)){pp_compact_cache($state,$cfg,$now);return ['status'=>'cached','pending'=>0,'health'=>pp_public_health($state,$cfg,$now)];}
         // Publish the new day from the validated cache before slow network work.
         if(($cfg['_publish_only']??false)&&!$rollover&&!pp_pending_forecasts($state,$now))return ['status'=>'cached','pending'=>count($due)];
-        $chosen=(($cfg['_publish_only']??false)||($web&&$rollover))?[]:($web?array_slice(array_keys($due),0,1):array_keys($due));
+        $chosen=(($cfg['_publish_only']??false)||($web&&$rollover))?[]:($web?array_slice(array_keys($due),0,3):array_keys($due));/* V139: a visit fetches up to 3 sources within ~7 s */
         if($prepared){$fixture=$state['matches'][$prepared]??null;$league=$fixture['competitionId']??null;$chosen=array_slice(array_keys(array_filter($due,fn($j)=>($j['league']??null)===$league&&in_array($j['format'],['espn-month','tff-week'],true))),0,1);}
         if(!empty($cfg['_only_jobs']))$chosen=array_values(array_intersect($chosen,$cfg['_only_jobs']));
         $downloadCfg=$cfg;if($web)$downloadCfg['request_timeout_seconds']=min((int)$cfg['web_request_timeout_seconds'],(int)$cfg['request_timeout_seconds']);
         $fetch=$fetcher??function(string $url)use($downloadCfg){return (str_ends_with($url,'.txt')||str_contains($url,'www.tff.org/'))?pp_fetch_raw($url,$downloadCfg):pp_fetch($url,$downloadCfg);};
         $sources=$state['sources']??[];$attempts=$state['refreshAttempts']??[];$checks=[];$fresh=0;
         foreach($jobs as $key=>$job){
-            if(!in_array($key,$chosen,true)){
+            if(!in_array($key,$chosen,true)||($web&&$key!==($chosen[0]??null)&&microtime(true)-$started>7)){
                 $old=$state['health']['sourceChecks'][$key]??[];$stamp=$sources[$key]['fetchedAt']??null;$age=$stamp?$epoch-strtotime($stamp):PHP_INT_MAX;
                 $checks[$key]=array_merge($old,['status'=>$age<$job['interval']?'recent':($stamp?'cached':'waiting'),'fetchedAt'=>$stamp,'matches'=>count($sources[$key]['matches']??[])]);
                 if(isset($old['error'])&&($attempts[$key]['ok']??true)===false)$checks[$key]['error']=$old['error'];continue;

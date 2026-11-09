@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V138** · 2026-11-09 · Claude Code
+> Son güncelleme: **V139** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V138** (`VERSION`) |
+| Kararlı sürüm | **V139** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -362,6 +362,17 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Grafikler: tanıtım/kazanan panelinde iki portre üst üste ve “Soyad & Soyad”; finalde kazanan ikili birlikte sevinir
   (ikinci oyuncu slot 10). Yüzler ve portreler hazırlıkta ısıtılır.
 - Telefon: FK paylaşım hatası artık sessiz kalmıyor, indirmeye düşüyor (penaltıdaki gibi). Test: `tests/duo.cjs`.
+
+## 4af. V139 (canlı sunucuda maç yok + telefonda hata)
+- Yerel tanı: güncel kod boş veriyle, V107/V110 `state.json` ile ve yalnız ziyaretçi tetiklemesiyle hatasız; 9–14 Kasım millî
+  ara (kulüp maçı yok), bu pencerede yalnız Uluslar Ligi/hazırlık maçları var. Kullanıcı sunucusunda neden olmadığı
+  görülemiyor → **`durum.php`**: PHP/cURL, veri klasörü ve `state.json` yazılabilirliği, cron son çalışma, kayıtlı maç/tahmin,
+  önümüzdeki 6 gün, kaynak başına durum/hata, canlı ESPN testi; “Verileri şimdi topla” (POST `durum.php?action=collect`,
+  cron.php gibi 4'er kaynak, aynı site, kilitli) cron olmadan veriyi doldurur.
+- Ziyaretçi yenilemesi artık 1 yerine en fazla 3 kaynak çeker (~7 sn bütçe; ilk kaynak hep çekilir).
+- Stüdyolar (telefon): ses bağlamı MP4 düğmesine basıldığı anda açılır (iOS uzun sahne kurulumundan sonra sesi başlatmıyor,
+  5 sn sonra “zaman aşımı” ile export iptal oluyordu); ses başlamazsa video sessiz hazırlanır. Sahne hazırlığı telefonda
+  120 sn'ye kadar bekler; yüz/portre/arma ve kadro zenginleştirme zaman aşımı artık ölümcül değil.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

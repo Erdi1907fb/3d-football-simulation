@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V139 — 2026-11-09 (Claude Code) · kararlı
+- **Sunucu durumu sayfası (`durum.php`):** maçların neden görünmediğini gösterir (veri klasörü izinleri, cron, kaynak
+  hataları, ESPN bağlantısı) ve “Verileri şimdi topla” düğmesiyle cron olmadan tüm kaynakları toplar.
+- Ziyaretçi yenilemesi bir seferde 3 kaynağa kadar çeker; site boş veriden daha hızlı dolar.
+- **Telefonda MP4:** iPhone'da sesin geç açılması yüzünden “zaman aşımı” ile iptal olan export düzeltildi; yavaş mobil
+  veride stüdyo hazırlığı artık hata vermeden bekler.
+
 ## V138 — 2026-11-09 (Claude Code) · kararlı
 - **2v2 oyuncu düellosu (penaltı + serbest vuruş):** her tarafa iki oyuncu seçilir (ör. Messi & Yamal vs Ronaldo &
   Mbappé); ikililer sırayla vurur, panelde iki portre, finalde kazanan ikili birlikte sevinir. Video yine 1080×1920 60 FPS.
