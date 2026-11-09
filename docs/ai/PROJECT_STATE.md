@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V143** · 2026-11-09 · Claude Code
+> Son güncelleme: **V144** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V143** (`VERSION`) |
+| Kararlı sürüm | **V144** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -411,6 +411,18 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   forma, isim ve arma seçilen kadro takımından; oyuncu kendi numarasıyla (Messi 10, Yamal 10, Ronaldo 7, Mbappé 10).
   2v2 vitrin ön ayarı artık Barcelona / Real Madrid formasıyla açılır.
 - Not: kullanıcı V141'i (aday kadro filtresi) yüklememişti; canlı `build.php` 140 gösteriyordu.
+
+## 4ak. V144 (millî 11: TFF aday kadro + BSD beklenen 11 + numaralar)
+- BSD (sports.bzzoiro.com, `Authorization: Token`, anahtar sunucuda config/`bsd-credentials.json`): millî maçlar da var
+  (UNL league_id 64; Türkiye team 932). `/api/v2/events/{id}/lineups/` → `lineup_status` predicted/confirmed (beta, AI),
+  `unavailable_players` (injured/suspended). BSD millî **aday kadroyu bilmez** (squad uç noktası boş; tahmini yedeklerde
+  İrfan Can, Kerem, Altay, Şengezer vardı). `bsd_national_lineup()` tarih + takım adıyla (pp_provider_name) eşleştirir.
+- `pp_national_callup_filter($snap,$m,$now,$cfg)` yeniden yazıldı: kim oynayabilir = aday kadro; kim başlar = BSD beklenen
+  11 (sağlayıcı XI'nın formasyon slotlarına grup bazlı), BSD sakat/cezalı çıkarılır; yedek: BSD yedekleri sonra reyting,
+  kaleciler önde, ≤12; numara: federasyon > sağlayıcı millî no > bilinen (Hakan 10, Arda 8, Orkun 6, Kenan 19) > boş no.
+  Grup: kaleci federasyon listesinden, saha oyuncusu kulüp kadrosu doğal rolünden; reyting statik kaynaktan → idempotent.
+- `assets/national-callups.json` Türkiye: 26 kişi + mevki + Wikipedia numaraları (TFF 6 Kasım listesi, haberlerle teyit).
+- `durum.php`: BSD anahtarı tanımlı mı satırı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

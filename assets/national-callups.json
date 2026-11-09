@@ -10,10 +10,164 @@
    "coach": "Sergen Yalçın",
    "source": "TFF aday kadro, 26 oyuncu (Belçika 12 Kasım İzmir, Fransa 15 Kasım) — aksiyon.com.tr, hurriyet.com.tr, milliyet.com.tr",
    "players": [
-    "Berke Özer", "Ersin Destanoğlu", "Serhat Öztaşdelen", "Uğurcan Çakır",
-    "Abdülkerim Bardakcı", "Ahmetcan Kaplan", "Emirhan Topçu", "Eren Elmalı", "Ferdi Kadıoğlu", "Merih Demiral", "Mustafa Eskihellaç", "Ozan Kabak", "Zeki Çelik",
-    "Arda Güler", "Can Uzun", "Hakan Çalhanoğlu", "İsmail Yüksek", "Orkun Kökçü", "Salih Özcan",
-    "Aral Şimşir", "Barış Alper Yılmaz", "Deniz Gül", "Enes Ünal", "İlhan Fakılı", "Oğuz Aydın", "Yunus Akgün"
+    "Berke Özer",
+    "Ersin Destanoğlu",
+    "Serhat Öztaşdelen",
+    "Uğurcan Çakır",
+    "Abdülkerim Bardakcı",
+    "Ahmetcan Kaplan",
+    "Emirhan Topçu",
+    "Eren Elmalı",
+    "Ferdi Kadıoğlu",
+    "Merih Demiral",
+    "Mustafa Eskihellaç",
+    "Ozan Kabak",
+    "Zeki Çelik",
+    "Arda Güler",
+    "Can Uzun",
+    "Hakan Çalhanoğlu",
+    "İsmail Yüksek",
+    "Orkun Kökçü",
+    "Salih Özcan",
+    "Aral Şimşir",
+    "Barış Alper Yılmaz",
+    "Deniz Gül",
+    "Enes Ünal",
+    "İlhan Fakılı",
+    "Oğuz Aydın",
+    "Yunus Akgün"
+   ],
+   "squad": [
+    {
+     "name": "Berke Özer",
+     "pos": "GK",
+     "number": null
+    },
+    {
+     "name": "Ersin Destanoğlu",
+     "pos": "GK",
+     "number": null
+    },
+    {
+     "name": "Serhat Öztaşdelen",
+     "pos": "GK",
+     "number": null
+    },
+    {
+     "name": "Uğurcan Çakır",
+     "pos": "GK",
+     "number": 1
+    },
+    {
+     "name": "Abdülkerim Bardakcı",
+     "pos": "DF",
+     "number": 14
+    },
+    {
+     "name": "Ahmetcan Kaplan",
+     "pos": "DF",
+     "number": null
+    },
+    {
+     "name": "Emirhan Topçu",
+     "pos": "DF",
+     "number": 4
+    },
+    {
+     "name": "Eren Elmalı",
+     "pos": "DF",
+     "number": 13
+    },
+    {
+     "name": "Ferdi Kadıoğlu",
+     "pos": "DF",
+     "number": 20
+    },
+    {
+     "name": "Merih Demiral",
+     "pos": "DF",
+     "number": 3
+    },
+    {
+     "name": "Mustafa Eskihellaç",
+     "pos": "DF",
+     "number": 22
+    },
+    {
+     "name": "Ozan Kabak",
+     "pos": "DF",
+     "number": 15
+    },
+    {
+     "name": "Zeki Çelik",
+     "pos": "DF",
+     "number": 2
+    },
+    {
+     "name": "Arda Güler",
+     "pos": "FW",
+     "number": null
+    },
+    {
+     "name": "Can Uzun",
+     "pos": "FW",
+     "number": null
+    },
+    {
+     "name": "Hakan Çalhanoğlu",
+     "pos": "MF",
+     "number": null
+    },
+    {
+     "name": "İsmail Yüksek",
+     "pos": "MF",
+     "number": 16
+    },
+    {
+     "name": "Orkun Kökçü",
+     "pos": "MF",
+     "number": null
+    },
+    {
+     "name": "Salih Özcan",
+     "pos": "MF",
+     "number": 5
+    },
+    {
+     "name": "Aral Şimşir",
+     "pos": "FW",
+     "number": 21
+    },
+    {
+     "name": "Barış Alper Yılmaz",
+     "pos": "FW",
+     "number": null
+    },
+    {
+     "name": "Deniz Gül",
+     "pos": "FW",
+     "number": 9
+    },
+    {
+     "name": "Enes Ünal",
+     "pos": "FW",
+     "number": null
+    },
+    {
+     "name": "İlhan Fakılı",
+     "pos": "FW",
+     "number": 11
+    },
+    {
+     "name": "Oğuz Aydın",
+     "pos": "FW",
+     "number": 18
+    },
+    {
+     "name": "Yunus Akgün",
+     "pos": "FW",
+     "number": 19
+    }
    ]
   }
  }

@@ -30,3 +30,21 @@ function bsd_lineups(array $m,array $teams,array $cfg,DateTimeImmutable $now,?ca
   }pp_lineup_trace('BSD',$status);
  }catch(Throwable $e){pp_lineup_trace('BSD','unavailable-or-deferred');}return $teams;
 }
+/* V144: BSD predicted/confirmed XI for national-team matches (all competitions, matched by date and team names).
+   BSD does not know federation call-ups, so the caller filters it with the call-up list. */
+function bsd_national_lineup(array $m,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):?array{
+ if(!bsd_key($cfg)&&!$fetcher)return null;
+ try{$day=(new DateTimeImmutable((string)($m['kickoff']??$m['date'])))->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d');
+  $key=fn($n)=>pp_public_name(function_exists('pp_provider_name')?pp_provider_name((string)$n):(string)$n);
+  $d=bsd_json('/api/v2/events/?date_from='.$day.'&date_to='.$day.'&limit=200',$cfg,$now,1800,$fetcher);$h=$key($m['home']['name']??'');$a=$key($m['away']['name']??'');
+  $hit=array_values(array_filter($d['results']??[],fn($e)=>$key($e['home_team']??'')===$h&&$key($e['away_team']??'')===$a));if(count($hit)!==1)return null;
+  $doc=bsd_json('/api/v2/events/'.(int)$hit[0]['id'].'/lineups/',$cfg,$now,900,$fetcher);$status=$doc['lineup_status']??'';if(!in_array($status,['predicted','confirmed'],true))return null;
+  $out=['status'=>$status,'eventId'=>(int)$hit[0]['id']];
+  foreach(['home','away']as$side){$l=$doc['lineups'][$side]??[];$out[$side]=['formation'=>$l['formation']??null,'confidence'=>$l['confidence']??null,
+   'starters'=>array_map(fn($p)=>['name'=>(string)($p['name']??''),'pos'=>(string)($p['position']??''),'number'=>$p['jersey_number']??null],$l['players']??[]),
+   'subs'=>array_map(fn($p)=>['name'=>(string)($p['name']??''),'pos'=>(string)($p['position']??''),'number'=>$p['jersey_number']??null],$l['substitutes']??[]),
+   'unavailable'=>array_map(fn($p)=>['name'=>(string)($p['name']??''),'status'=>(string)($p['status']??''),'reason'=>(string)($p['reason']??'')],$doc['unavailable_players'][$side]??[])];}
+  return $out;
+ }catch(Throwable $e){if(function_exists('pp_lineup_trace'))pp_lineup_trace('BSD national','unavailable-or-deferred',$e->getMessage());return null;}
+}
+

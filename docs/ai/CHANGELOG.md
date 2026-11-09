@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V144 — 2026-11-09 (Claude Code) · kararlı
+- **Millî takım kadroları:** muhtemel 11 artık BSD'nin (bzzoiro) maç tahmininden, yalnız TFF aday kadrosundaki oyuncularla
+  kurulur; sakat ve cezalılar çıkar. Herkesin farklı bir forma numarası var (Arda 8, Hakan 10…), yedeklerde önce kaleciler.
+
 ## V143 — 2026-11-09 (Claude Code) · kararlı
 - **Seremoni:** sahadaki bayrak/logo bezleri eskisi gibi net; parlama yok, turnuva logosu ve bayraklar kendi renkleriyle.
 - **Düelloda istediğin takımın forması:** “Seçtiğin takımın forması” seçeneğiyle ör. Messi & Yamal Barcelona, Ronaldo &

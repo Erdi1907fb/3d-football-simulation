@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V143 → V144 (kararlı)
+- **İstek:** millî kadrolar hâlâ yanlış (Arda'nın numarası yok, yedekler garip); BSD'den (bzzoiro) düzgün çek.
+- **Yapılanlar:** PROJECT_STATE 4ak. BSD anahtarı kullanıcı tarafından bu oturumun ortamına kaydedildi (değer görülmedi);
+  API canlı incelendi. Aday kadro haberlerle doğrulandı (Hürriyet, Habertürk, Aksiyon).
+- **Testler:** quick 19/19 (`callup-filter.php`: numaralar benzersiz, yedek kaleciyle başlar, ≤12, idempotent);
+  canlı BSD ile Türkiye XI: Uğurcan; Ferdi, Ozan, Merih; Zeki, Hakan, İsmail, Oğuz; Salih, Arda; Deniz.
+
+---
+
 ## [2026-11-09] Claude Code · V142 → V143 (kararlı)
 - **İstek:** aday kadro dışı oyuncular (İrfan Can, Kerem, Altay, Şengezer) yedekte bile olmasın; seremoni logoları eski
   netlikte; düelloda istenen takımın forması.

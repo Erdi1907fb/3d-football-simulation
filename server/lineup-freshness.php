@@ -5,7 +5,7 @@ function pp_lineup_trace(?string $provider=null,string $status='',?string $detai
 function pp_current_coach_save(array $m,string $side,array $coach,array $cfg):void{$id=(string)($m[$side]['espnId']??'');if(!preg_match('/^\d{1,12}$/D',$id)||empty($coach['name'])||empty($coach['asOf']))return;$previous=pp_read($cfg['storage_dir'].'/coach-current-'.$id.'.json');if((strtotime($previous['coach']['asOf']??'')?:0)>(strtotime($coach['asOf'])?:0))return;pp_write($cfg['storage_dir'].'/coach-current-'.$id.'.json',['teamId'=>$id,'name'=>$m[$side]['name'],'coach'=>$coach]);}
 function pp_coaches_finalize(array $snapshot,array $m,array $cfg,DateTimeImmutable $now):array{
  if(($m['date']??'')<$now->format('Y-m-d')||!empty($m['concept']))return $snapshot;
- if(function_exists('pp_national_callup_filter'))$snapshot=pp_national_callup_filter($snapshot,$m,$now);
+ if(function_exists('pp_national_callup_filter'))$snapshot=pp_national_callup_filter($snapshot,$m,$now,$cfg);
  foreach(['home','away']as$i=>$side){if(empty($snapshot['teams'][$i]))continue;$t=&$snapshot['teams'][$i];$id=(string)($m[$side]['espnId']??'');$saved=pp_read($cfg['storage_dir'].'/coach-current-'.$id.'.json');$fresh=((string)($saved['teamId']??'')===$id&&pp_public_name($saved['name']??'')===pp_public_name($m[$side]['name']??''))?($saved['coach']??null):null;$entry=pp_club_entry($m[$side]);$club=$entry['team']['coach']??null;
   foreach([$club]as$c)if($c&&strtotime($c['asOf']??'')>strtotime($fresh['asOf']??''))$fresh=$c;
   $exact=($t['source']['status']??'')==='provider-lineup'&&($t['coach']['basis']??'')==='exact-match';

@@ -33,6 +33,7 @@ else{
   $add('Kayıtlı maç / tahmin',count($state['matches']??[]).' / '.count($state['predictions']??[]),count($state['predictions']??[])>0);
   $sched=pp_read($dir.'/scheduler.json')['lastRunAt']??null;$add('Son cron çalışması',$sched?:'hiç (cron kurulu değil ya da çalışmıyor)',$sched&&time()-strtotime($sched)<900);
   $add('Son ziyaretçi yenilemesi',($state['webLastAttemptEpoch']??0)?date('d.m.Y H:i:s',(int)$state['webLastAttemptEpoch']):'hiç',null);
+  $add('BSD (bzzoiro) anahtarı',function_exists('bsd_key')&&bsd_key($cfg)!==''?'tanımlı':'YOK — millî maç tahmini 11 ve sakat/cezalı listesi kullanılamaz',function_exists('bsd_key')&&bsd_key($cfg)!=='');
   $add('Bekleyen kaynak',count(pp_due_jobs(pp_source_jobs($cfg,$now),$state,$cfg,$now)),null);
   $day=pp_bulletin_day($now);for($i=0;$i<6;$i++){$d=(new DateTimeImmutable($day))->modify("+$i day")->format('Y-m-d');$byDay[$d]=['fixtures'=>0,'published'=>0];}
   foreach($state['matches']??[]as$m)if(isset($byDay[$m['date']]))$byDay[$m['date']]['fixtures']++;
