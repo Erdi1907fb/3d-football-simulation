@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V147 — 2026-11-10 (Claude Code) · kararlı
+- **Kale fileleri:** her yüzde eşit, dengeli göz; top filede net görünür (maç, penaltı, serbest vuruş, konsept).
+- **2v2 portreler:** ikinci oyuncunun (ör. Yamal, Mbappé) fotoğrafı artık görünüyor.
+- **Serbest vuruş:** takım modunda en iyi 5 frikikçi sırayla; goller kaleciyi açıkça geçiyor ya da parmak ucuna değip giriyor.
+
 ## V146 — 2026-11-09 (Claude Code) · kararlı
 - **iPhone'da MP4 sonrası yenilenme:** video bitince 3D ön izleme bellekten bırakılıyor; video ve Kaydet düğmesi açık kalıyor.
   Oynat'a basınca aynı seri yeniden yükleniyor.

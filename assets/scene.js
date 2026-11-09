@@ -169,10 +169,13 @@ function create(options={}){
   const bar=mesh(geo('CylinderGeometry',.06,.06,7.32,32),postMat,goal,0,2.44,0);bar.castShadow=true;bar.rotation.x=Math.PI/2;
   // One dynamic draw per goal, with finer 12cm cords. Posts stay separate and rigid.
   const cordPoints=[],cord=(a,b)=>{for(let i=0;i<18;i++)for(const u of[i/18,(i+1)/18])for(let k=0;k<3;k++)cordPoints.push(a[k]+(b[k]-a[k])*u);};
-  for(let i=0;i<=60;i++){const z=-3.66+i*7.32/60;cord([0,2.44,z],[sign*2.1,2.44,z]);cord([sign*2.1,2.44,z],[sign*2.1,.05,z]);}
-  for(let i=0;i<=20;i++){const y=.05+i*2.39/20;cord([sign*2.1,y,-3.66],[sign*2.1,y,3.66]);for(const z of[-3.66,3.66])cord([0,y,z],[sign*2.1,y,z]);}
-  for(let i=1;i<=14;i++)for(const z of[-3.66,3.66])cord([sign*i*.15,.05,z],[sign*i*.15,2.44,z]);
-  const netGeometry=new T.BufferGeometry();netGeometry.setAttribute('position',new T.Float32BufferAttribute(cordPoints,3));const net=new T.LineSegments(netGeometry,new T.LineBasicMaterial({color:0xdce8e1,transparent:true,opacity:.80}));net.name='goal-net-ropes';net.userData.noBatch=true;net.frustumCulled=false;goal.add(net);goal.userData.sign=sign;goal.userData.net=[{mesh:net,base:new Float32Array(netGeometry.attributes.position.array)}];goal.userData.netDrawCalls=1;
+  // V147: one even ~24 cm square mesh on every face (back, roof, sides). The former 12 cm back/roof cords aliased into
+  // a dense moiré at 1080 px and hid the ball; the roof also gets its cross cords so every face is a real grid.
+  const NZ=30,NY=10,NX=9;
+  for(let i=0;i<=NZ;i++){const z=-3.66+i*7.32/NZ;cord([0,2.44,z],[sign*2.1,2.44,z]);cord([sign*2.1,2.44,z],[sign*2.1,.05,z]);}
+  for(let i=0;i<=NY;i++){const y=.05+i*2.39/NY;cord([sign*2.1,y,-3.66],[sign*2.1,y,3.66]);for(const z of[-3.66,3.66])cord([0,y,z],[sign*2.1,y,z]);}
+  for(let i=1;i<=NX;i++){const x=sign*i*2.1/(NX+1);for(const z of[-3.66,3.66])cord([x,.05,z],[x,2.44,z]);cord([x,2.44,-3.66],[x,2.44,3.66]);}
+  const netGeometry=new T.BufferGeometry();netGeometry.setAttribute('position',new T.Float32BufferAttribute(cordPoints,3));const net=new T.LineSegments(netGeometry,new T.LineBasicMaterial({color:0xe8eee9,transparent:true,opacity:.72}));net.name='goal-net-ropes';net.userData.noBatch=true;net.frustumCulled=false;goal.add(net);goal.userData.sign=sign;goal.userData.net=[{mesh:net,base:new Float32Array(netGeometry.attributes.position.array)}];goal.userData.netDrawCalls=1;
   // Evaluate shared cord junctions once; retain the single LineSegments draw.
   for(const entry of goal.userData.net){const lookup=new Map(),nodes=[],index=new Uint32Array(entry.base.length/3);for(let i=0;i<index.length;i++){const at=i*3,x=entry.base[at],y=entry.base[at+1],z=entry.base[at+2],key=x.toFixed(5)+'|'+y.toFixed(5)+'|'+z.toFixed(5);let id=lookup.get(key);if(id===undefined){id=nodes.length;lookup.set(key,id);nodes.push({x,y,z});}index[i]=id;}entry.nodes=nodes;entry.index=index;entry.displaced=new Float32Array(nodes.length*3);}
   netGoals.push(goal);

@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V146 → V147 (kararlı)
+- **İstek:** 2v2 ikinci oyuncu portresi boş; fileler çok sık; FK çeşitliliği/kaleci gerçekçiliği; FK takımda 5 vurucu;
+  genel grafik/FPS “çağ atlatma”.
+- **Yapılanlar:** PROJECT_STATE 4an. Genel “çağ atlatma” (T-11) bu sürümde yalnız file + FK olarak ele alındı; kalan
+  geniş görsel geliştirme açık görev.
+- **Testler:** quick 19/19 (freekick.cjs physicalMatch .997); penaltı/FK gol anı görüntüsü yeni fileyle.
+
+---
+
 ## [2026-11-09] Claude Code · V145 → V146 (kararlı)
 - **İstek:** iPhone'da video oluşuyor ama sonra sayfa çöküp yenileniyor.
 - **Yapılanlar:** PROJECT_STATE 4am. **Testler:** quick 19/19; iPhone 13 emülasyonu (kısaltılmış seri): iki stüdyoda MP4 →

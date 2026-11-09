@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V146** · 2026-11-09 · Claude Code
+> Son güncelleme: **V147** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V146** (`VERSION`) |
+| Kararlı sürüm | **V147** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -443,6 +443,16 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   `<video>` ön izleme aynı anda. iOS'ta (`IOS_STUDIO`) MP4 hazır olunca `releaseScene()` sahneyi ve WebGL bağlamını
   bırakır (`forceContextLoss`), `<video preload=metadata>`; Oynat/ileri sarma/yeni MP4'te `ensureScene()` aynı seriyi
   (aynı contest, yeni senaryo değil) yeniden kurar.
+
+## 4an. V147 (file, düello portreleri, FK gerçekçiliği)
+- `scene.js` kale filesi: her yüzde eşit ~24 cm göz (arka/çatı 31 ip, yatay 11 sıra, yan/çatı derinlik 9 ip; çatıya
+  çapraz ipler eklendi), renk/opaklık 0xe8eee9/.72. Eski 12 cm göz 1080 px'te hareli yüzey yapıp topu gizliyordu.
+  Tüm modlarda (maç, penaltı, FK, konsept) aynı `SekmeScene` filesi. Fizik (düğüm yer değiştirmesi) değişmedi.
+- Düello portreleri: kulüp kadrosundan seçilen oyuncunun `portrait.php` adresi stüdyoda çalışmıyordu (yalnız kayıtlı
+  maç XI'ları); `portraitFor()` önce yerel `assets/faces/player-portraits.json` fotoğrafını kullanır (ör. Yamal 745.webp).
+- FK takım modu: en iyi **5** vurucu sırayla (önce 3); `SPECIALISTS` 36 güncel frikikçiyle genişledi.
+- FK gol seçimi: `ok` artık gol için kaleci geçiş mesafesi ≥1.28 (uzanma elipsinin açıkça dışı) ya da parmak ucu teması
+  ister → kaleci yanından sızan gol 423'te 2 (yedek seçim).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
