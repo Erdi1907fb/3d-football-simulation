@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V144 → V145 (kararlı)
+- **İstek:** BSD tahmininde de Kerem var; doğru kaynak bul, olmazsa elle düzenlenebilir sistem.
+- **Yapılanlar:** PROJECT_STATE 4al (Transfermarkt + kadro.php).
+- **Testler:** quick 19/19 (TM ayrıştırma fixture'ı `tests/fixtures/tm-turkey-squad-202611.html`); kadro.php yerelde:
+  şifre oluşturma, kayıt, yanlış şifre, elle 11 → API'de 4-1-4-1 ve doğru mevkiler.
+- **Dikkat:** kullanıcı kadro.php şifresini yüklemeden hemen sonra belirlemeli (ilk gelen belirler).
+
+---
+
 ## [2026-11-09] Claude Code · V143 → V144 (kararlı)
 - **İstek:** millî kadrolar hâlâ yanlış (Arda'nın numarası yok, yedekler garip); BSD'den (bzzoiro) düzgün çek.
 - **Yapılanlar:** PROJECT_STATE 4ak. BSD anahtarı kullanıcı tarafından bu oturumun ortamına kaydedildi (değer görülmedi);

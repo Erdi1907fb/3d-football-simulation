@@ -12,6 +12,7 @@ require_once __DIR__.'/player-lineups.php';
 require_once __DIR__.'/big-matches.php';
 require_once __DIR__.'/national-ratings.php';
 require_once __DIR__.'/national-squads.php';
+require_once __DIR__.'/national-transfermarkt.php';
 
 function pp_config(): array {
     $cfg = require __DIR__ . '/defaults.php';
@@ -23,7 +24,7 @@ function pp_config(): array {
     $cfg['publication_policy'] = '3d-v74-all-fixtures-six-day-window';
     $cfg['live_sources_enabled'] = true;
     $cfg['mackolik_enabled'] = false;
-    $cfg['source_hosts'] = array_values(array_unique(array_merge($cfg['source_hosts'],['site.api.espn.com','www.tff.org','www.fotmob.com','en.wikipedia.org'])));
+    $cfg['source_hosts'] = array_values(array_unique(array_merge($cfg['source_hosts'],['site.api.espn.com','www.tff.org','www.fotmob.com','en.wikipedia.org','www.transfermarkt.com'])));
     // V136: tests never touch the live data directory.
     if (getenv('NEXT90_STORAGE_DIR')) $cfg['storage_dir'] = getenv('NEXT90_STORAGE_DIR');
     if (!is_dir($cfg['storage_dir']) && !mkdir($cfg['storage_dir'], 0750, true)) throw new RuntimeException('Storage could not be created');

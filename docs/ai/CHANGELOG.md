@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V145 — 2026-11-09 (Claude Code) · kararlı
+- **Aday kadro Transfermarkt'tan:** millî takımların güncel federasyon kadrosu otomatik (Türkiye'de TFF listesiyle birebir).
+- **Kendin düzelt: `kadro.php`** — aday kadroyu, ilk 11'i, dizilişi ve teknik direktörü şifreyle elle girebilirsin;
+  girdiğin liste her kaynağın önüne geçer.
+
 ## V144 — 2026-11-09 (Claude Code) · kararlı
 - **Millî takım kadroları:** muhtemel 11 artık BSD'nin (bzzoiro) maç tahmininden, yalnız TFF aday kadrosundaki oyuncularla
   kurulur; sakat ve cezalılar çıkar. Herkesin farklı bir forma numarası var (Arda 8, Hakan 10…), yedeklerde önce kaleciler.

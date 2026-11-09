@@ -100,7 +100,7 @@ $tmpW=sys_get_temp_dir().'/n90-ns-'.getmypid();@mkdir($tmpW);$wcalls=0;$wf=funct
 $fx=[['date'=>'2026-11-12','home'=>['name'=>'Türkiye','espnId'=>'465'],'away'=>['name'=>'Belgium','espnId'=>'459'],'result'=>null]];
 $nu=pp_ns_update(['storage_dir'=>$tmpW]+$cfg,$fx,new DateTimeImmutable('2026-11-09T10:00:00Z'),$wf);$lv=json_decode((string)file_get_contents($tmpW.'/national-callups-live.json'),true);
 $check(($nu['updated']??0)>=1&&count($lv['teams']['465']['players']??[])===26,'call-ups stored for Türkiye '.json_encode($nu));
-pp_ns_update(['storage_dir'=>$tmpW]+$cfg,$fx,new DateTimeImmutable('2026-11-09T12:00:00Z'),$wf);$check($wcalls===2,'cached for 12 h (one request per team), calls='.$wcalls);
+pp_ns_update(['storage_dir'=>$tmpW]+$cfg,$fx,new DateTimeImmutable('2026-11-09T12:00:00Z'),$wf);$check($wcalls===4,'cached for 12 h (Transfermarkt then Wikipedia per team, no refetch), calls='.$wcalls);
 $GLOBALS['pp_nr_storage']=$tmpW;$xi2=pp_players_recent($match,'home','uefa.nations',['storage_dir'=>$tmpW,'players_request_budget'=>20]+$cfg,new DateTimeImmutable('2026-11-10T12:00:00Z'),$fetch);unset($GLOBALS['pp_nr_storage']);
 $names2=array_map(fn($p)=>pp_public_name($p['name']),array_merge($xi2['players']??[],$xi2['bench']??[]));$check(count($xi2['players']??[])===11&&!in_array(pp_public_name('İrfan Can Kahveci'),$names2,true)&&in_array(pp_public_name('Aral Şimşir'),$names2,true),'XI from live call-ups: Aral in, İrfan Can out');
 $check(str_starts_with((string)($xi2['source']['callup']['source']??''),'Wikipedia'),'XI cites the live source');

@@ -17,3 +17,8 @@ $nums=array_map(fn($p)=>$p['number']??null,$all);if(in_array(null,$nums,true)||c
 if(($t['bench'][0]['position']??'')!=='GK')$fail('bench starts with a goalkeeper');if(count($t['bench'])>12)$fail('bench at most 12');
 $again=pp_national_callup_filter(['teams'=>[$t,null]],$m,new DateTimeImmutable('2026-11-09T18:00:00+03:00'))['teams'][0];if(array_map(fn($p)=>$p['name'].$p['number'],array_merge($again['players'],$again['bench']))!==array_map(fn($p)=>$p['name'].$p['number'],$all))$fail('filter must be idempotent');
 @rmdir($dir);echo json_encode(['PASS'=>true,'xi'=>array_map(fn($p)=>$p['name'],$t['players'])],JSON_UNESCAPED_UNICODE),"\n";
+// V145: Transfermarkt national squad page = federation call-up (26, no Kerem / İrfan Can / Altay / Şengezer).
+require_once __DIR__.'/../server/national-transfermarkt.php';$tm=pp_tm_parse((string)file_get_contents(__DIR__.'/fixtures/tm-turkey-squad-202611.html'));
+if(count($tm??[])!==26)$fail('Transfermarkt parse: 26 players');$tn=array_map(fn($p)=>$p['name'],$tm);foreach(['Kerem Aktürkoğlu','İrfan Can Kahveci','Altay Bayındır','Muhammed Şengezer'] as$n)if(in_array($n,$tn,true))$fail("TM: $n");
+if(count(array_filter($tm,fn($p)=>$p['pos']==='GK'))!==4||!array_filter($tm,fn($p)=>$p['captain']&&$p['name']==='Hakan Çalhanoğlu'))$fail('TM positions/captain');
+echo json_encode(['PASS'=>true,'transfermarkt'=>count($tm)]),"\n";

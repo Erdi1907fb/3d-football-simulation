@@ -1,0 +1,346 @@
+{
+ "version": 1,
+ "note": "Transfermarkt national-team ids (kader page = latest call-up). V145.",
+ "teams": {
+  "Albania": {
+   "slug": "albanien",
+   "id": 3561
+  },
+  "Algeria": {
+   "slug": "algerien",
+   "id": 3614
+  },
+  "Andorra": {
+   "slug": "andorra",
+   "id": 10533
+  },
+  "Argentina": {
+   "slug": "argentinien",
+   "id": 3437
+  },
+  "Armenia": {
+   "slug": "armenien",
+   "id": 6219
+  },
+  "Australia": {
+   "slug": "australien",
+   "id": 3433
+  },
+  "Austria": {
+   "slug": "osterreich",
+   "id": 3383
+  },
+  "Azerbaijan": {
+   "slug": "aserbaidschan",
+   "id": 8605
+  },
+  "Belarus": {
+   "slug": "belarus",
+   "id": 3450
+  },
+  "Belgium": {
+   "slug": "belgien",
+   "id": 3382
+  },
+  "Bosnia and Herzegovina": {
+   "slug": "bosnien-herzegowina",
+   "id": 3446
+  },
+  "Brazil": {
+   "slug": "brasilien",
+   "id": 3439
+  },
+  "Bulgaria": {
+   "slug": "bulgarien",
+   "id": 3394
+  },
+  "Cameroon": {
+   "slug": "kamerun",
+   "id": 3434
+  },
+  "Canada": {
+   "slug": "kanada",
+   "id": 3510
+  },
+  "Chile": {
+   "slug": "chile",
+   "id": 3700
+  },
+  "China PR": {
+   "slug": "china",
+   "id": 5598
+  },
+  "Colombia": {
+   "slug": "kolumbien",
+   "id": 3816
+  },
+  "Costa Rica": {
+   "slug": "costa-rica",
+   "id": 8497
+  },
+  "Croatia": {
+   "slug": "kroatien",
+   "id": 3556
+  },
+  "Cyprus": {
+   "slug": "zypern",
+   "id": 3668
+  },
+  "Czechia": {
+   "slug": "tschechien",
+   "id": 3445
+  },
+  "Côte d’Ivoire": {
+   "slug": "elfenbeinkuste",
+   "id": 3591
+  },
+  "Denmark": {
+   "slug": "danemark",
+   "id": 3436
+  },
+  "Ecuador": {
+   "slug": "ecuador",
+   "id": 5750
+  },
+  "Egypt": {
+   "slug": "agypten",
+   "id": 3672
+  },
+  "England": {
+   "slug": "england",
+   "id": 3299
+  },
+  "Estonia": {
+   "slug": "estland",
+   "id": 6133
+  },
+  "Faroe Islands": {
+   "slug": "faroer",
+   "id": 9173
+  },
+  "Finland": {
+   "slug": "finnland",
+   "id": 3443
+  },
+  "France": {
+   "slug": "frankreich",
+   "id": 3377
+  },
+  "Georgia": {
+   "slug": "georgien",
+   "id": 3669
+  },
+  "Germany": {
+   "slug": "deutschland",
+   "id": 3262
+  },
+  "Ghana": {
+   "slug": "ghana",
+   "id": 3441
+  },
+  "Gibraltar": {
+   "slug": "gibraltar",
+   "id": 37574
+  },
+  "Greece": {
+   "slug": "griechenland",
+   "id": 3378
+  },
+  "Hungary": {
+   "slug": "ungarn",
+   "id": 3468
+  },
+  "Iceland": {
+   "slug": "island",
+   "id": 3574
+  },
+  "Iran": {
+   "slug": "iran",
+   "id": 3582
+  },
+  "Israel": {
+   "slug": "israel",
+   "id": 5547
+  },
+  "Italia": {
+   "slug": "italien",
+   "id": 3376
+  },
+  "Japan": {
+   "slug": "japan",
+   "id": 3435
+  },
+  "Kazakhstan": {
+   "slug": "kasachstan",
+   "id": 9110
+  },
+  "Korea Republic": {
+   "slug": "sudkorea",
+   "id": 3589
+  },
+  "Kosovo": {
+   "slug": "kosovo",
+   "id": 53982
+  },
+  "Latvia": {
+   "slug": "lettland",
+   "id": 3555
+  },
+  "Liechtenstein": {
+   "slug": "liechtenstein",
+   "id": 5673
+  },
+  "Lithuania": {
+   "slug": "litauen",
+   "id": 3851
+  },
+  "Luxembourg": {
+   "slug": "luxemburg",
+   "id": 3580
+  },
+  "Mali": {
+   "slug": "mali",
+   "id": 3674
+  },
+  "Malta": {
+   "slug": "malta",
+   "id": 3587
+  },
+  "Mexico": {
+   "slug": "mexiko",
+   "id": 6303
+  },
+  "Moldova": {
+   "slug": "moldawien",
+   "id": 6090
+  },
+  "Montenegro": {
+   "slug": "montenegro",
+   "id": 11953
+  },
+  "Morocco": {
+   "slug": "marokko",
+   "id": 3575
+  },
+  "Netherlands": {
+   "slug": "niederlande",
+   "id": 3379
+  },
+  "Nigeria": {
+   "slug": "nigeria",
+   "id": 3444
+  },
+  "North Macedonia": {
+   "slug": "nordmazedonien",
+   "id": 5148
+  },
+  "Northern Ireland": {
+   "slug": "nordirland",
+   "id": 5674
+  },
+  "Norway": {
+   "slug": "norwegen",
+   "id": 3440
+  },
+  "Panama": {
+   "slug": "panama",
+   "id": 3577
+  },
+  "Paraguay": {
+   "slug": "paraguay",
+   "id": 3581
+  },
+  "Peru": {
+   "slug": "peru",
+   "id": 3584
+  },
+  "Poland": {
+   "slug": "polen",
+   "id": 3442
+  },
+  "Portugal": {
+   "slug": "portugal",
+   "id": 3300
+  },
+  "Qatar": {
+   "slug": "katar",
+   "id": 14162
+  },
+  "Republic of Ireland": {
+   "slug": "irland",
+   "id": 3509
+  },
+  "Romania": {
+   "slug": "rumanien",
+   "id": 3447
+  },
+  "San Marino": {
+   "slug": "san-marino",
+   "id": 10521
+  },
+  "Saudi Arabia": {
+   "slug": "saudi-arabien",
+   "id": 3807
+  },
+  "Scotland": {
+   "slug": "schottland",
+   "id": 3380
+  },
+  "Senegal": {
+   "slug": "senegal",
+   "id": 3499
+  },
+  "Serbia": {
+   "slug": "serbien",
+   "id": 3438
+  },
+  "Slovakia": {
+   "slug": "slowakei",
+   "id": 3503
+  },
+  "Slovenia": {
+   "slug": "slowenien",
+   "id": 3588
+  },
+  "Spain": {
+   "slug": "spanien",
+   "id": 3375
+  },
+  "Sweden": {
+   "slug": "schweden",
+   "id": 3557
+  },
+  "Switzerland": {
+   "slug": "schweiz",
+   "id": 3384
+  },
+  "Tunisia": {
+   "slug": "tunesien",
+   "id": 3670
+  },
+  "Türkiye": {
+   "slug": "turkei",
+   "id": 3381
+  },
+  "Ukraine": {
+   "slug": "ukraine",
+   "id": 3699
+  },
+  "United States": {
+   "slug": "vereinigte-staaten",
+   "id": 3505
+  },
+  "Uruguay": {
+   "slug": "uruguay",
+   "id": 3449
+  },
+  "Venezuela": {
+   "slug": "venezuela",
+   "id": 3504
+  },
+  "Wales": {
+   "slug": "wales",
+   "id": 3864
+  }
+ }
+}

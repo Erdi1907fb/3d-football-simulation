@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V144** · 2026-11-09 · Claude Code
+> Son güncelleme: **V145** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V144** (`VERSION`) |
+| Kararlı sürüm | **V145** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -423,6 +423,20 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   Grup: kaleci federasyon listesinden, saha oyuncusu kulüp kadrosu doğal rolünden; reyting statik kaynaktan → idempotent.
 - `assets/national-callups.json` Türkiye: 26 kişi + mevki + Wikipedia numaraları (TFF 6 Kasım listesi, haberlerle teyit).
 - `durum.php`: BSD anahtarı tanımlı mı satırı.
+
+## 4al. V145 (Transfermarkt aday kadro + elle düzenleme)
+- Kaynak araştırması (9 Kasım 2026, Türkiye): TFF listesi 26 kişi (haberlerle teyitli). **Transfermarkt** millî takım
+  `kader` sayfası birebir aynı (Kerem/İrfan Can/Altay/Şengezer yok; Hakan kaptan). FotMob millî kadro listesi ESKİ (Kerem,
+  İrfan, Altay var); BSD tahmini 11/yedekleri de aday kadroyu bilmiyor (Kerem 11'de); BSD squad uç noktası boş.
+- `server/national-transfermarkt.php`: `pp_tm_parse` (isim, hat, ayrıntılı mevki, no, kaptan, kulüp), `pp_tm_callup`;
+  `assets/national-transfermarkt.json` 85 millî takımın TM slug/id'si. `pp_ns_update` önce TM (6 sa önbellek, 403/405/429'da
+  2 sa bekleme), olmazsa Wikipedia. TM sık istekte 405 veriyor → nazik kullanım şart.
+- `pp_national_callup` önceliği: elle (`national-callups-manual.json`) > canlı (TM/Wikipedia) > editoryal; eksik no/teknik
+  direktör editoryal listeden.
+- **`kadro.php`**: şifreli (ilk kullanımda belirlenir, hash `kadro-admin.json`) elle aday kadro / ilk 11 / diziliş / TD
+  düzenleme; kayıt takımın bu aradaki son maçına kadar geçerli; “Otomatiğe dön”.
+- Filtre: diziliş elle > BSD > sağlayıcı; elle XI'da hat sayılarına en yakın şablon; oyuncu-slot ataması doğal role göre
+  açgözlü maliyet (`pp_lineup_role_cost`).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

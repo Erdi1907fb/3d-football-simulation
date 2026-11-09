@@ -31,10 +31,13 @@ function pp_ns_parse(string $wikitext):?array{
 function pp_ns_update(array $cfg,array $matches,DateTimeImmutable $now,?callable $fetcher=null,int $budget=6):array{
  $dir=$cfg['storage_dir'];$file=$dir.'/national-callups-live.json';$live=pp_read($file)?:['version'=>1,'teams'=>[]];$nr=pp_nr_current($cfg);
  $back=pp_read($dir.'/national-callups-backoff.json');if(($back['until']??0)>$now->getTimestamp())return ['status'=>'backoff'];
- $want=[];$limit=$now->modify('+10 days')->format('Y-m-d');foreach($matches as$m){if(!empty($m['result'])||($m['date']??'')<$now->format('Y-m-d')||($m['date']??'')>$limit)continue;
-  foreach(['home','away'] as$s){$n=$m[$s]['name']??'';$id=(string)($m[$s]['espnId']??($nr['teams'][$n]['espnId']??''));if(isset($nr['teams'][$n])&&preg_match('/^\d{1,12}$/',$id))$want[$id]=$n;}}
+ $want=[];$next=[];$limit=$now->modify('+10 days')->format('Y-m-d');foreach($matches as$m){if(!empty($m['result'])||($m['date']??'')<$now->format('Y-m-d')||($m['date']??'')>$limit)continue;
+  foreach(['home','away'] as$s){$n=$m[$s]['name']??'';$id=(string)($m[$s]['espnId']??($nr['teams'][$n]['espnId']??''));if(isset($nr['teams'][$n])&&preg_match('/^\d{1,12}$/',$id)){$want[$id]=$n;$next[$id]=min($next[$id]??'9999',(string)$m['date']);}}}
  $done=0;$changed=0;
- foreach($want as$id=>$name){$old=$live['teams'][$id]??null;if($old&&$now->getTimestamp()-(strtotime($old['fetchedAt']??'')?:0)<12*3600)continue;if($done>=$budget)break;$page=pp_ns_page($name);if(!$page)continue;$done++;
+ foreach($want as$id=>$name){$old=$live['teams'][$id]??null;if($old&&$now->getTimestamp()-(strtotime($old['fetchedAt']??'')?:0)<(($old['provider']??'')==='transfermarkt'?6:12)*3600)continue;if($done>=$budget)break;
+  // V145: Transfermarkt's national squad page (= latest federation call-up) first, Wikipedia as fallback.
+  if(function_exists('pp_tm_callup')&&isset(pp_tm_map()[$name])){$done++;$validTo=(new DateTimeImmutable($next[$id]??$now->format('Y-m-d')))->modify('+1 day')->format('Y-m-d');$tm=pp_tm_callup($name,$cfg,$now,$validTo,$fetcher);if($tm){$tm['coach']=$old['coach']??null;$live['teams'][$id]=$tm;$changed++;continue;}if($done>=$budget)break;}
+  $page=pp_ns_page($name);if(!$page)continue;$done++;
   $url='https://en.wikipedia.org/w/index.php?title='.rawurlencode($page).'&action=raw';
   try{$raw=$fetcher?$fetcher($url,$cfg):pp_fetch_raw($url,$cfg+['http_user_agent'=>'next90sim-squads/1.0 (football simulation; national call-ups once per 12h)']);}
   catch(Throwable $e){if(str_contains($e->getMessage(),'429'))pp_write($dir.'/national-callups-backoff.json',['until'=>$now->getTimestamp()+6*3600]);continue;}
