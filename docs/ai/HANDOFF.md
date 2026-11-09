@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V136 → V137 (kararlı)
+- **İstek:** millî kadrolar her arada değişiyor; doğru ve kendini güncelleyen bir kaynak.
+- **Yapılanlar:** PROJECT_STATE 4ad. Test: Türkiye/Belçika Wikipedia örnekleri (`tests/fixtures/wiki-turkey-squad-202611.txt`).
+
+---
+
 ## [2026-11-09] Claude Code · V135 → V136 (kararlı, ACİL)
 - **Sorun:** sitede diğer liglerin maçları kayboldu; telefonda/PC'de MP4 hazırlarken sayfa yeniden yükleniyor/takılıyor.
 - **Kök nedenler ve çözüm:** PROJECT_STATE 4ac. Kullanıcıya: sunucudaki `data/private/state.json`'u yedekten

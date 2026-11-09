@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V137 — 2026-11-09 (Claude Code) · kararlı
+- **Millî aday kadrolar kendiliğinden güncellenir:** her millî arada açıklanan aday kadro (Wikipedia "Current squad",
+  federasyon duyurusuna dayanır) sunucu tarafından çekilir; muhtemel 11 yalnız davetli oyunculardan kurulur, teknik
+  direktör ve forma numaraları buradan gelir (ör. Türkiye: İrfan Can ve Kerem yok, Aral ve Arda var).
+
 ## V136 — 2026-11-09 (Claude Code) · kararlı
 - **Kayıp maçlar:** güncelleme paketlerine yanlışlıkla eski bir sunucu veri dosyası giriyordu; yüklenince yayımlanmış
   tahminler siliniyordu. Paketten ve depodan çıkarıldı; sunucu tahminleri yeniden üretir.

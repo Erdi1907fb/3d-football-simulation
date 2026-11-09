@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V136** · 2026-11-08 · Claude Code
+> Son güncelleme: **V137** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V136** (`VERSION`) |
+| Kararlı sürüm | **V137** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -341,6 +341,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Bellek sızıntısı: sahne `dispose` hava durumunu silmiyordu; `weather.js`'in genel `live` kümesi her silinen sahneyi
   (önizleme/video/analiz) bellekte tutuyordu. Düzeltildi: iPhone emülasyonunda video sahnesi 380→263 MB, geçiş tepesi
   464→338 MB, 3 tekrarlı geçişte sabit (E260/P255). Telefonda 1K HDR + 2048 gölge; dışa aktarma her karede yield.
+
+## 4ad. V137 (canlı millî aday kadrolar)
+- `server/national-squads.php`: önümüzdeki 10 gün içinde millî maçı olan takımlar için Wikipedia makalesinin
+  "Current squad" bölümü (index.php?action=raw, 12 sa önbellek, 429'da 6 sa bekleme, cron 6 / web 1 sayfa).
+  Ayrıştırma: oyuncu adı/mevki/forma no/kulüp, aday kadronun maç tarihleri (geçerlilik penceresi), teknik direktör.
+  Çıktı `storage_dir/national-callups-live.json` (ESPN takım id anahtarlı) → `pp_national_callup` önce bunu, yoksa
+  editoryal `assets/national-callups.json`'u kullanır. ESPN geniş havuzundaki davetsiz oyuncular tahmini 11'den
+  çıkarılır, forma numarası kadrodan gelir. `en.wikipedia.org` izinli host. SofaScore otomatik erişime kapalı (403).
+- Sınır: ESPN havuzunda hiç olmayan yeni davetliler tahmini 11'e giremez (ESPN kimliği yok).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

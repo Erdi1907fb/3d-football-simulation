@@ -11,6 +11,7 @@ require_once __DIR__.'/read-cache.php';
 require_once __DIR__.'/player-lineups.php';
 require_once __DIR__.'/big-matches.php';
 require_once __DIR__.'/national-ratings.php';
+require_once __DIR__.'/national-squads.php';
 
 function pp_config(): array {
     $cfg = require __DIR__ . '/defaults.php';
@@ -22,7 +23,7 @@ function pp_config(): array {
     $cfg['publication_policy'] = '3d-v74-all-fixtures-six-day-window';
     $cfg['live_sources_enabled'] = true;
     $cfg['mackolik_enabled'] = false;
-    $cfg['source_hosts'] = array_values(array_unique(array_merge($cfg['source_hosts'],['site.api.espn.com','www.tff.org','www.fotmob.com'])));
+    $cfg['source_hosts'] = array_values(array_unique(array_merge($cfg['source_hosts'],['site.api.espn.com','www.tff.org','www.fotmob.com','en.wikipedia.org'])));
     // V136: tests never touch the live data directory.
     if (getenv('NEXT90_STORAGE_DIR')) $cfg['storage_dir'] = getenv('NEXT90_STORAGE_DIR');
     if (!is_dir($cfg['storage_dir']) && !mkdir($cfg['storage_dir'], 0750, true)) throw new RuntimeException('Storage could not be created');
@@ -324,6 +325,8 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
         // V136: national ratings refresh runs AFTER publishing, so it can never use up the request's publication time;
         // web requests only do it when time is left (max 2 feeds), cron does the full bounded refresh.
         if(!$web||microtime(true)-$started<6){try{pp_nr_update($cfg,$now,$fetcher,$web);}catch(Throwable $e){}}
+        // V137: national call-ups (Wikipedia current squads) for teams playing in the next 10 days.
+        if(!$web||microtime(true)-$started<8){try{pp_ns_update($cfg,array_values($all),$now,$fetcher,$web?1:6);}catch(Throwable $e){}}
         $oldest=$now->modify('-'.(int)$cfg['keep_archive_days'].' days')->format('Y-m-d');foreach($predictions as$id=>$p)if($p['date']<$oldest&&!pp_forecast_protected($p))unset($predictions[$id]);
         $currentChecks=array_filter($checks,fn($v,$key)=>$jobs[$key]['current'],ARRAY_FILTER_USE_BOTH);$ok=count(array_filter($currentChecks,fn($v)=>in_array($v['status'],['ok','recent'],true)));$coverage=[];
         foreach($jobs as$key=>$job)if($job['current']&&$key!=='authorized'){$c=$checks[$key];$coverage[]=['id'=>$job['league'],'name'=>$job['meta']['name'],'status'=>$c['status'],'fetchedAt'=>$c['fetchedAt']??null,'fixtureCount'=>$c['matches']??0,'unknownKickoffs'=>$c['unknownKickoffs']??null,'latestResultDate'=>$c['latestResultDate']??null,'unscoredPastFixtures'=>$c['unscoredPastFixtures']??null];}
