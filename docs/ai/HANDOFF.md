@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V145 → V146 (kararlı)
+- **İstek:** iPhone'da video oluşuyor ama sonra sayfa çöküp yenileniyor.
+- **Yapılanlar:** PROJECT_STATE 4am. **Testler:** quick 19/19; iPhone 13 emülasyonu (kısaltılmış seri): iki stüdyoda MP4 →
+  sahne bırakıldı, video + Kaydet görünür, Oynat → sahne yeniden kuruldu, hata yok.
+
+---
+
 ## [2026-11-09] Claude Code · V144 → V145 (kararlı)
 - **İstek:** BSD tahmininde de Kerem var; doğru kaynak bul, olmazsa elle düzenlenebilir sistem.
 - **Yapılanlar:** PROJECT_STATE 4al (Transfermarkt + kadro.php).

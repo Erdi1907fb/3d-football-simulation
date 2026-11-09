@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V146 — 2026-11-09 (Claude Code) · kararlı
+- **iPhone'da MP4 sonrası yenilenme:** video bitince 3D ön izleme bellekten bırakılıyor; video ve Kaydet düğmesi açık kalıyor.
+  Oynat'a basınca aynı seri yeniden yükleniyor.
+
 ## V145 — 2026-11-09 (Claude Code) · kararlı
 - **Aday kadro Transfermarkt'tan:** millî takımların güncel federasyon kadrosu otomatik (Türkiye'de TFF listesiyle birebir).
 - **Kendin düzelt: `kadro.php`** — aday kadroyu, ilk 11'i, dizilişi ve teknik direktörü şifreyle elle girebilirsin;

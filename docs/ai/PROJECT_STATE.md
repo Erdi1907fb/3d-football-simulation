@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V145** · 2026-11-09 · Claude Code
+> Son güncelleme: **V146** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V145** (`VERSION`) |
+| Kararlı sürüm | **V146** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -437,6 +437,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   düzenleme; kayıt takımın bu aradaki son maçına kadar geçerli; “Otomatiğe dön”.
 - Filtre: diziliş elle > BSD > sağlayıcı; elle XI'da hat sayılarına en yakın şablon; oyuncu-slot ataması doğal role göre
   açgözlü maliyet (`pp_lineup_role_cost`).
+
+## 4am. V146 (iPhone: MP4 bittikten sonra sayfa yenileniyordu)
+- iPhone 13'te export tamamlanıyor, ardından sekme çöküyordu: 3D sahne (~400 MB GPU) + bitmiş MP4 blob + 1080×1920
+  `<video>` ön izleme aynı anda. iOS'ta (`IOS_STUDIO`) MP4 hazır olunca `releaseScene()` sahneyi ve WebGL bağlamını
+  bırakır (`forceContextLoss`), `<video preload=metadata>`; Oynat/ileri sarma/yeni MP4'te `ensureScene()` aynı seriyi
+  (aynı contest, yeni senaryo değil) yeniden kurar.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
