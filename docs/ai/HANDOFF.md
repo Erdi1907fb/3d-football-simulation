@@ -17,6 +17,18 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V137 → V138 (kararlı)
+- **İstek:** penaltı ve serbest vuruş stüdyolarına 2v2 oyuncu düellosu (ör. Messi & Yamal vs Ronaldo & Mbappé); yeni modda
+  ve diğer kısımlarda telefonda indirme/yükleme sorunsuz olsun.
+- **Yapılanlar:** PROJECT_STATE 4ae. Motorlara `partners` (A1,B1,A2,B2 sırası), arayüzde `data-duo` seçeneği + “İkinci oyuncu”
+  seçimleri, çift portre/“Soyad & Soyad”, ikili final sevinci, `?mode=duo` vitrin ön ayarı. FK paylaşım hatasında indirmeye düşer.
+- **Testler:** `node tests/run-all.cjs --quick` → 17/17 (yeni `tests/duo.cjs`). Playwright iPhone 13 emülasyonu (SwiftShader):
+  iki stüdyoda `?mode=duo` hazırlık, `sceneTier('export')` → anlık görüntüler → 1080×1920 60 FPS MP4 kodlama (video/mp4),
+  `preview`'a dönüş; sayfa hatası yok, heap ~290 MB.
+- **Dikkat:** ikili, birinci oyuncunun formasını giyer (forma numarası oyuncunun kendi numarası; aynı numara görülebilir).
+
+---
+
 ## [2026-11-09] Claude Code · V136 → V137 (kararlı)
 - **İstek:** millî kadrolar her arada değişiyor; doğru ve kendini güncelleyen bir kaynak.
 - **Yapılanlar:** PROJECT_STATE 4ad. Test: Türkiye/Belçika Wikipedia örnekleri (`tests/fixtures/wiki-turkey-squad-202611.txt`).
