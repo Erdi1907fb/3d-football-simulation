@@ -26,7 +26,7 @@ function pp_nr_fetch(array $cfg,DateTimeImmutable $now,?callable $fetcher=null,i
  for($m=$utc->modify('first day of this month');$m>=$cursor&&count($months)<120;$m=$m->modify('-1 month'))$months[]=$m->format('Ym');
  $nat=pp_read(__DIR__.'/../assets/national-teams.json');$canon=[];foreach(array_keys($nat['strength']??[])as$n)$canon[pp_public_name($n)]=$n;
  $rows=[];$fetched=0;$complete=true;
- foreach(pp_nr_comps() as$slug=>$meta)foreach($months as$i=>$month){
+ foreach($months as$i=>$month)foreach(pp_nr_comps() as$slug=>$meta){/* newest month first: fresh results win the per-run budget */
   $path=$dir.'/national-feed-'.$slug.'-'.$month.'.json';$cache=pp_read($path);$age=$now->getTimestamp()-(strtotime($cache['fetchedAt']??'')?:0);$ttl=$i===0?3*3600:($i===1?12*3600:($cache&&($cache['finalAt']??null)?PHP_INT_MAX:24*3600));
   if((!$cache||$age>$ttl)&&$fetched<$budget){
    $url='https://site.api.espn.com/apis/site/v2/sports/soccer/'.$slug.'/scoreboard?dates='.$month.'&limit=1000';$fetched++;
@@ -63,7 +63,7 @@ function pp_nr_compute(array $games,array $seed,DateTimeImmutable $now):array{
 function pp_nr_update(array $cfg,DateTimeImmutable $now,?callable $fetcher=null,bool $web=false):array{
  if(!(($cfg['unl_enabled']??false)||($cfg['intl_enabled']??false)))return ['status'=>'disabled'];
  $dir=$cfg['storage_dir'];$seed=pp_nr_seed();if(empty($seed['games']))return ['status'=>'no-seed'];
- $f=pp_nr_fetch($cfg,$now,$fetcher,$web?6:32);$live=pp_read($dir.'/national-ratings.json');
+ $f=pp_nr_fetch($cfg,$now,$fetcher,$web?2:24);$live=pp_read($dir.'/national-ratings.json');
  $base=!empty($live['games'])?$live['games']:$seed['games'];$games=array_merge($base,$f['games']);
  $ids=[];foreach($games as$g)$ids[$g[8]??'']=true;$known=[];foreach($live['games']??[]as$g)$known[$g[8]??'']=true;
  $new=count(array_diff_key($ids,$known));if(!empty($live['teams'])&&$new===0&&$f['fetched']===0)return ['status'=>'current','matches'=>$live['matches']??0];

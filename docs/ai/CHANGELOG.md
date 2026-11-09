@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V136 — 2026-11-09 (Claude Code) · kararlı
+- **Kayıp maçlar:** güncelleme paketlerine yanlışlıkla eski bir sunucu veri dosyası giriyordu; yüklenince yayımlanmış
+  tahminler siliniyordu. Paketten ve depodan çıkarıldı; sunucu tahminleri yeniden üretir.
+- **Telefonda/bilgisayarda video hazırlama:** her yeni sahne eskisini bellekte bırakıyordu (bellek sızıntısı) → giderildi;
+  video hazırlarken sayfa takılmaz.
+
 ## V135 — 2026-11-08 (Claude Code) · kararlı
 - **Millî maç hafızası:** oynanan her millî maç (Dünya Kupası, elemeler, kıta turnuvaları, Uluslar Ligi'ler,
   hazırlık) kalıcı olarak birikir ve sonraki tüm millî maç analizlerini etkiler — lig sistemindeki gibi. Sunucu

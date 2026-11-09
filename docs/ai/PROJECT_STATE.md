@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V135** · 2026-11-08 · Claude Code
+> Son güncelleme: **V136** · 2026-11-08 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V135** (`VERSION`) |
+| Kararlı sürüm | **V136** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -330,6 +330,17 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   geçmişten hesaplanır (kulüp liglerindeki geçmiş sonuç mantığıyla aynı).
 - Model ve geçici-tahmin kuralı yalnız unl/intl değil, iki taraf da reytingli millî takım olan HER fikstüre uygulanır
   (ileride bültene eklenecek eleme/turnuva fikstürleri dahil).
+
+## 4ac. V136 (ACİL: canlı veri + bellek sızıntısı)
+- `data/private/state.json` (V110'da bir testin yazdığı, 680 maç / 0 tahmin) yanlışlıkla commit edilmişti ve V110+
+  güncelleme ZIP'lerine girdi → sunucuya yüklenince canlı tahminleri sildi. Dosyalar git'ten çıkarıldı,
+  `.gitignore` `data/private/*` (yalnız .htaccess izli). Testler `NEXT90_STORAGE_DIR` geçici klasörünü kullanır
+  (`pp_config`, `run-all.cjs`). ZIP üretiminde `data/` her zaman hariç tutulmalı.
+- Millî reyting güncellemesi yayın döngüsünden SONRA çalışır (web isteğinde ≤2 besleme ve yalnız süre kaldıysa);
+  web isteğinin 14 sn yayın bütçesini tüketemez. En yeni ay önce çekilir.
+- Bellek sızıntısı: sahne `dispose` hava durumunu silmiyordu; `weather.js`'in genel `live` kümesi her silinen sahneyi
+  (önizleme/video/analiz) bellekte tutuyordu. Düzeltildi: iPhone emülasyonunda video sahnesi 380→263 MB, geçiş tepesi
+  464→338 MB, 3 tekrarlı geçişte sabit (E260/P255). Telefonda 1K HDR + 2048 gölge; dışa aktarma her karede yield.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V135 → V136 (kararlı, ACİL)
+- **Sorun:** sitede diğer liglerin maçları kayboldu; telefonda/PC'de MP4 hazırlarken sayfa yeniden yükleniyor/takılıyor.
+- **Kök nedenler ve çözüm:** PROJECT_STATE 4ac. Kullanıcıya: sunucudaki `data/private/state.json`'u yedekten
+  dönebiliyorsa döndürsün; yoksa tahminler cron/ziyaretle yeniden üretilir (geçmiş arşiv tahminleri geri gelmez).
+
+---
+
 ## [2026-11-08] Claude Code · V134 → V135 (kararlı)
 - **İstek:** yalnız UNL'nin iki maçı değil; tüm millî maçlar lig sistemindeki gibi kalıcı geçmiş olarak birikip
   gelecekteki her millî maç analizine etki etsin.

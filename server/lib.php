@@ -23,6 +23,8 @@ function pp_config(): array {
     $cfg['live_sources_enabled'] = true;
     $cfg['mackolik_enabled'] = false;
     $cfg['source_hosts'] = array_values(array_unique(array_merge($cfg['source_hosts'],['site.api.espn.com','www.tff.org','www.fotmob.com'])));
+    // V136: tests never touch the live data directory.
+    if (getenv('NEXT90_STORAGE_DIR')) $cfg['storage_dir'] = getenv('NEXT90_STORAGE_DIR');
     if (!is_dir($cfg['storage_dir']) && !mkdir($cfg['storage_dir'], 0750, true)) throw new RuntimeException('Storage could not be created');
     return $cfg;
 }
@@ -296,7 +298,7 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
         // A policy migration must never regenerate an already shared match.
         foreach($history as $m)if($m['result']&&$m['date']<$bulletinDay)foreach(['home','away']as$side){$id=$m[$side]['id'];$other=$side==='home'?'away':'home';$rank[$m['competitionId']][$id]=($rank[$m['competitionId']][$id]??0)+($m['result'][$side]>$m['result'][$other]?3:($m['result'][$side]===$m['result'][$other]?1:0));}
         foreach($rank as &$r)arsort($r);unset($r);$limit=(new DateTimeImmutable($bulletinDay))->modify('+'.(int)$cfg['publish_ahead_days'].' days')->format('Y-m-d');usort($history,fn($a,$b)=>strcmp($a['date'].($a['kickoff']??''),$b['date'].($b['kickoff']??'')));$dayCount=[];foreach($predictions as$p)$dayCount[$p['date']]=($dayCount[$p['date']]??0)+1;
-        $GLOBALS['pp_nr_storage']=$cfg['storage_dir'];try{$nrStatus=pp_nr_update($cfg,$now,$fetcher,$web);}catch(Throwable $e){$nrStatus=['status'=>'error','message'=>$e->getMessage()];}
+        $GLOBALS['pp_nr_storage']=$cfg['storage_dir'];
         foreach($history as $m){$id=$m['id'];if(isset($predictions[$id])){
             // V134: a national forecast published while a team still had an earlier international to play is provisional;
             // once that match is played (and before this kick-off) it is rebuilt from the updated ratings.
@@ -319,6 +321,9 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
             $analysisCfg=$cfg;if($web){$analysisCfg['analysis_timeout_seconds']=2;$analysisCfg['analysis_max_seconds']=3;$analysisCfg['passing_request_budget']=0;}if($fetcher!==null){$analysisCfg['analysis_enabled']=false;$analysisCfg['analysis_network_enabled']=false;}try{$m=pp_analysis_enrich($m,$history,$analysisCfg,$now);$m=pp_passing_enrich($m,$history,$analysisCfg,$now);$m=pp_analysis_v44($m,$now);}catch(Throwable $e){$m['analysis']=['version'=>'evidence-v1','status'=>'unavailable','asOf'=>$now->format(DATE_ATOM),'sources'=>[],'missing'=>['analysis']];}
             $prediction=pp_build_prediction($m,$history,$now);if(pp_nr_pending_before($m,$history))$prediction['nationalProvisional']=true;$predictions[$id]=$prediction;$published++;$dayCount[$m['date']]=($dayCount[$m['date']]??0)+1;
         }
+        // V136: national ratings refresh runs AFTER publishing, so it can never use up the request's publication time;
+        // web requests only do it when time is left (max 2 feeds), cron does the full bounded refresh.
+        if(!$web||microtime(true)-$started<6){try{pp_nr_update($cfg,$now,$fetcher,$web);}catch(Throwable $e){}}
         $oldest=$now->modify('-'.(int)$cfg['keep_archive_days'].' days')->format('Y-m-d');foreach($predictions as$id=>$p)if($p['date']<$oldest&&!pp_forecast_protected($p))unset($predictions[$id]);
         $currentChecks=array_filter($checks,fn($v,$key)=>$jobs[$key]['current'],ARRAY_FILTER_USE_BOTH);$ok=count(array_filter($currentChecks,fn($v)=>in_array($v['status'],['ok','recent'],true)));$coverage=[];
         foreach($jobs as$key=>$job)if($job['current']&&$key!=='authorized'){$c=$checks[$key];$coverage[]=['id'=>$job['league'],'name'=>$job['meta']['name'],'status'=>$c['status'],'fetchedAt'=>$c['fetchedAt']??null,'fixtureCount'=>$c['matches']??0,'unknownKickoffs'=>$c['unknownKickoffs']??null,'latestResultDate'=>$c['latestResultDate']??null,'unscoredPastFixtures'=>$c['unscoredPastFixtures']??null];}

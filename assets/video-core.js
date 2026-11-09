@@ -320,7 +320,7 @@ async function serialEncode(job,env,media,canvas,draw,info,cfg,config){
    // Bound queued surfaces; dequeue does not reset the codec's reference pictures.
    if(encoder.encodeQueueSize>=2)await wait(new Promise((resolve,reject)=>{const drain=()=>{if(error){encoder.removeEventListener('dequeue',drain);reject(error);}else if(encoder.encodeQueueSize<2){encoder.removeEventListener('dequeue',drain);resolve();}};encoder.addEventListener('dequeue',drain);drain();}),signal,15000);
    if((i+1)%8===0)await wait(pending,signal);
-   onProgress(Math.min(.99,(i+1)/count));job.onMetrics?.({frame:i+1,total:count,queue:encoder.encodeQueueSize,packets});if(i%4===0)await yieldTask();
+   onProgress(Math.min(.99,(i+1)/count));job.onMetrics?.({frame:i+1,total:count,queue:encoder.encodeQueueSize,packets});await yieldTask();/* V136: yield every frame so the page never stutters while exporting */
   }
   await wait(encoder.flush(),signal,30000);await wait(pending,signal);if(error)throw error;
   if(packets!==expected)throw Error('Incomplete encoded video');encoder.close();encoder=null;audio?.close();video.close();job.onStage?.('finalize');await wait(output.finalize(),signal,30000);check(signal);
