@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V141 → V142 (kararlı)
+- **İstek:** iPhone 13'te stüdyolardan MP4 inmiyor, Safari “birçok kez sorun oluştu” (sekme çöküşü).
+- **Yapılanlar:** PROJECT_STATE 4ai. **Asla** iOS'ta tam sinematik zinciri ya da iki sahneli katman değişimini geri açma.
+- **Testler:** quick 19/19; iPhone 13 emülasyonu: iki stüdyoda MP4 1 sn'de kodlamaya başlıyor, güvenli mod yükleniyor.
+  Gerçek cihaz testi kullanıcıda.
+
+---
+
 ## [2026-11-09] Claude Code · V140 → V141 (kararlı)
 - **İstek:** site kaynakları kendi çeksin; geçmiş istatistikler; İrfan Can hâlâ kadroda.
 - **Yapılanlar:** PROJECT_STATE 4ah. V140 canlıda doğrulandı (kullanıcı sitesi, durum.php ile toplama → 32 maç).

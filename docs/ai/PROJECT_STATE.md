@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V141** · 2026-11-09 · Claude Code
+> Son güncelleme: **V142** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V141** (`VERSION`) |
+| Kararlı sürüm | **V142** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -393,6 +393,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   (provider-lineup) dışındaki tüm tahmini millî XI/yedeklere aday kadro uygulanır; çağrılmayanlar aynı hattan en yüksek
   reytingli davetli ile değişir (kulüp kadrosundan yüz/reyting), kalan davetliler yedeğe eklenir, teknik direktör
   federasyon listesinden. Canlıdaki hata: FotMob “son 11” yolunda İrfan Can/Kerem kalıyordu. Test: `tests/callup-filter.php`.
+
+## 4ai. V142 (iPhone 13: “bu sayfada birçok kez sorun oluştu” — sekme bellek çöküşü)
+- Ölçüm (WebGL çağrıları sayılarak, iPhone 13 profili): V130 katmanlı model ön izleme ~230 MB doku + MP4'te ikinci yüksek
+  sahne ~340 MB + tam sinematik zincir RT'leri → iOS WebGL belleğini geç bıraktığı için ~600 MB+ tepe. V127'de bulunan
+  “tam çözünürlük bloom/DOF/SMAA/sharpen arabellekleri iPhone'u öldürür” notu V129'da yanlışlıkla geri alınmıştı.
+- iOS (`IOS_STUDIO`): stüdyolar yüksek sahneyi bir kez kurar, katman değişimi yok (export ek ~70 MB); `broadcast-remaster.js`
+  iOS'ta LITE zincir (HDR→ACES→grade). Android katmanlı modelde kalır.
+- Çöküş koruması: `sessionStorage['next90-export-<sayfa>']` hazırlık/export sırasında set edilir; sekme ölürse sonraki
+  açılışta hafif (balanced, compact) sahne kullanılır.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

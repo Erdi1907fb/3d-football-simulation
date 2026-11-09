@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V142 — 2026-11-09 (Claude Code) · kararlı
+- **iPhone'da penaltı/serbest vuruş MP4:** sekme bellek yetmediği için kapanıyordu (“bu sayfada birçok kez sorun oluştu”).
+  iPhone'da sahne artık bir kez kuruluyor, video için ikinci sahne açılmıyor; görüntü zinciri iPhone'a uygun. Yine
+  çökerse bir sonraki açılış otomatik olarak daha hafif sahneyle çalışır.
+
 ## V141 — 2026-11-09 (Claude Code) · kararlı
 - **Cron olmadan kendi dolar:** site ilk ziyarette eksik kaynakları toplu çeker, yaklaşan maçı olan kaynakları öne alır.
 - **Millî kadrolar:** aday kadroda olmayan oyuncular (ör. İrfan Can, Kerem) artık hiçbir kaynaktan muhtemel 11'e ya da
