@@ -17,6 +17,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V138 → V139 (kararlı)
+- **İstek:** canlı sitede maçlar (Uluslar Ligi dahil) gelmiyor, V107 ya da bizim data konunca da düzelmedi; telefonda stüdyolar
+  yüklenirken hata veriyor, MP4 inmiyor.
+- **Bulgular/yapılanlar:** PROJECT_STATE 4af. Kod yerelde her veriyle çalışıyor → kullanıcı sunucusuna özgü (izin/cron/ağ);
+  `durum.php` tanı + elle veri toplama. Stüdyo export'unda iOS ses kilidi (AudioContext dokunuştan sonra açılıyordu) düzeltildi.
+- **Testler:** quick 17/17; `durum.php` boş veriden 8 turda 4889 maç / 32 UNL tahmini; iPhone 13 emülasyonunda iki stüdyoda MP4
+  düğmesi → kodlama başladı, hata yok.
+- **Dikkat:** kullanıcıdan `durum.php` ekran görüntüsü beklenecek; kırmızı satır kök nedeni gösterir.
+
+---
+
 ## [2026-11-09] Claude Code · V137 → V138 (kararlı)
 - **İstek:** penaltı ve serbest vuruş stüdyolarına 2v2 oyuncu düellosu (ör. Messi & Yamal vs Ronaldo & Mbappé); yeni modda
   ve diğer kısımlarda telefonda indirme/yükleme sorunsuz olsun.
