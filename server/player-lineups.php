@@ -62,6 +62,35 @@ function pp_players_event_ok(array $doc,string $event,array $m):bool{
 function pp_national_callup(string $team,array $m):?array{static $c=null;if($c===null)$c=pp_read(__DIR__.'/../assets/national-callups.json');/* V137: live Wikipedia call-ups first, editorial file as fallback */static $cfgDir=null;$dir=$GLOBALS['pp_nr_storage']??($cfgDir??=(function_exists('pp_config')?pp_config()['storage_dir']:null));$live=$dir?pp_read($dir.'/national-callups-live.json'):[];$day0=substr((string)($m['kickoff']??$m['date']??''),0,10);$le=$live['teams'][$team]??null;if($le&&$day0!==''&&$day0>=($le['validFrom']??'')&&$day0<=($le['validTo']??''))return $le;$e=$c['teams'][$team]??null;$day=substr((string)($m['kickoff']??$m['date']??''),0,10);if(!$e||$day===''||$day<($e['validFrom']??'')||$day>($e['validTo']??''))return null;return $e;}
 function pp_national_callup_apply(array $current,string $team,array $m):array{$e=pp_national_callup($team,$m);if(!$e)return $current;$names=array_map('pp_public_name',$e['players']??[]);$proper=array_combine($names,$e['players']??[]);foreach($current as&$c){$k=pp_public_name($c['name']??'');if(!in_array($k,$names,true))$c['available']=false;$c['calledUp']=in_array($k,$names,true);if($c['calledUp']){$c['name']=$proper[$k];foreach($e['squad']??[] as$sq)if(pp_public_name($sq['name'])===$k&&!empty($sq['number']))$c['number']=(int)$sq['number'];}/* federation spelling: Şimşir, Çalhanoğlu */}return $current;}
 function pp_national_callup_enrich(array $lineup,array $current,string $team,array $m,DateTimeImmutable $now):array{$e=pp_national_callup($team,$m);if(!$e)return $lineup;$used=[];foreach(array_merge($lineup['players']??[],$lineup['bench']??[])as$p)$used[(string)$p['id']]=true;foreach($current as$id=>$c){$id=(string)$id;if(isset($used[$id])||!($c['available']??false)||!($c['calledUp']??false))continue;$lineup['bench'][]=['id'=>$id,'name'=>$c['name'],'shortName'=>$c['name'],'number'=>$c['number']??null];}if(empty($lineup['coach'])&&!empty($e['coach']))$lineup['coach']=['name'=>$e['coach'],'source'=>'federation call-up','basis'=>'federation-callup','asOf'=>$now->format(DATE_ATOM)];$lineup['source']['callup']=['window'=>$e['window']??null,'players'=>count($e['players']??[]),'source'=>$e['source']??null];return $lineup;}
+function pp_callup_roster_player(string $key):?array{static $map=null;if($map===null){$map=[];$doc=pp_read(__DIR__.'/../assets/club-rosters-v75.json');foreach($doc['teams']??[]as$t)foreach(array_merge($t['team']['players']??[],$t['team']['bench']??[])as$p){$k=pp_public_name($p['name']??'');if($k!==''&&(!isset($map[$k])||($p['rating']??0)>($map[$k]['rating']??0)))$map[$k]=$p;}}
+ $p=$map[$key]??null;return $p?array_intersect_key($p,array_flip(['id','appearance','portrait','rating','naturalRoles','heightCm','weightKg','dateOfBirth','providerIds','shortName','positionIdsDesc'])):null;}
+/* V141: the federation call-up is applied to every estimated national XI and bench, whatever provider built it
+   (FotMob/ESPN/Nesine). Players not called up are replaced by called-up players of the same line. */
+function pp_national_callup_filter(array $snap,array $m,DateTimeImmutable $now):array{
+ foreach(['home','away']as$i=>$side){$t=$snap['teams'][$i]??null;if(!$t||($t['source']['status']??'')==='provider-lineup')continue;
+  $e=pp_national_callup((string)($m[$side]['espnId']??''),$m);if(!$e||count($e['players']??[])<11)continue;
+  $names=[];foreach($e['players']as$n)$names[pp_public_name($n)]=$n;$squad=[];foreach($e['squad']??[]as$sq)$squad[pp_public_name($sq['name'])]=$sq;
+  $key=function(array $p)use($names):?string{foreach([$p['name']??'',$p['shortName']??'']as$n){$k=pp_public_name($n);if(isset($names[$k]))return $k;}
+   $parts=preg_split('/\s+/u',trim((string)($p['name']??'')));$last=pp_public_name(end($parts)?:'');$hit=null;if($last!=='')foreach($names as$k=>$n){$np=preg_split('/\s+/u',trim($n));if(pp_public_name(end($np)?:'')===$last&&mb_substr(pp_public_name($parts[0]??''),0,1)===mb_substr($k,0,1)){if($hit)return null;$hit=$k;}}return $hit;};
+  $role=fn(array $p)=>(string)($p['position']??($p['roles'][0]??'MID'));$grp=fn(string $r)=>$r==='MID'?'M':pp_players_group($r);
+  $sqGroup=fn(?array $sq)=>['GK'=>'G','DF'=>'D','MF'=>'M','FW'=>'F'][$sq['pos']??'']??null;
+  $used=[];$keep=fn(array $p,string $k)=>array_merge($p,['name'=>$names[$k],'calledUp'=>true],!empty($squad[$k]['number'])?['number'=>(int)$squad[$k]['number']]:[]);
+  $bench=[];foreach($t['bench']??[]as$b){$k=$key($b);if($k&&!isset($used[$k])){$bench[$k]=$keep($b,$k);}}
+  $xi=[];$out=[];foreach($t['players']??[]as$j=>$p){$k=$key($p);if($k&&!isset($used[$k])){$used[$k]=true;unset($bench[$k]);$xi[$j]=$keep($p,$k);}else $out[]=$j;}
+  foreach($out as$j){$p=$t['players'][$j];$r=$role($p);$g=$grp($r);$pick=null;
+   // Best-rated called-up player of the same line (bench first-class, then the rest of the call-up list).
+   $cands=[];foreach($names as$k=>$n){if(isset($used[$k]))continue;$b=$bench[$k]??null;$rp=pp_callup_roster_player($k);$cg=$b?$grp($role($b)):($sqGroup($squad[$k]??null)??($rp?$grp((string)($rp['naturalRoles'][0]??'MID')):null));if($cg===null)continue;if($g==='G'?$cg!=='G':$cg==='G')continue;$cands[$k]=($cg===$g?100:0)+(float)($b['rating']??$rp['rating']??6.0);}
+   arsort($cands);$pick=array_key_first($cands);
+   if(!$pick){$xi[$j]=$p;continue;}$used[$k=$pick]=true;
+   $base=$bench[$k]??array_merge(['id'=>'callup-'.substr(sha1($names[$k]),0,10),'name'=>$names[$k],'shortName'=>$names[$k],'naturalRoles'=>[$r],'availability'=>'not-flagged'],pp_callup_roster_player($k)??[]);unset($bench[$k]);
+   $xi[$j]=array_merge($keep($base,$k),['position'=>$r,'roles'=>[$r],'captain'=>false]);}
+  ksort($xi);$t['players']=array_values($xi);
+  foreach($names as$k=>$n)if(!isset($used[$k])&&!isset($bench[$k])){$sq=$squad[$k]??[];$r=['GK'=>'GK','DF'=>'DEF','MF'=>'MID','FW'=>'ST'][$sq['pos']??'']??'MID';$bench[$k]=array_merge(['id'=>'callup-'.substr(sha1($n),0,10),'shortName'=>$n,'naturalRoles'=>[$r],'availability'=>'not-flagged'],pp_callup_roster_player($k)??[],['name'=>$n,'number'=>!empty($sq['number'])?(int)$sq['number']:null,'position'=>$r,'roles'=>[$r],'calledUp'=>true]);}
+  $t['bench']=array_values($bench);
+  if(!empty($e['coach'])&&pp_public_name($t['coach']['name']??'')!==pp_public_name($e['coach']))$t['coach']=['name'=>$e['coach'],'source'=>'federation call-up','basis'=>'federation-callup','asOf'=>$now->format(DATE_ATOM)];
+  $t['source']['callup']=['window'=>$e['window']??null,'players'=>count($e['players']),'source'=>$e['source']??null,'applied'=>'all-providers'];$snap['teams'][$i]=$t;}
+ return $snap;
+}
 function pp_players_group(string $role):string{return $role==='GK'?'G':(in_array($role,['CB','LB','RB','LWB','RWB','DEF'],true)?'D':(in_array($role,['ST','LW','RW'],true)?'F':'M'));}
 function pp_players_recent(array $m,string $side,string $code,array $cfg,DateTimeImmutable $now,?callable $fetcher=null):?array{
  $team=(string)($m[$side]['espnId']??'');if(!preg_match('/^\d{1,12}$/',$team))return null;$root='https://site.api.espn.com/apis/site/v2/sports/soccer/'.$code.'/teams/'.$team;

@@ -254,14 +254,14 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
         if(!$due&&!$rollover&&!pp_pending_forecasts($state,$now)){pp_compact_cache($state,$cfg,$now);return ['status'=>'cached','pending'=>0,'health'=>pp_public_health($state,$cfg,$now)];}
         // Publish the new day from the validated cache before slow network work.
         if(($cfg['_publish_only']??false)&&!$rollover&&!pp_pending_forecasts($state,$now))return ['status'=>'cached','pending'=>count($due)];
-        $chosen=(($cfg['_publish_only']??false)||($web&&$rollover))?[]:($web?array_slice(array_keys($due),0,3):array_keys($due));/* V139: a visit fetches up to 3 sources within ~7 s */
+        $chosen=(($cfg['_publish_only']??false)||($web&&$rollover))?[]:($web?array_slice(array_keys($due),0,count($due)>=6?10:3):array_keys($due));/* V141: a visit fetches up to 3 sources (~7 s); when many are missing (first fill, no cron) up to 10 (~25 s) */$webBudget=$web&&count($due)>=6?25:7;
         if($prepared){$fixture=$state['matches'][$prepared]??null;$league=$fixture['competitionId']??null;$chosen=array_slice(array_keys(array_filter($due,fn($j)=>($j['league']??null)===$league&&in_array($j['format'],['espn-month','tff-week'],true))),0,1);}
         if(!empty($cfg['_only_jobs']))$chosen=array_values(array_intersect($chosen,$cfg['_only_jobs']));
         $downloadCfg=$cfg;if($web)$downloadCfg['request_timeout_seconds']=min((int)$cfg['web_request_timeout_seconds'],(int)$cfg['request_timeout_seconds']);
         $fetch=$fetcher??function(string $url)use($downloadCfg){return (str_ends_with($url,'.txt')||str_contains($url,'www.tff.org/'))?pp_fetch_raw($url,$downloadCfg):pp_fetch($url,$downloadCfg);};
         $sources=$state['sources']??[];$attempts=$state['refreshAttempts']??[];$checks=[];$fresh=0;
         foreach($jobs as $key=>$job){
-            if(!in_array($key,$chosen,true)||($web&&$key!==($chosen[0]??null)&&microtime(true)-$started>7)){
+            if(!in_array($key,$chosen,true)||($web&&$key!==($chosen[0]??null)&&microtime(true)-$started>($webBudget??7))){
                 $old=$state['health']['sourceChecks'][$key]??[];$stamp=$sources[$key]['fetchedAt']??null;$age=$stamp?$epoch-strtotime($stamp):PHP_INT_MAX;
                 $checks[$key]=array_merge($old,['status'=>$age<$job['interval']?'recent':($stamp?'cached':'waiting'),'fetchedAt'=>$stamp,'matches'=>count($sources[$key]['matches']??[])]);
                 if(isset($old['error'])&&($attempts[$key]['ok']??true)===false)$checks[$key]['error']=$old['error'];continue;
@@ -315,7 +315,7 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
             if(!pp_forecast_eligible($m,$now))continue;
             if(!pp_history_ready($m,$history,$now))continue;
             // Persist each bounded batch before the next browser/cron tick.
-            if($web&&($published>=($prepared?1:2)||microtime(true)-$started>14))continue;
+            if($web&&($published>=($prepared?1:4)||microtime(true)-$started>($webBudget??7)+8))continue;
             if($m['kickoff']&&new DateTimeImmutable($m['kickoff'])<=$now)continue;
             if(!$m['kickoff']&&$now>=pp_date_only_deadline($m))continue;
             if((($cfg['fixture_scope']??'all')!=='all' && (int)$cfg['max_daily_matches']>0 && ($dayCount[$m['date']]??0)>=$cfg['max_daily_matches'])||!pp_is_featured($m,$rank,$cfg))continue;

@@ -101,7 +101,9 @@ function pp_due_jobs(array $jobs, array $state, array $cfg, DateTimeImmutable $n
         $adapterChanged=isset($state['sources'][$key]['url'])&&$state['sources'][$key]['url']!==$job['url'];
         if($failed&&$epoch-$attempt<(int)$cfg['failure_retry_seconds'])continue;
         if(!$adapterChanged&&$epoch-$fetched<pp_job_interval($job,$state,$cfg,$now))continue;
-        $due[$key]=$job+['fetchedEpoch'=>$fetched,'livePriority'=>in_array($job['format'],['espn-month','tff-week'],true),'resultPriority'=>pp_result_watch($job,$state,$now)];
+        // V141: sources whose cached fixtures fall in the next 6 days (or that were never fetched) come first.
+        $soon=!isset($state['sources'][$key]);if(!$soon){$end=$now->modify('+6 days')->format('Y-m-d');$today=$now->format('Y-m-d');foreach($state['sources'][$key]['matches']??[]as$m)if(empty($m['result'])&&($m['date']??'')>=$today&&($m['date']??'')<=$end){$soon=true;break;}}
+        $due[$key]=$job+['fetchedEpoch'=>$fetched,'livePriority'=>in_array($job['format'],['espn-month','tff-week'],true),'resultPriority'=>pp_result_watch($job,$state,$now),'windowPriority'=>$soon];
     }
-    uasort($due,fn($a,$b)=>($b['livePriority']<=>$a['livePriority'])?:($b['current']<=>$a['current'])?:($b['resultPriority']<=>$a['resultPriority'])?:($a['fetchedEpoch']<=>$b['fetchedEpoch']));return $due;
+    uasort($due,fn($a,$b)=>($b['livePriority']<=>$a['livePriority'])?:($b['windowPriority']<=>$a['windowPriority'])?:($b['current']<=>$a['current'])?:($b['resultPriority']<=>$a['resultPriority'])?:($a['fetchedEpoch']<=>$b['fetchedEpoch']));return $due;
 }

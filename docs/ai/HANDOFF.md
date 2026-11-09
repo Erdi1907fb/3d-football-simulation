@@ -17,6 +17,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-09] Claude Code · V140 → V141 (kararlı)
+- **İstek:** site kaynakları kendi çeksin; geçmiş istatistikler; İrfan Can hâlâ kadroda.
+- **Yapılanlar:** PROJECT_STATE 4ah. V140 canlıda doğrulandı (kullanıcı sitesi, durum.php ile toplama → 32 maç).
+- **Testler:** quick 19/19 (yeni callup-filter.php); boş veri + yalnız ziyaret → 20 sn'de 26 UNL maçı.
+- **Dikkat:** canlı siteyi okumak için yalnız GET kullan; durum.php collect kullanıcı onayıyla.
+
+---
+
 ## [2026-11-09] Claude Code · V139 → V140 (kararlı, ACİL)
 - **İstek:** V139 sonrası da maç yok, Uluslar Ligi de yok; V107 datası da çalışmıyor.
 - **Kök neden ve çözüm:** PROJECT_STATE 4ag (forecast-lock RuntimeException → her güncelleme 503). Kilit artık geri yükler,

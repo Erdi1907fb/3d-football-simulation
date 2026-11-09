@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V140** · 2026-11-09 · Claude Code
+> Son güncelleme: **V141** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V140** (`VERSION`) |
+| Kararlı sürüm | **V141** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -383,6 +383,16 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Yayın döngüsünde tek bir maçın tahmin hatası artık tüm güncellemeyi durdurmaz (try/catch, maç atlanır).
 - Test: `tests/forecast-lock.php`. Kullanıcı durumunun kopyası (V110 state + uyuşmayan kilit, cron yok) 12 ziyarette
   bültene 26 UNL + 6 hazırlık maçı getiriyor.
+
+## 4ah. V141 (cron'suz hızlı dolum + aday kadro her kaynakta)
+- Canlı site: https://darkgreen-penguin-901774.hostingersite.com (Hostinger, PHP 8.3, cron YOK). `durum.php` ile izlenebilir.
+- `pp_due_jobs`: önümüzdeki 6 günde maçı olan ya da hiç çekilmemiş kaynaklar öne (`windowPriority`). Ziyaretçi yenilemesi
+  6+ kaynak eksikse 10 kaynağa kadar (~25 sn bütçe) çeker; yayın sınırı ziyaret başına 4. Boş veriden ilk ziyaretten
+  ~20 sn sonra Uluslar Ligi bültende.
+- `pp_national_callup_filter` (player-lineups.php), `pp_coaches_finalize` başında her dönüş yolunda: resmî kadro
+  (provider-lineup) dışındaki tüm tahmini millî XI/yedeklere aday kadro uygulanır; çağrılmayanlar aynı hattan en yüksek
+  reytingli davetli ile değişir (kulüp kadrosundan yüz/reyting), kalan davetliler yedeğe eklenir, teknik direktör
+  federasyon listesinden. Canlıdaki hata: FotMob “son 11” yolunda İrfan Can/Kerem kalıyordu. Test: `tests/callup-filter.php`.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
