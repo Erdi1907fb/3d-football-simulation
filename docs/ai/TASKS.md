@@ -8,6 +8,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-260 | Penaltı + serbest vuruşta 2v2 oyuncu düellosu | done (V138) | claude | penalty-ui.js, freekick-ui.js, *-engine.js, tests/duo.cjs |
 | T-209 | Gerçek cihaz testi: iPhone Safari + Android Chrome’da `freekick.html` MP4 indirme | todo | kullanıcı | Ajanlar fiziksel cihaz testi yapamaz |
 | T-215 | Sevinçlerde gerçek motion-capture (kullanıcı Mixamo’dan indirip verirse) | todo | — | D-005 |
 | T-216 | Kalecinin “ulaşılabilir en iyi hedef” taramasını League-Soccer’dan uyarlamak (maç + stüdyolar) | todo | — | research/LEAGUE-SOCCER.md |

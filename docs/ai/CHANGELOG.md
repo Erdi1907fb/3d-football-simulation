@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V138 — 2026-11-09 (Claude Code) · kararlı
+- **2v2 oyuncu düellosu (penaltı + serbest vuruş):** her tarafa iki oyuncu seçilir (ör. Messi & Yamal vs Ronaldo &
+  Mbappé); ikililer sırayla vurur, panelde iki portre, finalde kazanan ikili birlikte sevinir. Video yine 1080×1920 60 FPS.
+- **Telefon:** serbest vuruşta paylaşım menüsü açılamazsa dosya doğrudan indirilir.
+
 ## V137 — 2026-11-09 (Claude Code) · kararlı
 - **Millî aday kadrolar kendiliğinden güncellenir:** her millî arada açıklanan aday kadro (Wikipedia "Current squad",
   federasyon duyurusuna dayanır) sunucu tarafından çekilir; muhtemel 11 yalnız davetli oyunculardan kurulur, teknik

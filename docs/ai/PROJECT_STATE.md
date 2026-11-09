@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V137** · 2026-11-08 · Claude Code
+> Son güncelleme: **V138** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V137** (`VERSION`) |
+| Kararlı sürüm | **V138** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -350,6 +350,18 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   editoryal `assets/national-callups.json`'u kullanır. ESPN geniş havuzundaki davetsiz oyuncular tahmini 11'den
   çıkarılır, forma numarası kadrodan gelir. `en.wikipedia.org` izinli host. SofaScore otomatik erişime kapalı (403).
 - Sınır: ESPN havuzunda hiç olmayan yeni davetliler tahmini 11'e giremez (ESPN kimliği yok).
+
+## 4ae. V138 (2v2 oyuncu düellosu)
+- Penaltı ve serbest vuruş stüdyolarında “Kapışma” listesine üçüncü seçenek: **2v2 oyuncu düellosu** (`<option value="duel" data-duo="1">`).
+  Değer yine `duel` olduğu için tek oyunculu düellonun tüm mantığı (forma, misafir yıldızlar, ortak kaleci, düello finali) aynen
+  geçerli; ikili tespiti `isDuo()` = seçili seçeneğin `data-duo`'su. Her tarafa “İkinci oyuncu” seçimi (`penaltyPartner0/1`,
+  `fkPartner0/1`, `.duo-only`), seçenekler o tarafın vurucu listesinden kopyalanır (kadro + yıldızlar/ikonlar).
+- Motorlar (`penalty-engine.js`, `freekick-engine.js`): `options.partners` (iki oyuncu) verilirse taraf içinde sırayla
+  A1, B1, A2, B2… vurulur; dönüşte `partners` alanı. Partner yoksa tek oyunculu düello birebir aynı.
+- İlk kez 2v2 seçildiğinde (veya `?mode=duo`) vitrin ön ayarı: Barcelona + Messi & Yamal vs Real Madrid + Ronaldo & Mbappé.
+- Grafikler: tanıtım/kazanan panelinde iki portre üst üste ve “Soyad & Soyad”; finalde kazanan ikili birlikte sevinir
+  (ikinci oyuncu slot 10). Yüzler ve portreler hazırlıkta ısıtılır.
+- Telefon: FK paylaşım hatası artık sessiz kalmıyor, indirmeye düşüyor (penaltıdaki gibi). Test: `tests/duo.cjs`.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

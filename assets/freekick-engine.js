@@ -94,9 +94,9 @@ function create(options){
  if(!duel)eligible.forEach((list,i)=>{if(!options.shooters)return;const at=list.findIndex(p=>String(p.id)===String(shooters[i].id));if(at>0)list.unshift(list.splice(at,1)[0]);else if(at<0)list.unshift(shooters[i]);});
  const spots=schedule(rng,options.spots||'varied',40);// A lying player is a per-round choice: both sides face the same wall set-up in a round.
  const lierRng=random(((options.seed>>>0)||1)*2654435761+97),lierRounds=Array.from({length:40},()=>lierRng()<.38);const kicks=[],score=[0,0],taken=[0,0];let winner=null;
- let cursor=INTRO;
+ let cursor=INTRO;const partners=duel&&Array.isArray(options.partners)&&options.partners.every(p=>p?.id)?options.partners:null;/* V138 2v2 duel */
  for(let k=0;k<60&&winner===null;k++){
-  const team=k%2,turn=taken[team],round=Math.floor(k/2);const ball=spots[round],p=duel?shooters[team]:eligible[team][turn%Math.min(3,eligible[team].length)],keeperPlayer=keepers[1-team],q=skill(p),ks=keeperSkill(keeperPlayer);
+  const team=k%2,turn=taken[team],round=Math.floor(k/2);const ball=spots[round],p=duel?(partners&&turn%2===1?partners[team]:shooters[team]):eligible[team][turn%Math.min(3,eligible[team].length)],keeperPlayer=keepers[1-team],q=skill(p),ks=keeperSkill(keeperPlayer);
   const distancePenalty=(ball.distance-18)*.011+Math.abs(ball.angle)*.08,pGoal=clamp(.13+q.value*.36-distancePenalty-(ks-.62)*.25,.08,.58),r=rng(),miss=1-pGoal,desired=r<pGoal?'goal':r<pGoal+miss*.36?'save':r<pGoal+miss*.45?'wall':r<pGoal+miss*.55?'post':'over';// blocks are rarer than clears of the wall: most misses go over or past the post
   const nearSign=ball.nearSign,wall=wallFor(ball,rng,nearSign,lierRounds[round]),footInfo=Feet.resolve(p),raw=footInfo.foot,foot=['left','l'].includes(raw)?'left':['both','b'].includes(raw)?(rng()<.5?'left':'right'):'right';
   const lineZ=bisectorZ(ball),keeper={x:KEEPER_X,z:clamp(lineZ-nearSign*(.45+rng()*.3),-1.9,1.9),reaction:.27-ks*.06+rng()*.05,reach:natural(keeperPlayer).includes('GK')?2.45:1.85,diveSpeed:natural(keeperPlayer).includes('GK')?5.6:4.2};
@@ -123,7 +123,7 @@ function create(options){
   if(!finished&&kick.replay&&age>=REPLAY_FROM&&age<kick.length-.25){const r=age-REPLAY_FROM;physicsAge=CONTACT-.55+r*REPLAY_RATE;replay={age:r,physicsAge,rate:REPLAY_RATE};}
   const f=frameAt(kick,physicsAge),reactionAge=age-kick.resolvedAge-.12,reaction=!replay&&reactionAge>=0&&!finished?{type:kick.outcome==='goal'?'goal':'miss',team:kick.team,age:reactionAge}:null;
   return{time,intro:time<INTRO,finished,kick,age,physicsAge,replay,...f,reaction,score:finished?score.slice():time>=kick.resolvedAt?kick.scoreAfter.slice():kick.scoreBefore.slice(),winner:finished?winner:null,finale:finished?{winner,loser:1-winner,age:time-finaleAt,mode:duel?'duel':'team'}:null,revealed:kicks.filter(k=>time>=k.resolvedAt)};}
- return{seed:options.seed>>>0,weather:options.weather||'clear',mode:duel?'duel':'team',format,rounds,kicks,score,winner,duration,finaleAt,sample,keepers,shooters,eligible,squads,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM},analysis:{basis:'aerodynamic-physics-search-with-entertainment-weights',specialists:kicks.filter(k=>k.skill.specialist).length,physicalOutcomes:kicks.filter(k=>k.outcome===k.desired||(k.desired==='over'&&k.outcome==='wide')).length}};
+ return{seed:options.seed>>>0,weather:options.weather||'clear',mode:duel?'duel':'team',format,rounds,kicks,score,winner,duration,finaleAt,sample,keepers,shooters,partners,eligible,squads,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM},analysis:{basis:'aerodynamic-physics-search-with-entertainment-weights',specialists:kicks.filter(k=>k.skill.specialist).length,physicalOutcomes:kicks.filter(k=>k.outcome===k.desired||(k.desired==='over'&&k.outcome==='wide')).length}};
 }
 return{create,bisectorZ,schedule,spot,skill,takers,completeEleven,random,simulate,wallFor,TECH,timing:{INTRO,KICK,FINAL,WHISTLE,RUN_START,CONTACT,REPLAY_FROM}};
 });
