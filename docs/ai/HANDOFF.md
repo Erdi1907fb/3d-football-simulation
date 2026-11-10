@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V148 → V149 (kararlı)
+- **İstek:** “6–8” yazısını kaldır; sırayla zemin → kale → top fiziği → top → oyuncular → kaleci → stadyum → taraftar.
+  Parlaklık/kontrastla oynama YOK. **Yapılanlar:** PROJECT_STATE 4ap. quick 19/19; önce/sonra maç görüntüsü.
+
+---
+
 ## [2026-11-10] Claude Code · V147 → V148 (kararlı)
 - **İstek:** panolarda “NEXT 90 SIM” istemiyor; profil resmi + @next90sim. Yapıldı (PROJECT_STATE 4ao). quick 19/19.
 

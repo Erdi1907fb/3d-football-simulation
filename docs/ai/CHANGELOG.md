@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V149 — 2026-11-10 (Claude Code) · kararlı
+- Penaltı skor tablosundaki “6–8” gibi aralık yazıları kaldırıldı.
+- Zemin: çim biçme şeritleri gerçek stadyumlardaki gibi daha dar ve daha çok (5,25 m); renkler aynı.
+
 ## V148 — 2026-11-10 (Claude Code) · kararlı
 - **Reklam panoları:** “NEXT 90 SIM” yazısı kaldırıldı; panolarda solda sayfanın profil resmi, sağda @next90sim.
 

@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V148** · 2026-11-09 · Claude Code
+> Son güncelleme: **V149** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V148** (`VERSION`) |
+| Kararlı sürüm | **V149** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -459,6 +459,13 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   sayfanın profil resmi (assets/next90sim.png) + büyük `@next90sim`, yan yana ortalı (stüdyolar ve brandBoards maçları).
   `tests/freekick.cjs` bunu doğrular. Not: `brand-config.js` `name` alanı yalnız sayfa başlıklarında kalır.
 - Kullanıcı: iPhone'da FK MP4 %20'yi yeniden başlamadan geçti (V146–V147 düzeltmeleri sahada çalışıyor).
+
+## 4ap. V149 (skor tablosu + zemin, sıralı geliştirme 1. adım)
+- Penaltı skor tablosundaki ani ölüm aralık etiketi (“6–8”) kaldırıldı (`label:''`); FK tablosunda zaten yoktu.
+- Zemin: biçme şeritleri 14×7.5 m → 20×5.25 m (`STRIPES` scene.js, tufts rengi pitch-detail.js). Renk/parlaklık/ton
+  eşleme DEĞİŞMEDİ (kullanıcı: parlaklık/kontrast oynaması istemiyor; V121 seremoni dersi).
+- Sıralı geliştirme planı (kullanıcı sırası): zemin ✓ → kale (file V147 ✓; sırada sallanma) → top fiziği → top →
+  oyuncular → kaleci → stadyum → taraftar/animasyonlar. Her adımda önce/sonra görüntüsü.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
