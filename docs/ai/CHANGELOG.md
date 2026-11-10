@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V151 — 2026-11-10 (Claude Code) · kararlı
+- **Kaleciler de vurabilir:** penaltı ve serbest vuruş düellolarında kaleci vurucu seçilebilir (kaleci–kaleci kapışması);
+  takım penaltıları uzarsa kaleci de sırası gelince vurur.
+
 ## V150 — 2026-11-10 (Claude Code) · kararlı
 - **Kaleci gözü kamerası (penaltı + serbest vuruş):** vuruşu kalecinin gözünden izle; vurucu yakından, üstünde adıyla;
   vuruşla birlikte top kaleye/eldivene/auta kadar takip edilir. MP4 de bu açıyla alınabilir.

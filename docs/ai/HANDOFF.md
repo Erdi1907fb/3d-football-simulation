@@ -17,6 +17,11 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V150 → V151 (kararlı)
+- **İstek:** kaleciler de penaltı/FK vurucusu olabilsin. Yapıldı (PROJECT_STATE 4ar). quick 19/19; tarayıcıda GK düellosu.
+
+---
+
 ## [2026-11-10] Claude Code · V149 → V150 (kararlı)
 - **İstek:** penaltı/FK için kaleci gözü açısı, vurucunun üstünde isim; ardından sıradaki kalite adımları (kale → top…).
 - **Yapılanlar:** PROJECT_STATE 4aq. quick 19/19; penaltı + FK kaleci gözü görüntüleri (vuruş öncesi / top yolda).

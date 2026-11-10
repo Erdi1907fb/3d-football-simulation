@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V150** · 2026-11-09 · Claude Code
+> Son güncelleme: **V151** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V150** (`VERSION`) |
+| Kararlı sürüm | **V151** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -473,6 +473,13 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   tarafına 0.42 m eğik, y=1.8). Vuruştan önce dar açı (penaltı fov 27, FK 17) vurucuya; temasla genişleyip (≈56–58)
   topu izler. Vurucunun üstünde maçtaki gibi isim etiketi (`nameTag`/`shooterTag`, temas anına kadar). Tekrar ve final
   kameraları değişmedi; MP4 de seçilen kamerayla.
+
+## 4ar. V151 (kaleciler vurucu)
+- Penaltı düellosunda vurucu/ikinci oyuncu listesine “Kaleciler · diğer kulüpler” (`keeper:club:id`) ve “Kaleciler ·
+  millî takımlar” (`national:id`) grupları (yalnız düelloda açık; partner listesi grupları etiketiyle kopyalar).
+  Kendi kadrodaki kaleci zaten seçilebiliyordu. Takım penaltılarında kaleci 11. vurucu (motor `automaticKeeperLast`).
+- FK: kadrodaki kaleci de listede (` · GK`); düelloda aynı iki kaleci grubu. Motorlar kaleci vurucuyu zaten destekliyor
+  (test: Ederson–Uğurcan penaltı ve FK düellosu).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
