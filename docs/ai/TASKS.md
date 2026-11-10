@@ -4,10 +4,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V163
+## Aktif hedef: V164
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-273 | Arena net süre/skor paneli, çalım ve karşı savunma, küçük saha ceza alanı/faul/penaltı, kaleci tutuş/dağıtım ve sürekli sekmeler | done (V163) | codex | files: assets/japon-*.js, assets/athlete-motion.js, assets/football-animation.js, assets/commentary.js, assets/vendor/yuka/arena-steering-NOTICE.txt, tests/*, *.html, ortak AI belgeleri |
 | T-272 | Arena tribün güvenlik/ayırıcıları, kesintisiz çizgiler, ortak sevinçler, 2–6 takım süreli seri aksiyon (30/45/60/75/90), tüm modlarda millî kadro/forma kapsamı, anlatım/video doğrulama | done (V162) | codex | files: assets/japon-*.js, assets/national-kit-profiles.js, assets/catalog.js, ortak kadro/düello JSONları, assets/club-rosters.js, assets/*ui.js, *.html, tools/build-national-coverage.cjs, tests/*, ortak AI belgeleri |
 | T-271 | Küçük Saha 4v4 / Japon Kale 3–6 ayrımı, serbest saha oyuncuları, normal maç kalitesinde küçük tribünler ve gol tepkileri, eğik dinamik yayın kamerası, saha çizgileri/oynanış | done (V161) | codex | files: assets/japon-*.js, assets/scene.js, assets/commentary.js, japon-kale.html, tests/japon-*.cjs |
 | T-270 | Japon Kale kale/file görünümünü normal futbol filesiyle uyumlu yap | done (V160) | codex | files: assets/japon-arena.js, tests/japon-net.cjs, sürüm/devir belgeleri |

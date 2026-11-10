@@ -64,7 +64,8 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 26 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 27 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/arena-duels.cjs` | Çalım/savunma/gerçek temas, kutu faulü/penaltı/FK, GK tutuş/geri pas/dağıtım, canlı top sınırı ve TR/EN | ~20 sn |
 | `node tests/arena-rush.cjs` | 2–6 takım × 5 süre, kesintisiz zaman, farklı gerçek skor/son bölüm, anlatım, koridor/duvar/güvenlik ve boya katmanı | ~3 sn |
 | `node tests/national-coverage.cjs` | 85 millî kadro/forma, ilk 11 doğruluğu, normal maç tamamlama ve güncel konsept takımlar | ~1 sn |
 | `node tests/small-sided.cjs` | 4v4/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
@@ -163,3 +164,11 @@ dosyalardır.
 - Ortak kadro JSON'unda 180 kulüp + 85 millî takım vardır; millî kayıtlar `national:true` ve `catalogId` taşır. Yeni listeler millî takımları yanlışlıkla kulüp filtresiyle dışlamasın. `national-kit-profiles.js`, katalogdan önce yüklenir ve Node factory bağımlılığıdır. 2.224 oyuncu sağlayıcı kadrosudur; ilk 11 resmî değildir. Millî forma görselleri renk/desen tasarımıdır, lisanslı sezon replikası iddia etme.
 - `tools/build-national-coverage.cjs <raw-json-directory>` kaynağı koruyarak üretir; ESPN ham kadroları yerel JSON dosyalarından okur. Kaynak URL/tarih her takımda kayıtlı. Arşiv oyuncularını/yıllarını silme veya güncel kadroyu tarihî maç olarak etiketleme.
 - Taraftar duvarları için güvenlik koridorlarını koru, kişi sayıları eşit kalsın. `japon-pitch-marking` materyal derinlik sırası biçme şeritlerinin üzerinde kalmalı; kesik boya hatasını geri getirme.
+
+
+## 12. Arena mücadeleleri ve kaleci oyunu (V163)
+- `japon-duels.js` engine'den önce yüklenir; Yuka tahmin uyarlamasının MIT notice kaydını koru. Çalım/savunma pozu yalnız görsel değildir, hareket hedefi ve gerçek temasla birlikte çalışır. Başarıyı/golü zorla yazma.
+- Küçük sahada HUD yalnız isim ve gol skorudur; atılan/yenilen alt satırını geri ekleme. Büyük süre ve skor güvenli bandın içindedir.
+- `frame.owner` GK de olabilir, yalnız `frame.holding.actorIndex` ile eşleştiğinde. Geri pas elle tutulmaz. Keeper kontrol/dağıtım ve restart kayıtları video/live zaman dönüşümünde korunur.
+- Ceza alanı faulü yalnız iki takımda penaltı, dışı FK; çok taraflı seri aksiyon avantajla sürer. Son saniye penaltısı için kayıtlı `added_time` ve `addedTime` istisnası vardır; sabit süre testinde bunu yok sayma. Sonuç ekranı yine 5 sn.
+- Duvar/direk/kaleci sekmesi ve tavan yansıması tüm 2–6 taraf varyantlarında. Gerçek gol ağzı hariç top dışarıda kalamaz; sahipli top da sınıra tabidir. Sonuç üretmek için topu ışınlama.

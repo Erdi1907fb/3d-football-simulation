@@ -19,7 +19,7 @@ function plan(contest,time,mode='broadcast'){
  const shot=contest.events.filter(e=>e.type==='shot'&&e.at<=time+.35&&time-e.at<1.6&&f.active[e.against]).at(-1);
  const nearest=players.filter(p=>!p.keeper).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z));
  const lead=shot&&Number.isInteger(shot.actorIndex)&&(!owner||owner.team===shot.team)?f.players[shot.actorIndex]:owner||nearest[0];
- const team=lead?.team??0,target=shot?contest.goals[shot.against]:contest.goals.filter(g=>g.team!==team&&f.active[g.team]).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z))[0];
+ const team=lead?.team??0,target=f.restart?contest.goals[f.restart.against]:shot?contest.goals[shot.against]:contest.goals.filter(g=>g.team!==team&&f.active[g.team]).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z))[0];
  const g=target&&Math.hypot(target.x-f.ball.x,target.z-f.ball.z)<8?target:null;
  const overview=mode==='wide';
  if(overview){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+.4])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});for(const p of players)points.push({...p,y:2.35});return{key:'overview',overview:true,frame:f,points,aim:new T.Vector3(0,.8,0),axis:new T.Vector3(.45,.9,1),fov:47};}

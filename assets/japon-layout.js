@@ -14,6 +14,8 @@ function create(count,goalWidth=5){
  const xs=vertices.map(p=>p.x),zs=vertices.map(p=>p.z),width=Math.max(...xs)-Math.min(...xs),length=Math.max(...zs)-Math.min(...zs);
  return{count,scale,apothem,vertices,boundaries,goals,width,length,area:area(vertices),shape:count===2?'duel':count===3?'triangle':count===4?'square':count===5?'pentagon':'hexagon'};
 }
+function penaltyArea(layout,team){const g=layout.goals[team];return{team,depth:5.4*layout.scale,halfWidth:4.9*layout.scale,spot:5*layout.scale};}
+function inPenaltyArea(p,layout,team){if(layout.count!==2)return false;const g=layout.goals[team],a=penaltyArea(layout,team),depth=g.radius-p.x*g.nx-p.z*g.nz,lateral=-p.x*g.nz+p.z*g.nx;return depth>=0&&depth<=a.depth&&Math.abs(lateral)<=a.halfWidth;}
 function contain(p,layout,margin=.4){for(let pass=0;pass<2;pass++)for(const edge of layout.boundaries){const excess=p.x*edge.nx+p.z*edge.nz-edge.d+margin;if(excess>0){p.x-=edge.nx*excess;p.z-=edge.nz*excess;}}return p;}
 function inside(p,layout,margin=0){return layout.boundaries.every(e=>p.x*e.nx+p.z*e.nz<=e.d-margin+1e-7);}
-return{create,contain,inside,area};});
+return{create,contain,inside,area,penaltyArea,inPenaltyArea};});

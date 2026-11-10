@@ -110,3 +110,14 @@ Open Football module. The exact source-to-integration mapping is documented.
 ### V162 — Millî takım kapsamı
 - 85 ülkenin kadro metaverisi, mevcut ESPN entegrasyonunun `fifa.friendly/teams/<id>/roster` uçlarından 2026-11-10 tarihinde alındı; boş dönen Suudi Arabistan `fifa.world` kaydından tamamlandı. Her takımın kaynak URL/tarihi `club-rosters-v75.json` içinde bulunur. Bunlar sağlayıcı kadrolarıdır; seçilen simülasyon ilk 11'i resmî maç kadrosu olarak sunulmaz. Yeni fotoğraf, logo veya lisanslı forma görseli indirilmedi.
 - `national-kit-profiles.js`: mevcut katalog ve millî arşivin renk/desen bilgilerinden proje içinde üretilen tasarımlar; resmî sezon replikası iddiası yok. Mevcut dört yerel millî atlas korunur; yeni üçüncü taraf medya varlığı eklenmedi.
+
+# Arena defensive steering (V163, 10 November 2026)
+
+`assets/japon-duels.js` adapts predictive interpose/evade from
+[Mugen87/Yuka](https://github.com/Mugen87/yuka), MIT © 2023 Yuka authors,
+pinned at `10591304811222d6856020d5de129b39ef43b58d`. Exact source links and full
+license are in `assets/vendor/yuka/arena-steering-NOTICE.txt`. Football skill
+envelopes, contacts and arena integration are original; no external service
+is required at runtime. This is a small 2D adaptation, not the whole Yuka engine
+or imported football motion-capture clips. The user explicitly requested
+GitHub research/reuse for skills and their defensive counterpart.

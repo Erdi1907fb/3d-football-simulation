@@ -6,6 +6,13 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V163 — 2026-11-10 (Codex)
+- Büyük süre/skor paneli; iki takımlıda yalnız takım veya oyuncu grubu adı ve gol skoru.
+- Dört çalım, tahminli kale hattı savunması/topa dönük kayma ve gerçek temasla top kapma/faul. Yuka MIT kaynak uyarlaması ve lisans kaydı.
+- Küçük saha ceza alanı/nokta, kutu içi penaltı ve dışarıda serbest vuruş; son penaltı için görünür ek süre.
+- Kaleci tutuşu, elle/yerden dağıtım, geri pası ayakla kontrol edip oyun kurma. 2–6 tarafta duvar/direk/kaleci/tavan sekmeleriyle top oyunda.
+- Olaylara uyan TR/EN anlatım, güvenli dinamik yayın, regresyon ve gerçek tarayıcı/kısa MP4 kontrolü; ortak ajan devri.
+
 ## V162 — 2026-11-10 (Codex)
 - 2–6 takım için 30/45/60/75/90 saniye oyun; kesintisiz akış, geri sayım ve 5 saniye sonuç. Çok takımda seri aksiyon varsayılanı, küçük sahada ortak golcü/takım/taraftar sevinci.
 - Tribün sektörleri arasında duvar, açık güvenlik koridoru ve normal maç güvenlik modeli. Çim şeritlerinde kesilen beyaz çizgilerin derinlik katmanı düzeltildi.

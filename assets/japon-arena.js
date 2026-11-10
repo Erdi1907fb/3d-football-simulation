@@ -34,6 +34,7 @@ function create(world,contest,sides){
  const dot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xf4f1df}),0,.02,0);dot.name='center-drop';
  // The halfway line joins the centre circle to both touchlines on the short pitch.
  if(l.count===2){stroke([{x:0,z:-l.length/2},{x:0,z:l.length/2}],0xe8eee1,.07);}else{for(let i=0;i<l.vertices.length;i+=2){const p=l.vertices[i],length=Math.hypot(p.x,p.z);stroke([{x:p.x/length*1.9,z:p.z/length*1.9},p],0xc9d8c7,.045);}}
+ if(l.count===2)for(const g of l.goals){const depth=5.4*l.scale,half=4.9*l.scale,point=(d,t)=>({x:g.x-g.nx*d-g.nz*t,z:g.z-g.nz*d+g.nx*t});stroke([point(0,-half),point(depth,-half),point(depth,half),point(0,half)],0xe8eee1,.09);const p=point(5*l.scale,0),spot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xf4f1df}),p.x,.035,p.z);spot.name='penalty-spot-'+g.team;}
  const crowd=world.farBatches?Crowd.create(world,contest,sides):null;
  const boardMat=material(0x132f35),postMat=new T.MeshPhysicalMaterial({color:0xf8f8f4,roughness:.26,clearcoat:.85});owned.push(postMat);
  for(const edge of l.boundaries){const gap=l.goals.find(g=>Math.abs(g.nx-edge.nx)<1e-6&&Math.abs(g.nz-edge.nz)<1e-6),length=Math.hypot(edge.b.x-edge.a.x,edge.b.z-edge.a.z),tx=(edge.b.x-edge.a.x)/length,tz=(edge.b.z-edge.a.z)/length;

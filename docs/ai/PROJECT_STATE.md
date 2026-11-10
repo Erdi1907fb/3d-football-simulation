@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V162** · 2026-11-10 · Codex (süreli arena, tribün güvenliği ve millî kapsam)
+> Son güncelleme: **V163** · 2026-11-10 · Codex (arena mücadeleleri, kaleci oyunu ve net skor)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V162** (`VERSION`; sürüm commit’i: `V162: Süreli arena, tribün güvenliği ve millî takımlar`) |
-| Sonraki geliştirme hedefi | **V163** |
+| Kararlı sürüm | **V163** (`VERSION`; sürüm commit’i: `V163: Arena mücadeleleri, kaleci oyunu ve net skor`) |
+| Sonraki geliştirme hedefi | **V164** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v162.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 162 |
+| Sürüm doğrulama | `build.php` → `assets/release-v163.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 163 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -591,3 +591,13 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Tüm stüdyolar aynı millî kadroları/forma profilini kullanır. `SekmeClubRosters.complete` normal maç eksiklerini ortak kayıttan tamamlar. Konsept seçiciye 85 güncel millî kadro ayrıca eklenir; eski tarihî dönemler korunur. Yeni oyuncuların millî forma eşlemeleri ortak düello JSON'una eklendi. JSON cache anahtarları V162.
 - Boya çizgileri renk başına, tribün yapıları materyal başına örneklenir; aynı normal güvenlik figürü sakin pozda örneklenir. Japon sahnesinde görünmeyen eski parçalar çizilmez ve karma eski aktör grupları görünür örneklere sıkıştırılır; normal mod yolu korunur. Geometri/model kalitesi ve aydınlatma değişmez.
 - Yeni `tests/arena-rush.cjs`, `tests/national-coverage.cjs`; süre/çeşitlilik/güvenlik/boya/anlatım ve 85 ülke kapsamı. Gerçek Arjantin–Fransa penaltı/FK/Küçük Saha hazırlığı doğrulandı. Video ve doğrulama ayrıntıları HANDOFF V162.
+
+
+## 4bd. V163 (arena mücadeleleri, kaleci oyunu ve net skor)
+- Güvenli yayın panelinde süre 36 px, iki tarafın gol skoru 55 px; iki takımlıda yalnız takım/oyuncu grubu adları ve skor. Atılan/yenilen alt satırı, madalya ve sıra bu varyantta yok. 3–6 tarafta daha büyük puan/eleme sayacı ve küçük destek satırı; sıralama korunur.
+- `japon-duels.js`: Yuka MIT interpose/evade tahmin uyarlaması ve özgün vücut çalımı, bacak aldatması, geri çekme, rulet zarfları. Taşıma yönü/top dokunuşu ve ortak `athlete-motion.js` pozu aynı tohumlu olaydan. Savunmacı topa dönük kayar, kale hattını kapatır; gerçek ayak/body erişimi temiz top kapma veya geç temastan faul üretir. Dört çalım her zaman başarılı değildir.
+- Küçük sahada 5,4 m derinlik/4,9 m yarı genişlik ölçekli ceza alanı ve 5 m nokta. `japon-layout.js` aynı kutu sınıflandırmasını yapar. Kutu içindeki gerçek faul penaltı, dışarıdaki serbest vuruş; top ve oyuncular kademeli yerleşir, atış ortak ball-aero ile çözülür. Son penaltı gerekirse seçilen süreyi uzatır; olay/anlatım/+süre sayacı bunu açıklar. Çok takımlıda faulde avantaj/aksiyon devam eder.
+- Kaleci süpürülmüş temasta erişilebilir topu tutar, sonra açık arkadaşına elle atar/yerden yuvarlar. Geri paslar ayakla kontrol/dağıtılır; sıradan oyuncu GK'ye de pas verebilir. Ortak tutuş IK, ayak vuruşu ve prosedürel bırakma pozu. Kayıtlı `holding`/`restart` durumları seek ve export'ta aynıdır; GK gerçek sahibi olabilir.
+- Sahipli top dahil tüm aktif oyun adımlarında duvar sınırı; kale ağzında fiziksel gol/direk, erişilebilir kaleci teması, yüksek top için arena tavan yansıması. Taç/köşe/aut sıfırlaması yok. Gol/sevinç sonrası merkezden başlama korunur. Top pas ve şutta gerçek fizik kullanır, skor zorlanmaz.
+- TR/EN anlatım gerçek çalım/temiz top kapma/penaltı/FK/tutuş/ayak kontrolü/elle veya ayakla dağıtımı destekler. Cümle yoğunluğu süzülür, bütün rutin olayların okunması zorlanmaz. TTS eklenmedi.
+- `tests/arena-duels.cjs`: 45 tohumlu 2/4/6 takım senaryosu, dört hareket, gerçek temas/kutu sınıflandırması/atış, GK/geri pas, sınır ve anlatım; mevcut kamera/rol/süre testleri yeni meşru GK sahipliği ve son penaltı ek süresine uyarlandı. Kanıt/test kapsamı HANDOFF V163.
