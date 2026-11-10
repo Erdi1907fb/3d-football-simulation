@@ -167,15 +167,16 @@ function create(options={}){
   // V111: painted aluminium goal frame with clearcoat highlights (rounder 32-sided profile).
   const postMat=materials.__goalPost||(materials.__goalPost=new T.MeshPhysicalMaterial({color:0xf8f8f4,roughness:.26,metalness:.05,clearcoat:.85,clearcoatRoughness:.12}));for(const z of[-3.66,3.66]){const post=mesh(geo('CylinderGeometry',.06,.06,2.44,32),postMat,goal,0,1.22,z);post.castShadow=true;}
   const bar=mesh(geo('CylinderGeometry',.06,.06,7.32,32),postMat,goal,0,2.44,0);bar.castShadow=true;bar.rotation.x=Math.PI/2;
-  // One dynamic draw per goal, with finer 12cm cords. Posts stay separate and rigid.
-  const cordPoints=[],cord=(a,b)=>{for(let i=0;i<18;i++)for(const u of[i/18,(i+1)/18])for(let k=0;k<3;k++)cordPoints.push(a[k]+(b[k]-a[k])*u);};
-  // V147: one even ~24 cm square mesh on every face (back, roof, sides). The former 12 cm back/roof cords aliased into
-  // a dense moiré at 1080 px and hid the ball; the roof also gets its cross cords so every face is a real grid.
-  const NZ=30,NY=10,NX=9;
-  for(let i=0;i<=NZ;i++){const z=-3.66+i*7.32/NZ;cord([0,2.44,z],[sign*2.1,2.44,z]);cord([sign*2.1,2.44,z],[sign*2.1,.05,z]);}
-  for(let i=0;i<=NY;i++){const y=.05+i*2.39/NY;cord([sign*2.1,y,-3.66],[sign*2.1,y,3.66]);for(const z of[-3.66,3.66])cord([0,y,z],[sign*2.1,y,z]);}
-  for(let i=1;i<=NX;i++){const x=sign*i*2.1/(NX+1);for(const z of[-3.66,3.66])cord([x,.05,z],[x,2.44,z]);cord([x,2.44,-3.66],[x,2.44,3.66]);}
-  const netGeometry=new T.BufferGeometry();netGeometry.setAttribute('position',new T.Float32BufferAttribute(cordPoints,3));const net=new T.LineSegments(netGeometry,new T.LineBasicMaterial({color:0xe8eee9,transparent:true,opacity:.72}));net.name='goal-net-ropes';net.userData.noBatch=true;net.frustumCulled=false;goal.add(net);goal.userData.sign=sign;goal.userData.net=[{mesh:net,base:new Float32Array(netGeometry.attributes.position.array)}];goal.userData.netDrawCalls=1;
+  // V153 (FC-style net): a fine ~12 cm knotted mesh drawn as a mip-mapped cord texture on four cloth panels (back, roof,
+  // sides). Close up every cord is crisp; further away the mip chain turns it into a soft white veil instead of the
+  // aliased moiré of 1-px line grids. The panels deform with the same netResponse physics (pocket + travelling wave).
+  const netTex=materials.__netTex||(materials.__netTex=(()=>{const c=typeof document!=='undefined'?document.createElement('canvas'):null;if(!c)return null;c.width=c.height=64;const g=c.getContext('2d');g.clearRect(0,0,64,64);g.strokeStyle='rgba(246,248,246,1)';g.lineWidth=5;g.lineCap='round';g.beginPath();g.moveTo(0,2.5);g.lineTo(64,2.5);g.moveTo(2.5,0);g.lineTo(2.5,64);g.stroke();g.fillStyle='rgba(255,255,255,1)';g.beginPath();g.arc(2.5,2.5,3.6,0,Math.PI*2);g.fill();const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.anisotropy=Math.min(8,quality.anisotropy||8);t.generateMipmaps=true;t.minFilter=T.LinearMipmapLinearFilter;t.colorSpace=T.SRGBColorSpace;return t;})());
+  const CELL=.12,panel=(w,h,sw,sh,at)=>{const pos=[],uv=[],idx=[];for(let b=0;b<=sh;b++)for(let a=0;a<=sw;a++){const u=a/sw,v=b/sh,q=at(u,v);pos.push(q[0],q[1],q[2]);uv.push(u*w/CELL,v*h/CELL);}for(let b=0;b<sh;b++)for(let a=0;a<sw;a++){const o=b*(sw+1)+a;idx.push(o,o+1,o+sw+1,o+1,o+sw+2,o+sw+1);}return{pos,uv,idx};};
+  const D=2.1,H=2.44,Y0=.03,W=7.32,parts=[panel(W,H-Y0,48,16,(u,v)=>[sign*D,Y0+v*(H-Y0),-W/2+u*W]),panel(W,D,48,14,(u,v)=>[sign*v*D,H-.05*Math.sin(Math.PI*v)*Math.sin(Math.PI*u),-W/2+u*W]),panel(D,H-Y0,14,16,(u,v)=>[sign*u*D,Y0+v*(H-Y0),-W/2]),panel(D,H-Y0,14,16,(u,v)=>[sign*u*D,Y0+v*(H-Y0),W/2])];
+  const P=[],U=[],I=[];for(const part of parts){const off=P.length/3;P.push(...part.pos);U.push(...part.uv);for(const n of part.idx)I.push(n+off);}
+  const netGeometry=new T.BufferGeometry();netGeometry.setAttribute('position',new T.Float32BufferAttribute(P,3));netGeometry.setAttribute('uv',new T.Float32BufferAttribute(U,2));netGeometry.setIndex(I);netGeometry.computeVertexNormals();
+  const netMat=materials.__netMat||(materials.__netMat=new T.MeshStandardMaterial({color:0xf4f6f4,map:netTex,alphaMap:null,transparent:true,alphaTest:.02,depthWrite:false,side:T.DoubleSide,roughness:.92,metalness:0}));
+  const net=new T.Mesh(netGeometry,netMat);net.name='goal-net-cloth';net.renderOrder=3;net.userData.noBatch=true;net.frustumCulled=false;goal.add(net);goal.userData.sign=sign;goal.userData.net=[{mesh:net,base:new Float32Array(netGeometry.attributes.position.array)}];goal.userData.netDrawCalls=1;
   // Evaluate shared cord junctions once; retain the single LineSegments draw.
   for(const entry of goal.userData.net){const lookup=new Map(),nodes=[],index=new Uint32Array(entry.base.length/3);for(let i=0;i<index.length;i++){const at=i*3,x=entry.base[at],y=entry.base[at+1],z=entry.base[at+2],key=x.toFixed(5)+'|'+y.toFixed(5)+'|'+z.toFixed(5);let id=lookup.get(key);if(id===undefined){id=nodes.length;lookup.set(key,id);nodes.push({x,y,z});}index[i]=id;}entry.nodes=nodes;entry.index=index;entry.displaced=new Float32Array(nodes.length*3);}
   netGoals.push(goal);

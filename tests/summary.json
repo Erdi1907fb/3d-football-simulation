@@ -1,11 +1,11 @@
 {
- "version": "V151",
- "ranAt": "2026-11-10T00:43:12.798Z",
+ "version": "V152",
+ "ranAt": "2026-11-10T00:51:27.886Z",
  "results": [
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 31.1,
+   "seconds": 32,
    "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":1985,\"outcomes\":{\"goal\":524,\"wide\":677,\"wall\":137,\"save\":497,\"post\":150},\"techniques\":[\"dip\",\"curl\",\"power\",\"under\",\"knuckle\",\"outside\"],\"physicalMatch\":0.997,\"earlyFinish\":52,\"suddenDeath\":79,\"samples\":888790,\"maxStep\":0.569,\"brandBoards\":true,\"sameSpotRounds\":1161,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":301,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1266,\"keeperCatches\":{\"clear\":30,\"rain\":19}}"
   },
   {
@@ -41,13 +41,13 @@
   {
    "test": "kickoff-referee.cjs",
    "pass": true,
-   "seconds": 33.7,
+   "seconds": 33.5,
    "summary": "{\"PASS\":true,\"samples\":360,\"minGap\":12.51}"
   },
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 2,
+   "seconds": 1.9,
    "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
   },
   {
@@ -65,7 +65,7 @@
   {
    "test": "forecast-lock.php",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0,
    "summary": "{\"PASS\":true}"
   },
   {
@@ -83,13 +83,13 @@
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.3,
+   "seconds": 5.2,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 1.1,
+   "seconds": 1.2,
    "summary": "{"
   },
   {
@@ -101,7 +101,7 @@
   {
    "test": "remaster.cjs",
    "pass": true,
-   "seconds": 1.1,
+   "seconds": 1,
    "summary": "{\"PASS\":true,\"tacticalTargets\":270,\"intents\":[\"inverted-cover\",\"rest-defence\",\"overlap\",\"pivot\",\"half-space\",\"weak-side-width\",\"wide-offer\",\"pin-and-run\",\"back-line\",\"goal-side-cover\",\"front-screen\",\"midfield-line\",\"fullback-width\",\"screen-pivot\",\"far-post-run\"],\"mirrorInvariant\":true,\"reciprocalAvoidance\":true,\"coincidentBodiesRecovered\":true,\"materialGroups\":[{\"before\":20,\"after\":14},{\"before\":20,\"after\":13}],\"deployBindings\":\"normal/concept/penalty\",\"shaderContract\":true}"
   },
   {
