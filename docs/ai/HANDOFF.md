@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V151 → V152 (kararlı)
+- **İstek:** kaleci gözünde takımlar sağ/sol ayrı; sonra file → top fiziği → top → oyuncular → kaleci → stadyum → taraftar.
+- **Yapılanlar:** PROJECT_STATE 4as. quick 19/19; kaleci gözü ve yayın açısında gol anı kare dizileri.
+- **Sıradaki:** top fiziği / top.
+
+---
+
 ## [2026-11-10] Claude Code · V150 → V151 (kararlı)
 - **İstek:** kaleciler de penaltı/FK vurucusu olabilsin. Yapıldı (PROJECT_STATE 4ar). quick 19/19; tarayıcıda GK düellosu.
 

@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V151** · 2026-11-09 · Claude Code
+> Son güncelleme: **V152** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V151** (`VERSION`) |
+| Kararlı sürüm | **V152** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -480,6 +480,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   Kendi kadrodaki kaleci zaten seçilebiliyordu. Takım penaltılarında kaleci 11. vurucu (motor `automaticKeeperLast`).
 - FK: kadrodaki kaleci de listede (` · GK`); düelloda aynı iki kaleci grubu. Motorlar kaleci vurucuyu zaten destekliyor
   (test: Ederson–Uğurcan penaltı ve FK düellosu).
+
+## 4as. V152 (kaleci gözü düzeltmesi, takımlar ayrı, file cebi)
+- Kaleci gözü: temasla kamera kalenin içine (x=53.4, y=1.85) çekilir ve sahaya bakar (aim ≈ x 46.2–46.5, y 1.0);
+  önceki sürümde uzanan kaleci kamerayı kaplıyordu, yüksek kamerada üst direk bant gibi görünüyordu.
+- Takım penaltıları: bekleyen oyuncular her takım kendi tarafında (z işareti = takım; orta yuvarlak), kaleci gözünde
+  bir takım solda, diğeri sağda.
+- File (kale adımı): `world-upgrade.js netResponse` + top büyüklüğünde cep (r≈0.34 m, 0.1 sn'de açılır, 0.35–0.8 sn
+  arası gevşer, en çok ≈0.3 m × enerji); yayılan dalga aynı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

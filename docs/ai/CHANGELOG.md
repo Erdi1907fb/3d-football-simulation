@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V152 — 2026-11-10 (Claude Code) · kararlı
+- **Kaleci gözü:** vuruştan sonra kamera kalenin içine çekilip sahaya bakıyor; kaleci artık kamerayı kapatmıyor.
+- **Takım penaltıları:** bekleyen oyuncular takım takım ayrı (kaleci gözünde biri solda, biri sağda).
+- **File:** top çarptığı yerde fileyi top büyüklüğünde dışarı itiyor, sonra yumuşakça eski haline dönüyor.
+
 ## V151 — 2026-11-10 (Claude Code) · kararlı
 - **Kaleciler de vurabilir:** penaltı ve serbest vuruş düellolarında kaleci vurucu seçilebilir (kaleci–kaleci kapışması);
   takım penaltıları uzarsa kaleci de sırası gelince vurur.

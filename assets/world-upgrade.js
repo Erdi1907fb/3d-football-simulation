@@ -2,7 +2,10 @@
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'));else r.Next90WorldUpgrade=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 function netResponse(x,y,z,hitY,hitZ,age,sign=1,speed=24,hitX=2.1){
  if(age<=0||age>=3)return{x,y,z};const depth=Math.abs(x),sourceDepth=Math.min(2.1,Math.abs(hitX)),distance=Math.hypot(z-hitZ,(y-hitY)*1.05,(depth-sourceDepth)*.85),time=age-distance/(13+Math.min(8,speed*.16));if(time<=0)return{x,y,z};
- const mouth=clamp(depth/.48),floor=clamp((y-.05)/.18),corner=1-.75*clamp((Math.abs(z)-3.35)/.31)*clamp((y-2.15)/.29),pin=mouth*floor*corner,energy=clamp(speed/28,.25,1.35),decay=Math.exp(-time*(2.9+distance*.14)),pulse=(1-Math.exp(-time*42))*(Math.sin(time*15.5)+.16*Math.sin(time*28)),envelope=1-clamp((age-2.4)/.6),d=.44*energy*decay*pulse*Math.exp(-distance*.60)*pin*envelope;
+ const mouth=clamp(depth/.48),floor=clamp((y-.05)/.18),corner=1-.75*clamp((Math.abs(z)-3.35)/.31)*clamp((y-2.15)/.29),pin=mouth*floor*corner,energy=clamp(speed/28,.25,1.35),decay=Math.exp(-time*(2.9+distance*.14)),pulse=(1-Math.exp(-time*42))*(Math.sin(time*15.5)+.16*Math.sin(time*28)),envelope=1-clamp((age-2.4)/.6);let d=.44*energy*decay*pulse*Math.exp(-distance*.60)*pin*envelope;
+ // V152 ball pocket: the cords right where the ball lands are pushed out in a ball-sized cup (rises in ~0.1 s, holds
+ // while the ball is caught, relaxes by ~0.8 s), on top of the travelling wave above.
+ const local=Math.hypot(z-hitZ,(y-hitY)*1.05,(depth-sourceDepth)*.85),cup=Math.exp(-(local*local)/(.34*.34)),cupTime=clamp(age/.1)*(1-clamp((age-.35)/.45));d+=.30*energy*cup*cupTime*pin*envelope;
  const side=Math.abs(z)>3.64,roof=y>2.42,back=depth>2.08,dx=back?1:roof?.65:.50,dy=roof?.48:-.045,dz=side?Math.sign(z)*.62:(z-hitZ)*.025;
  return{x:x+sign*d*dx,y:y+d*dy,z:z+d*dz};
 }
