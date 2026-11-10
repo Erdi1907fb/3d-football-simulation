@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V165** · 2026-11-10 · Codex (dar alan futbol kararları, yakın aksiyon ve kısa sonuç)
+> Son güncelleme: **V166** · 2026-11-10 · Codex (dengeli yayın, kadro seçimi ve ilişkili arena hareketi)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V165** (`VERSION`; sürüm commit’i: `V165: Dar alan futbol kararları ve yakın aksiyon`) |
-| Sonraki geliştirme hedefi | **V166** |
+| Kararlı sürüm | **V166** (`VERSION`; sürüm commit’i: `V166: Dengeli yayın ve ilişkili arena futbolu`) |
+| Sonraki geliştirme hedefi | **V167** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v165.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 165 |
+| Sürüm doğrulama | `build.php` → `assets/release-v166.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 166 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -622,3 +622,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Varsayılan yakın aksiyon, ilk kareden yakın; ilk 1,6 sn görünür baş etiketleri + skor bandında bütün kadro. Tam yan/taktik alternatifleri korunur. Kritik yakın oyuncu/top ve yakınlaşınca hedef kale; alan dışı boşluk için gereksiz genel kadraj yok. Zoom/aim yalnız aynı top bırakma kesiti içinde yumuşatılır, gol sonrası santrada bilinçli kesme. Aynı kesit içinde kamera sıçrama testi ve safe projection devam eder; reset topu sahanın içinden uçarak enterpole edilmez.
 - `resultDuration=4.5`: uzun taraftar koşusu yerine kısa yakın kazanan kutlaması. İki taraf: MAÇ SONU, kazanan/beraberlik, iki skor ve gerçek golcüler (KK dahil). Japon Kale: kazanan takım/oyuncu grubu ve puan; ortak birincilik/eksik turnuva dürüstlüğü. Bütün sıralama verisi API'de kalır. Küçük sahada gol molası 3,2 sn; çokta 0,7 sn, seçilen süreler aynı. 30 sn →34,5 sn video (geç penaltı istisnası hariç).
 - TR/EN duvar pası anlatımı gerçek `pattern:wall` olayından; yeni sonuç/kadro metinleri iki dilli. Yeni `tests/arena-football.cjs`, güçlü hareket/oyun/keeper/zemin/kamera/sonuç kontrolleri ve diğer regresyonların son kapsamı HANDOFF V165'te.
+
+
+## 4bg. V166 (dengeli yayın, anlaşılır kadro ve ilişkili arena hareketi)
+- D-027: `broadcast` artık orta mesafe; yaklaşık10×7m saha bağlamı + topun7m yakınındaki5 ilgili saha oyuncusu + yaklaşan kale. Amaç sahayı/pas seçeneklerini okumak, tek oyuncu yakın planı değil. Hedef sahanın içine sınırlandırılır, drop bölümlü yumuşak takip sürer. `side-full` orta çizgide sabit basın tribünü: oyuncu/topa göre konum/zoom değişmez; kısa final yakın kesmesi sürer.
+- Kadro arayüzü: 1 Takım kimliği/başlangıç kadrosu, 2 her role özel kartta kaynak kadro + oynayacak kişi, 3 bağımsız forma. TR/EN ve erişilebilir rol isimleri; eski ikon/millî/serbest seçim kaynakları ve GK filtresi aynı.
+- `japon-tactics`: ayrı derinlik/genişlik destek hatları, pas sonrası devam, markajdan küçük boşluk arama, ileri açık alıcı/şut kanalı kararları, göreli hızdan önleyici kaçınma. Savunma, pas uçuşunda da şekil/koşucu örtüsünü korur; çok takım serbest topunda en yakın üç baskıcı. Küçük fiziksel çakışma ve kapanma hızı giderilir; ilk dokunuş topu gerçek hızla yumuşatır. Duvar pası sonsuz düzlem yerine gerçek panel sınırına uyar.
+- GK: hareket ve bakış için tek heading güncellemesi, gecikmiş gözlem/ölü bölge/yan adım ve dalış boyunca plant. Ortak Motion yeni `keeperSaveAt` / `keeperContactPoint` opt-in alanlarını tanır; parry sonrası uzaklaşan topa el/gövde takibi kesilir. `arenaKeeper` ortak koşu/ready-stance'i kullanır; normal mod varsayılanları aynı. Normal maç template'inden askPass/organize/ceremony vb. pozlar arena'ya taşınmaz. Drop snapshot sonrası aynı adımın ikinci kez entegrasyonu giderilir.
+- File: paylaşılan `OpenFootball.containNet` panelinde `netElastic` bayrağı yay/sönüm uygular; top ağı gerip geri bırakır. Arena aynı koordinat adaptörünü kullanır. Render ortak World.netResponse dalgasını korur, o anda topun nete yüklediği gerçek basıncı cep olarak ekler. Ağız/zemin bağları sabit; geri sarma saf frame örneklemesi.
+- Yeni `tests/arena-balance.cjs`: orta mesafeli güvenli ve sürekli kadraj, sabit kamera matrisleri, GK tek dönüş/gerçek temas zamanı, sıçramasız oyuncular, ileri seçenek/kaçınma, elastik bırakma ve gerçek yüklü file. Son test ve tarayıcı kanıtları HANDOFF V166'da; normal maç/penaltı/FK ve millî kadrolar korunur.

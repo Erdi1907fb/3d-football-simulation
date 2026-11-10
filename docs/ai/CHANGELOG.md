@@ -6,6 +6,14 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V166 — 2026-11-10 (Codex)
+- Orta mesafeli aksiyon kadrajı: taşıyıcı, pas seçenekleri ve savunma örtüsü; en yakına sıkışmayan saha bağlamı. Sabit orta basın tribünü alternatifi.
+- Kadro seçimi takım → rol kartında kaynak/kişi → forma olarak açık adımlar; serbest seçim ve tüm kaynaklar korunur.
+- Pas uçuşunda hücum ve savunma şekli, ileri opsiyonlar/koşular, gerçek ilk dokunuş, göreli hıza göre kaçınma ve küçük temas düzeltmesi.
+- GK'de tek kontrollü dönüş, gerçek temas zamanı/noktasından kısa uzanma, yan adım/toparlanma; normal maçtan kalan arena pozları temizlenir.
+- Ortak fileye opt-in esnek karşılık ve gerçek top baskısıyla görsel cep: top arkaya gerer ve geri bırakılır; eski modların varsayılanı korunur.
+- Yeni yayın/ilişki/file regresyon testi, gerçek tarayıcı kanıtı ve ortak devir.
+
 ## V165 — 2026-11-10 (Codex)
 - Dar alan için atış kanalı, açık pas/duvar pası, alıcı koşusu ve ayak hazırlığına bağlı futbol kararları; kontrollü dönüş/ivme ve gerçek küçük top sürme temasları.
 - Kaleciler gecikmeli gözlem ve gerçek sekme yörüngesinden açı kapatır; tutuş/ayak kontrolü/toparlanma ve duruş düzeltildi. Ayakta savunma, her müdahalede kayan tackle yok.

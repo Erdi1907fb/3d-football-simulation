@@ -64,7 +64,8 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 29 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 30 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/arena-balance.cjs` | Orta mesafe aksiyon, sabit basın tribünü, GK dönüş/temas zamanı, çarpışma öngörüsü ve top yüküyle esneyip bırakan file | ~3 sn |
 | `node tests/arena-football.cjs` | Dikdörtgen, ivme/dönüş, yer direnci, alım/vuruş zamanı, şut kanalı, sekme okuyan GK, yakın açılış/kısa doğru sonuç | ~4 sn |
 | `node tests/arena-broadcast-flow.cjs` | Seçici isim, tek baskıcı, çalım sonucu, hareket eden gol topu/ortak file, yan kamera ve taraftar finali | ~3 sn |
 | `node tests/arena-duels.cjs` | Çalım/savunma/gerçek temas, kutu faulü/penaltı/FK, GK tutuş/geri pas/dağıtım, canlı top sınırı ve TR/EN | ~20 sn |
@@ -191,3 +192,11 @@ dosyalardır.
 - `continuousGround` arena ball state'inde opt-in'dir; ball-aero'nun diğer modlarının davranışını sessizce değiştirme. `receiveContact` varsa gerçek alım zamanı, yoksa eski ortak animasyon zamanlaması.
 - Sonuç artık 4,5 sn; uzun taraftar turunu geri ekleme. Küçük saha MAÇ SONU/kazanan veya beraberlik/skor/golcüler; çok taraflıda kazanan takım/oyuncu grubu. Kısa kutlama fiziksel mevcut pozisyonda, ışınlanma yok. Eksik eleme veya beraberlikte galip uydurma.
 - Küçük sahada 3,2 sn gol molası; yeni fiziksel kararlar eski tohumdaki skor/olay sayısını korumak zorunda değildir. Tohumla sonuç zorlama, gol veya kurtarış sayısı şartına göre beceri bastırma. Keeper catch de fiziksel kurtarıştır; testte yalnız parry sayımına dönme.
+
+
+## 15. Dengeli yayın ve ilişkili hareket (V166)
+- D-027, V165'in aşırı yakın aksiyonunu günceller: varsayılan kamera taşıyıcıyla birlikte pas seçeneklerini ve savunma örtüsünü gösteren orta mesafedir; ilk kare yakın plan değildir. En geniş sınır tam saha kadrajıdır. `side-full` orta çizgide sabit basın tribünüdür, maç içinde konumu/zoom'u oyuncu veya topa göre değişmez. Finaldeki kısa yakın kutlama kesmesi kalır.
+- Menüde her rol kendi kartındadır: “Nereden seçilecek?” kadro/kaynak seçer, “Kim oynayacak?” o kadrodan kişiyi seçer. Takım kimliği, kadro ve forma ayrı adımlardır. Havuzları veya serbest saha seçimini kaldırma; yalnız kaleci filtresi sürer.
+- GK bakışı ve hareket heading'i aynı adımda iki kez dönmez. Gerçek `keeperSaveAt` ve `keeperContactPoint` ortak animasyona geçer; parry sonrası el, uzaklaşan topu izleyip gövdeyi sürüklemez. `arenaKeeper` ortak lokomosyon/ready-stance bayrağıdır; normal modların varsayılanı aynı.
+- File: paylaşılan OpenFootball.containNet içinde opt-in `netElastic` yay/sönüm tepkisi; arena yerel koordinata dönüştürür. Dünya netResponse dalgası korunur; gerçek topun baskısı render edilen cebi ek olarak yükler. Kalede topu sabitleme, animasyonu fizik yerine sonuç üretmekte kullanma. Diğer modlar bayrağı açmadıkça eski fizik yolundadır.
+- Gerçek drop anında snapshot sonrası o adımı bir daha entegre etme; aksi hâlde kayıtta GK dönüşü hız sınırını aşar. Pas sırasında her iki tarafın hücum/savunma şekli korunur. Önleyici kaçınma + küçük fiziksel çakışma düzeltmesi, normal maç template'inden kalan askPass/organize/ceremony pozlarını temizleme korunur.

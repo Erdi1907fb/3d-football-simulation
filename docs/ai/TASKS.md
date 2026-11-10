@@ -4,10 +4,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V166
+## Aktif hedef: V167
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-276 | Dengeli orta mesafe aksiyon / sabit basın tribünü kamerası, anlaşılır kadro seçimi, ilişkili koşu-pas-savunma ve sakin GK, esnek top-file teması | done (V166) | codex | files: assets/japon-*.js, assets/athlete-motion.js, assets/football-animation.js, assets/open-football-adapter.js, japon-kale.html, tests/*, ortak AI belgeleri |
 | T-275 | Küçük saha futbol kararları/akıcı hareket/sekme öngörülü GK, gerçek dikdörtgen, yakın aksiyon ve belirgin file, kısa kazanan/sonuç finali | done (V165) | codex | files: assets/japon-*.js, assets/ball-aero.js, assets/football-animation.js, assets/athlete-motion.js, assets/commentary.js, tests/*, japon-kale.html, ortak AI belgeleri |
 | T-274 | HD skor paneli, seçici oyuncu etiketleri, düzenli hücum/savunma, ortak top/file tepkisi, tam yan yayın ve taraftarla final, anlaşılır rol menüsü | done (V164) | codex | files: assets/japon-*.js, assets/commentary.js, tests/*, japon-kale.html, ortak AI belgeleri |
 | T-273 | Arena net süre/skor paneli, çalım ve karşı savunma, küçük saha ceza alanı/faul/penaltı, kaleci tutuş/dağıtım ve sürekli sekmeler | done (V163) | codex | files: assets/japon-*.js, assets/athlete-motion.js, assets/football-animation.js, assets/commentary.js, assets/vendor/yuka/arena-steering-NOTICE.txt, tests/*, *.html, ortak AI belgeleri |

@@ -24,16 +24,19 @@ function plan(contest,time,mode='broadcast'){
  const nearest=players.filter(p=>!p.keeper).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z));
  const lead=shot&&Number.isInteger(shot.actorIndex)&&(!owner||owner.team===shot.team)?f.players[shot.actorIndex]:owner||nearest[0];
  const team=lead?.team??0,target=f.netGoal!=null?contest.goals[f.netGoal]:owner?.keeper?contest.goals[owner.team]:f.restart?contest.goals[f.restart.against]:shot?contest.goals[shot.against]:contest.goals.filter(g=>g.team!==team&&f.active[g.team]).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z))[0];
- const g=target&&Math.hypot(target.x-f.ball.x,target.z-f.ball.z)<4.6?target:null;
+ const g=target&&Math.hypot(target.x-f.ball.x,target.z-f.ball.z)<7?target:null;
  const overview=mode==='wide'||mode==='side-full';
- if(overview){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+.4])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});for(const p of players)points.push({...p,y:2.35});points.push({...f.ball});return{key:'overview',overview,frame:f,points,aim:new T.Vector3(0,.8,0),axis:mode==='side-full'?new T.Vector3(0,.5,1):mode==='touchline'?new T.Vector3(1,.72,.35):new T.Vector3(.45,.66,1),fov:47};}
- // Follow the ball and nearby duel; reveal the target frame as the ball approaches.
- const points=[{...f.ball,y:Math.max(.3,f.ball.y)},...nearest.filter(p=>Math.hypot(p.x-f.ball.x,p.z-f.ball.z)<2.8).slice(0,1).flatMap(p=>[{...p,y:.1},{...p,y:2.4}])];
- if(lead&&Math.hypot(lead.x-f.ball.x,lead.z-f.ball.z)<2.8)points.push({...lead,y:.1},{...lead,y:2.4});
+ if(overview){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+.4])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});points.push({x:0,y:4.6,z:0});return{key:'overview',overview,frame:f,points,aim:new T.Vector3(0,.8,0),axis:mode==='side-full'?new T.Vector3(0,.8,1):new T.Vector3(.45,.66,1),fov:47};}
+ // A readable phase of play: show the carrier, passing options and cover,
+ // with a minimum patch of pitch instead of framing one player's feet.
+ const centre=Layout.contain({x:f.ball.x*.72,z:f.ball.z*.72},contest.layout,4.3),points=[{...f.ball,y:Math.max(.3,f.ball.y)}];
+ for(const x of[-5.2,5.2])for(const z of[-3.6,3.6])points.push({...Layout.contain({x:centre.x+x,z:centre.z+z},contest.layout,.2),y:.1});
+ for(const p of players.filter(p=>!p.keeper&&Math.hypot(p.x-f.ball.x,p.z-f.ball.z)<7).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z)).slice(0,5))points.push({...p,y:.1},{...p,y:2.4});
+ if(lead&&Math.hypot(lead.x-f.ball.x,lead.z-f.ball.z)<8)points.push({...lead,y:.1},{...lead,y:2.4});
  if(g){for(const side of[-1,1]){points.push({x:g.x-g.nz*(g.width/2+.3)*side,y:0,z:g.z+g.nx*(g.width/2+.3)*side});points.push({x:g.x-g.nz*(g.width/2+.3)*side,y:g.height+.4,z:g.z+g.nx*(g.width/2+.3)*side});}for(const side of[-1,1])points.push({x:g.x+g.nx*g.depth-g.nz*g.width*.5*side,y:g.height+.3,z:g.z+g.nz*g.depth+g.nx*g.width*.5*side});const keeper=players.find(p=>p.team===g.team&&p.keeper);if(keeper)points.push({...keeper,y:2.4});}
- const aim=g?new T.Vector3(f.ball.x*.55+g.x*.45,.9,f.ball.z*.55+g.z*.45):new T.Vector3(f.ball.x,.9,f.ball.z);
+ const aim=new T.Vector3(centre.x,.9,centre.z);
  // Keep one side of the action: following a new goal must not reverse the screen.
- const axis=mode==='touchline'?new T.Vector3(1,.72,.35):new T.Vector3(.12,.95,1);
+ const axis=mode==='touchline'?new T.Vector3(1,.72,.35):new T.Vector3(.08,.9,1);
  return{key:shot?'shot-'+shot.at:'play-'+team+'-'+(g?.team??0),overview:false,frame:f,goal:g,points,aim,axis,fov:mode==='touchline'?49:48};
 }
 const paths=new WeakMap();

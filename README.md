@@ -7,7 +7,7 @@ uygulaması. Sürüm: bkz. `VERSION`.
 |---|---|
 | `index.html` | Maç merkezi: bülten, 11’e 11 3D maç, sezon, konsept maçlar, video indirme |
 | `penalty.html` | Penaltı Stüdyosu (takım serisi / oyuncu düellosu) |
-| `japon-kale.html` | Japon Kale: 3–6 taraf, kaleci + 2 serbest saha oyuncusu, eleme / puan, yakın aksiyon + isteğe bağlı tam yan yayın |
+| `japon-kale.html` | Japon Kale: 3–6 taraf, kaleci + 2 serbest saha oyuncusu, eleme / puan, dengeli aksiyon + sabit orta basın tribünü kamerası |
 | `japon-kale.html?mode=small` | Küçük Saha Maçı: 2 takım, kaleci + 3 serbest saha oyuncusu (4v4), süreli maç |
 | `freekick.html` | Serbest Vuruş Stüdyosu (takım vs takım / oyuncu düellosu) |
 

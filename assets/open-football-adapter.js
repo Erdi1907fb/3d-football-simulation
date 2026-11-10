@@ -121,15 +121,15 @@ function passFlight(a,b,u,duration,arc=0,spin=0){u=clamp(u,0,1);const T=Math.max
  else y=a.y+(b.y-a.y)*u+4*Math.max(0,arc)*u*(1-u);
  return{x:a.x+(b.x-a.x)*q,z:a.z+(b.z-a.z)*q+spin*Math.sin(Math.PI*u),y:Math.max(.11,y)};
 }
-function panel(over,speed,give,dt){give=Math.max(.001,give);const stretch=clamp(over/give,0,1),drag=speed>0?.10+(.95-.10)*stretch*stretch:.03;
+function panel(over,speed,give,dt,elastic=false){give=Math.max(.001,give);if(elastic){speed+=(-170*over-12*speed)*dt;if(over>give){over=give;if(speed>0)speed*=-.08;}return{over,speed};}const stretch=clamp(over/give,0,1),drag=speed>0?.10+(.95-.10)*stretch*stretch:.03;
  speed*=Math.pow(1-drag,dt/.01);speed-=1.2*stretch*stretch*dt;if(over>give){over=give;if(speed>0)speed=0;}return{over,speed};}
 function containNet(b,dt=1/120){
  if(b.x<52.5)return;const slack=h=>{const t=clamp(h/2.44,0,1);return 4*t*(1-t);};let contact=false;
  const back=54.49,side=3.55,roof=2.33;
- if(b.x>back){const p=panel(b.x-back,b.vx,.32*slack(b.y),dt);b.x=back+p.over;b.vx=p.speed;contact=true;}
- if(Math.abs(b.z)>side){const sign=Math.sign(b.z),p=panel(Math.abs(b.z)-side,b.vz*sign,.20*slack(b.y),dt);b.z=sign*(side+p.over);b.vz=sign*p.speed;contact=true;}
- if(b.y>roof){const p=panel(b.y-roof,b.vy,.16,dt);b.y=roof+p.over;b.vy=p.speed;contact=true;}
- if(contact||b.x>back-.025||Math.abs(b.z)>side-.025||b.y>roof-.025){const damp=Math.pow(.75,dt/.01);b.vx*=damp;b.vz*=damp;b.spin=(b.spin||0)*damp;}
+ if(b.x>back){const p=panel(b.x-back,b.vx,.32*slack(b.y),dt,b.netElastic);b.x=back+p.over;b.vx=p.speed;contact=true;}
+ if(Math.abs(b.z)>side){const sign=Math.sign(b.z),p=panel(Math.abs(b.z)-side,b.vz*sign,.20*slack(b.y),dt,b.netElastic);b.z=sign*(side+p.over);b.vz=sign*p.speed;contact=true;}
+ if(b.y>roof){const p=panel(b.y-roof,b.vy,.16,dt,b.netElastic);b.y=roof+p.over;b.vy=p.speed;contact=true;}
+ if(contact||b.x>back-.025||Math.abs(b.z)>side-.025||b.y>roof-.025){const damp=Math.pow(b.netElastic?.985:.75,dt/.01);b.vx*=damp;b.vz*=damp;b.spin=(b.spin||0)*damp;}
 }
 function blockContact(previous,ball,defender,reach=.49,ceiling=1.75){const v=sub(ball,previous),n=v.x*v.x+v.z*v.z;if(n<1e-12)return null;
  const raw=dot(sub(defender,previous),v)/n;if(raw<0||raw>1)return null;const q=raw,p={x:previous.x+v.x*q,z:previous.z+v.z*q,y:previous.y+(ball.y-previous.y)*q};return p.y<=ceiling&&distance(p,defender)<=reach?{...p,fraction:q}:null;
