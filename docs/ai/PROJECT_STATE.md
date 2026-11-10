@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V156** · 2026-11-09 · Claude Code
+> Son güncelleme: **V157** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V156** (`VERSION`) |
+| Kararlı sürüm | **V157** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -516,6 +516,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   ≈18 Hz, ±1.4 cm, 0.75 sn sönümlü titreşir (ölçüldü).
 - Sıçrama sistemi: sert sekme (önceki vy<−3.2 → ≥−0.5, y<0.3) küçük ölçekli toz (scale≤0.75); ikinci malzeme hava
   durumuna göre (açık: toprak, yağmur: yarı saydam su, kar: kar) — `sprayWeather` setWeather ve Next90Weather tercihinden.
+
+## 4ax. V157 (karda nefes buharı)
+- `scene.js updateBreath`: yalnız kar havasında, görünür her aktörün başından kendi ritmiyle (1.35–1.63 sn) küçük buhar
+  bulutu (smokeTexture, yarı saydam .38, kafa bakış yönünde 0.17–0.55 m, ağız hizası, büyüyüp incelir). 44 instanced,
+  1 çizim; durum zamanının saf fonksiyonu. Düşük kalitede kapalı. İlk denemede eklemeli karışım karda görünmüyordu,
+  sonra yüzü kapatıyordu; ikisi de düzeltildi (görüntülerle).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

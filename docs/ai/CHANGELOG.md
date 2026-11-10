@@ -2,6 +2,9 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V157 — 2026-11-11 (Claude Code) · kararlı
+- **Karda nefes buharı:** karlı havada oyuncuların ağzından soğuk nefes buharı çıkıyor.
+
 ## V156 — 2026-11-11 (Claude Code) · kararlı
 - **Direkten dönen top:** kale çerçevesi çarpma anında kısa bir an titriyor.
 - **Sekmede toz:** top yere sert sekince küçük çim tozu kalkıyor.
