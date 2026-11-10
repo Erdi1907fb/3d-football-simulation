@@ -1,5 +1,5 @@
 /* Dedicated arena dressing; existing player, net, turf and lighting resources are reused. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'),require('./japon-crowd.js'));else r.Next90JaponArena=f(r.THREE,r.Next90JaponCrowd);})(typeof globalThis!=='undefined'?globalThis:this,function(T,Crowd){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'),require('./japon-crowd.js'),require('./japon-net.js'));else r.Next90JaponArena=f(r.THREE,r.Next90JaponCrowd,r.Next90JaponNet);})(typeof globalThis!=='undefined'?globalThis:this,function(T,Crowd,Net){'use strict';
 // Keep the shared game's 12 cm cord spacing in metres. Scaling a cloned 7.32 m
 // goal also compressed its texture grid and kept shared, mutable net geometry.
 function netGeometry(width,height,depth){
@@ -45,7 +45,7 @@ function create(world,contest,sides){
  // The normal match / Penalty / Free Kick cord material is reused, with a local
  // material and correctly sized back, roof and side nets; the mouth stays open.
  const source=world.netGoals.find(n=>n.userData.sign===1).getObjectByName('goal-net-cloth');
- const netMat=source.material.clone(),net=mesh(netGeometry(g.width,g.height,g.depth),netMat,0,0,0,goal);net.name='goal-net-cloth';net.renderOrder=3;net.frustumCulled=false;
+ const netMat=source.material.clone(),net=mesh(netGeometry(g.width,g.height,g.depth),netMat,0,0,0,goal);net.userData.base=net.geometry.attributes.position.array.slice();net.geometry.attributes.position.setUsage(T.DynamicDrawUsage);net.name='goal-net-cloth';net.renderOrder=3;net.frustumCulled=false;
  for(const z of[-g.width/2,g.width/2])mesh(new T.CylinderGeometry(.06,.06,g.height,24),postMat,0,g.height/2,z,goal).castShadow=true;
  const bar=mesh(new T.CylinderGeometry(.06,.06,g.width,24),postMat,0,g.height,0,goal);bar.rotation.x=Math.PI/2;bar.castShadow=true;
  // Conventional rear ground frame anchors the sloping net on the turf.
@@ -56,6 +56,6 @@ function create(world,contest,sides){
  }
  // Paint is one draw per colour, with identical metre-sized continuous segments.
  const paintDummy=new T.Object3D();for(const color of new Set(paint.map(p=>p.color))){const pieces=paint.filter(p=>p.color===color),g=new T.BoxGeometry(1,.014,1),m=new T.MeshBasicMaterial({color,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-6,polygonOffsetUnits:-6}),batch=new T.InstancedMesh(g,m,pieces.length);owned.push(g,m);batch.name='japon-pitch-marking';batch.renderOrder=4;batch.frustumCulled=false;pieces.forEach((p,i)=>{paintDummy.position.set(p.x,.03,p.z);paintDummy.rotation.set(0,p.heading,0);paintDummy.scale.set(p.length,1,p.width);paintDummy.updateMatrix();batch.setMatrixAt(i,paintDummy.matrix);});root.add(batch);}
- return{root,goals,crowd,update(frame){crowd?.update(frame);for(let i=0;i<goals.length;i++){goals[i].visible=frame.active[i]||frame.finished;barriers[i].visible=!frame.active[i]&&!frame.finished;}},dispose(){crowd?.dispose();root.traverse(o=>{if(o.isInstancedMesh)o.dispose();});root.removeFromParent();for(const resource of new Set(owned))resource.dispose();}};
+ return{root,goals,crowd,update(frame){crowd?.update(frame);for(let i=0;i<goals.length;i++){const goal=goals[i],last=contest.events?.filter(e=>e.type==='goal'&&e.against===i&&e.at<=frame.time).at(-1),recent=last&&frame.time-last.at<(contest.goalPause||1);goal.visible=frame.active[i]||frame.finished||recent;barriers[i].visible=!frame.active[i]&&!frame.finished&&!recent;const hit=contest.events?.filter(e=>e.type==='net_contact'&&e.against===i&&e.at<=frame.time&&frame.time-e.at<3).at(-1),net=goal.getObjectByName('goal-net-cloth'),positions=net.geometry.attributes.position,base=net.userData.base;for(let j=0;j<positions.count;j++){const point={x:base[j*3],y:base[j*3+1],z:base[j*3+2]},q=hit?Net.deform(point,l.goals[i],hit,frame.time-hit.at):point;positions.setXYZ(j,q.x,q.y,q.z);}positions.needsUpdate=true;goal.userData.netImpact=hit||null;const post=contest.events?.filter(e=>e.type==='post'&&e.against===i&&e.at<=frame.time&&frame.time-e.at<.75).at(-1),age=post?frame.time-post.at:9;goal.position.y=.012+(age<.75?Math.abs(Math.sin(age*113))*.004*Math.exp(-age*5.5):0);}},dispose(){crowd?.dispose();root.traverse(o=>{if(o.isInstancedMesh)o.dispose();});root.removeFromParent();for(const resource of new Set(owned))resource.dispose();}};
 }
 return{create,netGeometry};});

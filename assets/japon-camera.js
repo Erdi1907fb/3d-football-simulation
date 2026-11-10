@@ -1,6 +1,6 @@
 /* Stateless broadcast director. Export, seeking and preview share the same frame.
    The intersection of our Shorts/Reels action region is measured at 1080×1920. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'));else r.Next90JaponCamera=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'),require('./japon-layout.js'));else r.Next90JaponCamera=f(r.THREE,r.Next90JaponLayout);})(typeof globalThis!=='undefined'?globalThis:this,function(T,Layout){'use strict';
 const SAFE={left:64,right:884,top:295,bottom:1220},WIDTH=1080,HEIGHT=1920;
 const v=p=>new T.Vector3(p.x,p.y??0,p.z),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 function fit(camera,points,axis,aim,fov=48){
@@ -16,13 +16,15 @@ function fit(camera,points,axis,aim,fov=48){
 }
 function plan(contest,time,mode='broadcast'){
  const f=contest.sample(time),players=f.players.filter(p=>f.active[p.team]),owner=f.owner>=0?f.players[f.owner]:null;
+ // The winner really runs to their own terrace; close coverage follows the group.
+ if(f.finished&&!contest.timedOut&&!contest.draw){const champions=contest.ranks.filter(r=>r.rank===1).map(r=>r.team),team=champions[Math.min(champions.length-1,Math.floor((time-contest.finaleAt)/6))],anchor=Layout.supporterAnchor(contest.layout,team),group=f.players.filter(p=>p.team===team),lead=group.slice().sort((a,b)=>Math.hypot(a.x-anchor.x,a.z-anchor.z)-Math.hypot(b.x-anchor.x,b.z-anchor.z))[0],near=group.filter(p=>Math.hypot(p.x-lead.x,p.z-lead.z)<7),points=near.flatMap(p=>[{...p,y:.1},{...p,y:2.5}]);if(Math.hypot(lead.x-anchor.x,lead.z-anchor.z)<7)for(const side of[-1,1])points.push({x:anchor.x+anchor.nx*5-anchor.nz*side*3,y:2.6,z:anchor.z+anchor.nz*5+anchor.nx*side*3});return{key:'supporter-finale-'+team,celebration:true,overview:false,frame:f,points,aim:new T.Vector3(lead.x*.7+anchor.x*.3,1.3,lead.z*.7+anchor.z*.3),axis:new T.Vector3(-anchor.nx-anchor.nz*.8,.58,-anchor.nz+anchor.nx*.8),fov:46};}
  const shot=contest.events.filter(e=>e.type==='shot'&&e.at<=time+.35&&time-e.at<1.6&&f.active[e.against]).at(-1);
  const nearest=players.filter(p=>!p.keeper).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z));
  const lead=shot&&Number.isInteger(shot.actorIndex)&&(!owner||owner.team===shot.team)?f.players[shot.actorIndex]:owner||nearest[0];
  const team=lead?.team??0,target=f.restart?contest.goals[f.restart.against]:shot?contest.goals[shot.against]:contest.goals.filter(g=>g.team!==team&&f.active[g.team]).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z))[0];
  const g=target&&Math.hypot(target.x-f.ball.x,target.z-f.ball.z)<8?target:null;
- const overview=mode==='wide';
- if(overview){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+.4])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});for(const p of players)points.push({...p,y:2.35});return{key:'overview',overview:true,frame:f,points,aim:new T.Vector3(0,.8,0),axis:new T.Vector3(.45,.9,1),fov:47};}
+ const overview=mode==='wide'||mode==='side-full';
+ if(overview||time<1.6){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+.4])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});for(const p of players)points.push({...p,y:2.35});points.push({...f.ball});return{key:'overview',overview,frame:f,points,aim:new T.Vector3(0,.8,0),axis:mode==='side-full'?new T.Vector3(0,.5,1):mode==='touchline'?new T.Vector3(1,.72,.35):new T.Vector3(.45,.66,1),fov:47};}
  // Follow the ball and nearby duel; reveal the target frame as the ball approaches.
  const points=[{...f.ball,y:Math.max(.3,f.ball.y)},...nearest.filter(p=>Math.hypot(p.x-f.ball.x,p.z-f.ball.z)<6.5).slice(0,2).flatMap(p=>[{...p,y:.1},{...p,y:2.4}])];
  if(lead&&Math.hypot(lead.x-f.ball.x,lead.z-f.ball.z)<6)points.push({...lead,y:.1},{...lead,y:2.4});
@@ -43,7 +45,7 @@ function trackingPath(contest,mode){let cached=paths.get(contest);if(!cached){ca
 }
 function apply(camera,contest,time,mode='broadcast'){
  const p=plan(contest,time,mode);
- if(p.overview){const distance=fit(camera,p.points,p.axis,p.aim,p.fov);return{...p,distance};}
+ if(p.overview||p.celebration){const distance=fit(camera,p.points,p.axis,p.aim,p.fov);return{...p,distance};}
  const{step,path}=trackingPath(contest,mode),t=clamp(time,0,contest.duration)/step,index=Math.min(path.length-2,Math.floor(t)),u=t-index,a=path[index],b=path[index+1],aim=a.aim.clone().lerp(b.aim,u),required=fit(camera,p.points,p.axis,aim,p.fov),distance=Math.max(required,a.distance+(b.distance-a.distance)*u);
  camera.position.copy(aim).addScaledVector(p.axis.clone().normalize(),distance);camera.lookAt(aim);camera.updateMatrixWorld();
  const segment=contest.segments?.findIndex(s=>time>=s.videoStart&&time<s.videoEnd)??0;

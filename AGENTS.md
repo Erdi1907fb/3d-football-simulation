@@ -64,13 +64,14 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 27 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 28 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/arena-broadcast-flow.cjs` | Seçici isim, tek baskıcı, çalım sonucu, hareket eden gol topu/ortak file, yan kamera ve taraftar finali | ~3 sn |
 | `node tests/arena-duels.cjs` | Çalım/savunma/gerçek temas, kutu faulü/penaltı/FK, GK tutuş/geri pas/dağıtım, canlı top sınırı ve TR/EN | ~20 sn |
 | `node tests/arena-rush.cjs` | 2–6 takım × 5 süre, kesintisiz zaman, farklı gerçek skor/son bölüm, anlatım, koridor/duvar/güvenlik ve boya katmanı | ~3 sn |
 | `node tests/national-coverage.cjs` | 85 millî kadro/forma, ilk 11 doğruluğu, normal maç tamamlama ve güncel konsept takımlar | ~1 sn |
 | `node tests/small-sided.cjs` | 4v4/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
 | `node tests/japon-net.cjs` | Normal file dokusu, 4,4/5/6 m ölçü, açık kale ağzı, ayrı geometri ve ortak kaynakların korunması | <1 sn |
-| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 4v4/üçlü kadrolar/efsaneler, 3 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
+| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 4v4/üçlü kadrolar/efsaneler, 4 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
 | `node tests/japon-kale.cjs` | 2–6 taraf, 50 senaryo, eleme/puan, tur sıfırlama, fiziksel gol çizgisi, özet zamanları, determinizm | ~2 sn |
 | `node tests/commentary.cjs` | TR/EN anlatım, gerçek olay/oyuncu, video zamanları, SRT | <1 sn |
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
@@ -172,3 +173,11 @@ dosyalardır.
 - `frame.owner` GK de olabilir, yalnız `frame.holding.actorIndex` ile eşleştiğinde. Geri pas elle tutulmaz. Keeper kontrol/dağıtım ve restart kayıtları video/live zaman dönüşümünde korunur.
 - Ceza alanı faulü yalnız iki takımda penaltı, dışı FK; çok taraflı seri aksiyon avantajla sürer. Son saniye penaltısı için kayıtlı `added_time` ve `addedTime` istisnası vardır; sabit süre testinde bunu yok sayma. Sonuç ekranı yine 5 sn.
 - Duvar/direk/kaleci sekmesi ve tavan yansıması tüm 2–6 taraf varyantlarında. Gerçek gol ağzı hariç top dışarıda kalamaz; sahipli top da sınıra tabidir. Sonuç üretmek için topu ışınlama.
+
+
+## 13. Arena yayın ve final tercihi (V164)
+- Kullanıcının yeni isteği: açılış1,6sn bütün isimler, sonra yalnız top sahibi/kurtaran kaleci; finalde oyuncu etiketi yok. `japon-broadcast.js` bu politikayı paylaşır. Ön izleme2D katmanı1080p, 3D540p; export1080p60. Metni fillText maxWidth ile yatay sıkıştırma, ölçüp kısalt.
+- Yeni varsayılan `side-full` bütün sahayı yandan gösterir; kullanıcı bunu açıkça istedi. Önceki aksiyon/touchline/wide seçenekleri korunur. Aksiyon intro noktaları yumuşak izleme yolunda kalır, final yakın kesmedir. Geçmiş yakın kamera tercihleri yeni yan seçeneği kaldırma gerekçesi değildir.
+- `japon-net.js` ortak OpenFootball.containNet ve world-upgrade.netResponse kullanır; normal/penaltı/FK fiziğinin kopyasını yazma. Gol molasında ball-aero durmaz. Yerel eğimli file boyutu/temas/dalga ve geri sarma testini koru.
+- Kazananlar kendi taraftar sektörüne fiziksel koşu ile gider. Sonuç süresi artık `resultDuration=12`; eski5sn varsayımına geri çevirme. Beraberlik/eksik elemede galip uydurma. Kaleci de final grubuna katılır, ortak waveCrowd kullanılır.
+- Takım başına tek baskıcı; sahipli çok takım oyununda yalnız en yakın iki rakip aktif baskıda, diğerleri alan tutar. Saha rolleri serbest oyuncu seçimini sınırlamaz; menüde başlangıç görevleri anlaşılır yazılır.

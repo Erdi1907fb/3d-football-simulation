@@ -6,6 +6,13 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V164 — 2026-11-10 (Codex)
+- Skor/arma/isim katmanı ön izlemede de gerçek1080p; daha büyük destek satırı, harfleri yatay sıkıştırmayan metin. Açılışta bütün isimler, sonra yalnız top sahibi/kurtaran kaleci.
+- Tüm sahayı yandan gösteren yeni varsayılan yayın kamerası; yakın aksiyon seçenekleri korunur. Başlangıç rol menüsü Forvet/Orta saha/Defans/Kaleci olarak netleşti.
+- Tek baskıcı, geniş pas desteği/alan kapama, alıcı koşusu, daha düzenli karar temposu; gerçek başarılı/başarısız çalım sonuçları.
+- Gol sonrası top fiziği durmaz; ortak normal maç file esnekliği ve temas noktasından yayılan dalga/cep tepkisi yerel kalelere bağlandı.
+-12sn final: galip oyuncular kendi taraftarına koşar, ortak kutlama ve yakın kamera; TR/EN anlatım, regresyon/görüntü/MP4 kanıtları ve ortak devir.
+
 ## V163 — 2026-11-10 (Codex)
 - Büyük süre/skor paneli; iki takımlıda yalnız takım veya oyuncu grubu adı ve gol skoru.
 - Dört çalım, tahminli kale hattı savunması/topa dönük kayma ve gerçek temasla top kapma/faul. Yuka MIT kaynak uyarlaması ve lisans kaydı.

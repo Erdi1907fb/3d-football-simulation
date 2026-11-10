@@ -14,6 +14,6 @@ let counts={},moves=new Set(),scores=new Set(),games=0;for(const n of[2,4,6])for
  const a=c.sample(5.3);c.sample(29);assert.deepEqual(a,c.sample(5.3));
 }
 for(const type of['skill','duel_win','foul','penalty','free_kick','keeper_catch','keeper_control','keeper_distribution','board','post','block','advantage'])assert(counts[type]>0,type+' exercised');assert.equal(moves.size,4);assert(scores.size>12);
-const late=E.create({sides:sides(2),seed:18,seconds:30});assert(late.addedTime>0);assert(late.events.some(e=>e.type==='shot'&&e.pattern==='penalty'&&e.at>late.events.find(q=>q.type==='penalty').at&&e.at<late.liveDuration));assert(C.build({kind:'small',contest:late},'tr').some(q=>q.text.includes('uzatılıyor')));
+const late=E.create({sides:sides(2),seed:187,seconds:30});assert(late.addedTime>0);assert(late.events.some(e=>e.type==='shot'&&e.pattern==='penalty'&&e.at>late.events.find(q=>q.type==='penalty').at&&e.at<late.liveDuration));assert(C.build({kind:'small',contest:late},'tr').some(q=>q.text.includes('uzatılıyor')));
 const again=E.create({sides:sides(2),seed:4,seconds:45});assert.deepEqual(again.events,E.create({sides:sides(2),seed:4,seconds:45}).events);
 console.log(JSON.stringify({pass:true,games,moves:[...moves],counts,coverage:'real skill/contact defence, box fouls/restarts, keeper catch/backpass/distribution, bounded live ball, honest narration, seeded rewind'}));
