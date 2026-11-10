@@ -17,6 +17,11 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V147 → V148 (kararlı)
+- **İstek:** panolarda “NEXT 90 SIM” istemiyor; profil resmi + @next90sim. Yapıldı (PROJECT_STATE 4ao). quick 19/19.
+
+---
+
 ## [2026-11-10] Claude Code · V146 → V147 (kararlı)
 - **İstek:** 2v2 ikinci oyuncu portresi boş; fileler çok sık; FK çeşitliliği/kaleci gerçekçiliği; FK takımda 5 vurucu;
   genel grafik/FPS “çağ atlatma”.

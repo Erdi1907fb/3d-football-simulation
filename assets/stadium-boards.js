@@ -5,7 +5,8 @@
   const s=height/256,ink='#f7f3e8';ctx.fillStyle='#09271f';ctx.fillRect(0,0,width,height);ctx.fillStyle='#9bb978';ctx.fillRect(0,0,width,3*s);ctx.textBaseline='middle';ctx.textAlign='center';
   const competition=(cx,max)=>{image(ctx,competitionImage,cx,65*s,104*s);ctx.fillStyle=ink;ctx.font=`700 ${64*s}px Arial, sans-serif`;ctx.fillText(M.competitionName(fixture,'en')||'WORLD OF SIMULATION',cx,190*s,max);};
   // V108: studio boards (penalty / free kick) carry the house brand instead of a league mark.
-  const house=(cx,max)=>{const mark=Math.min(176*s,max*.32);image(ctx,brandImage,cx-max*.30,128*s,mark);ctx.fillStyle=ink;ctx.font=`900 ${96*s}px Arial, sans-serif`;ctx.fillText(brand.name||'NEXT 90 SIM',cx+max*.12,112*s,max*.58);ctx.fillStyle='#9bb978';ctx.font=`700 ${40*s}px Arial, sans-serif`;ctx.fillText(brand.instagram||'@next90sim',cx+max*.12,196*s,max*.58);};
+  // V148 (owner request): house boards show only the page's profile picture and the @next90sim handle, side by side.
+  const house=(cx,max)=>{const handle=brand.instagram||'@next90sim',mark=Math.min(190*s,max*.3);let size=120*s;ctx.font=`800 ${size}px Arial, sans-serif`;let tw=ctx.measureText(handle).width;const room=max-mark-40*s;if(tw>room){size*=room/tw;ctx.font=`800 ${size}px Arial, sans-serif`;tw=ctx.measureText(handle).width;}const total=mark+40*s+tw,x0=cx-total/2;image(ctx,brandImage,x0+mark/2,128*s,mark);ctx.fillStyle=ink;ctx.textAlign='left';ctx.fillText(handle,x0+mark+40*s,132*s);ctx.textAlign='center';};
   if(kind==='competition'){if(brandOnly)house(width/2,width-90*s);else competition(width/2,width-90*s);return;}
   if(brandOnly&&end){house(width/2,width-90*s);return;}
   let left=0,available=width;if(end){const split=width*.43;competition(split/2,split-50*s);ctx.fillStyle='#cbdac329';ctx.fillRect(split,30*s,2*s,height-60*s);left=split+22*s;available=width-left;}

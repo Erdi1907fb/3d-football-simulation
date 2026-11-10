@@ -2,6 +2,9 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V148 — 2026-11-10 (Claude Code) · kararlı
+- **Reklam panoları:** “NEXT 90 SIM” yazısı kaldırıldı; panolarda solda sayfanın profil resmi, sağda @next90sim.
+
 ## V147 — 2026-11-10 (Claude Code) · kararlı
 - **Kale fileleri:** her yüzde eşit, dengeli göz; top filede net görünür (maç, penaltı, serbest vuruş, konsept).
 - **2v2 portreler:** ikinci oyuncunun (ör. Yamal, Mbappé) fotoğrafı artık görünüyor.

@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V147** · 2026-11-09 · Claude Code
+> Son güncelleme: **V148** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V147** (`VERSION`) |
+| Kararlı sürüm | **V148** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -453,6 +453,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - FK takım modu: en iyi **5** vurucu sırayla (önce 3); `SPECIALISTS` 36 güncel frikikçiyle genişledi.
 - FK gol seçimi: `ok` artık gol için kaleci geçiş mesafesi ≥1.28 (uzanma elipsinin açıkça dışı) ya da parmak ucu teması
   ister → kaleci yanından sızan gol 423'te 2 (yedek seçim).
+
+## 4ao. V148 (marka panoları)
+- Sahibin isteği: oyun içinde hiçbir panoda “NEXT 90 SIM” yazısı olmayacak. `stadium-boards.js` `house()` artık yalnız
+  sayfanın profil resmi (assets/next90sim.png) + büyük `@next90sim`, yan yana ortalı (stüdyolar ve brandBoards maçları).
+  `tests/freekick.cjs` bunu doğrular. Not: `brand-config.js` `name` alanı yalnız sayfa başlıklarında kalır.
+- Kullanıcı: iPhone'da FK MP4 %20'yi yeniden başlamadan geçti (V146–V147 düzeltmeleri sahada çalışıyor).
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

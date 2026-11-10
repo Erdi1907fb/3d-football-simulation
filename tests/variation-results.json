@@ -6,11 +6,11 @@
     0,
     1
   ],
-  "scores": 20,
+  "scores": 22,
   "conceptResultSigns": [
     1,
-    0,
-    -1
+    -1,
+    0
   ],
   "series": 300,
   "longest": 18,
