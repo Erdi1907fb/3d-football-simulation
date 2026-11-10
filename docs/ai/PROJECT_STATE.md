@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V149** · 2026-11-09 · Claude Code
+> Son güncelleme: **V150** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V149** (`VERSION`) |
+| Kararlı sürüm | **V150** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -466,6 +466,13 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   eşleme DEĞİŞMEDİ (kullanıcı: parlaklık/kontrast oynaması istemiyor; V121 seremoni dersi).
 - Sıralı geliştirme planı (kullanıcı sırası): zemin ✓ → kale (file V147 ✓; sırada sallanma) → top fiziği → top →
   oyuncular → kaleci → stadyum → taraftar/animasyonlar. Her adımda önce/sonra görüntüsü.
+
+## 4aq. V150 (kaleci gözü kamerası)
+- Penaltı: yeni `penaltyCamera` seçimi (Yayın kamerası / Kaleci gözü). FK: `fkCamera`'ya `keeper`.
+- Kaleci gözü: kale çizgisinde göz hizası (penaltı x=52.05,y=1.74; FK kalecinin yüzünün 0.38 m önü, barajın açık
+  tarafına 0.42 m eğik, y=1.8). Vuruştan önce dar açı (penaltı fov 27, FK 17) vurucuya; temasla genişleyip (≈56–58)
+  topu izler. Vurucunun üstünde maçtaki gibi isim etiketi (`nameTag`/`shooterTag`, temas anına kadar). Tekrar ve final
+  kameraları değişmedi; MP4 de seçilen kamerayla.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

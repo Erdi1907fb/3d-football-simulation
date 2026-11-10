@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V150 — 2026-11-10 (Claude Code) · kararlı
+- **Kaleci gözü kamerası (penaltı + serbest vuruş):** vuruşu kalecinin gözünden izle; vurucu yakından, üstünde adıyla;
+  vuruşla birlikte top kaleye/eldivene/auta kadar takip edilir. MP4 de bu açıyla alınabilir.
+
 ## V149 — 2026-11-10 (Claude Code) · kararlı
 - Penaltı skor tablosundaki “6–8” gibi aralık yazıları kaldırıldı.
 - Zemin: çim biçme şeritleri gerçek stadyumlardaki gibi daha dar ve daha çok (5,25 m); renkler aynı.

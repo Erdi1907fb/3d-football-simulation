@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V149 → V150 (kararlı)
+- **İstek:** penaltı/FK için kaleci gözü açısı, vurucunun üstünde isim; ardından sıradaki kalite adımları (kale → top…).
+- **Yapılanlar:** PROJECT_STATE 4aq. quick 19/19; penaltı + FK kaleci gözü görüntüleri (vuruş öncesi / top yolda).
+- **Sıradaki:** kale filesinin topla etkileşimi (sallanma), sonra top fiziği / top, oyuncular, kaleci, stadyum, taraftar.
+
+---
+
 ## [2026-11-10] Claude Code · V148 → V149 (kararlı)
 - **İstek:** “6–8” yazısını kaldır; sırayla zemin → kale → top fiziği → top → oyuncular → kaleci → stadyum → taraftar.
   Parlaklık/kontrastla oynama YOK. **Yapılanlar:** PROJECT_STATE 4ap. quick 19/19; önce/sonra maç görüntüsü.
