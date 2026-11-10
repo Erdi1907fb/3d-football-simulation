@@ -23,3 +23,6 @@ Yayın (Hostinger): dosyaları `public_html` köküne kopyala; `config.php`, sun
 hazır videoları silme; CDN önbelleğini temizle. Yeni servis/cron gerekmez.
 
 Tüm video modlarında TR/EN zaman damgalı anlatım: kopyalama, TXT ve SRT indirme.
+
+Arena süreleri: 2–6 takımda 30/45/60/75/90 saniye oyun + 5 saniye sonuç ekranı. Süreli maçlar kesintisizdir.
+Ortak millî kapsam: 85 ülkenin sağlayıcı kadrosu ve renk/desen formaları normal maç, penaltı, serbest vuruş, arena ve güncel konsept seçimine bağlıdır. İlk 11'ler simülasyon seçkisidir; formalar resmî sezon replikası değildir.

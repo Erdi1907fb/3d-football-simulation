@@ -105,3 +105,8 @@ Open Football module. The exact source-to-integration mapping is documented.
 - `assets/environment/stadium_01_2k.hdr` — Poly Haven “Stadium 01” by Sergej Majboroda, CC0 1.0 (https://polyhaven.com/a/stadium_01). High-quality reflections only.
 - `assets/vendor/three-postfx.js` — three.js r160 example post-processing modules (EffectComposer, RenderPass, ShaderPass, MaskPass, UnrealBloomPass, OutputPass, SMAAPass and shaders), MIT, © three.js authors; repackaged by `tools/build-postfx.cjs`.
 - `assets/national-walls.json` — derived from `assets/concept/teams.js` national line-ups (existing sources).
+
+
+### V162 — Millî takım kapsamı
+- 85 ülkenin kadro metaverisi, mevcut ESPN entegrasyonunun `fifa.friendly/teams/<id>/roster` uçlarından 2026-11-10 tarihinde alındı; boş dönen Suudi Arabistan `fifa.world` kaydından tamamlandı. Her takımın kaynak URL/tarihi `club-rosters-v75.json` içinde bulunur. Bunlar sağlayıcı kadrolarıdır; seçilen simülasyon ilk 11'i resmî maç kadrosu olarak sunulmaz. Yeni fotoğraf, logo veya lisanslı forma görseli indirilmedi.
+- `national-kit-profiles.js`: mevcut katalog ve millî arşivin renk/desen bilgilerinden proje içinde üretilen tasarımlar; resmî sezon replikası iddiası yok. Mevcut dört yerel millî atlas korunur; yeni üçüncü taraf medya varlığı eklenmedi.

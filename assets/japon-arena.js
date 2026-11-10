@@ -12,10 +12,11 @@ function netGeometry(width,height,depth){
  const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.Float32BufferAttribute(positions,3));geometry.setAttribute('uv',new T.Float32BufferAttribute(uv,2));geometry.setIndex(indices);geometry.computeVertexNormals();geometry.userData.cellMetres=cell;return geometry;
 }
 function create(world,contest,sides){
- const root=new T.Group();root.name='japon-arena';world.scene.add(root);const l=contest.layout,goals=[],barriers=[],owned=[];
+ const root=new T.Group();root.name='japon-arena';world.scene.add(root);const l=contest.layout,goals=[],barriers=[],owned=[],paint=[];
  function mesh(geometry,material,x=0,y=0,z=0,parent=root){owned.push(geometry,material);const m=new T.Mesh(geometry,material);m.position.set(x,y,z);m.receiveShadow=true;parent.add(m);return m;}
  function material(color){const m=new T.MeshStandardMaterial({color,roughness:.95});owned.push(m);return m;}
- function stroke(points,color=0xdde9d9,width=.065,parent=root){for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],dx=b.x-a.x,dz=b.z-a.z,m=mesh(new T.BoxGeometry(Math.hypot(dx,dz),.014,width),new T.MeshBasicMaterial({color}), (a.x+b.x)/2,.018,(a.z+b.z)/2,parent);m.rotation.y=-Math.atan2(dz,dx);}}
+ function stroke(points,color=0xdde9d9,width=.065){for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],dx=b.x-a.x,dz=b.z-a.z;paint.push({color,width,length:Math.hypot(dx,dz)+.004,x:(a.x+b.x)/2,z:(a.z+b.z)/2,heading:-Math.atan2(dz,dx)});}}
+
  // A continuous run-off carpet covers old match markings; this arena has its own perimeter.
  const runOff=mesh(new T.PlaneGeometry(112,78),material(0x173b2c),0,.001,0);runOff.rotation.x=-Math.PI/2;
  const shape=new T.Shape();l.vertices.forEach((p,i)=>i?shape.lineTo(p.x,-p.z):shape.moveTo(p.x,-p.z));shape.closePath();
@@ -52,6 +53,8 @@ function create(world,contest,sides){
  const sideColor=sides[g.team].team.primary,paint=Array.from({length:33},(_,i)=>{const a=-Math.PI/2+i*Math.PI/32,r=g.width*.72;return{x:g.x-g.nx*Math.cos(a)*r-g.nz*Math.sin(a)*r,z:g.z-g.nz*Math.cos(a)*r+g.nx*Math.sin(a)*r};});stroke(paint,sideColor,.11);
  const barrier=mesh(new T.BoxGeometry(.14,.45,g.width),boardMat,g.x,.30,g.z);barrier.rotation.y=goal.rotation.y;barrier.visible=false;barriers.push(barrier);
  }
- return{root,goals,crowd,update(frame){crowd?.update(frame);for(let i=0;i<goals.length;i++){goals[i].visible=frame.active[i]||frame.finished;barriers[i].visible=!frame.active[i]&&!frame.finished;}},dispose(){crowd?.dispose();root.removeFromParent();for(const resource of new Set(owned))resource.dispose();}};
+ // Paint is one draw per colour, with identical metre-sized continuous segments.
+ const paintDummy=new T.Object3D();for(const color of new Set(paint.map(p=>p.color))){const pieces=paint.filter(p=>p.color===color),g=new T.BoxGeometry(1,.014,1),m=new T.MeshBasicMaterial({color,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-6,polygonOffsetUnits:-6}),batch=new T.InstancedMesh(g,m,pieces.length);owned.push(g,m);batch.name='japon-pitch-marking';batch.renderOrder=4;batch.frustumCulled=false;pieces.forEach((p,i)=>{paintDummy.position.set(p.x,.03,p.z);paintDummy.rotation.set(0,p.heading,0);paintDummy.scale.set(p.length,1,p.width);paintDummy.updateMatrix();batch.setMatrixAt(i,paintDummy.matrix);});root.add(batch);}
+ return{root,goals,crowd,update(frame){crowd?.update(frame);for(let i=0;i<goals.length;i++){goals[i].visible=frame.active[i]||frame.finished;barriers[i].visible=!frame.active[i]&&!frame.finished;}},dispose(){crowd?.dispose();root.traverse(o=>{if(o.isInstancedMesh)o.dispose();});root.removeFromParent();for(const resource of new Set(owned))resource.dispose();}};
 }
 return{create,netGeometry};});

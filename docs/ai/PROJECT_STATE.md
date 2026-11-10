@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V161** · 2026-11-10 · Codex (Küçük Saha / yakın yayın ve küçük tribünler)
+> Son güncelleme: **V162** · 2026-11-10 · Codex (süreli arena, tribün güvenliği ve millî kapsam)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V161** (`VERSION`; sürüm commit’i: `V161: Küçük Saha 4v4 ve dinamik arena yayını`) |
-| Sonraki geliştirme hedefi | **V162** |
+| Kararlı sürüm | **V162** (`VERSION`; sürüm commit’i: `V162: Süreli arena, tribün güvenliği ve millî takımlar`) |
+| Sonraki geliştirme hedefi | **V163** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v161.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 161 |
+| Sürüm doğrulama | `build.php` → `assets/release-v162.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 162 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -582,3 +582,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - `japon-camera.js`: otomatik kuş bakışı açılış/final kaldırıldı. Sabit eğik yayın yönüyle top/atağa hareket eden hedef ve öngörülü, yumuşak zoom; zaman tabanlı yol önbelleği, geri sarma/export eşdeğerliği. İlgili oyuncular/top/hedef kale 1080×1920 ortak güvenli alanda kalır. Genel taktik açı isteğe bağlı.
 - Orta çizgi iki kalede iki kenara uzanır; çok kalede merkezden köşelere sektör çizgileri. Oyuncu isimleri, kalelerde takım adları korunur. V160 normal file değişmedi.
 - Yeni `tests/small-sided.cjs` ve tüm regresyon testleri; gerçek Chromium/SwiftShader 2–6 takım görselleri. Kanıtlar ve kalan cihaz/video sınırları HANDOFF V161.
+
+## 4bc. V162 (süreli seri aksiyon, tribün ve ortak millî takımlar)
+- İki takım da dahil 2–6 takım için 30/45/60/75/90 sn süre seçimi. Kesintisiz oyun ve 5 sn sonuç ekranı; geri sayım ortak güvenli skor bandında. 3–6 takım varsayılanı puan/seri aksiyon, kısa 0,7 sn gol molası. Küçük sahada 5,8 sn ortak normal maç sevinci: golcü + yaklaşan takım arkadaşları, aynı 100 sevinç planı/takım rutinleri, kendi taraftar tepkisi. Süreye yetişmeyen eleme eksik olarak gösterilir, şampiyon uydurulmaz.
+- Yeni tohumlar fiziksel farklı pozisyon/sonuçlar üretir. Son bölümde gerideki takımın baskısı ve çok kalede öndeki rakibe yönelme stratejisi, açık kanallar ve ortak fizik üzerinden çalışır. Sonucu ayarlayan skor yazımı veya kaleci becerisi baskılama yok. TR/EN metinde gerçek süre/format, son 10 saniyedeki gerçek liderlik, gol/eleme ve küçük saha sonuç skoru. Sonucun yanına gereksiz eş zamanlı rutin top anlatımı birleştirilmez.
+- Beş sıralı tribünde her takım eşit; sektör aralarında güvenlik koridoru, kademeli duvar ve normal sahnenin aynı steward yapıcısı. 2/4/6 tarafta 4/8/12 görevli. Beyaz çizgilerin biçme bantlarında kaybolmasına sebep olan polygon offset çakışması, ayrı boya katmanı/sırasıyla düzeltildi.
+- Katalogdaki 85 millî takım gerçek ESPN kadro kaydıyla ortak registry'ye eklendi (180 kulüp korunur, toplam 265). 2.224 oyuncu, takıma ait kaynak URL/tarih ve simülasyon XI etiketi. `national-kit-profiles.js`: 85 millî renk/desen profili ve alternatifleri; mevcut dört atlas korunur. Eksik resmî sezon forması varmış gibi sunulmaz, yeni medya indirilmedi. Hırvatistan dama ve Peru çapraz deseni ortak oyuncu çiziminde desteklenir.
+- Tüm stüdyolar aynı millî kadroları/forma profilini kullanır. `SekmeClubRosters.complete` normal maç eksiklerini ortak kayıttan tamamlar. Konsept seçiciye 85 güncel millî kadro ayrıca eklenir; eski tarihî dönemler korunur. Yeni oyuncuların millî forma eşlemeleri ortak düello JSON'una eklendi. JSON cache anahtarları V162.
+- Boya çizgileri renk başına, tribün yapıları materyal başına örneklenir; aynı normal güvenlik figürü sakin pozda örneklenir. Japon sahnesinde görünmeyen eski parçalar çizilmez ve karma eski aktör grupları görünür örneklere sıkıştırılır; normal mod yolu korunur. Geometri/model kalitesi ve aydınlatma değişmez.
+- Yeni `tests/arena-rush.cjs`, `tests/national-coverage.cjs`; süre/çeşitlilik/güvenlik/boya/anlatım ve 85 ülke kapsamı. Gerçek Arjantin–Fransa penaltı/FK/Küçük Saha hazırlığı doğrulandı. Video ve doğrulama ayrıntıları HANDOFF V162.

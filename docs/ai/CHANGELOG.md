@@ -6,6 +6,13 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V162 — 2026-11-10 (Codex)
+- 2–6 takım için 30/45/60/75/90 saniye oyun; kesintisiz akış, geri sayım ve 5 saniye sonuç. Çok takımda seri aksiyon varsayılanı, küçük sahada ortak golcü/takım/taraftar sevinci.
+- Tribün sektörleri arasında duvar, açık güvenlik koridoru ve normal maç güvenlik modeli. Çim şeritlerinde kesilen beyaz çizgilerin derinlik katmanı düzeltildi.
+- 85 millî takımın 2.224 oyunculu sağlayıcı kadroları ve renk/desen forma profilleri tüm modların ortak sistemine eklendi; güncel konsept seçimi genişledi. İlk 11 simülasyon seçkisi, formalar sezon replikası değil.
+- Aynı model/aydınlatma korunarak çizgiler, tribün ve güvenlik çizimleri gruplandı; eski görünmeyen stadyum örnekleri ayıklandı.
+- Gerçek pozisyon/son bölüm çeşitliliği, süreye ve gerçek skora uyan TR/EN anlatım; video/oyun akışı kontrolleri ve ortak ajan devri.
+
 ## V161 — 2026-11-10 (Codex)
 - İki kale: ayrı Küçük Saha Maçı 4v4 (GK + 3); 3–6 kale: Japon Kale (GK + 2). Serbest saha oyuncusu/kadro/forma seçimi, kaleci slotunda gerçek GK, süreli maç/beraberlik ve TR/EN anlatım.
 - Referans görseldeki eğik yayın açısı; top/atağı izleyen, yumuşak hareket ve öngörülü zoom. Açılış/finalde otomatik tepe açısı kaldırıldı; Reels/Shorts güvenli alanı korunur.

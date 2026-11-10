@@ -64,7 +64,9 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 24 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 26 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/arena-rush.cjs` | 2–6 takım × 5 süre, kesintisiz zaman, farklı gerçek skor/son bölüm, anlatım, koridor/duvar/güvenlik ve boya katmanı | ~3 sn |
+| `node tests/national-coverage.cjs` | 85 millî kadro/forma, ilk 11 doğruluğu, normal maç tamamlama ve güncel konsept takımlar | ~1 sn |
 | `node tests/small-sided.cjs` | 4v4/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
 | `node tests/japon-net.cjs` | Normal file dokusu, 4,4/5/6 m ölçü, açık kale ağzı, ayrı geometri ve ortak kaynakların korunması | <1 sn |
 | `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 4v4/üçlü kadrolar/efsaneler, 3 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
@@ -102,8 +104,9 @@ testi değildir — raporda böyle belirt.
 - Sürüm numarası her commit’te değil, **test edilmiş ve bütünleşmiş** bir sürüm
   tamamlandığında artırılır. V108 tamamlandı → yeni işler **V109** hedefiyle yapılır.
 - Sürüm kapatırken: `VERSION` güncelle → HTML’lerde `?v=` değerini güncelle →
+  `build.php`, `index.php` ve `assets/penalty-link.js` build numaralarını güncelle →
   `node tools/make-release.cjs` (assets/release-vNNN.json; `build.php` bunu kullanır) →
-  `build.php` ve `index.php` içindeki build numarasını güncelle → `docs/ai/CHANGELOG.md`.
+  `php build.php` ile filesMatch doğrula → `docs/ai/CHANGELOG.md`. Manifest kod değişikliklerinden sonra üretilir.
 - Eski sürüm giriş adresleri (`next90sim-vNN.html`, `penalty-vNN.html`) `.htaccess` ile
   kanonik sayfaya yönlenir; yeni sürüm kopyası HTML üretme.
 
@@ -136,10 +139,10 @@ dosyalardır.
 - **Dosya silme kuralı:** bir dosyayı silmeden önce `index.html`, `penalty.html`, `freekick.html`, tüm `*.php`, `server/*.php` ve aktif JS’ten (dinamik yol birleştirmeleri dahil: `'assets/pitch/turf-'+kind`) referans taraması yap. PHP veri akışı (haftalık bülten, 5 gün ileri maçlar, cron) dosyalarına dokunma. Emin değilsen silme, `TASKS.md`’ye not düş.
 
 ## 8. Japon Kale ve anlatım (V158)
-- `japon-kale.html`: 3–6 taraf Japon Kale (kaleci + 2 serbest saha oyuncusu); `?mode=small`: 2 taraf Küçük Saha Maçı (kaleci + 3 serbest saha oyuncusu, süreli 4v4). Eski ikili seçimi son kullanıcı talebiyle kaldırıldı. Yalnız kaleci slotu GK ile sınırlıdır. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; video kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
+- `japon-kale.html`: 3–6 taraf Japon Kale (kaleci + 2 serbest saha oyuncusu); `?mode=small`: 2 taraf Küçük Saha Maçı (kaleci + 3 serbest saha oyuncusu, süreli 4v4). Eski ikili seçimi son kullanıcı talebiyle kaldırıldı. Yalnız kaleci slotu GK ile sınırlıdır. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; V162 süreli oyun kesintisizdir; eski süresiz eleme API kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
 - `scene.js` `japonSides` yalnız bu modun aktör formalarını/kimliklerini seçer; diğer modların sahne yolu korunur.
 - `commentary.js` gerçek olaylardan metin üretir, TTS değildir. Normal maçta `match.toVideoTime`, stüdyolarda `resolvedAt`, Japon Kale’de özet video olay zamanlarını kullan. Sonuç/isim uydurma.
-- Japon Kale elemesinde 900 sn oyun güvenlik sınırı aşılırsa sonuç tamamlanmamış gösterilir; zorla şampiyon üretme.
+- Süresiz API elemesinde 900 sn (arayüzde seçilen 30–90 sn) oyun sınırı aşılırsa sonuç tamamlanmamış gösterilir; zorla şampiyon üretme.
 
 ## 9. Japon Kale yayın kuralları (V159)
 - `japon-layout.js`: görünür zemin/sınır ile fizik aynı geometriden gelir. 2 kale kısa dikdörtgen; 3–6 kale köşeleri kesilmiş çokgen; toplam alan kale sayısı ve kale genişliğiyle artar.
@@ -153,3 +156,10 @@ dosyalardır.
 - Kamera, video zamanına göre önceden hesaplanan yumuşak hedef ve öngörülü zoom zarfıdır (`japon-camera.js`). Ön izleme/geri sarma/MP4 aynı kareyi verir; top + ilgili oyuncular + hedef kale Reels/Shorts aksiyon alanında kalır. Yeni top/pozisyon sahipliğinde ani ekran yönü dönüşü yapma.
 - `japon-crowd.js`: normal maçın **aynı** `scene.createSpectator` ayrıntılı modeli, geometriye uygun birleşik beş sıralı küçük tribünler. Eşit kişi sayısı ve seçili forma renkleri; gol tepkileri gerçek video olaylarından. Kendi kaleye gol ve beraberlikte yanlış sevinç üretme. Paylaşılan geometri/materyalleri local dispose içinde serbest bırakma.
 - Açılışta ve gol sonrası top ortaya düşer, fiziksel yakınlıkla kapışılır; dizideki oyuncu sırası topu kazandırmaz. Defans/orta saha/hücum rolü yalnız başlangıç yerleşimi/davranışıdır, saha oyuncusu seçimi mevkiyle sınırlanmaz.
+
+## 11. Süreli arena ve millî kapsam (V162)
+- Arayüzde 2–6 takımın hepsinde 30/45/60/75/90 sn oyun süresi + 5 sn sonuç ekranı vardır. Süreli oyun kesintisizdir; özet kesiti gibi zaman atlatma. 3–6 takım varsayılanı seri aksiyon/puan; eleme isteğe bağlı ve süre dolunca eksik turnuva dürüstçe etiketlenir. Node API'sinde `seconds` verilmeyen eleme için eski güvenlik sınırı sürer.
+- Küçük sahada `SekmeCelebration.plan` ve takım rutini kullanılır; takım arkadaşları golcüye yaklaşır. Çok takımlı oyunda kısa gol molası. Sonucu son ana kadar yakın tutmak için skor/şut/kurtarış uydurma. Aynı tohum aynı maçı verir; yeni hazırlama yeni tohum verir, skor tekrarı mümkündür.
+- Ortak kadro JSON'unda 180 kulüp + 85 millî takım vardır; millî kayıtlar `national:true` ve `catalogId` taşır. Yeni listeler millî takımları yanlışlıkla kulüp filtresiyle dışlamasın. `national-kit-profiles.js`, katalogdan önce yüklenir ve Node factory bağımlılığıdır. 2.224 oyuncu sağlayıcı kadrosudur; ilk 11 resmî değildir. Millî forma görselleri renk/desen tasarımıdır, lisanslı sezon replikası iddia etme.
+- `tools/build-national-coverage.cjs <raw-json-directory>` kaynağı koruyarak üretir; ESPN ham kadroları yerel JSON dosyalarından okur. Kaynak URL/tarih her takımda kayıtlı. Arşiv oyuncularını/yıllarını silme veya güncel kadroyu tarihî maç olarak etiketleme.
+- Taraftar duvarları için güvenlik koridorlarını koru, kişi sayıları eşit kalsın. `japon-pitch-marking` materyal derinlik sırası biçme şeritlerinin üzerinde kalmalı; kesik boya hatasını geri getirme.
