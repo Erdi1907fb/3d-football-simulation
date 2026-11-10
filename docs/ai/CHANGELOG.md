@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V153 — 2026-11-10 (Claude Code) · kararlı
+- **File (FC27 tarzı):** sık 12 cm gözlü, ince düğümlü, uzaktan yumuşak beyaz tül gibi görünen file; top cebi ve dalga aynı.
+- **Top:** hızlı şutlarda topun arkasında hafif hareket izi; yön ve hız okunur.
+- **Stadyum:** çatı kenarı boyunca projektör sırası.
+
 ## V152 — 2026-11-10 (Claude Code) · kararlı
 - **Kaleci gözü:** vuruştan sonra kamera kalenin içine çekilip sahaya bakıyor; kaleci artık kamerayı kapatmıyor.
 - **Takım penaltıları:** bekleyen oyuncular takım takım ayrı (kaleci gözünde biri solda, biri sağda).

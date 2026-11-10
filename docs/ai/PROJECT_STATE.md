@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V152** · 2026-11-09 · Claude Code
+> Son güncelleme: **V153** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V152** (`VERSION`) |
+| Kararlı sürüm | **V153** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -488,6 +488,15 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   bir takım solda, diğeri sağda.
 - File (kale adımı): `world-upgrade.js netResponse` + top büyüklüğünde cep (r≈0.34 m, 0.1 sn'de açılır, 0.35–0.8 sn
   arası gevşer, en çok ≈0.3 m × enerji); yayılan dalga aynı.
+
+## 4at. V153 (FC tarzı file, top izi, çatı projektörleri)
+- File: `LineSegments` yerine 4 bez panel (arka 48×16, çatı 48×14 hafif sarkma, yanlar 14×16 bölüt) + 64 px
+  düğümlü ip dokusu (12 cm göz, mipmap + anizotropi; uzakta yumuşak beyaz tül, hare yok). `goal-net-cloth`;
+  aynı düğüm haritası/netResponse (cep + dalga) çalışır. Kullanıcı FC27 görselleri referans.
+- Top: hızlı topa (>12 m/s, kare arası) yön boyunca top genişliğinde soluk iz (`ballMotionBlur`, durum zamanıyla
+  deterministik; MP4 = ön izleme).
+- Stadyum: çatı iç kenarında projektör gantrisi (`roof-floodlight-housings/lenses`, 2 instanced çizim, ~3.4 m aralık).
+- Kalan (açık, T-11): oyuncu/kaleci animasyon ve taraftar katmanında görünür yenilik bu sürümde yok.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

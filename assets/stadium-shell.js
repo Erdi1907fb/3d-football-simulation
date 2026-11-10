@@ -23,6 +23,13 @@ function create({scene,stadium,profile={rows:4},teams=[]}={}){
  ring([89,68,18],[85.7,64.7,16],3.4,silver,'lower-concourse-belt');ring([89,68,18],[85.7,64.7,16],10.8,dark,'upper-concourse-belt');
  ring([91,70,20],[69,48,14],23.8,roof,'continuous-open-centre-canopy');ring([90.7,69.7,20],[69.1,48.1,14],23.45,under,'canopy-soffit');
  wall(perimeter(91,70,20),23.45,24.15,silver,'canopy-outer-fascia');wall(perimeter(69,48,14),23.45,24.15,dark,'canopy-inner-fascia');
+ // V153 roof-edge floodlight gantry: a row of lamp housings and a lit strip under the inner canopy edge, as in modern
+ // stadiums (the bowl top was a dead dark band in every studio shot). Instanced: 1 draw for housings, 1 for lenses.
+ {const edge=perimeter(68.2,47.2,13.2,10),pts=[];for(let i=0;i<edge.length;i++){const a=edge[i],b=edge[(i+1)%edge.length],len=Math.hypot(b[0]-a[0],b[1]-a[1]),n=Math.max(1,Math.round(len/3.4));for(let k=0;k<n;k++){const u=k/n;pts.push([a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u]);}}
+  const housingG=new T.BoxGeometry(1.15,.42,.62),lensG=new T.PlaneGeometry(1.0,.3);geometries.add(housingG);geometries.add(lensG);const housingM=material(0x2a3440),lensM=material(0xfff6e2,true,{toneMapped:true});lensM.color.multiplyScalar(.96);
+  const housing=new T.InstancedMesh(housingG,housingM,pts.length),lens=new T.InstancedMesh(lensG,lensM,pts.length),o=new T.Object3D();housing.name='roof-floodlight-housings';lens.name='roof-floodlight-lenses';
+  pts.forEach((q,i)=>{const yaw=Math.atan2(-q[0],-q[1]);o.position.set(q[0],23.05,q[1]);o.rotation.set(0,yaw,0);o.rotateX(-.5);o.updateMatrix();housing.setMatrixAt(i,o.matrix);o.translateZ(.32);o.updateMatrix();lens.setMatrixAt(i,o.matrix);});
+  for(const m of[housing,lens]){m.instanceMatrix.needsUpdate=true;m.userData.noBatch=true;m.frustumCulled=false;group.add(m);}}
  // Repeating columns, glazed hospitality bands and entrance doors connect the
  // separate tiers, including all four curved corners.
  for(let i=0;i<outer.length;i++){const a=outer[i],b=outer[(i+1)%outer.length],dx=b[0]-a[0],dz=b[1]-a[1],length=Math.hypot(dx,dz),segments=Math.max(1,Math.ceil(length/6)),angle=-Math.atan2(dz,dx);for(let j=0;j<segments;j++){

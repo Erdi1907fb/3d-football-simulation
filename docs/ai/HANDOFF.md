@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Claude Code · V152 → V153 (kararlı)
+- **İstek (gece, otonom):** FC27 gibi file; sonra top fiziği, top, oyuncular, kaleci, stadyum, taraftar hepsi.
+- **Yapılanlar:** PROJECT_STATE 4at. quick 19/19; penaltı yayın + kaleci gözü + maç görüntüleri.
+- **Yapılmayan:** oyuncu/kaleci/taraftar animasyon katmanı (büyük, riskli; ayrı adımlarda önce/sonra ile yapılmalı).
+
+---
+
 ## [2026-11-10] Claude Code · V151 → V152 (kararlı)
 - **İstek:** kaleci gözünde takımlar sağ/sol ayrı; sonra file → top fiziği → top → oyuncular → kaleci → stadyum → taraftar.
 - **Yapılanlar:** PROJECT_STATE 4as. quick 19/19; kaleci gözü ve yayın açısında gol anı kare dizileri.
