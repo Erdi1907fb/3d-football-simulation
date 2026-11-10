@@ -27,11 +27,11 @@ olursa **bu dosya geçerlidir**.
 
 ## 2. Mimari kurallar
 
-- **Üç stüdyo, tek altyapı.** Normal maç, Penaltı ve Serbest Vuruş aynı sahneyi
+- **Dört mod, tek altyapı.** Normal maç, Penaltı, Serbest Vuruş ve Japon Kale aynı sahneyi
   (`assets/scene.js`), aynı oyuncu/forma/yüz sistemini, aynı top fiziğini
   (`football-physics.js`, `ball-aero.js`, `open-football-adapter.js`), aynı kaleci dalış
   animasyonunu ve aynı video hattını (`video-core.js`) kullanır. Stüdyoya özel davranış,
-  seçenek bayraklarıyla (`penaltyStudio`, `freeKickStudio`, `brandBoards`) eklenir — ayrı
+  seçenek bayraklarıyla (`penaltyStudio`, `freeKickStudio`, `japonSides`, `brandBoards`) eklenir — ayrı
   fizik motoru yazılmaz.
 - **Modül biçimi:** her dosya UMD benzeri IIFE’dir: Node’da `module.exports`, tarayıcıda
   `globalThis.<Ad>`. Yeni modül bu kalıbı izlemeli ki `tests/*.cjs` ile Node’da test edilebilsin.
@@ -64,7 +64,9 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 19 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 21 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/japon-kale.cjs` | 2–6 taraf, 50 senaryo, eleme/puan, tur sıfırlama, fiziksel gol çizgisi, özet zamanları, determinizm | ~2 sn |
+| `node tests/commentary.cjs` | TR/EN anlatım, gerçek olay/oyuncu, video zamanları, SRT | <1 sn |
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
 | `node tests/penalty.cjs` | Penaltı teknikleri (9 tür), hız aralığı, ayak dışı falso, süreklilik | ~3 sn |
 | `node tests/weather.cjs` | Hava durumu: uygula/geri yükle, geç kumaşlar, kalite ölçeği, zaman tabanlı yağış | <1 sn |
@@ -129,3 +131,9 @@ dosyalardır.
 - `data/private/` ve sunucudaki `config.php` gizlidir; repoya gerçek anahtar koyma.
 - `.htaccess` `docs/`, `tests/`, `tools/`, `*.md` erişimini engeller; yayına bunları açma.
 - **Dosya silme kuralı:** bir dosyayı silmeden önce `index.html`, `penalty.html`, `freekick.html`, tüm `*.php`, `server/*.php` ve aktif JS’ten (dinamik yol birleştirmeleri dahil: `'assets/pitch/turf-'+kind`) referans taraması yap. PHP veri akışı (haftalık bülten, 5 gün ileri maçlar, cron) dosyalarına dokunma. Emin değilsen silme, `TASKS.md`’ye not düş.
+
+## 8. Japon Kale ve anlatım (V158)
+- `japon-kale.html`: 2–6 taraf, taraf başına kaleci + saha oyuncusu. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; video kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
+- `scene.js` `japonSides` yalnız bu modun aktör formalarını/kimliklerini seçer; diğer modların sahne yolu korunur.
+- `commentary.js` gerçek olaylardan metin üretir, TTS değildir. Normal maçta `match.toVideoTime`, stüdyolarda `resolvedAt`, Japon Kale’de özet video olay zamanlarını kullan. Sonuç/isim uydurma.
+- Japon Kale elemesinde 900 sn oyun güvenlik sınırı aşılırsa sonuç tamamlanmamış gösterilir; zorla şampiyon üretme.

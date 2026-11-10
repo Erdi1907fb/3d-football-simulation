@@ -110,3 +110,9 @@ kullanılmaya devam eder.
 **Karar (kullanıcı):** Bundan sonra harici repo/varlık aranmaz ve eklenmez; grafik, animasyon ve fizik Claude Code ve Codex
 tarafından projenin içinde geliştirilir. Mevcut lisanslı içerikler (three.js MIT, CC0 varlıklar, GameplayFootball klipleri)
 yerinde kalır. Öncelik: görsel kalite (profesyonel yayın hissi), animasyon, oyuncu/kaleci donanımı, atmosfer.
+
+
+## D-020 · 2026-11-10 · codex · kabul — Japon Kale varyantı ve video olay zamanı
+**Karar:** Kullanıcının kaleci+saha oyunculu 2–6 taraf varyantı: elemede tur gol sayacı sıfırlanır, puanda gol +1/yenen −1. Ortak top fiziği ve ortak sahne aktörleri kullanılır. Araştırılan yerel oyunlarda kurallar değişiyor; bu sürüm resmî Japon futbolu kuralı olarak sunulmaz.
+**Kaynak:** https://reisspor.com.tr/page/japon-saha (çoklu kale, gol yiyerek elenme); https://www.ekonomim.com/kose-yazisi/japon-kale-futbol-maci-ve-rekabet-analizi/691008 (herkes kendi kalesini korur). Tur sıfırlama ve kaleci+saha oyuncusu kullanıcının açık tercihidir. Harici kod/varlık eklenmedi.
+**Video:** Kesitler bütün golleri korur; anlatım aynı video zamanına bağlıdır. SRT/TXT/kopyalama metin üretir, TTS üretmez. Eşitlikte ortak derece; eleme süresi aşılırsa tamamlanmamış sonuç.

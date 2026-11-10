@@ -6,6 +6,12 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V158 — 2026-11-10 (Codex)
+- Japon Kale Stüdyosu: 2–6 taraf, kaleci + saha oyuncusu, eleme / puan biçimleri, bağımsız oyuncu ve forma seçimi.
+- Dairesel arena, açık şut yolu seçimi, ortak top fiziği ve oyuncu animasyonları; genel/aksiyon kamera, tüm golleri içeren dikey MP4 özeti, dereceler.
+- Tüm maç/stüdyo videolarına TR/EN zamanlı anlatım metni: kopyala, TXT, SRT; gerçek golcü/olay ve video zamanları kullanılır.
+- Test/cihaz sınırları ve devir ayrıntıları: HANDOFF V158.
+
 ## V157 — 2026-11-10 (Claude Code) · kararlı
 - **Karda nefes buharı:** karlı havada oyuncuların ağzından soğuk nefes buharı çıkıyor.
 

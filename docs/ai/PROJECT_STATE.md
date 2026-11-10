@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V157** · 2026-11-10 · Claude Code (belge bakımı: sürüm tablosu, görev panosu, tarih düzeltmeleri)
+> Son güncelleme: **V158** · 2026-11-10 · Codex (Japon Kale ve tüm modlarda anlatım)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V157** (`VERSION`, `main` @ 961f797, 2026-11-10) |
-| Sonraki geliştirme hedefi | **V158** |
+| Kararlı sürüm | **V158** (`VERSION`; sürüm commit’i: `V158: Japon Kale ve zamanlı anlatım`) |
+| Sonraki geliştirme hedefi | **V159** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v157.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 157 |
+| Sürüm doğrulama | `build.php` → `assets/release-v158.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 158 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -523,6 +523,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   bulutu (smokeTexture, yarı saydam .38, kafa bakış yönünde 0.17–0.55 m, ağız hizası, büyüyüp incelir). 44 instanced,
   1 çizim; durum zamanının saf fonksiyonu. Düşük kalitede kapalı. İlk denemede eklemeli karışım karda görünmüyordu,
   sonra yüzü kapatıyordu; ikisi de düzeltildi (görüntülerle).
+
+## 4ay. V158 (Japon Kale + zamanlı anlatım)
+- `japon-kale.html`, `assets/japon-engine.js`, `assets/japon-ui.js`: 2–6 taraf; her tarafta 1 kaleci + 1 saha oyuncusu. Takım/serbest ikili adlandırması, ayrı oyuncu/kaleci kadrosu (kulüpler, yıldızlar/ikonlar, millî kaleciler), bağımsız forma takımı ve iç/deplasman/üçüncü/millî forma.
+- Çap 24–32 m dairesel arena; her kalede 4,4×2,1 m ağız. Tohumlu kararlar; şut yolu baskısı + mesafe + rastgelelik, gövde aralığı, fiziksel blok/kurtarış/direk/gol. `ball-aero.js` 120 Hz; kayıt 20 Hz. Oyuncu reytingi simülasyon hız/isabet/kaleci erişimini sınırlı etkiler; doğrulanmış gerçek performans ölçümü değildir.
+- Eleme: varsayılan 2 gol yiyen çıkar, kalanların **turda** yediği gol sıfırlanır; toplamlar korunur. Puan: atılan +1, yenilen −1, eleme yok; eşit puanda atılan gol, yine eşitse ortak derece. Altın/gümüş/bronz + 4–6 sonuç satırları.
+- Video: başlangıç top düşüşü + tüm goller/elemeler + sonuç. Sürekli oyun kaydından kesitler; `segments`, `toVideoTime`, `fromVideoTime`, `liveEvents` ile eşleşir. Genel/aksiyon kamera, aynı ortak `SekmeScene` oyuncu/yüz/forma/animasyonları ve `SekmeVideo` 1080×1920/60 FPS hattı. `japonSides` sadece yeni modda kullanılır.
+- `commentary.js` + `commentary-ui.js`: normal maç (resmî/personal/konsept), penaltı/1v1/2v2, FK ve Japon Kale için TR/EN gerçek olay isimleri ve video zamanları; kopyala, TXT/SRT. Ses üretimi yok, seslendirmeye hazır metindir. Maçtaki `playerName` / global actor kimliği kullanılır; kafa/korner yalnız olay/pozisyon verisinde varsa söylenir.
+- Sınırlar: eleme 900 sn oyun güvenlik sınırına gelirse şampiyon uydurulmaz, “tamamlanmadı” gösterilir. Fiziksel telefon testi yapılmadı. Yeni arenanın maç süresinde tam MP4’ü bu ortamda baştan sona kodlanmadı; kısa gerçek H.264 1080×1920/60 FPS örneği ve MP4 düğmesi doğrulandı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

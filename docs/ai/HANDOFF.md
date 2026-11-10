@@ -17,6 +17,32 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Codex · V157 → V158
+- Dal / commit / PR: `agent/codex/japon-kale-commentary`; başlangıç `main` @ 13472f2. Sürüm commit’i `V158: Japon Kale ve zamanlı anlatım`; testlerden sonra `main`’e fast-forward push. PR yok.
+- Kullanıcı isteği: 2–6 taraflı Japon Kale; her tarafta 1 kaleci + 1 saha oyuncusu; gol yiyerek eleme ve tur sayacı sıfırlama / gol +1, yenilen −1 puan modu; takım/serbest ikili/forma seçimi; dikey video ve dereceler. Bütün maç/stüdyolarda video zamanına bağlı TR/EN kopyalanabilir anlatım; görsel kanıt; testler ve main push.
+- Yapılanlar: PROJECT_STATE 4ay, DECISIONS D-020. Yeni mod ana sayfa ve iki stüdyo menüsünden açılır. Kaleci/oyuncu/forma kaynakları bağımsız; yıldızlar ve millî kaleciler dahil. Ortak 120 Hz aerodinamik top adımları; kaleci/gövde/direk teması, açık şut yolu seçimi ve gövde aralığı. Bütün golleri koruyan video kesitleri, genel/aksiyon kamera, eleme turu ve altın/gümüş/bronz/dereceler. Anlatım gerçek olay ve isimlerden çıkar; TXT/SRT/kopyala; ses sentezi eklenmedi.
+- Değişen önemli dosyalar: `japon-kale.html`, `assets/japon-engine.js`, `assets/japon-ui.js`, `assets/commentary.js`, `assets/commentary-ui.js`, `assets/scene.js` (yalnız japonSides aktör seçimi), `assets/app.js` (salt okunur commentaryMatch), `assets/freekick-ui.js` (participantName dışa açıldı), `assets/penalty-link.js`, HTML önbellek sürümleri, `VERSION`, `build.php`, `index.php`, release manifesti, iki yeni test ve `tests/run-all.cjs`, ortak belgeler.
+- Tamamlanmayanlar / kısmi: fiziksel iPhone/Android ve gerçek GPU testi yok; tam maç uzunluğunda Japon Kale MP4’ü bu ortamda baştan sona kodlanmadı. MP4 hazırlama düğmesi kısa 0,2 sn gerçek örnekte çalıştı; uzun üretim aynı paylaşılan video hattını kullanır. Canlı Hostinger’a yükleme yapılmadı. Önceki T-209/T-262…T-266 açık kalır.
+- Karşılaşılan sorunlar: ortamda PHP yoktu; PHP 8.4 CLI ve mbstring yalnız `/tmp/php-runtime` içine indirildi (`/workspace/bin/php` sarmalayıcı), sunucu/proje PHP kodu değiştirilmedi. İlk national-competitions testi mbstring eksikliğiyle başarısızdı; eklentiyle tekrar geçti. İlk yapay konsept test yükü eksikti; gerçek `SekmeConceptEngine.payload` ile test yeniden yapıldı ve geçti. Kale çerçevesi kaynak sahnede batch edildiği için arena klonlarında görünmüyordu; ortak net + görünür küçük kale çerçevesi eklendi. Kalecilerde diveSide açıkça verilir.
+- Testler (komut → sonuç):
+  - `PATH=/workspace/bin:$PATH node tests/run-all.cjs --quick` → **21/21 PASS** (başlık sürümü test sırasında V157; aynı kod sonra V158 numarasını aldı).
+  - `node tests/engine-test.cjs` → **PASS**, 500 penaltı serisi + 18 maç (tam paket içinde ~110,5 sn).
+  - Son arena gövde aralığı/reyting/blok düzenlemesinden sonra `node tests/japon-kale.cjs` → **PASS, 50 senaryo**, `node tests/commentary.cjs` → **PASS**.
+  - `php build.php` → `build:158, filesMatch:true, mismatches:[]` (manifest final kod/build dosyalarından üretildi).
+  - Chromium + SwiftShader: penaltı ve FK hazırlandı, İngilizce anlatım, hata yok; Japon Kale 4 taraf eleme, 6 taraf puan ve final, 2 taraf Messi & Ederson serbest ikilisi + Barcelona forması; iPhone 13 viewport 390 px → belge genişliği 390 px, sayfa hatası yok.
+  - Ana sayfa gerçek konsept üreticisi: İspanya 2010–Brezilya 2002; metindeki golcüler Rivaldo/Ronaldo/David Villa, skor 1–2, video zaman eşlemesi doğrulandı. Normal resmî/personal ve konsept aynı `Sekme3D.commentaryMatch` kaynağından geçer.
+  - Panoya kopyalanan metin textarea ile birebir; SRT indirme gerçek tarayıcıda alındı. Gerçek MP4 düğmesi 0,2 sn kodlama örneğini tamamladı; ffprobe önceki aynı kodlama kontrolünde H.264, 1080×1920, 60/1 FPS, 12 kare gösterdi. Tarayıcı testleri fiziksel cihaz testi değildir.
+  - `node --check` yeni dört modül + `git diff --check` → PASS.
+- Sonraki ajan için dikkat:
+  - Güncel sürüm **V158**, yeni hedef **V159**. Önce fetch/pull ve ortak belgeler. Kullanıcının yeni isteği eski görevlerden öncelikli.
+  - Japon Kale `sample(t)` **video saniyesi** alır; `liveTime` ayrı. `liveEvents` ile `events` zamanlarını karıştırma. Tüm gol/elemeler video kesitlerinde korunur; seyrek atak araları kesilir. Elemede tur GA sıfırlanır, toplam GA kalır.
+  - `japonSides` sadece bu modda kullanılmalı; diğer modların sahnesi/renkleri/kontrastı değişmedi. Yeni arena görüntüsü ortak oyuncu/forma/yüz/animasyonlarla üretilir.
+  - Anlatım TTS değildir. Eksik veride kafa vuruşu, asist veya istatistik uydurma; maç zamanını doğrudan SRT’ye koyma (`toVideoTime` gerekir). Aynı senaryo metni TR/EN yeniden üretilebilir.
+  - Yeni stüdyo MP4 sonrası GPU sahnesini bırakır; oynatma/seek aynı contest ile yeniden kurar. Tam uzunlukta ve gerçek telefon MP4 testi sonraki doğrulama önceliğidir.
+  - Önceki iOS LITE/tek sahne, veri paketi dışlama, canlıya yalnız GET ve parlaklık/kontrast kuralları geçerlidir. `data/` güncelleme paketine girmez.
+
+---
+
 ## [2026-11-10] Claude Code · V157 → V157 (belge bakımı, sürüm artırılmadı)
 - Dal / commit / PR: `claude/great-curie-v7xiuc` → `main`’e hızlı ileri; başlangıç `main` @ 961f797 (V157). Bu bakımın
   commit kimliği commit mesajında “docs: Codex devri öncesi belge bakımı”; PR yok.
