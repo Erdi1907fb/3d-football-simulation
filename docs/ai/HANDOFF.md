@@ -17,6 +17,11 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-11] Claude Code · V154 → V155 (kararlı)
+- Kaleci kurtarış sevinci (PROJECT_STATE 4av). quick 19/19; penaltı kurtarış görüntüsü.
+
+---
+
 ## [2026-11-11] Claude Code · V153 → V154 (kararlı)
 - **İstek:** kalanları (oyuncu/kaleci/taraftar) seremonideki gibi bozmadan geliştir.
 - **Yapılanlar:** PROJECT_STATE 4au. quick 19/19; penaltı + FK sıçrama görüntüleri.

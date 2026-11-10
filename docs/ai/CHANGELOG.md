@@ -2,6 +2,9 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V155 — 2026-11-11 (Claude Code) · kararlı
+- **Kaleci kurtarınca seviniyor:** penaltıda ve serbest vuruşta kurtarış yapan kaleci kalkıp sevinç gösteriyor.
+
 ## V154 — 2026-11-11 (Claude Code) · kararlı
 - **Vuruşta çim sıçraması:** sert vuruşlarda topun durduğu yerden küçük çim ve toprak parçaları kalkıyor (maç, penaltı,
   serbest vuruş); ön izleme ve MP4 aynı.

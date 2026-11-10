@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V154** · 2026-11-09 · Claude Code
+> Son güncelleme: **V155** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V154** (`VERSION`) |
+| Kararlı sürüm | **V155** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -505,6 +505,11 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Denenip geri alınan: dünya uzayı gece gökyüzü kubbesi (görünen kadrajlarda fark yaratmadı).
 - Kalan katmanlar incelendi: oyuncular (mocap idle/koşu), kaleci (yaylanma, adım, kurtarış türleri), taraftar
   (atkı, flaş, meşale, duman, konfeti, dalga) zaten mevcut; hedefli istek bekleniyor.
+
+## 4av. V155 (kaleci kurtarış sevinci)
+- Penaltı/FK: kurtarışta kaleci tepkisizdi. Artık tepki yaşı penaltıda 0.9 sn, FK'de 0.75 sn sonra (kaleci doğrulunca)
+  `happy(...,'small')` ile sevinç (kutlama paketinden, vuruş indeksine göre deterministik). Tepki süresi penaltıda
+  ≈1.5–2.1 sn, FK'de ≈1.6 sn. Tribün tepkisi (kaleci tarafı konfeti) zaten vardı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve
