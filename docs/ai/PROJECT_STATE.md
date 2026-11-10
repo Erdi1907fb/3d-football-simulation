@@ -1,17 +1,18 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V157** · 2026-11-09 · Claude Code
+> Son güncelleme: **V157** · 2026-11-10 · Claude Code (belge bakımı: sürüm tablosu, görev panosu, tarih düzeltmeleri)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
+> Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V157** (`VERSION`) |
-| Sonraki geliştirme hedefi | **V116** |
-| Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
-| Sürüm doğrulama | `build.php` → `assets/release-v115.json` (sha256 listesi, `tools/make-release.cjs`) |
+| Kararlı sürüm | **V157** (`VERSION`, `main` @ 961f797, 2026-11-10) |
+| Sonraki geliştirme hedefi | **V158** |
+| Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
+| Sürüm doğrulama | `build.php` → `assets/release-v157.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 157 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -531,9 +532,19 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Oyuncu modelleri MPFB tabanlı stilize modellerdir; yüzler fotoğraf dokusudur, 3D tarama değildir.
 - Sevinçler prosedüreldir (eklem açıları); motion-capture klibi değildir. Mixamo animasyonları **eklenmedi** (lisans: Adobe hesabı ve dağıtım şartları; bkz. DECISIONS D-005).
 - Normal maç motoru “chance” (pozisyon) tabanlı zaman çizelgesi üretir; tam 90 dakikalık sürekli
-  fizik simülasyonu değildir. V108’de yalnızca savunma blok derinliği/step-off eklendi.
-- Penaltı motoru kendi parabolik yolunu kullanır; `ball-aero.js`’ye taşınması V109 görevidir.
-- `football-lab.html`, `face-coverage.html` V108’de tarayıcıda yeniden doğrulanmadı.
+  fizik simülasyonu değildir.
+- Penaltı uçuşu V110’dan beri `ball-aero.js` ile (T-201); `football-lab.html` / `face-coverage.html` V110’da
+  tarayıcıda doğrulandı (T-210), sonraki sürümlerde yeniden doğrulanmadı.
+- **Gerçek cihaz:** iPhone 13 çökme düzeltmeleri (V142 tek sahne + iOS LITE zincir, V146 MP4 sonrası sahne bırakma)
+  yalnız Playwright iPhone 13 emülasyonunda doğrulandı. Kullanıcı V146–V147 sonrası FK MP4’ün %20’yi yeniden
+  başlamadan geçtiğini bildirdi; MP4’ün sonuna kadar oluşup indirildiği bildirilmedi (T-209).
+- **Canlı sunucu (doğrulanmadı):** sunucuda BSD anahtarı tanımlı mı, Transfermarkt sunucu IP’sinden erişilebiliyor mu
+  (yerelde sık istekte HTTP 405), `kadro.php` şifresi belirlendi mi — bilinmiyor. `durum.php` BSD satırını gösterir.
+- Wikipedia “Current squad” sayfaları bazen eski; millî aday kadroda öncelik: elle (`kadro.php`) > Transfermarkt >
+  Wikipedia > `assets/national-callups.json` (editoryal, yalnız Türkiye Kasım 2026 penceresi).
+- BSD tahmini 11 (beta) aday kadroyu bilmez; yalnız aday listesiyle süzülerek kullanılır (V144).
+- Görsel “çağ atlatma” (T-261) kısmi: oyuncu/kaleci animasyonu ve taraftar katmanında hedefli istek bekleniyor;
+  parlaklık/kontrast/ton eşlemeyle oynanmaz (V121 seremoni dersi, V143’te geri alındı).
 
 ## 6. Önemli dosyalar (hızlı başvuru)
 - Sahne: `assets/scene.js` (≈134 KB) — `Boards.create`, `player()`, `update(state, aspect, mode)`.

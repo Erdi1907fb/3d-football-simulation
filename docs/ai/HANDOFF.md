@@ -17,23 +17,68 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
-## [2026-11-11] Claude Code · V156 → V157 (kararlı)
+## [2026-11-10] Claude Code · V157 → V157 (belge bakımı, sürüm artırılmadı)
+- Dal / commit / PR: `claude/great-curie-v7xiuc` → `main`’e hızlı ileri; başlangıç `main` @ 961f797 (V157). Bu bakımın
+  commit kimliği commit mesajında “docs: Codex devri öncesi belge bakımı”; PR yok.
+- Kullanıcı isteği (özet): Codex ile ortak çalışmaya geçmeden önce devir düzenini toparla; VERSION V157 iken eski V116
+  hedefleri, `release-v115.json` referansı ve tutarsız tarihleri düzelt; görev panosunu eşitle (emin olunmayan iş
+  “tamamlandı” sayılmaz); HANDOFF’a devir raporu; oyun kodu değişmez, sürüm artmaz; `main`’e push.
+- Yapılanlar:
+  - `PROJECT_STATE.md`: sürüm tablosu (V157 @ 961f797, sonraki hedef **V158**, manifest `release-v157.json`, canlı
+    sunucu PHP 8.3.36 + cron yok), tarih kuralı (UTC commit tarihi), “Bilinen sınırlar” eskimiş maddeleri düzeltildi
+    (penaltı `ball-aero` V110’da bitti) ve doğrulanmamış canlı/cihaz konuları eklendi.
+  - `TASKS.md`: “Aktif hedef V116” → V158; açık işler yeniden sıralandı; yeni T-261…T-266; V136–V157 için
+    tamamlanan (T-240…T-247) ve **kısmi/doğrulanmamış** (T-250…T-254) tabloları; T-209/T-222/T-233/T-234 notları
+    güncel duruma göre; T-213 ile T-215 aynı iş olarak işaretlendi.
+  - Tarihler (UTC commit tarihine göre): V154–V157 2026-11-11 → 2026-11-10; V147 2026-11-10 → 2026-11-09; V110
+    2026-11-08 → 2026-11-07 (`CHANGELOG.md`, `HANDOFF.md`).
+  - `AGENTS.md` test tablosuna eksik 5 test eklendi (duo, kickoff-referee, national-competitions, forecast-lock,
+    callup-filter); `--quick` kapsamı yazıldı.
+- Değişen önemli dosyalar: `AGENTS.md`, `docs/ai/PROJECT_STATE.md`, `docs/ai/TASKS.md`, `docs/ai/HANDOFF.md`,
+  `docs/ai/CHANGELOG.md`. Oyun/sunucu kodu, `VERSION`, `?v=` değerleri ve release manifesti **değişmedi**.
+- Tamamlanmayanlar / kısmi: T-261 (görsel geliştirme; oyuncu animasyonu ve taraftar katmanı açık), T-209/T-266
+  (gerçek cihaz), T-262…T-265 (canlı sunucu: cron, `kadro.php` şifresi, BSD anahtarı, Transfermarkt erişimi).
+- Karşılaşılan sorunlar: belgelerde karışık tarih kuralı (UTC/TRT) ve sonraki sürümlerde güncellenmeyen V116/V115
+  satırları vardı; V119–V135 işleri panoya ayrı satır olarak hiç işlenmemişti (CHANGELOG’da var, panoda not düşüldü).
+- Testler (komut → sonuç; 2026-11-10, belge değişikliğinden önce, kod V157):
+  - `node tests/run-all.cjs --quick` → 19/19 PASS (çıkış 0).
+  - `node tests/engine-test.cjs` → PASS (500 penaltı serisi, 18 maç; ~142 sn).
+  - Tarayıcı/cihaz testi bu bakımda **çalıştırılmadı** (kod değişmedi). `tests/summary.json` ve
+    `tests/variation-results.json` test çıktıları commit’e alınmadı (geri yüklendi).
+- Sonraki ajan için dikkat (Codex):
+  - Önce `git fetch && git checkout main && git pull`; tek kaynak `VERSION` (V157), yeni iş **V158** hedefiyle.
+  - Sürüm kapatma: `VERSION` → HTML `?v=` → `node tools/make-release.cjs` → `build.php`/`index.php` build no →
+    `git rm` eski `assets/release-vNNN.json`. Güncelleme ZIP’ine **asla** `data/` koyma (V136 olayı; kullanıcı sunucudaki
+    `data/private`’ı korur).
+  - **Parlaklık, kontrast, ton eşleme ve bloom ile oynama** (kullanıcının açık isteği; V121 seremoni hatası, V143).
+    Görsel işte her adımda önce/sonra görüntüsü göster.
+  - iOS: `broadcast-remaster.js` iOS’ta LITE zincir, stüdyolarda tek yüksek sahne + MP4 sonrası sahne bırakma
+    (V142/V146) — tam zinciri ya da iki sahneli katman değişimini iOS’ta geri açma.
+  - Millî kadro: `pp_national_callup` önceliği elle > Transfermarkt > Wikipedia > editoryal; BSD tahmini yalnız aday
+    listesiyle süzülür. Aday kadroda olmayan oyuncu 11’e de yedeğe de giremez (kullanıcının kesin kuralı).
+  - Canlı site okumak için yalnız GET; `durum.php?action=collect` ve `kadro.php` yazma işlemlerini kullanıcı onayı
+    olmadan yapma. `forecast-lock` artık geri yükler, durdurmaz (V140) — `throw` geri ekleme.
+  - Kullanıcı Türkçe yazar; yanıt/rapor Türkçe. Commit/PR metnine model kimliği yazma.
+
+---
+
+## [2026-11-10] Claude Code · V156 → V157 (kararlı)
 - Karda nefes buharı (PROJECT_STATE 4ax). quick 19/19; kaleci gözü kar görüntü dizisi.
 
 ---
 
-## [2026-11-11] Claude Code · V155 → V156 (kararlı)
+## [2026-11-10] Claude Code · V155 → V156 (kararlı)
 - Direk titremesi, sekme tozu, hava durumuna göre sıçrama (PROJECT_STATE 4aw). quick 19/19; titreşim sayısal ölçüldü,
   yağmurda FK görüntüsü.
 
 ---
 
-## [2026-11-11] Claude Code · V154 → V155 (kararlı)
+## [2026-11-10] Claude Code · V154 → V155 (kararlı)
 - Kaleci kurtarış sevinci (PROJECT_STATE 4av). quick 19/19; penaltı kurtarış görüntüsü.
 
 ---
 
-## [2026-11-11] Claude Code · V153 → V154 (kararlı)
+## [2026-11-10] Claude Code · V153 → V154 (kararlı)
 - **İstek:** kalanları (oyuncu/kaleci/taraftar) seremonideki gibi bozmadan geliştir.
 - **Yapılanlar:** PROJECT_STATE 4au. quick 19/19; penaltı + FK sıçrama görüntüleri.
 
@@ -76,7 +121,7 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
-## [2026-11-10] Claude Code · V146 → V147 (kararlı)
+## [2026-11-09] Claude Code · V146 → V147 (kararlı)
 - **İstek:** 2v2 ikinci oyuncu portresi boş; fileler çok sık; FK çeşitliliği/kaleci gerçekçiliği; FK takımda 5 vurucu;
   genel grafik/FPS “çağ atlatma”.
 - **Yapılanlar:** PROJECT_STATE 4an. Genel “çağ atlatma” (T-11) bu sürümde yalnız file + FK olarak ele alındı; kalan
@@ -404,7 +449,7 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
-## [2026-11-08] Claude Code · V109 → V110 (kararlı)
+## [2026-11-07] Claude Code · V109 → V110 (kararlı)
 
 - **Dal / commit:** `claude/great-curie-v7xiuc` → `main` (hızlı ileri). Commit: “V110: …”.
 - **Kullanıcı isteği:** Mixamo hariç tüm açık görevler; diz kayışlarını daha görünür yapıp çimde iz bırakmak; tek kolun

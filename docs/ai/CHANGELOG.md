@@ -2,18 +2,22 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
-## V157 — 2026-11-11 (Claude Code) · kararlı
+## Belge bakımı — 2026-11-10 (Claude Code) · sürüm artırılmadı (V157)
+- Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
+  tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
+
+## V157 — 2026-11-10 (Claude Code) · kararlı
 - **Karda nefes buharı:** karlı havada oyuncuların ağzından soğuk nefes buharı çıkıyor.
 
-## V156 — 2026-11-11 (Claude Code) · kararlı
+## V156 — 2026-11-10 (Claude Code) · kararlı
 - **Direkten dönen top:** kale çerçevesi çarpma anında kısa bir an titriyor.
 - **Sekmede toz:** top yere sert sekince küçük çim tozu kalkıyor.
 - **Yağmur/kar:** vuruş ve sekmede toprak yerine su damlacıkları ya da kar sıçrıyor.
 
-## V155 — 2026-11-11 (Claude Code) · kararlı
+## V155 — 2026-11-10 (Claude Code) · kararlı
 - **Kaleci kurtarınca seviniyor:** penaltıda ve serbest vuruşta kurtarış yapan kaleci kalkıp sevinç gösteriyor.
 
-## V154 — 2026-11-11 (Claude Code) · kararlı
+## V154 — 2026-11-10 (Claude Code) · kararlı
 - **Vuruşta çim sıçraması:** sert vuruşlarda topun durduğu yerden küçük çim ve toprak parçaları kalkıyor (maç, penaltı,
   serbest vuruş); ön izleme ve MP4 aynı.
 
@@ -42,7 +46,7 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 ## V148 — 2026-11-10 (Claude Code) · kararlı
 - **Reklam panoları:** “NEXT 90 SIM” yazısı kaldırıldı; panolarda solda sayfanın profil resmi, sağda @next90sim.
 
-## V147 — 2026-11-10 (Claude Code) · kararlı
+## V147 — 2026-11-09 (Claude Code) · kararlı
 - **Kale fileleri:** her yüzde eşit, dengeli göz; top filede net görünür (maç, penaltı, serbest vuruş, konsept).
 - **2v2 portreler:** ikinci oyuncunun (ör. Yamal, Mbappé) fotoğrafı artık görünüyor.
 - **Serbest vuruş:** takım modunda en iyi 5 frikikçi sırayla; goller kaleciyi açıkça geçiyor ya da parmak ucuna değip giriyor.
@@ -284,7 +288,7 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 ### Testler
 - `tests/weather.cjs` (uygula/geri yükle, geç yüklenen formalar, kalite ölçeği, zaman tabanlı yağış) → run-all 14 test.
 
-## V110 — 2026-11-08 (Claude Code) · kararlı
+## V110 — 2026-11-07 (Claude Code) · kararlı
 
 ### Yeni
 - Çimde diz/göğüs kayma izleri; stüdyoda kayışlar gerçekten öne ilerler.

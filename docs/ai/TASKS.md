@@ -4,30 +4,44 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V116
+## Aktif hedef: V158
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-260 | Penaltı + serbest vuruşta 2v2 oyuncu düellosu | done (V138) | claude | penalty-ui.js, freekick-ui.js, *-engine.js, tests/duo.cjs |
-| T-209 | Gerçek cihaz testi: iPhone Safari + Android Chrome’da `freekick.html` MP4 indirme | todo | kullanıcı | Ajanlar fiziksel cihaz testi yapamaz |
-| T-215 | Sevinçlerde gerçek motion-capture (kullanıcı Mixamo’dan indirip verirse) | todo | — | D-005 |
+| T-261 | Sıralı görsel geliştirme (zemin → kale → top → oyuncular → kaleci → stadyum → taraftar), parlaklık/kontrastla oynamadan | partial | claude | Yapılanlar: V149 şeritler, V147/V152/V153 file, V153 top izi + çatı projektörleri, V154 çim sıçraması, V155 kaleci sevinci, V156 direk titremesi/sekme tozu/hava durumu, V157 karda nefes. Açık: oyuncu animasyonları, taraftar katmanı (kullanıcıdan hedefli istek). scene.js, world-upgrade.js, stadium-shell.js |
+| T-262 | Canlı sunucuda cron kurulumu (hPanel → Cron Jobs, `cron.php` her dakika) | todo | kullanıcı | Komut V141 raporunda; cron olmadan site ziyaretle dolar |
+| T-263 | `kadro.php` şifresinin sahibince belirlenmesi | todo | kullanıcı | İlk kullanan şifreyi belirler; belirlendiği doğrulanmadı |
+| T-264 | Canlı sunucuda BSD anahtarı tanımlı mı (`durum.php` satırı) | todo | kullanıcı | Doğrulanmadı; yoksa BSD beklenen 11 / sakat-cezalı listesi devreye girmez |
+| T-265 | Transfermarkt aday kadrosunun canlı sunucudan çekildiğini doğrulama | todo | — | Yerelde sık istekte HTTP 405; sunucuda 2 sa geri çekilme. server/national-transfermarkt.php |
+| T-266 | Gerçek iPhone’da kaleci gözü, 2v2 portreler, V153 file ve V154–V157 efektlerinin görünümü/FPS | todo | kullanıcı | Yalnız SwiftShader/emülasyonda görüldü |
+| T-209 | Gerçek cihaz testi: iPhone Safari + Android Chrome’da penaltı/FK/maç MP4 indirme | partial | kullanıcı | Kullanıcı iPhone 13’te FK MP4’ün V146–V147 sonrası %20’yi yeniden başlamadan geçtiğini bildirdi; tam indirme ve Android doğrulanmadı. Ajanlar fiziksel cihaz testi yapamaz |
 | T-216 | Kalecinin “ulaşılabilir en iyi hedef” taramasını League-Soccer’dan uyarlamak (maç + stüdyolar) | todo | — | research/LEAGUE-SOCCER.md |
 | T-217 | Ofsayt çizgisine rakip hareket öngörüsü (0,1–0,15 sn) | todo | — | collective-play.js |
 | T-221 | Taraftarlarda yağmurluk/kapüşon varyasyonu, karda çatıda birikme | todo | — | crowd-*.js, weather.js |
-| T-222 | Fileye ip normal haritası; ıslakken file sarkması | todo | — | scene.js netGoals |
+| T-222 | Fileye ip normal haritası; ıslakken file sarkması | todo | — | V153’te file `LineSegments` yerine dokulu bez panellere geçti (`goal-net-cloth`); normal harita ve ıslak sarkma yok. scene.js |
 | T-223 | Çim yapraklarına rüzgâr salınımı (GrassSystemThreeJS tekniği, MIT) | todo | — | pitch-detail.js |
-| T-224 | Normal maç ve penaltı tribününde de koridor/görevli seçeneği | done (V119: tüm modlarda otomatik ayrım) | — | scene.js |
 | T-230 | Oyuncu gövde modeli: forma/şort kesimi (göğüs-bel oranı), daha atletik bacak ve kramponda taban/çivi ayrıntısı | partial (V115 gövde + kumaş; V116 baldır + modern krampon; V117 V-gövde) | — | fullbody-runtime.js, scene.js — kendi geliştirmemiz (D-019) |
-| T-231 | Kaleci: büyük eldiven (manşet + avuç ayrı renk), kaleci forması dolgulu dirsek, kale çizgisinde hazır duruş varyasyonları | done (V114 eldiven, V117 dirsek, V119 hazır duruş) | — | fullbody-runtime.js, football-animation.js |
 | T-232 | Animasyon: koşu-sprint geçişinde ivme eğimi, yön değişiminde ayak bastırma, top sürerken kısa adım | partial (V116 hıza bağlı gövde eğimi) | — | athlete-motion.js, football-clips.js |
-| T-233 | Çim: rüzgâr salınımı, kale önü ve orta sahada aşınmış çim lekeleri, maç ilerledikçe kramponla açılan izler | todo | — | pitch-detail.js |
-| T-234 | Tribün: taraftar animasyon çeşitliliği (kalkma, el çırpma dalgası), atkı sallama, koreografi pankartı | partial (V116 kıyafet çeşitliliği) | — | crowd-lod.js, stadium-atmosphere.js |
+| T-233 | Çim: rüzgâr salınımı, kale önü ve orta sahada aşınmış çim lekeleri, maç ilerledikçe kramponla açılan izler | partial | — | Aşınma lekeleri var (scene.js `pitch-wear`), V149 biçme şeritleri 20×5,25 m, V154 vuruş/sekme çim sıçraması; rüzgâr ve krampon izi yok. pitch-detail.js, scene.js |
+| T-234 | Tribün: taraftar animasyon çeşitliliği (kalkma, el çırpma dalgası), atkı sallama, koreografi pankartı | partial | — | V116 kıyafet; atkı, dalga (V121), flaş, meşale, duman, konfeti mevcut; koreografi pankartı yok. crowd-lod.js, stadium-atmosphere.js |
+| T-215 | Sevinçlerde gerçek motion-capture (kullanıcı Mixamo’dan indirip verirse) | todo | — | D-005; T-213 ile aynı iş (birleştirilebilir) |
 | T-213 | Sevinçler için gerçek motion-capture klipleri (kullanıcı Mixamo’dan indirirse retarget) | todo | — | `celebration-clips.js`, D-005 |
 
 ## Tamamlananlar
 
 | ID | Görev | Sürüm | Sahip |
 |---|---|---|---|
+| T-260 | Penaltı + serbest vuruşta 2v2 oyuncu düellosu | V138 | claude |
+| T-224 | Normal maç ve penaltı tribününde koridor/görevli (tüm modlarda otomatik ayrım) | V119 | claude |
+| T-231 | Kaleci eldiveni, dolgulu dirsek, hazır duruş varyasyonları | V114–V119 | claude |
+| T-240 | Canlı veri koruması: paketlerden `data/private/state.json` çıkarıldı, test depolama izolasyonu | V136 | claude |
+| T-241 | Tahmin kilidi uyuşmazlığı güncellemeleri durdurmuyor (kök neden; canlıda 32 maç ile doğrulandı) | V140 | claude |
+| T-242 | Cron’suz hızlı dolum (pencere öncelikli kaynaklar), aday kadro filtresi tüm sağlayıcılarda | V141 | claude |
+| T-243 | Seremoni bezleri ışıksız/net (V121 geri alındı), düelloda seçilen takım forması | V143 | claude |
+| T-244 | Kaleci gözü kamerası (penaltı + FK), isim etiketi; temasta kale içine çekilme | V150, V152 | claude |
+| T-245 | Kaleciler vurucu seçilebilir (penaltı + FK) | V151 | claude |
+| T-246 | Penaltı skor tablosunda aralık etiketi kaldırıldı; reklam panosu: profil resmi + @next90sim | V148–V149 | claude |
+| T-247 | FK takım modunda en iyi 5 vurucu, gol kaleciyi açıkça geçer (≥1.28 uzanma) | V147 | claude |
 | T-201 | Penaltı uçuşu ball-aero | V110 | claude |
 | T-202 | Maç şutlarında aerodinamik sürükleme | V110 | claude |
 | T-203 | (Kullanıcı kararıyla değişti: frikikte yalnız baraj+kaleci+vurucu) — kapatıldı | V110 | claude |
@@ -60,3 +74,15 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-106 | Penaltı Stüdyosu ayarlarının adımlı ve mod-duyarlı düzeni | V108 | claude |
 | T-107 | Forma isim/numara kontrast seçimi | V108 | claude |
 | T-108 | Savunma blok derinliği ve step-off | V108 | claude |
+
+## Kısmi / doğrulanmamış (V136–V157)
+
+| ID | Görev | Sürüm | Durum | Not |
+|---|---|---|---|---|
+| T-250 | iPhone stüdyo çökmesi: tek yüksek sahne + iOS LITE zincir, çökme koruması | V142 | partial | Emülasyonda doğrulandı; gerçek cihaz T-209 |
+| T-251 | iPhone MP4 sonrası yenilenme: sahneyi bırak, isteğe göre yeniden kur | V146 | partial | Emülasyonda doğrulandı; kullanıcı %20’ye kadar sorunsuz bildirdi |
+| T-252 | Millî 11: BSD beklenen 11 + aday kadro + numaralar | V144 | partial | Sunucuda BSD anahtarı doğrulanmadı (T-264) |
+| T-253 | Transfermarkt aday kadro + `kadro.php` elle düzenleme | V145 | partial | Yerelde uçtan uca test edildi; canlı erişim T-265, şifre T-263 |
+| T-254 | Wikipedia canlı aday kadro güncelleyici | V137 | partial | Canlıda editoryal liste kullanıldığı görüldü; Wikipedia’nın sunucuda çekildiği doğrulanmadı |
+
+> Not: V119–V135 işleri bu panoya ayrı satır olarak işlenmedi; ayrıntı `CHANGELOG.md` ve `HANDOFF.md`’de.

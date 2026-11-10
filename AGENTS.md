@@ -64,7 +64,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar | ~2,5 dk |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 19 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
 | `node tests/penalty.cjs` | Penaltı teknikleri (9 tür), hız aralığı, ayak dışı falso, süreklilik | ~3 sn |
 | `node tests/weather.cjs` | Hava durumu: uygula/geri yükle, geç kumaşlar, kalite ölçeği, zaman tabanlı yağış | <1 sn |
@@ -79,6 +79,11 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 | `node tests/remaster.cjs` | Taktik hedefler, kaçınma, shader sözleşmesi | <1 sn |
 | `node tests/crests.cjs` / `node tests/search-test.cjs` | Arma ve arama | ~1 sn |
 | `node tests/engine-test.cjs` | 18 normal maç, 500 penaltı serisi | ~2 dk |
+| `node tests/duo.cjs` | 2v2 düello: ikililer sırayla vurur (penaltı + FK) | <1 sn |
+| `node tests/kickoff-referee.cjs` | Başlama vuruşunda hakem/vurucu çakışması | <1 sn |
+| `php tests/national-competitions.php` | Uluslar Ligi/hazırlık maçları, millî reyting güncelleyici, aday kadro (Wikipedia/Transfermarkt) | ~2 sn |
+| `php tests/forecast-lock.php` | Korunan tahmin kilidi uyuşmazlığı güncellemeyi durdurmaz (V140) | <1 sn |
+| `php tests/callup-filter.php` | Aday kadro filtresi tüm sağlayıcılarda, numaralar, Transfermarkt ayrıştırma | <1 sn |
 | `node tests/faces.cjs` | Yüz pozları (`@napi-rs/canvas` gerekir) | — |
 
 Tarayıcı kontrolü: `python3 -m http.server` ile kökü sun, Playwright/Chromium ile
