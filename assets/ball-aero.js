@@ -29,7 +29,7 @@ function step(b,dt=STEP){
  // Spin decays slowly in air (time constant ≈ 9 s) and quickly while rolling.
  const decay=Math.exp(-dt*(air?.11:2.2));b.wx*=decay;b.wy*=decay;b.wz*=decay;
  let event=null;
- if(b.y<R){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-(.55*sf.roll*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
+ if(b.y<R||b.continuousGround&&b.y<=R+1e-6){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-(.55*sf.roll*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
  return event;
 }
 // Woodwork: two uprights (vertical cylinders) and the crossbar (horizontal).

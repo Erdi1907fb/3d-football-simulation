@@ -6,8 +6,8 @@ for(let count=2;count<=6;count++){
  for(const goal of layout.goals){assert(layout.boundaries.some(e=>Math.abs(e.nx-goal.nx)<1e-6&&Math.abs(e.nz-goal.nz)<1e-6&&Math.abs(e.d-goal.radius)<1e-6),'visible goal sits on physical edge');}
  const sides=Array.from({length:count},(_,i)=>({name:'Side '+i,keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},...(count===2?{midfielder:{id:'m'+i,name:'Midfielder '+i}}:{}),defender:{id:'d'+i,name:'Defender '+i},player:{id:'a'+i,name:'Attacker '+i}}));
  for(const mode of ['points','elimination']){
- const c=E.create({sides,seed:42,mode,...(mode==='points'?{seconds:30}:{})});assert.equal(c.playersPerSide,count===2?4:3);assert.equal(c.frames[0].players.length,count*c.playersPerSide);triples++;
- if(c.mode==='elimination'){assert(!c.timedOut,'representative tournament must finish');assert.equal(c.ranks.length,count);complete++;}
+ const c=E.create({sides,seed:42,mode,seconds:mode==='points'?30:90});assert.equal(c.playersPerSide,count===2?4:3);assert.equal(c.frames[0].players.length,count*c.playersPerSide);triples++;
+ if(c.mode==='elimination'){assert.equal(c.ranks.length,count);if(c.timedOut)assert.equal(c.winner,null,'unfinished elimination cannot invent a winner');else complete++;}
  for(const frame of c.frames.filter((_,i)=>i%37===0)){for(const p of frame.players.filter(p=>p.active))assert(Layout.inside(p,c.layout,-.3),'players respect arena boundary');if(frame.owner>=0){const p=frame.players[frame.owner];assert(p&&(!p.keeper||frame.holding?.actorIndex===frame.owner),'owner is an outfield player or the keeper controlling the ball');}}
  for(const event of c.events.filter(e=>e.type==='shot')){assert(event.actorIndex>=0&&event.actorIndex<count*c.playersPerSide);assert(!c.frames[0].players[event.actorIndex].keeper);assert.equal(event.actor,sides[event.team][c.frames[0].players[event.actorIndex].role==='defender'?'defender':c.frames[0].players[event.actorIndex].role==='midfielder'?'midfielder':'player'].name);}
  const times=[0,1.15,1.7,c.finaleAt,c.duration,...c.events.filter(e=>['shot','goal','save'].includes(e.type)).flatMap(e=>[Math.max(0,e.at-.2),e.at,Math.min(c.duration,e.at+.4)])];

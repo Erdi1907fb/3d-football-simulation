@@ -64,7 +64,8 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 28 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 29 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/arena-football.cjs` | Dikdörtgen, ivme/dönüş, yer direnci, alım/vuruş zamanı, şut kanalı, sekme okuyan GK, yakın açılış/kısa doğru sonuç | ~4 sn |
 | `node tests/arena-broadcast-flow.cjs` | Seçici isim, tek baskıcı, çalım sonucu, hareket eden gol topu/ortak file, yan kamera ve taraftar finali | ~3 sn |
 | `node tests/arena-duels.cjs` | Çalım/savunma/gerçek temas, kutu faulü/penaltı/FK, GK tutuş/geri pas/dağıtım, canlı top sınırı ve TR/EN | ~20 sn |
 | `node tests/arena-rush.cjs` | 2–6 takım × 5 süre, kesintisiz zaman, farklı gerçek skor/son bölüm, anlatım, koridor/duvar/güvenlik ve boya katmanı | ~3 sn |
@@ -181,3 +182,12 @@ dosyalardır.
 - `japon-net.js` ortak OpenFootball.containNet ve world-upgrade.netResponse kullanır; normal/penaltı/FK fiziğinin kopyasını yazma. Gol molasında ball-aero durmaz. Yerel eğimli file boyutu/temas/dalga ve geri sarma testini koru.
 - Kazananlar kendi taraftar sektörüne fiziksel koşu ile gider. Sonuç süresi artık `resultDuration=12`; eski5sn varsayımına geri çevirme. Beraberlik/eksik elemede galip uydurma. Kaleci de final grubuna katılır, ortak waveCrowd kullanılır.
 - Takım başına tek baskıcı; sahipli çok takım oyununda yalnız en yakın iki rakip aktif baskıda, diğerleri alan tutar. Saha rolleri serbest oyuncu seçimini sınırlamaz; menüde başlangıç görevleri anlaşılır yazılır.
+
+
+## 14. Dar alan futbolu ve kısa sonuç (V165)
+- Kullanıcının yeni kararı D-026: iki takımda dört dik köşe; varsayılan yeniden yakın broadcast, ilk karede de uzak genel açı yok. Açılışta tüm kadro güvenli skor bandına sığar, görünen oyuncular baş etiketi alabilir. Önceki yan/taktik seçenekler korunur.
+- Aksiyon takip yolu gerçek `drop` kesitlerini ayrı tutar. Santraya bilinçli kamera kesmesini oyun içi sıçramayla karıştırma; aynı `cameraInfo.key` içinde süreklilik denetlenir. Topun gerçek resetini sahanın içinden uçarak enterpole etme.
+- Yeni `japon-tactics.js` engine'den önce yüklenir. GK gelecekteki sonucu okuyamaz: gecikmeli gözlem + ortak top/duvar projeksiyonu + gerçek erişim. Oyuncu hız/yön/ayak hazırlığı ve sahip kaybı temizliği korunur.
+- `continuousGround` arena ball state'inde opt-in'dir; ball-aero'nun diğer modlarının davranışını sessizce değiştirme. `receiveContact` varsa gerçek alım zamanı, yoksa eski ortak animasyon zamanlaması.
+- Sonuç artık 4,5 sn; uzun taraftar turunu geri ekleme. Küçük saha MAÇ SONU/kazanan veya beraberlik/skor/golcüler; çok taraflıda kazanan takım/oyuncu grubu. Kısa kutlama fiziksel mevcut pozisyonda, ışınlanma yok. Eksik eleme veya beraberlikte galip uydurma.
+- Küçük sahada 3,2 sn gol molası; yeni fiziksel kararlar eski tohumdaki skor/olay sayısını korumak zorunda değildir. Tohumla sonuç zorlama, gol veya kurtarış sayısı şartına göre beceri bastırma. Keeper catch de fiziksel kurtarıştır; testte yalnız parry sayımına dönme.

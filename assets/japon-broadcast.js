@@ -6,4 +6,6 @@ function labelSlots(contest,frame,time){if(frame.finished)return[];if(time<INTRO
  return frame.owner>=0?[frame.owner]:[];
 }
 function ellipsis(ctx,text,width){text=String(text);if(ctx.measureText(text).width<=width)return text;while(text.length&&ctx.measureText(text+'…').width>width)text=text.slice(0,-1);return text.trimEnd()+'…';}
-return{INTRO,labelSlots,ellipsis};});
+function result(contest){const winners=contest.timedOut||contest.draw?[]:contest.ranks.filter(r=>r.rank===1).map(r=>r.team);return{winners,draw:!!contest.draw,incomplete:!!contest.timedOut,score:contest.stats.map(s=>s.gf)};}
+function scorers(contest,team){const counts=new Map();for(const e of contest.events.filter(e=>e.type==='goal'&&e.team===team)){const key=(e.ownGoal?'OG:':'')+e.actor;counts.set(key,(counts.get(key)||0)+1);}return [...counts].map(([name,goals])=>({name:name.replace(/^OG:/,''),ownGoal:name.startsWith('OG:'),goals}));}
+return{INTRO,labelSlots,ellipsis,result,scorers};});

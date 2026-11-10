@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V164** · 2026-11-10 · Codex (net yayın, düzenli arena ve taraftar finali)
+> Son güncelleme: **V165** · 2026-11-10 · Codex (dar alan futbol kararları, yakın aksiyon ve kısa sonuç)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V164** (`VERSION`; sürüm commit’i: `V164: Net yayın, düzenli arena ve taraftar finali`) |
-| Sonraki geliştirme hedefi | **V165** |
+| Kararlı sürüm | **V165** (`VERSION`; sürüm commit’i: `V165: Dar alan futbol kararları ve yakın aksiyon`) |
+| Sonraki geliştirme hedefi | **V166** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v164.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 164 |
+| Sürüm doğrulama | `build.php` → `assets/release-v165.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 165 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -611,3 +611,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Sonuç süresi `resultDuration=12`: galip oyuncular/GK kendi taraftar sektörünün yakınındaki ayrı hedeflere4,5m/sn ile koşar; ortak `pack:wave`/`waveCrowd` kutlaması, aynı kendi taraftar tepkisi ve yakın kamera. Tüm galiplerin varışı için süre ayrılır. Beraberlik/eksik elemede uydurma galip yok, ortak derece korunur. Seçilen oyun süresi aynıdır; örn.30sn oyun →42sn video (geç penaltı ek süresi hariç). TR/EN sonuç/taraftar cümleleri gerçek olay/zamanla, rutin çalım sonucu metinleri ekli.
 - Menüde Forvet / Orta saha / Defans / Kaleci ve oyuncu havuzları açık yazılır. Roller başlangıç davranışıdır; sahada istenen mevki oyuncusu hâlâ seçilir. Yalnız GK filtresi korunur.
 - Yeni `tests/arena-broadcast-flow.cjs`, seçici etiket/tek baskıcı/başarılı-başarısız çalım/hareket eden gol topu/ortak gerçek file deformasyonu ve geri sarma/güvenli tam yan kamera/gerçek taraftar finali kontrolleri. Eski testler 12sn final, dört kamera ve ek top hız/spin metaverisine uyarlandı; geç penaltı fixture'ı yeni fiziksel maçta seed187. Tam test/video/tarayıcı kapsamı HANDOFF V164.
+
+
+## 4bf. V165 (dar alan futbol kararları, yakın aksiyon ve kısa sonuç)
+- `japon-tactics.js`: özgün ölçülü hareket, kararlı niyet/baskı, atış kanalı, destek/alan savunması, pas/şut değerlendirmesi ve duvar yansıması hesabı. Hücumcu kale ağzı merkezine koşmaz; yaklaşık 4–6 m derinlikte bitiriş kanalı arar, açık açıdan ve ayağı topa yakınken şut çeker. Kalecinin gerçek konumuna göre boş köşeye nişan, oyuncu kalitesi/hata payı ve ortak fizik; kaleci becerisi veya skor zorlanmaz.
+- Hareket hedefi filtreli, ivme 5,5 / fren 8 m/s², dönüş genelde 3,8 rad/sn ile sınırlı; pas/şut öncesi kısa ayak hazırlığı ve 5 rad/sn hazırlık yönü. Topu alma/yerleştirme ve gerçek temas anına eşlenen ortak vuruş/karşılama. Sahip kaybında eski wind-up temizlenir. Arena müdahaleleri ayakta ayak uzatma; her müdahale normal ortak kayan tackle pozunu tetiklemez. Diğer modlar bu özel bayrakları almaz.
+- Top sürme kilitli takip yerine kısa kontrol darbeleri + ortak serbest fizik. Yer pasları gerçek hız/yuvarlanma, alıcıya öngörülü hedef ve makul erişim; kapalı doğrudan kanalda geometrik bank pası. `continuousGround` yalnız arena ball state'inde opt-in; tam R yüksekliğinde kayan topun her adımda yuvarlanma direnci almasını sağlar. `football-animation.receiveWeight` açık gerçek `receiveContact` zamanını destekler, eski varsayılan aynıdır.
+- GK: 0,16 sn gecikmeli top gözlemi, aynı aerodinamik/zemin/duvarlar üzerinden 1,2 sn kısa tehdit yörüngesi. Açı/mesafeye göre koruma, yaklaşan sekmede çizgi kesişimini kapama, uzaklaşan/tehlikesiz topta yerini koruma. Tutuşta hareket durur ve oyun kurmak için içeri döner. Ayak/eller yükseklikle ayrılır; gerçek süpürülmüş temasla kurtarış ve kısa toparlanma. Dalış zarfı 0,65 sn sonunda tam sıfırdır; küçük kayan nokta kalıntısı hazır duruşunu kapatmaz. Gelecekteki sonuç okunmaz.
+- İki takımda aynı ölçekte gerçek dikdörtgen: dört köşe, dört duvar, 28×18 m standart. Çok kaleli çokgenler/ölçekler aynı. File darbesi dalgasına artık sönümlenmeden önceki gerçek hız verilir; küçük esneme yerine gelen şutun enerjisi görünür olur. Ortak file/zemin/aerodinamik sistemi korunur.
+- Varsayılan yakın aksiyon, ilk kareden yakın; ilk 1,6 sn görünür baş etiketleri + skor bandında bütün kadro. Tam yan/taktik alternatifleri korunur. Kritik yakın oyuncu/top ve yakınlaşınca hedef kale; alan dışı boşluk için gereksiz genel kadraj yok. Zoom/aim yalnız aynı top bırakma kesiti içinde yumuşatılır, gol sonrası santrada bilinçli kesme. Aynı kesit içinde kamera sıçrama testi ve safe projection devam eder; reset topu sahanın içinden uçarak enterpole edilmez.
+- `resultDuration=4.5`: uzun taraftar koşusu yerine kısa yakın kazanan kutlaması. İki taraf: MAÇ SONU, kazanan/beraberlik, iki skor ve gerçek golcüler (KK dahil). Japon Kale: kazanan takım/oyuncu grubu ve puan; ortak birincilik/eksik turnuva dürüstlüğü. Bütün sıralama verisi API'de kalır. Küçük sahada gol molası 3,2 sn; çokta 0,7 sn, seçilen süreler aynı. 30 sn →34,5 sn video (geç penaltı istisnası hariç).
+- TR/EN duvar pası anlatımı gerçek `pattern:wall` olayından; yeni sonuç/kadro metinleri iki dilli. Yeni `tests/arena-football.cjs`, güçlü hareket/oyun/keeper/zemin/kamera/sonuç kontrolleri ve diğer regresyonların son kapsamı HANDOFF V165'te.

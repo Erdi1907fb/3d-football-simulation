@@ -25,6 +25,7 @@ else if(e.type==='penalty')add(e.at,en?`Penalty to ${side}! ${actor} will take i
 else if(e.type==='free_kick')add(e.at,en?`A free kick for ${side}. ${actor} over the ball.`:`${side} serbest vuruş kullanacak. Topun başında ${actor}.`,3);
 else if(e.type==='advantage')add(e.at,en?'The referee plays advantage.':'Avantaj var, oyun devam ediyor.',2);
 else if(e.type==='added_time')add(e.at,en?'Time is extended to complete the penalty.':'Penaltının kullanılması için süre uzatılıyor.',3);
+else if(e.type==='pass'&&e.pattern==='wall')add(e.at,en?`${actor} uses the board to find ${e.receiver||side}.`:`${actor}, duvarı kullanarak ${e.receiver||side} ile oynuyor.`,2);
 else if(e.type==='pass')add(e.at,en?`${actor} finds ${e.receiver||side}.`:`${actor}, ${e.receiver||side} ile oynuyor.`,1);
 else if(e.type==='save')add(e.at,pick(en?[`${e.keeper||actor}, a fine stop!`,`${e.keeper||actor} keeps it out!`]:[`${e.keeper||actor}, harika kurtarış!`,`${e.keeper||actor} gole izin vermiyor!`],e),3);
 else if(e.type==='post')add(e.at,en?'Off the woodwork! So close!':'Direkten dönüyor! Çok yakındı!',3);

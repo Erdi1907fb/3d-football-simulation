@@ -6,6 +6,14 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V165 — 2026-11-10 (Codex)
+- Dar alan için atış kanalı, açık pas/duvar pası, alıcı koşusu ve ayak hazırlığına bağlı futbol kararları; kontrollü dönüş/ivme ve gerçek küçük top sürme temasları.
+- Kaleciler gecikmeli gözlem ve gerçek sekme yörüngesinden açı kapatır; tutuş/ayak kontrolü/toparlanma ve duruş düzeltildi. Ayakta savunma, her müdahalede kayan tackle yok.
+- İki takımda dört köşeli dikdörtgen saha. Ortak zeminde tam temaslı yuvarlanma direnci, fileye gelen gerçek darbe hızı ve belirgin file tepkisi.
+- İlk kareden yakın aksiyon; santraya geçiş ayrı kamera kesmesi, bütün maçı genişleten uzak zoom kaldırıldı. Açılış kadrosu güvenli bantta, tam yan alternatif korunur.
+- 4,5 sn kısa sonuç: iki takımda kazanan/skor/golcüler, çok takımlıda kazanan takım/oyuncular. Uzun final taraftar turu kaldırıldı.
+- Yeni futbol testi, FIFA/FA referans kaydı, tarayıcı/MP4 kanıtları ve ortak ajan devri.
+
 ## V164 — 2026-11-10 (Codex)
 - Skor/arma/isim katmanı ön izlemede de gerçek1080p; daha büyük destek satırı, harfleri yatay sıkıştırmayan metin. Açılışta bütün isimler, sonra yalnız top sahibi/kurtaran kaleci.
 - Tüm sahayı yandan gösteren yeni varsayılan yayın kamerası; yakın aksiyon seçenekleri korunur. Başlangıç rol menüsü Forvet/Orta saha/Defans/Kaleci olarak netleşti.
