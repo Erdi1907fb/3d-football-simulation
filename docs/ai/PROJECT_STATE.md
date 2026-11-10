@@ -1,13 +1,13 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V153** · 2026-11-09 · Claude Code
+> Son güncelleme: **V154** · 2026-11-09 · Claude Code
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 
 ## 1. Sürüm
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V153** (`VERSION`) |
+| Kararlı sürüm | **V154** (`VERSION`) |
 | Sonraki geliştirme hedefi | **V116** |
 | Önceki sürüm | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP 8.1. Yeni servis/cron gerekmez. |
@@ -497,6 +497,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
   deterministik; MP4 = ön izleme).
 - Stadyum: çatı iç kenarında projektör gantrisi (`roof-floodlight-housings/lenses`, 2 instanced çizim, ~3.4 m aralık).
 - Kalan (açık, T-11): oyuncu/kaleci animasyon ve taraftar katmanında görünür yenilik bu sürümde yok.
+
+## 4au. V154 (vuruşta çim sıçraması)
+- `scene.js updateSpray`: yerdeki top sert vurulunca (kare arası hız <4 → >14 m/s, top y<0.35) vuruş noktasından
+  26 çim + 26 toprak parçası (instanced, 2 çizim) kalkar; konum vuruştan geçen durum zamanının saf fonksiyonu
+  (ön izleme = ileri/geri sarma = MP4). Düşük kalitede kapalı. Maç, penaltı, FK, konsept hepsinde otomatik.
+- Denenip geri alınan: dünya uzayı gece gökyüzü kubbesi (görünen kadrajlarda fark yaratmadı).
+- Kalan katmanlar incelendi: oyuncular (mocap idle/koşu), kaleci (yaylanma, adım, kurtarış türleri), taraftar
+  (atkı, flaş, meşale, duman, konfeti, dalga) zaten mevcut; hedefli istek bekleniyor.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

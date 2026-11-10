@@ -2,6 +2,10 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V154 — 2026-11-11 (Claude Code) · kararlı
+- **Vuruşta çim sıçraması:** sert vuruşlarda topun durduğu yerden küçük çim ve toprak parçaları kalkıyor (maç, penaltı,
+  serbest vuruş); ön izleme ve MP4 aynı.
+
 ## V153 — 2026-11-10 (Claude Code) · kararlı
 - **File (FC27 tarzı):** sık 12 cm gözlü, ince düğümlü, uzaktan yumuşak beyaz tül gibi görünen file; top cebi ve dalga aynı.
 - **Top:** hızlı şutlarda topun arkasında hafif hareket izi; yön ve hız okunur.

@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-11] Claude Code · V153 → V154 (kararlı)
+- **İstek:** kalanları (oyuncu/kaleci/taraftar) seremonideki gibi bozmadan geliştir.
+- **Yapılanlar:** PROJECT_STATE 4au. quick 19/19; penaltı + FK sıçrama görüntüleri.
+
+---
+
 ## [2026-11-10] Claude Code · V152 → V153 (kararlı)
 - **İstek (gece, otonom):** FC27 gibi file; sonra top fiziği, top, oyuncular, kaleci, stadyum, taraftar hepsi.
 - **Yapılanlar:** PROJECT_STATE 4at. quick 19/19; penaltı yayın + kaleci gözü + maç görüntüleri.
