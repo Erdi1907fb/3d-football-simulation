@@ -4,10 +4,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V159
+## Aktif hedef: V160
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-269 | Japon Kale yayın kadrajı/oyuncu isimleri, 2–6 kaleye özel saha, kaleci-defans-hücum üçlüleri ve Reels/Shorts güvenli aksiyon | done (V159) | codex | files: assets/japon-*.js, assets/scene.js, japon-kale.html, tests/japon-*.cjs |
 | T-267 | Japon Kale: 2–6 taraf, eleme/puan, ortak 3D/video ve serbest oyuncu/forma | done (V158) | codex | files: assets/japon-*.js, japon-kale.html, assets/scene.js, tests/japon-kale.cjs |
 | T-268 | Tüm modlarda zaman damgalı TR/EN kopyalanabilir anlatım | done (V158) | codex | files: assets/commentary*.js, assets/*ui.js, assets/app.js, assets/concept/*, *.html, tests/commentary.cjs |
 | T-261 | Sıralı görsel geliştirme (zemin → kale → top → oyuncular → kaleci → stadyum → taraftar), parlaklık/kontrastla oynamadan | partial | claude | Yapılanlar: V149 şeritler, V147/V152/V153 file, V153 top izi + çatı projektörleri, V154 çim sıçraması, V155 kaleci sevinci, V156 direk titremesi/sekme tozu/hava durumu, V157 karda nefes. Açık: oyuncu animasyonları, taraftar katmanı (kullanıcıdan hedefli istek). scene.js, world-upgrade.js, stadium-shell.js |

@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict'),E=require('../assets/japon-engine.js'),Layout=require('../assets/japon-layout.js'),Director=require('../assets/japon-camera.js'),T=require('../assets/vendor/three.min.js');
+let previousArea=0,frames=0,triples=0,complete=0;
+for(let count=2;count<=6;count++){
+ const layout=Layout.create(count);assert(layout.area>previousArea,'arena area grows with goal count');previousArea=layout.area;
+ const bigger=Layout.create(count,6);assert(bigger.area>layout.area);assert(bigger.goals.every(g=>g.width===6));
+ for(const goal of layout.goals){assert(layout.boundaries.some(e=>Math.abs(e.nx-goal.nx)<1e-6&&Math.abs(e.nz-goal.nz)<1e-6&&Math.abs(e.d-goal.radius)<1e-6),'visible goal sits on physical edge');}
+ const sides=Array.from({length:count},(_,i)=>({name:'Side '+i,keeper:{id:'k'+i,name:'Keeper '+i},defender:{id:'d'+i,name:'Defender '+i},player:{id:'a'+i,name:'Attacker '+i}}));
+ for(const mode of ['points','elimination']){
+ const c=E.create({sides,seed:42,mode,seconds:30});assert.equal(c.playersPerSide,3);assert.equal(c.frames[0].players.length,count*3);triples++;
+ if(mode==='elimination'){assert(!c.timedOut,'representative tournament must finish');assert.equal(c.ranks.length,count);complete++;}
+ for(const frame of c.frames.filter((_,i)=>i%37===0)){for(const p of frame.players.filter(p=>p.active))assert(Layout.inside(p,c.layout,-.3),'players respect arena boundary');if(frame.owner>=0){const p=frame.players[frame.owner];assert(p&&!p.keeper,'owner is a real outfield slot');}}
+ for(const event of c.events.filter(e=>e.type==='shot')){assert(event.actorIndex>=0&&event.actorIndex<count*3);assert(!c.frames[0].players[event.actorIndex].keeper);assert.equal(event.actor,sides[event.team][c.frames[0].players[event.actorIndex].role==='defender'?'defender':'player'].name);}
+ const times=[0,1.15,1.7,c.finaleAt,c.duration,...c.events.filter(e=>['shot','goal','save'].includes(e.type)).flatMap(e=>[Math.max(0,e.at-.2),e.at,Math.min(c.duration,e.at+.4)])];
+ for(const time of times)for(const mode of ['broadcast','touchline','wide']){const camera=new T.PerspectiveCamera(),p=Director.apply(camera,c,time,mode);for(const critical of p.points){const screen=Director.project(camera,critical);assert(screen.z>-1&&screen.z<1,'critical action remains in frustum');assert(Director.inSafe(screen,.01),`critical action outside Reels/Shorts safe region (${count}, ${mode}, ${time}): ${JSON.stringify(screen)}`);}const expected=camera.matrixWorld.toArray();Director.apply(camera,c,c.duration,mode);Director.apply(camera,c,time,mode);assert.deepEqual(camera.matrixWorld.toArray(),expected,'seeking cannot change camera');frames++;}
+ }
+}
+const legends=require('../assets/japon-legends.json').players;for(const name of ['Gerard Piqué','Sergio Ramos','Iker Casillas','Marc-André ter Stegen'])assert(legends.some(p=>p.name===name));
+console.log(JSON.stringify({pass:true,triples,complete,frames,coverage:'monotonic arena areas/goal sizes, matching visible+physical bounds, 6–18 actors, per-role shot identities, critical action and goal frame inside Shorts/Reels safe region, all three cameras, deterministic seeking, requested legends'}));

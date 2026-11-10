@@ -17,6 +17,32 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Codex · V158 → V159
+- Dal / commit / PR: `agent/codex/japon-broadcast-trios`; başlangıç `main` @ 25ff94f. Sürüm commit’i `V159: Japon Kale üçlüleri ve güvenli yayın kadrajı`; main’e fast-forward push. PR yok.
+- Kullanıcı isteği: Japon Kale görüntüsü ve kamera ilgi çekici değil; oyuncu isimleri oyuncuların üstünde, takım adı kalede. Takımlarda kaleci + defans + hücum; Messi/Piqué/ter Stegen ve Ronaldo/Ramos/Casillas gibi özel üçlüler seçilebilsin. 2–6 kale için ayrı ve büyüyen saha, büyüyen kaleyle büyüyen alan. İndirilen video Instagram Reels ve YouTube Shorts arayüzlerinden korunmuş ana aksiyon kadrajını kullansın. Yeni sürüm main’e push.
+- Yapılanlar: PROJECT_STATE 4az / D-021. Kaleci-defans-hücum rolleri ve özel üçlüler (6–18 oyuncu), eski ikililer korunur. 29 mevcut arşiv savunmacısı/kalecisi hafif JSON’a seçildi; hazır efsane eşleşmesi düğmesi. Oyuncu başında gerçek isim/kısa isim, çakışma yerleşimi; kulüp adı kalede. Görsel/fizik aynı çokgen saha verisi; alan kale sayısıyla artar, kale boyutu ölçekler. Ayrı zemin, sınır bandı, kale bölgeleri; eski normal saha parçaları bu modda gizlenir. Üç kamera: aksiyon yayını, saha kenarı, taktik genel. Top, taşıyıcı/hücumcu, yakın saha oyuncuları, kaleci ve direk/net köşeleri perspektifle ortak güvenli bölgeye sığdırılır; MP4 aynı draw yoludur.
+- Değişen önemli dosyalar: `assets/japon-layout.js`, `assets/japon-camera.js`, `assets/japon-arena.js`, `assets/japon-engine.js`, `assets/japon-ui.js`, `assets/japon-legends.json`, `tools/build-japon-legends.cjs`, `assets/scene.js` (yalnız japonSides/japonSize dalı), `japon-kale.html`, `tests/japon-camera.cjs`, `tests/run-all.cjs`, VERSION/build/HTML sürüm referansları, release manifesti ve ortak belgeler.
+- Tamamlanmayanlar / kısmi: gerçek iPhone/Android/GPU FPS ve tam uzunlukta MP4 kontrolü yapılmadı. 2 sn 1080p60 yazılımsal GPU testi çok yavaş ilerlediği için durdurulup aynı üretim düğmesi/aksiyon draw hattıyla 0,25 sn örnek kodlandı. Bu süre yalnız test kesitidir, ürün maç süreleri/kalitesi düşürülmedi. Hostinger’a yükleme yapılmadı.
+- Karşılaşılan sorunlar: ilk varsayılan seçiciler aynı oyuncuyu defans/hücum seçebiliyordu; otomatik seçim farklı kimlikleri tercih eder, manuel tekrarlar doğrulamada reddedilir. Yeni panolar ilk denemede kale çizgisi önünde topu kesiyordu; aktif kale ağızları pano çarpışmasından ayrıldı (görünür/fiziksel açıklık eşleşir). Normal sahnenin batch edilmiş çizim kalıntıları yalnız Japon Kale dalında gizlendi. Kamera testi stateless tutuldu; önceki kareyle yumuşatma kullanılmadı.
+- Testler (komut → sonuç):
+  - `PATH=/workspace/bin:$PATH node tests/run-all.cjs` → **23/23 PASS**, engine-test dahil (500 seri + 18 normal maç). Test anında VERSION V158; aynı kod V159 numarasıyla kapatıldı. Son yalnız-Japon-Kale sahne maskesi ve son baş yönü düzeltmesinden sonra ilgili sözdizimi/arena/kamera testleri tekrar geçti.
+  - `node tests/japon-kale.cjs` → **PASS, 50 senaryo**; mevcut eleme/puan/puan zamanı/sıfırlama/özet/fizik gol çizgisi korunur.
+  - `node tests/japon-camera.cjs` → **PASS, 10 üçlü senaryo / 2.103 kadraj kontrolü**, 3 kamera, 2–6 kale, eleme/puan; toplam alan ve büyük kale ölçeği, gerçek rol/actorIndex, güvenli frustum ve deterministik geri sarma. Hedef netin arka köşeleri dahil.
+  - Ek 60 üçlü eleme simülasyonu (2–6 taraf, seed 1–12) → **60 tamamlandı, 0 süre aşımı**.
+  - Chromium + SwiftShader: 2–6 kale → 6/9/12/15/18 görünür oyuncu; bütün üç kamera gerçek render sonrası güvenli nokta izdüşümünden geçti. İkiliye dönüşte 6 tarafta 12 oyuncu. Hazır Messi/Piqué/ter Stegen – Ronaldo/Ramos/Casillas seçimi doğru; 6 m kale alanı büyütüyor. iPhone 13 viewport: innerWidth=390, scrollWidth=390, üçlü sahne hazır.
+  - Son kaynakla gerçek aksiyon karesindeki tüm görünür aktör alt nesneleri `matrixWorld` sonlu; browser pageerror yok.
+  - Gerçek MP4 düğmesi, testte yalnız job süresi 0,25 sn’ye ve draw zamanı şut kesitine yönlendirildi (kaynak dosya değişmeden): **PASS**, 543.866 bayt, sayfa hatası yok. `ffprobe` H.264, **1080×1920, 60/1 FPS, 15 kare**. Ön izleme/kamera/etiket çizimi aynıdır. Uzun video/gerçek telefon FPS sonucu olarak yorumlama.
+  - `php build.php` → build 159, filesMatch true, mismatches []. `node --check` değişen modüller, `git diff --check` → PASS.
+- Sonraki ajan için dikkat:
+  - Güncel sürüm V159, sonraki hedef V160. `japon-layout.js` fizik ve render için tek kaynaktır; daire/bağımsız saha kopyasına dönme. Aktif kale ağızlarını panoyla kapatma. 3–6 çokgenlerin toplam alanı büyür; şekilleri farklı olduğundan tek eksen uzunluğu tek başına büyüme ölçütü değildir.
+  - `frame.owner` gerçek global aktör slotu; `playersPerSide` 2 veya 3. Şutlarda `actorIndex`; yalnız `team*2+1` hesaplama. Ortak scene `japonSize` kimlik/forma eşlemesi aynı olmalı.
+  - Kritik aksiyon bölgesi: 1080×1920 **x64–884 / y295–1220**. Skor bandı x30–909 / y1296–1518. Üst/sağ/alt platform UI alanlarına kritik top/oyuncu/kale taşırma. Camera.fit view-offset/critical-point testini koru; export/seek kameraları geçmiş kareye bağlı olamaz.
+  - `japon-arena` yalnız kendi kaynaklarını dispose eder, ortak saha/net/çim kaynaklarını silmez. UI `disposeScene` arena→world sırasını korur. Genel scene maskeleri yalnız `options.japonSides` dalındadır.
+  - Oyuncu adları üstte, takım adı kalede; özel üçlülerin logoları giyilen forma takımına aittir. Arşiv seçkisi mevcut veri kaynağından yeniden üretilebilir, ek harici medya yok.
+  - Görsel kanıtlar bu çalışma alanında `/workspace/artifacts/v159/` (iki özel üçlü açısı, 3/6 saha, 6 kale aksiyon, kısa MP4); yeni ortamda tekrar üretilmelidir. Gerçek cihaz/uzun MP4 testi T-209/T-266 kapsamında açıktır. Önceki iOS/veri/renk/kontrast kuralları devam eder.
+
+---
+
 ## [2026-11-10] Codex · V157 → V158
 - Dal / commit / PR: `agent/codex/japon-kale-commentary`; başlangıç `main` @ 13472f2. Sürüm commit’i `V158: Japon Kale ve zamanlı anlatım`; testlerden sonra `main`’e fast-forward push. PR yok.
 - Kullanıcı isteği: 2–6 taraflı Japon Kale; her tarafta 1 kaleci + 1 saha oyuncusu; gol yiyerek eleme ve tur sayacı sıfırlama / gol +1, yenilen −1 puan modu; takım/serbest ikili/forma seçimi; dikey video ve dereceler. Bütün maç/stüdyolarda video zamanına bağlı TR/EN kopyalanabilir anlatım; görsel kanıt; testler ve main push.

@@ -1,0 +1,696 @@
+{
+ "source": "Existing assets/concept/teams.js; model appearance is stylised, not a scan.",
+ "players": [
+  {
+   "id": "nat-ita-2006-P-55511",
+   "name": "Alessandro Nesta",
+   "number": 13,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1976-03-19",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "AC Milan 2004–05",
+   "archiveSource": "club-milan-2004–2005"
+  },
+  {
+   "id": "tm-3182",
+   "name": "Ashley Cole",
+   "number": 3,
+   "roles": [
+    "LB"
+   ],
+   "position": "LB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1980-12-20",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 172,
+    "weightKg": 67,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "LB"
+   ],
+   "archiveTeam": "Chelsea 2011–12",
+   "archiveSource": "club-chelsea-2011–2012"
+  },
+  {
+   "id": "nat-bra-2002-P-91718",
+   "name": "Cafu",
+   "number": 2,
+   "roles": [
+    "RB"
+   ],
+   "position": "RB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1970-06-07",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "RB"
+   ],
+   "archiveTeam": "AC Milan 2004–05",
+   "archiveSource": "club-milan-2004–2005"
+  },
+  {
+   "id": "nat-esp-2010-P-51089",
+   "name": "Carles Puyol",
+   "number": 5,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1978-04-13",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 178,
+    "weightKg": 80,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "FC Barcelona 2010–11",
+   "archiveSource": "club-barcelona-2010–2011"
+  },
+  {
+   "id": "tm-15951",
+   "name": "Dani Alves",
+   "number": 13,
+   "roles": [
+    "RB"
+   ],
+   "position": "RB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1983-05-06",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 172,
+    "weightKg": 68,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "naturalRoles": [
+    "RB"
+   ],
+   "archiveTeam": "Paris Saint-Germain 2018–19",
+   "archiveSource": "season-psg-2018"
+  },
+  {
+   "id": "tm-59016",
+   "name": "David Alaba",
+   "number": 27,
+   "roles": [
+    "LB"
+   ],
+   "position": "LB",
+   "sourcePosition": "M",
+   "dateOfBirth": "1992-06-24",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 175,
+    "weightKg": 70,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "LB"
+   ],
+   "archiveTeam": "Bayern München 2009–10",
+   "archiveSource": "club-bayern-2009–2010"
+  },
+  {
+   "id": "hist-d8908b6199a74425",
+   "name": "Edwin van der Sar",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1970-10-29",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 197,
+    "weightKg": 83,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "Manchester United 2010–11",
+   "archiveSource": "club-man-utd-2010–2011"
+  },
+  {
+   "id": "nat-ita-2006-P-88863",
+   "name": "Fabio Cannavaro",
+   "number": 17,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1973-09-13",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Parma 1995–96",
+   "archiveSource": "season-parma-1995"
+  },
+  {
+   "id": "hist-55165042ff0f0d5c",
+   "name": "Franco Baresi",
+   "number": 6,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1960-05-08",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "AC Milan 1995–96",
+   "archiveSource": "season-milan-1995"
+  },
+  {
+   "id": "tm-18944",
+   "name": "Gerard Piqué",
+   "number": 3,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1987-02-02",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 192,
+    "weightKg": 85,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "FC Barcelona 2010–11",
+   "archiveSource": "club-barcelona-2010–2011"
+  },
+  {
+   "id": "tm-5023",
+   "name": "Gianluigi Buffon",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1978-01-28",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 192,
+    "weightKg": 94,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "Juventus 2016–17",
+   "archiveSource": "club-juventus-2016–2017"
+  },
+  {
+   "id": "tm-3979",
+   "name": "Iker Casillas",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1981-05-20",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 185,
+    "weightKg": 79,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "Real Madrid 2013–14",
+   "archiveSource": "club-real-madrid-2013–2014"
+  },
+  {
+   "id": "tm-19981",
+   "name": "Javier Mascherano",
+   "number": 14,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "M",
+   "dateOfBirth": "1984-06-08",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 178,
+    "weightKg": 77,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "FC Barcelona 2010–11",
+   "archiveSource": "club-barcelona-2010–2011"
+  },
+  {
+   "id": "tm-26485",
+   "name": "Jérôme Boateng",
+   "number": 17,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1988-09-03",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 192,
+    "weightKg": 90,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Bayern München 2011–12",
+   "archiveSource": "club-bayern-2011–2012"
+  },
+  {
+   "id": "tm-3160",
+   "name": "John Terry",
+   "number": 26,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1980-12-07",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 186,
+    "weightKg": 91,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Chelsea 2011–12",
+   "archiveSource": "club-chelsea-2011–2012"
+  },
+  {
+   "id": "nat-bra-2002-P-42918",
+   "name": "Lúcio",
+   "number": 6,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1978-05-08",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 188,
+    "weightKg": 84,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Inter 2009–10",
+   "archiveSource": "club-inter-2009–2010"
+  },
+  {
+   "id": "tm-17259",
+   "name": "Manuel Neuer",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1986-03-27",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 192,
+    "weightKg": 90,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "Bayern München 2011–12",
+   "archiveSource": "club-bayern-2011–2012"
+  },
+  {
+   "id": "tm-74857",
+   "name": "Marc-André ter Stegen",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1992-04-30",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 185,
+    "weightKg": 82,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "FC Barcelona 2014–15",
+   "archiveSource": "club-barcelona-2014–2015"
+  },
+  {
+   "id": "tm-19726",
+   "name": "Nemanja Vidić",
+   "number": 15,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1981-10-21",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 188,
+    "weightKg": 82,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Manchester United 2010–11",
+   "archiveSource": "club-man-utd-2010–2011"
+  },
+  {
+   "id": "hist-2cb49865dee636c2",
+   "name": "Oliver Kahn",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1969-06-15",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "Bayern München 1995–96",
+   "archiveSource": "season-bayern-1995"
+  },
+  {
+   "id": "hist-0d6ec1abb2d2f8df",
+   "name": "Paolo Maldini",
+   "number": 3,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1968-06-26",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "AC Milan 2004–05",
+   "archiveSource": "club-milan-2004–2005"
+  },
+  {
+   "id": "tm-14132",
+   "name": "Pepe",
+   "number": 3,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1983-02-26",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 186,
+    "weightKg": 72,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Real Madrid 2016–17",
+   "archiveSource": "club-real-madrid-2016–2017"
+  },
+  {
+   "id": "hist-6d9b076ae0afb8e9",
+   "name": "Peter Schmeichel",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1963-11-18",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "Manchester United 1993–94",
+   "archiveSource": "season-man-utd-1993"
+  },
+  {
+   "id": "tm-2219",
+   "name": "Philipp Lahm",
+   "number": 21,
+   "roles": [
+    "RB"
+   ],
+   "position": "RB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1983-11-11",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 170,
+    "weightKg": 62,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "RB"
+   ],
+   "archiveTeam": "Bayern München 2009–10",
+   "archiveSource": "club-bayern-2009–2010"
+  },
+  {
+   "id": "tm-3235",
+   "name": "Rio Ferdinand",
+   "number": 5,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1978-11-07",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 189,
+    "weightKg": 82,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Manchester United 2010–11",
+   "archiveSource": "club-man-utd-2010–2011"
+  },
+  {
+   "id": "nat-bra-2002-P-85176",
+   "name": "Roberto Carlos",
+   "number": 6,
+   "roles": [
+    "LB"
+   ],
+   "position": "LB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1973-04-10",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": null,
+    "weightKg": null,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "LB"
+   ],
+   "archiveTeam": "Inter 1995–96",
+   "archiveSource": "season-inter-1995"
+  },
+  {
+   "id": "tm-25557",
+   "name": "Sergio Ramos",
+   "number": 4,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1986-03-30",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 184,
+    "weightKg": 82,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Real Madrid 2017–18",
+   "archiveSource": "club-real-madrid-2017–2018"
+  },
+  {
+   "id": "tm-29241",
+   "name": "Thiago Silva",
+   "number": 2,
+   "roles": [
+    "CB"
+   ],
+   "position": "CB",
+   "sourcePosition": "D",
+   "dateOfBirth": "1984-09-22",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 183,
+    "weightKg": 79,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "naturalRoles": [
+    "CB"
+   ],
+   "archiveTeam": "Paris Saint-Germain 2013–14",
+   "archiveSource": "season-psg-2013"
+  },
+  {
+   "id": "tm-7589",
+   "name": "Víctor Valdés",
+   "number": 1,
+   "roles": [
+    "GK"
+   ],
+   "position": "GK",
+   "sourcePosition": "G",
+   "dateOfBirth": "1982-01-14",
+   "scoringWeight": 0.75,
+   "physical": {
+    "heightCm": 183,
+    "weightKg": 78,
+    "verifiedMeasurements": true,
+    "source": "FootballSquads archived season roster"
+   },
+   "selectionPositionInferred": false,
+   "naturalRoles": [
+    "GK"
+   ],
+   "archiveTeam": "FC Barcelona 2010–11",
+   "archiveSource": "club-barcelona-2010–2011"
+  }
+ ]
+}

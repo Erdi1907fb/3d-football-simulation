@@ -116,3 +116,8 @@ yerinde kalır. Öncelik: görsel kalite (profesyonel yayın hissi), animasyon, 
 **Karar:** Kullanıcının kaleci+saha oyunculu 2–6 taraf varyantı: elemede tur gol sayacı sıfırlanır, puanda gol +1/yenen −1. Ortak top fiziği ve ortak sahne aktörleri kullanılır. Araştırılan yerel oyunlarda kurallar değişiyor; bu sürüm resmî Japon futbolu kuralı olarak sunulmaz.
 **Kaynak:** https://reisspor.com.tr/page/japon-saha (çoklu kale, gol yiyerek elenme); https://www.ekonomim.com/kose-yazisi/japon-kale-futbol-maci-ve-rekabet-analizi/691008 (herkes kendi kalesini korur). Tur sıfırlama ve kaleci+saha oyuncusu kullanıcının açık tercihidir. Harici kod/varlık eklenmedi.
 **Video:** Kesitler bütün golleri korur; anlatım aynı video zamanına bağlıdır. SRT/TXT/kopyalama metin üretir, TTS üretmez. Eşitlikte ortak derece; eleme süresi aşılırsa tamamlanmamış sonuç.
+
+
+## D-021 · 2026-11-10 · codex · kabul — Üçlü roller ve geometriye bağlı güvenli kamera
+**Karar:** Takımlarda/özel üçlülerde kaleci–defans–hücum, mevcut ikililer korunur. Görsel saha ve fizik aynı `japon-layout.js` verisini kullanır; toplam alan kale sayısıyla artar, kale genişliğiyle ölçeklenir. Kullanıcı görsel geri bildirimi: ayrı daire ve uzak kamera yetersizdi.
+**Yayın:** `japon-camera.js` kritik noktaları platform arayüzleri için ayrılan ortak aksiyon alanına perspektif olarak sığdırır. Geçmiş kamera durumuna bağlı yumuşatma kullanılmaz; export/seek aynı kareyi üretir. Kulüp adı kalede, isim oyuncuda. Efsaneler mevcut veri arşivinden türetildi; dış kaynak/medya indirilmedi.

@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V158** · 2026-11-10 · Codex (Japon Kale ve tüm modlarda anlatım)
+> Son güncelleme: **V159** · 2026-11-10 · Codex (Japon Kale üçlüleri ve güvenli yayın kadrajı)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V158** (`VERSION`; sürüm commit’i: `V158: Japon Kale ve zamanlı anlatım`) |
-| Sonraki geliştirme hedefi | **V159** |
+| Kararlı sürüm | **V159** (`VERSION`; sürüm commit’i: `V159: Japon Kale üçlüleri ve güvenli yayın kadrajı`) |
+| Sonraki geliştirme hedefi | **V160** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v158.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 158 |
+| Sürüm doğrulama | `build.php` → `assets/release-v159.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 159 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -531,6 +531,14 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Video: başlangıç top düşüşü + tüm goller/elemeler + sonuç. Sürekli oyun kaydından kesitler; `segments`, `toVideoTime`, `fromVideoTime`, `liveEvents` ile eşleşir. Genel/aksiyon kamera, aynı ortak `SekmeScene` oyuncu/yüz/forma/animasyonları ve `SekmeVideo` 1080×1920/60 FPS hattı. `japonSides` sadece yeni modda kullanılır.
 - `commentary.js` + `commentary-ui.js`: normal maç (resmî/personal/konsept), penaltı/1v1/2v2, FK ve Japon Kale için TR/EN gerçek olay isimleri ve video zamanları; kopyala, TXT/SRT. Ses üretimi yok, seslendirmeye hazır metindir. Maçtaki `playerName` / global actor kimliği kullanılır; kafa/korner yalnız olay/pozisyon verisinde varsa söylenir.
 - Sınırlar: eleme 900 sn oyun güvenlik sınırına gelirse şampiyon uydurulmaz, “tamamlanmadı” gösterilir. Fiziksel telefon testi yapılmadı. Yeni arenanın maç süresinde tam MP4’ü bu ortamda baştan sona kodlanmadı; kısa gerçek H.264 1080×1920/60 FPS örneği ve MP4 düğmesi doğrulandı.
+
+## 4az. V159 (üçlüler, sahalar ve Reels/Shorts yayın kadrajı)
+- Takım ve özel üçlü modları kaleci + defans + hücumcu; 6–18 aktör. Önceki ikili mod korunur (4–12 aktör). Kaynak ve forma seçimi bağımsızdır. Hazır örnek: Messi/Piqué/ter Stegen ve Ronaldo/Ramos/Casillas; `japon-legends.json` mevcut konsept arşivinden 29 savunmacı/kaleci, yaklaşık 15 KB; üretici `tools/build-japon-legends.cjs`.
+- `japon-layout.js` tek geometri kaynağıdır: 2 kale 28×18 m kısa dikdörtgen (~494 m²); üçgen (~658), dörtgen (~817), beşgen (~1029), altıgen (~1233 m²), köşeleri kesilmiş. 4,4 / 5 / 6 m kale genişliği saha ve kale yüksekliğini birlikte ölçekler. `japon-arena.js` paylaşılan çim dokusu ve fileyle ayrı zemin/bant/kale bölgeleri kurar; eski normal saha çizimleri bu modda gizlenir, diğer modlar etkilenmez.
+- Fizik: aynı 120 Hz top adımları; çokgen panolar ile aktif kale ağızları aynı sınırlardır. Kaleci kale önünde kalır, defans perdeleme/geri çekilme/serbest top, hücum baskı/ileri koşu; destek oyuncuları topun üstüne yığılmaz. `owner` artık gerçek slot, `actorIndex` şut kimliğidir. Kayıt 20 Hz, özet/kural/puan sistemi değişmedi.
+- `japon-camera.js`: aksiyon yayını, saha kenarı, taktik genel. Top, hücumcu, en yakın üç saha oyuncusu, hedef kaleci, kale direk/net köşelerinin perspektif izdüşümü ortak güvenli aksiyon alanına sığdırılır: 1080×1920 x64–884 / y295–1220. Genel plan ilk 1,15 sn, manuel taktik ve finalde saha bağlamını gösterir. Kamera geçmiş kareye bağlı değildir, geri sarma/MP4 aynı.
+- `japon-ui.js`: görünür oyuncunun üstünde gerçek adı/kısa adı ve forma rengi; takım adı yalnız hedef kalede ve skor panelinde. Etiket çakışması için dikey kaydırma/bağlantı çizgisi. Top işaret halkası. Skor güvenli bandı y1296–1518 korunur. Tüm etiket/kamera yolları ön izleme ve MP4’te ortaktır.
+- Kontrol kapsamı: yeni kamera testi 2–6 taraf, eleme/puan, 10 üçlü senaryo, 2.103 kamera kadrajı; 60 ek üçlü eleme simülasyonunun tamamı süre aşmadan bitti. Chromium/SwiftShader görüntüleri ve kısa MP4 kanıtı HANDOFF’ta; gerçek cihaz testi hâlâ yapılmadı.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

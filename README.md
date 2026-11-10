@@ -7,7 +7,7 @@ uygulaması. Sürüm: bkz. `VERSION`.
 |---|---|
 | `index.html` | Maç merkezi: bülten, 11’e 11 3D maç, sezon, konsept maçlar, video indirme |
 | `penalty.html` | Penaltı Stüdyosu (takım serisi / oyuncu düellosu) |
-| `japon-kale.html` | Japon Kale: 2–6 taraf, eleme / puan, takım veya oyuncu ikilisi |
+| `japon-kale.html` | Japon Kale: 2–6 taraf, eleme / puan, takım/özel üçlü/ikili, 3 yayın kamerası |
 | `freekick.html` | Serbest Vuruş Stüdyosu (takım vs takım / oyuncu düellosu) |
 
 **Geliştiriciler ve yapay zekâ ajanları (Codex, Claude):** önce `AGENTS.md`, sonra

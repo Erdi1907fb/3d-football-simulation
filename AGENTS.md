@@ -64,7 +64,8 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 21 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 22 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, üçlü roller/efsaneler, 3 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
 | `node tests/japon-kale.cjs` | 2–6 taraf, 50 senaryo, eleme/puan, tur sıfırlama, fiziksel gol çizgisi, özet zamanları, determinizm | ~2 sn |
 | `node tests/commentary.cjs` | TR/EN anlatım, gerçek olay/oyuncu, video zamanları, SRT | <1 sn |
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
@@ -133,7 +134,14 @@ dosyalardır.
 - **Dosya silme kuralı:** bir dosyayı silmeden önce `index.html`, `penalty.html`, `freekick.html`, tüm `*.php`, `server/*.php` ve aktif JS’ten (dinamik yol birleştirmeleri dahil: `'assets/pitch/turf-'+kind`) referans taraması yap. PHP veri akışı (haftalık bülten, 5 gün ileri maçlar, cron) dosyalarına dokunma. Emin değilsen silme, `TASKS.md`’ye not düş.
 
 ## 8. Japon Kale ve anlatım (V158)
-- `japon-kale.html`: 2–6 taraf, taraf başına kaleci + saha oyuncusu. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; video kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
+- `japon-kale.html`: 2–6 taraf; takım/özel üçlü: kaleci + defans + hücumcu; ikili mod: kaleci + saha oyuncusu. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; video kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
 - `scene.js` `japonSides` yalnız bu modun aktör formalarını/kimliklerini seçer; diğer modların sahne yolu korunur.
 - `commentary.js` gerçek olaylardan metin üretir, TTS değildir. Normal maçta `match.toVideoTime`, stüdyolarda `resolvedAt`, Japon Kale’de özet video olay zamanlarını kullan. Sonuç/isim uydurma.
 - Japon Kale elemesinde 900 sn oyun güvenlik sınırı aşılırsa sonuç tamamlanmamış gösterilir; zorla şampiyon üretme.
+
+## 9. Japon Kale yayın kuralları (V159)
+- `japon-layout.js`: görünür zemin/sınır ile fizik aynı geometriden gelir. 2 kale kısa dikdörtgen; 3–6 kale köşeleri kesilmiş çokgen; toplam alan kale sayısı ve kale genişliğiyle artar.
+- `japon-camera.js`: tüm kritik oyuncuların ayak/baş noktaları, top ve hedef kalenin direk/net köşeleri 1080×1920’de x=64–884 / y=295–1220 içine sığdırılır. Sabit geniş açıya dönme; `tests/japon-camera.cjs` kontrolünü koru. Skor bandı y=1296–1518.
+- İsimler oyuncuların üstünde, kulüp adı yalnız kalede (takım modunda); etiket çakışmalarını yönet. Kamera ve isimler MP4’te de aynı draw yolundan geçer.
+- `japonSize` 2/3 ortak sahne aktörlerinin rol/forma eşlemesini belirler. 18 aktör (6×3) en çoktur. Eski `team*2+1` varsayımını kullanma; `frame.owner` gerçek aktör slotudur, olaylarda `actorIndex` bulunur.
+- `japon-legends.json` yalnız mevcut konsept arşivinin 29 kişilik hafif seçkisidir (`node tools/build-japon-legends.cjs`). Harici veri/varlık eklenmedi.

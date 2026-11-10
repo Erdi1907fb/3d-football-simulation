@@ -6,6 +6,12 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V159 — 2026-11-10 (Codex)
+- Japon Kale’de kaleci–defans–hücum üçlüleri; özel üçlü ve mevcut ikili seçimi. Messi/Piqué/ter Stegen – Ronaldo/Ramos/Casillas hazır örneği ve 29 arşiv oyuncusu.
+- Oyuncu isimleri başlarının üzerinde; takım adı kalede. Kale sayısı ve boyutuna göre büyüyen, aynı fizik sınırlarını kullanan beş saha düzeni.
+- Aksiyon yayını, saha kenarı ve taktik kameraları; top/oyuncu/kaleyi Reels–Shorts güvenli alanına sığdıran otomatik kadraj, aynı MP4 çıktısı.
+- Yeni arena çimi, sınır bantları, kale bölgeleri; eski saha çizimleri kaldırıldı. Ayrıntı ve testler HANDOFF V159.
+
 ## V158 — 2026-11-10 (Codex)
 - Japon Kale Stüdyosu: 2–6 taraf, kaleci + saha oyuncusu, eleme / puan biçimleri, bağımsız oyuncu ve forma seçimi.
 - Dairesel arena, açık şut yolu seçimi, ortak top fiziği ve oyuncu animasyonları; genel/aksiyon kamera, tüm golleri içeren dikey MP4 özeti, dereceler.

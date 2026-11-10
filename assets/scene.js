@@ -154,6 +154,7 @@ function create(options={}){
  const turf=[0x2f7d44,0x38894c].map(color=>new T.MeshStandardMaterial({color,map:grass,normalMap:grassNormal,normalScale:new T.Vector2(.11,.12),roughness:.98}));
  scene.userData.turf=pitchDetail.info;
  const STRIPES=20;/* V149: 5.25 m mowing stripes (UEFA-typical 5-6 m) instead of 7.5 m bands */const turfMeshes=[];for(let i=0;i<STRIPES;i++)turfMeshes.push(box(stadium,105/STRIPES,.035,68,turf[i%2],-52.5+(i+.5)*105/STRIPES,-.015,0));for(const m of turfMeshes){m.userData.noBatch=true;m.receiveShadow=quality.shadows;}const turfReady=pitchDetail.bind(turf,turfMeshes);for(const m of turf)if(m?.userData)m.userData.broadcastSurface=true;if(pitchDetail.tufts?.material)pitchDetail.tufts.material.userData.broadcastSurface=true;turfReady.then(()=>weather?.refresh()).catch(()=>{});
+ const japonPitchStart=stadium.children.length;
  rect(stadium,-52.5,-34,105,68);pitchStroke(stadium,[[0,.04,-34],[0,.04,34]]);
  // Pitch wear: scuffed, thinner turf where play concentrates (goalmouths, penalty spots, centre spot).
  if(typeof document!=='undefined'){const cv=document.createElement('canvas');cv.width=cv.height=256;const g=cv.getContext('2d');let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;for(let i=0;i<420;i++){const r=4+rnd()*22,d=Math.pow(rnd(),.7)*92,a=rnd()*Math.PI*2,x=128+Math.cos(a)*d,y=128+Math.sin(a)*d*.9,k=1-d/110,gr=g.createRadialGradient(x,y,0,x,y,r),c=rnd()<.5?'96,92,58':'112,118,66';gr.addColorStop(0,`rgba(${c},${(.15*k).toFixed(3)})`);gr.addColorStop(1,`rgba(${c},0)`);g.fillStyle=gr;g.fillRect(x-r,y-r,2*r,2*r);}
@@ -183,6 +184,7 @@ function create(options={}){
   const arc=sign>0?[2.216,4.067]:[-.926,.926];circle(sign*41.5,0,9.15,...arc);
   for(const z of[-34,34]){cylinder(stadium,.04,.04,1.5,0xf4f1dd,sign*52.5,.75,z);box(stadium,.55,.32,.02,0xe9cd5a,sign*52.5+.25,1.35,z);}
  }
+ if(options.japonSides){for(const m of turfMeshes)m.visible=false;for(const o of stadium.children.slice(japonPitchStart)){o.visible=false;o.traverse(n=>{n.userData.noBatch=true;});}}
  // Modest stadium shell: no heavy crowd textures or real-time shadow maps on phones.
  for(const side of[-1,1]){
   box(stadium,125,1.1,.45,0xdce2db,0,.55,side*39);
@@ -309,7 +311,7 @@ if(!options.penaltyCrowd){
  }
  const smokeBatch=new T.InstancedMesh(geo('PlaneGeometry',1,1),new T.MeshBasicMaterial({color:0xc2b9b0,map:smokeTexture,transparent:true,opacity:.25,depthWrite:false,side:T.DoubleSide}),flares.length*6);smokeBatch.userData.noBatch=true;smokeBatch.frustumCulled=false;scene.add(smokeBatch);
  const effectDummy=new T.Object3D(),effectHidden=new T.Matrix4().makeScale(0,0,0),confetti=[0,1].map(team=>{const batch=new T.InstancedMesh(geo('PlaneGeometry',.22,.36),new T.MeshBasicMaterial({color:0xffffff,side:T.DoubleSide}),4096);batch.userData.noBatch=true;batch.frustumCulled=false;batch.visible=false;const palette=[teams[team].primary,teams[team].secondary,0xf6f2df,0xd1dbe0];for(let i=0;i<4096;i++)batch.setColorAt(i,new T.Color(palette[i%4]));scene.add(batch);return{team,batch,active:false,count:0};});
- let faceRuntime=null;const actors=[];for(let team=0;team<2;team++)for(let i=0;i<11;i++){const slot=team*11+i,jSide=options.japonSides?.[Math.floor(slot/2)],a=jSide?player(0,slot%2,false,[jSide.team],slot%2?jSide.player:jSide.keeper,options.canvasFactory):player(team,i,false,teams,options.lineups?.[team]?.players[i],options.canvasFactory);a.print.penaltyStudio=!!(options.penaltyStudio||options.freeKickStudio);actors.push(a);scene.add(a.root);if(!options.japonSides)badge(a.waist,team,.075,.10,-.10,.42,.181);a.kitLegacy.push(a.waist.children.at(-1));kitRuntime.register(a);}
+ let faceRuntime=null;const actors=[];for(let team=0;team<2;team++)for(let i=0;i<11;i++){const slot=team*11+i,jSize=options.japonSize||2,jSide=options.japonSides?.[Math.floor(slot/jSize)],jLocal=slot%jSize,jIdentity=jLocal===0?jSide?.keeper:jSize===3&&jLocal===1?jSide?.defender:jSide?.player,a=jSide?player(0,jLocal,false,[jSide.team],jIdentity,options.canvasFactory):player(team,i,false,teams,options.lineups?.[team]?.players[i],options.canvasFactory);a.print.penaltyStudio=!!(options.penaltyStudio||options.freeKickStudio);actors.push(a);scene.add(a.root);if(!options.japonSides)badge(a.waist,team,.075,.10,-.10,.42,.181);a.kitLegacy.push(a.waist.children.at(-1));kitRuntime.register(a);}
  const officials=[];for(let i=0;i<4;i++){const ref=options.fixture?.referee,identity={id:i===0&&ref?.id?'referee:'+ref.id:'generic-referee:'+i,name:i===0?(typeof ref==='string'?ref:ref?.name)||'Referee':['','Assistant referee 1','Assistant referee 2','Fourth official'][i],staffRole:i===0?'referee':i===3?'fourth-official':'assistant'};const a=player(0,i+1,true,teams,identity);{const head=a.head;const ear=sphere(head,.023,0x152129,.143,.008,0);ear.name='referee-earpiece';const boom=line(head,[[.144,.005,0],[.13,-.045,.12],[.052,-.053,.16]],0x152129);boom.name='referee-mic-boom';sphere(head,.012,0x111820,.052,-.053,.16).name='referee-microphone';}officials.push(a);scene.add(a.root);if(i===1||i===2){const flag=box(a.arms[1].elbow,.28,.24,.012,0xf4c240,.12,-.30,0);flag.rotation.z=.3;}}
  // Technical areas stay outside the touchline. Shared geometry is instanced with the stadium.
  const sidelines=[],stewards=[],benchRoster=teams.map(t=>({...t,kit:{...t.kit,shirt:t.kit.shirt,shorts:t.kit.shorts}}));
@@ -365,6 +367,7 @@ ballGroup.traverse(o=>{if(o.isMesh&&o.material&&!o.material.isMeshPhysicalMateri
  // Static stadium parts and distant spectators are uploaded once; articulated near rows stay live.
  scene.updateMatrixWorld(true);
  for(const f of fans)if(f.body)f.root.traverse(o=>{if(o.isMesh)o.userData.crowdOwner=f.slot.id;});
+ if(options.japonSides){const p=new T.Vector3();scene.traverse(o=>{if(!o.isMesh)return;p.setFromMatrixPosition(o.matrixWorld);if(p.y>=0&&p.y<3.4&&Math.abs(p.x)<58&&Math.abs(p.z)<38&&(Math.abs(p.x)>26||Math.abs(p.z)>25)){o.userData.noBatch=true;o.visible=false;}});}
  const groups=new Map();scene.traverse(o=>{if(o.isMesh&&!o.userData.noBatch){const key=o.geometry.uuid+o.material.uuid;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(o);}});
  const isStatic=o=>{for(let n=o;n&&n!==scene;n=n.parent){if(n.userData.animate)return false;if(n.userData.baked)return true;}return false;};
  const batches=[];let frozenParts=0;for(const originals of groups.values())if(originals.length>1){
