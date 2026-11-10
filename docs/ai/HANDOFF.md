@@ -17,6 +17,22 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-10] Codex · V159 → V160
+- Dal / commit / PR: `agent/codex/japon-normal-nets`; başlangıç `main` @ 2cc1268. Sürüm commit’i `V160: Japon Kale normal futbol filesi`; main’e fast-forward push. PR yok.
+- Kullanıcı isteği: Japon Kale’nin görünümü genel olarak uygun; kaleleri/fileleri normal futbol filesi gibi, diğer oyun modlarıyla uyumlu yap.
+- Yapılanlar: `japon-arena.js` büyük kalenin ölçekli klonunu kaldırır; kaleyi kendi metre ölçülerinde kurar. Aynı normal maç/penaltı/FK beyaz düğümlü file dokusu, yan/üst/eğimli arka ağ, üç yuvarlak ön direk ve yere oturan U biçimli arka çerçeve. Temel göz aralığı 12 cm; ölçü değişince sıkışmış kopya oluşmaz. Yeni ağ geometrileri ve materyalleri bağımsız; ortak doku korunur. Kamera, oyuncu/forma/rol, saha ve fizik/puan akışları değişmedi.
+- Değişen önemli dosyalar: `assets/japon-arena.js`, `tests/japon-net.cjs`, `tests/run-all.cjs`, VERSION/build/HTML sürüm referansları, release manifesti, ortak görev/durum/devir belgeleri.
+- Tamamlanmayanlar / kısmi: gerçek cihaz veya yeni tam uzunlukta MP4 testi yapılmadı; değişiklik ortak preview/export çizim yolundadır. Hostinger’a yükleme yapılmadı.
+- Karşılaşılan sorunlar: 7,32 m kaleyi ölçeklemek ağ dokusunu da sıkıştırıyordu ve kaynak geometriyi paylaştırıyordu. Yerel geometri + aynı ortak doku bu iki durumu giderir. Diğer modların kaynakları dispose edilmez.
+- Testler (komut → sonuç):
+  - `PATH=/workspace/bin:$PATH node tests/run-all.cjs` → **24/24 PASS**, kapsamlı motor testi dahil (500 penaltı serisi + 18 normal maç, ~87 sn). Test başında VERSION V159; aynı düzeltme V160 numarasıyla kapatıldı.
+  - Son yan yüz UV uyumundan sonra `node tests/japon-net.cjs` → PASS: 4,4/5/6 m ölçüler, açık kale ağzı, 12 cm temel göz aralığı, 6 ayrı file, ortak normal oyun dokusu ve yerel kaynak temizliği.
+  - Chromium + SwiftShader: yayın ve saha kenarı açısında özel üçlüler hazırlandı, sayfa hatası yok; iki kalede scale=[1,1,1], gerçek ağ mesh’i ve normal oyunla aynı texture kimliği doğrulandı. Görseller `/workspace/artifacts/v160/normal-file-yayin.png`, `normal-file-yan.png`.
+  - `node --check assets/japon-arena.js`, `git diff --check` → PASS. `php build.php` → build 160, filesMatch true, mismatches [].
+- Sonraki ajan için dikkat: güncel V160, hedef V161. File materyali aynı normal oyun dokusunu paylaşır; dokuyu dispose etme. Mini kaleyi tekrar büyük net klonunu sıkıştırarak oluşturma. Görsel değişiklik yalnız Japon Kale yolundadır; önceki üçlü/rol/oyuncu etiketi ve Reels/Shorts güvenli kamera kuralları devam eder.
+
+---
+
 ## [2026-11-10] Codex · V158 → V159
 - Dal / commit / PR: `agent/codex/japon-broadcast-trios`; başlangıç `main` @ 25ff94f. Sürüm commit’i `V159: Japon Kale üçlüleri ve güvenli yayın kadrajı`; main’e fast-forward push. PR yok.
 - Kullanıcı isteği: Japon Kale görüntüsü ve kamera ilgi çekici değil; oyuncu isimleri oyuncuların üstünde, takım adı kalede. Takımlarda kaleci + defans + hücum; Messi/Piqué/ter Stegen ve Ronaldo/Ramos/Casillas gibi özel üçlüler seçilebilsin. 2–6 kale için ayrı ve büyüyen saha, büyüyen kaleyle büyüyen alan. İndirilen video Instagram Reels ve YouTube Shorts arayüzlerinden korunmuş ana aksiyon kadrajını kullansın. Yeni sürüm main’e push.

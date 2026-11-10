@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V159** · 2026-11-10 · Codex (Japon Kale üçlüleri ve güvenli yayın kadrajı)
+> Son güncelleme: **V160** · 2026-11-10 · Codex (Japon Kale normal kale/filesi)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V159** (`VERSION`; sürüm commit’i: `V159: Japon Kale üçlüleri ve güvenli yayın kadrajı`) |
-| Sonraki geliştirme hedefi | **V160** |
+| Kararlı sürüm | **V160** (`VERSION`; sürüm commit’i: `V160: Japon Kale normal futbol filesi`) |
+| Sonraki geliştirme hedefi | **V161** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v159.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 159 |
+| Sürüm doğrulama | `build.php` → `assets/release-v160.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 160 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -539,6 +539,11 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - `japon-camera.js`: aksiyon yayını, saha kenarı, taktik genel. Top, hücumcu, en yakın üç saha oyuncusu, hedef kaleci, kale direk/net köşelerinin perspektif izdüşümü ortak güvenli aksiyon alanına sığdırılır: 1080×1920 x64–884 / y295–1220. Genel plan ilk 1,15 sn, manuel taktik ve finalde saha bağlamını gösterir. Kamera geçmiş kareye bağlı değildir, geri sarma/MP4 aynı.
 - `japon-ui.js`: görünür oyuncunun üstünde gerçek adı/kısa adı ve forma rengi; takım adı yalnız hedef kalede ve skor panelinde. Etiket çakışması için dikey kaydırma/bağlantı çizgisi. Top işaret halkası. Skor güvenli bandı y1296–1518 korunur. Tüm etiket/kamera yolları ön izleme ve MP4’te ortaktır.
 - Kontrol kapsamı: yeni kamera testi 2–6 taraf, eleme/puan, 10 üçlü senaryo, 2.103 kamera kadrajı; 60 ek üçlü eleme simülasyonunun tamamı süre aşmadan bitti. Chromium/SwiftShader görüntüleri ve kısa MP4 kanıtı HANDOFF’ta; gerçek cihaz testi hâlâ yapılmadı.
+
+## 4ba. V160 (normal futbol kalesi ve filesi)
+- Japon Kale’de büyük kalenin ölçeklenmiş klonu yerine metre cinsinden kendi ölçüsünde kale kurulur; 4,4 / 5 / 6 m seçeneklerinde ağ gözleri sıkışmaz. Ön çerçeve üç yuvarlak beyaz direk, arka zemin çerçevesi U biçimindedir.
+- File dört yüzeylidir: yanlar, hafif sarkık üst ve eğimli arka yüz; kale ağzı açıktır. Normal maç/penaltı/FK’nin aynı beyaz düğümlü file dokusu kullanılır (12 cm temel göz aralığı). Her kalenin geometri/material kopyası ayrıdır; ortak doku korunur.
+- Yalnız Japon Kale’nin görsel `japon-arena.js` yolu değişti; kamera, saha, roller, fizik/puan ve diğer modların fileleri değişmedi. Ön izleme ve MP4 ortak çizim yolunu kullanır.
 
 ## 5. Bilinen sınırlar / sorunlar
 - Tarayıcı testleri Chromium + SwiftShader yazılımsal WebGL’dir; gerçek iPhone/Android ve

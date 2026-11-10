@@ -6,6 +6,10 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V160 — 2026-11-10 (Codex)
+- Japon Kale’nin fileleri normal futbol filesi görünümüne uyarlandı: aynı oyun dokusu, doğru ağ gözü aralığı, yan/üst/eğimli arka file ve yere oturan arka çerçeve.
+- Kale ölçüleri doğrudan oluşturulur; büyük kaleyi küçültmekten gelen sıkışmış file görünümü kaldırıldı. Kamera ve oynanış korundu.
+
 ## V159 — 2026-11-10 (Codex)
 - Japon Kale’de kaleci–defans–hücum üçlüleri; özel üçlü ve mevcut ikili seçimi. Messi/Piqué/ter Stegen – Ronaldo/Ramos/Casillas hazır örneği ve 29 arşiv oyuncusu.
 - Oyuncu isimleri başlarının üzerinde; takım adı kalede. Kale sayısı ve boyutuna göre büyüyen, aynı fizik sınırlarını kullanan beş saha düzeni.
