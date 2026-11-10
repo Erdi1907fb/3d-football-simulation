@@ -27,7 +27,7 @@ olursa **bu dosya geçerlidir**.
 
 ## 2. Mimari kurallar
 
-- **Dört mod, tek altyapı.** Normal maç, Penaltı, Serbest Vuruş ve Japon Kale aynı sahneyi
+- **Ortak mod altyapısı.** Normal maç, Penaltı, Serbest Vuruş ve Japon Kale/Küçük Saha aynı sahneyi
   (`assets/scene.js`), aynı oyuncu/forma/yüz sistemini, aynı top fiziğini
   (`football-physics.js`, `ball-aero.js`, `open-football-adapter.js`), aynı kaleci dalış
   animasyonunu ve aynı video hattını (`video-core.js`) kullanır. Stüdyoya özel davranış,
@@ -64,9 +64,10 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 23 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 24 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/small-sided.cjs` | 4v4/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
 | `node tests/japon-net.cjs` | Normal file dokusu, 4,4/5/6 m ölçü, açık kale ağzı, ayrı geometri ve ortak kaynakların korunması | <1 sn |
-| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, üçlü roller/efsaneler, 3 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
+| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 4v4/üçlü kadrolar/efsaneler, 3 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
 | `node tests/japon-kale.cjs` | 2–6 taraf, 50 senaryo, eleme/puan, tur sıfırlama, fiziksel gol çizgisi, özet zamanları, determinizm | ~2 sn |
 | `node tests/commentary.cjs` | TR/EN anlatım, gerçek olay/oyuncu, video zamanları, SRT | <1 sn |
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
@@ -135,14 +136,20 @@ dosyalardır.
 - **Dosya silme kuralı:** bir dosyayı silmeden önce `index.html`, `penalty.html`, `freekick.html`, tüm `*.php`, `server/*.php` ve aktif JS’ten (dinamik yol birleştirmeleri dahil: `'assets/pitch/turf-'+kind`) referans taraması yap. PHP veri akışı (haftalık bülten, 5 gün ileri maçlar, cron) dosyalarına dokunma. Emin değilsen silme, `TASKS.md`’ye not düş.
 
 ## 8. Japon Kale ve anlatım (V158)
-- `japon-kale.html`: 2–6 taraf; takım/özel üçlü: kaleci + defans + hücumcu; ikili mod: kaleci + saha oyuncusu. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; video kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
+- `japon-kale.html`: 3–6 taraf Japon Kale (kaleci + 2 serbest saha oyuncusu); `?mode=small`: 2 taraf Küçük Saha Maçı (kaleci + 3 serbest saha oyuncusu, süreli 4v4). Eski ikili seçimi son kullanıcı talebiyle kaldırıldı. Yalnız kaleci slotu GK ile sınırlıdır. `japon-engine.js` ortak `ball-aero.js` ile 120 Hz fizik, 20 Hz kayıt; video kesitleri tüm golleri/elemeleri korur. `sample` video zamanı alır, `liveTime` oyun zamanıdır.
 - `scene.js` `japonSides` yalnız bu modun aktör formalarını/kimliklerini seçer; diğer modların sahne yolu korunur.
 - `commentary.js` gerçek olaylardan metin üretir, TTS değildir. Normal maçta `match.toVideoTime`, stüdyolarda `resolvedAt`, Japon Kale’de özet video olay zamanlarını kullan. Sonuç/isim uydurma.
 - Japon Kale elemesinde 900 sn oyun güvenlik sınırı aşılırsa sonuç tamamlanmamış gösterilir; zorla şampiyon üretme.
 
 ## 9. Japon Kale yayın kuralları (V159)
 - `japon-layout.js`: görünür zemin/sınır ile fizik aynı geometriden gelir. 2 kale kısa dikdörtgen; 3–6 kale köşeleri kesilmiş çokgen; toplam alan kale sayısı ve kale genişliğiyle artar.
-- `japon-camera.js`: tüm kritik oyuncuların ayak/baş noktaları, top ve hedef kalenin direk/net köşeleri 1080×1920’de x=64–884 / y=295–1220 içine sığdırılır. Sabit geniş açıya dönme; `tests/japon-camera.cjs` kontrolünü koru. Skor bandı y=1296–1518.
+- `japon-camera.js`: yakın kritik oyuncuların ayak/baş noktaları ve top; top kaleye yaklaşırken hedef kalenin direk/net köşeleri 1080×1920’de x=64–884 / y=295–1220 içine sığdırılır. Sabit geniş açıya dönme; `tests/japon-camera.cjs` kontrolünü koru. Skor bandı y=1296–1518.
 - İsimler oyuncuların üstünde, kulüp adı yalnız kalede (takım modunda); etiket çakışmalarını yönet. Kamera ve isimler MP4’te de aynı draw yolundan geçer.
-- `japonSize` 2/3 ortak sahne aktörlerinin rol/forma eşlemesini belirler. 18 aktör (6×3) en çoktur. Eski `team*2+1` varsayımını kullanma; `frame.owner` gerçek aktör slotudur, olaylarda `actorIndex` bulunur.
+- `japonSize` 4/3 ortak sahne aktörlerinin rol/forma eşlemesini belirler. 18 aktör (6×3) en çoktur; iki takımda 8 aktör (2×4). Eski `team*2+1` varsayımını kullanma; `frame.owner` gerçek aktör slotudur, olaylarda `actorIndex` bulunur.
 - `japon-legends.json` yalnız mevcut konsept arşivinin 29 kişilik hafif seçkisidir (`node tools/build-japon-legends.cjs`). Harici veri/varlık eklenmedi.
+
+## 10. Küçük Saha / Japon Kale görsel tercihi (V161)
+- Kullanıcının görsel referansı: eğik, yakın, topu/atağı takip eden yayın açısı. Takım sayısı arttığı için otomatik tepe kamerasına dönme. `wide` yalnız açıkça seçilen taktik alternatiftir; açılış ve finalde otomatik genel açı yok.
+- Kamera, video zamanına göre önceden hesaplanan yumuşak hedef ve öngörülü zoom zarfıdır (`japon-camera.js`). Ön izleme/geri sarma/MP4 aynı kareyi verir; top + ilgili oyuncular + hedef kale Reels/Shorts aksiyon alanında kalır. Yeni top/pozisyon sahipliğinde ani ekran yönü dönüşü yapma.
+- `japon-crowd.js`: normal maçın **aynı** `scene.createSpectator` ayrıntılı modeli, geometriye uygun birleşik beş sıralı küçük tribünler. Eşit kişi sayısı ve seçili forma renkleri; gol tepkileri gerçek video olaylarından. Kendi kaleye gol ve beraberlikte yanlış sevinç üretme. Paylaşılan geometri/materyalleri local dispose içinde serbest bırakma.
+- Açılışta ve gol sonrası top ortaya düşer, fiziksel yakınlıkla kapışılır; dizideki oyuncu sırası topu kazandırmaz. Defans/orta saha/hücum rolü yalnız başlangıç yerleşimi/davranışıdır, saha oyuncusu seçimi mevkiyle sınırlanmaz.

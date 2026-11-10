@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V160** · 2026-11-10 · Codex (Japon Kale normal kale/filesi)
+> Son güncelleme: **V161** · 2026-11-10 · Codex (Küçük Saha / yakın yayın ve küçük tribünler)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V160** (`VERSION`; sürüm commit’i: `V160: Japon Kale normal futbol filesi`) |
-| Sonraki geliştirme hedefi | **V161** |
+| Kararlı sürüm | **V161** (`VERSION`; sürüm commit’i: `V161: Küçük Saha 4v4 ve dinamik arena yayını`) |
+| Sonraki geliştirme hedefi | **V162** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v160.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 160 |
+| Sürüm doğrulama | `build.php` → `assets/release-v161.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 161 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -573,3 +573,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Forma baskısı: `assets/jersey-print.js` (`style()` kontrast seçimi, `paint()`).
 - Marka: `assets/brand-config.js`, `assets/next90sim.png`.
 - Arşiv: `docs/archive/` (V72–V107 sürüm notları, kaynak araştırmaları, lisans notları).
+
+## 4bb. V161 (Küçük Saha 4v4, Japon Kale ve yakın dinamik yayın)
+- İki takım/iki kale artık **Küçük Saha Maçı**, süreli 4v4: bir GK ve üç serbest saha oyuncusu. `?mode=small` doğrudan giriş, ana merkezde ayrı bağlantı. Aynı kısa saha ve V160 fileleri korunur. 3–6 kale Japon Kale olarak kalır, her tarafta GK + iki saha oyuncusu. Eski ikili seçimi yeni kullanıcı isteğiyle kalktı (D-022).
+- GK listesi gerçek kalecilerle sınırlı; saha oyuncuları herhangi bir mevkiden, kulüp/millî/efsane/ikon kaynağından ve bağımsız forma seçilebilir. Orta saha başlangıç slotu yalnız iki takımda görünür. Finalde küçük saha gol skoru, beraberlik/ortak sıra doğru gösterilir; TR/EN anlatım türü ayrı.
+- Ortaya düşen top için tüm hareketler tamamlandıktan sonra gerçek yakınlık/oyuncu becerisi/tohumlu kontrol yarışı çözülür. İvmeli koşu/yavaşlama, topu sürerken kararlı hedef seçimi, açık pas kanalında öndeki takım arkadaşının hareketine pas (2–6 takım), süpürülmüş savunma/blok ve kaleci teması. Fizik ortak ball-aero; sonuçlar yazılmaz.
+- `japon-crowd.js`, normal maçın `scene.createSpectator` ayrıntılı modelini beş gerçek pozda, üç görünüm varyasyonuyla örnekler. Küçük birleşik beş sıralı tribün/kırmızı koltuk/arka korkuluk, sahaya göre çevre; taraftarlar tam eşit, kendi forma renklerinde. Gol/sevinç/yenen gol tepkisi gerçek olay zamanından hesaplanır. Büyük eski stadyum ve saha dışı personel bu modda maskelenir; normal maç/penaltı/FK yolu korunur.
+- `japon-camera.js`: otomatik kuş bakışı açılış/final kaldırıldı. Sabit eğik yayın yönüyle top/atağa hareket eden hedef ve öngörülü, yumuşak zoom; zaman tabanlı yol önbelleği, geri sarma/export eşdeğerliği. İlgili oyuncular/top/hedef kale 1080×1920 ortak güvenli alanda kalır. Genel taktik açı isteğe bağlı.
+- Orta çizgi iki kalede iki kenara uzanır; çok kalede merkezden köşelere sektör çizgileri. Oyuncu isimleri, kalelerde takım adları korunur. V160 normal file değişmedi.
+- Yeni `tests/small-sided.cjs` ve tüm regresyon testleri; gerçek Chromium/SwiftShader 2–6 takım görselleri. Kanıtlar ve kalan cihaz/video sınırları HANDOFF V161.

@@ -6,6 +6,13 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V161 — 2026-11-10 (Codex)
+- İki kale: ayrı Küçük Saha Maçı 4v4 (GK + 3); 3–6 kale: Japon Kale (GK + 2). Serbest saha oyuncusu/kadro/forma seçimi, kaleci slotunda gerçek GK, süreli maç/beraberlik ve TR/EN anlatım.
+- Referans görseldeki eğik yayın açısı; top/atağı izleyen, yumuşak hareket ve öngörülü zoom. Açılış/finalde otomatik tepe açısı kaldırıldı; Reels/Shorts güvenli alanı korunur.
+- Normal maçın aynı ayrıntılı taraftar modeliyle beş sıralı birleşik küçük tribün; her tarafta tam eşit taraftar ve gerçek gole göre sevinç/üzüntü. Eski uzak stadyum/personel görünümü kaldırıldı.
+- Merkez/kenar çizgileri, ivmeli koşu, kararlı dribbling hedefi, açık kanalda hareketli takım arkadaşına pas, eş zamanlı top kapma yarışı. V160 fileleri korundu.
+- Yeni küçük saha/tribün/sürekli kamera testi, mevcut regresyonlar ve 2–6 takım gerçek tarayıcı görüntüleri. Ortak Codex/Claude devri güncellendi.
+
 ## V160 — 2026-11-10 (Codex)
 - Japon Kale’nin fileleri normal futbol filesi görünümüne uyarlandı: aynı oyun dokusu, doğru ağ gözü aralığı, yan/üst/eğimli arka file ve yere oturan arka çerçeve.
 - Kale ölçüleri doğrudan oluşturulur; büyük kaleyi küçültmekten gelen sıkışmış file görünümü kaldırıldı. Kamera ve oynanış korundu.

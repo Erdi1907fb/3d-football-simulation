@@ -1,5 +1,5 @@
 /* Dedicated arena dressing; existing player, net, turf and lighting resources are reused. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'));else r.Next90JaponArena=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'),require('./japon-crowd.js'));else r.Next90JaponArena=f(r.THREE,r.Next90JaponCrowd);})(typeof globalThis!=='undefined'?globalThis:this,function(T,Crowd){'use strict';
 // Keep the shared game's 12 cm cord spacing in metres. Scaling a cloned 7.32 m
 // goal also compressed its texture grid and kept shared, mutable net geometry.
 function netGeometry(width,height,depth){
@@ -31,6 +31,9 @@ function create(world,contest,sides){
  stroke([...l.vertices,l.vertices[0]],0xe8eee1,.09);
  const center=Array.from({length:65},(_,i)=>({x:Math.cos(i*Math.PI/32)*1.9,z:Math.sin(i*Math.PI/32)*1.9}));stroke(center,0xe8eee1,.065);
  const dot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xf4f1df}),0,.02,0);dot.name='center-drop';
+ // The halfway line joins the centre circle to both touchlines on the short pitch.
+ if(l.count===2){stroke([{x:0,z:-l.length/2},{x:0,z:l.length/2}],0xe8eee1,.07);}else{for(let i=0;i<l.vertices.length;i+=2){const p=l.vertices[i],length=Math.hypot(p.x,p.z);stroke([{x:p.x/length*1.9,z:p.z/length*1.9},p],0xc9d8c7,.045);}}
+ const crowd=world.farBatches?Crowd.create(world,contest,sides):null;
  const boardMat=material(0x132f35),postMat=new T.MeshPhysicalMaterial({color:0xf8f8f4,roughness:.26,clearcoat:.85});owned.push(postMat);
  for(const edge of l.boundaries){const gap=l.goals.find(g=>Math.abs(g.nx-edge.nx)<1e-6&&Math.abs(g.nz-edge.nz)<1e-6),length=Math.hypot(edge.b.x-edge.a.x,edge.b.z-edge.a.z),tx=(edge.b.x-edge.a.x)/length,tz=(edge.b.z-edge.a.z)/length;
  const pieces=gap?[[0,(length-gap.width)/2-.14],[(length+gap.width)/2+.14,length]]:[[0,length]];
@@ -49,6 +52,6 @@ function create(world,contest,sides){
  const sideColor=sides[g.team].team.primary,paint=Array.from({length:33},(_,i)=>{const a=-Math.PI/2+i*Math.PI/32,r=g.width*.72;return{x:g.x-g.nx*Math.cos(a)*r-g.nz*Math.sin(a)*r,z:g.z-g.nz*Math.cos(a)*r+g.nx*Math.sin(a)*r};});stroke(paint,sideColor,.11);
  const barrier=mesh(new T.BoxGeometry(.14,.45,g.width),boardMat,g.x,.30,g.z);barrier.rotation.y=goal.rotation.y;barrier.visible=false;barriers.push(barrier);
  }
- return{root,goals,update(frame){for(let i=0;i<goals.length;i++){goals[i].visible=frame.active[i]||frame.finished;barriers[i].visible=!frame.active[i]&&!frame.finished;}},dispose(){root.removeFromParent();for(const resource of new Set(owned))resource.dispose();}};
+ return{root,goals,crowd,update(frame){crowd?.update(frame);for(let i=0;i<goals.length;i++){goals[i].visible=frame.active[i]||frame.finished;barriers[i].visible=!frame.active[i]&&!frame.finished;}},dispose(){crowd?.dispose();root.removeFromParent();for(const resource of new Set(owned))resource.dispose();}};
 }
 return{create,netGeometry};});

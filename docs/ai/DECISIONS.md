@@ -121,3 +121,9 @@ yerinde kalır. Öncelik: görsel kalite (profesyonel yayın hissi), animasyon, 
 ## D-021 · 2026-11-10 · codex · kabul — Üçlü roller ve geometriye bağlı güvenli kamera
 **Karar:** Takımlarda/özel üçlülerde kaleci–defans–hücum, mevcut ikililer korunur. Görsel saha ve fizik aynı `japon-layout.js` verisini kullanır; toplam alan kale sayısıyla artar, kale genişliğiyle ölçeklenir. Kullanıcı görsel geri bildirimi: ayrı daire ve uzak kamera yetersizdi.
 **Yayın:** `japon-camera.js` kritik noktaları platform arayüzleri için ayrılan ortak aksiyon alanına perspektif olarak sığdırır. Geçmiş kamera durumuna bağlı yumuşatma kullanılmaz; export/seek aynı kareyi üretir. Kulüp adı kalede, isim oyuncuda. Efsaneler mevcut veri arşivinden türetildi; dış kaynak/medya indirilmedi.
+
+
+## D-022 · 2026-11-10 · codex · kabul — Küçük Saha ayrımı ve referansa uygun yakın yayın
+**Karar:** Kullanıcının son talebi D-020/D-021 kadrolarını değiştirir: iki kale süreli Küçük Saha 4v4 (GK+3), 3–6 kale Japon Kale (GK+2). Saha oyuncusu mevkiyle sınırlanmaz; yalnız GK gerçek kaleci. Eski ikili seçimi bu açık talep nedeniyle kaldırıldı; aynı sayfa/ortak altyapı korunur. İlk ev sahibi santrası talebi kullanıcı tarafından geri alındı: top merkezden düşer ve yarışılır.
+**Görsel tercih:** Gönderilen eğik yakın çekim referansı tüm takım sayılarında geçerli. Çok takım nedeniyle otomatik üstten genel açıyı seçme. Kamera gerçek atağı izler, aynı tarafta kalır; önceden hesaplanan zaman tabanlı yumuşatma/zoom ve güvenli izdüşüm kullanır. Normal maçın ayrıntılı taraftar modeli, yalnız daha az kişi ve küçük birleşik tribün; ucuz farklı bir figür veya uzak büyük stadyum yok. Eşit taraftar/forma/gol tepkileri.
+**Sonuç:** Ek fizik motoru veya harici varlık yok. `japon-crowd.js` ortak spectator yapıcısını kullanır ve kendi poz örneklerini/materiallerini yönetir; normal mod davranışı değişmez. Kullanıcının en son kamera/tribün düzeltmesi bu sürüme dahildir.
