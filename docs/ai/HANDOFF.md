@@ -17,6 +17,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-11] Claude Code · V155 → V156 (kararlı)
+- Direk titremesi, sekme tozu, hava durumuna göre sıçrama (PROJECT_STATE 4aw). quick 19/19; titreşim sayısal ölçüldü,
+  yağmurda FK görüntüsü.
+
+---
+
 ## [2026-11-11] Claude Code · V154 → V155 (kararlı)
 - Kaleci kurtarış sevinci (PROJECT_STATE 4av). quick 19/19; penaltı kurtarış görüntüsü.
 

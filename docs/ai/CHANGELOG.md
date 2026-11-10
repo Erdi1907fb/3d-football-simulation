@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V156 — 2026-11-11 (Claude Code) · kararlı
+- **Direkten dönen top:** kale çerçevesi çarpma anında kısa bir an titriyor.
+- **Sekmede toz:** top yere sert sekince küçük çim tozu kalkıyor.
+- **Yağmur/kar:** vuruş ve sekmede toprak yerine su damlacıkları ya da kar sıçrıyor.
+
 ## V155 — 2026-11-11 (Claude Code) · kararlı
 - **Kaleci kurtarınca seviniyor:** penaltıda ve serbest vuruşta kurtarış yapan kaleci kalkıp sevinç gösteriyor.
 
