@@ -8,7 +8,11 @@ function move(p,target,speed,dt){
  const dx=p.steerX-p.x,dz=p.steerZ-p.z,d=Math.hypot(dx,dz),angle=Math.atan2(dx,dz),turn=Math.abs(Math.atan2(Math.sin(angle-p.heading),Math.cos(angle-p.heading))),desired=d<.18?0:Math.min(speed,Math.sqrt(2*6*Math.max(0,d-.12)))*(p.jockey?1:clamp(1-turn*.26,.3,1)),vx=d?dx/d*desired:0,vz=d?dz/d*desired:0,change=Math.hypot(vx-(p.vx||0),vz-(p.vz||0)),accel=p.keeper&&p.guardThreat?18:desired<(p.speed||0)?8:5.5,mix=change?Math.min(1,accel*dt/change):1;
  p.vx=(p.vx||0)+(vx-(p.vx||0))*mix;p.vz=(p.vz||0)+(vz-(p.vz||0))*mix;p.speed=Math.hypot(p.vx,p.vz);p.x+=p.vx*dt;p.z+=p.vz*dt;p.travel=(p.travel||0)+p.speed*dt;if(p.speed>.25&&!p.jockey&&!p.faceLocked)face(p,Math.atan2(p.vx,p.vz),dt,p.keeper?4:3.8);
 }
-function carryTarget(p,g,skill){const lateral=-p.x*g.nz+p.z*g.nx,depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,channel=clamp(lateral*.45+(p.attackLane||0)*.55,-6,6),gate=depth>9?(p.shootingDepth||6):Math.max(3.3,depth-1.2),offset=skill?skill.lateral*1.4:0;return{x:g.x-g.nx*gate-g.nz*(channel+offset),z:g.z-g.nz*gate+g.nx*(channel+offset)};}
+function carryTarget(p,g,skill,players){const lateral=-p.x*g.nz+p.z*g.nx,depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,channel=clamp(lateral*.45+(p.attackLane||0)*.55,-6,6),gate=depth>9?(p.shootingDepth||6):Math.max(3.3,depth-1.2),offset=skill?skill.lateral*1.4:0,target={x:g.x-g.nx*gate-g.nz*(channel+offset),z:g.z-g.nz*gate+g.nx*(channel+offset)};
+ // V169: a dribbler does not run the ball into a set defender; he takes the open shoulder.
+ if(players&&!skill){const dx=target.x-p.x,dz=target.z-p.z,d=Math.hypot(dx,dz)||1,ux=dx/d,uz=dz/d;let block=null,best=9;for(const q of players){if(!q.active||q.team===p.team||q.keeper)continue;const rx=q.x-p.x,rz=q.z-p.z,along=rx*ux+rz*uz,side=rx*-uz+rz*ux;if(along>.2&&along<2.6&&Math.abs(side)<1.15&&along<best){best=along;block={side,along};}}
+  if(block){const keep=Number.isFinite(p.dodgeSide)&&p.dodgeUntil>(p.clock||0)?p.dodgeSide:(block.side>0?-1:1);p.dodgeSide=keep;p.dodgeUntil=(p.clock||0)+.7;const shift=keep*(1.9-Math.abs(block.side)*.6),reach=Math.min(d,3.2);return{x:p.x+ux*reach-uz*shift,z:p.z+uz*reach+ux*shift};}}
+ return target;}
 function support(p,carrier,ownGoal,targetGoal,slot,players=[],time=0){
  const fx=targetGoal.nx,fz=targetGoal.nz,tx=-fz,tz=fx,depth=(carrier.x-ownGoal.x)*fx+(carrier.z-ownGoal.z)*fz,ballSide=carrier.x*tx+carrier.z*tz,role=p.role,forwardRun=role!=='defender'&&time<(p.followRunUntil||0)?2.4:0;
  const advance=role.startsWith('defender')?-4.6:role==='midfielder'?-1.1:3.3,line=clamp(depth+advance+forwardRun,role==='attacker'?8:role==='midfielder'?6:4.8,role.startsWith('defender')?ownGoal.radius:ownGoal.radius*2-4.6),width=role==='midfielder'?-4.1:role==='attacker'?((carrier.x*tx+carrier.z*tz)>1?-3.4:3.4):role==='defender2'?-3.2:3.2;
@@ -19,7 +23,7 @@ function support(p,carrier,ownGoal,targetGoal,slot,players=[],time=0){
 }
 function defend(p,carrier,g,primary,slot,opponents=[]){
  const depth=(g.x-carrier.x)*g.nx+(g.z-carrier.z)*g.nz,lat=-carrier.x*g.nz+carrier.z*g.nx,fx=-g.nx,fz=-g.nz;
- if(primary){const dx=g.x-carrier.x,dz=g.z-carrier.z,d=Math.hypot(dx,dz)||1,gap=p.challengeActive?.55:1.02;return{x:carrier.x+dx/d*gap+(carrier.vx||0)*.22,z:carrier.z+dz/d*gap+(carrier.vz||0)*.22};}
+ if(primary){const dx=g.x-carrier.x,dz=g.z-carrier.z,d=Math.hypot(dx,dz)||1,gap=p.challengeActive?.55:1.22;return{x:carrier.x+dx/d*gap+(carrier.vx||0)*.22,z:carrier.z+dz/d*gap+(carrier.vz||0)*.22};}
  const isBack=p.role.startsWith('defender'),back=clamp(depth-3.7,2.5,10.4),line=isBack?back:p.role==='midfielder'?back+3:back+6,side=p.role==='defender'?-2.5:p.role==='defender2'?2.5:p.role==='midfielder'?clamp(lat*.55,-3,3):clamp(lat*.4,-3,3),threats=opponents.filter(q=>q.active&&!q.keeper&&q!==carrier).sort((a,b)=>dist(a,g)-dist(b,g)),mark=threats[slot%Math.max(1,threats.length)];
  let cover=line,lateral=side+lat*.18;
  if(mark){const markedDepth=(g.x-mark.x)*g.nx+(g.z-mark.z)*g.nz,markedSide=-mark.x*g.nz+mark.z*g.nx;cover=clamp(line*.25+(markedDepth-1.0)*.75,1.3,isBack?Math.min(12,depth+1):17);lateral=side*.22+markedSide*.78;}
@@ -53,7 +57,9 @@ function choose(p,g,players,lane,rng,context={}){
  if(context.keeper){const off=(g.x-context.keeper.x)*g.nx+(g.z-context.keeper.z)*g.nz;if(off>2.2&&distance>5&&distance<13&&blocked<.9&&rng()<.5)return{kind:'shot'};}
  if(distance<6.4&&blocked<1.6||distance<15&&rng()<look*(oneTouch?1.4:.95)+.09&&blocked<1.25)return{kind:'shot'};
  if(pass&&threat<2.0&&pass.value>.02&&rng()<.62)return{kind:'pass',receiver:pass.p};
- if(pass&&(pass.value>.2&&pass.progress>.4||near>.85&&pass.value>-.15))return{kind:'pass',receiver:pass.p};return{kind:'carry'};
+ if(pass&&(pass.value>.2&&pass.progress>.4||near>.85&&pass.value>-.15))return{kind:'pass',receiver:pass.p};
+ // V169 circulation: after holding the ball, recycle it to a free team-mate rather than run into cover.
+ if(pass&&pass.risk<.3&&context.time-(p.receivedAt||-10)>1.3&&(blocked>.25||distance>9)&&rng()<.55)return{kind:'pass',receiver:pass.p};return{kind:'carry'};
 }
 function finish(p,g,keeper,rng,context={}){
  const depth=(g.x-keeper.x)*g.nx+(g.z-keeper.z)*g.nz,distance=dist(p,g),quality=context.ability??.5,keeperSide=-keeper.x*g.nz+keeper.z*g.nx,roll=rng(),fresh=context.time-(p.receivedAt||-10)<.85&&p.receivedFrom!=null;

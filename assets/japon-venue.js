@@ -135,7 +135,7 @@
           if (end - start < .6) continue;
           const g = new T.PlaneGeometry(end - start, .36), uv = g.attributes.uv, u0 = start / led.userData.metres, u1 = end / led.userData.metres;
           for (let i = 0; i < uv.count; i++) uv.setX(i, uv.getX(i) < .5 ? u0 : u1);
-          const m = new T.MeshBasicMaterial({ map: led, toneMapped: false, fog: false });
+          const m = new T.MeshBasicMaterial({ map: led, color: 0xb9b9b9, toneMapped: false, fog: false });
           const mid = (start + end) / 2, face = mesh(g, m, edge.a.x + tx * mid - edge.nx * .075, .31, edge.a.z + tz * mid - edge.nz * .075);
           face.rotation.y = Math.atan2(-edge.nx, -edge.nz); face.name = 'arena-led-board'; ledFaces.push(face);
         }
@@ -146,7 +146,7 @@
     // Each straight section can be hidden separately when the camera is behind it.
     const tiers = [], inner = ring(layout, 9.35), outerTop = ring(layout, 16.2), crowdMap = crowdTexture(owned);
     const tierMat = new T.MeshBasicMaterial({ color: crowdMap ? 0x8f979f : 0x1a2630, map: crowdMap, vertexColors: true, toneMapped: false, fog: false });
-    const fasciaMat = std(0x121c26, { roughness: .7 }), ribbonMat = new T.MeshBasicMaterial({ color: 0xcfe6ff, toneMapped: false, fog: false });
+    const fasciaMat = std(0x121c26, { roughness: .7 }), ribbonMat = new T.MeshBasicMaterial({ color: 0x7f93a6, toneMapped: false, fog: false });
     owned.push(tierMat);
     const base = layout.count === 2 ? 0 : -Math.PI / 2, sector = Math.PI * 2 / layout.count, tint = new T.Color();
     const teamAt = (x, z) => { let a = Math.atan2(z, x) - base + sector / 2; a = ((a % (Math.PI * 2)) + Math.PI * 2) % (Math.PI * 2); return Math.min(layout.count - 1, Math.floor(a / sector)); };
@@ -184,7 +184,7 @@
       const lamps = new T.InstancedMesh(lampGeo, lampMat, 28), dummy = new T.Object3D(); lamps.name = 'arena-floodlight-lamps';
       for (let j = 0; j < 28; j++) { dummy.position.set(-1.38 + (j % 7) * .46, .66 - Math.floor(j / 7) * .44, .15); dummy.updateMatrix(); lamps.setMatrixAt(j, dummy.matrix); }
       tilt.add(lamps);
-      if (glow) { const sm = new T.SpriteMaterial({ map: glow, blending: T.AdditiveBlending, depthWrite: false, fog: false, toneMapped: false, transparent: true, opacity: .9 }); owned.push(sm); const sprite = new T.Sprite(sm); sprite.scale.set(13, 13, 1); sprite.position.set(0, 0, .5); tilt.add(sprite); mast.userData.glow = sprite; }
+      if (glow) { const sm = new T.SpriteMaterial({ map: glow, blending: T.AdditiveBlending, depthWrite: false, fog: false, toneMapped: false, transparent: true, opacity: .55 }); owned.push(sm); const sprite = new T.Sprite(sm); sprite.scale.set(13, 13, 1); sprite.position.set(0, 0, .5); tilt.add(sprite); mast.userData.glow = sprite; }
       mast.userData.outward = { x: p.x / d, z: p.z / d }; masts.push(mast);
     }
 

@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V168** · 2026-11-11 · Claude Code (arena gece stadyumu, akıcı arena futbolu, penaltı/FK çeşitliliği)
+> Son güncelleme: **V169** · 2026-11-11 · Claude Code (basın yakın takip kamerası, düşük parlama, sabırlı savunma)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,8 +8,8 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V168** (`VERSION`; sürüm commit’i: `V168: Arena gece stadyumu, akıcı arena futbolu, penaltı/FK çeşitliliği`) |
-| Sonraki geliştirme hedefi | **V169** |
+| Kararlı sürüm | **V169** (`VERSION`; sürüm commit’i: `V169: Basın yakın takip kamerası, düşük parlama, sabırlı savunma`) |
+| Sonraki geliştirme hedefi | **V170** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
 | Sürüm doğrulama | `build.php` → `assets/release-v167.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 167 |
@@ -647,3 +647,8 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - `penalty-engine.js`: `STYLE_WEIGHTS`/`pickStyle`, yeni `side-netting|roof|roll` stilleri, vuruş kaydında `keeperTiming`, `diveDelay`, `keeperPrep`, `prepPhase`, `prepSide`; koşu stilleri `hop`, `walk`.
 - `freekick-engine.js`: `TECH.chip`, `TECH.around` (`nearCurl`: falso yönü yakın direğe göre).
 - Ölçüm betikleri repoda değil; aynı ölçüm `E.create({sides,seed,seconds:60,mode:'points'}).liveEvents` sayılarak tekrarlanabilir.
+
+## V169 eklemeleri
+- `japon-camera.js`: `fit(...,margin)`; `side-full` planı `margin:.985`; yeni mod `press-follow` (eksen (0,.5,1), FOV 42, izleme yolu/segment mantığı `broadcast` ile ortak). `japon-kale.html` kamera listesinde yeni seçenek; `japon-ui.js` iki basın modunda varsayılan yatay.
+- `japon-tactics.js` `carryTarget(p,g,skill,players)`: öndeki savunmacının açık omzuna yönelir (`p.dodgeSide/dodgeUntil`, `p.clock` motor tarafından verilir). `choose`: dolaşım pası kuralı.
+- `broadcast-remaster.js` bloom 0,10/0,4/0,92. `scene.js` meşale/duman/konfeti/aşınma tonları. `match.js`: fikstürlü maçlarda `rngOf(seed^0x5e7a11)` ile frikik/korner çeşitlemesi (fikstürsüz test yolunu etkilemez).

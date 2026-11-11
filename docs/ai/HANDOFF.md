@@ -17,6 +17,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-11] Claude Code · V168 → V169
+- Dal / commit / PR: `claude/elegant-ride-a93j2q`; başlangıç main `4dd0418`. Başlık `V169: Basın yakın takip kamerası, düşük parlama, sabırlı savunma`; testlerden sonra main'e fast-forward. PR/Hostinger dağıtımı yok.
+- Kullanıcı isteği (özet): basın kamerası daha yakın ama kaleler/oynanan alan görünsün; oyuncu modeli/yüz değişmesin; taraftar, çim, zemin, oynanış, grafik/HD yükselsin; 11v11 ve 2 takımlı arenada oynanış gerçek futbola yaklaşsın; penaltı/FK'de parlayan yerler kısılsın — parlaklık kalite değildir.
+- Yapılanlar: CHANGELOG V169'daki beş başlık (kamera, parlama, HD ön izleme, 5v5 oynanış, 11v11 duran top çeşitliliği). Karar D-032, AGENTS §18.
+- Değişen önemli dosyalar: assets/japon-camera.js, japon-ui.js, japon-arena.js, japon-venue.js, japon-engine.js, japon-tactics.js, broadcast-remaster.js, scene.js, match.js, japon-kale.html, tests/japon-camera.cjs.
+- Tamamlanmayanlar / kısmi: taraftar modeli/animasyonu ve çim dokusu yeniden yapılmadı (yalnız ton/parlama ve çözünürlük); penaltı/FK oynanışı ve fiziği bu sürümde değişmedi (V168'deki eklemeler geçerli); 11v11 karar/hareket motoruna (pas, pres, diziliş) dokunulmadı, yalnız duran top menüsü çeşitlendi. Pas sayısı 5v5'te artmadı (12,5 → 11,1); top kapma azaldı. Çok takımlı Japon Kale pas isabeti ~%60 düzeyinde kaldı.
+- Karşılaşılan sorunlar: savunma aralığını açmak ilk denemede top kapmayı artırdı (top süren, bekleyen savunmacının üstüne gidiyordu) → `carryTarget` açık omuz kuralı eklendi. Tüm sahayı sabit kadrajda tutarken oyuncuyu belirgin büyütmek geometrik olarak mümkün değil; bu yüzden ikinci kamera modu eklendi.
+- Testler (komut → sonuç): `node tests/run-all.cjs` → 32/32 PASS; ardından yalnız konfeti tonu/adedi (scene.js) değişti → `node tests/run-all.cjs --quick` 31/31 PASS. 11v11 fikstür yolu için ayrıca 24 maçlık Node denemesi (hedef skor korunur, tüm kareler sonlu).
+- Tarayıcı: Chromium/SwiftShader ile iki basın modu, aksiyon kamerası, penaltı gol anı ve FK kareleri alındı. Gerçek cihaz/GPU ve MP4 dışa aktarma test edilmedi (T-209/T-266 açık).
+- Sonraki ajan için dikkat: D-032/§18. `press-follow` izleme yolu `broadcast` ile aynı önbelleği kullanır (mod+oran anahtarlı). Parlaklık değerlerini geri yükseltmeyin.
+
 ## [2026-11-11] Claude Code · V167 → V168
 - Dal / commit / PR: `claude/elegant-ride-a93j2q`; başlangıç main `1a1dfe9`. Başlık `V168: Arena gece stadyumu, akıcı arena futbolu, penaltı/FK çeşitliliği`; testlerden sonra main'e fast-forward push. PR/Hostinger dağıtımı yok.
 - Kullanıcı isteği (özet): bütün modlarda (normal maç, Küçük Saha, Japon Kale 3–6, penaltı, serbest vuruş) görünüm/atmosfer/animasyon ve futbolun oynanışında (çalım, çalıma karşı savunma, pas, top sürme, şut, kaleci, aşırtma) belirgin gelişim; penaltı/FK tekdüze olmasın; önce/sonra görselleri. Ek not: normal maçlarda UEFA Uluslar Ligi maçlarının geleceğinden emin ol.

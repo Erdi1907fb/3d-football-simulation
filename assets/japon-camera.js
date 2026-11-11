@@ -5,12 +5,12 @@ const SAFE={left:64,right:884,top:295,bottom:1220},WIDTH=1080,HEIGHT=1920;
 const LANDSCAPE_SAFE={left:70,right:1850,top:55,bottom:795};
 function safe(camera){return camera?.userData?.orientation==='landscape'?LANDSCAPE_SAFE:SAFE;}
 const v=p=>new T.Vector3(p.x,p.y??0,p.z),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
-function fit(camera,points,axis,aim,fov=48){
+function fit(camera,points,axis,aim,fov=48,margin=.94){
  const landscape=camera.userData.orientation==='landscape',width=landscape?1920:WIDTH,height=landscape?1080:HEIGHT,bounds=safe(camera);camera.userData.width=width;camera.userData.height=height;camera.clearViewOffset();camera.aspect=width/height;camera.fov=fov;camera.near=1.5;camera.far=300;
  const cx=(bounds.left+bounds.right)/2,cy=(bounds.top+bounds.bottom)/2;
  camera.setViewOffset(width,height,width/2-cx,height/2-cy,width,height);
  axis=axis.clone().normalize();camera.position.copy(aim).addScaledVector(axis,30);camera.lookAt(aim);camera.updateMatrixWorld();
- const right=new T.Vector3().setFromMatrixColumn(camera.matrixWorld,0),up=new T.Vector3().setFromMatrixColumn(camera.matrixWorld,1),tan=Math.tan(fov*Math.PI/360),hx=(bounds.right-bounds.left)/width*.94,hy=(bounds.bottom-bounds.top)/height*.94;
+ const right=new T.Vector3().setFromMatrixColumn(camera.matrixWorld,0),up=new T.Vector3().setFromMatrixColumn(camera.matrixWorld,1),tan=Math.tan(fov*Math.PI/360),hx=(bounds.right-bounds.left)/width*margin,hy=(bounds.bottom-bounds.top)/height*margin;
  let distance=10;
  for(const p of points){const delta=v(p).sub(aim),depth=delta.dot(axis);distance=Math.max(distance,depth+Math.abs(delta.dot(right))/(tan*camera.aspect*hx),depth+Math.abs(delta.dot(up))/(tan*hy));}
  camera.position.copy(aim).addScaledVector(axis,distance+.6);camera.lookAt(aim);camera.updateProjectionMatrix();camera.updateMatrixWorld();camera.userData.framingAim=aim.clone();
@@ -26,20 +26,20 @@ function plan(contest,time,mode='broadcast'){
  const nearest=players.filter(p=>!p.keeper).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z));
  const lead=shot&&Number.isInteger(shot.actorIndex)&&(!owner||owner.team===shot.team)?f.players[shot.actorIndex]:owner||nearest[0];
  const team=lead?.team??0,target=f.netGoal!=null?contest.goals[f.netGoal]:owner?.keeper?contest.goals[owner.team]:f.restart?contest.goals[f.restart.against]:shot?contest.goals[shot.against]:contest.goals.filter(g=>g.team!==team&&f.active[g.team]).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z))[0];
- const g=target&&Math.hypot(target.x-f.ball.x,target.z-f.ball.z)<7?target:null;
+ const g=target&&Math.hypot(target.x-f.ball.x,target.z-f.ball.z)<(mode==='press-follow'?9.5:7)?target:null;
  const overview=mode==='wide'||mode==='side-full';
- if(overview){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+.4])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});points.push({x:0,y:4.6,z:0});return{key:'overview',overview,frame:f,points,aim:new T.Vector3(0,.8,0),axis:mode==='side-full'?new T.Vector3(0,.43,1):new T.Vector3(.45,.66,1),fov:mode==='side-full'?55:47};}
+ if(overview){const points=contest.layout.vertices.map(p=>({...p,y:.1}));for(const goal of contest.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[0,goal.height+(mode==='side-full'?.15:.4)])points.push({x:goal.x+goal.nx*depth-goal.nz*goal.width*.5*side,y,z:goal.z+goal.nz*depth+goal.nx*goal.width*.5*side});points.push({x:0,y:mode==='side-full'?2.6:4.6,z:0});return{key:'overview',overview,frame:f,points,aim:new T.Vector3(0,.8,0),axis:mode==='side-full'?new T.Vector3(0,.49,1):new T.Vector3(.45,.66,1),fov:mode==='side-full'?47:47,margin:mode==='side-full'?.985:.94};}
  // A readable phase of play: show the carrier, passing options and cover,
  // with a minimum patch of pitch instead of framing one player's feet.
- const centre=Layout.contain({x:f.ball.x*.72,z:f.ball.z*.72},contest.layout,4.3),points=[{...f.ball,y:Math.max(.3,f.ball.y)}];
- for(const x of[-5.2,5.2])for(const z of[-3.6,3.6])points.push({...Layout.contain({x:centre.x+x,z:centre.z+z},contest.layout,.2),y:.1});
+ const press=mode==='press-follow',centre=press?Layout.contain({x:f.ball.x*.8,z:f.ball.z*.45},contest.layout,3.2):Layout.contain({x:f.ball.x*.72,z:f.ball.z*.72},contest.layout,4.3),points=[{...f.ball,y:Math.max(.3,f.ball.y)}];
+ for(const x of press?[-6.4,6.4]:[-5.2,5.2])for(const z of press?[-3.2,3.2]:[-3.6,3.6])points.push({...Layout.contain({x:centre.x+x,z:centre.z+z},contest.layout,.2),y:.1});
  for(const p of players.filter(p=>!p.keeper&&Math.hypot(p.x-f.ball.x,p.z-f.ball.z)<7).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z)).slice(0,5))points.push({...p,y:.1},{...p,y:2.4});
  if(lead&&Math.hypot(lead.x-f.ball.x,lead.z-f.ball.z)<8)points.push({...lead,y:.1},{...lead,y:2.4});
  if(g){for(const side of[-1,1]){points.push({x:g.x-g.nz*(g.width/2+.3)*side,y:0,z:g.z+g.nx*(g.width/2+.3)*side});points.push({x:g.x-g.nz*(g.width/2+.3)*side,y:g.height+.4,z:g.z+g.nx*(g.width/2+.3)*side});}for(const side of[-1,1])points.push({x:g.x+g.nx*g.depth-g.nz*g.width*.5*side,y:g.height+.3,z:g.z+g.nz*g.depth+g.nx*g.width*.5*side});const keeper=players.find(p=>p.team===g.team&&p.keeper);if(keeper)points.push({...keeper,y:2.4});}
  const aim=new T.Vector3(centre.x,.9,centre.z);
  // Keep one side of the action: following a new goal must not reverse the screen.
- const axis=mode==='touchline'?new T.Vector3(1,.72,.35):new T.Vector3(.08,.9,1);
- return{key:shot?'shot-'+shot.at:'play-'+team+'-'+(g?.team??0),overview:false,frame:f,goal:g,points,aim,axis,fov:mode==='touchline'?49:48};
+ const axis=mode==='touchline'?new T.Vector3(1,.72,.35):press?new T.Vector3(0,.5,1):new T.Vector3(.08,.9,1);
+ return{key:shot?'shot-'+shot.at:'play-'+team+'-'+(g?.team??0),overview:false,frame:f,goal:g,points,aim,axis,fov:mode==='touchline'?49:press?42:48};
 }
 const paths=new WeakMap();
 function trackingPath(contest,mode,orientation='portrait'){const cacheKey=mode+'|'+orientation;let cached=paths.get(contest);if(!cached){cached=new Map();paths.set(contest,cached);}if(cached.has(cacheKey))return cached.get(cacheKey);
@@ -52,7 +52,7 @@ function apply(camera,contest,time,mode='broadcast',orientation='portrait'){came
  // Floating playback increments must select the same side of a centre-drop cut
  // as the segment cache; otherwise the old net briefly forces a distant fit.
  time=cutTime(contest,time);
- const p=plan(contest,time,mode);if(p.overview||p.celebration){const distance=fit(camera,p.points,p.axis,p.aim,p.fov);return{...p,distance};}
+ const p=plan(contest,time,mode);if(p.overview||p.celebration){const distance=fit(camera,p.points,p.axis,p.aim,p.fov,p.margin);return{...p,distance};}
  const{step,path,segmentAt}=trackingPath(contest,mode,orientation),t=clamp(time,0,contest.duration)/step,index=Math.min(path.length-2,Math.floor(t)),segment=segmentAt(time);let u=t-index,a=path[index],b=path[index+1];if(a.segment!==b.segment){a=b=a.segment===segment?a:b;u=0;}const aim=a.aim.clone().lerp(b.aim,u),required=fit(camera,p.points,p.axis,aim,p.fov),distance=Math.max(required,a.distance+(b.distance-a.distance)*u);
  camera.position.copy(aim).addScaledVector(p.axis.clone().normalize(),distance);camera.lookAt(aim);camera.updateMatrixWorld();return{...p,key:'tracking-'+mode+'-'+segment,aim,distance};
 }

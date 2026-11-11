@@ -219,3 +219,9 @@ dosyalardır.
 - Top sürme dokunuşu `carryX/carryZ` (yönelinen yön) ve gerçek hız bileşeniyle verilir; `p.heading`'e göre itmeye geri dönmeyin (dönüşlerde top kaçıyordu). Çalım `Duels.verdict` yalnız hareketi etkiler; sahiplik/gol yine fiziksel.
 - `Duels.MOVES` 7 hareket, penaltıda 11 `shotStyle`, FK'de 9 teknik: `tests/arena-duels.cjs`, `tests/presentation.cjs` bu sayıları denetler; yeni hareket eklerken testi ve `athlete-motion.js` pozunu birlikte güncelleyin.
 - Kaleci 1v1 çıkışı en çok 3,55 m (test sınırı 3,7 m). Penaltıda `keeperTiming` erken/bekle/normal; kurtarışlarda dalış temas anına senkron kalır.
+
+
+## 18. Basın kameraları ve parlaklık (V169)
+- D-032: `side-full` sabit kalır (top/oyuncuya göre hareket ve zoom yok); yakın görüntü isteyen `press-follow` seçer. İkisini birleştirmeyin, birini kaldırmayın. Yeni kamera modu eklerseniz `tests/japon-camera.cjs` mod listesine ekleyin.
+- Parlaklık kalite değildir: bloom 0,10/eşik 0,92, meşale/duman/konfeti ve çizgi/LED tonları bilinçli olarak düşüktür. Yeni efektlerde `toneMapped:false` beyaz yüzey ve additive hale kullanmaktan kaçının.
+- Arena ön izlemesi masaüstünde 0,75×, telefonda 0,5× çözünürlüktür; telefon değerini yükseltmeyin (bellek).

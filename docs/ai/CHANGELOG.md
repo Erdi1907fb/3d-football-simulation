@@ -6,6 +6,14 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V169 — 2026-11-11 (Claude Code)
+- **Basın kamerası:** sabit `side-full` daha dolu kadraj (ölü yükseklik payı 4,6 → 2,6 m, kenar payı %94 → %98,5, eksen 0,43 → 0,49, FOV 55 → 47); konumu/zoom'u yine sabittir. Yeni `press-follow` (“Basın tribünü · Yakın takip”): aynı yandan, oyunun fazını izleyen TV ana kamerası; top 9,5 m içindeyken o yandaki kale kadraja girer. Seçilince (kullanıcı biçim seçmediyse) yatay açılır; dikey de çalışır. Aynı güvenli alan denetimi `tests/japon-camera.cjs` içine eklendi.
+- **Parlama azaltıldı (parlaklık ≠ kalite):** UnrealBloom 0,30/eşik 0,74 → 0,10/eşik 0,92 (yağmur 0,16, kar 0,11); meşale halesi 0,65 → 0,30, meşale ışığı 3+2,2e → 1,1+0,8e; duman beyaz %25 → gri %13; gol konfetisi adedi 2250+1000e → 850+450e ve kâğıt tonu %66; çim aşınma lekesi 0,15 → 0,085; arena çizgi/nokta/pano üstü/direk/LED/şerit tonları düşürüldü.
+- **HD ön izleme:** arena 3D ön izlemesi masaüstünde 540p → 810p (yatay 1440×810); telefonlarda bellek güvenli 540p korunur. Dışa aktarma her zaman 1080p60.
+- **5v5 / Japon Kale oynanışı:** savunmacı önce karşılar (aralık 1,02 → 1,22 m, müdahale menzili 1,55 → 1,4 m, bekleme 1,9–2,9 → 2,5–3,8 sn); top süren hazır savunmacının üstüne gitmez, açık omzundan geçer; baskı yokken 1,3 sn'den uzun top tutan oyuncu güvenli arkadaşına çevirir. Ölçüm (24 tohum, 60 sn 5v5; V168 → V169): top kapma 7,9 → 5,9, gol 1,7 → 2,0, pas 12,5 → 11,1, pas isabeti %82 → %79, kendi kendine kayıp 1,1 → 1,3.
+- **11'e 11:** gerçek/konsept fikstürlerde duran top menüsü maçtan maça değişir (frikik %45, korner %30 olasılıkla açık oyun atağına döner; penaltı zaten %16). 24 fikstür maçında hedef skor korundu, bozuk kare yok.
+- Testler: `node tests/run-all.cjs` 32/32 PASS.
+
 ## V168 — 2026-11-11 (Claude Code)
 - **Arena görseli (Küçük Saha + Japon Kale 2–6):** yeni `japon-venue.js` — gece gökyüzü kubbesi/yıldızlar, sektör renkli üst tribün halkası (kamera arkasında kalan bölüm otomatik gizlenir), takım renkli kayan LED saha panoları (@next90sim), projektör direkleri, koyu çim çevre halkası; doğal çim tonu ve belirgin biçme şeritleri.
 - **Arena oynanışı:** top sürme dokunuşu gövde yönüne değil gerçekten gidilen yöne; ağır dokunuşu oyuncu kovalar; alıcı yavaşlayan pasa hareketlenir; boş alana ara pası (`through`); mesafeye bağlı pas hızı 9,4–13,2 m/sn; 7 çalım (elastico, chop, nutmeg eklendi) ve tohumlu yetenek ağırlıklı çalım düellosu (kazanan patlama hızı alır, kaybeden savunmacı 0,6 sn geride kalır; okuyan savunmacı temiz müdahale şansı kazanır); boş köşeye nişan; öne çıkan kaleciye aşırtma kararı; kaleci yavaş şutu tutar ve oyunu elle başlatır; kurtarış pozu yükseklik/uzanmaya göre (tipOver/fullStretch/parryWide/foot/reflex).

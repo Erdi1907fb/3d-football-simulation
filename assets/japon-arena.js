@@ -29,19 +29,19 @@ function create(world,contest,sides){
  for(let band=0;band<Math.ceil(l.width/4);band++){if(band%2)continue;const x0=-l.width/2+band*4,x1=x0+4;
  let polygon=l.vertices.map(p=>({...p}));for(const [cut,sign]of[[x0,-1],[x1,1]]){const out=[];for(let i=0;i<polygon.length;i++){const a=polygon[i],b=polygon[(i+1)%polygon.length],aIn=(a.x-cut)*sign<=0,bIn=(b.x-cut)*sign<=0;if(aIn)out.push(a);if(aIn!==bIn){const u=(cut-a.x)/(b.x-a.x);out.push({x:cut,z:a.z+(b.z-a.z)*u});}}polygon=out;}
  if(polygon.length<3)continue;const s=new T.Shape();polygon.forEach((p,i)=>i?s.lineTo(p.x,-p.z):s.moveTo(p.x,-p.z));s.closePath();const g=new T.ShapeGeometry(s),u=g.attributes.uv,p=g.attributes.position;for(let i=0;i<u.count;i++)u.setXY(i,p.getX(i)/8,p.getY(i)/8);const m=material(0x225e2d);m.envMapIntensity=.25;m.map=turfMap;m.depthWrite=false;m.polygonOffset=true;m.polygonOffsetFactor=-1;m.polygonOffsetUnits=-1;const stripe=mesh(g,m,0,.007,0);stripe.rotation.x=-Math.PI/2;stripe.renderOrder=1;}
- stroke([...l.vertices,l.vertices[0]],0xe8eee1,.09);
- const center=Array.from({length:65},(_,i)=>({x:Math.cos(i*Math.PI/32)*1.9,z:Math.sin(i*Math.PI/32)*1.9}));stroke(center,0xe8eee1,.065);
- const dot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xf4f1df}),0,.02,0);dot.name='center-drop';
+ stroke([...l.vertices,l.vertices[0]],0xcdd5c6,.09);
+ const center=Array.from({length:65},(_,i)=>({x:Math.cos(i*Math.PI/32)*1.9,z:Math.sin(i*Math.PI/32)*1.9}));stroke(center,0xcdd5c6,.065);
+ const dot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xcfd3c4}),0,.02,0);dot.name='center-drop';
  // The halfway line joins the centre circle to both touchlines on the short pitch.
- if(l.count===2){stroke([{x:0,z:-l.length/2},{x:0,z:l.length/2}],0xe8eee1,.07);}else{for(let i=0;i<l.vertices.length;i+=2){const p=l.vertices[i],length=Math.hypot(p.x,p.z);stroke([{x:p.x/length*1.9,z:p.z/length*1.9},p],0xc9d8c7,.045);}}
- if(l.count===2)for(const g of l.goals){const depth=5.4*l.scale,half=4.9*l.scale,point=(d,t)=>({x:g.x-g.nx*d-g.nz*t,z:g.z-g.nz*d+g.nx*t});stroke([point(0,-half),point(depth,-half),point(depth,half),point(0,half)],0xe8eee1,.09);const p=point(5*l.scale,0),spot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xf4f1df}),p.x,.035,p.z);spot.name='penalty-spot-'+g.team;}
+ if(l.count===2){stroke([{x:0,z:-l.length/2},{x:0,z:l.length/2}],0xcdd5c6,.07);}else{for(let i=0;i<l.vertices.length;i+=2){const p=l.vertices[i],length=Math.hypot(p.x,p.z);stroke([{x:p.x/length*1.9,z:p.z/length*1.9},p],0xc9d8c7,.045);}}
+ if(l.count===2)for(const g of l.goals){const depth=5.4*l.scale,half=4.9*l.scale,point=(d,t)=>({x:g.x-g.nx*d-g.nz*t,z:g.z-g.nz*d+g.nx*t});stroke([point(0,-half),point(depth,-half),point(depth,half),point(0,half)],0xcdd5c6,.09);const p=point(5*l.scale,0),spot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xcfd3c4}),p.x,.035,p.z);spot.name='penalty-spot-'+g.team;}
  const crowd=world.farBatches?Crowd.create(world,contest,sides):null;
  // V168: night sky, floodlights, LED boards and surround turf (visual only).
  const venue=Venue?Venue.create(root,l,sides,{turfMap,brand:typeof globalThis!=='undefined'?globalThis.SekmeBrand:null}):null;
- const boardMat=material(0x132f35),postMat=new T.MeshPhysicalMaterial({color:0xf8f8f4,roughness:.26,clearcoat:.85});owned.push(postMat);
+ const boardMat=material(0x132f35),postMat=new T.MeshPhysicalMaterial({color:0xe2e2dc,roughness:.34,clearcoat:.6});owned.push(postMat);
  for(const edge of l.boundaries){const gap=l.goals.find(g=>Math.abs(g.nx-edge.nx)<1e-6&&Math.abs(g.nz-edge.nz)<1e-6),length=Math.hypot(edge.b.x-edge.a.x,edge.b.z-edge.a.z),tx=(edge.b.x-edge.a.x)/length,tz=(edge.b.z-edge.a.z)/length;
  const pieces=gap?[[0,(length-gap.width)/2-.14],[(length+gap.width)/2+.14,length]]:[[0,length]];
- for(const [start,end]of pieces){if(end<=start)continue;const mid=(start+end)/2,m=mesh(new T.BoxGeometry(end-start,.45,.14),boardMat,edge.a.x+tx*mid,.30,edge.a.z+tz*mid);m.rotation.y=-Math.atan2(tz,tx);const top=mesh(new T.BoxGeometry(end-start,.035,.16),material(0x879b91),m.position.x,.54,m.position.z);top.rotation.y=m.rotation.y;}}
+ for(const [start,end]of pieces){if(end<=start)continue;const mid=(start+end)/2,m=mesh(new T.BoxGeometry(end-start,.45,.14),boardMat,edge.a.x+tx*mid,.30,edge.a.z+tz*mid);m.rotation.y=-Math.atan2(tz,tx);const top=mesh(new T.BoxGeometry(end-start,.035,.16),material(0x46544f),m.position.x,.54,m.position.z);top.rotation.y=m.rotation.y;}}
  for(const g of l.goals){
  const goal=new T.Group();goal.name='japon-goal-'+g.team;goal.position.set(g.x,.012,g.z);goal.rotation.y=-Math.atan2(g.nz,g.nx);root.add(goal);
  // The normal match / Penalty / Free Kick cord material is reused, with a local
