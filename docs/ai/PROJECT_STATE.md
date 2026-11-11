@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V169** · 2026-11-11 · Claude Code (basın yakın takip kamerası, düşük parlama, sabırlı savunma)
+> Son güncelleme: **V170** · 2026-11-11 · Claude Code (yeşil gol işareti, gökyüzü tonu geri alındı)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,8 +8,8 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V169** (`VERSION`; sürüm commit’i: `V169: Basın yakın takip kamerası, düşük parlama, sabırlı savunma`) |
-| Sonraki geliştirme hedefi | **V170** |
+| Kararlı sürüm | **V170** (`VERSION`; sürüm commit’i: `V170: Yeşil gol işareti ve kale arkası gökyüzü şeridi düzeltmesi`) |
+| Sonraki geliştirme hedefi | **V171** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
 | Sürüm doğrulama | `build.php` → `assets/release-v167.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 167 |

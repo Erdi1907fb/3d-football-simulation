@@ -6,6 +6,11 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V170 — 2026-11-11 (Claude Code)
+- Penaltı ve serbest vuruş skor şeridinde gol işareti `#4dd99a` (nane/turkuaza kaçan) → `#2fcc5a` (net yeşil); kaçan vuruş kırmızı çarpı aynı.
+- V168'de mavileştirilen büyük stadyum gökyüzü tonu geri alındı: kale arkasındaki duvar ile tribün arasındaki dar aralıktan görünen gökyüzü parlak mavi bir “ufuk çizgisi” gibi duruyordu (kullanıcı bildirimi). Aralık artık V167'deki koyu tonda.
+- Testler: `node tests/run-all.cjs --quick` 31/31 PASS (yalnız 2D renk ve gökyüzü tonu değişti; normal motor kodu değişmedi).
+
 ## V169 — 2026-11-11 (Claude Code)
 - **Basın kamerası:** sabit `side-full` daha dolu kadraj (ölü yükseklik payı 4,6 → 2,6 m, kenar payı %94 → %98,5, eksen 0,43 → 0,49, FOV 55 → 47); konumu/zoom'u yine sabittir. Yeni `press-follow` (“Basın tribünü · Yakın takip”): aynı yandan, oyunun fazını izleyen TV ana kamerası; top 9,5 m içindeyken o yandaki kale kadraja girer. Seçilince (kullanıcı biçim seçmediyse) yatay açılır; dikey de çalışır. Aynı güvenli alan denetimi `tests/japon-camera.cjs` içine eklendi.
 - **Parlama azaltıldı (parlaklık ≠ kalite):** UnrealBloom 0,30/eşik 0,74 → 0,10/eşik 0,92 (yağmur 0,16, kar 0,11); meşale halesi 0,65 → 0,30, meşale ışığı 3+2,2e → 1,1+0,8e; duman beyaz %25 → gri %13; gol konfetisi adedi 2250+1000e → 850+450e ve kâğıt tonu %66; çim aşınma lekesi 0,15 → 0,085; arena çizgi/nokta/pano üstü/direk/LED/şerit tonları düşürüldü.
