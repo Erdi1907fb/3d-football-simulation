@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V166** · 2026-11-10 · Codex (dengeli yayın, kadro seçimi ve ilişkili arena hareketi)
+> Son güncelleme: **V167** · 2026-11-11 · Codex (5v5, bağlı savunma/çeşitli hücum, basın açısı, madalyalar ve net stüdyolar)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V166** (`VERSION`; sürüm commit’i: `V166: Dengeli yayın ve ilişkili arena futbolu`) |
-| Sonraki geliştirme hedefi | **V167** |
+| Kararlı sürüm | **V167** (`VERSION`; sürüm commit’i: `V167: 5v5 futsal, çeşitli hücumlar ve net stüdyolar`) |
+| Sonraki geliştirme hedefi | **V168** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v166.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 166 |
+| Sürüm doğrulama | `build.php` → `assets/release-v167.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 167 |
 
 ## 2. Giriş sayfaları ve durumları
 
@@ -631,3 +631,12 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - GK: hareket ve bakış için tek heading güncellemesi, gecikmiş gözlem/ölü bölge/yan adım ve dalış boyunca plant. Ortak Motion yeni `keeperSaveAt` / `keeperContactPoint` opt-in alanlarını tanır; parry sonrası uzaklaşan topa el/gövde takibi kesilir. `arenaKeeper` ortak koşu/ready-stance'i kullanır; normal mod varsayılanları aynı. Normal maç template'inden askPass/organize/ceremony vb. pozlar arena'ya taşınmaz. Drop snapshot sonrası aynı adımın ikinci kez entegrasyonu giderilir.
 - File: paylaşılan `OpenFootball.containNet` panelinde `netElastic` bayrağı yay/sönüm uygular; top ağı gerip geri bırakır. Arena aynı koordinat adaptörünü kullanır. Render ortak World.netResponse dalgasını korur, o anda topun nete yüklediği gerçek basıncı cep olarak ekler. Ağız/zemin bağları sabit; geri sarma saf frame örneklemesi.
 - Yeni `tests/arena-balance.cjs`: orta mesafeli güvenli ve sürekli kadraj, sabit kamera matrisleri, GK tek dönüş/gerçek temas zamanı, sıçramasız oyuncular, ileri seçenek/kaçınma, elastik bırakma ve gerçek yüklü file. Son test ve tarayıcı kanıtları HANDOFF V166'da; normal maç/penaltı/FK ve millî kadrolar korunur.
+
+
+## V167 güncel arena ve stüdyo sözleşmesi
+- Küçük saha 28×18m sabit, 5v5: GK + sol/sağ defans + orta saha + forvet. Saha oyuncusu seçimi serbest; Japon Kale 3–6 taraf × 3 oyuncu. Başlangıçta ortak top yarışı, küçük saha gollerinden sonra yiyenin forvetinin arkadaşına fiziksel paslı santrası.
+- Hücum genişliği, geri/duvar pası, örtüşen destek, gerçek ilk vuruş/kafa/orta, plase/sert/yükselen/aşırma çeşitliliği. Tek baskıcı ve bağlı alan/adam örtüsü, top kaybında geri dönüş. Kaleci açı kapatır, gerçek temasla tutar/sektirir; alan dışı ve geri pasta el kullanmaz. Olay/sonuç zorlama yok.
+- Galip kendi taraftarına fiziksel koşup kısa kutlar; süre yol uzunluğuna göre4,5–9sn. Çok taraflıda ardından1,8sn altın/gümüş/bronz ve4–6 sıralaması; takım veya gerçek oyuncu grubu isimleri. Ortak dereceler korunur, eksik elemede şampiyon uydurulmaz. TR/EN anlatım gerçek olay/sonuç/video zamanını izler.
+- Basın tribünü alçak, ortadan sabit seyirci açısı. Menüye1920×1080 yatay eklendi; basın seçilince biçim elle seçilmemişse yatay olur. Dikey1080×1920 Reels ve aksiyon seçenekleri korunur. Export aynı oran/kamera/HUD yolunda. Kamera yakın/uzak düzlemleri1,5/300, büyük çevre zemin ve boya/şerit sırası siyah tarama/boş arka plan sorununu giderir.
+- FK kalecisi aynı ivme/hız sınırlı fiziksel erişim ve görsel dalış kullanır;9,81 yerçekimi, en çok0,38m ek yükseliş, gerçek temas noktası ve opt-in zemin koruması. İç/dış/üst ayak ve alçak falso spin/nişan/vuruş pozuyla ayrılır. Penaltı/FK isim/arma/skor katmanı gerçek1080p; metin yatay sıkıştırılmaz, WebGL önizleme adaptiftir.
+- Doğrulama: ilk32/32 tam test; son eklerden sonra31/31 quick + değişmeyen normal motorun önceki18maç/500penaltı testi. Gerçek Chromium/SwiftShader2/4/6 arena, FK/penaltı, seçici isim/kadro/medalya/tribün ve sonlu pozlar. Kısa ürün MP4: dikey1080×1920/60FPS21kare ve yatay1920×1080/60FPS12kare. Bu sürümde tam maç1080p eksportu ve fiziksel telefon/GPU performansı test edilmedi. Kanıtlar `/workspace/artifacts/v167/` (git dışı); devirde ayrıntı var.

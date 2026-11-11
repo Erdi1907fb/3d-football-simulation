@@ -64,16 +64,17 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 30 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 31 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/futsal-five.cjs` | 5v5/same pitch, yiyenin paslı santrası, alan/adam örtüsü, fiziksel ilk vuruş/kafa, yasal GK eli, taraftar finali/madalyalar ve iki video oranı | ~8 sn |
 | `node tests/arena-balance.cjs` | Orta mesafe aksiyon, sabit basın tribünü, GK dönüş/temas zamanı, çarpışma öngörüsü ve top yüküyle esneyip bırakan file | ~3 sn |
 | `node tests/arena-football.cjs` | Dikdörtgen, ivme/dönüş, yer direnci, alım/vuruş zamanı, şut kanalı, sekme okuyan GK, yakın açılış/kısa doğru sonuç | ~4 sn |
 | `node tests/arena-broadcast-flow.cjs` | Seçici isim, tek baskıcı, çalım sonucu, hareket eden gol topu/ortak file, yan kamera ve taraftar finali | ~3 sn |
 | `node tests/arena-duels.cjs` | Çalım/savunma/gerçek temas, kutu faulü/penaltı/FK, GK tutuş/geri pas/dağıtım, canlı top sınırı ve TR/EN | ~20 sn |
 | `node tests/arena-rush.cjs` | 2–6 takım × 5 süre, kesintisiz zaman, farklı gerçek skor/son bölüm, anlatım, koridor/duvar/güvenlik ve boya katmanı | ~3 sn |
 | `node tests/national-coverage.cjs` | 85 millî kadro/forma, ilk 11 doğruluğu, normal maç tamamlama ve güncel konsept takımlar | ~1 sn |
-| `node tests/small-sided.cjs` | 4v4/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
+| `node tests/small-sided.cjs` | 5v5/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
 | `node tests/japon-net.cjs` | Normal file dokusu, 4,4/5/6 m ölçü, açık kale ağzı, ayrı geometri ve ortak kaynakların korunması | <1 sn |
-| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 4v4/üçlü kadrolar/efsaneler, 4 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
+| `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 5v5/üçlü kadrolar/efsaneler, 4 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
 | `node tests/japon-kale.cjs` | 2–6 taraf, 50 senaryo, eleme/puan, tur sıfırlama, fiziksel gol çizgisi, özet zamanları, determinizm | ~2 sn |
 | `node tests/commentary.cjs` | TR/EN anlatım, gerçek olay/oyuncu, video zamanları, SRT | <1 sn |
 | `node tests/freekick.cjs` | Serbest vuruş fiziği, baraj/kaleci/direk, kurallar, ayna noktalar, millî baraj verisi, marka panoları | ~10 sn |
@@ -200,3 +201,14 @@ dosyalardır.
 - GK bakışı ve hareket heading'i aynı adımda iki kez dönmez. Gerçek `keeperSaveAt` ve `keeperContactPoint` ortak animasyona geçer; parry sonrası el, uzaklaşan topu izleyip gövdeyi sürüklemez. `arenaKeeper` ortak lokomosyon/ready-stance bayrağıdır; normal modların varsayılanı aynı.
 - File: paylaşılan OpenFootball.containNet içinde opt-in `netElastic` yay/sönüm tepkisi; arena yerel koordinata dönüştürür. Dünya netResponse dalgası korunur; gerçek topun baskısı render edilen cebi ek olarak yükler. Kalede topu sabitleme, animasyonu fizik yerine sonuç üretmekte kullanma. Diğer modlar bayrağı açmadıkça eski fizik yolundadır.
 - Gerçek drop anında snapshot sonrası o adımı bir daha entegre etme; aksi hâlde kayıtta GK dönüşü hız sınırını aşar. Pas sırasında her iki tarafın hücum/savunma şekli korunur. Önleyici kaçınma + küçük fiziksel çakışma düzeltmesi, normal maç template'inden kalan askPass/organize/ceremony pozlarını temizleme korunur.
+
+
+## 16. 5v5 / çeşitli hücum / madalyalar / net stüdyolar (V167)
+- D-028 günceldir: iki takımda5oyuncu (`keeper, defender, defender2, midfielder, attacker`), aynı28×18m saha. `defender2` ikinci serbest seçilebilir kimliktir; aktör slotları0–4/5–9. 3–6takımda3oyuncu aynı. `scene.js` ve UI kimliklerini bu eşlemeyle koru; 4/3 varsayımını geri getirme.
+- İlk top her modda ortak drop. Golden sonra yalnız küçük sahada yiyenin forveti, herkes yerine fiziksel dönünce arkadaşına pasla santra yapar. `kickoff_setup` kamera kesmesidir; gol sonrası santrayı tekrar ortak kapışmaya döndürme. Japon Kale’de her gol sonrası drop devam eder. Seçilen süreyi veya skoru bu kurala uydurmak için uzatma/uydurma; yalnız geç penaltı süre istisnası sürer.
+- Hücum/savunma ayrı bağlantılı hatlardır; pres seçimi rol+mesafe/histerezisle, diğerleri koşucu/alan örtüsüyle. İlk vuruş ve kafa, gerçekten erişilebilen serbest topa temasla oluşur. `Tactics.keeperContact` gerçek süpürülmüş temas/alan/geri pas yasasını paylaşır. Alan dışı el/tutuş/parry yok; alçak ayak kontrolü mümkündür. Şut türleri gol sonucu değildir; skor fiziksel kalır.
+- Kazananlar kendi taraftar sektörüne koşup döner/kutlar. `celebrationDuration`4,5–9sn; Japon Kale’de ardından1,8sn `podiumAt`/`frame.podium` sıralaması. İlk3gerçek derece altın/gümüş/bronz;4–6da listelenir. Ortak dereceye ortak madalya, eksik elemede şampiyon/madalya uydurma. Küçük saha gerçek maç sonucu/golcülerini korur.
+- Basın (`side-full`) alçak orta stadyum açısı. Arayüzde bu kamerayı seçmek, kullanıcı video biçimini elle seçmediyse yatayı açar; dikeyReels korunur. Kamera/project/inSafe boyut bilgisi taşır; tracking cache oranı da anahtarlar. Dikey kritik alan eski64–884/295–1220, yatay70–1850/55–795; skor yatayda830–1052. Export kullanılan biçimi aynen alır. Farklı oranı dikey koordinatlara sıkıştırma.
+- Arena near1,5/far300 hassasiyeti, zemin420×420 ve yerel arka plan, biçme şeritlerinde depthWrite=false/renderOrder1. Milimetrelik çim/boya/gölge katmanlarını uzak kamerada tekrar çakıştırma. Renk/forma varlıkları değiştirilmedi.
+- D-029 FK: keeperTravel ivmeli ve hız sınırlı; fiziksel reach ve görünen dalış aynı modeli kullanır. Yerçekimi9,81, en çok0,38m ek itiş; `keeperGrounded` opt-in zemin düzeltmesi. Gerçek temas zamanı/noktası, uçan topu kovalayan IK yok. Dış ayak gerçekten `outside-foot`, alçak falso gerçek spin/nişan profili; eski mod varsayılanları değişmez.
+- D-030: penaltı/FK2Dcanvas1080×1920; WebGLönizleme adaptif kalır. İsim/arma/skor büyütülür, fillText(maxWidth) ile harf sıkıştırılmaz. Video yolu aynı; telefon bellek/kalite korumalarını kaldırma.

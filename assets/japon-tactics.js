@@ -1,39 +1,61 @@
 /* Arena football decisions. Original code; coaching references in docs/ai/research.
  * Position/velocity evidence only: no authored goals or forced outcomes. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'));else r.Next90JaponTactics=f(r.Next90BallAero);})(typeof globalThis!=='undefined'?globalThis:this,function(A){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'),require('./japon-layout.js'));else r.Next90JaponTactics=f(r.Next90BallAero,r.Next90JaponLayout);})(typeof globalThis!=='undefined'?globalThis:this,function(A,Layout){'use strict';
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),dist=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
 function face(p,heading,dt,rate=4){const delta=Math.atan2(Math.sin(heading-p.heading),Math.cos(heading-p.heading));p.heading+=clamp(delta,-rate*dt,rate*dt);}
 function move(p,target,speed,dt){
  const weight=1-Math.exp(-dt/Math.max(.10,p.keeper?.13:.18));p.steerX=(p.steerX??p.x)+(target.x-(p.steerX??p.x))*weight;p.steerZ=(p.steerZ??p.z)+(target.z-(p.steerZ??p.z))*weight;
- const dx=p.steerX-p.x,dz=p.steerZ-p.z,d=Math.hypot(dx,dz),angle=Math.atan2(dx,dz),turn=Math.abs(Math.atan2(Math.sin(angle-p.heading),Math.cos(angle-p.heading))),desired=d<.18?0:Math.min(speed,Math.sqrt(2*6*Math.max(0,d-.12)))*(p.jockey?1:clamp(1-turn*.26,.3,1)),vx=d?dx/d*desired:0,vz=d?dz/d*desired:0,change=Math.hypot(vx-(p.vx||0),vz-(p.vz||0)),accel=desired<(p.speed||0)?8:5.5,mix=change?Math.min(1,accel*dt/change):1;
+ const dx=p.steerX-p.x,dz=p.steerZ-p.z,d=Math.hypot(dx,dz),angle=Math.atan2(dx,dz),turn=Math.abs(Math.atan2(Math.sin(angle-p.heading),Math.cos(angle-p.heading))),desired=d<.18?0:Math.min(speed,Math.sqrt(2*6*Math.max(0,d-.12)))*(p.jockey?1:clamp(1-turn*.26,.3,1)),vx=d?dx/d*desired:0,vz=d?dz/d*desired:0,change=Math.hypot(vx-(p.vx||0),vz-(p.vz||0)),accel=p.keeper&&p.guardThreat?18:desired<(p.speed||0)?8:5.5,mix=change?Math.min(1,accel*dt/change):1;
  p.vx=(p.vx||0)+(vx-(p.vx||0))*mix;p.vz=(p.vz||0)+(vz-(p.vz||0))*mix;p.speed=Math.hypot(p.vx,p.vz);p.x+=p.vx*dt;p.z+=p.vz*dt;p.travel=(p.travel||0)+p.speed*dt;if(p.speed>.25&&!p.jockey&&!p.faceLocked)face(p,Math.atan2(p.vx,p.vz),dt,p.keeper?4:3.8);
 }
-function carryTarget(p,g,skill){const lateral=-p.x*g.nz+p.z*g.nx,depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,channel=clamp(lateral,-g.width*.46,g.width*.46),gate=depth>8?5.8:Math.max(4.2,depth-.7),offset=skill?skill.lateral*1.4:0;return{x:g.x-g.nx*gate-g.nz*(channel+offset),z:g.z-g.nz*gate+g.nx*(channel+offset)};}
+function carryTarget(p,g,skill){const lateral=-p.x*g.nz+p.z*g.nx,depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,channel=clamp(lateral*.45+(p.attackLane||0)*.55,-6,6),gate=depth>9?(p.shootingDepth||6):Math.max(3.3,depth-1.2),offset=skill?skill.lateral*1.4:0;return{x:g.x-g.nx*gate-g.nz*(channel+offset),z:g.z-g.nz*gate+g.nx*(channel+offset)};}
 function support(p,carrier,ownGoal,targetGoal,slot,players=[],time=0){
  const fx=targetGoal.nx,fz=targetGoal.nz,tx=-fz,tz=fx,depth=(carrier.x-ownGoal.x)*fx+(carrier.z-ownGoal.z)*fz,ballSide=carrier.x*tx+carrier.z*tz,role=p.role,forwardRun=role!=='defender'&&time<(p.followRunUntil||0)?2.4:0;
- const advance=role==='defender'?-4.6:role==='midfielder'?-1.1:3.3,line=clamp(depth+advance+forwardRun,role==='attacker'?8:role==='midfielder'?6:4.8,role==='defender'?ownGoal.radius:ownGoal.radius*2-4.6),width=role==='midfielder'?-4.1:role==='attacker'?3.7:2.9;
+ const advance=role.startsWith('defender')?-4.6:role==='midfielder'?-1.1:3.3,line=clamp(depth+advance+forwardRun,role==='attacker'?8:role==='midfielder'?6:4.8,role.startsWith('defender')?ownGoal.radius:ownGoal.radius*2-4.6),width=role==='midfielder'?-4.1:role==='attacker'?((carrier.x*tx+carrier.z*tz)>1?-3.4:3.4):role==='defender2'?-3.2:3.2;
  const baseSide=clamp(width+ballSide*.20,-6,6),base={x:ownGoal.x+fx*line+tx*baseSide,z:ownGoal.z+fz*line+tz*baseSide};
  // A small lane adjustment opens an angle without dragging all support to the ball.
  let shift=0;for(const q of players){if(!q.active||q.team===p.team||q.keeper)continue;const d=dist(base,q);if(d<2.5)shift+=(baseSide-(-q.x*fz+q.z*fx)>=0?1:-1)*(2.5-d)*.5;}
  const side=clamp(shift,-1.3,1.3);return{x:base.x+tx*side,z:base.z+tz*side};
 }
-function defend(p,carrier,g,primary,slot,opponents=[]){const depth=(g.x-carrier.x)*g.nx+(g.z-carrier.z)*g.nz,lat=-carrier.x*g.nz+carrier.z*g.nx;
- if(primary){const dx=g.x-carrier.x,dz=g.z-carrier.z,d=Math.hypot(dx,dz)||1,gap=p.challengeActive?.62:1.25;return{x:carrier.x+dx/d*gap+(carrier.vx||0)*.12,z:carrier.z+dz/d*gap+(carrier.vz||0)*.12};}
- const threats=opponents.filter(q=>q.active&&!q.keeper&&q!==carrier).sort((a,b)=>dist(a,g)-dist(b,g)),mark=threats[slot%Math.max(1,threats.length)],line=clamp(depth*.48,2.5,8.2),side=(slot%2?1:-1)*2.6;
- let lateral=clamp(lat*.35+side,-5.7,5.7),cover=line;if(mark){const markedDepth=(g.x-mark.x)*g.nx+(g.z-mark.z)*g.nz;cover=clamp(line*.55+(markedDepth-1.3)*.45,1.6,Math.max(2,depth-1));lateral=lateral*.35+(-mark.x*g.nz+mark.z*g.nx)*.65;}
- return{x:g.x-g.nx*cover-g.nz*lateral,z:g.z-g.nz*cover+g.nx*lateral};
+function defend(p,carrier,g,primary,slot,opponents=[]){
+ const depth=(g.x-carrier.x)*g.nx+(g.z-carrier.z)*g.nz,lat=-carrier.x*g.nz+carrier.z*g.nx,fx=-g.nx,fz=-g.nz;
+ if(primary){const dx=g.x-carrier.x,dz=g.z-carrier.z,d=Math.hypot(dx,dz)||1,gap=p.challengeActive?.55:1.02;return{x:carrier.x+dx/d*gap+(carrier.vx||0)*.22,z:carrier.z+dz/d*gap+(carrier.vz||0)*.22};}
+ const isBack=p.role.startsWith('defender'),back=clamp(depth-3.7,2.5,10.4),line=isBack?back:p.role==='midfielder'?back+3:back+6,side=p.role==='defender'?-2.5:p.role==='defender2'?2.5:p.role==='midfielder'?clamp(lat*.55,-3,3):clamp(lat*.4,-3,3),threats=opponents.filter(q=>q.active&&!q.keeper&&q!==carrier).sort((a,b)=>dist(a,g)-dist(b,g)),mark=threats[slot%Math.max(1,threats.length)];
+ let cover=line,lateral=side+lat*.18;
+ if(mark){const markedDepth=(g.x-mark.x)*g.nx+(g.z-mark.z)*g.nz,markedSide=-mark.x*g.nz+mark.z*g.nx;cover=clamp(line*.25+(markedDepth-1.0)*.75,1.3,isBack?Math.min(12,depth+1):17);lateral=side*.22+markedSide*.78;}
+ return{x:g.x+fx*cover-g.nz*clamp(lateral,-6,6),z:g.z+fz*cover+g.nx*clamp(lateral,-6,6)};
 }
+function presserScore(p,ball,g){const deep=(g.x-ball.x)*g.nx+(g.z-ball.z)*g.nz;return dist(p,ball)+(p.role.startsWith('defender')&&deep>11?4:0)+(p.role==='attacker'&&deep<6?1.3:0);}
 function avoid(p,target,players){let x=0,z=0;for(const q of players){if(q===p||!q.active)continue;const dx=p.x-q.x,dz=p.z-q.z,d=Math.hypot(dx,dz),futureX=dx+((p.vx||0)-(q.vx||0))*.28,futureZ=dz+((p.vz||0)-(q.vz||0))*.28,future=Math.hypot(futureX,futureZ),space=q.team===p.team?1.6:p.pressing&&q.controlled?.72:1.1;if(d>2.4||d<1e-5||Math.min(d,future)>space)continue;const amount=(space-Math.min(d,future))*(q.team===p.team?1.5:1);x+=dx/d*amount;z+=dz/d*amount;}const length=Math.hypot(x,z),scale=length>1.4?1.4/length:1;return{x:target.x+x*scale,z:target.z+z*scale};}
-function keeperTarget(g,ball,threat,friendly){const depth=(g.x-ball.x)*g.nx+(g.z-ball.z)*g.nz,lat=-ball.x*g.nz+ball.z*g.nx,coming=ball.vx*g.nx+ball.vz*g.nz>1,reach=threat&&threat.time<1.2,step=reach?.65:friendly?1.15:clamp(1.35-depth*.035,.65,1.3);let lateral=lat*step/Math.max(2,depth);if(reach)lateral=threat.lateral;else if(!coming&&depth<6)lateral*=.3;lateral=clamp(lateral,-g.width*.40,g.width*.40);return{x:g.x-g.nx*step-g.nz*lateral,z:g.z-g.nz*step+g.nx*lateral,threat:!!reach};}
+function keeperTarget(g,ball,threat,friendly,carrier=null,protectedByDefender=false){
+ const depth=(g.x-ball.x)*g.nx+(g.z-ball.z)*g.nz,lat=-ball.x*g.nz+ball.z*g.nx,coming=ball.vx*g.nx+ball.vz*g.nz>1,reach=threat&&threat.time<1.2,oneOnOne=!friendly&&carrier&&!carrier.keeper&&!protectedByDefender&&depth>2&&depth<8&&Math.abs(lat)<g.width*.8;
+ let step=reach?.8:friendly?1.15:oneOnOne?clamp(4.5-depth*.28,1.6,3.5):clamp(1.7-depth*.035,.8,1.6),lateral=lat*step/Math.max(2,depth);
+ if(reach)lateral=threat.lateral;else if(!coming&&depth<4&&!carrier)lateral*=.3;
+ lateral=clamp(lateral,-g.width*.42,g.width*.42);return{x:g.x-g.nx*step-g.nz*lateral,z:g.z-g.nz*step+g.nx*lateral,threat:!!reach,rushing:!!oneOnOne};
+}
 // Predict the observed free ball with the shared integrator and the same boards.
 function threats(ball,layout){const b={...ball,continuousGround:true},out=Array(layout.count).fill(null),dt=1/60;if(Math.hypot(b.vx,b.vz)<2)return out;for(let t=dt;t<=1.2;t+=dt){const previous={x:b.x,z:b.z};A.step(b,dt);for(const g of layout.goals){const plane=g.radius-.7,old=previous.x*g.nx+previous.z*g.nz,now=b.x*g.nx+b.z*g.nz;if(old<plane&&now>=plane&&!out[g.team]&&b.y<g.height+.2){const lat=-b.x*g.nz+b.z*g.nx;if(Math.abs(lat)<g.width*.65)out[g.team]={time:t,lateral:lat,height:b.y};}}
  for(const e of layout.boundaries){const excess=b.x*e.nx+b.z*e.nz-e.d+.11,gap=layout.goals.some(g=>Math.abs(g.nx-e.nx)<1e-6&&Math.abs(g.nz-e.nz)<1e-6&&Math.abs(-b.x*g.nz+b.z*g.nx)<g.width/2-.11&&b.y<g.height-.11);if(excess>0&&!gap){b.x-=e.nx*excess;b.z-=e.nz*excess;const vn=b.vx*e.nx+b.vz*e.nz;if(vn>0){b.vx-=1.74*vn*e.nx;b.vz-=1.74*vn*e.nz;}}}if(layout.goals.some(g=>b.x*g.nx+b.z*g.nz>g.radius+.2))break;}
  return out;
 }
+function keeperContact(previous,ball,k,g,layout,team,backpass,quality){const dx=ball.x-previous.x,dz=ball.z-previous.z,dd=dx*dx+dz*dz,u=dd?clamp(((k.x-previous.x)*dx+(k.z-previous.z)*dz)/dd,0,1):0,point={x:previous.x+u*dx,y:previous.y+(ball.y-previous.y)*u,z:previous.z+u*dz},d=Math.hypot(point.x-k.x,point.z-k.z),height=point.y,speedBall=Math.hypot(ball.vx,ball.vz),handsAllowed=!backpass&&Layout.inGoalArea(k,layout,team)&&Layout.inGoalArea(point,layout,team);
+ return{dx,dz,u,d,height,point,speedBall,handsAllowed,method:handsAllowed?'hands':'feet',gather:d<.62+quality*.16&&height<(handsAllowed?1.8:.65)&&speedBall<(handsAllowed?18:15),parry:d<.70+quality*.4&&height<(handsAllowed?2.35:.65)&&speedBall>2};}
 function pressure(p,players,team){return players.filter(q=>q.active&&!q.keeper&&q.team!==team).reduce((sum,q)=>sum+Math.exp(-(dist(p,q)**2)/6),0);}
-function choose(p,g,players,lane,rng){const distance=dist(p,g),blocked=lane(p,g,players,p.team),near=pressure(p,players,p.team),choices=players.filter(q=>q.active&&q.team===p.team&&q!==p&&dist(p,q)>2.5&&dist(p,q)<13).map(q=>{const progress=distance-dist(q,g),risk=lane(p,q,players,p.team),space=pressure(q,players,p.team);return{p:q,risk,progress,value:progress*.32+(near-space)*1.25-risk*3-(q.keeper?2.4:0)-dist(p,q)*.035+rng()*.16};}).filter(q=>q.risk<1.1).sort((a,b)=>b.value-a.value),pass=choices[0],shot=distance<10.5&&blocked<.65||distance<6.8;
- if(shot&&(!pass||pass.value<1.15||distance<6.5))return{kind:'shot'};if(pass&&(pass.value>.35&&pass.progress>.5||near>.9&&pass.value>.05||distance>14&&pass.progress>1&&pass.risk<.5))return{kind:'pass',receiver:pass.p};return{kind:'carry'};
+function choose(p,g,players,lane,rng,context={}){
+ const distance=dist(p,g),depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,lateral=-p.x*g.nz+p.z*g.nx,blocked=lane(p,g,players,p.team),near=pressure(p,players,p.team),choices=players.filter(q=>q.active&&q.team===p.team&&q!==p&&dist(p,q)>2&&dist(p,q)<15).map(q=>{const progress=distance-dist(q,g),risk=lane(p,q,players,p.team),space=pressure(q,players,p.team),returnPass=context.time-(p.receivedAt||-10)<1.1&&q===players[p.receivedFrom];return{p:q,risk,progress,value:progress*.23+(near-space)*1.15-risk*2.3-(q.keeper?1.5:0)-dist(p,q)*.025+(returnPass?.65:0)+rng()*.25};}).filter(q=>q.risk<1.2).sort((a,b)=>b.value-a.value),pass=choices[0];
+ const cross=players.filter(q=>q.active&&q.team===p.team&&q!==p&&!q.keeper&&dist(p,q)>3&&dist(p,q)<15&&(g.x-q.x)*g.nx+(g.z-q.z)*g.nz<8.5&&Math.abs(-q.x*g.nz+q.z*g.nx)<g.width*.85&&pressure(q,players,p.team)<1.8).map(q=>({p:q})).sort((a,b)=>dist(a.p,g)-dist(b.p,g))[0];
+ if(Math.abs(lateral)>2.8&&depth<13&&cross&&rng()<.55)return{kind:'cross',receiver:cross.p};
+ const look=clamp((12-distance)/8,0,1)*(1-clamp(blocked/1.8,0,.85)),oneTouch=context.time-(p.receivedAt||-10)<.8&&p.receivedFrom!=null;
+ if(pass&&pass.value>.55&&(blocked>.35||distance>8.5||rng()<.38))return{kind:'pass',receiver:pass.p};
+ if(distance<5.6||distance<13&&rng()<look*(oneTouch?1.35:.85)+.06&&blocked<1.25)return{kind:'shot'};
+ if(pass&&(pass.value>.2&&pass.progress>.4||near>.85&&pass.value>-.15))return{kind:'pass',receiver:pass.p};return{kind:'carry'};
+}
+function finish(p,g,keeper,rng,context={}){
+ const depth=(g.x-keeper.x)*g.nx+(g.z-keeper.z)*g.nz,distance=dist(p,g),quality=context.ability??.5,keeperSide=-keeper.x*g.nz+keeper.z*g.nx,roll=rng(),fresh=context.time-(p.receivedAt||-10)<.85&&p.receivedFrom!=null;
+ const pattern=depth>2&&distance>4&&roll<.62?'chip':fresh&&roll<.5?'placed':roll<.34?'placed':roll<.70?'driven':'rising';
+ const aim=(rng()-.5)*g.width*.78-keeperSide*.20,error=(rng()+rng()-1)*(.28+(1-quality)*.65+Math.max(0,distance-7)*.045),lateral=aim+error,y=pattern==='driven'?.16+rng()*.3:pattern==='rising'?g.height*(.65+rng()*.48):pattern==='chip'?.3+rng()*.5:.25+rng()*1.2,pace=pattern==='driven'?20+rng()*5:pattern==='placed'||pattern==='one_touch'?14+rng()*4:19+rng()*4,flight=pattern==='chip'?clamp(1.0+distance*.035,1.1,1.55):clamp(distance/pace,.24,1.35);
+ return{pattern,target:{x:g.x-g.nz*lateral,y,z:g.z+g.nx*lateral},flight,spin:{x:pattern==='driven'?-4:0,y:pattern==='placed'?(rng()-.5)*12:(rng()-.5)*4,z:0}};
 }
 function bank(from,to,layout,lane,players,team){let best;for(const e of layout.boundaries){if(layout.goals.some(g=>Math.abs(g.nx-e.nx)<1e-6&&Math.abs(g.nz-e.nz)<1e-6))continue;const d=e.d-.11,over=to.x*e.nx+to.z*e.nz-d,aim={x:to.x-2*over*e.nx,z:to.z-2*over*e.nz},vx=aim.x-from.x,vz=aim.z-from.z,den=vx*e.nx+vz*e.nz,u=(d-from.x*e.nx-from.z*e.nz)/den;if(!(u>.15&&u<.85))continue;const hit={x:from.x+vx*u,z:from.z+vz*u},length=dist(from,hit)+dist(hit,to),onBoard=layout.boundaries.every(edge=>hit.x*edge.nx+hit.z*edge.nz<=edge.d-.10+1e-6),cost=lane(from,hit,players,team)+lane(hit,to,players,team);if(onBoard&&length<16&&cost<.65&&(!best||cost<best.cost))best={aim,hit,cost,length};}return best;
 }
-return{face,move,carryTarget,support,defend,avoid,keeperTarget,threats,pressure,choose,bank};});
+return{face,move,carryTarget,support,defend,presserScore,avoid,keeperTarget,threats,keeperContact,pressure,choose,finish,bank};});

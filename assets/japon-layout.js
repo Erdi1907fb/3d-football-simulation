@@ -15,9 +15,10 @@ function create(count,goalWidth=5){
  return{count,scale,apothem,vertices,boundaries,goals,width,length,area:area(vertices),shape:count===2?'rectangle':count===3?'triangle':count===4?'square':count===5?'pentagon':'hexagon'};
 }
 function penaltyArea(layout,team){const g=layout.goals[team];return{team,depth:5.4*layout.scale,halfWidth:4.9*layout.scale,spot:5*layout.scale};}
-function inPenaltyArea(p,layout,team){if(layout.count!==2)return false;const g=layout.goals[team],a=penaltyArea(layout,team),depth=g.radius-p.x*g.nx-p.z*g.nz,lateral=-p.x*g.nz+p.z*g.nx;return depth>=0&&depth<=a.depth&&Math.abs(lateral)<=a.halfWidth;}
+function inGoalArea(p,layout,team){const g=layout.goals[team],a=penaltyArea(layout,team),depth=g.radius-p.x*g.nx-p.z*g.nz,lateral=-p.x*g.nz+p.z*g.nx;return depth>=0&&depth<=a.depth&&Math.abs(lateral)<=a.halfWidth;}
+function inPenaltyArea(p,layout,team){return layout.count===2&&inGoalArea(p,layout,team);}
 function foulRestart(layout,point,against,at,until){const penalty=inPenaltyArea(point,layout,against),g=layout.goals[against],distance=penaltyArea(layout,against).spot;return{kind:penalty?'penalty':'free_kick',spot:penalty?{x:g.x-g.nx*distance,z:g.z-g.nz*distance}:contain({x:point.x,z:point.z},layout,.8),until:penalty?Math.max(until,at+5):until};}
 function supporterAnchor(layout,team){const angle=(layout.count===2?0:-Math.PI/2)+team*Math.PI*2/layout.count+Math.PI/(layout.count*3),nx=Math.cos(angle),nz=Math.sin(angle),r=Math.min(...layout.boundaries.map(e=>{const d=e.nx*nx+e.nz*nz;return d>1e-7?(e.d-1.1)/d:Infinity;}));return{x:nx*r,z:nz*r,nx,nz};}
 function contain(p,layout,margin=.4){for(let pass=0;pass<2;pass++)for(const edge of layout.boundaries){const excess=p.x*edge.nx+p.z*edge.nz-edge.d+margin;if(excess>0){p.x-=edge.nx*excess;p.z-=edge.nz*excess;}}return p;}
 function inside(p,layout,margin=0){return layout.boundaries.every(e=>p.x*e.nx+p.z*e.nz<=e.d-margin+1e-7);}
-return{create,contain,inside,area,foulRestart,supporterAnchor,penaltyArea,inPenaltyArea};});
+return{create,contain,inside,area,foulRestart,supporterAnchor,penaltyArea,inPenaltyArea,inGoalArea};});

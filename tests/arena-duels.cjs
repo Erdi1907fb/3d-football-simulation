@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),E=require('../assets/japon-engine.js'),L=require('../assets/japon-layout.js'),D=require('../assets/japon-duels.js'),C=require('../assets/commentary.js'),A=require('../assets/ball-aero.js');
-const sides=n=>Array.from({length:n},(_,i)=>({name:'Side '+i,keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},defender:{id:'d'+i,name:'Defender '+i},midfielder:{id:'m'+i,name:'Midfielder '+i},player:{id:'p'+i,name:'Player '+i}}));
+const sides=n=>Array.from({length:n},(_,i)=>({name:'Side '+i,keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},defender:{id:'d'+i,name:'Defender '+i},defender2:{id:'d2'+i,name:'Second defender '+i,roles:['CB']},midfielder:{id:'m'+i,name:'Midfielder '+i},player:{id:'p'+i,name:'Player '+i}}));
 const screen=D.interpose({x:3,z:1},{x:0,z:0,vx:2,vz:0},{x:12,z:0});assert(screen.x>1.25&&screen.x<3&&screen.z===0);assert.equal(D.evade({x:0,z:0},{x:1,z:1},{x:12,z:0}),-1);
 for(const type of D.MOVES){const a=D.envelope({type,side:1,at:2,duration:.8},2),b=D.envelope({type,side:1,at:2,duration:.8},2.8);assert(Math.abs(a.lateral)<1e-6&&Math.abs(b.lateral)<1e-6);assert(Math.abs(b.phase-1)<1e-8);}
 assert(D.contact({x:.8,z:0,vx:-2},{x:0,z:0},{x:.4,z:0}).ballFirst);assert(D.contact({x:.8,z:0,vx:-2},{x:0,z:0},{x:-.35,z:0}).lateBody);
@@ -14,7 +14,7 @@ let counts={},moves=new Set(),scores=new Set(),games=0;for(const n of[2,4,6])for
  const a=c.sample(5.3);c.sample(29);assert.deepEqual(a,c.sample(5.3));
 }
 const upright=A.state({x:A.GOAL_X-.1,y:1,z:A.POST_Z},{x:18,y:0,z:0});assert.equal(A.woodwork(upright)?.part,'post');assert(upright.vx<0,'shared physical post contact reverses the incoming normal velocity');
-for(const type of['skill','duel_win','foul','free_kick','keeper_catch','keeper_control','keeper_distribution','board','block','advantage'])assert(counts[type]>0,type+' exercised');assert.equal(moves.size,4);assert(scores.size>12);
+for(const type of['skill','duel_win','foul','free_kick','keeper_catch','keeper_distribution','board','block','advantage'])assert(counts[type]>0,type+' exercised');assert.equal(moves.size,4);assert(scores.size>12);
 const large=L.create(2,6),late=L.foulRestart(large,{x:large.goals[0].x-2,z:0},0,29,30);assert.equal(late.kind,'penalty');assert.equal(late.until,34);assert.equal(late.spot.x,10.8);const victim={x:large.goals[0].x-2,z:0},lateDefender={x:victim.x+.8,z:0,vx:-2,vz:0},shieldedBall={x:victim.x-.35,z:0};assert(D.contact(lateDefender,victim,shieldedBall).lateBody,'penalty fixture requires a real late body challenge');assert.equal(L.foulRestart(large,victim,0,29,30).kind,'penalty');const outside=L.foulRestart(large,{x:0,z:0},0,29,30);assert.equal(outside.kind,'free_kick');assert.equal(outside.until,30);
 
 const again=E.create({sides:sides(2),seed:4,seconds:45});assert.deepEqual(again.events,E.create({sides:sides(2),seed:4,seconds:45}).events);

@@ -6,6 +6,14 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V167 — 2026-11-11 (Codex)
+- Küçük saha aynı boyutta5v5/2–1–1; ilk top ortak, sonraki gollerde yiyenin forveti pasla santra yapar.
+- Bağlı baskı/örtü/adam savunması, farklı taşıma/pas/orta ve fiziksel ilk vuruş/kafa; plase, sert/alçak, yükselen ve aşırtma. GK alan kapatır; alan dışı/geri pas elle oynanmaz.
+- Kazananlar taraftarına koşup kutlar; Japon Kale’de ardından altın/gümüş/bronz ve4–6tam sıralama.
+- İçeriden alçak basın açısı; yatay1920×1080 seçeneği ve dikeyReels korunur. Uzak kadrajda çim/gölge derinlik çatışmaları ve sert zemin sınırı düzeltildi.
+- FK kalecisi yerçekimi ve sınırlı itişle dalar, gerçek temas/zemin sınırı; alçak falso ve gerçek dış ayak pozu.
+- Penaltı/FK arma-ad-skor gerçek1080p ve daha büyük; sıkıştırılmayan metin. Ortak rapor/test ve gerçek tarayıcı kanıtları.
+
 ## V166 — 2026-11-10 (Codex)
 - Orta mesafeli aksiyon kadrajı: taşıyıcı, pas seçenekleri ve savunma örtüsü; en yakına sıkışmayan saha bağlamı. Sabit orta basın tribünü alternatifi.
 - Kadro seçimi takım → rol kartında kaynak/kişi → forma olarak açık adımlar; serbest seçim ve tüm kaynaklar korunur.

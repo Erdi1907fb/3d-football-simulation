@@ -7,8 +7,8 @@ uygulaması. Sürüm: bkz. `VERSION`.
 |---|---|
 | `index.html` | Maç merkezi: bülten, 11’e 11 3D maç, sezon, konsept maçlar, video indirme |
 | `penalty.html` | Penaltı Stüdyosu (takım serisi / oyuncu düellosu) |
-| `japon-kale.html` | Japon Kale: 3–6 taraf, kaleci + 2 serbest saha oyuncusu, eleme / puan, dengeli aksiyon + sabit orta basın tribünü kamerası |
-| `japon-kale.html?mode=small` | Küçük Saha Maçı: 2 takım, kaleci + 3 serbest saha oyuncusu (4v4), süreli maç |
+| `japon-kale.html` | Japon Kale: 3–6 taraf, kaleci + 2 serbest saha oyuncusu, eleme / puan, dengeli aksiyon + stadyum içi basın kamerası (dikey/yatay) |
+| `japon-kale.html?mode=small` | Küçük Saha Maçı: 2 takım, kaleci + 4 serbest saha oyuncusu (5v5), süreli maç |
 | `freekick.html` | Serbest Vuruş Stüdyosu (takım vs takım / oyuncu düellosu) |
 
 **Geliştiriciler ve yapay zekâ ajanları (Codex, Claude):** önce `AGENTS.md`, sonra
@@ -24,5 +24,8 @@ hazır videoları silme; CDN önbelleğini temizle. Yeni servis/cron gerekmez.
 
 Tüm video modlarında TR/EN zaman damgalı anlatım: kopyalama, TXT ve SRT indirme.
 
-Arena süreleri: 2–6 takımda 30/45/60/75/90 saniye oyun + 4,5 saniye kısa sonuç/kutlama. Süreli maçlar kesintisizdir.
+Arena süreleri: 2–6 takımda 30/45/60/75/90 saniye oyun; taraftara fiziksel koşu/kısa kutlama ve Japon Kale’de 1,8 saniyelik madalyalı sıralama. Süreli maçlar kesintisizdir.
 Ortak millî kapsam: 85 ülkenin sağlayıcı kadrosu ve renk/desen formaları normal maç, penaltı, serbest vuruş, arena ve güncel konsept seçimine bağlıdır. İlk 11'ler simülasyon seçkisidir; formalar resmî sezon replikası değildir.
+
+Küçük saha 5v5: kaleci + iki defans + orta saha + forvet (2–1–1); saha aynı28×18m. İlk top kapışılır, golden sonra yiyenin forveti arkadaşına pasla başlar. 3–6 takımda ortak top kapışması sürer. Saha oyuncuları serbest seçilir.
+Basın kamerası için1920×1080 yatay yayın;1080×1920 dikey Reels/Shorts da seçilebilir. Penaltı ve FK ön izlemesinin metin/arma/skor katmanı gerçek1080p’dir.

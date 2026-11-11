@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),E=require('../assets/japon-engine.js');
-const sides=n=>Array.from({length:n},(_,i)=>({name:'Side '+i,player:{id:'p'+i,name:'Player '+i},keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},defender:{id:'d'+i,name:'Outfield 1 '+i},...(n===2?{midfielder:{id:'m'+i,name:'Outfield 3 '+i}}:{})}));
+const sides=n=>Array.from({length:n},(_,i)=>({name:'Side '+i,player:{id:'p'+i,name:'Player '+i},keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},defender:{id:'d'+i,name:'Outfield 1 '+i},...(n===2?{defender2:{id:'d2'+i,name:'Second defender '+i,roles:['CB']},midfielder:{id:'m'+i,name:'Outfield 3 '+i}}:{})}));
 let games=0;
 for(let n=2;n<=6;n++)for(const mode of ['elimination','points'])for(let seed=1;seed<=5;seed++){
  const c=E.create({sides:sides(n),seed,mode,seconds:30}),score=c.stats.map(()=>({gf:0,ga:0,points:0,roundGA:0})),active=Array(n).fill(true);let outs=0;

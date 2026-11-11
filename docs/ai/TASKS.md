@@ -4,10 +4,13 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V167
+## Aktif hedef: V168
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-279 | Penaltı/FK stüdyosunda gerçek1080p isim-arma-skor ve sıkıştırılmayan metin | done (V167) | codex | files: assets/penalty-ui.js, assets/freekick-ui.js, ortak AI belgeleri |
+| T-278 | FK kalecisinde yerçekimi/sınırlı itiş, gerçek temas hedefi ve iç/dış/üst ayak-alçak falso çeşitliliği | done (V167) | codex | files: assets/freekick-engine.js, assets/freekick-ui.js, assets/athlete-motion.js, tests/freekick.cjs, ortak AI belgeleri |
+| T-277 | Küçük saha 5v5/2-1-1, yiyenin paslı santrası, bağlı alan/adam savunması, hücum/şut/kaleci çeşitliliği ve taraftar finali | done (V167) | codex | files: assets/japon-*.js, assets/scene.js, assets/commentary.js, japon-kale.html, tests/*, ortak AI belgeleri |
 | T-276 | Dengeli orta mesafe aksiyon / sabit basın tribünü kamerası, anlaşılır kadro seçimi, ilişkili koşu-pas-savunma ve sakin GK, esnek top-file teması | done (V166) | codex | files: assets/japon-*.js, assets/athlete-motion.js, assets/football-animation.js, assets/open-football-adapter.js, japon-kale.html, tests/*, ortak AI belgeleri |
 | T-275 | Küçük saha futbol kararları/akıcı hareket/sekme öngörülü GK, gerçek dikdörtgen, yakın aksiyon ve belirgin file, kısa kazanan/sonuç finali | done (V165) | codex | files: assets/japon-*.js, assets/ball-aero.js, assets/football-animation.js, assets/athlete-motion.js, assets/commentary.js, tests/*, japon-kale.html, ortak AI belgeleri |
 | T-274 | HD skor paneli, seçici oyuncu etiketleri, düzenli hücum/savunma, ortak top/file tepkisi, tam yan yayın ve taraftarla final, anlaşılır rol menüsü | done (V164) | codex | files: assets/japon-*.js, assets/commentary.js, tests/*, japon-kale.html, ortak AI belgeleri |
