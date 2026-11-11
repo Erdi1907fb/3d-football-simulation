@@ -108,7 +108,8 @@ function adaptPlan(c,positions,plan){
 }
 function steer(c,p,q,t){if(!c.ai?.adapter||p.keeper||['penalty','freeKick','corner'].includes(c.pattern)||t>=3.8)return{x:(q.x-p.x)*2.4,z:(q.z-p.z)*2.4};
  const core=p.team===c.team&&[c.finisher,c.midActor,c.wideActor].includes(p.id%11);
- return OpenFootball.arrive(p,q,c.ai.profiles[p.id].pace,core?.60:1.25);
+ /* V171 tempo: the three players making the chance sprint; team-mates and recovering defenders match effort to how far out of position they are */const away=Math.hypot(q.x-p.x,q.z-p.z),effort=core?1:p.team!==c.team?(away>9?1:away>4?.88:.74):(away>12?.9:away>6?.74:.6);
+ return OpenFootball.arrive(p,q,c.ai.profiles[p.id].pace*effort,core?.60:1.25);
 }
 function xg({start,shooter,keeper,defenders,type='placed',penalty=false}){if(penalty)return .76;const dx=52.5-start.x,distance=Math.hypot(dx,start.z),angle=Math.abs(Math.atan2(3.66-start.z,dx)-Math.atan2(-3.66-start.z,dx)),pressure=defenders.reduce((n,p)=>Math.max(n,clamp((4.5-dist(p,start))/4.5)),0),keeperError=clamp(Math.abs(keeper.z-start.z*.1)/5),raw=sigmoid(-1.65-.065*distance+1.75*angle+.5*(1-pressure)+.4*((shooter.finishing||.7)-.7)-.45*pressure+.25*keeperError);return clamp(raw*(type==='header'?.72:type==='volley'?.75:1),.01,.85);}
 function keeperRead(c,target,error=0){

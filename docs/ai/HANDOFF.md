@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-11] Claude Code · V170 → V171
+- Dal / commit / PR: `claude/elegant-ride-a93j2q`; başlangıç main `7b84d6d`. Başlık `V171: 11v11 tempo ve oyun değiştirme, penaltı kaleci sıçraması`; main'e fast-forward. PR/Hostinger dağıtımı yok.
+- Kullanıcı isteği (özet): önceki raporda “yapılmadı” denen iki kalem — penaltı/FK oynanış-fizik ve 11v11 pas/pres/diziliş/top sürme — yapılsın. Oturum sonunda kullanıcı “uzatmadan bitir, daha önemli iş var” dedi; iş bu yüzden daraltıldı.
+- Yapılanlar: 11v11 efora bağlı tempo (possession-engine + football-ai steer), top sürme hızı, oyun değiştirme pası, ara pası ağırlığı; penaltı kalecisinde yerçekimi sınırlı sıçrama/gövde açısı. Ölçümler CHANGELOG V171.
+- Değişen önemli dosyalar: assets/possession-engine.js, assets/football-ai.js, assets/penalty-engine.js, sürüm dosyaları.
+- Tamamlanmayanlar / kısmi (T-283): (1) Penaltı yüksek kurtarışta kaleci hâlâ ~1 m havada ve top temas anında uyluk hizasında görünüyor; motor tarafındaki `diveLift` artık ≤0,42 m, kalan yükseliş `scene.js` tipOver pozu (+0,30 sin) ve `football-clips.js` kurtarış kliplerinden geliyor — FK'deki D-029 çözümü (keeperSaveAt/keeperContactPoint ile gerçek temas) penaltıya taşınmalı. (2) FK oynanış/fiziği değişmedi. (3) 11v11'de pres ve diziliş mantığına dokunulmadı; ortanca hız hâlâ 3,97 m/sn (yalnız atak sekansları ölçülüyor). Ara pası olayı ölçümde hâlâ görünmüyor.
+- Testler (komut → sonuç): `node tests/run-all.cjs` → 32/32 PASS. Ek: 18 fikstür maçı Node doğrulaması (hedef skor, sonlu kare, hız ≤9,6 m/sn).
+- Tarayıcı: yalnız penaltı kurtarış kareleri (SwiftShader) önce/sonra karşılaştırıldı; 11v11 değişikliği tarayıcıda izlenmedi, gerçek cihaz testi yok.
+- Sonraki ajan için dikkat: tempo ölçeklemesini kaldırmayın; çekirdek üç oyuncu (finisher/midActor/wideActor) ve pres yapanlar tam hızda kalmalı, aksi hâlde şut penceresi zamanlaması bozulur.
+
 ## [2026-11-11] Claude Code · V169 → V170
 - Dal / commit / PR: `claude/elegant-ride-a93j2q`; başlangıç main `d1fb1de`. Başlık `V170: Yeşil gol işareti ve kale arkası gökyüzü şeridi düzeltmesi`; main'e fast-forward. PR/Hostinger dağıtımı yok.
 - Kullanıcı isteği (özet): penaltı/FK'de gol işareti mavi görünüyor, yeşil olsun (ikisinde de); kale sağ/solunda “deniz arkasındaki gökyüzü” gibi duran ışıklı şerit ekran görüntüsünden değilse düzeltilsin.

@@ -6,6 +6,13 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V171 — 2026-11-11 (Claude Code)
+- **11'e 11 açık oyun:** herkes sürekli tam hızla koşmuyor — topa yakın/pres yapan/pas bekleyen oyuncu sprint atar, diğerleri konumdan uzaklığına göre tempo tutar (`possession-engine.js` ve pozisyon sonu `football-ai.js steer`). Top süren oyuncu rakip yakınken yavaşlar (%80–100 hız). Ters kanada havadan oyun değiştirme pası eklendi; ara pası ağırlığı artırıldı.
+- Ölçüm (8 fikstür maçı, canlı oyun; önce → sonra): oyuncu hızı ortanca 4,25 → 3,97 m/sn, %90 6,78 → 6,15; top süren %90 6,92 → 6,22; havadan pas 3 → 13 (18 maçta 48); pas isabeti %87 → %90. 18 fikstür maçında hedef skor korundu, bozuk kare/aşırı hız yok.
+- **Penaltı kalecisi:** sıçrama yerçekimiyle sınırlı (en çok 0,42 m itiş), gövde açısı ve yanal mesafe top yüksekliğine göre; `keeperGrounded` ve `saveHeight` sahneye iletilir. **Kısmi:** yüksek kurtarışta kaleci görüntüde hâlâ yaklaşık 1 m havada; kalan yükseliş poz/klip katmanından geliyor.
+- Serbest vuruş oynanışı bu sürümde değişmedi.
+- Testler: `node tests/run-all.cjs` 32/32 PASS.
+
 ## V170 — 2026-11-11 (Claude Code)
 - Penaltı ve serbest vuruş skor şeridinde gol işareti `#4dd99a` (nane/turkuaza kaçan) → `#2fcc5a` (net yeşil); kaçan vuruş kırmızı çarpı aynı.
 - V168'de mavileştirilen büyük stadyum gökyüzü tonu geri alındı: kale arkasındaki duvar ile tribün arasındaki dar aralıktan görünen gökyüzü parlak mavi bir “ufuk çizgisi” gibi duruyordu (kullanıcı bildirimi). Aralık artık V167'deki koyu tonda.
