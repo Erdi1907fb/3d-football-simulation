@@ -124,7 +124,7 @@ function prepareFinish(c,frames,at){
  const aerial=c.liveGeometry&&c.proceduralOpening?!!c.liveDeliveryAerial:['cross','corner','overlapCross','earlyCross'].includes(c.pattern)&&c.family!=='lowCross';
  if(!aerial&&['header','volley','halfVolley','bicycle'].includes(c.finish))c.finish='placed';
  if(c.finish==='chip'&&(!c.oneOnOne||!(c.keeperRush>1.1)))c.finish='placed';
- if(c.oneOnOne&&c.keeperRush>1.1&&r()<.26)c.finish='chip';
+ if(c.oneOnOne&&c.keeperRush>1.1&&r()<.38)c.finish='chip';/* V168: a keeper off his line is lobbed more often */
  if(aerial){const n=r();c.finish=n<.68?'header':n<.91?'volley':'halfVolley';}
  c.finishContext={oneOnOne:!!c.oneOnOne,keeperAdvance:c.keeperRush||0,aerial};
 }

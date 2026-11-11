@@ -14,7 +14,7 @@ let counts={},moves=new Set(),scores=new Set(),games=0;for(const n of[2,4,6])for
  const a=c.sample(5.3);c.sample(29);assert.deepEqual(a,c.sample(5.3));
 }
 const upright=A.state({x:A.GOAL_X-.1,y:1,z:A.POST_Z},{x:18,y:0,z:0});assert.equal(A.woodwork(upright)?.part,'post');assert(upright.vx<0,'shared physical post contact reverses the incoming normal velocity');
-for(const type of['skill','duel_win','foul','free_kick','keeper_catch','keeper_distribution','board','block','advantage'])assert(counts[type]>0,type+' exercised');assert.equal(moves.size,4);assert(scores.size>12);
+for(const type of['skill','duel_win','foul','free_kick','keeper_catch','keeper_distribution','board','block','advantage'])assert(counts[type]>0,type+' exercised');assert.equal(moves.size,7);assert(scores.size>12);
 const large=L.create(2,6),late=L.foulRestart(large,{x:large.goals[0].x-2,z:0},0,29,30);assert.equal(late.kind,'penalty');assert.equal(late.until,34);assert.equal(late.spot.x,10.8);const victim={x:large.goals[0].x-2,z:0},lateDefender={x:victim.x+.8,z:0,vx:-2,vz:0},shieldedBall={x:victim.x-.35,z:0};assert(D.contact(lateDefender,victim,shieldedBall).lateBody,'penalty fixture requires a real late body challenge');assert.equal(L.foulRestart(large,victim,0,29,30).kind,'penalty');const outside=L.foulRestart(large,{x:0,z:0},0,29,30);assert.equal(outside.kind,'free_kick');assert.equal(outside.until,30);
 
 const again=E.create({sides:sides(2),seed:4,seconds:45});assert.deepEqual(again.events,E.create({sides:sides(2),seed:4,seconds:45}).events);

@@ -6,6 +6,16 @@ Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archiv
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.
 
+## V168 — 2026-11-11 (Claude Code)
+- **Arena görseli (Küçük Saha + Japon Kale 2–6):** yeni `japon-venue.js` — gece gökyüzü kubbesi/yıldızlar, sektör renkli üst tribün halkası (kamera arkasında kalan bölüm otomatik gizlenir), takım renkli kayan LED saha panoları (@next90sim), projektör direkleri, koyu çim çevre halkası; doğal çim tonu ve belirgin biçme şeritleri.
+- **Arena oynanışı:** top sürme dokunuşu gövde yönüne değil gerçekten gidilen yöne; ağır dokunuşu oyuncu kovalar; alıcı yavaşlayan pasa hareketlenir; boş alana ara pası (`through`); mesafeye bağlı pas hızı 9,4–13,2 m/sn; 7 çalım (elastico, chop, nutmeg eklendi) ve tohumlu yetenek ağırlıklı çalım düellosu (kazanan patlama hızı alır, kaybeden savunmacı 0,6 sn geride kalır; okuyan savunmacı temiz müdahale şansı kazanır); boş köşeye nişan; öne çıkan kaleciye aşırtma kararı; kaleci yavaş şutu tutar ve oyunu elle başlatır; kurtarış pozu yükseklik/uzanmaya göre (tipOver/fullStretch/parryWide/foot/reflex).
+- **Ölçüm (24 tohum, 60 sn 5v5; önce → sonra):** pas 10,7 → 12,5; şut 4,2 → 5,4; gol 0,9 → 1,7; kendi kendine top kaybı 4,8 → 1,1; sahipsiz top süresi %52 → %40; çalım başarısı %32 → %52; kaleci tutuşu 0 → 1,2.
+- **Penaltı:** 11 vuruş stili (yan ağlara sert, çatıya, kaleciyi bekleyip yuvarlama eklendi), sonuca göre ağırlıklı stil seçimi, kalecide erken hamle/bekleme/normal zamanlama ve çizgide sallanma/yan adım, sekerek (hop) ve yürüyerek koşu; Panenka'yı bekleyen kaleci tutar.
+- **Serbest vuruş:** 9 teknik — baraj üstü aşırtma (`chip`) ve barajın yanından (`around`, gerektiğinde dış ayak) eklendi; fiziksel aday arama korunur (eşleşme %99,85).
+- **Normal maç:** bire birde kaleci açıldığında aşırtma olasılığı %26 → %38. Büyük stadyum gece göğü hafif mavileştirildi.
+- **UEFA Uluslar Ligi:** canlı ESPN `uefa.nations` Kasım akışı gerçek sunucu ayrıştırıcısından geçirildi: 52/52 maç, filtreye takılan takım yok; yerel `api.php` yenilemesinde bültende 44 UNL + 6 hazırlık maçı (5 günlük pencere). `season-data.php` puan tablosunda `value` taşımayan istatistik satırı uyarısı giderildi.
+- Testler: `node tests/run-all.cjs` 32/32 PASS (engine-test 118,5 sn dahil).
+
 ## V167 — 2026-11-11 (Codex)
 - Küçük saha aynı boyutta5v5/2–1–1; ilk top ortak, sonraki gollerde yiyenin forveti pasla santra yapar.
 - Bağlı baskı/örtü/adam savunması, farklı taşıma/pas/orta ve fiziksel ilk vuruş/kafa; plase, sert/alçak, yükselen ve aşırtma. GK alan kapatır; alan dışı/geri pas elle oynanmaz.

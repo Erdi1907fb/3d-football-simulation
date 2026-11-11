@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V167** · 2026-11-11 · Codex (5v5, bağlı savunma/çeşitli hücum, basın açısı, madalyalar ve net stüdyolar)
+> Son güncelleme: **V168** · 2026-11-11 · Claude Code (arena gece stadyumu, akıcı arena futbolu, penaltı/FK çeşitliliği)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,8 +8,8 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V167** (`VERSION`; sürüm commit’i: `V167: 5v5 futsal, çeşitli hücumlar ve net stüdyolar`) |
-| Sonraki geliştirme hedefi | **V168** |
+| Kararlı sürüm | **V168** (`VERSION`; sürüm commit’i: `V168: Arena gece stadyumu, akıcı arena futbolu, penaltı/FK çeşitliliği`) |
+| Sonraki geliştirme hedefi | **V169** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
 | Sürüm doğrulama | `build.php` → `assets/release-v167.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 167 |
@@ -640,3 +640,10 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Basın tribünü alçak, ortadan sabit seyirci açısı. Menüye1920×1080 yatay eklendi; basın seçilince biçim elle seçilmemişse yatay olur. Dikey1080×1920 Reels ve aksiyon seçenekleri korunur. Export aynı oran/kamera/HUD yolunda. Kamera yakın/uzak düzlemleri1,5/300, büyük çevre zemin ve boya/şerit sırası siyah tarama/boş arka plan sorununu giderir.
 - FK kalecisi aynı ivme/hız sınırlı fiziksel erişim ve görsel dalış kullanır;9,81 yerçekimi, en çok0,38m ek yükseliş, gerçek temas noktası ve opt-in zemin koruması. İç/dış/üst ayak ve alçak falso spin/nişan/vuruş pozuyla ayrılır. Penaltı/FK isim/arma/skor katmanı gerçek1080p; metin yatay sıkıştırılmaz, WebGL önizleme adaptiftir.
 - Doğrulama: ilk32/32 tam test; son eklerden sonra31/31 quick + değişmeyen normal motorun önceki18maç/500penaltı testi. Gerçek Chromium/SwiftShader2/4/6 arena, FK/penaltı, seçici isim/kadro/medalya/tribün ve sonlu pozlar. Kısa ürün MP4: dikey1080×1920/60FPS21kare ve yatay1920×1080/60FPS12kare. Bu sürümde tam maç1080p eksportu ve fiziksel telefon/GPU performansı test edilmedi. Kanıtlar `/workspace/artifacts/v167/` (git dışı); devirde ayrıntı var.
+
+## V168 eklemeleri (arena mekânı, akıcı oyun, stüdyo çeşitliliği)
+- `assets/japon-venue.js` (yeni, okunabilir UMD): `create(root,layout,sides,{turfMap,brand})` → `{update(time),cull(camera),dispose}`. `japon-arena.js` kurar; `japon-ui.js` kamerayı uyguladıktan sonra `arena.cull(camera)` çağırır. Node'da canvas yoksa dokusuz çalışır. `japon-kale.html` içinde `japon-arena.js`'ten önce yüklenir.
+- `japon-engine.js`: `p.carryX/carryZ` (dokunuş yönü = yönelinen yön), ağır dokunuşu kovalama, `loose_ball` eşiği 2,1 m, `beatenUntil/readUntil/burstUntil` düello alanları, `through` pas deseni, mesafeye bağlı pas hızı. `japon-duels.js`: `MOVES` 7 hareket + `verdict()`. `japon-tactics.js`: ara pası adayı (`context.layout` gerekir), boş köşe nişanı, aşırtma kararı, yavaş şutta daha geniş tutuş.
+- `penalty-engine.js`: `STYLE_WEIGHTS`/`pickStyle`, yeni `side-netting|roof|roll` stilleri, vuruş kaydında `keeperTiming`, `diveDelay`, `keeperPrep`, `prepPhase`, `prepSide`; koşu stilleri `hop`, `walk`.
+- `freekick-engine.js`: `TECH.chip`, `TECH.around` (`nearCurl`: falso yönü yakın direğe göre).
+- Ölçüm betikleri repoda değil; aynı ölçüm `E.create({sides,seed,seconds:60,mode:'points'}).liveEvents` sayılarak tekrarlanabilir.

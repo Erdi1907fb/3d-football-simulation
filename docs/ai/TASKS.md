@@ -4,10 +4,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V168
+## Aktif hedef: V169
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-280 | Tüm modlarda görsel/oynanış sıçraması: arena gece stadyumu (gökyüzü, üst tribün, LED pano, projektör), doğal çim; arena top sürme/pas/çalım düellosu/köşeye şut/kaleci tutuşu; penaltıda 11 vuruş stili + kaleci zamanlaması; FK'de aşırtma ve barajın yanından; 1v1 aşırtma; UNL bülten doğrulaması | done (V168) | claude | files: assets/japon-venue.js (yeni), assets/japon-arena.js, japon-engine.js, japon-tactics.js, japon-duels.js, japon-ui.js, athlete-motion.js, penalty-engine.js, penalty-ui.js, freekick-engine.js, football-ai.js, stadium-customization.js, server/season-data.php, tests/presentation.cjs, tests/arena-duels.cjs |
 | T-279 | Penaltı/FK stüdyosunda gerçek1080p isim-arma-skor ve sıkıştırılmayan metin | done (V167) | codex | files: assets/penalty-ui.js, assets/freekick-ui.js, ortak AI belgeleri |
 | T-278 | FK kalecisinde yerçekimi/sınırlı itiş, gerçek temas hedefi ve iç/dış/üst ayak-alçak falso çeşitliliği | done (V167) | codex | files: assets/freekick-engine.js, assets/freekick-ui.js, assets/athlete-motion.js, tests/freekick.cjs, ortak AI belgeleri |
 | T-277 | Küçük saha 5v5/2-1-1, yiyenin paslı santrası, bağlı alan/adam savunması, hücum/şut/kaleci çeşitliliği ve taraftar finali | done (V167) | codex | files: assets/japon-*.js, assets/scene.js, assets/commentary.js, japon-kale.html, tests/*, ortak AI belgeleri |

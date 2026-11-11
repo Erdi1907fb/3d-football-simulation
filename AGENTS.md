@@ -212,3 +212,10 @@ dosyalardır.
 - Arena near1,5/far300 hassasiyeti, zemin420×420 ve yerel arka plan, biçme şeritlerinde depthWrite=false/renderOrder1. Milimetrelik çim/boya/gölge katmanlarını uzak kamerada tekrar çakıştırma. Renk/forma varlıkları değiştirilmedi.
 - D-029 FK: keeperTravel ivmeli ve hız sınırlı; fiziksel reach ve görünen dalış aynı modeli kullanır. Yerçekimi9,81, en çok0,38m ek itiş; `keeperGrounded` opt-in zemin düzeltmesi. Gerçek temas zamanı/noktası, uçan topu kovalayan IK yok. Dış ayak gerçekten `outside-foot`, alçak falso gerçek spin/nişan profili; eski mod varsayılanları değişmez.
 - D-030: penaltı/FK2Dcanvas1080×1920; WebGLönizleme adaptif kalır. İsim/arma/skor büyütülür, fillText(maxWidth) ile harf sıkıştırılmaz. Video yolu aynı; telefon bellek/kalite korumalarını kaldırma.
+
+
+## 17. Arena mekânı ve akıcı oyun (V168)
+- D-031: `japon-venue.js` yalnız görseldir; fizik/sonuç eklemeyin. Üst tribün ve direkler `cull(camera)` ile kamera önünden çekilir — bu gizlemeyi kaldırıp aksiyonu kapatmayın. LED pano dokusu takım rengi + `SekmeBrand`; lig/sponsor logosu uydurmayın.
+- Top sürme dokunuşu `carryX/carryZ` (yönelinen yön) ve gerçek hız bileşeniyle verilir; `p.heading`'e göre itmeye geri dönmeyin (dönüşlerde top kaçıyordu). Çalım `Duels.verdict` yalnız hareketi etkiler; sahiplik/gol yine fiziksel.
+- `Duels.MOVES` 7 hareket, penaltıda 11 `shotStyle`, FK'de 9 teknik: `tests/arena-duels.cjs`, `tests/presentation.cjs` bu sayıları denetler; yeni hareket eklerken testi ve `athlete-motion.js` pozunu birlikte güncelleyin.
+- Kaleci 1v1 çıkışı en çok 3,55 m (test sınırı 3,7 m). Penaltıda `keeperTiming` erken/bekle/normal; kurtarışlarda dalış temas anına senkron kalır.

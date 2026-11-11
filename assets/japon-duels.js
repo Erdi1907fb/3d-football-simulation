@@ -12,12 +12,13 @@ function evade(carrier,pursuer,goal){
  const ahead=clamp(distance(carrier,pursuer)/(4.5+Math.hypot(pursuer.vx||0,pursuer.vz||0)),0,.4),px=pursuer.x+(pursuer.vx||0)*ahead,pz=pursuer.z+(pursuer.vz||0)*ahead,dx=goal.x-carrier.x,dz=goal.z-carrier.z,d=Math.hypot(dx,dz)||1;
  return (px-carrier.x)*(-dz/d)+(pz-carrier.z)*(dx/d)>0?-1:1;
 }
-const MOVES=['body-feint','step-over','drag-back','roulette'];
+const MOVES=['body-feint','step-over','drag-back','roulette','elastico','chop','nutmeg'];
 function envelope(skill,time){if(!skill)return null;const u=clamp((time-skill.at)/skill.duration,0,1),wave=Math.sin(Math.PI*u),side=skill.side;
- return{type:skill.type,phase:u,side,lean:side*wave*.18,lateral:side*(skill.type==='body-feint'?(u<.3?-.45*Math.sin(u/.3*Math.PI):Math.sin((u-.3)/.7*Math.PI)):wave),back:skill.type==='drag-back'?-.65*wave:0,spin:skill.type==='roulette'?side*Math.PI*2*u:0,foot:skill.type==='step-over'?Math.sin(u*Math.PI*2):0};
+ return{type:skill.type,phase:u,side,lean:side*wave*.18,lateral:side*(skill.type==='body-feint'?(u<.3?-.45*Math.sin(u/.3*Math.PI):Math.sin((u-.3)/.7*Math.PI)):skill.type==='elastico'?(u<.38?-.7*Math.sin(u/.38*Math.PI):1.25*Math.sin((u-.38)/.62*Math.PI)):skill.type==='chop'?1.35*Math.sin(Math.PI*Math.min(1,u*1.25)):skill.type==='nutmeg'?.55*wave:wave),back:skill.type==='drag-back'?-.65*wave:skill.type==='chop'?-.3*Math.sin(Math.PI*Math.min(1,u*2)):0,spin:skill.type==='roulette'?side*Math.PI*2*u:0,foot:skill.type==='step-over'?Math.sin(u*Math.PI*2):0};
 }
 // A foul requires late body contact; reaching the ball first is a clean challenge.
 function contact(defender,carrier,ball){const body=distance(defender,carrier),reach=distance(defender,ball),dx=carrier.x-defender.x,dz=carrier.z-defender.z,d=body||1,closing=((defender.vx||0)-(carrier.vx||0))*dx/d+((defender.vz||0)-(carrier.vz||0))*dz/d;
  return{body,reach,closing,ballFirst:reach<body-.10&&reach<.85,lateBody:body<.92&&reach>.58&&reach>body-.02&&closing>.55};
 }
-return{interpose,evade,envelope,contact,MOVES};});
+function verdict(attackerAbility,defenderAbility,type,roll){const edge=.46+(attackerAbility-defenderAbility)*.45+(type==='nutmeg'?-.10:type==='roulette'||type==='elastico'?.04:0);return roll<Math.max(.2,Math.min(.8,edge));}
+return{interpose,evade,envelope,contact,verdict,MOVES};});
