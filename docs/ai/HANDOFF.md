@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-12] Claude Code · V171 → V171 (web kodu değişmedi) — Windows masaüstü sürümü ayrı repoda
+- Dal / commit / PR: bu repoda yalnız bu not (`claude/3d-football-engine-windows-8fbzi3`, belge değişikliği; main'e birleştirilmedi). Asıl iş **`Erdi1907fb/Yeni-Video`** (GitHub'da "3D Football Simulation Windows" olarak yeniden adlandırıldı) reposunda, aynı dal adında.
+- Kullanıcı isteği (özet): League-Soccer/GameplayFootball C++ motoruyla 11v11 oynanış ve Windows `.exe`; analiz/modlar/video korunacak; **bu web projesine dokunulmayacak**.
+- Yapılanlar (diğer repoda): `engine/` (C++ motor + Next90 director), `bridge/` (analiz → senaryo → motor → FFmpeg), `app/` (Electron kabuğu; `app/web` = bu reponun V171 kopyası), CI ile Windows ZIP. Ayrıntı ve doğrulama durumu: o repodaki `docs/STATUS.md`, `docs/ai/HANDOFF.md`.
+- Değişen önemli dosyalar (bu repo): yalnız `docs/ai/HANDOFF.md`, `docs/ai/TASKS.md`.
+- Tamamlanmayanlar / kısmi: penaltı/serbest vuruş/Japon Kale/küçük saha C++ motora taşınmadı (masaüstünde bu reponun stüdyoları çalışır); gerçek GPU'lu Windows testi yapılmadı.
+- Testler: bu repoda kod değişmedi, test çalıştırılmadı.
+- Sonraki ajan için dikkat: masaüstü sürüm bu reponun `assets/match.js`, `catalog.js`, `club-rosters.js`, `club-rosters-v75.json`, `audio-data.js`, `fonts/BarlowCondensed-Bold.ttf` ve `kits/**` (fm26 atlası) dosyalarını Node'dan `require`/okuma ile kullanır. Bu dosyaların adlarını veya `Match.create` / `Catalog.pair` / `ClubRosters.complete` çıktılarının (`chances`, `events`, `goalLedger`, `sample().stats`, `teams[].players`) biçimini değiştirirseniz diğer repodaki `tests/scenario.cjs` kırılır; değişikliği orada `tools/sync-web.sh` ile alıp testi çalıştırın.
+
 ## [2026-11-11] Claude Code · V170 → V171
 - Dal / commit / PR: `claude/elegant-ride-a93j2q`; başlangıç main `7b84d6d`. Başlık `V171: 11v11 tempo ve oyun değiştirme, penaltı kaleci sıçraması`; main'e fast-forward. PR/Hostinger dağıtımı yok.
 - Kullanıcı isteği (özet): önceki raporda “yapılmadı” denen iki kalem — penaltı/FK oynanış-fizik ve 11v11 pas/pres/diziliş/top sürme — yapılsın. Oturum sonunda kullanıcı “uzatmadan bitir, daha önemli iş var” dedi; iş bu yüzden daraltıldı.

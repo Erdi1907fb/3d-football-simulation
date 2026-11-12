@@ -8,6 +8,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-284 | Windows masaüstü sürümü (C++ 3D motor, Electron kabuğu) — **ayrı repo `Erdi1907fb/Yeni-Video`** | partial | claude | Bu repoda kod değişikliği yok. Durum: diğer repoda `docs/STATUS.md`. Bu reponun analiz modül arayüzleri orada kullanılıyor (HANDOFF 2026-11-12). |
 | T-283 | 11v11 açık oyun temposu (efora göre koşu, top sürme hızı), oyun değiştirme ve ara pası; penaltı kalecisinde yerçekimi sınırlı sıçrama | partial (V171) | claude | Kalan: penaltı yüksek kurtarışta kaleci hâlâ ~1 m havada (poz/klip katmanı `scene.js` tipOver + `football-clips.js`), FK oynanışı değişmedi. files: assets/possession-engine.js, assets/football-ai.js, assets/penalty-engine.js |
 | T-282 | Penaltı/FK skor şeridinde gol işareti net yeşil; kale arkasındaki parlak mavi “ufuk” şeridi (V168 gökyüzü tonu) geri alındı | done (V170) | claude | files: assets/penalty-ui.js, assets/freekick-ui.js, assets/stadium-customization.js |
 | T-281 | Basın kamerası (sabit açının sıkılaştırılması + yeni “yakın takip”), parlama azaltma (bloom, meşale, duman, konfeti, çizgi/LED), masaüstü arena ön izleme çözünürlüğü, 5v5 sabırlı savunma/top çevirme/savunmacının yanından geçme, 11v11 duran top çeşitliliği | done (V169) | claude | files: assets/japon-camera.js, japon-ui.js, japon-arena.js, japon-venue.js, japon-engine.js, japon-tactics.js, broadcast-remaster.js, scene.js, match.js, japon-kale.html, tests/japon-camera.cjs |
