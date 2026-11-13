@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V172** · 2026-11-13 UTC · Codex (ortak futbol zekâsı ve elemede kalan takım sayısına göre saha)
+> Son güncelleme: **V173** · 2026-11-13 UTC · Codex (gerçek temas, koordineli koşular, kalabalık arena ve takım karakteri)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,15 +8,22 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V172** (`VERSION`; sürüm commit’i: `V172: Ortak futbol zekâsı ve elemede değişen saha`) |
-| Sonraki geliştirme hedefi | **V173** |
+| Kararlı sürüm | **V173** (`VERSION`; `V173: Gerçek temas ve koordineli futbol geliştirmeleri`) |
+| Sonraki geliştirme hedefi | **V174** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v172.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 172 |
+| Sürüm doğrulama | `build.php` → `assets/release-v173.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 173 |
 
-## Devam eden geliştirme — V173
+## V173 — beş aşamalı planın durumu
 
-Kullanıcı beş aşamayı sırayla yetkilendirdi: temas/animasyon → takım birlikteliği → kalabalık arena → takım karakteri → gerçek kullanım/1080pvideo. [Ortak plan](FOOTBALL-ROADMAP.md), TASKS T-286…T-290. İlk aşama Codex tarafından başlatıldı; beşi henüz tamamlanmadı. League-Soccer referansı kullanılır; FM özel motoru/kodu aktarılmıyor.
+- Kalıcı devir: [FOOTBALL-ROADMAP.md](FOOTBALL-ROADMAP.md); T-286…T-289kodları tamamlandı. T-290yerel tarayıcı/video denemeleri ilerletildi; fiziksel Windows/telefon ve tam süreli sesli1080p doğrulaması açık. Beş aşamanın bütünü done değildir.
+- Gerçek dondurulmuş vuruş/alım noktası ve doğru aktif ayakla IK; uzaklaşan topu kovalamama, root/top değişmezliği. Grounded kalecide tek yükselme ve sınırlı gövde uzanması; mevcut klip root'u korunur. Mevcut authored normal sekanslarda gerçek nokta yoksa eski animasyon devam eder.
+- Ortak `football-intelligence`: gerçek son pasa bağlı verkaç/üçüncü oyuncu; normal collective ve arena takım planı. Arena desteği5Hzortak açı dağılımı, top kaybında örtü, topa katılmayan rakipte sektör koruma. Alıcı ball-aero kısa tahminiyle yavaşlayan topa buluşmaya gider.
+- Takım kimliğinden4sentetik profil: balanced/combination/vertical/wide. Genişlik/destek temposu/karar sabrı/pas ilerleme ağırlığı değişir. Açık taktikler öncelikli, `verified:false`; gerçek kulüp taktiği veya FM özel motoru iddiası yok.
+- V172→V173sabit6taraf örneği: alım15→26, yakın çift/kare1.715→1.403, ortalama pas riski.155→.131. 5v5/3taraf bazı risk/yakınlık ölçüleri arttı; T-291açık. Tam sonuç [araştırma raporunda](research/COORDINATED-FOOTBALL-V173.md).
+- Tam36Node/PHP regresyonu PASS; son stil girdi koruması/aktif alım ayağı hedefli testleri ek tekrar PASS. Chromium/SwiftShader normal/P/FK/2/3/6arena JS hatasız. Bu donanım performans veya canlı sağlayıcı doğrulaması değildir.
+- Yerel video:51.4snileri/geri zaman çizelgesi ve iptal/yeniden üretim PASS;0.3snsessiz1080p60gerçek klip WebCodecs/software yollarında H.264/18ayrı kare olarak ffprobe+ffmpeg ile doğrulandı. Tam süreli sesli maç/gerçek cihaz kanıtı değildir. [Video kaydı](research/v173-video-validation.json).
+- Saha/forma/model/lig/PHP veri akışı ve normal goalLedger sözleşmesi korunur. Canlı Hostinger dağıtımı yapılmadı. V174devri: T-290cihaz/tam sesli video + T-291risk ölçümleri.
 
 ## V172 — ortak zekâ ve eleme sahası
 

@@ -4,15 +4,16 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V173
+## Aktif hedef: V174
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-286 | Aşama1: gerçek oyuncu–top alım/vuruş zamanı, kaleci el–top ve doğal temas animasyonu | in-progress | codex | files: assets/football-animation.js, athlete-motion.js, scene.js, football-clips.js, japon-ui.js, penalty-engine.js, freekick-engine.js, tests/, sürüm/AI belgeleri; plan FOOTBALL-ROADMAP.md |
-| T-287 | Aşama2: verkaç/üçüncü oyuncu/bindirme ve top kaybında takım savunması | in-progress | codex | files: assets/football-intelligence.js, collective-play.js, possession-engine.js, japon-{tactics,engine}.js, tests/; T-286'dan sonra |
-| T-288 | Aşama3: kalabalık Japon Kale'de alan/markaj dağılımı ve pas alımı | in-progress | codex | files: assets/japon-{tactics,engine}.js, football-intelligence.js, tools/measure-intelligence.cjs, tests/; V172 karşılaştırması |
-| T-289 | Aşama4: tohumlu takım karakteri ve hücum çeşitliliği | in-progress | codex | files: assets/football-intelligence.js, football-ai.js, possession-engine.js, japon-{tactics,engine}.js, tests/; doğrulanmamış gerçek taktik iddiası yok |
-| T-290 | Aşama5: uzun oynatma/arama/iptal ve1080pMP4 uçtan uca doğrulama | in-progress | codex | files: assets/video-core.js, video-ui.js, tests/browser-*.cjs, tools/, AI belgeleri; gerçek telefon/Windows ve yerel emülasyon ayrılır |
+| T-291 | V173 sonrası5v5/3taraf risk/yakınlık artışını daha geniş örnek ve tekil hazırlama süresiyle analiz et | todo | — | files: assets/football-intelligence.js, japon-tactics.js, japon-engine.js, collective-play.js, tools/measure-intelligence.cjs, tests/; sonuç/kurtarış kotası ekleme |
+| T-286 | Aşama1: gerçek oyuncu–top alım/vuruş zamanı, kaleci el–top ve doğal temas animasyonu | done (V173) | codex | files: assets/football-animation.js, athlete-motion.js, scene.js, football-clips.js, japon-ui.js, penalty-engine.js, freekick-engine.js, tests/, sürüm/AI belgeleri; plan FOOTBALL-ROADMAP.md |
+| T-287 | Aşama2: verkaç/üçüncü oyuncu/bindirme ve top kaybında takım savunması | done (V173) | codex | files: assets/football-intelligence.js, collective-play.js, possession-engine.js, japon-{tactics,engine}.js, tests/; T-286'dan sonra |
+| T-288 | Aşama3: kalabalık Japon Kale'de alan/markaj dağılımı ve pas alımı | done (V173) | codex | files: assets/japon-{tactics,engine}.js, football-intelligence.js, tools/measure-intelligence.cjs, tests/; V172 karşılaştırması |
+| T-289 | Aşama4: tohumlu takım karakteri ve hücum çeşitliliği | done (V173) | codex | files: assets/football-intelligence.js, football-ai.js, possession-engine.js, japon-{tactics,engine}.js, tests/; doğrulanmamış gerçek taktik iddiası yok |
+| T-290 | Aşama5: uzun oynatma/arama/iptal ve1080pMP4 uçtan uca doğrulama | partial (V173) | codex | files: assets/video-core.js, video-ui.js, tests/browser-*.cjs, tools/, AI belgeleri; gerçek telefon/Windows ve yerel emülasyon ayrılır; Yerel51.4snarama+iptal ve0.3sn1080p60WebCodecs/software MP4decode PASS; sınır research/COORDINATED-FOOTBALL-V173.md; fiziksel Windows/telefon ve tam süreli sesli video açık. |
 | T-285 | Japon Kale elemede kalan takım sayısının standart sahasına geçiş; fizik/zemin/kaleler/tribün/kamera ve geri sarma eşleşsin | done (V172) | codex | files: assets/japon-{engine,layout,arena,camera,crowd,ui}.js, tests/arena-elimination.cjs, tests/japon-kale.cjs, tests/japon-camera.cjs, sürüm/AI belgeleri |
 | T-284 | Mevcut web görünümünü koruyarak League-Soccer yaklaşımından ortak oyuncu/oyun zekâsı:11v11/sezon/konsept, penaltı, FK, küçük saha ve3–6taraf Japon Kale | done (V172) | codex | files: assets/football-intelligence.js, football-ai.js, possession-engine.js, japon-tactics.js, japon-engine.js, penalty-engine.js, freekick-engine.js, tests/, giriş HTML/sürüm ve AI belgeleri; tek fizik/gerçek sonuç/determinizm korunur; detay research/SHARED-INTELLIGENCE-V172.md |
 | T-283 | 11v11 açık oyun temposu (efora göre koşu, top sürme hızı), oyun değiştirme ve ara pası; penaltı kalecisinde yerçekimi sınırlı sıçrama | partial (V171) | claude | Kalan: penaltı yüksek kurtarışta kaleci hâlâ ~1 m havada (poz/klip katmanı `scene.js` tipOver + `football-clips.js`), FK oynanışı değişmedi. files: assets/possession-engine.js, assets/football-ai.js, assets/penalty-engine.js |

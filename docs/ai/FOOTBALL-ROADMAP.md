@@ -7,11 +7,11 @@ Her aşamada yapılan, test edilen, eksik kalan, sıradaki somut adım ve commit
 
 | Sıra / görev | İş | Durum | Kabul ölçütü |
 |---|---|---|---|
-| 1 / T-286 | Oyuncu–top teması, alım/vuruş hazırlığı ve kaleci el–top pozu | in-progress · codex | Gerçek temas zamanı/noktası; ulaşılabilir eklem hareketi, kök/top ışınlaması yok; normal/arena/P/FK'de aynı sunum yolu, arama/geri sarma deterministik |
-| 2 / T-287 | Takım halinde oyun | in-progress | Verkaç/üçüncü oyuncu/bindirme ve top kaybı sonrası savunma; kararlar gerçek sahiplik/koridor/oyuncu erişimine bağlı; gol kotası yok |
-| 3 / T-288 | Kalabalık Japon Kale | in-progress | Özellikle6takımda destek/markaj dağılımı, top çevresine yığılma; V172 sabit örnekleriyle pas alımı/risk/sahipsiz top ve yakınlık ölçümü |
-| 4 / T-289 | Maç ve takım karakteri çeşitliliği | in-progress | Tohumla tekrar üretilebilir farklı genişlik/tempo/doğrudanlık; gerçek oyuncu istatistiği veya doğrulanmış taktik iddiası yok; her mod kendi kurallarını korur |
-| 5 / T-290 | Gerçek kullanım / 1080p video | in-progress | Uzun oynatma/arama/iptal/yeniden hazırlama + yerel gerçek1080pMP4 üretme/çözümleme; tarayıcı/Windows/fiziksel telefon sonuçları ayrı, denenmeyen cihaz dürüstçe açık |
+| 1 / T-286 | Oyuncu–top teması, alım/vuruş hazırlığı ve kaleci el–top pozu | done (V173) · codex | Gerçek temas zamanı/noktası; ulaşılabilir eklem hareketi, kök/top ışınlaması yok; normal/arena/P/FK'de aynı sunum yolu, arama/geri sarma deterministik |
+| 2 / T-287 | Takım halinde oyun | done (V173) | Verkaç/üçüncü oyuncu/bindirme ve top kaybı sonrası savunma; kararlar gerçek sahiplik/koridor/oyuncu erişimine bağlı; gol kotası yok |
+| 3 / T-288 | Kalabalık Japon Kale | done (V173) | Özellikle6takımda destek/markaj dağılımı, top çevresine yığılma; V172 sabit örnekleriyle pas alımı/risk/sahipsiz top ve yakınlık ölçümü |
+| 4 / T-289 | Maç ve takım karakteri çeşitliliği | done (V173) | Tohumla tekrar üretilebilir farklı genişlik/tempo/doğrudanlık; gerçek oyuncu istatistiği veya doğrulanmış taktik iddiası yok; her mod kendi kurallarını korur |
+| 5 / T-290 | Gerçek kullanım / 1080p video | partial (V173) | Uzun oynatma/arama/iptal/yeniden hazırlama + yerel gerçek1080pMP4 üretme/çözümleme; tarayıcı/Windows/fiziksel telefon sonuçları ayrı, denenmeyen cihaz dürüstçe açık |
 
 ## Motor ve tasarım kararları
 
@@ -46,3 +46,18 @@ Her aşamada yapılan, test edilen, eksik kalan, sıradaki somut adım ve commit
 - T-289 uygulandı: balanced/combination/vertical/wide sentetik takım kimliği profilleri; açık kullanıcı taktikleri önceliklidir. Kimlikten deterministik, gerçek kulüp taktiği iddiası yok.
 - T-290 çalışılıyor: tüm maç zamanı/ileri-geri çizim, gerçek1080pMP4 üretim+decode ve iptal/yeniden üretim için Chromium harness hazırlanıyor. Fiziksel telefon/Windows testi yapılmış değildir.
 - Tam36testlik paket ve tarayıcı çalışması sürüyor; henüz V173kararlı ilan edilmedi. Sonraki adım: testleri bitir, çıkan gerçek hatayı düzelt, kod/rapor/manifesti beraber kapat.
+
+## V173 kapanış / sonraki ajan
+
+T-286…T-289uygulandı,36regresyon geçti ve normal/P/FK/2/3/6arena Chromium'da
+çizildi. Ara günlükteki "testler sürüyor" ifadeleri bu kayıtla tarihsel kalır.
+T-290kısmi: yerel tarayıcı/kodlama sonucu araştırma raporu ve en yeni HANDOFF'ta;
+fiziksel Windows/telefon ve tam süreli sesli maç kanıtı hâlâ açık.
+T-291:5v5/3taraf risk/yakınlık tradeoff'u ve izole hazırlama süresi. Sonraki hedefV174.
+Ajan değişiminde önce en yeni main, sonra en yeni HANDOFF; WIPkontrol noktasını
+son sürüm sanma. Kullanıcının saha/forma/lig görünümü ve V172eleme düzeni korunur.
+
+Yerel T-290sonucu:51.4snzaman çizelgesi ileri/geri PASS, iptal/yeniden üretim PASS;
+0.3snsessiz1080×1920/60FPSgerçek sahne klibi WebCodecs ve software yollarında
+üretildi, ffprobe/ffmpeg18ayrı kareyi çözdü. Detay research/v173-video-validation.json.
+Fiziksel Windows/telefon ve tam süreli sesli1080p maç hâlâ bekliyor; bu yüzden kısmi.

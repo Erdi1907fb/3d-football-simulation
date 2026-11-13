@@ -14,6 +14,8 @@ olursa **bu dosya geçerlidir**.
    görevlerden önceliklidir.
 4. Diğer ajanın açık bıraktığı işler ve “dikkat” notları varsa önce onları değerlendir.
 
+Uzun vadeli futbol geliştirmesinde `docs/ai/FOOTBALL-ROADMAP.md` ve TASKS T-286…T-290 da okunur. Aşama/test/cihaz durumları en yeni HANDOFF ile doğrulanır; plan listesini tamamlanmış iş sanma.
+
 ## 1. Proje özeti
 
 - Statik web sitesi + küçük PHP yardımcıları (Hostinger, `public_html`). Derleme adımı yok;
@@ -64,7 +66,11 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 31 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 35 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
+| `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
+| `node tests/football-intelligence.cjs` | Yetişme/pas koridoru/markaj ve gözleme dayalı fiziksel kaleci | ~2 sn |
+| `node tests/arena-elimination.cjs` | Kayıtlı4→3→2saha, kimlik, fizik/render ve geri sarma | ~2 sn |
 | `node tests/futsal-five.cjs` | 5v5/same pitch, yiyenin paslı santrası, alan/adam örtüsü, fiziksel ilk vuruş/kafa, yasal GK eli, taraftar finali/madalyalar ve iki video oranı | ~8 sn |
 | `node tests/arena-balance.cjs` | Orta mesafe aksiyon, sabit basın tribünü, GK dönüş/temas zamanı, çarpışma öngörüsü ve top yüküyle esneyip bırakan file | ~3 sn |
 | `node tests/arena-football.cjs` | Dikdörtgen, ivme/dönüş, yer direnci, alım/vuruş zamanı, şut kanalı, sekme okuyan GK, yakın açılış/kısa doğru sonuç | ~4 sn |

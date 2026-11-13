@@ -8,3 +8,5 @@ data/private/*
 !data/private/.htaccess
 
 /tests/browser-output/
+
+/tests/browser-video-output/

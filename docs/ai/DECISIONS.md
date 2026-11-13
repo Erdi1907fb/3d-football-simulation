@@ -198,3 +198,9 @@ Kullanıcının web isteği doğrultusunda League-Soccer AI yaklaşımını hafi
 
 ## D-034 · 2026-11-13 UTC · codex · kabul — Eleme sahası kalan takım sayısına dönüşür
 Kullanıcı kalenin kaybolup büyük sahanın aynı kalmasını istemiyor. Elemede gol molası sonrası ortak drop'ta kalan en az iki takım için `Layout.create(remaining)` geometrisine geçilir. Fizik ve görünür saha aynı kaydı kullanır. Bu açık tur kesmesinde oyuncular yeni kale yerleşimine göre yeniden yerleştirilir; oyun sırasında saha sınırı değiştirilmez. Mevcut oyuncu/forma kimliği ve üçerli kadro korunur; iki takımlı final5v5 moduna dönmez. Kazananla tek kale sahası yaratılmaz. Puan modu ve bağımsız5v5 aynı kalır. Geçiş/geri sarma, kamera ve yerel kaynak temizliği birlikte test edilir.
+
+## D-035 · 2026-11-13 UTC · codex · kabul — Ortak temas ve tek kaleci yükselmesi
+Alım/vuruş noktası engine gözleminden dondurulur; pozu topun peşinden uzatarak veya root'u oynatarak temas üretilmez. Aktif ayak ve destek ayağı aynı seçim kullanır. Grounded GK'de eski prosedürel arc + tipOver arc + klip root'u yerine tek sınırlı itiş ve sınırlı gövde düzeltmesi. Gerçek erişilemeyen nokta raporlanır; top/sonuç bu yüzden değiştirilmez. Authored normal sekanslarda nokta yoksa eski yol korunur.
+
+## D-036 · 2026-11-13 UTC · codex · kabul — Gözlenen pasla takım koşusu ve kimlikten sentetik karakter
+Verkaç/üçüncü oyuncu gerçek son pas ve sahiplikle açılır, takım desteği ayrı açılara atanır. Çok taraflı arenada topa katılmayan uzaktaki takım kendi sektörünü korur; bütün takımlar aynı taşıyıcıya yığılmaz. Alıcı yavaşlayan topa erişimini tahmin eder. Dört koçluk profili sentetiktir, `verified:false`; isim/ID korunur, sadece renk objesi stil kimliğini değiştiremez. Açık taktik öncelikli; skor/galip/uzun seri kotası yok. League-Soccer yaklaşımı genişletilir, FM özel kodu alınmaz.

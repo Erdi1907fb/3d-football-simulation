@@ -1,0 +1,195 @@
+{
+  "method": "Same seeds. Risk is re-evaluated by the SAME current arrival-time assessor for both versions; sampled gameplay metrics are not real-player statistics. Received = next possession within 2s is the intended receiver; first-time goals are not counted as receptions.",
+  "baseline": {
+    "arena": {
+      "2": {
+        "matches": 6,
+        "passes": 55,
+        "received": 38,
+        "unsafe": 0,
+        "looseFrames": 3147,
+        "frames": 5427,
+        "intents": {},
+        "meanPassDistance": 5.917,
+        "crowdedPairsPerFrame": 1.081,
+        "meanRisk": 0.092,
+        "looseFraction": 0.58
+      },
+      "3": {
+        "matches": 6,
+        "passes": 31,
+        "received": 17,
+        "unsafe": 1,
+        "looseFrames": 2931,
+        "frames": 5430,
+        "intents": {},
+        "meanPassDistance": 7.23,
+        "crowdedPairsPerFrame": 1.992,
+        "meanRisk": 0.152,
+        "looseFraction": 0.54
+      },
+      "6": {
+        "matches": 6,
+        "passes": 31,
+        "received": 15,
+        "unsafe": 1,
+        "looseFrames": 2935,
+        "frames": 5413,
+        "intents": {},
+        "meanPassDistance": 9.153,
+        "crowdedPairsPerFrame": 1.715,
+        "meanRisk": 0.155,
+        "looseFraction": 0.542
+      }
+    },
+    "normal": {
+      "matches": 2,
+      "passes": 34,
+      "unsafe": 4,
+      "goalLedgers": [
+        [
+          {
+            "team": 0,
+            "minute": 19,
+            "actor": 9
+          },
+          {
+            "team": 1,
+            "minute": 69,
+            "actor": 20
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "minute": 8,
+            "actor": 20
+          },
+          {
+            "team": 0,
+            "minute": 56,
+            "actor": 9
+          }
+        ]
+      ],
+      "meanRisk": 0.158
+    },
+    "penalty": {
+      "kicks": 304,
+      "goals": 180,
+      "saves": 107,
+      "keeperTouches": 17,
+      "physicalOverrides": 110
+    },
+    "freekick": {
+      "kicks": 160,
+      "goals": 42,
+      "saves": 45
+    }
+  },
+  "current": {
+    "arena": {
+      "2": {
+        "matches": 6,
+        "passes": 56,
+        "received": 39,
+        "unsafe": 4,
+        "looseFrames": 2753,
+        "frames": 5422,
+        "intents": {
+          "support-lane": 7429,
+          "overlap-offer": 1118,
+          "transition-cover": 4827,
+          "give-and-go": 1193,
+          "third-man": 254
+        },
+        "meanPassDistance": 5.716,
+        "crowdedPairsPerFrame": 1.297,
+        "meanRisk": 0.136,
+        "looseFraction": 0.508
+      },
+      "3": {
+        "matches": 6,
+        "passes": 28,
+        "received": 18,
+        "unsafe": 2,
+        "looseFrames": 3017,
+        "frames": 5446,
+        "intents": {
+          "support-lane": 2026,
+          "transition-cover": 1097,
+          "overlap-offer": 466,
+          "give-and-go": 638
+        },
+        "meanPassDistance": 5.763,
+        "crowdedPairsPerFrame": 1.908,
+        "meanRisk": 0.208,
+        "looseFraction": 0.554
+      },
+      "6": {
+        "matches": 6,
+        "passes": 43,
+        "received": 26,
+        "unsafe": 2,
+        "looseFrames": 2843,
+        "frames": 5421,
+        "intents": {
+          "sector-cover": 18148,
+          "support-lane": 2108,
+          "give-and-go": 1274,
+          "overlap-offer": 114,
+          "transition-cover": 1258,
+          "third-man": 6
+        },
+        "meanPassDistance": 7.607,
+        "crowdedPairsPerFrame": 1.403,
+        "meanRisk": 0.131,
+        "looseFraction": 0.524
+      }
+    },
+    "normal": {
+      "matches": 2,
+      "passes": 34,
+      "unsafe": 5,
+      "goalLedgers": [
+        [
+          {
+            "team": 0,
+            "minute": 19,
+            "actor": 9
+          },
+          {
+            "team": 1,
+            "minute": 69,
+            "actor": 20
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "minute": 8,
+            "actor": 20
+          },
+          {
+            "team": 0,
+            "minute": 56,
+            "actor": 9
+          }
+        ]
+      ],
+      "meanRisk": 0.188
+    },
+    "penalty": {
+      "kicks": 304,
+      "goals": 180,
+      "saves": 107,
+      "keeperTouches": 17,
+      "physicalOverrides": 110
+    },
+    "freekick": {
+      "kicks": 160,
+      "goals": 42,
+      "saves": 45
+    }
+  }
+}

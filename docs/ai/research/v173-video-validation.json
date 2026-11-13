@@ -1,0 +1,60 @@
+{
+  "softwareWebGL": true,
+  "exports": [
+    {
+      "software": false,
+      "encoderPath": "webcodecs",
+      "frames": 18,
+      "width": 1080,
+      "height": 1920,
+      "seconds": 0.3,
+      "extension": "mp4"
+    },
+    {
+      "software": true,
+      "encoderPath": "software",
+      "frames": 18,
+      "width": 1080,
+      "height": 1920,
+      "seconds": 0.3,
+      "extension": "mp4"
+    }
+  ],
+  "errors": [],
+  "capabilities": {
+    "encoder": "function",
+    "decoder": "function",
+    "workers": "function",
+    "platform": "Linux x86_64",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.191 Electron/33.4.11 Safari/537.36"
+  },
+  "playback": {
+    "duration": 51.4,
+    "seeks": 4
+  },
+  "cancellation": {
+    "pre": true,
+    "mid": true
+  },
+  "ffmpeg": {
+    "automatic": {
+      "decodedFrames": 18,
+      "uniqueFrames": 18,
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "seconds": 0.3
+    },
+    "software": {
+      "decodedFrames": 18,
+      "uniqueFrames": 18,
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "seconds": 0.3
+    }
+  },
+  "limits": "Local Linux Chromium/SwiftShader. 0.3s silent real scene clip through two actual encoding paths. Full 51.4s timeline seeking checked; no full-length audio export or physical Windows/iPhone/Android validation."
+}

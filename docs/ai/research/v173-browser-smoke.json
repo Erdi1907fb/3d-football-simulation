@@ -1,0 +1,51 @@
+{
+  "softwareWebGL": true,
+  "modes": [
+    {
+      "mode": "normal-concept",
+      "seed": 2503760305,
+      "score": [
+        0,
+        0
+      ],
+      "players": 22,
+      "intelligence": "shared-intelligence-v173"
+    },
+    {
+      "mode": "penalty",
+      "seed": 3133168970,
+      "kick": 5,
+      "outcome": "save",
+      "intelligence": "shared-intelligence-v173"
+    },
+    {
+      "mode": "freekick",
+      "seed": 116318890,
+      "kick": 6,
+      "outcome": "save",
+      "intelligence": "shared-intelligence-v173"
+    },
+    {
+      "mode": "arena",
+      "seed": 962986880,
+      "actors": 10,
+      "sides": 2,
+      "intelligence": "shared-intelligence-v173"
+    },
+    {
+      "mode": "arena",
+      "seed": 3539480689,
+      "actors": 9,
+      "sides": 3,
+      "intelligence": "shared-intelligence-v173"
+    },
+    {
+      "mode": "arena",
+      "seed": 1370628485,
+      "actors": 18,
+      "sides": 6,
+      "intelligence": "shared-intelligence-v173"
+    }
+  ],
+  "errors": []
+}

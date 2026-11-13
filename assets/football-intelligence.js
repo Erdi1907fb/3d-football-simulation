@@ -92,7 +92,7 @@
  function teamStyle(team={},seed=0){
   const identity=String(team.registryId??team.catalogId??team.id??team.name??seed);let hash=2166136261;for(const ch of identity)hash=Math.imul(hash^ch.charCodeAt(0),16777619)>>>0;
   const families=[{name:'balanced',width:1,tempo:1,directness:.50,patience:1},{name:'combination',width:.92,tempo:.92,directness:.34,patience:1.22},{name:'vertical',width:.98,tempo:1.08,directness:.69,patience:.88},{name:'wide',width:1.16,tempo:1.02,directness:.55,patience:1.04}],base=families[hash%families.length],requested=team.conceptStyle||team.tactics||{};
-  return{...base,width:clamp(Number.isFinite(requested.width)?requested.width/.72:base.width,.8,1.2),tempo:clamp(Number.isFinite(requested.tempo)?requested.tempo:base.tempo,.88,1.12),directness:clamp(requested.directness??requested.direct??base.directness,.2,.8),basis:'seeded-simulation-coaching-preset',verified:false};
+  return{...base,width:clamp(Number.isFinite(requested.width)?requested.width/.72:base.width,.8,1.2),tempo:clamp(Number.isFinite(requested.tempo)?requested.tempo:base.tempo,.88,1.12),directness:clamp(Number.isFinite(requested.directness)?requested.directness:Number.isFinite(requested.direct)?requested.direct:base.directness,.2,.8),basis:'seeded-simulation-coaching-preset',verified:false};
  }
  function combinations(players,carrier,goal,{time=0,lastPass=null,bounds=p=>p,style={width:1},maxDistance=18}={}){
   const out={};if(!carrier||!goal)return out;const dx=goal.x-carrier.x,dz=goal.z-carrier.z,d=Math.hypot(dx,dz)||1,fx=dx/d,fz=dz/d,tx=-fz,tz=fx,

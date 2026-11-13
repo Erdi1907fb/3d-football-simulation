@@ -2,6 +2,14 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V173 — 2026-11-13 UTC (Codex)
+- Gerçek dondurulmuş alım/vuruş noktalarıyla ortak temas IK; doğru aktif/destek ayağı, erişilemez hedefi uzatmama. Grounded kalecide üst üste yükselme yerine tek itiş ve sınırlı gövde düzeltmesi.
+- Gerçek son pasa bağlı verkaç/üçüncü oyuncu, normal collective ve arena takım desteği; top kaybında örtü. Kalabalık arenada sektör tutma ve ayrı destek açıları; pas alıcısında yavaşlayan topa buluşma tahmini.
+- Dört sentetik takım karakteri (genişlik/tempo/karar sabrı/doğrudanlık); açık taktik önceliği, kimlikten determinizm. Gerçek kulüp taktiği iddiası yok.
+- Altı taraflı sabit örnekte alım15→26ve yakın çift/kare1.715→1.403; bazı5v5/3taraf ölçüleri geriledi, T-291açık. Tam ölçüm/koşullar research/COORDINATED-FOOTBALL-V173.md.
+- Yerel video:51.4snarama, iptal/yeniden üretim;0.3snsessiz1080×1920/60FPSH.264WebCodecs+software iki gerçek yol, ffprobe/ffmpeg18ayrı kare decode PASS.
+-36/36Node/PHP regresyonu; son küçük stil girdi/aktif ayak düzeltmeleri ek hedefli PASS. Chromium normal/P/FK/2/3/6arena PASS. T-290gerçek cihaz ve tam süreli sesli1080pvideo doğrulaması kısmi; yeni harness ve kayıtlar raporda. PHP veri akışı ve canlı Hostinger dağıtımı değişmedi.
+
 ## V172 — 2026-11-13 UTC (Codex)
 - Doğrulama: tam Node/PHP paketi34/34PASS; gerçek Chromium çizim yolunda normal/penaltı/FK/2/3/6taraf ve elemede4→3→2→4geri sarma/kimlikler PASS (SwiftShader). Build172filesMatch=true. Yeni MP4 kodlama veya canlı sağlayıcı denemesi olarak sunulmaz.
 - Bütün web modlarında ortak yetişme/pas riski/destek/pres/markaj zekâsı; normal maçın V171 temposu, saha/model/forma ve mevcut skor sözleşmesi korunur. Arena oyuncusu hazırladığı pasın koridorunu vuruştan önce tekrar okur.
