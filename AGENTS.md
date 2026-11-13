@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 42 test; `--quick` `engine-test.cjs` hariç 41 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 43 test; `--quick` `engine-test.cjs` hariç 42 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -241,3 +241,12 @@ dosyalardır.
 - Devam: `docs/ai/EMERGENT-FOOTBALL-PLAN.md`, `research/VALIDATION-V175.md`; kısmi aşamalar tamamlandı sayılmaz.
 
 - Kullanıcının 2026-11-13 son netleştirmesi: **ana hedef Hostinger web sürümü**. Bütün futbol geliştirmeleri web reposunda çalışmalı; Windows yalnız ek uyumluluk. Kullanıcıya web teslimini ve canlı dağıtım durumunu açıkça anlat. Web güncellemesi bir EXE paketi değildir.
+
+## 20. V176 — kullanıcının web düzeltmeleri
+- T-310/T-311: ana ürün Hostinger web. Gereksiz aksiyon/eleme/tur ve yardım metinlerini yayın/UI'ye geri eklemeyin. İşlevsel seçimler, gerçek hata/işlem durumu, skor/süre, kimlik ve sonuç kalır.
+- Geri pas ve yavaş top ayakla kontrol/dağıtımdır; acil kurtarış değildir. Kaleci kendi oyuncusu sürerken rutin alıma çıkmaz. Taşıyıcıya takım arkadaşları alan bırakır. Ulaşılamayan durmuş topta sahiplik düşer; son alım/dokunuşun en yenisi kullanılır. Seed1015/5taraf/90sn/limit5 takılması testte tutulur.
+- 60/75/90sn çok kaleli eleme normal süre sonrası tek golle eleme uzatmasıdır. Tur sayaçları sıfırlanır, frame.overtime taşınır ve HUD barajı1 olur. Gerçek gol olmadan eleme/şampiyon yazılmaz. 30/45sn kısa eleme ve puan/5v5 süre/beraberlik korunur. Video, gerçek uzatma ve gol beklemeleri kadar uzar. Bütçe aşımında kontrollü hata; sessiz yarım sonuç veya sahte gol yok.
+- Penaltı golünün varış vektörünü ilk fırlatma vektörüyle değiştirmeyin. Ortak file yay/sönüm ve topun görsel panel yükü birlikte çalışır. Kale çizgisi polygonOffset/renderOrder4/depthWritefalse/noBatch ile çimden ayrılır.
+- Açık kale fırsatını uygun seçenek filtresiyle bitirin; rastlantı hareketin teknik sonucunda sürer. Analiz gol defterini değiştirmeyin; çelişen başlangıçları yeniden örnekleyin. `openFinish` normal fiziksel bitiriciye devirdir, yeni gol ekleme değildir.
+- Renk paleti League-Soccer'dan taşınmadı. Arena çim tinti yeşil kalmalı; world.pitchDetail.grass ile geç yüklenen PBR haritasını aynı sanıp nötr beyaz tint uygulamayın. Taraftar/forma paletini ve global pozlamayı sebepsiz değiştirmeyin.
+- Kanıt/komutlar: `docs/ai/research/FIXES-V176.md`, `tests/football-fixes.cjs`, `tools/validate-elimination.cjs`. Geniş sekiz aşama planı hâlâ kısmi; mikro düzeltmeler onu tamamlandı yapmaz.

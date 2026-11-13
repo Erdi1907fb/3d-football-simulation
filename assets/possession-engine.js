@@ -16,7 +16,7 @@ function simulate(c,initial,foot,attempt){
  starting=(c.liveGeometry&&attempt>=9?players[c.team*11+(c.finisher??9)]:null)||pool[Math.floor(rng()*pool.length)]||players.find(p=>p.team===initialTeam&&!p.keeper&&!p.dismissed);
  if(!starting)return null;
  let owner=starting.id,ball=foot(starting,0),flight=null,loose=null,control=null,nextDecision=.12+rng()*.20,carryAim=null,lastPossession=initialTeam,turnoverAt=-Infinity,duelAt=-Infinity,previousPrimary=null,world=null,lastTackle=null,giveAndGo=null;
- const frames=[],events=[],actions=[],minimum=free?freeSeconds:3.5+rng()*2.5,maximum=free?freeSeconds:minimum+5.5;let horizon=maximum,finished=false;
+ const frames=[],events=[],actions=[],minimum=free?freeSeconds:3.5+rng()*2.5,maximum=free?freeSeconds:minimum+5.5;let horizon=maximum,finished=false,openFinish=false;
  const trace=(type,t,data={})=>events.push({type,at:t,minute:free?t/60:c.minute,stage:'procedural',...data}),action=(type,t,data={})=>actions.push({type,at:t,...data});
  trace('attack',0,{team:initialTeam,pattern:'attack'});
  function gain(p,t,cause){const prior=lastPossession;p.receivedAt=t;p.receivePoint={...ball};control={from:{...ball},at:t,...Intent.control(p,ball,profiles[p.id],players.filter(o=>o.team!==p.team),direction(p.team))};world=null;owner=p.id;flight=null;loose=null;carryAim=null;nextDecision=t+.18+rng()*.28;
@@ -45,7 +45,7 @@ function simulate(c,initial,foot,attempt){
   opts.push({type:'carry',weight:(.7+beat*2.4+(space?.value||0)*.5-pressure*.25)*(c.liveGeometry&&attempt>=10&&p.id===c.team*11+(c.finisher??9)?5:1)});
   if(pressure>.2)opts.push({type:'shield',weight:.2+(1-beat)*pressure});
   if(me.x>(free?16:27)&&Math.abs(me.z)<23)opts.push({type:'shot',weight:free?.18+Math.max(0,me.x-20)/16:.65+(me.x-27)/11});
-  const selected=E.choose(opts.map(o=>({...o,creative:o.type==='through'?.9:o.type==='loft'?.4:0,utility:Math.log(Math.max(.0001,o.weight))})),profile.traits||E.character(p,profile),decisionRng,{pressure,fatigue:p.fatigue||0});nextDecision=t+((c.liveGeometry?.42:.35)+rng()*(c.liveGeometry?.75:.55))*(c.ai.tactics[p.team].style?.patience||1);
+  const opportunity=Intelligence.finishingOpportunity(me,{x:52.5,z:0,width:7.32},opponents),viable=opportunity.clear?opts.filter(o=>o.type==='shot'||o.type==='pass'&&o.friend.x*dir>me.x+1&&Math.abs(o.friend.z)<3):opts;const selected=E.choose((viable.length?viable:opts).map(o=>({...o,creative:o.type==='through'?.9:o.type==='loft'?.4:0,utility:Math.log(Math.max(.0001,o.weight))})),profile.traits||E.character(p,profile),decisionRng,{pressure,fatigue:p.fatigue||0});nextDecision=t+((c.liveGeometry?.42:.35)+rng()*(c.liveGeometry?.75:.55))*(c.ai.tactics[p.team].style?.patience||1);
   if(['pass','loft','cross','through'].includes(selected.type)){const f=selected.friend,target=selected.aim||Intent.lead(p,f,c.liveGeometry?14:18);release(p,target,t,selected.type,f.id);return;}
   if(selected.type==='shot'){
    // Extra chances may fail, rebound or turn into a counter; new goals are
@@ -60,7 +60,7 @@ function simulate(c,initial,foot,attempt){
  }
  for(let tick=0;tick<=Math.ceil((free?freeSeconds:17)/DT);tick++){
   const t=tick*DT;if(t>horizon)break;const old=players.map(p=>({...p}));
-  if(owner!=null&&!restartPlan&&t>=nextDecision)decide(players[owner],t);
+  if(!free&&owner!=null){const carrier=players[owner],dir=direction(carrier.team),chance=Intelligence.finishingOpportunity(relative(carrier,dir),{x:52.5,z:0,width:7.32},players.filter(q=>q.team!==carrier.team).map(q=>relative(q,dir)));if(chance.clear){if(frames.length>1&&owner===c.team*11+(c.finisher??9)){finished=true;openFinish=true;break;}return null;}}if(owner!=null&&!restartPlan&&t>=nextDecision)decide(players[owner],t);
   if(tick%12===0||!world){const side=owner!=null?players[owner].team:flight?.team??lastPossession,dir=direction(side),ps=players.map(p=>relative(p,dir)),b={...relative(ball,dir),vx:loose?.vx||0,vz:loose?.vz||0},att=ps.filter(p=>p.team===side),def=ps.filter(p=>p.team!==side),phase=OF.phase(false,-b.x,t-turnoverAt,.5,c.ai.tactics[1-side].press);
    world={oeOffsets:{},network:c.ai.openEngine?OE.supportNetwork(ps,side):null,side,dir,ps,b,attackers:att,defenders:def,plan:OF.defensivePlan(def,att,b,profiles,phase,previousPrimary,{press:c.ai.tactics[1-side].press})};world.collective=Collective.targets(players,ball,side,dir,profiles,c.ai.tactics,world.plan.primary,owner,{time:t,turnoverAt,flight,lastPass:giveAndGo});previousPrimary=world.plan.primary;
   }
@@ -113,8 +113,8 @@ function simulate(c,initial,foot,attempt){
  onside=c.liveGeometry?(owner===striker.id||striker.x<=0||striker.x<=Math.max(ball.x,defenceLine)-.65):players.filter(p=>p.team===c.team&&!p.keeper&&!p.dismissed).every(p=>p.x<=0||p.x<=Math.max(ball.x,defenceLine)-1.0);
   if(!free&&onside&&t>=minimum&&owner!=null&&players[owner].team===c.team&&!players[owner].keeper&&striker.x>16&&Math.abs(striker.z)<29&&gap(players[owner],striker)<(c.liveGeometry?17:43)&&t>(control?.at??-1)+.25){finished=true;break;}
  }
- if(free)finished=frames.length>2;if(!finished||frames.length<180)return null;
- const duration=(frames.length-1)*DT,end=frames.at(-1);return{frames,events,actions,duration,endPlayers:end.players.map(p=>({...p})),owner:end.owner,endBall:{...end.ball},score:freeScore,initialTeam,procedural:true,kind:'live-possession',attempt};
+ if(free)finished=frames.length>2;if(!finished||frames.length<(openFinish?2:180))return null;
+ const duration=(frames.length-1)*DT,end=frames.at(-1);return{frames,events,actions,duration,endPlayers:end.players.map(p=>({...p})),owner:end.owner,endBall:{...end.ball},score:freeScore,initialTeam,procedural:true,kind:'live-possession',attempt,openFinish};
 }
 function create(c,initial,foot){
  if(!c.proceduralBuildUp||!c.ai||c.pre||(!c.liveGeometry&&c.substitutions?.length)||c.review||c.contactFoul||['corner','freeKick','penalty'].includes(c.pattern))return null;

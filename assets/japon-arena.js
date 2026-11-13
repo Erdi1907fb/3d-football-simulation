@@ -23,7 +23,7 @@ function createStage(world,contest,sides){
  const geometry=new T.ShapeGeometry(shape),uv=geometry.attributes.uv,pos=geometry.attributes.position;
  for(let i=0;i<uv.count;i++)uv.setXY(i,pos.getX(i)/8,pos.getY(i)/8);
  const turfMap=world.pitchDetail.grass.clone();turfMap.wrapS=turfMap.wrapT=T.RepeatWrapping;turfMap.repeat.set(1,1);turfMap.needsUpdate=true;owned.push(turfMap);
- const turf=material(0x2b7137);turf.envMapIntensity=.25;turf.map=turfMap;turf.normalMap=world.pitchDetail.grassNormal;turf.normalScale=new T.Vector2(.10,.10);
+ const turf=material(0x2f7d44);turf.envMapIntensity=.25;turf.map=turfMap;turf.normalMap=world.pitchDetail.grassNormal;turf.normalScale=new T.Vector2(.10,.10);
  const surface=mesh(geometry,turf,0,.005,0);surface.rotation.x=-Math.PI/2;surface.name='japon-playing-surface';
  // Subtle mowing bands, clipped to the actual shape, share the original grass map.
  for(let band=0;band<Math.ceil(l.width/4);band++){if(band%2)continue;const x0=-l.width/2+band*4,x1=x0+4;

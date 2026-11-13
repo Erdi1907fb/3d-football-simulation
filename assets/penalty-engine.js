@@ -22,7 +22,7 @@ const tailCache=new WeakMap();
 function spinFor(technique,foot){const curl=foot==='left'?-1:1;switch(technique){case'inside-foot':case'placed':return{x:0,y:curl*32,z:-6};case'disguised':return{x:0,y:curl*22,z:-4};case'outside-foot':return{x:0,y:-curl*30,z:-8};case'high-corner':return{x:0,y:curl*20,z:-12};case'driven':return{x:0,y:curl*6,z:-18};case'power-rise':return{x:0,y:curl*4,z:6};case'chip':return{x:0,y:0,z:26};case'side-netting':return{x:0,y:curl*8,z:-16};case'roof':return{x:0,y:curl*3,z:7};case'roll':return{x:0,y:curl*10,z:-20};default:return{x:0,y:curl*3,z:-6};}}
 function aeroPath(from,to,duration,spin){if(!Aero)return null;const v=Aero.solve(from,to,duration,spin),b=Aero.state(from,v,spin),n=Math.ceil(duration/Aero.STEP),out=new Float32Array((n+1)*3);out[0]=from.x;out[1]=from.y;out[2]=from.z;for(let i=1;i<=n;i++){Aero.step(b,i===n?duration-(n-1)*Aero.STEP:Aero.STEP);out[i*3]=b.x;out[i*3+1]=b.y;out[i*3+2]=b.z;}out[n*3]=to.x;out[n*3+1]=to.y;out[n*3+2]=to.z;return{frames:out,n,duration,launch:v};}
 function aeroAt(path,time){const q=clamp(time/path.duration,0,1)*path.n,i=Math.min(path.n-1,Math.floor(q)),u=q-i,f=path.frames;return{x:f[i*3]+(f[i*3+3]-f[i*3])*u,y:Math.max(R,f[i*3+1]+(f[i*3+4]-f[i*3+1])*u),z:f[i*3+2]+(f[i*3+5]-f[i*3+2])*u};}
-function rebound(at,v,time,net=false){let cached=tailCache.get(at);if(!cached||cached.velocity!==v||cached.net!==net){const b={...at,vx:v.x,vy:v.y,vz:v.z,spin:0},frames=[{...at}];let netContact=null;
+function rebound(at,v,time,net=false){let cached=tailCache.get(at);if(!cached||cached.velocity!==v||cached.net!==net){const b={...at,vx:v.x,vy:v.y,vz:v.z,spin:0,netElastic:!!net},frames=[{...at}];let netContact=null;
  for(let i=0;i<720;i++){Physics.advance(b);if(net){if(!netContact&&b.x>52.62&&(b.x>54.465||Math.abs(b.z)>3.525||b.y>2.305))netContact={time:(i+1)*Physics.STEP,point:{x:b.x,y:b.y,z:b.z}};Physics.containNet(b);}frames.push({x:b.x,y:b.y,z:b.z});}
  cached={frames,velocity:v,net,netContact};tailCache.set(at,cached);
  }return Physics.at(cached.frames,Math.max(0,time));}
@@ -73,7 +73,7 @@ function physicalKick(kick,history,seed){
  const t=kick.flight,now=aeroAt(kick.aero,t),prev=aeroAt(kick.aero,Math.max(0,t-.004)),span=Math.min(.004,t)||.004;
  kick.incoming={x:(now.x-prev.x)/span,y:(now.y-prev.y)/span,z:(now.z-prev.z)/span};
  if(kick.outcome==='save')kick.outgoing=kick.saveKind==='smother'?{x:0,y:0,z:0}:kick.saveKind==='tip-over'?{x:2.2,y:5.7,z:Math.sign(kick.target.z-state.z)*.75}:{x:-5.4,y:1.5,z:(kick.saveKind==='parry-left'?-1:1)*7};
- else if(kick.outcome==='goal'){kick.goalKind=kick.glove?'keeper-touch':'clean';kick.outgoing={x:kick.incoming.x*.72,y:kick.incoming.y*.72,z:kick.incoming.z*.65};}
+ else if(kick.outcome==='goal'){kick.goalKind=kick.glove?'keeper-touch':'clean';if(!kick.naturalDecisions&&!kick.glove){const prior=aeroAt(kick.aero,Math.max(0,kick.flight-.003));kick.outgoing={x:(kick.target.x-prior.x)/.003,y:(kick.target.y-prior.y)/.003,z:(kick.target.z-prior.z)/.003};}}
  // Post/wide impulses remain the existing shared physical reflection path.
  kick.playerTraits=Intelligence.Emergent.character(kick.shooter);kick.keeperTraits=Intelligence.Emergent.character(kick.keeper);kick.keeperSide=Math.sign(state.z)||model.side;kick.keeperTiming=model.early?'early':'wait';kick.diveDelay=model.early?-.12:model.reaction;
  kick.keeperStyle=kick.saveKind==='smother'?'smother':kick.saveKind==='tip-over'?'tipOver':kick.target.y>1.5?'fullStretch':'parryWide';

@@ -1,0 +1,323 @@
+{
+  "version": "V176",
+  "baseline": "9a505c1 / V175",
+  "fullSuite": {
+    "count": 43,
+    "pass": true,
+    "note": "Full43 test run followed by final changed-module checks; not all43 re-run after each intermediate edit."
+  },
+  "finalArenaChecks": [
+    {
+      "test": "arena-elimination",
+      "pass": true,
+      "seconds": 5.9
+    },
+    {
+      "test": "futsal-five",
+      "pass": true,
+      "seconds": 53.9
+    },
+    {
+      "test": "arena-balance",
+      "pass": true,
+      "seconds": 11.3
+    },
+    {
+      "test": "arena-football",
+      "pass": true,
+      "seconds": 15.2
+    },
+    {
+      "test": "arena-broadcast-flow",
+      "pass": true,
+      "seconds": 10.5
+    },
+    {
+      "test": "arena-duels",
+      "pass": true,
+      "seconds": 56.8
+    },
+    {
+      "test": "arena-rush",
+      "pass": true,
+      "seconds": 43.2
+    },
+    {
+      "test": "small-sided",
+      "pass": true,
+      "seconds": 20.5
+    },
+    {
+      "test": "japon-camera",
+      "pass": true,
+      "seconds": 29.6
+    },
+    {
+      "test": "japon-kale",
+      "pass": true,
+      "seconds": 23.1
+    },
+    {
+      "test": "teamwork",
+      "pass": true,
+      "seconds": 2.7
+    },
+    {
+      "test": "arena-clock",
+      "pass": true,
+      "seconds": 7.9
+    }
+  ],
+  "finalRegression": {
+    "pass": true,
+    "openGoalSeeds": 120,
+    "goals": 33,
+    "returned": 2301,
+    "keeperControl": true,
+    "grass": {
+      "speed": 3.2133573376680378,
+      "distance": 10.807163070653427
+    },
+    "legacy": {
+      "speed": 4.951548210181898,
+      "distance": 12.641033347306418
+    },
+    "eliminationMatches": 25,
+    "extended": 25,
+    "samples": [
+      {
+        "n": 3,
+        "seconds": 60,
+        "seed": 1,
+        "game": 121,
+        "winner": 1,
+        "goals": 3
+      },
+      {
+        "n": 3,
+        "seconds": 60,
+        "seed": 7,
+        "game": 151.81666666666666,
+        "winner": 0,
+        "goals": 3
+      },
+      {
+        "n": 3,
+        "seconds": 60,
+        "seed": 42,
+        "game": 125.53333333333333,
+        "winner": 0,
+        "goals": 6
+      },
+      {
+        "n": 3,
+        "seconds": 90,
+        "seed": 1,
+        "game": 121,
+        "winner": 1,
+        "goals": 3
+      },
+      {
+        "n": 3,
+        "seconds": 90,
+        "seed": 7,
+        "game": 151.81666666666666,
+        "winner": 0,
+        "goals": 3
+      },
+      {
+        "n": 3,
+        "seconds": 90,
+        "seed": 42,
+        "game": 125.53333333333333,
+        "winner": 0,
+        "goals": 6
+      },
+      {
+        "n": 4,
+        "seconds": 60,
+        "seed": 1,
+        "game": 166.59166666666667,
+        "winner": 3,
+        "goals": 3
+      },
+      {
+        "n": 4,
+        "seconds": 60,
+        "seed": 7,
+        "game": 89.58333333333333,
+        "winner": 2,
+        "goals": 5
+      },
+      {
+        "n": 4,
+        "seconds": 60,
+        "seed": 42,
+        "game": 291.4583333333333,
+        "winner": 1,
+        "goals": 6
+      },
+      {
+        "n": 4,
+        "seconds": 90,
+        "seed": 1,
+        "game": 166.59166666666667,
+        "winner": 3,
+        "goals": 3
+      },
+      {
+        "n": 4,
+        "seconds": 90,
+        "seed": 7,
+        "game": 182.39166666666665,
+        "winner": 2,
+        "goals": 6
+      },
+      {
+        "n": 4,
+        "seconds": 90,
+        "seed": 42,
+        "game": 291.4583333333333,
+        "winner": 1,
+        "goals": 6
+      },
+      {
+        "n": 5,
+        "seconds": 60,
+        "seed": 1,
+        "game": 143.025,
+        "winner": 2,
+        "goals": 5
+      },
+      {
+        "n": 5,
+        "seconds": 60,
+        "seed": 7,
+        "game": 136.90833333333333,
+        "winner": 1,
+        "goals": 7
+      },
+      {
+        "n": 5,
+        "seconds": 60,
+        "seed": 42,
+        "game": 252.09166666666667,
+        "winner": 3,
+        "goals": 9
+      },
+      {
+        "n": 5,
+        "seconds": 90,
+        "seed": 1,
+        "game": 117.35,
+        "winner": 0,
+        "goals": 7
+      },
+      {
+        "n": 5,
+        "seconds": 90,
+        "seed": 7,
+        "game": 136.90833333333333,
+        "winner": 1,
+        "goals": 7
+      },
+      {
+        "n": 5,
+        "seconds": 90,
+        "seed": 42,
+        "game": 240.50833333333333,
+        "winner": 3,
+        "goals": 12
+      },
+      {
+        "n": 5,
+        "seconds": 90,
+        "seed": 1015,
+        "game": 150.00833333333333,
+        "winner": 1,
+        "goals": 4
+      },
+      {
+        "n": 6,
+        "seconds": 60,
+        "seed": 1,
+        "game": 188.54166666666666,
+        "winner": 1,
+        "goals": 6
+      },
+      {
+        "n": 6,
+        "seconds": 60,
+        "seed": 7,
+        "game": 152.13333333333333,
+        "winner": 4,
+        "goals": 7
+      },
+      {
+        "n": 6,
+        "seconds": 60,
+        "seed": 42,
+        "game": 152.65,
+        "winner": 5,
+        "goals": 6
+      },
+      {
+        "n": 6,
+        "seconds": 90,
+        "seed": 1,
+        "game": 195.875,
+        "winner": 5,
+        "goals": 8
+      },
+      {
+        "n": 6,
+        "seconds": 90,
+        "seed": 7,
+        "game": 247.99166666666667,
+        "winner": 2,
+        "goals": 9
+      },
+      {
+        "n": 6,
+        "seconds": 90,
+        "seed": 42,
+        "game": 152.65,
+        "winner": 5,
+        "goals": 6
+      }
+    ]
+  },
+  "eliminationStress": {
+    "pass": true,
+    "count": 100,
+    "maxGameDuration": 358.31666666666666,
+    "reproducedStallSeed": 1015,
+    "fixedStall": {
+      "n": 5,
+      "seconds": 90,
+      "seed": 1015,
+      "goalLimit": 5,
+      "winner": 1,
+      "gameDuration": 150.00833333333333,
+      "videoDuration": 163.2,
+      "overtime": true,
+      "goals": 4,
+      "ms": 5971
+    }
+  },
+  "browser": {
+    "arenaPass": true,
+    "penaltyPass": true,
+    "errors": [],
+    "shooter": "Lucas Torreira"
+  },
+  "liveProbe": {
+    "build": 175,
+    "filesMatch": true
+  },
+  "limits": [
+    "Original Argentina–Uruguay highlight/seed was not supplied; generic clear-finish regression used",
+    "No new full-length MP4 or physical mobile/GPU test",
+    "Elimination may extend beyond requested regular time; safety-budget failure is explicit, never a forged champion"
+  ]
+}

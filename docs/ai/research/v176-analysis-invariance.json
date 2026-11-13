@@ -1,0 +1,69 @@
+{
+  "baseline": "9a505c1 / V175",
+  "method": "Same seeds. Risk is re-evaluated by the SAME current arrival-time assessor for both versions; sampled gameplay metrics are not real-player statistics. Received = next possession within 2s is the intended receiver; first-time goals are not counted as receptions.",
+  "normalBaseline": {
+    "matches": 2,
+    "passes": 25,
+    "unsafe": 2,
+    "goalLedgers": [
+      [
+        {
+          "team": 0,
+          "minute": 19,
+          "actor": 9
+        },
+        {
+          "team": 1,
+          "minute": 69,
+          "actor": 20
+        }
+      ],
+      [
+        {
+          "team": 1,
+          "minute": 8,
+          "actor": 20
+        },
+        {
+          "team": 0,
+          "minute": 56,
+          "actor": 9
+        }
+      ]
+    ],
+    "meanRisk": 0.117
+  },
+  "normalCurrent": {
+    "matches": 2,
+    "passes": 24,
+    "unsafe": 1,
+    "goalLedgers": [
+      [
+        {
+          "team": 0,
+          "minute": 19,
+          "actor": 9
+        },
+        {
+          "team": 1,
+          "minute": 69,
+          "actor": 20
+        }
+      ],
+      [
+        {
+          "team": 1,
+          "minute": 8,
+          "actor": 20
+        },
+        {
+          "team": 0,
+          "minute": 56,
+          "actor": 9
+        }
+      ]
+    ],
+    "meanRisk": 0.08
+  },
+  "goalLedgersUnchanged": true
+}

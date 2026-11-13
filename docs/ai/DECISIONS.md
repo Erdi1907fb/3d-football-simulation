@@ -218,3 +218,10 @@ Kullanıcının yeni talimatıyla oyuncu kararları yalnız en yüksek puanlı s
 D-004'ün istenen sonuca göre aday arama yolu programatik eski P/FKAPI uyumluluğu için kalır; yeni stüdyo UI doğal karar bayrağıyla doğrudan fiziksel vuruş üretir ve önceki skor farklı olsun diye tekrar örneklemez. Normal analizli özet korunur; ayrı kompakt serbest11v11 hedef skoru kullanmaz. Bu henüz tam90dakika değildir.
 
 T-303, eski video süresi varsayımını değiştirir: gol→gerçek yeniden başlatma arasında maç saati durur, fizik/video çalışır. Golcü kartı yalnız gerçek aktör/portre/takım kimliğidir. Özet kesilirse anlatım/SRT dahil tüm zaman çizelgesi dönüşür. Yerel testler fiziksel Windows/GPUkanıtı sayılmaz.
+
+## D-041 · 2026-11-13 UTC · codex · kabul — Eleme kazananı ve gerçek kontrol
+Kullanıcı60/90sn çok kaleli elemede mutlaka sahada kazanan istedi. Seçili süre normal süredir;60sn ve üzeri tercihlerde sonuç yoksa tek golle eleme uzatmasına geçilir, tur sayaçları sıfırlanır. Gerçek gol/eleme beklenir; skor veya galip uydurulmaz. 30/45sn kısa eleme ile puan/5v5 süre/beraberlik aynı kalır. Video gerçek uzatmayı gösterir. Beklenmedik fiziksel kilit bütçede çözülemezse kontrollü hata üretmek sahte şampiyondan önceliklidir.
+
+Seed1015 sorunu, kalecinin kendi taşıyıcısına çıkması ve topa dokunamayan taşıyıcının sahte sahipliğiydi. Kaleci yalnız serbest topa alım yapar; yakın takım arkadaşı kaçınması taşıyıcıyı toptan kovmaz. Durmuş topa uzun süre dokunamayan oyuncu kontrolü kaybeder; son alım/dokunuş zamanı birlikte değerlendirilir. Bu hata golleri zorlayarak çözülmedi.
+
+Kullanıcının ek talimatıyla yayın mod/tur açıklamaları ve uzun stüdyo bilgi notları kaldırılır. Anlamlı kontrol seçenekleri, skor/süre/kimlik/gerçek hata ve sonuçlar korunur. Fiziksel ve taktiksel çeşitlilik, mantıksız açık kale adaylarını elemekle birlikte sürer.

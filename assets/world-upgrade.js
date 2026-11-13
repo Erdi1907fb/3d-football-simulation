@@ -1,13 +1,17 @@
 /* Next90 web scene refinement. Pure time sampling; no result, RNG or timeline mutation. */
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'));else r.Next90WorldUpgrade=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
-function netResponse(x,y,z,hitY,hitZ,age,sign=1,speed=24,hitX=2.1){
- if(age<=0||age>=3)return{x,y,z};const depth=Math.abs(x),sourceDepth=Math.min(2.1,Math.abs(hitX)),distance=Math.hypot(z-hitZ,(y-hitY)*1.05,(depth-sourceDepth)*.85),time=age-distance/(13+Math.min(8,speed*.16));if(time<=0)return{x,y,z};
+function netLoad(point,base,ball,sign=1){if(!ball)return point;const r=.11,pin=clamp((base.y-.03)/.065)*clamp(Math.abs(base.x)/.35),weight=(a,b)=>Math.exp(-(a*a+b*b)/(.38*.38))*pin,out={...point};
+ if(Math.abs(base.x)>2.08){const load=Math.max(0,ball.depth+r-2.1)*weight(base.z-ball.z,base.y-ball.y);out.x=sign*Math.max(sign*out.x,Math.abs(base.x)+load);}
+ if(Math.abs(base.z)>3.64&&Math.sign(base.z)===Math.sign(ball.z)){const load=Math.max(0,Math.abs(ball.z)+r-3.66)*weight(Math.abs(base.x)-ball.depth,base.y-ball.y);out.z=Math.sign(base.z)*Math.max(Math.abs(out.z),Math.abs(base.z)+load);}
+ if(base.y>2.42){const load=Math.max(0,ball.y+r-base.y)*weight(Math.abs(base.x)-ball.depth,base.z-ball.z);out.y=Math.max(out.y,base.y+load);}return out;}
+function netResponse(x,y,z,hitY,hitZ,age,sign=1,speed=24,hitX=2.1,ball=null){
+ if(age<=0||age>=3)return netLoad({x,y,z},{x,y,z},ball,sign);const depth=Math.abs(x),sourceDepth=Math.min(2.1,Math.abs(hitX)),distance=Math.hypot(z-hitZ,(y-hitY)*1.05,(depth-sourceDepth)*.85),time=age-distance/(13+Math.min(8,speed*.16));if(time<=0)return netLoad({x,y,z},{x,y,z},ball,sign);
  const mouth=clamp(depth/.48),floor=clamp((y-.05)/.18),corner=1-.75*clamp((Math.abs(z)-3.35)/.31)*clamp((y-2.15)/.29),pin=mouth*floor*corner,energy=clamp(speed/28,.25,1.35),decay=Math.exp(-time*(2.9+distance*.14)),pulse=(1-Math.exp(-time*42))*(Math.sin(time*15.5)+.16*Math.sin(time*28)),envelope=1-clamp((age-2.4)/.6);let d=.44*energy*decay*pulse*Math.exp(-distance*.60)*pin*envelope;
  // V152 ball pocket: the cords right where the ball lands are pushed out in a ball-sized cup (rises in ~0.1 s, holds
  // while the ball is caught, relaxes by ~0.8 s), on top of the travelling wave above.
  const local=Math.hypot(z-hitZ,(y-hitY)*1.05,(depth-sourceDepth)*.85),cup=Math.exp(-(local*local)/(.34*.34)),cupTime=clamp(age/.1)*(1-clamp((age-.35)/.45));d+=.30*energy*cup*cupTime*pin*envelope;
  const side=Math.abs(z)>3.64,roof=y>2.42,back=depth>2.08,dx=back?1:roof?.65:.50,dy=roof?.48:-.045,dz=side?Math.sign(z)*.62:(z-hitZ)*.025;
- return{x:x+sign*d*dx,y:y+d*dy,z:z+d*dz};
+ return netLoad({x:x+sign*d*dx,y:y+d*dy,z:z+d*dz},{x,y,z},ball,sign);
 }
 function create({scene,stadium,quality,actors,ball,lighting,canvasFactory}){const nodes=[],textures=[],materials=[],geometries=[];let disposed=false;const info={build:102,reflection:false,scuffs:0,pose:true,deterministic:true};const canvas=(w,h)=>{const c=canvasFactory?canvasFactory(w,h):typeof document!=='undefined'?document.createElement('canvas'):null;if(c){c.width=w;c.height=h;}return c;};
  // A small local reflection environment gives cloth/skin/paint distinct light response.
@@ -23,4 +27,4 @@ function create({scene,stadium,quality,actors,ball,lighting,canvasFactory}){cons
  scene.userData.upgrade=info;
  function pose(a,p,s){if(!p||a.official||p.celebrate||p.kicking||p.receiving||p.headingBall||p.dive||p.tackle||p.fall||p.jump||s.pregame||s.endSequence)return;const speed=p.speed||0;if(p.keeper&&p.keeperSet){const phase=(s.physicsTime||0)*9.2+(p.id||0),ready=Math.sin(phase)*.010;a.body.position.y-=.018+Math.abs(ready);a.arms.forEach((arm,i)=>{arm.shoulder.rotation.z+=(i?1:-1)*.06;});a.root.userData.readyStep101=true;}else if(speed>1){const lean=clamp(p.bodyLean||0,-.14,.14);a.body.rotation.z+=lean*.16;a.waist.rotation.y+=clamp(Math.sin((p.gait||0)*.5)*speed*.002,-.018,.018);}}
  return{info,pose,refresh,update(){},dispose(){if(disposed)return;disposed=true;for(const n of nodes){n.removeFromParent();n.dispose?.();}if(textures.includes(scene.environment))scene.environment=null;textures.forEach(t=>t.dispose());materials.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());}};}
-return{create,netResponse};});
+return{create,netResponse,netLoad};});

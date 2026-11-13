@@ -1,0 +1,55 @@
+{
+  "pass": true,
+  "errors": [],
+  "penalty": null,
+  "arenas": [
+    {
+      "n": 2,
+      "pose": {
+        "dive": 0,
+        "keeperFeet": true
+      },
+      "seed": 5,
+      "winner": 1,
+      "timedOut": false,
+      "game": 60,
+      "seconds": 60,
+      "overtime": false,
+      "at": 35.01166666666666,
+      "event": {
+        "type": "keeper_control",
+        "at": 34.891666666666666,
+        "matchTime": 34.891666666666666,
+        "round": 1,
+        "team": 0,
+        "actor": "Ederson",
+        "actorIndex": 0,
+        "liveAt": 34.891666666666666
+      }
+    },
+    {
+      "n": 4,
+      "pose": {
+        "dive": 0,
+        "keeperFeet": true
+      },
+      "seed": 5,
+      "winner": 0,
+      "timedOut": false,
+      "game": 124.11666666666666,
+      "seconds": 60,
+      "overtime": true,
+      "at": 61.76166666666666,
+      "event": {
+        "type": "keeper_control",
+        "at": 61.641666666666666,
+        "matchTime": 51.574999999999996,
+        "round": 2,
+        "team": 1,
+        "actor": "Uğurcan Çakir",
+        "actorIndex": 3,
+        "liveAt": 61.641666666666666
+      }
+    }
+  ]
+}

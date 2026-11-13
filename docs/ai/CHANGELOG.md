@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V176 — 2026-11-13 UTC (Codex)
+- Web: kale çizgisi derinlik çakışması, penaltı golü sonrası varış vektörü, esnek file ve gerçek top yüküyle ağ cebi.
+- Açık kale bitiriş kararı/normal fiziksel bitiriciye kontrol devri, arena geri pası ve yavaş topta ayak kontrolü, sönümlü kurtarış, çim direnci, kararlı hücum hedefi ve takım arkadaşı–taşıyıcı/kaleci takılmasının giderilmesi.
+- 60/75/90 sn çok kaleli eleme normal süre ardından tek golle eleme uzatmasıyla fiziksel kazanana gider; puan ve5v5 beraberliği sürer. Her eleme gerçek gole bağlıdır. Seed1015 takılması yeniden üretilip kalıcı regresyona alındı.
+- Gereksiz aksiyon/eleme/tur/yardım bilgileri kaldırıldı; anlamlı seçim, skor/süre/oyuncu ve sonuç korunur. Arena yeşili ortak sahaya yaklaştırıldı; taraftar/forma renkleri değişmedi.
+- Tam43 test, son arena paketi,100 ayrı eleme maçı ve gerçek tarayıcı Torreira/file/kaleci/UI kontrolleri. Sınırlar ve komutlar `research/FIXES-V176.md`. Bu sürümde tam maç MP4 ve fiziksel cihaz testi yeniden yapılmadı.
+
 ## V175 — 2026-11-13 UTC (Codex)
 - Japon Kale ve küçük sahada gol sonrası maç saati gerçek restart'a kadar durur. Video süresi beklemeleri içerir. Golcü adı, mevcut doğrulanmış fotoğraf ve gerçek takım logosu ortak güvenli HUD bandında gösterilir.
 - Mevcut motorda bağımsız seed akışları, tutarlı bireysel karakter, uygun seçeneklerden olasılıksal tercih ve baskı/denge/yorgunluktan fiziksel uygulama hataları. Blok/markaj/geçiş, hareket ataleti ve gerçek temasa bağlı kaleci sektirmesi; hata/gol kotası yok.

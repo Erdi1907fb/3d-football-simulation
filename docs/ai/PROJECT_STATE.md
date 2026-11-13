@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V175** · 2026-11-13 UTC · Codex (taktik karar çekirdeği ve durdurulan arena saati)
+> Son güncelleme: **V176** · 2026-11-13 UTC · Codex (Hostinger web fizik/kaleci/bitiriş/eleme düzeltmeleri)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,21 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V175** (`VERSION`; kaynak kod ve yerel testler; Windows CI ayrı kayıttır) |
-| Sonraki geliştirme hedefi | **V176** — kalibrasyon ve aşağıda açık kalan işler |
+| Kararlı sürüm | **V176** (`VERSION`; web düzeltmeleri ve yerel testler) |
+| Sonraki geliştirme hedefi | **V177** — kalibrasyon ve aşağıda açık kalan işler |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build170 / filesMatch=true** (2026-11-13); main V175 henüz Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v175.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 175 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build175 / filesMatch=true** (2026-11-13); V176 henüz Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v176.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 176 |
+
+## V176 — son web düzeltmeleri
+
+- Penaltı boyası derinlik çakışmasına karşı ayrıldı. Gol sonrası gerçek varış hızı ve ortak esnek file; gerçek top yüküyle devam eden görsel cep. Torreira ile gerçek tarayıcı kareleri kontrol edildi.
+- Açık kale fırsatında anlamsız taşıma/geri dönme adayları elenir; fiziksel bitiriş veya daha iyi pas kalır. Analiz gol defteri korunur; kullanıcıdaki Arjantin–Uruguay videosu/seed'i verilmediği için birebir izlenmiş sayılmaz.
+- Arena kuru çim direnci, sönümlü parry ve daha kararlı kale seçimi; kaleci geri/yavaş pası ayakla kontrol edip dağıtır, takım arkadaşı top sürerken önüne çıkmaz. Ulaşılamayan durmuş topta sahte sahiplik düşer. Seed1015'teki uzun kontrol takılması yeniden üretildi ve düzeltildi.
+- 60/75/90 sn çok kaleli elemede normal süre sonrası tek golle eleme uzatması, tur sayaçlarını sıfırlama ve gerçek golle tek kazanan. Puan/5v5 beraberliği ve30/45 sn kısa eleme davranışı korunur. Videonun gerçek uzatma süresi de uzar; sonuç zorlanmaz.
+- Yayındaki aksiyon/eleme/tur bilgi başlıkları ve gereksiz stüdyo yardım/notları kaldırıldı. Arena normal saha yeşiline yaklaştırıldı; taraftar/forma paleti değişmedi.
+- Tam43/43 test PASS; son mekanik düzeltme ardından arena testleri ayrıca PASS. 100 farklı60/90 sn eleme örneği gerçek gollerle tek kazanana ulaştı. Fiziksel telefon/GPU veya tam yeni maç MP4 testi bu sürümde tekrarlanmadı. Ayrıntı: [V176 kayıt](research/FIXES-V176.md).
+- Son canlı kontrol: build175/filesMatch=true. V176 kaynak ve Hostinger güncelleme paketi hazırlanmıştır; bu oturumda canlı dağıtım yapılmazsa yapılmış sayılmaz.
 
 ## V175 — gerçek durum ve devam noktası
 

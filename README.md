@@ -24,7 +24,8 @@ hazır videoları silme; CDN önbelleğini temizle. Yeni servis/cron gerekmez.
 
 Tüm video modlarında TR/EN zaman damgalı anlatım: kopyalama, TXT ve SRT indirme.
 
-Arena süreleri: 2–6 takımda 30/45/60/75/90 saniye oyun; taraftara fiziksel koşu/kısa kutlama ve Japon Kale’de 1,8 saniyelik madalyalı sıralama. Süreli maçlar kesintisizdir.
+Arena süreleri: puan/5v5 modunda30/45/60/75/90sngerçek oyun; gol sonrası yeniden başlama beklemelerinde maç saati durur. Çok kaleli elemede60snveüstü seçim normal süredir; gerekirse tek golle eleme uzatması oynanıp gerçek kazanan çıkar. Kısa30/45sneleme eksik kalabilir. Video gerçek oyun, bekleme ve kısa sonucu içerir. Yayındaki gereksiz aksiyon/eleme/tur açıklamaları kaldırılmıştır.
+
 Ortak millî kapsam: 85 ülkenin sağlayıcı kadrosu ve renk/desen formaları normal maç, penaltı, serbest vuruş, arena ve güncel konsept seçimine bağlıdır. İlk 11'ler simülasyon seçkisidir; formalar resmî sezon replikası değildir.
 
 Küçük saha 5v5: kaleci + iki defans + orta saha + forvet (2–1–1); saha aynı28×18m. İlk top kapışılır, golden sonra yiyenin forveti arkadaşına pasla başlar. 3–6 takımda ortak top kapışması sürer. Saha oyuncuları serbest seçilir.

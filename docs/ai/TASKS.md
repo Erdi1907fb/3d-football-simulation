@@ -1,4 +1,4 @@
-> **Kullanıcının son netleştirmesi (2026-11-13): Ana hedef Hostinger web sürümüdür. Bütün kalan futbol geliştirmeleri kaynak webde yapılacak; Windows ek uyumluluk kontrolüdür. Canlı sunucuya yükleme yapılmadı, V170→V175 web ZIP hazır.**
+> **Kullanıcının son netleştirmesi (2026-11-13): Ana hedef Hostinger web sürümüdür. Bütün kalan futbol geliştirmeleri kaynak webde yapılacak; Windows ek uyumluluk kontrolüdür. Canlı son kontrolde V175; V176 kaynak ve web güncelleme paketi hazır, canlıya bu oturumda yükleme yapılmadı.**
 
 # TASKS — görev panosu
 
@@ -6,10 +6,12 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V175
+## Aktif hedef: V176 → V177
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-311 | Japon Kale/5v5 ve diğer stüdyolarda gereksiz aksiyon/eleme ve yardım açıklamalarını kaldır | done (V176) | codex | Yayındaki mod/tur başlığı, ölçü satırı, uzun yardım/subtitle ve P/FK notları gizlendi; işlevsel seçenekler, skor/süre/kimlik/hata ve sonuç kaldı. |
+| T-310 | Web: penaltı çizgisi/file/goal-tail; normal açık kale kararı; arena kaleci geri pası, zemin/sekme/çeviklik;60/90sn elemede gerçek kazanan; renk doğrulama; gereksiz mod bilgilerini kaldır | done (V176) | codex | files: assets/{scene,world-upgrade,penalty-engine,football-intelligence,possession-engine,ball-aero,japon-*}.js, giriş HTML/UI, tests/, sürüm/devir; Arjantin–Uruguay videosu/seed sağlanmadı, tariften yeniden üretilecek. |
 | T-304 | Karar çeşitliliğini koruyarak pas alımı, şut/mesafe/alan dağılımı ve hazırlama maliyetini kalibre et | todo | — | V175 karşılaştırmasında daha çok pas fakat daha düşük 3sn alım proxy'si; oyun saati farkını normalize et, gerçek olay/varış ölçümü ve uygun açık veriyle karşılaştır; gol/hata kotası ekleme. |
 | T-305 | Kompakt serbest11v11 çekirdeğini tam90dakika, düşük bellek ve bölüm kayıt/arama desteğine genişlet | todo | — | V175 API15–180sn/UI30/60/90sn; bugünkü kısa örnekleri tam maç sayma. |
 | T-306 | Mevcut5v5saha ve stüdyo düellolarını koruyarak alan2v2/3v3seçimi ve farklı kısa destek/rol kuralları | todo | — | V175 bütün modlara ortak çekirdek taktı; yeni küçük saha sayısı seçicisi henüz yok. |

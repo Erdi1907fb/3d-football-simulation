@@ -1,0 +1,14 @@
+{
+  "baseBuild": 175,
+  "targetBuild": 176,
+  "baseCommit": "9a505c1a5e48159477b88cd841d0f2f3f4765b00",
+  "targetRuntimeManifestSha256": "faaecbee850640f3e913ad8051d49cdb76744345263b243225190be46c913edd",
+  "files": 22,
+  "codeHashesVerified": 501,
+  "bytes": 187992,
+  "sha256": "6510393bf3cf33d316d9a3f5601db9b518b1faf074893345935c570178a82bbd",
+  "omits": "config.php, server data, videos, documentation/tests/tools; no deletions",
+  "liveProbeBuild": 175,
+  "liveFilesMatch": true,
+  "deployed": false
+}

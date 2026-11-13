@@ -1,0 +1,68 @@
+{
+  "pass": true,
+  "errors": [],
+  "penalty": {
+    "seed": 5,
+    "index": 1,
+    "actor": "Lucas Torreira",
+    "at": 8.118349105466072,
+    "markings": [
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      },
+      {
+        "offset": true,
+        "write": false,
+        "order": 4
+      }
+    ]
+  },
+  "arenas": []
+}

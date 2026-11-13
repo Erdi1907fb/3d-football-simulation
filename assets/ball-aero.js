@@ -17,7 +17,7 @@ function knuckleForce(t,seed,speed){if(speed<14)return{y:0,z:0};const a=K*speed*
 // V113 surface response: wet turf skids (lower bounce, faster roll), snow grabs the ball
 // (low bounce, strong rolling resistance). Values are relative to dry broadcast turf.
 const SURFACES={clear:{bounce:1,roll:1,grip:1},rain:{bounce:.82,roll:.55,grip:1.07},snow:{bounce:.68,roll:2.1,grip:.86}};
-function state(p,v,w,opt={}){return{x:p.x,y:p.y??R,z:p.z,vx:v.x,vy:v.y,vz:v.z,wx:w?.x||0,wy:w?.y||0,wz:w?.z||0,t:0,knuckle:!!opt.knuckle,seed:opt.seed|0,bounces:0,surface:SURFACES[opt.surface]||SURFACES.clear};}
+function state(p,v,w,opt={}){return{x:p.x,y:p.y??R,z:p.z,vx:v.x,vy:v.y,vz:v.z,wx:w?.x||0,wy:w?.y||0,wz:w?.z||0,t:0,knuckle:!!opt.knuckle,seed:opt.seed|0,bounces:0,rollingResistance:Number.isFinite(opt.rollingResistance)?opt.rollingResistance:.55,surface:SURFACES[opt.surface]||SURFACES.clear};}
 // One integration step in free air or on the turf; returns events.
 function step(b,dt=STEP){
  const speed=Math.hypot(b.vx,b.vy,b.vz),air=b.y>R+.002||b.vy>.05;let ax=0,ay=0,az=0;
@@ -29,7 +29,7 @@ function step(b,dt=STEP){
  // Spin decays slowly in air (time constant ≈ 9 s) and quickly while rolling.
  const decay=Math.exp(-dt*(air?.11:2.2));b.wx*=decay;b.wy*=decay;b.wz*=decay;
  let event=null;
- if(b.y<R||b.continuousGround&&b.y<=R+1e-6){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-(.55*sf.roll*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
+ if(b.y<R||b.continuousGround&&b.y<=R+1e-6){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-((b.rollingResistance??.55)*sf.roll*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
  return event;
 }
 // Woodwork: two uprights (vertical cylinders) and the crossbar (horizontal).
