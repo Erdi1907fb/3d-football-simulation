@@ -6,3 +6,5 @@ tools/__pycache__/
 tools/.national-cache/
 data/private/*
 !data/private/.htaccess
+
+/tests/browser-output/

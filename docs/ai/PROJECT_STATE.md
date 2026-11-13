@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V171** · 2026-11-11 · Claude Code (11v11 tempo/oyun değiştirme, penaltı kaleci sıçraması kısmi)
+> Son güncelleme: **V172** · 2026-11-13 UTC · Codex (ortak futbol zekâsı ve elemede kalan takım sayısına göre saha)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,21 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V171** (`VERSION`; sürüm commit’i: `V171: 11v11 tempo ve oyun değiştirme, penaltı kaleci sıçraması`) |
-| Sonraki geliştirme hedefi | **V172** |
+| Kararlı sürüm | **V172** (`VERSION`; sürüm commit’i: `V172: Ortak futbol zekâsı ve elemede değişen saha`) |
+| Sonraki geliştirme hedefi | **V173** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v167.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 167 |
+| Sürüm doğrulama | `build.php` → `assets/release-v172.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 172 |
+
+## V172 — ortak zekâ ve eleme sahası
+
+- `football-intelligence.js`: hız/ivme/yön üzerinden yetişme süresi, top ve rakibin yetişme yarışından pas riski, güvenli destek açısı, pres devri, tekil koşucu markajı, gözleme dayalı kaleci. Normal11v11 (bülten/sezon/konsept aynı motor),5v5,Japon Kale,penaltı veFK bağlandı. League-Soccer yaklaşımından özgün JavaScript uyarlaması; C++ motorunun tamamı/WASM aktarımı değildir. Apache-2.0 lisansı `assets/vendor/league-soccer/LICENSE` içinde.
+- Normal maçın hedef skor/goalLedger sözleşmesi ve V171 tempo/oyun değiştirmesi korunur. Arena pası hazırlık sonrasında tekrar kontrol edilir. Penaltıda önceden örneklenen sonuç yalnız vuruş adayıdır: kaleci bu sonucu okuyamaz, gerçek el teması sonucu değiştirir. Aynı eski tohumun skoru bu nedenle değişebilir. FK'de kalecinin fiziksel hareket izi ve görünen konumu aynı kayıttır.
+- Japon Kale eleme: gol molası bitince6→5→4→3→2, kalan takım sayısının **mevcut standart** saha geometri/ölçüleri kullanılır. Dört→üçte üçgen, üç→ikide28×18m dikdörtgen (varsayılan5m kale) olur. Alanı yalnız bir ölçekle küçültmek değildir. Zemin/çizgiler/panolar/tribünler/kaleler/kamera birlikte değişir; asıl takım/forma/oyuncu kimliği korunur. İki takımlı eleme finali mevcut üçerli ekiplerle devam eder,5v5 kadroya dönüşmez. Bir kazanan kalınca son iki kaleli saha korunur. Puan modu değişmez.
+- `contest.layout/goals` başlangıç düzeni; `contest.stages` kayıtlı turlar; **anlık** `sample(t).layout/goals/stage` fizik ve yayın gerçeğidir. Yeni geometriye geçiş ortak top düşüşünde kayıtlı kesmedir; eski/yeni sahalar arasında top/oyuncu enterpolasyonu yapılmaz. Önizleme, geri sarma ve MP4 aynı sample/draw yolunu kullanır. Arena değişiminde yerel geometri dispose edilir, ortak model/doku serbest bırakılmaz.
+- Saha/forma/yüz/oyuncu modeli varlıkları, lig arayüzleri, PHP veri/bülten/cron akışı değiştirilmedi. Canlı Hostinger dağıtımı bu çalışma kapsamında yapılmadı.
+- Doğrulama: tam Node/PHP paketi **34/34 PASS**, 2.395kamera karesi, tarayıcıda normal/penaltı/FK/2/3/6taraf ve elemede4→3→2→4geri sarma, doğru kale/tribün kimlikleri ve JS hata yok. `php build.php`:172,filesMatch=true.
+- Tekrarlanabilir ölçüm ve uygulama sınırları: [SHARED-INTELLIGENCE-V172.md](research/SHARED-INTELLIGENCE-V172.md). Yazılımsal Chromium görüntü testi gerçek telefon/GPU performans veya yeni MP4 dışa aktarım testi değildir.
 
 ## 2. Giriş sayfaları ve durumları
 

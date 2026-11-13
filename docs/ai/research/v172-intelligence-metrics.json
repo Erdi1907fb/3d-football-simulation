@@ -1,0 +1,159 @@
+{
+  "method": "Same seeds. Risk is re-evaluated by the SAME V172 arrival-time assessor for both versions; sampled gameplay metrics are not real-player statistics. Received = next possession within 2s is the intended receiver; first-time goals are not counted as receptions.",
+  "baseline": {
+    "arena": {
+      "2": {
+        "matches": 6,
+        "passes": 55,
+        "received": 36,
+        "unsafe": 5,
+        "looseFrames": 3272,
+        "frames": 5425,
+        "meanRisk": 0.156,
+        "looseFraction": 0.603
+      },
+      "3": {
+        "matches": 6,
+        "passes": 32,
+        "received": 17,
+        "unsafe": 4,
+        "looseFrames": 3151,
+        "frames": 5438,
+        "meanRisk": 0.228,
+        "looseFraction": 0.579
+      },
+      "6": {
+        "matches": 6,
+        "passes": 33,
+        "received": 17,
+        "unsafe": 3,
+        "looseFrames": 2755,
+        "frames": 5422,
+        "meanRisk": 0.16,
+        "looseFraction": 0.508
+      }
+    },
+    "normal": {
+      "matches": 2,
+      "passes": 29,
+      "unsafe": 5,
+      "goalLedgers": [
+        [
+          {
+            "team": 0,
+            "minute": 19,
+            "actor": 9
+          },
+          {
+            "team": 1,
+            "minute": 69,
+            "actor": 20
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "minute": 8,
+            "actor": 20
+          },
+          {
+            "team": 0,
+            "minute": 56,
+            "actor": 9
+          }
+        ]
+      ],
+      "meanRisk": 0.251
+    },
+    "penalty": {
+      "kicks": 313,
+      "goals": 232,
+      "saves": 47,
+      "keeperTouches": 55,
+      "physicalOverrides": 0
+    },
+    "freekick": {
+      "kicks": 162,
+      "goals": 42,
+      "saves": 48
+    }
+  },
+  "current": {
+    "arena": {
+      "2": {
+        "matches": 6,
+        "passes": 55,
+        "received": 38,
+        "unsafe": 0,
+        "looseFrames": 3147,
+        "frames": 5427,
+        "meanRisk": 0.092,
+        "looseFraction": 0.58
+      },
+      "3": {
+        "matches": 6,
+        "passes": 31,
+        "received": 17,
+        "unsafe": 1,
+        "looseFrames": 2931,
+        "frames": 5430,
+        "meanRisk": 0.152,
+        "looseFraction": 0.54
+      },
+      "6": {
+        "matches": 6,
+        "passes": 31,
+        "received": 15,
+        "unsafe": 1,
+        "looseFrames": 2935,
+        "frames": 5413,
+        "meanRisk": 0.155,
+        "looseFraction": 0.542
+      }
+    },
+    "normal": {
+      "matches": 2,
+      "passes": 34,
+      "unsafe": 4,
+      "goalLedgers": [
+        [
+          {
+            "team": 0,
+            "minute": 19,
+            "actor": 9
+          },
+          {
+            "team": 1,
+            "minute": 69,
+            "actor": 20
+          }
+        ],
+        [
+          {
+            "team": 1,
+            "minute": 8,
+            "actor": 20
+          },
+          {
+            "team": 0,
+            "minute": 56,
+            "actor": 9
+          }
+        ]
+      ],
+      "meanRisk": 0.158
+    },
+    "penalty": {
+      "kicks": 304,
+      "goals": 180,
+      "saves": 107,
+      "keeperTouches": 17,
+      "physicalOverrides": 110
+    },
+    "freekick": {
+      "kicks": 160,
+      "goals": 42,
+      "saves": 45
+    }
+  }
+}

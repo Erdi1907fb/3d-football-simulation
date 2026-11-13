@@ -4,10 +4,12 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V172
+## Aktif hedef: V173
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-285 | Japon Kale elemede kalan takım sayısının standart sahasına geçiş; fizik/zemin/kaleler/tribün/kamera ve geri sarma eşleşsin | done (V172) | codex | files: assets/japon-{engine,layout,arena,camera,crowd,ui}.js, tests/arena-elimination.cjs, tests/japon-kale.cjs, tests/japon-camera.cjs, sürüm/AI belgeleri |
+| T-284 | Mevcut web görünümünü koruyarak League-Soccer yaklaşımından ortak oyuncu/oyun zekâsı:11v11/sezon/konsept, penaltı, FK, küçük saha ve3–6taraf Japon Kale | done (V172) | codex | files: assets/football-intelligence.js, football-ai.js, possession-engine.js, japon-tactics.js, japon-engine.js, penalty-engine.js, freekick-engine.js, tests/, giriş HTML/sürüm ve AI belgeleri; tek fizik/gerçek sonuç/determinizm korunur; detay research/SHARED-INTELLIGENCE-V172.md |
 | T-283 | 11v11 açık oyun temposu (efora göre koşu, top sürme hızı), oyun değiştirme ve ara pası; penaltı kalecisinde yerçekimi sınırlı sıçrama | partial (V171) | claude | Kalan: penaltı yüksek kurtarışta kaleci hâlâ ~1 m havada (poz/klip katmanı `scene.js` tipOver + `football-clips.js`), FK oynanışı değişmedi. files: assets/possession-engine.js, assets/football-ai.js, assets/penalty-engine.js |
 | T-282 | Penaltı/FK skor şeridinde gol işareti net yeşil; kale arkasındaki parlak mavi “ufuk” şeridi (V168 gökyüzü tonu) geri alındı | done (V170) | claude | files: assets/penalty-ui.js, assets/freekick-ui.js, assets/stadium-customization.js |
 | T-281 | Basın kamerası (sabit açının sıkılaştırılması + yeni “yakın takip”), parlama azaltma (bloom, meşale, duman, konfeti, çizgi/LED), masaüstü arena ön izleme çözünürlüğü, 5v5 sabırlı savunma/top çevirme/savunmacının yanından geçme, 11v11 duran top çeşitliliği | done (V169) | claude | files: assets/japon-camera.js, japon-ui.js, japon-arena.js, japon-venue.js, japon-engine.js, japon-tactics.js, broadcast-remaster.js, scene.js, match.js, japon-kale.html, tests/japon-camera.cjs |

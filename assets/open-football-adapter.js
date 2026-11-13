@@ -5,7 +5,7 @@
  * Changes: Rust -> JavaScript, native units -> metres, centered X/Z pitch,
  * stateless geometry API. This is not the complete Open Football match engine.
  */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.Next90OpenFootball=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./football-intelligence.js'));else r.Next90OpenFootball=f(r.Next90Intelligence);})(typeof globalThis!=='undefined'?globalThis:this,function(Intelligence){'use strict';
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
 function unit(v){const n=Math.hypot(v.x,v.z);return n>.01?{x:v.x/n,z:v.z/n}:null;}
 function supportOffer(player,carrier,opponents,goal={x:52.5,z:0}){
@@ -45,19 +45,19 @@ function pursuit(p,target,velocity,pace){const d=sub(target,p),n=Math.hypot(d.x,
 function arrive(p,target,pace,slowing=1.25){const d=sub(target,p),n=Math.hypot(d.x,d.z);if(n<.12)return{x:0,z:0};const ratio=clamp(n/Math.max(.375,slowing),0,1),speed=pace*ratio*ratio;return{x:d.x/n*speed,z:d.z/n*speed};}
 function defensivePlan(defenders,attackers,ball,profiles,phases,previous,{press=.5,condition=[]}={}){
  const active=defenders.filter(p=>!p.keeper&&!p.dismissed),duties={},goal={x:52.5,z:0},axis=unit(sub(goal,ball))||{x:1,z:0};
- const ranked=active.slice().sort((a,b)=>distance(a,ball)-distance(b,ball)||a.id-b.id);
+ const chase=Intelligence.pressers(active,ball,previous,{profiles,goal}),ranked=chase.ranked.map(q=>q.player);
  if(!ranked.length)return{duties,primary:null,cover:null};
- let primary=ranked[0];const prior=ranked.find(p=>p.id===previous);if(prior&&distance(prior,ball)<distance(primary,ball)+1.1)primary=prior;
+ const primary=ranked.find(p=>p.id===chase.primary)||ranked[0];
  const cover=ranked.find(p=>p.id!==primary.id&&distance(p,ball)<17.5);
  duties[primary.id]={mode:'primary',target:pitch({x:ball.x+axis.x*.75,z:ball.z+axis.z*.75})};
  if(cover)duties[cover.id]={mode:'cover',target:pitch({x:ball.x+axis.x*4.2,z:ball.z+axis.z*4.2-Math.sign(primary.z-ball.z||1)*2.2})};
- const marked=new Set(),threats=attackers.filter(p=>!p.keeper&&!p.dismissed&&distance(p,ball)>1.1).sort((a,b)=>{
+ const predictive=Intelligence.mark(ranked.filter(p=>p.id!==primary.id&&p.id!==cover?.id),attackers.filter(p=>distance(p,ball)>1.1),ball,{goal}),marked=new Set(),threats=attackers.filter(p=>!p.keeper&&!p.dismissed&&distance(p,ball)>1.1).sort((a,b)=>{
   const danger=p=>105-distance(p,goal)+(Math.hypot(p.vx,p.vz)>5&&dot(unit({x:p.vx,z:p.vz})||axis,unit(sub(goal,p))||axis)>.5?8:0);
   return danger(b)-danger(a)||a.id-b.id;
  });
  for(const d of ranked){if(duties[d.id])continue;const role=profiles[d.id]?.role;
-  const threat=threats.filter(a=>!marked.has(a.id)&&distance(a,d)<17.5).sort((a,b)=>distance(a,d)-distance(b,d)||a.id-b.id)[0];
-  if(threat&&['CB','LB','RB','DM','CM'].includes(role)){marked.add(threat.id);const toGoal=unit(sub(goal,threat))||axis;duties[d.id]={mode:'trackRunner',mark:threat.id,target:pitch({x:threat.x+toGoal.x*1.5,z:threat.z+toGoal.z*1.5})};}
+  const preferred=predictive[d.id],threat=threats.find(a=>a.id===preferred?.mark&&!marked.has(a.id)&&distance(a,d)<17.5)||threats.filter(a=>!marked.has(a.id)&&distance(a,d)<17.5).sort((a,b)=>distance(a,d)-distance(b,d)||a.id-b.id)[0];
+  if(threat&&['CB','LB','RB','DM','CM'].includes(role)){marked.add(threat.id);const toGoal=unit(sub(goal,threat))||axis;duties[d.id]={mode:'trackRunner',mark:threat.id,target:pitch({x:threat.x+(threat.vx||0)*.18+toGoal.x*1.5,z:threat.z+(threat.vz||0)*.18+toGoal.z*1.5})};}
   else duties[d.id]={mode:'hold'};
  }
  // Only one extra nearby worker counter-presses; everyone else recovers/marks.

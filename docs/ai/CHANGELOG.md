@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V172 — 2026-11-13 UTC (Codex)
+- Doğrulama: tam Node/PHP paketi34/34PASS; gerçek Chromium çizim yolunda normal/penaltı/FK/2/3/6taraf ve elemede4→3→2→4geri sarma/kimlikler PASS (SwiftShader). Build172filesMatch=true. Yeni MP4 kodlama veya canlı sağlayıcı denemesi olarak sunulmaz.
+- Bütün web modlarında ortak yetişme/pas riski/destek/pres/markaj zekâsı; normal maçın V171 temposu, saha/model/forma ve mevcut skor sözleşmesi korunur. Arena oyuncusu hazırladığı pasın koridorunu vuruştan önce tekrar okur.
+- Penaltı kalecisi aday kurtarış sonucundan doğru köşeyi öğrenmez: geçmiş vuruş/gözlenen top ve hız/ivme sınırıyla karar verir; gerçek temas sonucu belirler. Parmak ucundan sonraki uçuş da fizikseldir. FK kalecisinin kayıtlı konumu hem temas hem görüntüde kullanılır.
+- Japon Kale elemede gol molası sonrası kalan takım sayısının standart sahasına geçilir: örneğin4→3üçgen→2dikdörtgen. Zemin/sınır/kaleler/tribün/kamera birlikte değişir; takım/forma kimlikleri ve mevcut kadrolar korunur. Geri sarma aynı geometriyi geri getirir. Puan modu değişmez.
+- League-Soccer kaynak/lisans ve ölçüm sınırları `research/SHARED-INTELLIGENCE-V172.md`; tam C++ motor aktarımı değildir. PHP veri akışı değişmedi, canlı Hostinger dağıtımı yapılmadı.
+
 ## Belge bakımı — 2026-11-10 (Claude Code) · sürüm artırılmadı (V157)
 - Codex devri öncesi: `PROJECT_STATE`/`TASKS` V158 hedefine ve `release-v157.json`’a güncellendi, tarihler UTC commit
   tarihine göre düzeltildi, `AGENTS.md` test tablosu tamamlandı. Oyun kodu değişmedi.

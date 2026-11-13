@@ -121,3 +121,15 @@ envelopes, contacts and arena integration are original; no external service
 is required at runtime. This is a small 2D adaptation, not the whole Yuka engine
 or imported football motion-capture clips. The user explicitly requested
 GitHub research/reuse for skills and their defensive counterpart.
+
+# V172 shared football intelligence — League-Soccer references
+
+`assets/football-intelligence.js` is an original JavaScript adaptation of
+arrival-time, passing-corridor and keeper-reading principles examined in
+`Erdi1907fb/Yeni-Video@f987081230e1498a2ad3b3c53437035ec39c5a73`,
+`engine/src/onthepitch/AIsupport/AIfunctions.cpp` and the goalkeeper strategy.
+The underlying League-Soccer / GameplayFootball source is Apache-2.0,
+Copyright 2019 Google LLC & Bastiaan Konings; license copy:
+`assets/vendor/league-soccer/LICENSE`. This is not a complete engine port.
+No player model, pitch, kit, face, image, animation or audio asset was added
+or replaced for this adaptation.
