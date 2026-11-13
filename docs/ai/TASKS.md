@@ -8,6 +8,8 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-292 | T-290 son test: tam süreli sesli1080p export, oynatma/arama/indirme | blocked | codex | Gerçek UI iptal/tekrar başlatma PASS;1sn recordedAudio AAC audio unavailable;76,9sn tam iş sürerken ortam unavailable oldu. Tam dosya/oynatma/indirme PASS değil. research/FULL-VIDEO-TEST-V173.md |
+| T-293 | AAC kodlanamadığında istenen sesin kaybolup sessiz devam etme olasılığını incele | todo | — | video-core.js recordedAudio/serialEncode/softwareAudio ve UI onAudioOmitted; tam sessiz dosya doğrudan gözlenmedi; ses kaybını başarı sayma |
 | T-291 | V173 sonrası5v5/3taraf risk/yakınlık artışını daha geniş örnek ve tekil hazırlama süresiyle analiz et | todo | — | files: assets/football-intelligence.js, japon-tactics.js, japon-engine.js, collective-play.js, tools/measure-intelligence.cjs, tests/; sonuç/kurtarış kotası ekleme |
 | T-286 | Aşama1: gerçek oyuncu–top alım/vuruş zamanı, kaleci el–top ve doğal temas animasyonu | done (V173) | codex | files: assets/football-animation.js, athlete-motion.js, scene.js, football-clips.js, japon-ui.js, penalty-engine.js, freekick-engine.js, tests/, sürüm/AI belgeleri; plan FOOTBALL-ROADMAP.md |
 | T-287 | Aşama2: verkaç/üçüncü oyuncu/bindirme ve top kaybında takım savunması | done (V173) | codex | files: assets/football-intelligence.js, collective-play.js, possession-engine.js, japon-{tactics,engine}.js, tests/; T-286'dan sonra |
