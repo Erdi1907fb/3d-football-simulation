@@ -5,7 +5,7 @@
  * Ball integration, contact and the rules remain in the existing engines.
  * Reference copyright 2019 Google LLC & Bastiaan Konings (Apache-2.0);
  * license: assets/vendor/league-soccer/LICENSE. */
-(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.Next90Intelligence=factory();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory(require('./emergent-football.js'));else root.Next90Intelligence=factory(root.Next90Emergent);})(typeof globalThis!=='undefined'?globalThis:this,function(Emergent){'use strict';
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),gap=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
  const live=p=>p&&!p.dismissed&&p.active!==false;
  const key=p=>p.id??p.actorIndex??`${p.team}:${p.role}`;
@@ -83,10 +83,10 @@
   const a=frames[lo],b=frames[Math.min(lo+1,frames.length-1)],span=b.t-a.t,u=clamp((time-a.t)/(span||1),0,1);
   return{z:a.z+(b.z-a.z)*u,vz:time<frames[0].t||time>=frames.at(-1).t?0:span?(b.z-a.z)/span:0};
  }
- function penaltyPlan(history,random,{naturalKeeper=true}={}){
+ function penaltyPlan(history,random,{naturalKeeper=true,keeperTraits=null}={}){
   // Recent targets are observed attempts. Current shot/result is not an input.
-  const recent=history.slice(-8),bias=recent.reduce((n,k)=>n+Math.sign(k.target?.z||0),0),weight=recent.length?clamp(.5+bias/(recent.length+4)*.25,.3,.7):.5,side=random()<weight?1:-1,early=random()<.72;
-  return{x:52.48,z:0,commit:early?side*(1.65+random()*.4):0,anticipation:early?.12:0,reaction:naturalKeeper?.15:.24,diveSpeed:naturalKeeper?5.6:4.2,acceleration:naturalKeeper?18:12,reach:naturalKeeper?1.1:.82,side,early,basis:'observed-attempts-and-seeded-commitment'};
+  const traits=keeperTraits||{reflexes:.65,awareness:.6,decisions:.6,composure:.6};const recent=history.slice(-8),bias=recent.reduce((n,k)=>n+Math.sign(k.target?.z||0),0),weight=recent.length?clamp(.5+bias/(recent.length+4)*.25,.3,.7):.5,side=random()<weight?1:-1,early=random()<.72;
+  return{x:52.48,z:0,commit:early?side*(1.65+random()*.4):0,anticipation:early?.12:0,reaction:(naturalKeeper?.15:.24)+(1-traits.reflexes)*.09,diveSpeed:naturalKeeper?5.2+traits.reflexes*.4:4.0+traits.reflexes*.2,acceleration:naturalKeeper?18:12,reach:naturalKeeper?1.1:.82,side,early,basis:'observed-attempts-and-seeded-commitment'};
  }
  // Synthetic coaching presets, not claims about a club's verified real tactics.
  function teamStyle(team={},seed=0){
@@ -108,5 +108,35 @@
    assigned.push(best);out[offer.id]={x:best.x,z:best.z};
   }return out;
  }
- return Object.freeze({teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v173'});
+
+ // Arrival-time proxy, not a fitted Spearman pitch-control/EPV model.
+ function pitchControl(point,friends,opponents){const eta=ps=>Math.min(12,...ps.filter(live).map(p=>arrival(p,point,{reaction:.18}))),ours=eta(friends),theirs=eta(opponents);return 1/(1+Math.exp(clamp((ours-theirs)/.35,-30,30)));}
+ function attackValue(point,goal,{length=105,width=68}={}){const distance=gap(point,goal),angle=2*Math.atan2(Math.min(3.66,width*.12),Math.max(1,distance));return clamp(Math.exp(-distance/(length*.24))*(.35+angle),0,1);}
+ function teamPlan(players,ball,team,ownGoal,goal,{profiles=[],tactics={},time=0,lostAt=-Infinity,owner=null,length=105,width=68,bounds=q=>q}={}){
+  const friends=players.filter(p=>live(p)&&p.team===team&&!p.keeper),enemies=players.filter(p=>live(p)&&p.team!==team&&!p.keeper),d=gap(ownGoal,goal)||1,fx=(goal.x-ownGoal.x)/d,fz=(goal.z-ownGoal.z)/d,tx=-fz,tz=fx,
+   depth=p=>(p.x-ownGoal.x)*fx+(p.z-ownGoal.z)*fz,lateral=p=>(p.x-ownGoal.x)*tx+(p.z-ownGoal.z)*tz,hasBall=owner!=null&&owner.team===team,ballDepth=depth(ball),small=friends.length<7,block=tactics.depth||'mid',blockBase=block==='high'?.47:block==='deep'||block==='low'?.22:.34,
+   line=clamp(ballDepth-(small?3:13),length*blockBase,length*(small?.72:.68)),press=tactics.press??.5,recent=time-lostAt>=0&&time-lostAt<2.6,near=friends.filter(p=>gap(p,ball)<(small?5:10)),counter=recent&&press>.5&&near.length>=2,
+   ranked=pressers(friends,ball,null,{profiles,goal:ownGoal}).ranked,primary=ranked[0]?.player,cover=ranked.find(q=>q.player!==primary&&gap(q.player,ball)<(small?8:18))?.player,pressEnabled=counter||primary&&gap(primary,ball)<(small?7:10+press*9)&&ballDepth<length*(block==='high'?.95:block==='deep'?.52:.76),marking=tactics.marking||'mixed',marks=mark(friends.filter(p=>p!==primary&&p!==cover),enemies,ball,{goal:ownGoal}),out={};
+  const role=p=>profiles[p.id]?.role||p.role||'CM',backs=friends.filter(p=>/CB|defender/.test(role(p))).sort((a,b)=>lateral(a)-lateral(b));
+  for(const p of friends){if(hasBall&&key(p)===key(owner))continue;const r=role(p),back=/CB|defender/.test(r),mid=/DM|CM|midfielder/.test(r),side=Math.sign(lateral(p))||1;let q,intent,blend=.30;
+   if(!hasBall&&pressEnabled&&p===primary){const away={x:ball.x-ownGoal.x,z:ball.z-ownGoal.z},n=Math.hypot(away.x,away.z)||1;q={x:ball.x-away.x/n*.6-tx*side*.35,z:ball.z-away.z/n*.6-tz*side*.35};intent=counter?'counter-press':'first-pressure';blend=.7;}
+   else if(!hasBall&&pressEnabled&&p===cover){q={x:ball.x-fx*(small?2.4:4.8)+tx*side*1.5,z:ball.z-fz*(small?2.4:4.8)+tz*side*1.5};intent='cover-pressure';blend=.55;}
+   else{const rank=backs.indexOf(p),baseSide=back&&backs.length>1?(rank/(backs.length-1)-.5)*width*(small?.25:.32):clamp(lateral(p),-width*.38,width*.38),progress=hasBall?back?Math.min(ballDepth-(small?5:18),length*.52):mid?ballDepth-2:ballDepth+Math.min(8,length*.12):line-(back?0:mid?-(small?2:7):-(small?4:13)),z=clamp(baseSide*.8+lateral(ball)*.18,-width*.43,width*.43);q={x:ownGoal.x+fx*clamp(progress,small?2:7,length*.88)+tx*z,z:ownGoal.z+fz*clamp(progress,small?2:7,length*.88)+tz*z};intent=hasBall&&back?'rest-defense':hasBall?'offer-between-lines':'compact-'+block;
+    const duty=marks[key(p)];if(!hasBall&&duty&&marking!=='zone'){const a=enemies.find(e=>key(e)===duty.mark),weight=marking==='man'?.78:a&&gap(a,p)<(small?5:10)?.48:.12;q={x:q.x+(duty.target.x-q.x)*weight,z:q.z+(duty.target.z-q.z)*weight};intent=weight>.4?'track-runner':intent;}
+   }out[key(p)]={...bounds(q),intent,blend};
+  }return{targets:out,primary:pressEnabled&&primary?key(primary):null,cover:pressEnabled&&cover?key(cover):null,counterPress:counter,block,line};
+ }
+ function arenaDecision(p,g,players,lane,rng,context={}){
+  const identity=p.identity||p,traits=p.traits||Emergent.character(identity),style=context.style||{directness:.5,patience:1},enemies=players.filter(q=>live(q)&&q.team!==p.team),friends=players.filter(q=>live(q)&&q.team===p.team&&q!==p),distance=gap(p,g),pressure=enemies.filter(q=>!q.keeper).reduce((n,q)=>n+Math.exp(-(gap(p,q)**2)/6),0),options=[],maxPass=context.layout?.count>2?15:18;
+  options.push({kind:'carry',utility:.36+traits.control*.18-Math.min(1,pressure)*.16,risk:pressure*.14});
+  for(const q of friends){const d=gap(p,q);if(d<1.6||d>maxPass)continue;const target={x:q.x+(q.vx||0)*.22,z:q.z+(q.vz||0)*.22},risk=passWindow(p,target,enemies,{speed:12,receiver:q}).risk,gain=(distance-gap(q,g))/maxPass,control=pitchControl(target,[q],enemies),value=attackValue(target,g,{length:28,width:18})-attackValue(p,g,{length:28,width:18});
+   if(risk<Math.min(.68,.52+traits.vision*.12+pressure*.025))options.push({kind:'pass',receiver:q,utility:.35+gain*(.3+style.directness*.45)+control*.23+value*.35+Math.min(pressure,1.5)*.15-(q.keeper?.22:0),risk});
+   if(!q.keeper&&context.layout&&d>3&&d<13&&distance>6){const n=gap(q,g)||1,lead=Math.min(3.2,Math.max(1.5,n-4)),through={x:q.x+(g.x-q.x)/n*lead,z:q.z+(g.z-q.z)/n*lead},inside=context.layout.boundaries.every(e=>through.x*e.nx+through.z*e.nz<=e.d-.8),window=passWindow(p,through,enemies,{speed:13,receiver:q});if(inside&&window.risk<.72&&gap(through,g)<distance-1.5)options.push({kind:'pass',receiver:q,through,utility:.55+(distance-gap(through,g))*.025+traits.vision*.12,risk:window.risk,creative:.8});}
+   const depth=(g.x-q.x)*g.nx+(g.z-q.z)*g.nz;if(!q.keeper&&depth<8&&d>3&&d<14&&Math.abs(-p.x*g.nz+p.z*g.nx)>3&&pressure<2.5)options.push({kind:'cross',receiver:q,utility:.48+(1-pressure*.2)*.08,risk:Math.min(.9,risk*.7+.13),creative:.3});
+  }
+  const blocked=lane(p,g,players,p.team),depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,lateral=Math.abs(-p.x*g.nz+p.z*g.nx),angle=Math.atan2(g.width/2,Math.max(.1,distance));
+  if(distance<16&&depth>.6&&lateral<g.width*.5+depth*.9)options.push({kind:'shot',utility:.15+clamp((15-distance)/10,0,1)*.65+angle*.2+(context.keeper?.rushing?.12:0),risk:clamp(blocked*.20+Math.max(0,distance-7)*.025,0,.85),creative:distance>11?.4:0});
+  return Emergent.choose(options,traits,rng,{pressure,fatigue:p.fatigue||0});
+ }
+ return Object.freeze({Emergent,pitchControl,attackValue,teamPlan,arenaDecision,teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v175'});
 });

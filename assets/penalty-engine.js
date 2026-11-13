@@ -40,10 +40,12 @@ function deflectedPath(full,touch,spin){
  return{aero:{frames,n,duration,launch:full.launch},target:{x:b.x,y:b.y,z:b.z},outgoing:{x:b.vx,y:b.vy,z:b.vz},result};
 }
 
+// Natural studio attempts: classify the real flight/woodwork, never a sampled result.
+function goalLineFlight(kick){const b=Aero.state(FROM,kick.aero.launch,kick.spin),points=[{...FROM}];let result='wide',post=null;for(let i=1;i<=Math.ceil(kick.flight/Aero.STEP);i++){const previous={...b};Aero.step(b,Math.min(Aero.STEP,kick.flight-(i-1)*Aero.STEP));post=Aero.woodwork(b);points.push({x:b.x,y:b.y,z:b.z});if(post){result='post';break;}if(previous.x<52.5+R&&b.x>=52.5+R){result=Math.abs(b.z)<3.66-R&&b.y<2.44-R?'goal':'wide';break;}}const n=points.length-1,frames=new Float32Array(points.flatMap(p=>[p.x,p.y,p.z]));return{result,post,path:{frames,n,duration:Math.min(kick.flight,n*Aero.STEP),launch:kick.aero.launch},point:{x:b.x,y:b.y,z:b.z},outgoing:{x:b.vx,y:b.vy,z:b.vz}};}
 function physicalKick(kick,history,seed){
- const rng=random((seed^Math.imul(kick.index+1,0x4f1bbcdc))>>>0),model=Intelligence.penaltyPlan(history,rng,{naturalKeeper:natural(kick.keeper).includes('GK')}),proposed=kick.outcome;
+ const rng=random((seed^Math.imul(kick.index+1,0x4f1bbcdc))>>>0),model=Intelligence.penaltyPlan(history,rng,{naturalKeeper:natural(kick.keeper).includes('GK'),keeperTraits:Intelligence.Emergent.character(kick.keeper)}),proposed=kick.outcome;
  const target={...kick.target};if(proposed==='save')target.x=52.62;
- const full=aeroPath(FROM,target,kick.flight,kick.spin),dt=1/120,track=[];
+ const full=aeroPath(FROM,target,kick.flight,kick.spin);if(kick.naturalDecisions){const raw=Aero.fly(FROM,full.launch,kick.spin,kick.flight);full.frames[full.n*3]=raw.x;full.frames[full.n*3+1]=raw.y;full.frames[full.n*3+2]=raw.z;}const dt=1/120,track=[];
  let state={z:0,vz:0},last={...FROM},touch=null;
  for(let t=-model.anticipation;t<=kick.flight+dt/2;t+=dt){const age=Math.max(0,Math.min(t,kick.flight)),ball=t<0?{...FROM}:aeroAt(full,age),previousAge=Math.max(0,age-dt),prior=age>0?aeroAt(full,previousAge):ball;
   const observed={...ball,vx:(ball.x-prior.x)/Math.max(dt,age-previousAge),vy:(ball.y-prior.y)/Math.max(dt,age-previousAge),vz:(ball.z-prior.z)/Math.max(dt,age-previousAge)};
@@ -66,14 +68,14 @@ function physicalKick(kick,history,seed){
   kick.saveKind=Math.abs(lateral)<.45&&height<1.5&&speed<28?'smother':height>1.75?'tip-over':lateral<0?'parry-left':'parry-right';
   kick.keeperContact={...touch};
  }else{
-  kick.aero=full;kick.target=target;kick.outcome=proposed==='save'?'goal':proposed;kick.saveKind=null;kick.keeperContactOffset=kick.flight;
+  kick.aero=full;kick.target=target;kick.outcome=proposed==='save'?'goal':proposed;kick.saveKind=null;kick.keeperContactOffset=kick.flight;if(kick.naturalDecisions){const classified=goalLineFlight(kick);kick.aero=classified.path;kick.target=classified.point;kick.flight=classified.path.duration;kick.keeperContactOffset=kick.flight;kick.outcome=classified.result;kick.outgoing=classified.outgoing;kick.postKind=classified.post?(classified.post.part==='bar'?'crossbar':'upright'):null;kick.postNormal=classified.post?.normal||null;}
  }
  const t=kick.flight,now=aeroAt(kick.aero,t),prev=aeroAt(kick.aero,Math.max(0,t-.004)),span=Math.min(.004,t)||.004;
  kick.incoming={x:(now.x-prev.x)/span,y:(now.y-prev.y)/span,z:(now.z-prev.z)/span};
  if(kick.outcome==='save')kick.outgoing=kick.saveKind==='smother'?{x:0,y:0,z:0}:kick.saveKind==='tip-over'?{x:2.2,y:5.7,z:Math.sign(kick.target.z-state.z)*.75}:{x:-5.4,y:1.5,z:(kick.saveKind==='parry-left'?-1:1)*7};
  else if(kick.outcome==='goal'){kick.goalKind=kick.glove?'keeper-touch':'clean';kick.outgoing={x:kick.incoming.x*.72,y:kick.incoming.y*.72,z:kick.incoming.z*.65};}
  // Post/wide impulses remain the existing shared physical reflection path.
- kick.keeperSide=Math.sign(state.z)||model.side;kick.keeperTiming=model.early?'early':'wait';kick.diveDelay=model.early?-.12:model.reaction;
+ kick.playerTraits=Intelligence.Emergent.character(kick.shooter);kick.keeperTraits=Intelligence.Emergent.character(kick.keeper);kick.keeperSide=Math.sign(state.z)||model.side;kick.keeperTiming=model.early?'early':'wait';kick.diveDelay=model.early?-.12:model.reaction;
  kick.keeperStyle=kick.saveKind==='smother'?'smother':kick.saveKind==='tip-over'?'tipOver':kick.target.y>1.5?'fullStretch':'parryWide';
  kick.resolvedAt=kick.start+kick.contact+kick.flight;
  return kick;
@@ -86,7 +88,7 @@ function create(options){const rng=random(options.seed),rosters=options.lineups,
  const kicks=[],score=[0,0],taken=[0,0];let winner=null;
  for(let k=0;k<220&&winner===null;k++){
   const team=k%2,turn=taken[team],p=duel?(partners&&turn%2===1?partners[team]:shooters[team]):eligible[team][turn%11],keeper=keepers[1-team],q=quality(p),record=keeper.penaltySaveRecord,gk=natural(keeper).includes('GK');let keeperAdjustment=gk?0:.095,keeperBasis=gk?'natural-goalkeeper-prior':'outfield-goalkeeper-estimate';if(validRecord(record,'saved')){const rate=(record.saved+.18*15)/(record.attempts+15);keeperAdjustment=clamp(.18-rate,-.075,.075);keeperBasis='observed-save-record';}
-  const probability=clamp(q.value+keeperAdjustment,.56,.90),r=rng();let outcome=r<probability?'goal':r<probability+(1-probability)*.67?'save':r<probability+(1-probability)*.84?'post':'wide';const side=rng()<.5?-1:1,shotStyle=pickStyle(outcome,rng()),footInfo=Feet.resolve(p),rawFoot=footInfo.foot,foot=['left','l'].includes(rawFoot)?'left':['both','b'].includes(rawFoot)?(rng()<.5?'left':'right'):'right';
+  const probability=clamp(q.value+keeperAdjustment,.56,.90),r=rng();let outcome=options.naturalDecisions?'goal':r<probability?'goal':r<probability+(1-probability)*.67?'save':r<probability+(1-probability)*.84?'post':'wide';const side=rng()<.5?-1:1,shotStyle=options.naturalDecisions?Intelligence.Emergent.choose(Object.entries(STYLE_WEIGHTS.goal).map(([kind,w])=>({kind,utility:Math.log(w)*.3,risk:['chip','roof','side-netting'].includes(kind)?.45:.1,creative:['chip','disguised'].includes(kind)?.8:0})),Intelligence.Emergent.character(p,{shooting:q.value}),Intelligence.Emergent.stream(Intelligence.Emergent.hash(options.seed+'|penalty-choice|'+k))).kind:pickStyle(outcome,rng()),footInfo=Feet.resolve(p),rawFoot=footInfo.foot,foot=['left','l'].includes(rawFoot)?'left':['both','b'].includes(rawFoot)?(rng()<.5?'left':'right'):'right';
   let z=(1.55+rng()*1.82)*side,y=.24+rng()*.63,flight=.48+rng()*.08;
   if(shotStyle==='high-corner'){y=1.72+rng()*.44;z=(2.35+rng()*.98)*side;flight=.49+rng()*.07;}
   if(shotStyle==='driven'){y=.15+rng()*.44;flight=.43+rng()*.055;}
@@ -98,7 +100,7 @@ function create(options){const rng=random(options.seed),rosters=options.lineups,
   if(shotStyle==='side-netting'){y=.13+rng()*.30;z=(3.12+rng()*.33)*side;flight=.41+rng()*.05;}
   if(shotStyle==='roof'){y=1.80+rng()*.42;z=(rng()-.5)*1.7;flight=.42+rng()*.045;}
   if(shotStyle==='roll'){y=.13+rng()*.20;z=(1.3+rng()*1.5)*side;flight=.66+rng()*.10;}
-  const target={x:52.62,y,z};let postKind=null,normal=null;
+  const execution=options.naturalDecisions?Intelligence.Emergent.execute('shot',{heading:Math.PI/2},Intelligence.Emergent.character(p,{shooting:q.value}),Intelligence.Emergent.stream(Intelligence.Emergent.hash(options.seed+'|penalty-execution|'+k)),{distance:11,pressure:.35+(turn>=5?.25:0)}):null;const target={x:52.62,y:y+(execution?.longitudinal||0)*.7,z:z+(execution?.lateral||0)};if(execution)flight/=execution.speed;let postKind=null,normal=null;
   if(outcome==='post'){const pr=rng();postKind=['roof','chip','central'].includes(shotStyle)?'crossbar':['side-netting','roll','driven','inside-foot'].includes(shotStyle)?'upright':pr<.7?'upright':'crossbar';const nx=-.80-rng()*.12,nside=Math.sqrt(1-nx*nx),radius=R+.06;target.x=52.5+nx*radius;if(postKind==='upright'){normal={x:nx,y:0,z:-nside*side};target.z=3.66*side+normal.z*radius;target.y=Math.min(2.10,target.y);}else{normal={x:nx,y:-nside,z:0};target.y=2.44+normal.y*radius;}}
   if(outcome==='wide'){const wr=rng(),high=['roof','chip','central'].includes(shotStyle)?true:['side-netting','roll','driven'].includes(shotStyle)?false:shotStyle==='power-rise'?wr<.6:wr>=.72;if(!high)target.z=(4.05+rng()*1.15)*side;else target.y=2.85+rng()*.50;}
 
@@ -107,7 +109,7 @@ function create(options){const rng=random(options.seed),rosters=options.lineups,
   if(outcome==='post'){const v={...incoming,y:incoming.y-G*flight},dot=v.x*normal.x+v.y*normal.y+v.z*normal.z;outgoing={x:(v.x-1.62*dot*normal.x)*.73,y:(v.y-1.62*dot*normal.y)*.73,z:(v.z-1.62*dot*normal.z)*.73};outgoing.x=-Math.abs(outgoing.x);}
 
   if(outcome==='wide')outgoing={...incoming,y:incoming.y-G*flight};
-  kicks.push({index:k,team,round:turn+1,shooter:p,keeper,technique,speedKmh:Math.round(Math.hypot(target.x-FROM.x,target.y-FROM.y,target.z-FROM.z)/flight*3.6*1.06),probability,basis:q.basis,evidence:q,keeperBasis,outcome,target,runStyle,shotStyle,foot,keeperPrep,prepPhase,prepSide,footEvidence:footInfo,flight,contact,runStart,start,whistleAt:start+.18,resolvedAt:start+contact+flight,incoming,outgoing,postKind,postNormal:normal,swerve,runZ,preparation:{from:{x:0,z:(team?1:-1)*2},to:{x:38,z:runZ},duration:12,cutBeforeRunup:true},scoreBefore:score.slice(),suddenDeath:turn>=5});
+  kicks.push({naturalDecisions:!!options.naturalDecisions,execution,index:k,team,round:turn+1,shooter:p,keeper,technique,speedKmh:Math.round(Math.hypot(target.x-FROM.x,target.y-FROM.y,target.z-FROM.z)/flight*3.6*1.06),probability,basis:q.basis,evidence:q,keeperBasis,outcome,target,runStyle,shotStyle,foot,keeperPrep,prepPhase,prepSide,footEvidence:footInfo,flight,contact,runStart,start,whistleAt:start+.18,resolvedAt:start+contact+flight,incoming,outgoing,postKind,postNormal:normal,swerve,runZ,preparation:{from:{x:0,z:(team?1:-1)*2},to:{x:38,z:runZ},duration:12,cutBeforeRunup:true},scoreBefore:score.slice(),suddenDeath:turn>=5});
   kicks[k].spin=spinFor(technique,foot);
   physicalKick(kicks[k],kicks.slice(0,k),options.seed);outcome=kicks[k].outcome;if(outcome==='goal'){rebound(kicks[k].target,kicks[k].outgoing,0,true);kicks[k].netContact=tailCache.get(kicks[k].target).netContact;}taken[team]++;if(outcome==='goal')score[team]++;kicks[k].scoreAfter=score.slice();if(official&&taken[0]<=5&&taken[1]<=5){if(score[0]>score[1]+5-taken[1])winner=0;else if(score[1]>score[0]+5-taken[0])winner=1;}if(taken[0]===taken[1]&&taken[0]>=5&&score[0]!==score[1])winner=score[0]>score[1]?0:1;
  }

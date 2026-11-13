@@ -1,0 +1,498 @@
+{
+  "scope": "Small public reference samples; not a fitted league model or proof of real player mental attributes. No StatsBomb-derived product parameters.",
+  "units": "metres/seconds/radians",
+  "metrica": {
+    "home": {
+      "frames": 7500,
+      "seconds": 299.96,
+      "speed": {
+        "n": 82447,
+        "p10": 0.3562,
+        "median": 1.503,
+        "p90": 4.2284
+      },
+      "allTrackedTeamLength": {
+        "n": 7500,
+        "p10": 46.0067,
+        "median": 58.0865,
+        "p90": 87.5695
+      },
+      "allTrackedTeamWidth": {
+        "n": 7500,
+        "p10": 21.1273,
+        "median": 34.8809,
+        "p90": 41.6663
+      },
+      "note": "300-second prefix, includes stoppages and GK; anonymised IDs, not player skill labels. Speeds >12m/s treated as tracking outliers."
+    },
+    "away": {
+      "frames": 7500,
+      "seconds": 299.96,
+      "speed": {
+        "n": 82488,
+        "p10": 0.3436,
+        "median": 1.4798,
+        "p90": 4.0383
+      },
+      "allTrackedTeamLength": {
+        "n": 7500,
+        "p10": 31.5611,
+        "median": 54.0188,
+        "p90": 64.5806
+      },
+      "allTrackedTeamWidth": {
+        "n": 7500,
+        "p10": 20.7779,
+        "median": 37.6591,
+        "p90": 54.6868
+      },
+      "note": "300-second prefix, includes stoppages and GK; anonymised IDs, not player skill labels. Speeds >12m/s treated as tracking outliers."
+    },
+    "passDistance": {
+      "n": 799,
+      "p10": 7.5602,
+      "median": 14.2467,
+      "p90": 28.3656
+    }
+  },
+  "skillcorner": {
+    "chaotic": {
+      "phases": 96,
+      "width": {
+        "n": 96,
+        "p10": 23.899,
+        "median": 31.825,
+        "p90": 49.715
+      },
+      "length": {
+        "n": 96,
+        "p10": 39.197,
+        "median": 58.055,
+        "p90": 70.075
+      }
+    },
+    "defending_direct": {
+      "phases": 42,
+      "width": {
+        "n": 42,
+        "p10": 24.136,
+        "median": 32.79,
+        "p90": 38.392
+      },
+      "length": {
+        "n": 42,
+        "p10": 44.514,
+        "median": 58.72,
+        "p90": 72.814
+      }
+    },
+    "defending_quick_break": {
+      "phases": 9,
+      "width": {
+        "n": 9,
+        "p10": 23.54,
+        "median": 42.8,
+        "p90": 57.592
+      },
+      "length": {
+        "n": 9,
+        "p10": 40.92,
+        "median": 48.74,
+        "p90": 57.0
+      }
+    },
+    "defending_set_play": {
+      "phases": 13,
+      "width": {
+        "n": 13,
+        "p10": 11.67,
+        "median": 20.48,
+        "p90": 25.944
+      },
+      "length": {
+        "n": 13,
+        "p10": 11.844,
+        "median": 13.715,
+        "p90": 23.54
+      }
+    },
+    "defending_transition": {
+      "phases": 2,
+      "width": {
+        "n": 2,
+        "p10": 43.365,
+        "median": 45.945,
+        "p90": 48.525
+      },
+      "length": {
+        "n": 2,
+        "p10": 59.801,
+        "median": 60.885,
+        "p90": 61.969
+      }
+    },
+    "high_block": {
+      "phases": 66,
+      "width": {
+        "n": 66,
+        "p10": 27.89,
+        "median": 35.2,
+        "p90": 43.145
+      },
+      "length": {
+        "n": 66,
+        "p10": 50.38,
+        "median": 56.13,
+        "p90": 70.04
+      }
+    },
+    "low_block": {
+      "phases": 95,
+      "width": {
+        "n": 95,
+        "p10": 25.232,
+        "median": 30.49,
+        "p90": 37.266
+      },
+      "length": {
+        "n": 95,
+        "p10": 28.484,
+        "median": 43.04,
+        "p90": 55.808
+      }
+    },
+    "medium_block": {
+      "phases": 160,
+      "width": {
+        "n": 160,
+        "p10": 26.038,
+        "median": 33.41,
+        "p90": 41.402
+      },
+      "length": {
+        "n": 160,
+        "p10": 35.708,
+        "median": 52.47,
+        "p90": 68.0
+      }
+    }
+  },
+  "pose": {
+    "frames": 309,
+    "posePlayerFrames": 4953,
+    "missingPlayerFrames": 4935,
+    "rejectedLimbs": 388,
+    "kneeFlexRadians": {
+      "n": 9518,
+      "p10": 0.4532,
+      "median": 0.8341,
+      "p90": 1.5653
+    },
+    "jointErrorCm": {
+      "n": 28554,
+      "p10": 7.23,
+      "median": 10.13,
+      "p90": 14.41
+    },
+    "sampleDuration": 12.32,
+    "prototypeOnly": true,
+    "limitations": "12.32s second-half quick-break sample. 25Hz pose vs10Hz tracking; missing detections, p90 estimation errors and uncertain absolute vertical root. Hinge-angle prototype is not a ready-made game animation and is not enabled in runtime."
+  },
+  "posePrototype": {
+    "player": "560989",
+    "samples": [
+      {
+        "frame": 124487,
+        "time": 0.0,
+        "leftKneeFlex": 1.1337,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124488,
+        "time": 0.04,
+        "leftKneeFlex": 1.33487,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124489,
+        "time": 0.08,
+        "leftKneeFlex": 1.53971,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124490,
+        "time": 0.12,
+        "leftKneeFlex": 1.60581,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124491,
+        "time": 0.16,
+        "leftKneeFlex": 1.3916,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124536,
+        "time": 1.96,
+        "leftKneeFlex": 0.66902,
+        "maxErrorCm": 18.13
+      },
+      {
+        "frame": 124537,
+        "time": 2.0,
+        "leftKneeFlex": 0.63773,
+        "maxErrorCm": 18.92
+      },
+      {
+        "frame": 124538,
+        "time": 2.04,
+        "leftKneeFlex": 0.5935,
+        "maxErrorCm": 14.19
+      },
+      {
+        "frame": 124539,
+        "time": 2.08,
+        "leftKneeFlex": 0.52104,
+        "maxErrorCm": 13.34
+      },
+      {
+        "frame": 124540,
+        "time": 2.12,
+        "leftKneeFlex": 0.49553,
+        "maxErrorCm": 14.2
+      },
+      {
+        "frame": 124541,
+        "time": 2.16,
+        "leftKneeFlex": 0.60309,
+        "maxErrorCm": 16.98
+      },
+      {
+        "frame": 124542,
+        "time": 2.2,
+        "leftKneeFlex": 0.84401,
+        "maxErrorCm": 16.98
+      },
+      {
+        "frame": 124543,
+        "time": 2.24,
+        "leftKneeFlex": 1.11014,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124544,
+        "time": 2.28,
+        "leftKneeFlex": 1.3831,
+        "maxErrorCm": 14.2
+      },
+      {
+        "frame": 124545,
+        "time": 2.32,
+        "leftKneeFlex": 1.52049,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124546,
+        "time": 2.36,
+        "leftKneeFlex": 1.54504,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124547,
+        "time": 2.4,
+        "leftKneeFlex": 1.45475,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124548,
+        "time": 2.44,
+        "leftKneeFlex": 1.3642,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124549,
+        "time": 2.48,
+        "leftKneeFlex": 1.10208,
+        "maxErrorCm": 13.74
+      },
+      {
+        "frame": 124550,
+        "time": 2.52,
+        "leftKneeFlex": 0.78381,
+        "maxErrorCm": 18.13
+      },
+      {
+        "frame": 124551,
+        "time": 2.56,
+        "leftKneeFlex": 0.62372,
+        "maxErrorCm": 15.28
+      },
+      {
+        "frame": 124552,
+        "time": 2.6,
+        "leftKneeFlex": 0.49565,
+        "maxErrorCm": 15.93
+      },
+      {
+        "frame": 124553,
+        "time": 2.64,
+        "leftKneeFlex": 0.70589,
+        "maxErrorCm": 18.13
+      },
+      {
+        "frame": 124554,
+        "time": 2.68,
+        "leftKneeFlex": 0.48226,
+        "maxErrorCm": 17.38
+      },
+      {
+        "frame": 124555,
+        "time": 2.72,
+        "leftKneeFlex": 0.46102,
+        "maxErrorCm": 16.62
+      },
+      {
+        "frame": 124556,
+        "time": 2.76,
+        "leftKneeFlex": 0.68716,
+        "maxErrorCm": 14.19
+      },
+      {
+        "frame": 124557,
+        "time": 2.8,
+        "leftKneeFlex": 0.70493,
+        "maxErrorCm": 13.74
+      },
+      {
+        "frame": 124558,
+        "time": 2.84,
+        "leftKneeFlex": 0.7443,
+        "maxErrorCm": 13.74
+      },
+      {
+        "frame": 124559,
+        "time": 2.88,
+        "leftKneeFlex": 0.75334,
+        "maxErrorCm": 13.34
+      },
+      {
+        "frame": 124560,
+        "time": 2.92,
+        "leftKneeFlex": 0.78729,
+        "maxErrorCm": 13.74
+      },
+      {
+        "frame": 124561,
+        "time": 2.96,
+        "leftKneeFlex": 1.05382,
+        "maxErrorCm": 12.43
+      },
+      {
+        "frame": 124562,
+        "time": 3.0,
+        "leftKneeFlex": 1.40554,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124563,
+        "time": 3.04,
+        "leftKneeFlex": 1.64845,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124564,
+        "time": 3.08,
+        "leftKneeFlex": 1.71336,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124565,
+        "time": 3.12,
+        "leftKneeFlex": 1.67435,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124566,
+        "time": 3.16,
+        "leftKneeFlex": 1.51391,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124567,
+        "time": 3.2,
+        "leftKneeFlex": 1.21064,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124568,
+        "time": 3.24,
+        "leftKneeFlex": 0.74846,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124569,
+        "time": 3.28,
+        "leftKneeFlex": 0.60337,
+        "maxErrorCm": 12.39
+      },
+      {
+        "frame": 124570,
+        "time": 3.32,
+        "leftKneeFlex": 0.53196,
+        "maxErrorCm": 12.39
+      }
+    ]
+  },
+  "sourceFiles": [
+    {
+      "name": "metrica-away-prefix.csv",
+      "bytes": 1674224,
+      "sha256": "688dfc540c91833591b65c3740b3755246d47c9b4c4fd033b5768c519a328a74"
+    },
+    {
+      "name": "bodypose-card.md",
+      "bytes": 6408,
+      "sha256": "2397aadbdb2f3573427879c149815a19461f8d637497d7cffcc274debd5f9d41"
+    },
+    {
+      "name": "metrica-home-prefix.csv",
+      "bytes": 1673768,
+      "sha256": "4ec95c56d7e1db14628e543914afe79b79b9b1df7818594e52e6bd8afcc0263f"
+    },
+    {
+      "name": "metrica-events.csv",
+      "bytes": 139446,
+      "sha256": "097dda6345e17390dca095331458fd00e47960c480c76f4356fd4edf2575ef05"
+    },
+    {
+      "name": "skill-tracking-prefix.jsonl",
+      "bytes": 3151601,
+      "sha256": "747feec6a6de70f14466d23648abae4a86d79f60264125798ccb3a96d479d4e7"
+    },
+    {
+      "name": "skill-match.json",
+      "bytes": 28396,
+      "sha256": "f4345b32c0fdd7c9990df70050b3a74f57b1992cf762e20f2a4d309bd2fba7d2"
+    },
+    {
+      "name": "metrica-tree.json",
+      "bytes": 4248,
+      "sha256": "49259ce093ecb430932230001c3c9c5db3774dfe28215e6ee70ec7089a210ccc"
+    },
+    {
+      "name": "bodypose-sample.jsonl.gz",
+      "bytes": 1926895,
+      "sha256": "eb10f537c5c3b3c80018d5670f16cb788b14a3529d0be0b36a077bd1b41aeb4a"
+    },
+    {
+      "name": "skill-tree.json",
+      "bytes": 45606,
+      "sha256": "dbc97f9732ea0698dc1053cc8e263f33259e257a27053f0386f9d28ac233859b"
+    },
+    {
+      "name": "skill-phases.csv",
+      "bytes": 131104,
+      "sha256": "a1682a736a9cf1c311cb799f0a949f7e023dca4ebaa9dd294b138e8929271274"
+    }
+  ]
+}

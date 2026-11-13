@@ -1,0 +1,136 @@
+{
+  "retrievedAt": "2026-11-13",
+  "runtimeDownloads": false,
+  "files": [
+    {
+      "name": "fifa-language.html",
+      "url": "https://www.fifatrainingcentre.com/en/game/performance-analysis/football-language-analysis/the-fifa-football-language.php",
+      "bytes": 94286,
+      "sha256": "f301b71be55edc96f9b9796a7c062dcee47ee5a44a27c57beae0f291fdd7d754",
+      "pass": true
+    },
+    {
+      "name": "fifa-principles.html",
+      "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/landing-page-core-principles.php",
+      "bytes": 72374,
+      "sha256": "99a96c8b5d64806583ca00b265f551fe7fd4ad6d013c7a5f404dbe225d0fbc02",
+      "pass": true
+    },
+    {
+      "name": "bodypose-card.md",
+      "url": "https://huggingface.co/datasets/SkillCorner/opendata-bodypose/raw/main/README.md",
+      "bytes": 6408,
+      "sha256": "2397aadbdb2f3573427879c149815a19461f8d637497d7cffcc274debd5f9d41",
+      "pass": true
+    },
+    {
+      "name": "bodypose-sample.jsonl.gz",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/bodypose/sample_1925299_phase406.jsonl.gz",
+      "bytes": 1926895,
+      "sha256": "eb10f537c5c3b3c80018d5670f16cb788b14a3529d0be0b36a077bd1b41aeb4a",
+      "pass": true
+    },
+    {
+      "name": "skill-tree.json",
+      "url": "https://api.github.com/repos/SkillCorner/opendata/git/trees/master?recursive=1",
+      "bytes": 45606,
+      "sha256": "dbc97f9732ea0698dc1053cc8e263f33259e257a27053f0386f9d28ac233859b",
+      "pass": true
+    },
+    {
+      "name": "metrica-tree.json",
+      "url": "https://api.github.com/repos/metrica-sports/sample-data/git/trees/master?recursive=1",
+      "bytes": 4248,
+      "sha256": "49259ce093ecb430932230001c3c9c5db3774dfe28215e6ee70ec7089a210ccc",
+      "pass": true
+    },
+    {
+      "name": "statsbomb-license.pdf",
+      "url": "https://raw.githubusercontent.com/hudl/open-data/master/LICENSE.pdf",
+      "bytes": 165130,
+      "sha256": "a5462e69aeb71a39268b760b110c5c2190a2e0cee3015ba976f66bd71f6c2bb4",
+      "pass": true
+    },
+    {
+      "name": "statsbomb-events.json",
+      "url": "https://raw.githubusercontent.com/hudl/open-data/master/data/events/3788741.json",
+      "bytes": 3208593,
+      "sha256": "b9ddce6bee771bdb1f3564c9ac0552619257e412d0767939f1e7f1500ace3062",
+      "pass": true
+    },
+    {
+      "name": "pitch-control.py",
+      "url": "https://raw.githubusercontent.com/Friends-of-Tracking-Data-FoTD/LaurieOnTracking/master/Metrica_PitchControl.py",
+      "bytes": 19843,
+      "sha256": "d0b6644fff32fd31c00ddbf23a37762dae77894b7d9126a34e191b8e015f0cb2",
+      "pass": true
+    },
+    {
+      "name": "socceraction-xt.py",
+      "url": "https://raw.githubusercontent.com/ML-KULeuven/socceraction/master/socceraction/xthreat.py",
+      "bytes": 16924,
+      "sha256": "35ebec9b3e171eccf1db5c519ca133886f65411e8e3fa6754111a4f45cc96453",
+      "pass": true
+    },
+    {
+      "name": "grf-ai.cpp",
+      "url": "https://raw.githubusercontent.com/google-research/football/master/third_party/gfootball_engine/src/onthepitch/AIfunctions.cpp",
+      "pass": false,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "skill-match.json",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1925299/1925299_match.json",
+      "bytes": 28396,
+      "sha256": "f4345b32c0fdd7c9990df70050b3a74f57b1992cf762e20f2a4d309bd2fba7d2",
+      "pass": true
+    },
+    {
+      "name": "skill-phases.csv",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/matches/1925299/1925299_phases_of_play.csv",
+      "bytes": 131104,
+      "sha256": "a1682a736a9cf1c311cb799f0a949f7e023dca4ebaa9dd294b138e8929271274",
+      "pass": true
+    },
+    {
+      "name": "metrica-events.csv",
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/master/data/Sample_Game_1/Sample_Game_1_RawEventsData.csv",
+      "bytes": 139446,
+      "sha256": "097dda6345e17390dca095331458fd00e47960c480c76f4356fd4edf2575ef05",
+      "pass": true
+    },
+    {
+      "name": "grf-player.cpp",
+      "url": "https://raw.githubusercontent.com/google-research/football/master/gfootball_engine/src/onthepitch/player/controller/footballer.cpp",
+      "pass": false,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "skill-tracking-prefix.jsonl",
+      "url": "https://media.githubusercontent.com/media/SkillCorner/opendata/master/data/matches/1925299/1925299_tracking_extrapolated.jsonl",
+      "prefixLines": 1800,
+      "bytes": 3151601,
+      "sha256": "747feec6a6de70f14466d23648abae4a86d79f60264125798ccb3a96d479d4e7",
+      "pass": true,
+      "partial": true
+    },
+    {
+      "name": "metrica-home-prefix.csv",
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/master/data/Sample_Game_1/Sample_Game_1_RawTrackingData_Home_Team.csv",
+      "prefixLines": 7503,
+      "bytes": 1673768,
+      "sha256": "4ec95c56d7e1db14628e543914afe79b79b9b1df7818594e52e6bd8afcc0263f",
+      "pass": true,
+      "partial": true
+    },
+    {
+      "name": "metrica-away-prefix.csv",
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/master/data/Sample_Game_1/Sample_Game_1_RawTrackingData_Away_Team.csv",
+      "prefixLines": 7503,
+      "bytes": 1674224,
+      "sha256": "688dfc540c91833591b65c3740b3755246d47c9b4c4fd033b5768c519a328a74",
+      "pass": true,
+      "partial": true
+    }
+  ]
+}
