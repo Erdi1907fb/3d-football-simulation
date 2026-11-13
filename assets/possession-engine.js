@@ -18,11 +18,11 @@ function simulate(c,initial,foot,attempt){
  const frames=[],events=[],actions=[],minimum=3.5+rng()*2.5,maximum=minimum+5.5;let horizon=maximum,finished=false;
  const trace=(type,t,data={})=>events.push({type,at:t,minute:c.minute,stage:'procedural',...data}),action=(type,t,data={})=>actions.push({type,at:t,...data});
  trace('attack',0,{team:initialTeam,pattern:'attack'});
- function gain(p,t,cause){const prior=lastPossession;control={from:{...ball},at:t,...Intent.control(p,ball,profiles[p.id],players.filter(o=>o.team!==p.team),direction(p.team))};world=null;owner=p.id;flight=null;loose=null;carryAim=null;nextDecision=t+.18+rng()*.28;
+ function gain(p,t,cause){const prior=lastPossession;p.receivedAt=t;p.receivePoint={...ball};control={from:{...ball},at:t,...Intent.control(p,ball,profiles[p.id],players.filter(o=>o.team!==p.team),direction(p.team))};world=null;owner=p.id;flight=null;loose=null;carryAim=null;nextDecision=t+.18+rng()*.28;
   if(p.team!==prior){turnoverAt=t;trace('interception',t,{team:p.team,actor:p.id,lossKind:cause});trace('ball_secured',t+.02,{team:p.team,actor:p.id});action('recovery',t,{actor:p.id,cause,x:ball.x,z:ball.z});}
   lastPossession=p.team;
  }
- function release(p,target,t,kind,receiver){const from=foot(p,t),d=gap(from,target),duration=c.liveGeometry?clamp(d/(12+d*.12),.32,3.3):clamp(d/OF.passPace(d),.28,2.15),opponents=players.filter(o=>o.team!==p.team&&!o.dismissed),pressure=OF.pressureIntensity(p,opponents),quality=profiles[p.id].passing;
+ function release(p,target,t,kind,receiver){const from=foot(p,t);p.strikePoint={...from};p.strikeAt=t;const d=gap(from,target),duration=c.liveGeometry?clamp(d/(12+d*.12),.32,3.3):clamp(d/OF.passPace(d),.28,2.15),opponents=players.filter(o=>o.team!==p.team&&!o.dismissed),pressure=OF.pressureIntensity(p,opponents),quality=profiles[p.id].passing;
   const error=(1-quality)*(.25+pressure*2.2),aim={x:target.x+(rng()-.5)*error*3,z:target.z+(rng()-.5)*error*3,y:.11};
   if(kind==='through'){const line=opponents.map(o=>o.x*direction(p.team)).sort((a,b)=>b-a)[1]??52.5;aim.x=Math.min(aim.x*direction(p.team),Math.max(from.x*direction(p.team),line)-.65)*direction(p.team);}
   const arc=kind==='cross'?2.3:kind==='loft'?1.8:.08;giveAndGo={actor:p.id,receiver,at:t,target:Intent.runAfterPass(p,players[receiver],ball,direction(p.team),profiles[p.id].role)};
@@ -44,7 +44,7 @@ function simulate(c,initial,foot,attempt){
   opts.push({type:'carry',weight:(.7+beat*2.4+(space?.value||0)*.5-pressure*.25)*(c.liveGeometry&&attempt>=10&&p.id===c.team*11+(c.finisher??9)?5:1)});
   if(pressure>.2)opts.push({type:'shield',weight:.2+(1-beat)*pressure});
   if(me.x>27&&Math.abs(me.z)<23)opts.push({type:'shot',weight:.65+(me.x-27)/11});
-  const selected=choose(rng,opts);nextDecision=t+(c.liveGeometry?.42:.35)+rng()*(c.liveGeometry?.75:.55);
+  const selected=choose(rng,opts);nextDecision=t+((c.liveGeometry?.42:.35)+rng()*(c.liveGeometry?.75:.55))*(c.ai.tactics[p.team].style?.patience||1);
   if(['pass','loft','cross','through'].includes(selected.type)){const f=selected.friend,target=selected.aim||Intent.lead(p,f,c.liveGeometry?14:18);release(p,target,t,selected.type,f.id);return;}
   if(selected.type==='shot'){
    // Extra chances may fail, rebound or turn into a counter; new goals are
@@ -61,7 +61,7 @@ function simulate(c,initial,foot,attempt){
   const t=tick*DT;if(t>horizon)break;const old=players.map(p=>({...p}));
   if(owner!=null&&t>=nextDecision)decide(players[owner],t);
   if(tick%12===0||!world){const side=owner!=null?players[owner].team:flight?.team??lastPossession,dir=direction(side),ps=players.map(p=>relative(p,dir)),b={...relative(ball,dir),vx:loose?.vx||0,vz:loose?.vz||0},att=ps.filter(p=>p.team===side),def=ps.filter(p=>p.team!==side),phase=OF.phase(false,-b.x,t-turnoverAt,.5,c.ai.tactics[1-side].press);
-   world={oeOffsets:{},network:c.ai.openEngine?OE.supportNetwork(ps,side):null,side,dir,ps,b,attackers:att,defenders:def,plan:OF.defensivePlan(def,att,b,profiles,phase,previousPrimary,{press:c.ai.tactics[1-side].press})};world.collective=Collective.targets(players,ball,side,dir,profiles,c.ai.tactics,world.plan.primary,owner,{time:t,turnoverAt,flight});previousPrimary=world.plan.primary;
+   world={oeOffsets:{},network:c.ai.openEngine?OE.supportNetwork(ps,side):null,side,dir,ps,b,attackers:att,defenders:def,plan:OF.defensivePlan(def,att,b,profiles,phase,previousPrimary,{press:c.ai.tactics[1-side].press})};world.collective=Collective.targets(players,ball,side,dir,profiles,c.ai.tactics,world.plan.primary,owner,{time:t,turnoverAt,flight,lastPass:giveAndGo});previousPrimary=world.plan.primary;
   }
   const goals=players.map(p=>{const profile=profiles[p.id],role=profile.role,dir=world.dir,canon=relative(p,dir),isAttack=p.team===world.side,home=relative(initial[p.id],dir),b=world.b;let q;
    if(p.keeper){const ownDir=direction(p.team);q={x:-ownDir*49.6,z:clamp(ball.z*.12,-2.4,2.4)};return q;}

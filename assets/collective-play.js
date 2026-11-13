@@ -1,12 +1,13 @@
 /* Continuous geometric team coordination. Original Next90 implementation.
  * Works with the existing Apache-2.0 Open Football decision layer and OpenEngine.
  * No authored attack catalogue and no score/goal generation. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f();else r.Next90Collective=f();})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./football-intelligence.js'));else r.Next90Collective=f(r.Next90Intelligence);})(typeof globalThis!=='undefined'?globalThis:this,function(Intelligence){'use strict';
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),d=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z),mix=(a,b,t)=>a+(b-a)*t;
 function lane(a,b,enemies){let danger=0;const dx=b.x-a.x,dz=b.z-a.z,l=dx*dx+dz*dz;for(const p of enemies){const u=clamp(((p.x-a.x)*dx+(p.z-a.z)*dz)/Math.max(.001,l),0,1);if(u<.08||u>.95)continue;const reach=1.2+(p.speed||0)*.13;danger=Math.max(danger,clamp(1-Math.hypot(p.x-a.x-u*dx,p.z-a.z-u*dz)/reach,0,1));}return danger;}
 function role(p,profiles){return profiles[p.id]?.role||'CM';}
 function targets(players,ball,side,dir,profiles,tactics,primary,owner,context={}){
  const rows=players.map(p=>({...p,x:p.x*dir,z:p.z*dir,vx:(p.vx||0)*dir,vz:(p.vz||0)*dir})),b={x:ball.x*dir,z:ball.z*dir},attack=rows.filter(p=>p.team===side&&!p.dismissed&&!p.keeper),defend=rows.filter(p=>p.team!==side&&!p.dismissed&&!p.keeper),out={},offers=[],width=clamp(tactics[side]?.width??.7,.35,.95),carrier=rows.find(p=>p.id===owner),carrierRole=carrier?role(carrier,profiles):'',wide=Math.abs(b.z)>17,ballSign=Math.sign(b.z)||1,line=rows.filter(p=>p.team!==side&&!p.dismissed).map(p=>p.x).sort((a,b)=>b-a)[1]??52.5,onside=Math.max(0,b.x,line)-1.05;
+ const jobs=carrier?Intelligence.combinations(rows.map(p=>({...p,role:role(p,profiles)})),carrier,{x:52.5,z:0},{time:context.time,lastPass:context.lastPass,style:tactics[side]?.style,bounds:q=>({x:clamp(q.x,-43,Math.min(47,onside)),z:clamp(q.z,-30.3,30.3)})}):{};
  const signOf=p=>{const r=role(p,profiles);return ['LB','LWB','LW','LM'].includes(r)?-1:['RB','RWB','RW','RM'].includes(r)?1:Math.sign(p.z)||((p.id%11)%2?1:-1);};
  // V112 formation awareness: a back three spreads its centre-backs (left/centre/right),
  // wing-backs then play higher in possession and drop into a back five without the ball.
@@ -27,6 +28,7 @@ function targets(players,ball,side,dir,profiles,tactics,primary,owner,context={}
   // sprints into channels ahead of the ball and one runner attacks the far post lane.
   const sinceTurnover=Number.isFinite(context.turnoverAt)?(context.time??0)-context.turnoverAt:Infinity,counter=sinceTurnover>=0&&sinceTurnover<6.5&&b.x<30?1-clamp((sinceTurnover-4)/2.5,0,1):0;
   if(counter>0&&!back&&!fb){const lane=wing?sign*(15+((p.id%3)*1.5)):striker?clamp(b.z*.3,-6,6):mid?sign*9:z;x=mix(x,b.x+(wing?17:striker?21:mid?7:x-b.x),counter);z=mix(z,lane,counter);intent=wing||striker?'counter-lane':'counter-support';}
+  const job=jobs[p.id];if(job&&!back&&!anchor){x=mix(x,job.x,job.blend);z=mix(z,job.z,job.blend);intent=job.intent;}
   const base={x:clamp(x,-43,Math.min(47,onside)),z:clamp(z,-30.3,30.3)},step=back||anchor?2.1:3.2;let best=null;
   for(let ix=-1;ix<=1;ix++)for(let iz=-1;iz<=1;iz++){const q={x:clamp(base.x+ix*step,-45,Math.min(48,onside)),z:clamp(base.z+iz*step,-31,31)},opposition=Math.min(12,...defend.map(o=>d(q,{x:o.x+o.vx*.35,z:o.z+o.vz*.35}))),spacing=Math.min(7,...offers.map(o=>d(q,o))),risk=lane(b,q,defend),distance=d(p,q),goalThreat=striker||wing?clamp((q.x-18)/28,0,1)*.22:0,score=opposition*.09+spacing*.13+(1-risk)*.85-distance*.021-Math.abs(q.x-base.x)*.03-Math.abs(q.z-base.z)*.025+goalThreat;
    if(!best||score>best.score)best={...q,score};}

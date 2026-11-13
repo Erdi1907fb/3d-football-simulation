@@ -8,10 +8,10 @@ Her aşamada yapılan, test edilen, eksik kalan, sıradaki somut adım ve commit
 | Sıra / görev | İş | Durum | Kabul ölçütü |
 |---|---|---|---|
 | 1 / T-286 | Oyuncu–top teması, alım/vuruş hazırlığı ve kaleci el–top pozu | in-progress · codex | Gerçek temas zamanı/noktası; ulaşılabilir eklem hareketi, kök/top ışınlaması yok; normal/arena/P/FK'de aynı sunum yolu, arama/geri sarma deterministik |
-| 2 / T-287 | Takım halinde oyun | todo | Verkaç/üçüncü oyuncu/bindirme ve top kaybı sonrası savunma; kararlar gerçek sahiplik/koridor/oyuncu erişimine bağlı; gol kotası yok |
-| 3 / T-288 | Kalabalık Japon Kale | todo | Özellikle6takımda destek/markaj dağılımı, top çevresine yığılma; V172 sabit örnekleriyle pas alımı/risk/sahipsiz top ve yakınlık ölçümü |
-| 4 / T-289 | Maç ve takım karakteri çeşitliliği | todo | Tohumla tekrar üretilebilir farklı genişlik/tempo/doğrudanlık; gerçek oyuncu istatistiği veya doğrulanmış taktik iddiası yok; her mod kendi kurallarını korur |
-| 5 / T-290 | Gerçek kullanım / 1080p video | todo | Uzun oynatma/arama/iptal/yeniden hazırlama + yerel gerçek1080pMP4 üretme/çözümleme; tarayıcı/Windows/fiziksel telefon sonuçları ayrı, denenmeyen cihaz dürüstçe açık |
+| 2 / T-287 | Takım halinde oyun | in-progress | Verkaç/üçüncü oyuncu/bindirme ve top kaybı sonrası savunma; kararlar gerçek sahiplik/koridor/oyuncu erişimine bağlı; gol kotası yok |
+| 3 / T-288 | Kalabalık Japon Kale | in-progress | Özellikle6takımda destek/markaj dağılımı, top çevresine yığılma; V172 sabit örnekleriyle pas alımı/risk/sahipsiz top ve yakınlık ölçümü |
+| 4 / T-289 | Maç ve takım karakteri çeşitliliği | in-progress | Tohumla tekrar üretilebilir farklı genişlik/tempo/doğrudanlık; gerçek oyuncu istatistiği veya doğrulanmış taktik iddiası yok; her mod kendi kurallarını korur |
+| 5 / T-290 | Gerçek kullanım / 1080p video | in-progress | Uzun oynatma/arama/iptal/yeniden hazırlama + yerel gerçek1080pMP4 üretme/çözümleme; tarayıcı/Windows/fiziksel telefon sonuçları ayrı, denenmeyen cihaz dürüstçe açık |
 
 ## Motor ve tasarım kararları
 
@@ -37,3 +37,12 @@ Her aşamada yapılan, test edilen, eksik kalan, sıradaki somut adım ve commit
 3. PROJECT_STATE'te kararlı sürüm ve devam eden geliştirme.
 4. Sürüm kapanınca CHANGELOG/manifest ve test özeti, aynı commit.
 5. Yarım bir aşamayı done yapma; fiziksel telefon/Windows yoksa ona ait satırı açık bırak.
+
+## V173 çalışma kaydı — 2026-11-13 UTC / Codex
+
+- T-286 uygulandı: ortak erişilebilir vuruş/alım IK, dondurulmuş alım noktası, arena gerçek pas/vuruş noktaları, normal prosedürel alım noktası; kalecide tek yükselme ve sınırlı gövde düzeltmesi. Sol/sağ temas, kök/top değişmezliği ve sınır testleri PASS. Tarayıcı doğrulaması sürüyor.
+- T-287 uygulandı: gözlenen son pasa bağlı verkaç/üçüncü oyuncu teklifleri, normal collective bağlantısı ve arena takım destek planı; top kaybında örtü koşusu. `teamwork.cjs` PASS; gerçek gol sonucu değişmezlik şartı korunur.
+- T-288 uygulandı: katılmayan rakip sektöründe örtü tutar; takım destek açıları ortak dağıtılır, pas alıcısı ball-aero ile yavaşlayan topun erişilebilir noktasına koşar. Altı takımlı örnekte15→26alım, yakın çift/kare1.715→1.403. 5v5yakınlık/risk her ölçüde iyileşmedi; tam sonuç final rapora girecek.
+- T-289 uygulandı: balanced/combination/vertical/wide sentetik takım kimliği profilleri; açık kullanıcı taktikleri önceliklidir. Kimlikten deterministik, gerçek kulüp taktiği iddiası yok.
+- T-290 çalışılıyor: tüm maç zamanı/ileri-geri çizim, gerçek1080pMP4 üretim+decode ve iptal/yeniden üretim için Chromium harness hazırlanıyor. Fiziksel telefon/Windows testi yapılmış değildir.
+- Tam36testlik paket ve tarayıcı çalışması sürüyor; henüz V173kararlı ilan edilmedi. Sonraki adım: testleri bitir, çıkan gerçek hatayı düzelt, kod/rapor/manifesti beraber kapat.

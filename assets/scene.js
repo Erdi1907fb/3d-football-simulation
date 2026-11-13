@@ -611,7 +611,7 @@ ballGroup.traverse(o=>{if(o.isMesh&&o.material&&!o.material.isMeshPhysicalMateri
    if(!official){FootballClips.goalkeeper(a,p,state);Motion.keeperRecovery(a,p,state);}
    const hold=Motion.holdWeight(p,state);if(hold){const pose=Motion.begin(a,'keeperHold');a.body.rotation.z=0;a.body.position.y=-.08;a.legs.forEach(l=>{l.hip.rotation.x=-.18;l.knee.rotation.x=.36;});Motion.blend(pose,hold);}
    if(!official)Athlete.action(a,p,state);
-   if(Motion.keeperSignal(p,state))Motion.keeperReach(a,p,state,{distance:FullBody.gloveDistance});else delete a.root.userData.keeperContact;if(p.disappointed){a.body.rotation.x=.16;a.arms.forEach(arm=>arm.shoulder.rotation.x=-.15);}
+   Motion.keeperPose(a,p);if(Motion.keeperSignal(p,state))Motion.keeperReach(a,p,state,{distance:FullBody.gloveDistance});else delete a.root.userData.keeperContact;if(p.disappointed){a.body.rotation.x=.16;a.arms.forEach(arm=>arm.shoulder.rotation.x=-.15);}
    if(p.blocking&&!p.fall){const q=p.blocking;a.waist.position.y-=.13*q;a.body.rotation.x=.12*q;a.legs.forEach((l,k)=>{l.hip.rotation.z=(k?1:-1)*.26*q;l.hip.rotation.x=-.25*q;l.knee.rotation.x=.50*q;});a.arms.forEach((arm,k)=>{arm.shoulder.rotation.z=(k?1:-1)*.20*q;arm.shoulder.rotation.x=-.35*q;arm.elbow.rotation.x=-.85*q;});}
    if(p.fall){const q=p.fall,roll=Math.sin(Math.min(1,(p.fallAge||0)/.75)*Math.PI)*.10;a.body.rotation.set(p.fallDirection==='backward'?-1.42*q:p.fallDirection==='forward'?1.32*q:.16*q,0,p.fallDirection==='backward'?.10*q:p.fallDirection==='forward'?-.12*q:-1.48*q-roll);a.body.position.y=0;a.head.rotation.set(-.12*q,0,.18*q);a.legs.forEach((l,k)=>{l.hip.rotation.x=(k?-.38:.18)*q;l.knee.rotation.x=(k?.86:.44)*q;l.boot.rotation.x=-.16*q;});a.arms.forEach((arm,k)=>{arm.shoulder.rotation.x=-(k?.90:1.15)*q;arm.shoulder.rotation.z=(k?.25:-.35)*q;arm.elbow.rotation.x=-.75*q;});}
    if(!official)FootballClips.defence?.(a,p,state);
@@ -633,7 +633,7 @@ ballGroup.traverse(o=>{if(o.isMesh&&o.material&&!o.material.isMeshPhysicalMateri
     if(v===2){armTarget(a,1,[.12,.54,.43]);a.arms[0].shoulder.rotation.set(-.1,0,-.15);a.arms[0].elbow.rotation.x=-.25;}
     if(v===3){armTarget(a,0,[-.04,.49,.20]);armTarget(a,1,[.04,.49,.20]);}}
    if(!official)CelebrationClips.apply(a,p,state);
-   if(!official){enhancement.pose(a,p,state);Motion.supportFeet(a,p,state);Motion.groundFeet?.(a,p,state);Motion.strikeContact?.(a,p);}
+   if(!official){enhancement.pose(a,p,state);Motion.supportFeet(a,p,state);Motion.groundFeet?.(a,p,state);Motion.strikeContact?.(a,p);Motion.receiveContact?.(a,p,state);}
    // Final lower-body constraint also covers crouched celebration variants.
    // Use the exact transformed sole ellipsoid, avoiding a full actor Box3 scan.
    if(p.celebrate||p.photoPose){a.root.updateMatrixWorld(true);let floor=Infinity;for(const l of a.legs){const m=l.sole.matrixWorld.elements;floor=Math.min(floor,m[13]-Math.hypot(m[1],m[5],m[9]));}if(floor<.003)a.waist.position.y+=(.003-floor)/Math.max(.2,Math.abs(a.body.matrixWorld.elements[5]));}

@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-13 UTC] Codex · V173 ara geliştirme noktası
+- Dal `agent/codex/coordinated-football-v173`, taban `82f3d7a` plan commit'i. Bu kayıt WIP: kararlı sürüm hâlâ V172, VERSION/HTML173yeni sürüm hazırlığıdır; main'e oyun kodu henüz taşınmadı.
+- T-286…T-289kodları yazıldı, hedefli contact-motion/teamwork/arena-football/remaster testleri geçti. T-290gerçek1080pkodlama harness'i üzerinde. Tam36Node/PHP ve Chromium testleri sürüyor; beş aşamaya done yazılmadı.
+- Sonraki adım: `/workspace/artifacts/web-v173-all-tests.log`, `web-v173-browser.log`, `web-v173-video.log` sonuçlarını incele (yerel dosyalar başka ajanda olmayabilir; yoksa testleri tekrar çalıştır); browser-video.cjs çizim yolu senkrondur, export için18gerçek1080pbitmap önceden hazırlanır. Henüz başarılı MP4denemesi sayılmaz.
+- Altı takımlı ölçüm15→26alım/yığılma1.715→1.403; diğer modlarda tradeoff var, tam JSONölçümü son rapora konmalı. Sabit özel bir skor/kimlik testini yeni fizik sonucuna zorlamayın; eleme kimlik testi artık gerçek eleme olaylarından beklenen ID'yi türetiyor.
+- FMözel motoru yok; League-Soccer yaklaşımı ve mevcut ortak sahne/fizik devam ediyor. Fiziksel telefon/Windows ve canlı Hostinger hâlâ doğrulanmadı.
+
 ## [2026-11-13 UTC] Codex · V172 → V173 geliştirme başladı
 - Başlangıç `main=2ba43be`; dal `agent/codex/coordinated-football-v173`.
 - Kullanıcı beş önerinin hepsini sırayla yapmamızı ve Codex/Claude Code arasında kalıcı devir istemiştir. Ortak plan `FOOTBALL-ROADMAP.md`; TASKS T-286…T-290.

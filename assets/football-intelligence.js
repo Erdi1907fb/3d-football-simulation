@@ -88,5 +88,25 @@
   const recent=history.slice(-8),bias=recent.reduce((n,k)=>n+Math.sign(k.target?.z||0),0),weight=recent.length?clamp(.5+bias/(recent.length+4)*.25,.3,.7):.5,side=random()<weight?1:-1,early=random()<.72;
   return{x:52.48,z:0,commit:early?side*(1.65+random()*.4):0,anticipation:early?.12:0,reaction:naturalKeeper?.15:.24,diveSpeed:naturalKeeper?5.6:4.2,acceleration:naturalKeeper?18:12,reach:naturalKeeper?1.1:.82,side,early,basis:'observed-attempts-and-seeded-commitment'};
  }
- return Object.freeze({arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v172'});
+ // Synthetic coaching presets, not claims about a club's verified real tactics.
+ function teamStyle(team={},seed=0){
+  const identity=String(team.registryId??team.catalogId??team.id??team.name??seed);let hash=2166136261;for(const ch of identity)hash=Math.imul(hash^ch.charCodeAt(0),16777619)>>>0;
+  const families=[{name:'balanced',width:1,tempo:1,directness:.50,patience:1},{name:'combination',width:.92,tempo:.92,directness:.34,patience:1.22},{name:'vertical',width:.98,tempo:1.08,directness:.69,patience:.88},{name:'wide',width:1.16,tempo:1.02,directness:.55,patience:1.04}],base=families[hash%families.length],requested=team.conceptStyle||team.tactics||{};
+  return{...base,width:clamp(Number.isFinite(requested.width)?requested.width/.72:base.width,.8,1.2),tempo:clamp(Number.isFinite(requested.tempo)?requested.tempo:base.tempo,.88,1.12),directness:clamp(requested.directness??requested.direct??base.directness,.2,.8),basis:'seeded-simulation-coaching-preset',verified:false};
+ }
+ function combinations(players,carrier,goal,{time=0,lastPass=null,bounds=p=>p,style={width:1},maxDistance=18}={}){
+  const out={};if(!carrier||!goal)return out;const dx=goal.x-carrier.x,dz=goal.z-carrier.z,d=Math.hypot(dx,dz)||1,fx=dx/d,fz=dz/d,tx=-fz,tz=fx,
+   mates=players.filter(p=>live(p)&&p.team===carrier.team&&!p.keeper&&key(p)!==key(carrier)&&gap(p,carrier)<maxDistance),enemies=players.filter(p=>live(p)&&p.team!==carrier.team),recent=lastPass&&time>=lastPass.at&&time-lastPass.at<2.2&&lastPass.receiver===key(carrier),passer=recent?mates.find(p=>key(p)===lastPass.actor):null;
+  if(passer){const lateral=(passer.x-carrier.x)*tx+(passer.z-carrier.z)*tz,sign=Math.sign(lateral)||1,target=bounds({x:passer.x+fx*3+tx*sign*1.1,z:passer.z+fz*3+tz*sign*1.1});out[key(passer)]={...target,intent:'give-and-go',blend:.68};}
+  const runners=mates.filter(p=>p!==passer&&!/^(CB|DM|defender)/.test(p.role||'')).map(p=>{const sign=Math.sign((p.x-carrier.x)*tx+(p.z-carrier.z)*tz)||1,target=bounds({x:carrier.x+fx*4+tx*sign*3.4*(style.width||1),z:carrier.z+fz*4+tz*sign*3.4*(style.width||1)}),risk=passWindow(carrier,target,enemies,{speed:12,receiver:p}).risk;return{p,target,risk,score:risk*4+gap(p,target)*.1};}).filter(r=>r.risk<.65).sort((a,b)=>a.score-b.score||String(key(a.p)).localeCompare(String(key(b.p))));
+  const run=runners[0];if(run)out[key(run.p)]={...run.target,intent:passer?'third-man':'overlap-offer',blend:passer?.62:.36};return out;
+ }
+ function distributeOffers(offers,players,ball,{bounds=p=>p,spacing=3.1}={}){
+  const assigned=[],out={};for(const offer of offers){const p=players.find(p=>key(p)===offer.id);if(!p)continue;let best=null;const dx=offer.x-ball.x,dz=offer.z-ball.z,d=Math.hypot(dx,dz)||1,tx=-dz/d,tz=dx/d;
+   for(const shift of[0,-1.6,1.6,-2.8,2.8]){const q=bounds({x:offer.x+tx*shift,z:offer.z+tz*shift}),room=Math.min(spacing,...assigned.map(a=>gap(q,a))),laneAngle=Math.atan2(q.z-ball.z,q.x-ball.x),angleRoom=Math.min(.5,...assigned.map(a=>Math.abs(Math.atan2(Math.sin(laneAngle-a.angle),Math.cos(laneAngle-a.angle))))),crowd=players.filter(o=>live(o)&&o.team!==p.team).reduce((cost,o)=>cost+Math.max(0,1.8-gap(o,q)),0),score=room*.7+angleRoom*2-Math.abs(shift)*.10-crowd*.55;
+    if(!best||score>best.score)best={...q,score,angle:laneAngle};}
+   assigned.push(best);out[offer.id]={x:best.x,z:best.z};
+  }return out;
+ }
+ return Object.freeze({teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v173'});
 });
