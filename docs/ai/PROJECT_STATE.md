@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V174** · 2026-11-13 UTC · Codex (AAC düzeltmesi ve tam sesli1080pmaç testi)
+> Son güncelleme: **V175** · 2026-11-13 UTC · Codex (taktik karar çekirdeği ve durdurulan arena saati)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,20 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V174** (`VERSION`; `V174: AAC sesini ve tam maç video dışa aktarımını düzelt`) |
-| Sonraki geliştirme hedefi | **V175** |
+| Kararlı sürüm | **V175** (`VERSION`; kaynak kod ve yerel testler; Windows CI ayrı kayıttır) |
+| Sonraki geliştirme hedefi | **V176** — kalibrasyon ve aşağıda açık kalan işler |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v174.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 174 |
+| Sürüm doğrulama | `build.php` → `assets/release-v175.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 175 |
+
+## V175 — gerçek durum ve devam noktası
+
+- Japon Kale ve küçük saha: gol sonrası maç saati gerçek restart'a kadar durur. `gameDuration` seçili oyun süresidir; `liveDuration`/video daha uzundur. Erken eleme finalinde kalan süre sıfırlanmaz. Gerçek golcü adı/mevcut doğrulanmış fotoğrafı/gerçek takım arması güvenli yayın bandındadır; serbest oyuncu grubuna forma kulübünden takım arması uydurulmaz.
+- Ortak karakter/karar/uygulama çekirdeği, bağımsız seed akışları, blok/markaj/geçiş hedefleri, denge/atalet ve fiziksel kaleci sektirmesi. Stüdyolarda doğal P/FK tercihleri; sonuç/komik hata kotası yok.
+- Normal maçta analiz modu korunur; ayrıca **30/60/90 saniyelik kompakt serbest11v11** seçilebilir. Bu tam90dakikalık model değildir. İsteğe bağlı ilginç olay özetinde resim/ses/anlatım/SRT aynı kesilmiş zaman çizelgesini kullanır.
+- Tam42/42Node/PHP testi geçti; son pas nişanı/son saat değişikliğine hedefli arena/saat/teamwork/anlatım testleri ayrıca geçti. Deneylerin sınırı ve komutlar: [V175 doğrulama](research/VALIDATION-V175.md).
+- Aynı koşullarda100eski+100yeni arena: tohumlar farklı olay/konum izleri üretiyor; eski sürüm de bu özelliğe sahip. Pas sayıları arttı, basit3snalım oranları düştü; kalabalıklaşma iki modda iyileşti, ikisinde kötüleşti. Tüm alanlarda üstünlük kanıtlandı **denmez**. Parametre kalibrasyonu açık.
+- [Sekiz aşamalı kayıt](EMERGENT-FOOTBALL-PLAN.md): tamrig retarget, kapsamlı duran top/paslıFK, yeni saha2v2/3v3seçimi, tam90dkserbest akış ve geniş kalibrasyon açık. C++ motorun bütününün JS'e taşındığı iddia edilmez. Windows CI/paket ve fiziksel cihaz/GPU kanıtları ayrı tutulur.
 
 ## V174 — tam süreli sesli video / son durum
 

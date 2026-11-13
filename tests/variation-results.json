@@ -3,14 +3,14 @@
   "penaltyAnalyses": 100,
   "conceptAnalyses": 100,
   "winners": [
-    0,
-    1
+    1,
+    0
   ],
-  "scores": 24,
+  "scores": 17,
   "conceptResultSigns": [
-    0,
     -1,
-    1
+    1,
+    0
   ],
   "series": 300,
   "longest": 12,

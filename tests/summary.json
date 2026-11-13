@@ -1,11 +1,17 @@
 {
  "version": "V175",
- "ranAt": "2026-11-13T16:54:58.976Z",
+ "ranAt": "2026-11-13T17:25:14.301Z",
  "results": [
+  {
+   "test": "natural-studios.cjs",
+   "pass": true,
+   "seconds": 7.7,
+   "summary": "{\"pass\":true,\"series\":100,\"kicks\":1058,\"freekicks\":166,\"outcomes\":{\"goal\":628,\"save\":343,\"post\":52,\"wide\":35},\"fkOutcomes\":{\"wall\":60,\"wide\":20,\"goal\":48,\"save\":29,\"post\":9},\"techniques\":[\"outside-foot\",\"roof\",\"placed\",\"driven\",\"power-rise\",\"inside-foot\",\"chip\",\"high-corner\",\"roll\",\"disguised\",\"central\",\"side-netting\"],\"naturalSelection\":true,\"physicalClassification\":true,\"finiteNoForcedRareEventQuota\":true}"
+  },
   {
    "test": "free-football.cjs",
    "pass": true,
-   "seconds": 13.9,
+   "seconds": 30.7,
    "summary": "{\"pass\":true,\"seconds\":30,\"score\":[0,1],\"goals\":1,\"passes\":13,\"targetIndependent\":true,\"rewind\":true,\"compactNotFull90Minutes\":true}"
   },
   {
@@ -23,8 +29,8 @@
   {
    "test": "arena-clock.cjs",
    "pass": true,
-   "seconds": 4.3,
-   "summary": "{\"pass\":true,\"pauses\":5,\"smallPauses\":3,\"multiPauses\":2,\"scope\":\"wall/video clock separate from 30s match clock; stop through actual restart; score-card identity and rewind\"}"
+   "seconds": 24.5,
+   "summary": "{\"pass\":true,\"pauses\":6,\"smallPauses\":1,\"multiPauses\":5,\"scope\":\"wall/video clock separate from 60s match clock; stop through actual restart; score-card identity and rewind\"}"
   },
   {
    "test": "audio-export.cjs",
@@ -35,57 +41,56 @@
   {
    "test": "football-intelligence.cjs",
    "pass": true,
-   "seconds": 1.1,
+   "seconds": 3,
    "summary": "{\"PASS\":true,\"arrivalAndMovingLanes\":true,\"uniqueCover\":true,\"observationOnly\":true,\"deterministicRewind\":true,\"physicalPenaltySaves\":61,\"physicalOverrides\":66,\"freeKickContacts\":14}"
   },
   {
    "test": "contact-motion.cjs",
    "pass": true,
-   "seconds": 0.6,
+   "seconds": 2.2,
    "summary": "{\"pass\":true,\"contacts\":4,\"coverage\":\"reachable left/right strike and frozen receive IK, no root/ball mutation, no departed-ball chasing, one keeper lift and bounded body correction\"}"
   },
   {
    "test": "teamwork.cjs",
    "pass": true,
-   "seconds": 3.1,
-   "summary": "{\"pass\":true,\"styles\":[\"balanced\",\"wide\",\"vertical\",\"combination\"],\"combinations\":1119,\"recoveries\":2326,\"sector\":3980,\"passes\":47,\"coverage\":\"stable synthetic team styles, observed wall-pass and third-man jobs, mirror symmetry, separated support lanes, real arena pass points, sector/recovery cover, deterministic seeking\"}"
+   "seconds": 9.2,
+   "summary": "{\"pass\":true,\"styles\":[\"balanced\",\"wide\",\"vertical\",\"combination\"],\"combinations\":1091,\"recoveries\":1740,\"sector\":4484,\"passes\":49,\"coverage\":\"stable synthetic team styles, observed wall-pass and third-man jobs, mirror symmetry, separated support lanes, real arena pass points, sector/recovery cover, deterministic seeking\"}"
   },
   {
    "test": "arena-elimination.cjs",
    "pass": true,
-   "seconds": 1.5,
-   "summary": "{\"pass\":true,\"stages\":[{\"count\":4,\"teams\":[0,1,2,3]},{\"count\":3,\"teams\":[1,2,3]},{\"count\":2,\"teams\":[1,2]}],\"coverage\":\"physical 4→3→2 layouts, identities, restart cut, replay, real goal meshes/surface, local disposal, camera, unchanged points mode\"}"
+   "seconds": 3.3,
+   "summary": "{\"pass\":true,\"stages\":[{\"count\":4,\"teams\":[0,1,2,3]},{\"count\":3,\"teams\":[1,2,3]},{\"count\":2,\"teams\":[1,3]}],\"coverage\":\"physical 4→3→2 layouts, identities, restart cut, replay, real goal meshes/surface, local disposal, camera, unchanged points mode\"}"
   },
   {
    "test": "futsal-five.cjs",
    "pass": true,
-   "seconds": 19.5,
-   "summary": "{\"pass\":true,\"games\":18,\"patterns\":[\"driven\",\"free_kick\",\"rising\",\"placed\",\"chip\",\"one_touch\",\"header\"],\"kickoffs\":3,\"finales\":15,\"hands\":66,\"crosses\":3,\"goalSideCover\":0.989,\"counts\":{\"drop\":34,\"block\":15,\"possession\":501,\"decision\":565,\"pass\":295,\"turnover\":245,\"skill\":135,\"skill_result\":134,\"tackle\":446,\"duel_win\":98,\"loose_ball\":22,\"shot\":85,\"save\":92,\"board\":70,\"foul\":19,\"free_kick\":7,\"keeper_catch\":28,\"keeper_distribution\":28,\"goal\":19,\"net_contact\":19,\"kickoff_setup\":3,\"play_resumed\":19,\"kickoff\":3,\"finish\":18,\"advantage\":12},\"coverage\":\"5v5 unchanged pitch, conceding-forward pass kicko"
+   "seconds": 39.7,
+   "summary": "{\"pass\":true,\"games\":18,\"patterns\":[\"driven\",\"placed\",\"one_touch\",\"rising\",\"free_kick\",\"chip\",\"header\"],\"kickoffs\":2,\"finales\":14,\"hands\":55,\"crosses\":2,\"goalSideCover\":0.977,\"counts\":{\"drop\":34,\"block\":15,\"possession\":469,\"decision\":501,\"pass\":230,\"turnover\":233,\"skill\":118,\"tackle\":447,\"skill_result\":116,\"shot\":82,\"save\":80,\"duel_win\":106,\"goal\":18,\"net_contact\":18,\"kickoff_setup\":2,\"play_resumed\":18,\"kickoff\":2,\"board\":79,\"finish\":18,\"foul\":17,\"free_kick\":4,\"keeper_catch\":17,\"keeper_distribution\":17,\"loose_ball\":46,\"post\":3,\"keeper_spill\":4,\"advantage\":13,\"clearance\":1},\"coverage\":\"5v5 unch"
   },
   {
    "test": "arena-balance.cjs",
    "pass": true,
-   "seconds": 3.7,
-   "summary": "{\"pass\":true,\"games\":6,\"cameraFrames\":2796,\"passes\":46,\"shots\":14,\"maxKeeperTurn\":3.2,\"maxPlayerTravel\":5.653,\"coverage\":\"medium action context, fixed central press box, actual save time, collision anticipation, forward options, elastic net release and ball-loaded cloth\"}"
+   "seconds": 6.5,
+   "summary": "{\"pass\":true,\"games\":6,\"cameraFrames\":2805,\"passes\":54,\"shots\":13,\"maxKeeperTurn\":3.2,\"maxPlayerTravel\":5.5,\"coverage\":\"medium action context, fixed central press box, actual save time, collision anticipation, forward options, elastic net release and ball-loaded cloth\"}"
   },
   {
    "test": "arena-football.cjs",
-   "pass": false,
-   "seconds": 0.1,
-   "summary": "",
-   "error": "308)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+   "pass": true,
+   "seconds": 11.5,
+   "summary": "{\"pass\":true,\"games\":12,\"passes\":91,\"completed\":61,\"shotDistances\":[11.61,11.44,7.09,13.34,10.78,9.39,7.89,6.76],\"coverage\":\"rectangle, turn/acceleration limits, real ground friction, receive timing, shooting channels, wall-aware keepers, real bank passes, kick preparation, balanced opening, short truthful result\"}"
   },
   {
    "test": "arena-broadcast-flow.cjs",
    "pass": true,
-   "seconds": 4.3,
-   "summary": "{\"pass\":true,\"games\":10,\"netGoals\":3,\"finales\":8,\"skills\":{\"true\":12,\"false\":25},\"coverage\":\"selective names, one presser, skill outcomes, moving scored ball, shared net physics/waves and rewind, full-side safe framing, real supporter finales, uncompressed HUD text\"}"
+   "seconds": 6.5,
+   "summary": "{\"pass\":true,\"games\":10,\"netGoals\":3,\"finales\":9,\"skills\":{\"true\":12,\"false\":20},\"coverage\":\"selective names, one presser, skill outcomes, moving scored ball, shared net physics/waves and rewind, full-side safe framing, real supporter finales, uncompressed HUD text\"}"
   },
   {
    "test": "arena-duels.cjs",
    "pass": true,
-   "seconds": 32.7,
-   "summary": "{\"pass\":true,\"games\":45,\"moves\":[\"roulette\",\"nutmeg\",\"chop\",\"drag-back\",\"step-over\",\"body-feint\",\"elastico\"],\"counts\":{\"drop\":71,\"block\":32,\"possession\":923,\"decision\":1059,\"pass\":552,\"turnover\":431,\"skill\":223,\"skill_result\":219,\"tackle\":867,\"duel_win\":174,\"loose_ball\":39,\"shot\":149,\"save\":148,\"board\":148,\"foul\":39,\"free_kick\":10,\"finish\":45,\"keeper_catch\":54,\"keeper_distribution\":52,\"goal\":29,\"net_contact\":29,\"kickoff_setup\":3,\"play_resumed\":29,\"kickoff\":3,\"post\":4,\"advantage\":29,\"clearance\":1,\"ceiling\":1},\"coverage\":\"real skill/contact defence, box fouls/restarts, keeper catch/backpass/dist"
+   "seconds": 47.2,
+   "summary": "{\"pass\":true,\"games\":45,\"moves\":[\"roulette\",\"body-feint\",\"chop\",\"nutmeg\",\"step-over\",\"drag-back\",\"elastico\"],\"counts\":{\"drop\":68,\"block\":35,\"possession\":848,\"decision\":944,\"pass\":430,\"turnover\":407,\"skill\":202,\"tackle\":822,\"skill_result\":199,\"shot\":158,\"save\":170,\"duel_win\":168,\"goal\":29,\"net_contact\":29,\"kickoff_setup\":6,\"play_resumed\":29,\"kickoff\":6,\"board\":161,\"finish\":45,\"keeper_catch\":37,\"keeper_distribution\":35,\"loose_ball\":90,\"foul\":34,\"free_kick\":7,\"post\":5,\"keeper_spill\":14,\"advantage\":27,\"clearance\":1},\"coverage\":\"real skill/contact defence, box fouls/restarts, keeper catch/backpass/"
   },
   {
    "test": "national-coverage.cjs",
@@ -95,16 +100,15 @@
   },
   {
    "test": "arena-rush.cjs",
-   "pass": false,
-   "seconds": 4.2,
-   "summary": "",
-   "error": "198)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+   "pass": true,
+   "seconds": 49.1,
+   "summary": "{\"pass\":true,\"games\":25,\"scoreSignatures\":7,\"winners\":4,\"lateChances\":9,\"coverage\":\"2–6 teams x five exact durations, continuous playback, late physical action/varied scores, timed elimination honesty, TR/EN timelines, safety aisles/walls/stewards, continuous pitch paint\"}"
   },
   {
    "test": "small-sided.cjs",
    "pass": true,
-   "seconds": 9.1,
-   "summary": "{\"pass\":true,\"passes\":175,\"saves\":91,\"goals\":9,\"draws\":4,\"cameraFrames\":4612,\"coverage\":\"5v5/3-per-side, free outfield positions + mandatory GK, centre-drop variation, actual passes/saves/scorer slots, equal local crowd, contiguous terraces, goal-specific cheers, oblique safe and continuous tracking\"}"
+   "seconds": 10.6,
+   "summary": "{\"pass\":true,\"passes\":179,\"saves\":79,\"goals\":7,\"draws\":4,\"cameraFrames\":4700,\"coverage\":\"5v5/3-per-side, free outfield positions + mandatory GK, centre-drop variation, actual passes/saves/scorer slots, equal local crowd, contiguous terraces, goal-specific cheers, oblique safe and continuous tracking\"}"
   },
   {
    "test": "japon-net.cjs",
@@ -115,37 +119,37 @@
   {
    "test": "japon-camera.cjs",
    "pass": true,
-   "seconds": 15.2,
-   "summary": "{\"pass\":true,\"triples\":10,\"complete\":0,\"frames\":2035,\"coverage\":\"monotonic arena areas/goal sizes, matching visible+physical bounds, 10/9/12/15/18 actors, per-role shot identities, critical action and goal frame inside Shorts/Reels safe region, all three cameras, deterministic seeking, requested legends\"}"
+   "seconds": 13.9,
+   "summary": "{\"pass\":true,\"triples\":10,\"complete\":0,\"frames\":2155,\"coverage\":\"monotonic arena areas/goal sizes, matching visible+physical bounds, 10/9/12/15/18 actors, per-role shot identities, critical action and goal frame inside Shorts/Reels safe region, all three cameras, deterministic seeking, requested legends\"}"
   },
   {
    "test": "japon-kale.cjs",
    "pass": true,
-   "seconds": 30.5,
+   "seconds": 25.4,
    "summary": "{\"pass\":true,\"games\":50,\"coverage\":\"2–6 sides, two formats, exact goal score, round reset, elimination, ranking, physical goal plane, highlights, seeded rewind, open lanes\"}"
   },
   {
    "test": "commentary.cjs",
    "pass": true,
-   "seconds": 7.1,
+   "seconds": 3.7,
    "summary": "{\"pass\":true,\"coverage\":\"TR/EN, exact exported times, all goals/eliminations, actual actors, corner without invented header, SRT, deterministic variation\"}"
   },
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 25,
+   "seconds": 25.6,
    "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2108,\"outcomes\":{\"goal\":560,\"wide\":685,\"wall\":156,\"post\":153,\"save\":554},\"techniques\":[\"dip\",\"curl\",\"under\",\"power\",\"knuckle\",\"outside\",\"low-curl\",\"chip\",\"around\"],\"physicalMatch\":0.9986,\"earlyFinish\":41,\"suddenDeath\":93,\"samples\":936436,\"maxStep\":0.577,\"brandBoards\":true,\"sameSpotRounds\":1166,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":286,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1238,\"keeperCatches\":{\"clear\":172,\"rain\":78}}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 6.9,
+   "seconds": 6.3,
    "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4257,\"techniques\":{\"chip\":176,\"disguised\":147,\"placed\":649,\"power-rise\":320,\"roll\":326,\"high-corner\":359,\"inside-foot\":633,\"side-netting\":396,\"central\":257,\"driven\":596,\"outside-foot\":171,\"roof\":227},\"speedKmh\":{\"min\":54,\"median\":84,\"max\":111},\"maxStep60fps\":0.55,\"aeroKicks\":632,\"maxCurlMetres\":0.273}"
   },
   {
    "test": "duo.cjs",
    "pass": true,
-   "seconds": 3.5,
+   "seconds": 3.4,
    "summary": "{\"PASS\":true,\"penaltySeries\":120,\"freeKickSeries\":120}"
   },
   {
@@ -169,13 +173,13 @@
   {
    "test": "kickoff-referee.cjs",
    "pass": true,
-   "seconds": 29,
+   "seconds": 30,
    "summary": "{\"PASS\":true,\"samples\":360,\"minGap\":12.51}"
   },
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 1.8,
+   "seconds": 2.1,
    "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
   },
   {
@@ -205,19 +209,19 @@
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 4.1,
+   "seconds": 3.8,
    "summary": "{"
   },
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.3,
+   "seconds": 5.2,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 0.9,
+   "seconds": 1,
    "summary": "{"
   },
   {
@@ -228,29 +232,28 @@
   },
   {
    "test": "remaster.cjs",
-   "pass": false,
-   "seconds": 1,
-   "summary": "",
-   "error": "  at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: { x: -27, z: -4.68, intent: 'offer-between-lines', blend: 0.24 },\n  expected: undefined,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+   "pass": true,
+   "seconds": 0.8,
+   "summary": "{\"PASS\":true,\"tacticalTargets\":270,\"intents\":[\"inverted-cover\",\"rest-defence\",\"overlap\",\"pivot\",\"half-space\",\"weak-side-width\",\"wide-offer\",\"overlap-offer\",\"back-line\",\"goal-side-cover\",\"front-screen\",\"midfield-line\",\"fullback-width\",\"screen-pivot\",\"far-post-run\"],\"mirrorInvariant\":true,\"reciprocalAvoidance\":true,\"coincidentBodiesRecovered\":true,\"materialGroups\":[{\"before\":20,\"after\":14},{\"before\":20,\"after\":13}],\"deployBindings\":\"normal/concept/penalty\",\"shaderContract\":true}"
   },
   {
    "test": "crests.cjs",
    "pass": true,
-   "seconds": 0.2,
+   "seconds": 0.1,
    "summary": "{\"PASS\":true,\"catalogTeams\":274,\"embeddedAssets\":294,\"lateImageRefresh\":true}"
   },
   {
    "test": "search-test.cjs",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0,
    "summary": "{"
   },
   {
    "test": "engine-test.cjs",
    "pass": true,
-   "seconds": 163.7,
+   "seconds": 133.4,
    "summary": "{"
   }
  ],
- "pass": false
+ "pass": true
 }

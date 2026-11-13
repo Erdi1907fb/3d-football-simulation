@@ -211,3 +211,10 @@ MediaRecorder audio/mp4 desteği AAC garantisi değildir. Native AAC veya açık
 
 ## D-039 · 2026-11-13 UTC · codex · kabul — Acil hafif çizimde gölge bütçesi
 Mevcut `SEKME_LITE_RENDER` bellek/uyumluluk yolunda `lite=true` yanında gölgeler kapatılır, shadowSize512 ve tufts0 olur. Önceden high profilinin2048/4096gölge bütçesi hafif yola taşınıyordu; yazılım GPU'da tam video testi ağırlaşıyordu. Normal high profil gölgeleri değişmez. Video çözünürlüğü1080p/60FPS kalır; gerçek maç süresi/kareleri, saha, oyuncu, forma ve fizik değiştirilmez. Yazılımsal GPU hızını fiziksel cihaz performansı diye raporlama.
+
+## D-040 · 2026-11-13 UTC · codex · kabul — Doğal karar ve gerçek süre
+Kullanıcının yeni talimatıyla oyuncu kararları yalnız en yüksek puanlı seçenekten seçilmez; önce fiziksel/taktiksel uygunluk, sonra karakter/maç durumundan ağırlıklı seçim yapılır. Karar, teknik uygulama ve kaleci rastlantısı bağımsız seed akışlarıdır. Bilinmeyen mental özellikler etiketli sentetik öncüllerdir. Gerçekçi hata kotası veya istenen skor için top/oyuncu ışınlama yok.
+
+D-004'ün istenen sonuca göre aday arama yolu programatik eski P/FKAPI uyumluluğu için kalır; yeni stüdyo UI doğal karar bayrağıyla doğrudan fiziksel vuruş üretir ve önceki skor farklı olsun diye tekrar örneklemez. Normal analizli özet korunur; ayrı kompakt serbest11v11 hedef skoru kullanmaz. Bu henüz tam90dakika değildir.
+
+T-303, eski video süresi varsayımını değiştirir: gol→gerçek yeniden başlatma arasında maç saati durur, fizik/video çalışır. Golcü kartı yalnız gerçek aktör/portre/takım kimliğidir. Özet kesilirse anlatım/SRT dahil tüm zaman çizelgesi dönüşür. Yerel testler fiziksel Windows/GPUkanıtı sayılmaz.

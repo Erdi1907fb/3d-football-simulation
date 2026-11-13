@@ -145,3 +145,13 @@ Pinned FFmpeg source:60a2818f76dcd1fee3155b1791304af104a0fc1b; Emscripten4.0.21.
 It includes no GPL/nonfree build components. Rebuild/replace the standalone bundle
 using the provided source instructions to use a modified AAC library. The AAC code
 is loaded locally only when native AAC is absent; no media is uploaded to a service.
+
+## Offline football research (V175)
+
+The small research summaries credit Metrica Sports, SkillCorner and PySport;
+no raw research datasets are bundled in the game runtime. SkillCorner Open Data
+MIT notice: `docs/ai/research/licenses/SkillCorner-MIT.txt`. Body Pose is labelled
+MIT by the provider's dataset card; its short sample was used only for an offline
+angle-extraction prototype, not as ready-made game animation. FIFA is conceptual
+reference only. No StatsBomb raw data or derived product parameters are shipped.
+Full source-specific terms and limits: `docs/ai/research/EMERGENT-SOURCES-V175.md`.

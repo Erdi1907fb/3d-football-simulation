@@ -1,0 +1,60 @@
+[
+  {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "60/1",
+        "duration": "0.200000",
+        "nb_frames": "12"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "r_frame_rate": "0/0",
+        "duration": "0.213333",
+        "nb_frames": "11"
+      }
+    ],
+    "file": "scorer-portrait-1080p60.mp4",
+    "bytes": 499083,
+    "decode": true,
+    "audioVolume": [
+      "[Parsed_volumedetect_0 @ 0x7f1b78001d40] max_volume: -26.9 dB"
+    ]
+  },
+  {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "duration": "0.200000",
+        "nb_frames": "12"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "r_frame_rate": "0/0",
+        "duration": "0.213333",
+        "nb_frames": "11"
+      }
+    ],
+    "file": "scorer-landscape-1080p60.mp4",
+    "bytes": 505291,
+    "decode": true,
+    "audioVolume": [
+      "[Parsed_volumedetect_0 @ 0x7f96c4001d40] max_volume: -26.9 dB"
+    ]
+  }
+]

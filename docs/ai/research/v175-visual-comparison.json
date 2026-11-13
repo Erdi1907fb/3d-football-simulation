@@ -1,0 +1,58 @@
+{
+  "pass": true,
+  "errors": [],
+  "examples": [
+    {
+      "label": "v174",
+      "seed": 5,
+      "selectedSeconds": 60,
+      "players": 10,
+      "firstPassAt": 8.766666666666666,
+      "firstShotAt": 3.25,
+      "score": [
+        0,
+        2
+      ],
+      "times": [
+        {
+          "kind": "open",
+          "t": 2
+        },
+        {
+          "kind": "first-pass",
+          "t": 9.016666666666666
+        },
+        {
+          "kind": "first-shot",
+          "t": 3.1
+        }
+      ]
+    },
+    {
+      "label": "v175",
+      "seed": 5,
+      "selectedSeconds": 60,
+      "players": 10,
+      "firstPassAt": 2.3666666666666667,
+      "firstShotAt": 16.058333333333334,
+      "score": [
+        1,
+        1
+      ],
+      "times": [
+        {
+          "kind": "open",
+          "t": 2
+        },
+        {
+          "kind": "first-pass",
+          "t": 2.6166666666666667
+        },
+        {
+          "kind": "first-shot",
+          "t": 15.908333333333333
+        }
+      ]
+    }
+  ]
+}

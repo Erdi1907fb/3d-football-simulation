@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "errors": [],
+  "analysis": {
+    "mode": "analysis",
+    "score": [
+      0,
+      1
+    ]
+  },
+  "free": {
+    "mode": "free",
+    "duration": 34.5,
+    "players": 22,
+    "score": [
+      0,
+      1
+    ],
+    "targetUsed": false,
+    "recipeMode": "free",
+    "rewind": true,
+    "events": 26
+  },
+  "audioFailure": {
+    "prepared": 0,
+    "resultHidden": true,
+    "status": "Video tamamlanamadı. Hata:  [audio-unavailable] AAC test unavailable"
+  }
+}

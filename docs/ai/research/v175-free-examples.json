@@ -1,0 +1,1278 @@
+{
+  "method": "Eight compact 30-second physical 11v11 samples; actual catalogue identities, hypothetical compatible formations; no target score. Not full 90-minute matches.",
+  "matches": [
+    {
+      "seed": 3,
+      "formation": "4-3-3",
+      "teams": [
+        "FC Barcelona",
+        "Real Madrid CF"
+      ],
+      "seconds": 30,
+      "score": [
+        0,
+        1
+      ],
+      "stats": [
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 0,
+          "completedPasses": 0,
+          "possession": 0,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 0
+        },
+        {
+          "shots": 1,
+          "on": 1,
+          "xg": 0.1,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 10,
+          "completedPasses": 10,
+          "possession": 100,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.3,
+          "minute": 0.005,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 17,
+          "receiver": 19,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 1.3333333333333333,
+          "videoAt": 0.3
+        },
+        {
+          "type": "pass",
+          "at": 6.1,
+          "minute": 0.10166666666666666,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 12,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 7.166666666666667,
+          "videoAt": 6.1
+        },
+        {
+          "type": "pass",
+          "at": 9.5,
+          "minute": 0.15833333333333333,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 12,
+          "receiver": 19,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 9.883333333333333,
+          "videoAt": 9.5
+        },
+        {
+          "type": "pass",
+          "at": 10.3,
+          "minute": 0.1716666666666667,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 12,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 10.6,
+          "videoAt": 10.3
+        },
+        {
+          "type": "pass",
+          "at": 10.916666666666666,
+          "minute": 0.18194444444444444,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 12,
+          "receiver": 19,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 11.25,
+          "videoAt": 10.916666666666666
+        },
+        {
+          "type": "pass",
+          "at": 11.683333333333334,
+          "minute": 0.1947222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 12,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 11.983333333333333,
+          "videoAt": 11.683333333333334
+        },
+        {
+          "type": "pass",
+          "at": 12.283333333333333,
+          "minute": 0.20472222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 12,
+          "receiver": 19,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 12.65,
+          "videoAt": 12.283333333333333
+        },
+        {
+          "type": "pass",
+          "at": 13.299999999999999,
+          "minute": 0.22166666666666665,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 12,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 13.75,
+          "videoAt": 13.299999999999999
+        },
+        {
+          "type": "pass",
+          "at": 14.133333333333333,
+          "minute": 0.23555555555555555,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 12,
+          "receiver": 19,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 14.683333333333334,
+          "videoAt": 14.133333333333333
+        },
+        {
+          "type": "pass",
+          "at": 21.633333333333333,
+          "minute": 0.3605555555555556,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 20,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 22.083333333333332,
+          "videoAt": 21.633333333333333
+        },
+        {
+          "type": "shot",
+          "at": 25.2,
+          "minute": 0.42,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "xg": 0.1,
+          "onTarget": false,
+          "videoAt": 25.2
+        },
+        {
+          "type": "goal",
+          "at": 25.35,
+          "minute": 0.42250000000000004,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 9,
+          "physical": true,
+          "point": {
+            "x": -53.07835594960083,
+            "y": 1.0124980304484175,
+            "z": -2.575211556029235
+          },
+          "actorIndex": 20,
+          "playerId": "231388",
+          "playerName": "Kylian Mbappé",
+          "videoAt": 25.35
+        }
+      ],
+      "signature": "757fe60341379202"
+    },
+    {
+      "seed": 4,
+      "formation": "4-3-3",
+      "teams": [
+        "FC Barcelona",
+        "Real Madrid CF"
+      ],
+      "seconds": 30,
+      "score": [
+        1,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 1,
+          "on": 1,
+          "xg": 0.1,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 1,
+          "completedPasses": 1,
+          "possession": 61.299278178789564,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        },
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 4,
+          "completedPasses": 4,
+          "possession": 38.700721821210436,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.15,
+          "minute": 0.0025,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "receiver": 9,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 0.9166666666666666,
+          "videoAt": 0.15
+        },
+        {
+          "type": "shot",
+          "at": 11.366666666666667,
+          "minute": 0.18944444444444444,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 9,
+          "xg": 0.1,
+          "onTarget": false,
+          "videoAt": 11.366666666666667
+        },
+        {
+          "type": "goal",
+          "at": 11.566666666666666,
+          "minute": 0.19277777777777777,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 9,
+          "physical": true,
+          "point": {
+            "x": 52.850588918566814,
+            "y": 0.476816781979691,
+            "z": -1.7299605027179175
+          },
+          "actorIndex": 9,
+          "playerId": "231050",
+          "playerName": "Raphinha",
+          "videoAt": 11.566666666666666
+        },
+        {
+          "type": "pass",
+          "at": 16.983333333333334,
+          "minute": 0.28305555555555556,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "receiver": 19,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 18.4,
+          "videoAt": 16.983333333333334
+        },
+        {
+          "type": "pass",
+          "at": 21.583333333333332,
+          "minute": 0.3597222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "loft",
+          "completedAt": 23.65,
+          "videoAt": 21.583333333333332
+        },
+        {
+          "type": "pass",
+          "at": 23.933333333333334,
+          "minute": 0.3988888888888889,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 18,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 24.266666666666666,
+          "videoAt": 23.933333333333334
+        },
+        {
+          "type": "pass",
+          "at": 24.583333333333332,
+          "minute": 0.4097222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 18,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 25.166666666666668,
+          "videoAt": 24.583333333333332
+        }
+      ],
+      "signature": "f151f49a4ee3ceb3"
+    },
+    {
+      "seed": 3,
+      "formation": "4-2-3-1",
+      "teams": [
+        "FC Barcelona",
+        "Real Madrid CF"
+      ],
+      "seconds": 30,
+      "score": [
+        0,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 5,
+          "completedPasses": 2,
+          "possession": 22.987229317046086,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 3,
+          "accuracy": 40
+        },
+        {
+          "shots": 1,
+          "on": 0,
+          "xg": 0.1,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 1,
+          "completedPasses": 1,
+          "possession": 77.01277068295391,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.3,
+          "minute": 0.005,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 17,
+          "receiver": 20,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 1.55,
+          "videoAt": 0.3
+        },
+        {
+          "type": "shot",
+          "at": 13.866666666666667,
+          "minute": 0.23111111111111113,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "xg": 0.1,
+          "onTarget": false,
+          "videoAt": 13.866666666666667
+        },
+        {
+          "type": "pass",
+          "at": 18.03333333333333,
+          "minute": 0.3005555555555555,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 1,
+          "receiver": 4,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 18.03333333333333
+        },
+        {
+          "type": "pass",
+          "at": 23.55,
+          "minute": 0.3925,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 8,
+          "receiver": 4,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 23.866666666666667,
+          "videoAt": 23.55
+        },
+        {
+          "type": "pass",
+          "at": 24.166666666666668,
+          "minute": 0.4027777777777778,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 4,
+          "receiver": 8,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 24.6,
+          "videoAt": 24.166666666666668
+        },
+        {
+          "type": "pass",
+          "at": 24.8,
+          "minute": 0.41333333333333333,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 8,
+          "receiver": 10,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 24.8
+        },
+        {
+          "type": "pass",
+          "at": 27.583333333333332,
+          "minute": 0.4597222222222222,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 10,
+          "receiver": 7,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 27.583333333333332
+        }
+      ],
+      "signature": "41346b05f2369a27"
+    },
+    {
+      "seed": 4,
+      "formation": "4-2-3-1",
+      "teams": [
+        "FC Barcelona",
+        "Real Madrid CF"
+      ],
+      "seconds": 30,
+      "score": [
+        1,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 1,
+          "on": 1,
+          "xg": 0.1,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 2,
+          "completedPasses": 2,
+          "possession": 63.187118267629096,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        },
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 3,
+          "completedPasses": 1,
+          "possession": 36.812881732370904,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 2,
+          "accuracy": 33.33333333333333
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.15,
+          "minute": 0.0025,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "receiver": 10,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 0.9166666666666666,
+          "videoAt": 0.15
+        },
+        {
+          "type": "shot",
+          "at": 12.616666666666667,
+          "minute": 0.21027777777777779,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 10,
+          "xg": 0.1,
+          "onTarget": false,
+          "videoAt": 12.616666666666667
+        },
+        {
+          "type": "goal",
+          "at": 12.733333333333333,
+          "minute": 0.2122222222222222,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 10,
+          "physical": true,
+          "point": {
+            "x": 53.1350502264522,
+            "y": 0.39399124411459774,
+            "z": 0.6877016123029613
+          },
+          "actorIndex": 10,
+          "playerId": "231050",
+          "playerName": "Raphinha",
+          "videoAt": 12.733333333333333
+        },
+        {
+          "type": "pass",
+          "at": 18.133333333333333,
+          "minute": 0.3022222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 18,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 18.766666666666666,
+          "videoAt": 18.133333333333333
+        },
+        {
+          "type": "pass",
+          "at": 19.03333333333333,
+          "minute": 0.3172222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 18,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 19.03333333333333
+        },
+        {
+          "type": "pass",
+          "at": 22.4,
+          "minute": 0.3733333333333333,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 18,
+          "receiver": 20,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 22.4
+        },
+        {
+          "type": "pass",
+          "at": 28.383333333333333,
+          "minute": 0.47305555555555556,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "receiver": 8,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 29.816666666666666,
+          "videoAt": 28.383333333333333
+        }
+      ],
+      "signature": "371ae08b05cdaac4"
+    },
+    {
+      "seed": 3,
+      "formation": "4-4-2",
+      "teams": [
+        "FC Barcelona",
+        "Real Madrid CF"
+      ],
+      "seconds": 30,
+      "score": [
+        0,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 4,
+          "completedPasses": 4,
+          "possession": 56.80177679067185,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        },
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 2,
+          "completedPasses": 1,
+          "possession": 43.19822320932815,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 1,
+          "accuracy": 50
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.3,
+          "minute": 0.005,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 17,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 1.65,
+          "videoAt": 0.3
+        },
+        {
+          "type": "pass",
+          "at": 6.416666666666667,
+          "minute": 0.10694444444444445,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 19,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 6.416666666666667
+        },
+        {
+          "type": "pass",
+          "at": 11.583333333333334,
+          "minute": 0.19305555555555556,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 8,
+          "receiver": 5,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 12.966666666666667,
+          "videoAt": 11.583333333333334
+        },
+        {
+          "type": "pass",
+          "at": 13.366666666666667,
+          "minute": 0.2227777777777778,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "receiver": 8,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 13.983333333333333,
+          "videoAt": 13.366666666666667
+        },
+        {
+          "type": "pass",
+          "at": 27.316666666666666,
+          "minute": 0.4552777777777778,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 8,
+          "receiver": 9,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 27.666666666666668,
+          "videoAt": 27.316666666666666
+        },
+        {
+          "type": "pass",
+          "at": 28.099999999999998,
+          "minute": 0.4683333333333333,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 9,
+          "receiver": 8,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 28.4,
+          "videoAt": 28.099999999999998
+        }
+      ],
+      "signature": "cf020a7f5a608bca"
+    },
+    {
+      "seed": 4,
+      "formation": "4-4-2",
+      "teams": [
+        "FC Barcelona",
+        "Real Madrid CF"
+      ],
+      "seconds": 30,
+      "score": [
+        1,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 1,
+          "on": 1,
+          "xg": 0.1,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 2,
+          "completedPasses": 2,
+          "possession": 68.68406440866185,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        },
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 3,
+          "completedPasses": 2,
+          "possession": 31.315935591338146,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 1,
+          "accuracy": 66.66666666666666
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.15,
+          "minute": 0.0025,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "receiver": 1,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 1.1833333333333333,
+          "videoAt": 0.15
+        },
+        {
+          "type": "pass",
+          "at": 2.05,
+          "minute": 0.034166666666666665,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 1,
+          "receiver": 5,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 3.2,
+          "videoAt": 2.05
+        },
+        {
+          "type": "shot",
+          "at": 13.633333333333333,
+          "minute": 0.22722222222222221,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "xg": 0.1,
+          "onTarget": false,
+          "videoAt": 13.633333333333333
+        },
+        {
+          "type": "goal",
+          "at": 13.933333333333334,
+          "minute": 0.23222222222222222,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 5,
+          "physical": true,
+          "point": {
+            "x": 52.62000000000001,
+            "y": 1.0805391670964752,
+            "z": 2.975299570522889
+          },
+          "actorIndex": 5,
+          "playerId": "268782",
+          "playerName": "Anthony Gordon",
+          "videoAt": 13.933333333333334
+        },
+        {
+          "type": "pass",
+          "at": 19.45,
+          "minute": 0.32416666666666666,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 20.616666666666667,
+          "videoAt": 19.45
+        },
+        {
+          "type": "pass",
+          "at": 21.666666666666668,
+          "minute": 0.3611111111111111,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 16,
+          "completed": true,
+          "actionKind": "loft",
+          "completedAt": 23.516666666666666,
+          "videoAt": 21.666666666666668
+        },
+        {
+          "type": "pass",
+          "at": 23.766666666666666,
+          "minute": 0.3961111111111111,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 16,
+          "receiver": 12,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 23.766666666666666
+        }
+      ],
+      "signature": "f4386b67065aa244"
+    },
+    {
+      "seed": 3,
+      "formation": "3-5-2",
+      "teams": [
+        "Deportivo",
+        "Deportivo Alavés"
+      ],
+      "seconds": 30,
+      "score": [
+        0,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 0,
+          "completedPasses": 0,
+          "possession": 19.655746807329262,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 0
+        },
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 10,
+          "completedPasses": 8,
+          "possession": 80.34425319267073,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 2,
+          "accuracy": 80
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.3,
+          "minute": 0.005,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 18,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 1.2333333333333334,
+          "videoAt": 0.3
+        },
+        {
+          "type": "pass",
+          "at": 1.5,
+          "minute": 0.025,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 18,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 2.2666666666666666,
+          "videoAt": 1.5
+        },
+        {
+          "type": "pass",
+          "at": 3.5166666666666666,
+          "minute": 0.05861111111111111,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 18,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 4.416666666666667,
+          "videoAt": 3.5166666666666666
+        },
+        {
+          "type": "pass",
+          "at": 4.716666666666667,
+          "minute": 0.07861111111111112,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 20,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 5.216666666666667,
+          "videoAt": 4.716666666666667
+        },
+        {
+          "type": "pass",
+          "at": 5.533333333333333,
+          "minute": 0.09222222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 6.116666666666666,
+          "videoAt": 5.533333333333333
+        },
+        {
+          "type": "pass",
+          "at": 6.466666666666667,
+          "minute": 0.10777777777777778,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 20,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 7.183333333333334,
+          "videoAt": 6.466666666666667
+        },
+        {
+          "type": "pass",
+          "at": 7.45,
+          "minute": 0.12416666666666668,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "receiver": 16,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 7.45
+        },
+        {
+          "type": "pass",
+          "at": 22.55,
+          "minute": 0.37583333333333335,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 19,
+          "receiver": 16,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 23.216666666666665,
+          "videoAt": 22.55
+        },
+        {
+          "type": "pass",
+          "at": 23.566666666666666,
+          "minute": 0.3927777777777778,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 16,
+          "receiver": 15,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 24.1,
+          "videoAt": 23.566666666666666
+        },
+        {
+          "type": "pass",
+          "at": 24.4,
+          "minute": 0.4066666666666666,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 15,
+          "receiver": 19,
+          "completed": false,
+          "actionKind": "pass",
+          "videoAt": 24.4
+        }
+      ],
+      "signature": "421b1a08e37e2277"
+    },
+    {
+      "seed": 4,
+      "formation": "3-5-2",
+      "teams": [
+        "Deportivo",
+        "Deportivo Alavés"
+      ],
+      "seconds": 30,
+      "score": [
+        0,
+        0
+      ],
+      "stats": [
+        {
+          "shots": 1,
+          "on": 0,
+          "xg": 0.1,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 2,
+          "completedPasses": 2,
+          "possession": 62.021099389228205,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        },
+        {
+          "shots": 0,
+          "on": 0,
+          "xg": 0,
+          "corners": 0,
+          "saves": 0,
+          "fouls": 0,
+          "yellow": 0,
+          "red": 0,
+          "passes": 7,
+          "completedPasses": 7,
+          "possession": 37.978900610771795,
+          "shortPasses": 0,
+          "longPasses": 0,
+          "failedPasses": 0,
+          "accuracy": 100
+        }
+      ],
+      "events": [
+        {
+          "type": "pass",
+          "at": 0.15,
+          "minute": 0.0025,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 6,
+          "receiver": 1,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 0.7,
+          "videoAt": 0.15
+        },
+        {
+          "type": "pass",
+          "at": 0.9666666666666667,
+          "minute": 0.01611111111111111,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 1,
+          "receiver": 10,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 1.75,
+          "videoAt": 0.9666666666666667
+        },
+        {
+          "type": "shot",
+          "at": 13.15,
+          "minute": 0.21916666666666668,
+          "stage": "procedural",
+          "team": 0,
+          "actor": 10,
+          "xg": 0.1,
+          "onTarget": false,
+          "videoAt": 13.15
+        },
+        {
+          "type": "pass",
+          "at": 17.433333333333334,
+          "minute": 0.29055555555555557,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "receiver": 12,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 18.616666666666667,
+          "videoAt": 17.433333333333334
+        },
+        {
+          "type": "pass",
+          "at": 19.016666666666666,
+          "minute": 0.3169444444444444,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 12,
+          "receiver": 20,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 19.983333333333334,
+          "videoAt": 19.016666666666666
+        },
+        {
+          "type": "pass",
+          "at": 20.266666666666666,
+          "minute": 0.3377777777777778,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 20,
+          "receiver": 13,
+          "completed": true,
+          "actionKind": "loft",
+          "completedAt": 21.916666666666668,
+          "videoAt": 20.266666666666666
+        },
+        {
+          "type": "pass",
+          "at": 22.233333333333334,
+          "minute": 0.3705555555555556,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 13,
+          "receiver": 14,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 23.183333333333334,
+          "videoAt": 22.233333333333334
+        },
+        {
+          "type": "pass",
+          "at": 24.233333333333334,
+          "minute": 0.4038888888888889,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 14,
+          "receiver": 18,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 24.5,
+          "videoAt": 24.233333333333334
+        },
+        {
+          "type": "pass",
+          "at": 24.733333333333334,
+          "minute": 0.4122222222222222,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 18,
+          "receiver": 21,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 25.53333333333333,
+          "videoAt": 24.733333333333334
+        },
+        {
+          "type": "pass",
+          "at": 26,
+          "minute": 0.43333333333333335,
+          "stage": "procedural",
+          "team": 1,
+          "actor": 21,
+          "receiver": 18,
+          "completed": true,
+          "actionKind": "pass",
+          "completedAt": 26.716666666666665,
+          "videoAt": 26
+        }
+      ],
+      "signature": "26d4de7cbbf56461"
+    }
+  ]
+}

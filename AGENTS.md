@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 37 test; `--quick` `engine-test.cjs` hariç 36 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 42 test; `--quick` `engine-test.cjs` hariç 41 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -232,3 +232,10 @@ dosyalardır.
 - D-032: `side-full` sabit kalır (top/oyuncuya göre hareket ve zoom yok); yakın görüntü isteyen `press-follow` seçer. İkisini birleştirmeyin, birini kaldırmayın. Yeni kamera modu eklerseniz `tests/japon-camera.cjs` mod listesine ekleyin.
 - Parlaklık kalite değildir: bloom 0,10/eşik 0,92, meşale/duman/konfeti ve çizgi/LED tonları bilinçli olarak düşüktür. Yeni efektlerde `toneMapped:false` beyaz yüzey ve additive hale kullanmaktan kaçının.
 - Arena ön izlemesi masaüstünde 0,75×, telefonda 0,5× çözünürlüktür; telefon değerini yükseltmeyin (bellek).
+
+## 19. V175 — maç saati ve karar sistemi devralma kuralları
+- Kullanıcının yeni isteği T-303: gol sonrası bekleme/yerleşme maç süresinden düşmez. Duvar/fizik/video zamanı ile `gameClock` ayrıdır. Küçük saha gerçek santra pasında, Japon Kale merkezden top oyuna girince saat açılır; yalnız sabit gol molası sonunda açma. Erken eleme bitişinde kalan süreyi sıfırlama.
+- Golcü kartı gerçek olay aktörü, mevcut doğrulanmış fotoğraf ve gerçek takım logosunu kullanır. Serbest oyuncu grubunda forma seçimi takım kimliği değildir. Kart ortak önizleme/export HUD güvenli bandındadır.
+- `emergent-football.js` bağımsız RNG akışlarını korur. Mental karakterlerin bilinmeyen değerleri etiketli sentetik öncüllerdir, gerçek ölçüm sayılmaz. Pas değerlendirmesi ve fiziksel vuruş aynı nişan/hız yardımcılarını kullanır.
+- `free-football.js` 15–180snkompakt11v11; UI30/60/90. Tam90dakika veya kalibre edilmiş xT/VAEP iddiasında bulunma. Mevcut analiz kipini koru. İsteğe bağlı özet kesilirse görüntü, olay, ses/anlatım veSRT zamanlarını birlikte dönüştür.
+- Devam: `docs/ai/EMERGENT-FOOTBALL-PLAN.md`, `research/VALIDATION-V175.md`; kısmi aşamalar tamamlandı sayılmaz.

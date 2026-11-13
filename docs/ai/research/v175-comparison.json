@@ -1,6 +1,6 @@
 {
   "baselineRef": "46b9720",
-  "method": "Same identity/rating/seeds, 30 selected match seconds, 2/3/4/6 goals. New clock excludes goal-to-restart waits, so wall time differs; do not interpret raw goal/pass counts as a pure AI improvement. Crowding/speed exclude known pauses. Spatial/event hashes are a repetition diagnostic, not proof of visual quality. Preparation timings share this CPU with tests/browser and are not device FPS.",
+  "method": "Same identity/rating/seeds; --baseline-report reuses unchanged V174 measurements when specified. 30 selected match seconds, 2/3/4/6 goals. New clock excludes goal-to-restart waits, so wall time differs; do not interpret raw goal/pass counts as a pure AI improvement. Crowding/speed exclude known pauses. Spatial/event hashes are a repetition diagnostic, not proof of visual quality. Preparation timings share this CPU with tests/browser and are not device FPS.",
   "baseline": {
     "matches": [
       {
@@ -3230,322 +3230,308 @@
         "seed": 1001,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 809.7293,
+        "ms": 554.346,
         "passes": 6,
         "received": 5,
-        "shots": 2,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           8.103343242235347,
           4.751551180317076,
-          6.541301674921157,
-          7.837009024455469,
-          2.1336458217327903,
-          4.272246677613897
+          6.541301790194475,
+          4.8428310114430895,
+          8.599738118161927,
+          3.3342323815869057
         ],
-        "shotDistances": [
-          7.775047272516451
-        ],
+        "shotDistances": [],
         "patterns": {
-          "free_kick": 1,
-          "rising": 1
+          "free_kick": 1
         },
-        "crowdedFraction": 0.0434,
-        "meanPlayerSpeed": 2.469,
-        "eventSignature": "be6e722c87ef23d6",
-        "spatialSignature": "10f86f734e41904a"
+        "crowdedFraction": 0.0542,
+        "meanPlayerSpeed": 2.371,
+        "eventSignature": "31875d290ef326af",
+        "spatialSignature": "e9ff482570bbfd05"
       },
       {
         "sides": 3,
         "seed": 1001,
         "gameDuration": 30,
-        "wallDuration": 32.7,
-        "ms": 833.9128,
+        "wallDuration": 30,
+        "ms": 433.6037,
         "passes": 6,
-        "received": 3,
-        "shots": 2,
-        "goals": 1,
+        "received": 2,
+        "shots": 1,
+        "goals": 0,
         "passDistances": [
           9.807777141311458,
           6.1428750583238845,
-          4.296288867462472,
-          2.9800407382081433,
-          5.329953194277751,
-          12.092542191203929
+          4.056858842710869,
+          11.576398886207448,
+          5.358085762202442,
+          2.0623813931838173
         ],
         "shotDistances": [
-          8.89984713106175,
-          7.483509871077609
+          5.581004314758751
         ],
         "patterns": {
-          "rising": 1,
-          "header": 1
+          "rising": 1
         },
-        "crowdedFraction": 0.1421,
-        "meanPlayerSpeed": 2.8537,
-        "eventSignature": "0e322b5ca1c06942",
-        "spatialSignature": "94ac2e8698231086"
+        "crowdedFraction": 0.1377,
+        "meanPlayerSpeed": 2.8147,
+        "eventSignature": "8a347e7b056df252",
+        "spatialSignature": "c9cf12be672f0a30"
       },
       {
         "sides": 4,
         "seed": 1001,
         "gameDuration": 30,
-        "wallDuration": 32.80833333333333,
-        "ms": 785.8952,
-        "passes": 4,
-        "received": 2,
-        "shots": 2,
-        "goals": 1,
+        "wallDuration": 30,
+        "ms": 435.1175,
+        "passes": 5,
+        "received": 3,
+        "shots": 1,
+        "goals": 0,
         "passDistances": [
           13.229544832577746,
-          10.778574929864591,
-          4.72891884872242,
-          15.046996146062112
+          10.778575338413956,
+          4.728287672433594,
+          15.031649443638754,
+          9.543761248266579
         ],
         "shotDistances": [
-          4.847200616790708,
-          12.694452821033437
+          4.845763399489011
         ],
         "patterns": {
-          "driven": 2
+          "driven": 1
         },
-        "crowdedFraction": 0.055,
-        "meanPlayerSpeed": 2.2421,
-        "eventSignature": "64eb543376c94d2d",
-        "spatialSignature": "28a6bc5954c1ab7b"
+        "crowdedFraction": 0.0621,
+        "meanPlayerSpeed": 2.1958,
+        "eventSignature": "74c26086f629f86b",
+        "spatialSignature": "5795d5fee7ccb613"
       },
       {
         "sides": 6,
         "seed": 1001,
         "gameDuration": 30,
         "wallDuration": 32.391666666666666,
-        "ms": 1398.7398,
-        "passes": 4,
-        "received": 1,
+        "ms": 1484.552,
+        "passes": 3,
+        "received": 2,
         "shots": 3,
         "goals": 1,
         "passDistances": [
           14.959067674296104,
           8.639526097192856,
-          2.2528418440600633,
-          4.16217729248609
+          2.2137046562664864
         ],
         "shotDistances": [
           9.014999679786989,
           6.706076821902024,
-          2.739527179485464
+          10.161003088466806
         ],
         "patterns": {
-          "rising": 1,
-          "chip": 1,
-          "placed": 1
+          "rising": 2,
+          "chip": 1
         },
         "crowdedFraction": 0.0255,
-        "meanPlayerSpeed": 1.8125,
-        "eventSignature": "31332fe7c35cc323",
-        "spatialSignature": "c6598289e0c31554"
+        "meanPlayerSpeed": 1.8162,
+        "eventSignature": "f9c3987e6bc5f941",
+        "spatialSignature": "0e3a3f167da3726a"
       },
       {
         "sides": 2,
         "seed": 1002,
         "gameDuration": 30,
-        "wallDuration": 35.55833333333333,
-        "ms": 874.7033,
+        "wallDuration": 30,
+        "ms": 459.8023,
         "passes": 10,
         "received": 8,
-        "shots": 3,
-        "goals": 1,
+        "shots": 1,
+        "goals": 0,
         "passDistances": [
           13.634307087276001,
-          8.52594517637924,
-          6.963334877935253,
-          3.260113934919417,
-          12.633589339966601,
-          5.33380901439416,
-          9.46324725462543,
-          3.3524733167616962,
-          3.835198635858901,
-          6.2187347293655515
+          6.733257508053149,
+          8.165297430992918,
+          2.083774878521118,
+          2.708686557919531,
+          3.561913539317513,
+          5.875965288459946,
+          6.0082500572694695,
+          2.7554044535706854,
+          6.215528973508338
         ],
-        "shotDistances": [
-          7.651925099659249,
-          11.871077630621496,
-          5.427080384805256
-        ],
+        "shotDistances": [],
         "patterns": {
-          "rising": 1,
-          "placed": 2
+          "free_kick": 1
         },
-        "crowdedFraction": 0.0304,
-        "meanPlayerSpeed": 2.2267,
-        "eventSignature": "6f92353fbc774db7",
-        "spatialSignature": "3f850eda4cf42f74"
+        "crowdedFraction": 0.0402,
+        "meanPlayerSpeed": 2.1826,
+        "eventSignature": "ad87196a3ce99d0d",
+        "spatialSignature": "b238b86c08a0a83c"
       },
       {
         "sides": 3,
         "seed": 1002,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 625.775,
-        "passes": 8,
+        "ms": 447.8661,
+        "passes": 9,
         "received": 4,
-        "shots": 3,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           9.857968844511557,
           3.3773941225400046,
           1.1928671212279327,
           3.4778630535750823,
-          9.048552731276219,
-          5.3076122462655295,
-          9.319774584480973,
-          8.385443323563313
+          9.048147652463,
+          5.306926524942532,
+          9.392058684304779,
+          8.290144475758979,
+          6.0984603949872795
         ],
         "shotDistances": [
-          12.208556247436485,
-          4.562021746964127,
-          8.732995929576575
+          12.208506239821823,
+          5.293069091825972
         ],
         "patterns": {
           "driven": 1,
-          "rising": 1,
-          "placed": 1
+          "rising": 1
         },
-        "crowdedFraction": 0.1399,
-        "meanPlayerSpeed": 2.5178,
-        "eventSignature": "eb483a2a3aeb3127",
-        "spatialSignature": "53b6dc99eb012559"
+        "crowdedFraction": 0.1213,
+        "meanPlayerSpeed": 2.5369,
+        "eventSignature": "30da4acfa4a45eb0",
+        "spatialSignature": "43689fd4fd93d749"
       },
       {
         "sides": 4,
         "seed": 1002,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 998.0861,
-        "passes": 6,
-        "received": 2,
-        "shots": 2,
+        "ms": 758.9652,
+        "passes": 5,
+        "received": 0,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           13.393645753057204,
           5.688592564470623,
           9.531326622539272,
-          8.428904797744025,
-          5.701015380229143,
-          13.331351507131645
+          8.405391433312422,
+          14.38254330189433
         ],
         "shotDistances": [
-          4.629231861722653,
-          8.503765950257046
+          5.341555497617444
         ],
         "patterns": {
-          "driven": 1,
-          "placed": 1
+          "driven": 1
         },
-        "crowdedFraction": 0.034,
-        "meanPlayerSpeed": 2.1877,
-        "eventSignature": "cb047c22279a57cb",
-        "spatialSignature": "46feddbfd2ee49c2"
+        "crowdedFraction": 0.0498,
+        "meanPlayerSpeed": 2.3296,
+        "eventSignature": "7d685d6a6b390656",
+        "spatialSignature": "a944400f577c4287"
       },
       {
         "sides": 6,
         "seed": 1002,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 1790.8269,
-        "passes": 5,
-        "received": 2,
+        "wallDuration": 32.425,
+        "ms": 842.3794,
+        "passes": 7,
+        "received": 5,
         "shots": 2,
-        "goals": 0,
+        "goals": 1,
         "passDistances": [
           15.066952284033292,
           12.631908692243965,
-          12.004327347391884,
-          9.009637542901293,
-          7.587984860396061
+          12.23397111562647,
+          11.846110430937063,
+          9.180779966296093,
+          10.648960495065946,
+          2.5679709336294203
         ],
         "shotDistances": [
-          13.436741413754552,
-          6.985265166583916
+          8.449368309001098,
+          14.05941369286049
         ],
         "patterns": {
-          "driven": 1,
-          "rising": 1
+          "placed": 1,
+          "driven": 1
         },
-        "crowdedFraction": 0.0209,
-        "meanPlayerSpeed": 1.8418,
-        "eventSignature": "ceef9d2cac4ce338",
-        "spatialSignature": "662f51bf7fdcf91e"
+        "crowdedFraction": 0.0225,
+        "meanPlayerSpeed": 1.7905,
+        "eventSignature": "60c1f00f6085bd89",
+        "spatialSignature": "d9cb45c8e3cf25e8"
       },
       {
         "sides": 2,
         "seed": 1003,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 913.5329,
-        "passes": 14,
-        "received": 11,
-        "shots": 0,
+        "ms": 696.2183,
+        "passes": 9,
+        "received": 8,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           5.120823851280345,
-          5.619900860292685,
-          5.843827716332339,
-          3.974862331622564,
-          7.9371262112901695,
-          6.235148448044957,
-          15.841511510436717,
-          4.669876863939092,
-          6.181273387980791,
-          6.680843770990951,
-          11.701446057609562,
-          15.693261034530757,
-          2.245466221062342,
-          7.435860007647681
+          5.6199008594516675,
+          5.843834118100839,
+          3.97484936589827,
+          7.936931485716028,
+          1.8017492378123536,
+          6.509535276308093,
+          1.6025675538513993,
+          5.456821809247188
         ],
         "shotDistances": [],
-        "patterns": {},
-        "crowdedFraction": 0.0486,
-        "meanPlayerSpeed": 2.1313,
-        "eventSignature": "438c518bafc1c5b6",
-        "spatialSignature": "c3e43fff02a46ec0"
+        "patterns": {
+          "free_kick": 1
+        },
+        "crowdedFraction": 0.0434,
+        "meanPlayerSpeed": 2.1268,
+        "eventSignature": "2e87f12abafce71a",
+        "spatialSignature": "54a9e499cf0a9977"
       },
       {
         "sides": 3,
         "seed": 1003,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 746.9357,
-        "passes": 5,
-        "received": 3,
+        "ms": 608.8573,
+        "passes": 8,
+        "received": 4,
         "shots": 2,
         "goals": 0,
         "passDistances": [
           6.448655313000035,
-          12.100207084277352,
-          4.882188392018589,
-          8.521929354970682,
-          5.262532730029373
+          12.158034093882526,
+          7.586979690802542,
+          3.7052195089551643,
+          5.7791266843907625,
+          5.4965028657691235,
+          5.214930750085292,
+          6.361896832687255
         ],
         "shotDistances": [
-          5.702797332054889,
-          8.738081707739475
+          8.908163250947897,
+          9.484240231751928
         ],
         "patterns": {
-          "placed": 1,
-          "rising": 1
+          "rising": 1,
+          "one_touch": 1
         },
-        "crowdedFraction": 0.0852,
-        "meanPlayerSpeed": 2.683,
-        "eventSignature": "7fe89d0d22b8da37",
-        "spatialSignature": "84a361f03e850b97"
+        "crowdedFraction": 0.1005,
+        "meanPlayerSpeed": 2.657,
+        "eventSignature": "f2ebbd27339f595b",
+        "spatialSignature": "8eb1a00034acd498"
       },
       {
         "sides": 4,
         "seed": 1003,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 849.4211,
+        "ms": 500.1442,
         "passes": 11,
         "received": 8,
         "shots": 0,
@@ -3560,279 +3546,277 @@
           4.7546062030113845,
           2.2473054984271106,
           9.958869866246165,
-          7.389978968979266,
-          7.294383710957721
+          8.98242226018038,
+          5.7579849934795
         ],
         "shotDistances": [],
         "patterns": {},
-        "crowdedFraction": 0.0691,
-        "meanPlayerSpeed": 2.0446,
-        "eventSignature": "104b052cf6862a44",
-        "spatialSignature": "1445719353d12eb6"
+        "crowdedFraction": 0.0632,
+        "meanPlayerSpeed": 2.0818,
+        "eventSignature": "42a3aec71e282803",
+        "spatialSignature": "6478a8cc287f84f9"
       },
       {
         "sides": 6,
         "seed": 1003,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1253.9424,
+        "ms": 649.7253,
         "passes": 4,
-        "received": 2,
+        "received": 3,
         "shots": 3,
         "goals": 0,
         "passDistances": [
           14.01738655544647,
           6.078893737759199,
           7.580213074899464,
-          3.215662093672243
+          1.3722086980758175
         ],
         "shotDistances": [
           5.990470756921555,
           3.144797725479755,
-          12.744662983323597
+          12.744663161748026
         ],
         "patterns": {
           "driven": 2,
           "rising": 1
         },
-        "crowdedFraction": 0.0166,
-        "meanPlayerSpeed": 1.8088,
-        "eventSignature": "a6234f2494540255",
-        "spatialSignature": "bdc7cda6e65dea63"
+        "crowdedFraction": 0.0169,
+        "meanPlayerSpeed": 1.7976,
+        "eventSignature": "bdf2dae9211a1bac",
+        "spatialSignature": "a706888be970d78b"
       },
       {
         "sides": 2,
         "seed": 1004,
         "gameDuration": 30,
-        "wallDuration": 35.44166666666666,
-        "ms": 721.8517,
-        "passes": 9,
-        "received": 4,
-        "shots": 2,
+        "wallDuration": 34.61666666666667,
+        "ms": 561.1688,
+        "passes": 10,
+        "received": 5,
+        "shots": 1,
         "goals": 1,
         "passDistances": [
           8.338123128191649,
           9.993712632638974,
           8.683068273968198,
           5.7308891362663115,
-          5.821333223862036,
-          8.85570988967803,
-          1.5516796763465592,
-          3.2374357339409503,
-          9.80386654299812
+          9.640120303327478,
+          3.9427235213554086,
+          5.858943355969908,
+          5.388527785844119,
+          2.909065041945882,
+          3.587764736594975
         ],
         "shotDistances": [
-          6.5577990379983255,
-          8.784525480233922
+          9.52184665799422
         ],
         "patterns": {
-          "header": 1,
-          "one_touch": 1
+          "driven": 1
         },
-        "crowdedFraction": 0.0351,
-        "meanPlayerSpeed": 2.14,
-        "eventSignature": "91b9057430a12834",
-        "spatialSignature": "7b3953defa6eda9e"
+        "crowdedFraction": 0.0381,
+        "meanPlayerSpeed": 2.0806,
+        "eventSignature": "5850e5300af202ec",
+        "spatialSignature": "81a21ce84fdce5cf"
       },
       {
         "sides": 3,
         "seed": 1004,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 620.4914,
-        "passes": 4,
-        "received": 2,
-        "shots": 3,
+        "ms": 325.4549,
+        "passes": 3,
+        "received": 1,
+        "shots": 4,
         "goals": 0,
         "passDistances": [
           6.393569517633017,
-          10.43103387164144,
-          12.53980184365916,
-          11.343473716562448
+          10.42116331642314,
+          5.350762398613953
         ],
         "shotDistances": [
           3.8950360542900904,
-          11.623126180734575,
-          8.307155176511971
+          11.621827791361916,
+          8.313898044922952,
+          7.732981371686938
         ],
         "patterns": {
           "placed": 1,
           "one_touch": 1,
-          "rising": 1
+          "rising": 2
         },
-        "crowdedFraction": 0.1005,
-        "meanPlayerSpeed": 2.4448,
-        "eventSignature": "c0e9418e0056ac84",
-        "spatialSignature": "1cd674112b67f066"
+        "crowdedFraction": 0.1126,
+        "meanPlayerSpeed": 2.5455,
+        "eventSignature": "4a741436a9301601",
+        "spatialSignature": "508e6c52d6d3668b"
       },
       {
         "sides": 4,
         "seed": 1004,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 560.4313,
+        "ms": 697.7589,
         "passes": 3,
-        "received": 0,
+        "received": 1,
         "shots": 2,
         "goals": 0,
         "passDistances": [
           13.363386626865069,
-          6.449300735106926,
-          14.516025551774128
+          9.642707344268686,
+          2.7459671188347756
         ],
         "shotDistances": [
-          5.066840238744909,
-          10.48833598113209
+          4.08779314346462,
+          7.478236291236518
         ],
         "patterns": {
-          "rising": 1,
-          "placed": 1
+          "placed": 1,
+          "rising": 1
         },
-        "crowdedFraction": 0.0539,
-        "meanPlayerSpeed": 2.093,
-        "eventSignature": "27a468b4e8d2d2ce",
-        "spatialSignature": "2fda0590c0a4b6f0"
+        "crowdedFraction": 0.0504,
+        "meanPlayerSpeed": 2.3316,
+        "eventSignature": "d1dbc964c9597cc9",
+        "spatialSignature": "c4c9e473168ae454"
       },
       {
         "sides": 6,
         "seed": 1004,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1794.3643,
-        "passes": 9,
-        "received": 8,
-        "shots": 1,
+        "ms": 1459.569,
+        "passes": 4,
+        "received": 4,
+        "shots": 3,
         "goals": 0,
         "passDistances": [
           14.783229027000903,
           10.922955887204694,
           10.90554744569134,
-          4.021075213884307,
-          2.878892539543893,
-          3.371217432984753,
-          5.926562569388511,
-          2.2615739615596784,
-          10.413332504440923
+          11.012556879157563
         ],
         "shotDistances": [
-          9.164231760682407
+          9.163784120012236,
+          12.498840050511388,
+          15.038208423218263
         ],
         "patterns": {
-          "placed": 1
+          "placed": 2,
+          "rising": 1
         },
-        "crowdedFraction": 0.0201,
-        "meanPlayerSpeed": 1.6087,
-        "eventSignature": "a3b9c9bddfe187fc",
-        "spatialSignature": "7b971d352f4a7c28"
+        "crowdedFraction": 0.0221,
+        "meanPlayerSpeed": 1.7246,
+        "eventSignature": "73ec17f8997936ab",
+        "spatialSignature": "72497089356c8c52"
       },
       {
         "sides": 2,
         "seed": 1005,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 857.3998,
-        "passes": 11,
-        "received": 9,
-        "shots": 3,
+        "ms": 434.3385,
+        "passes": 12,
+        "received": 10,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           4.619101769631575,
           11.80760615216771,
           1.389815469122339,
           2.531045721097265,
-          7.76273427249361,
-          5.377634279978004,
-          4.601383553009181,
-          3.6878192059479558,
-          2.992359204513162,
-          10.892295641795693,
-          10.182294935384265
+          7.762734594103122,
+          5.377654288839226,
+          4.601465471228186,
+          5.600168006037346,
+          8.455451387018567,
+          6.400713559758409,
+          5.016138126390097,
+          1.8728193065535115
         ],
         "shotDistances": [
-          10.469731342701674,
-          7.45454265342064
+          10.469731342701674
         ],
         "patterns": {
           "driven": 1,
-          "free_kick": 1,
-          "placed": 1
+          "free_kick": 1
         },
-        "crowdedFraction": 0.0542,
-        "meanPlayerSpeed": 2.2268,
-        "eventSignature": "22f06884c735ef56",
-        "spatialSignature": "cb16094733868ce8"
+        "crowdedFraction": 0.0536,
+        "meanPlayerSpeed": 2.2187,
+        "eventSignature": "405a7bf04330709a",
+        "spatialSignature": "ae2671ac3b9bf8fa"
       },
       {
         "sides": 3,
         "seed": 1005,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 582.2677,
-        "passes": 4,
-        "received": 1,
-        "shots": 3,
+        "ms": 575.7365,
+        "passes": 7,
+        "received": 3,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           2.363113009870389,
-          7.125059108726644,
-          9.90505005241863,
-          6.7126300355020785
+          7.1250578001716445,
+          11.818842942124501,
+          9.719732076207054,
+          11.01934105081895,
+          9.78910075094198,
+          6.427502683672525
         ],
         "shotDistances": [
           11.281329215499659,
-          3.144317324382668,
-          15.260103396104052
+          3.1443159656748065
         ],
         "patterns": {
-          "driven": 2,
+          "driven": 1,
           "rising": 1
         },
-        "crowdedFraction": 0.106,
-        "meanPlayerSpeed": 2.6967,
-        "eventSignature": "c3e4f533b339ba0f",
-        "spatialSignature": "fe262c7525f08e35"
+        "crowdedFraction": 0.1027,
+        "meanPlayerSpeed": 2.7622,
+        "eventSignature": "28e2089374718a4c",
+        "spatialSignature": "b214aab9b072d800"
       },
       {
         "sides": 4,
         "seed": 1005,
         "gameDuration": 30,
-        "wallDuration": 31.974999999999998,
-        "ms": 558.9631,
-        "passes": 7,
+        "wallDuration": 30,
+        "ms": 1743.4985,
+        "passes": 6,
         "received": 3,
-        "shots": 4,
-        "goals": 1,
+        "shots": 5,
+        "goals": 0,
         "passDistances": [
           9.57162897286512,
           5.709098893217135,
-          10.40311944002831,
-          5.671654790692425,
-          5.488211856434871,
-          13.829994905279753,
-          3.1727721580879096
+          6.8695710874122184,
+          14.703583177126097,
+          7.846038046118636,
+          6.501270766473359
         ],
         "shotDistances": [
           10.180854351913183,
           6.3331373748986195,
-          10.700763897793717,
-          11.875850029561176
+          4.2777502952903115,
+          10.952663958863434,
+          1.8808205786276662
         ],
         "patterns": {
           "driven": 2,
           "chip": 1,
-          "one_touch": 1
+          "rising": 2
         },
-        "crowdedFraction": 0.0601,
-        "meanPlayerSpeed": 2.1225,
-        "eventSignature": "bd6ea6d1ef799f3f",
-        "spatialSignature": "36a1e9303df494b4"
+        "crowdedFraction": 0.048,
+        "meanPlayerSpeed": 2.2675,
+        "eventSignature": "0e12fb58af442cd2",
+        "spatialSignature": "509729b5942cd556"
       },
       {
         "sides": 6,
         "seed": 1005,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 972.0471,
+        "ms": 1792.8152,
         "passes": 3,
         "received": 1,
         "shots": 4,
@@ -3845,26 +3829,27 @@
         "shotDistances": [
           12.072388797843962,
           3.969757604735032,
-          6.598868869173123,
-          5.011990290985708
+          6.600016026637894,
+          5.00720841063239
         ],
         "patterns": {
           "placed": 1,
-          "rising": 3
+          "rising": 2,
+          "driven": 1
         },
-        "crowdedFraction": 0.0164,
-        "meanPlayerSpeed": 1.9154,
-        "eventSignature": "90cca02cad7daf43",
-        "spatialSignature": "b356954b6346cda4"
+        "crowdedFraction": 0.0159,
+        "meanPlayerSpeed": 1.923,
+        "eventSignature": "cb86118ffe7c8439",
+        "spatialSignature": "1ad93f1d92adec22"
       },
       {
         "sides": 2,
         "seed": 1006,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 707.9449,
-        "passes": 12,
-        "received": 9,
+        "ms": 406.8353,
+        "passes": 11,
+        "received": 7,
         "shots": 0,
         "goals": 0,
         "passDistances": [
@@ -3874,249 +3859,241 @@
           1.3752925617061054,
           2.764324424918506,
           9.616905479800808,
-          3.0381270149299673,
-          3.4636267598101718,
-          7.602926682952091,
-          2.1949884111009395,
-          5.098203657130661,
-          5.711655463468422
+          5.619925412513572,
+          3.0388727769161004,
+          6.570069283761428,
+          5.543974777548708,
+          2.1449588488381157
         ],
         "shotDistances": [],
         "patterns": {},
-        "crowdedFraction": 0.0468,
-        "meanPlayerSpeed": 1.9765,
-        "eventSignature": "8996272c94601db7",
-        "spatialSignature": "ae24b622378de3dd"
+        "crowdedFraction": 0.0328,
+        "meanPlayerSpeed": 1.9881,
+        "eventSignature": "ef12262b5a0ef2d0",
+        "spatialSignature": "a9dfd536aa844f6d"
       },
       {
         "sides": 3,
         "seed": 1006,
         "gameDuration": 30,
-        "wallDuration": 31.458333333333332,
-        "ms": 490.2939,
-        "passes": 4,
-        "received": 2,
-        "shots": 2,
-        "goals": 1,
+        "wallDuration": 30,
+        "ms": 755.3747,
+        "passes": 7,
+        "received": 3,
+        "shots": 0,
+        "goals": 0,
         "passDistances": [
           6.410360655438784,
-          5.46399963238997,
-          10.272320034525583,
-          8.300226995701387
+          5.463999725633003,
+          10.276436001616878,
+          8.306533983848245,
+          6.737840013885267,
+          14.559020912566966,
+          13.197726098654702
         ],
-        "shotDistances": [
-          9.900117732602062,
-          10.764653159103753
-        ],
-        "patterns": {
-          "driven": 1,
-          "rising": 1
-        },
-        "crowdedFraction": 0.1027,
-        "meanPlayerSpeed": 2.6007,
-        "eventSignature": "42dc8203a125b998",
-        "spatialSignature": "c31b93f007b24791"
+        "shotDistances": [],
+        "patterns": {},
+        "crowdedFraction": 0.0984,
+        "meanPlayerSpeed": 2.6331,
+        "eventSignature": "39b619280ad1e739",
+        "spatialSignature": "8a023cb99a8ebba8"
       },
       {
         "sides": 4,
         "seed": 1006,
         "gameDuration": 30,
-        "wallDuration": 32.05833333333333,
-        "ms": 628.5283,
+        "wallDuration": 30,
+        "ms": 585.8795,
         "passes": 4,
-        "received": 1,
-        "shots": 2,
-        "goals": 1,
+        "received": 2,
+        "shots": 3,
+        "goals": 0,
         "passDistances": [
           9.830719115411178,
-          11.871290153794826,
-          8.033932992972726,
-          8.756753231952295
+          8.839820882467885,
+          6.497567321543926,
+          8.214021566573782
         ],
         "shotDistances": [
-          9.050417513408467,
-          9.14583673011432
+          3.76306574336554,
+          11.721214672141672,
+          5.675266930976933
         ],
         "patterns": {
-          "driven": 1,
-          "rising": 1
+          "placed": 1,
+          "driven": 2
         },
-        "crowdedFraction": 0.0585,
-        "meanPlayerSpeed": 2.1644,
-        "eventSignature": "4922b0c5f3182785",
-        "spatialSignature": "436be7a3e88e8846"
+        "crowdedFraction": 0.0433,
+        "meanPlayerSpeed": 2.3337,
+        "eventSignature": "cbec251c2e58ec3f",
+        "spatialSignature": "c2051edf22c44abc"
       },
       {
         "sides": 6,
         "seed": 1006,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1389.5174,
+        "ms": 809.61,
         "passes": 5,
         "received": 3,
-        "shots": 4,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           15.117645085873132,
-          3.434808906281002,
-          8.896681502086802,
-          9.932471236450708,
-          10.523141447646625
+          9.604169173067579,
+          10.02488040321986,
+          3.098359823480932,
+          13.22722944534025
         ],
         "shotDistances": [
-          13.137326973567768,
-          11.53815642942103,
-          7.6941950311458855,
-          7.049189260612598
+          9.5985982466908,
+          5.2531715759586
         ],
         "patterns": {
-          "placed": 2,
-          "rising": 1,
-          "chip": 1
+          "placed": 2
         },
-        "crowdedFraction": 0.0179,
-        "meanPlayerSpeed": 1.8868,
-        "eventSignature": "bb7eb84958dddd35",
-        "spatialSignature": "8120a8e19f78b584"
+        "crowdedFraction": 0.0229,
+        "meanPlayerSpeed": 1.5681,
+        "eventSignature": "d16761f4b9294e62",
+        "spatialSignature": "79bf38f6fe36f210"
       },
       {
         "sides": 2,
         "seed": 1007,
         "gameDuration": 30,
-        "wallDuration": 35.075,
-        "ms": 546.3776,
+        "wallDuration": 35.708333333333336,
+        "ms": 535.2248,
         "passes": 14,
-        "received": 11,
+        "received": 9,
         "shots": 1,
         "goals": 1,
         "passDistances": [
           4.452164878138702,
           4.419942704624232,
           4.785375527398456,
-          9.918885940760369,
-          6.264105635428641,
-          7.708579736794391,
-          3.959829217382784,
-          8.198605234214703,
-          5.5255366392036604,
-          7.791960295010006,
-          4.217170709697598,
-          7.554862378016791,
-          5.9225468828264125,
-          8.51213466185179
+          16.65751757940922,
+          6.565901998751054,
+          4.176253630931317,
+          1.8418303133477103,
+          9.560567646411386,
+          3.428862123282385,
+          5.781415349208528,
+          4.383729648692452,
+          4.285296710203158,
+          4.191625361762242,
+          2.238670279009286
         ],
         "shotDistances": [
-          10.269372867097728
+          8.513934520323645
         ],
         "patterns": {
-          "driven": 1
+          "placed": 1
         },
-        "crowdedFraction": 0.0427,
-        "meanPlayerSpeed": 2.1723,
-        "eventSignature": "df920a9139a8ef1d",
-        "spatialSignature": "a1a13710a1ea5e14"
+        "crowdedFraction": 0.0498,
+        "meanPlayerSpeed": 1.918,
+        "eventSignature": "1b90b0a73c2631ee",
+        "spatialSignature": "ca3b6ec36cd3088f"
       },
       {
         "sides": 3,
         "seed": 1007,
         "gameDuration": 30,
-        "wallDuration": 34.325,
-        "ms": 531.074,
-        "passes": 5,
-        "received": 2,
-        "shots": 3,
+        "wallDuration": 33.95,
+        "ms": 411.1818,
+        "passes": 4,
+        "received": 1,
+        "shots": 4,
         "goals": 2,
         "passDistances": [
-          8.250001059046598,
-          7.449864949132933,
-          3.807521658644831,
-          12.38026441483288,
-          14.594563533733366
+          13.54353081320935,
+          6.643226298464018,
+          11.125619593977145,
+          6.52842891320275
         ],
         "shotDistances": [
           11.34490403726793,
-          11.904467103815596,
-          9.941970181331788
+          11.904451711250713,
+          3.4409392691968805,
+          10.66946817270203
         ],
         "patterns": {
-          "driven": 1,
+          "driven": 2,
           "placed": 1,
-          "one_touch": 1
+          "rising": 1
         },
-        "crowdedFraction": 0.1367,
-        "meanPlayerSpeed": 2.3917,
-        "eventSignature": "cd8d757dfde43617",
-        "spatialSignature": "4cad76c22246701a"
+        "crowdedFraction": 0.1289,
+        "meanPlayerSpeed": 2.4636,
+        "eventSignature": "c935ce22336cae9b",
+        "spatialSignature": "1071f377fc8cdff7"
       },
       {
         "sides": 4,
         "seed": 1007,
         "gameDuration": 30,
-        "wallDuration": 31.333333333333332,
-        "ms": 1084.2003,
-        "passes": 5,
-        "received": 2,
-        "shots": 5,
+        "wallDuration": 32.5,
+        "ms": 784.3818,
+        "passes": 4,
+        "received": 3,
+        "shots": 3,
         "goals": 1,
         "passDistances": [
-          3.4569398135238956,
-          6.67386852913288,
-          5.991938935248001,
-          12.227458885631215,
-          14.80037843038676
+          11.031328313471066,
+          10.807340375304946,
+          5.696433865736186,
+          4.643096738894597
         ],
         "shotDistances": [
           13.56306403377432,
-          2.2839856587400194,
-          2.8306542372136887,
-          4.405258546006039,
-          2.89036774717633
+          9.311963865895864,
+          13.288905393347479
         ],
         "patterns": {
           "driven": 2,
-          "placed": 3
+          "rising": 1
         },
-        "crowdedFraction": 0.0597,
-        "meanPlayerSpeed": 2.2398,
-        "eventSignature": "135d8d8739121a6c",
-        "spatialSignature": "24382934b9f9e144"
+        "crowdedFraction": 0.0445,
+        "meanPlayerSpeed": 2.3841,
+        "eventSignature": "02b2140d018cd24e",
+        "spatialSignature": "32681dc7c0ec943c"
       },
       {
         "sides": 6,
         "seed": 1007,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 785.2068,
-        "passes": 5,
+        "wallDuration": 32.483333333333334,
+        "ms": 953.0309,
+        "passes": 7,
         "received": 2,
         "shots": 1,
-        "goals": 0,
+        "goals": 1,
         "passDistances": [
           15.25641706650197,
           7.050876135260638,
-          6.952255039629527,
-          1.8982621784236624,
-          5.567151513186714
+          7.297258344955297,
+          8.39205019233207,
+          10.650114750803358,
+          14.423735873993222,
+          5.363744541196802
         ],
         "shotDistances": [
-          5.872557177509628
+          4.580243957469073
         ],
         "patterns": {
-          "chip": 1
+          "driven": 1
         },
-        "crowdedFraction": 0.0271,
-        "meanPlayerSpeed": 1.6686,
-        "eventSignature": "5a6d7e1336cf354e",
-        "spatialSignature": "742d50a2681e8ea2"
+        "crowdedFraction": 0.0233,
+        "meanPlayerSpeed": 1.8069,
+        "eventSignature": "0bafcd1746d233af",
+        "spatialSignature": "3630e035ee37eca2"
       },
       {
         "sides": 2,
         "seed": 1008,
         "gameDuration": 30,
         "wallDuration": 41.7,
-        "ms": 629.4547,
-        "passes": 14,
-        "received": 11,
+        "ms": 1189.5734,
+        "passes": 12,
+        "received": 9,
         "shots": 2,
         "goals": 2,
         "passDistances": [
@@ -4127,13 +4104,11 @@
           5.731853128548687,
           5.376434390569368,
           9.417747231637126,
-          9.59106804836461,
-          8.19271850472881,
-          5.599411284311692,
-          3.5556398518541106,
-          4.418965023449142,
-          4.590404756617987,
-          2.3790011929157786
+          9.591069229629515,
+          8.192672862944558,
+          5.5984604463725125,
+          3.4512529899039537,
+          5.588688637642561
         ],
         "shotDistances": [
           8.468037291741853,
@@ -4144,306 +4119,302 @@
           "placed": 1
         },
         "crowdedFraction": 0.0351,
-        "meanPlayerSpeed": 2.2154,
-        "eventSignature": "a2ffabde3d489a85",
-        "spatialSignature": "da5c2318eee3084e"
+        "meanPlayerSpeed": 2.214,
+        "eventSignature": "8075f5005c2b669e",
+        "spatialSignature": "f9afe92022c47e58"
       },
       {
         "sides": 3,
         "seed": 1008,
         "gameDuration": 30,
-        "wallDuration": 32.03333333333333,
-        "ms": 711.0475,
-        "passes": 8,
-        "received": 4,
-        "shots": 3,
+        "wallDuration": 32.025,
+        "ms": 929.0237,
+        "passes": 5,
+        "received": 3,
+        "shots": 2,
         "goals": 1,
         "passDistances": [
           6.34090762195705,
-          14.033985187539987,
-          6.819143164231823,
-          7.533310729135228,
-          5.530035067804973,
-          7.911144582977658,
-          5.84125612419431,
-          10.138085612904565
+          14.033799159266264,
+          7.4390180837050535,
+          8.224615300285823,
+          3.7384988894143785
         ],
         "shotDistances": [
-          11.01748228205971,
-          8.749940628799202,
-          6.893978541367122
+          11.017481263457999,
+          5.636405410084389
         ],
         "patterns": {
-          "rising": 1,
-          "driven": 1,
-          "chip": 1
+          "rising": 2
         },
-        "crowdedFraction": 0.1038,
-        "meanPlayerSpeed": 2.5801,
-        "eventSignature": "04653984ede8bff7",
-        "spatialSignature": "94605d2cf1622c1f"
+        "crowdedFraction": 0.0874,
+        "meanPlayerSpeed": 2.548,
+        "eventSignature": "20c46940f47debe1",
+        "spatialSignature": "a588b485b49b14ba"
       },
       {
         "sides": 4,
         "seed": 1008,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 582.4544,
-        "passes": 6,
-        "received": 3,
-        "shots": 3,
+        "ms": 804.4247,
+        "passes": 8,
+        "received": 4,
+        "shots": 0,
         "goals": 0,
         "passDistances": [
           10.045002386632927,
           3.4593325856070347,
-          5.581207114883933,
-          7.86857236106076,
-          6.015668252229324,
-          10.246410495704026
+          8.17654906249956,
+          7.278560824329506,
+          11.234247766936226,
+          10.834231280765977,
+          0.9541594922492429,
+          4.8682188120311425
         ],
-        "shotDistances": [
-          13.46784581904971,
-          10.604821371685574,
-          7.627673001778872
-        ],
-        "patterns": {
-          "rising": 2,
-          "one_touch": 1
-        },
-        "crowdedFraction": 0.0498,
-        "meanPlayerSpeed": 2.2775,
-        "eventSignature": "e4165ee8ecbf090f",
-        "spatialSignature": "53066b9f784d1452"
+        "shotDistances": [],
+        "patterns": {},
+        "crowdedFraction": 0.0492,
+        "meanPlayerSpeed": 2.1848,
+        "eventSignature": "10a34a7456f3308b",
+        "spatialSignature": "1d3090acb3699c58"
       },
       {
         "sides": 6,
         "seed": 1008,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 813.6062,
-        "passes": 5,
+        "ms": 966.5046,
+        "passes": 4,
         "received": 2,
-        "shots": 2,
+        "shots": 3,
         "goals": 0,
         "passDistances": [
           15.35586314539579,
           7.515168944342232,
-          11.737423582576529,
-          9.771124814108449,
-          5.909575292557473
+          10.885600567213736,
+          7.173666167330546
         ],
         "shotDistances": [
           9.554750284489925,
-          6.136598247338382
+          6.136598247338382,
+          14.799787540625902
         ],
         "patterns": {
-          "placed": 1,
+          "placed": 2,
           "chip": 1
         },
-        "crowdedFraction": 0.0209,
-        "meanPlayerSpeed": 1.6568,
-        "eventSignature": "77af72e4b1a6141c",
-        "spatialSignature": "31f446fb1b243f6f"
+        "crowdedFraction": 0.0189,
+        "meanPlayerSpeed": 1.7525,
+        "eventSignature": "f20363ed73a8c06e",
+        "spatialSignature": "187ccb3904cbf0e6"
       },
       {
         "sides": 2,
         "seed": 1009,
         "gameDuration": 30,
-        "wallDuration": 41.333333333333336,
-        "ms": 369.4484,
+        "wallDuration": 41.608333333333334,
+        "ms": 490.3045,
         "passes": 12,
         "received": 11,
-        "shots": 2,
+        "shots": 4,
         "goals": 2,
         "passDistances": [
           8.425681917429833,
           5.982285691420207,
           9.90263448712093,
           4.4240007045982965,
-          7.5077048167505716,
-          4.516133800741159,
-          5.800356743938297,
-          7.204992867385169,
-          9.16781465754136,
-          5.785682644276412,
-          4.801678133499134,
-          9.796432853457869
+          2.2073331670305767,
+          6.952779994381333,
+          5.5423758985454965,
+          4.937899587455971,
+          9.408208327406204,
+          5.9919574834454625,
+          1.008772910704349,
+          1.7910441424054004
         ],
         "shotDistances": [
           3.057773100581965,
-          8.725884270565896
+          6.30062560616938,
+          5.056116771993651,
+          5.104336618701414
         ],
         "patterns": {
-          "placed": 1,
+          "placed": 2,
+          "one_touch": 1,
           "driven": 1
         },
-        "crowdedFraction": 0.0411,
-        "meanPlayerSpeed": 2.3401,
-        "eventSignature": "281b866e1546c26b",
-        "spatialSignature": "0108567f216a8610"
+        "crowdedFraction": 0.0417,
+        "meanPlayerSpeed": 2.3663,
+        "eventSignature": "f83d954f35fa3c00",
+        "spatialSignature": "aa2279e3fbab5008"
       },
       {
         "sides": 3,
         "seed": 1009,
         "gameDuration": 30,
-        "wallDuration": 32.35,
-        "ms": 406.2649,
-        "passes": 7,
+        "wallDuration": 32.3,
+        "ms": 524.9924,
+        "passes": 5,
         "received": 1,
-        "shots": 4,
+        "shots": 2,
         "goals": 1,
         "passDistances": [
           6.358227250565604,
-          9.038428992405125,
-          6.872903891573118,
-          4.855457797534096,
-          3.9758160494172983,
-          2.734966307674397,
-          4.592093153078185
+          3.76858588691008,
+          11.753867092996037,
+          8.18945778208158,
+          9.64725126333432
         ],
         "shotDistances": [
-          7.887737859718129,
-          9.081753055108512,
-          6.177362941624287,
-          10.34650901312961
+          12.111336888658226,
+          10.048311270963527
         ],
         "patterns": {
-          "driven": 2,
-          "placed": 1,
-          "one_touch": 1
+          "driven": 2
         },
-        "crowdedFraction": 0.1202,
-        "meanPlayerSpeed": 2.5746,
-        "eventSignature": "069dc01a6aaf9491",
-        "spatialSignature": "f6ddcf0299063de8"
+        "crowdedFraction": 0.1158,
+        "meanPlayerSpeed": 2.7753,
+        "eventSignature": "50d1eb6076e6f084",
+        "spatialSignature": "ac244a846c4f2ee4"
       },
       {
         "sides": 4,
         "seed": 1009,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 799.7398,
+        "wallDuration": 32.15,
+        "ms": 1084.284,
         "passes": 4,
-        "received": 1,
-        "shots": 1,
-        "goals": 0,
+        "received": 0,
+        "shots": 3,
+        "goals": 1,
         "passDistances": [
           9.670221679098598,
-          7.562629790725042,
-          2.4099590824868584,
-          9.826579709342768
+          4.561796267788819,
+          5.719000302633032,
+          9.280257761772178
         ],
         "shotDistances": [
-          8.593002012952544
+          6.051774851595677,
+          13.262092040477613,
+          12.18349268171532
         ],
         "patterns": {
-          "rising": 1
+          "rising": 1,
+          "placed": 1,
+          "header": 1
         },
-        "crowdedFraction": 0.0644,
-        "meanPlayerSpeed": 2.2075,
-        "eventSignature": "19180f20782810d3",
-        "spatialSignature": "7d82ffe7d22e0b26"
+        "crowdedFraction": 0.0662,
+        "meanPlayerSpeed": 2.1434,
+        "eventSignature": "d9b16fbb0f545850",
+        "spatialSignature": "df1f54f274017eac"
       },
       {
         "sides": 6,
         "seed": 1009,
         "gameDuration": 30,
-        "wallDuration": 32.608333333333334,
-        "ms": 1082.8607,
-        "passes": 9,
-        "received": 6,
-        "shots": 2,
+        "wallDuration": 32.61666666666667,
+        "ms": 1312.5611,
+        "passes": 7,
+        "received": 5,
+        "shots": 3,
         "goals": 1,
         "passDistances": [
           14.884624785377495,
           9.456739707720972,
-          1.8817304205922172,
-          2.546546303570333,
-          1.733940240155965,
-          13.114236408764967,
-          1.8783203385979352,
-          3.939474089005792,
-          7.55555199454709
+          1.8817283888688843,
+          2.54701738022898,
+          1.7665225936533813,
+          13.112991495512397,
+          11.501557614955637
         ],
         "shotDistances": [
-          11.197242176305586,
-          8.668567928083045
+          11.198486103682583,
+          8.667855904745105,
+          11.476484443900853
         ],
         "patterns": {
           "driven": 1,
-          "rising": 1
+          "rising": 2
         },
-        "crowdedFraction": 0.0233,
-        "meanPlayerSpeed": 1.6281,
-        "eventSignature": "09bc5034dc23e17a",
-        "spatialSignature": "afe1a5e8a78a224d"
+        "crowdedFraction": 0.0226,
+        "meanPlayerSpeed": 1.7706,
+        "eventSignature": "c33dd49603c98f71",
+        "spatialSignature": "3ac9e14c0a42d2a2"
       },
       {
         "sides": 2,
         "seed": 1010,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 291.48,
+        "ms": 511.8243,
         "passes": 9,
-        "received": 6,
-        "shots": 0,
+        "received": 5,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           5.217022307216704,
           8.209683367150191,
-          2.9460515468435613,
-          12.664346666584214,
-          2.5573345921903816,
-          7.556229119294509,
-          8.411606340129714,
-          5.15633443473471,
-          5.09384346087668
+          2.9457089088833346,
+          12.664885473099742,
+          5.726754554450795,
+          3.7370785468857566,
+          5.268374645126164,
+          8.20221441550448,
+          7.010366356824374
         ],
-        "shotDistances": [],
-        "patterns": {},
-        "crowdedFraction": 0.0263,
-        "meanPlayerSpeed": 2.2649,
-        "eventSignature": "a45af5f18a5173e3",
-        "spatialSignature": "96b07fd12eccbb65"
+        "shotDistances": [
+          11.820698027402875
+        ],
+        "patterns": {
+          "driven": 1
+        },
+        "crowdedFraction": 0.0363,
+        "meanPlayerSpeed": 2.1827,
+        "eventSignature": "194764b26f4d10c2",
+        "spatialSignature": "7bb80ac3c9473cda"
       },
       {
         "sides": 3,
         "seed": 1010,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 415.0043,
-        "passes": 3,
-        "received": 0,
-        "shots": 5,
-        "goals": 0,
+        "wallDuration": 31.608333333333334,
+        "ms": 377.1732,
+        "passes": 4,
+        "received": 2,
+        "shots": 6,
+        "goals": 1,
         "passDistances": [
-          8.852033164832068,
-          12.893261845064972,
-          11.021023888589449
+          2.731094778525802,
+          1.068557520506455,
+          3.453978931511869,
+          3.2177144487721083
         ],
         "shotDistances": [
           11.405727867839687,
-          4.07618583330702,
-          10.104941889266865,
-          1.982302476711747,
-          5.525686640320175
+          3.757092807853573,
+          10.780604136467414,
+          9.77565082338542,
+          6.561106328335236,
+          11.150484363617066
         ],
         "patterns": {
-          "rising": 4,
+          "rising": 2,
+          "placed": 3,
           "driven": 1
         },
-        "crowdedFraction": 0.0951,
-        "meanPlayerSpeed": 2.5242,
-        "eventSignature": "359c5cf78075eef5",
-        "spatialSignature": "286a79490d9677b6"
+        "crowdedFraction": 0.118,
+        "meanPlayerSpeed": 2.5845,
+        "eventSignature": "eb774f6407b089ba",
+        "spatialSignature": "65498f0192002413"
       },
       {
         "sides": 4,
         "seed": 1010,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 488.6974,
-        "passes": 7,
+        "ms": 780.8604,
+        "passes": 5,
         "received": 4,
         "shots": 2,
         "goals": 0,
@@ -4451,1053 +4422,1066 @@
           9.699100220993575,
           8.460470611721355,
           2.8814608679290212,
-          5.685931684848973,
-          7.7097268255962375,
-          5.700941936231618,
-          14.88294149708172
+          5.685902250777907,
+          7.692504352312124
         ],
         "shotDistances": [
           10.55521617732655,
-          5.242302753530273
+          5.245468312346633
         ],
         "patterns": {
           "rising": 1,
           "placed": 1
         },
-        "crowdedFraction": 0.0662,
-        "meanPlayerSpeed": 2.1851,
-        "eventSignature": "9cec63ffe72ad5e4",
-        "spatialSignature": "8cc6861785b8c4eb"
+        "crowdedFraction": 0.0644,
+        "meanPlayerSpeed": 2.268,
+        "eventSignature": "8fef50e29f9b4010",
+        "spatialSignature": "a8db07588be5e952"
       },
       {
         "sides": 6,
         "seed": 1010,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1204.3871,
-        "passes": 5,
-        "received": 1,
-        "shots": 3,
+        "ms": 2339.1032,
+        "passes": 9,
+        "received": 5,
+        "shots": 0,
         "goals": 0,
         "passDistances": [
           15.854324992477899,
-          9.318284437334338,
-          7.576684608705551,
-          11.107265744630048,
-          5.795479864382329
+          5.314050951401797,
+          2.9991369386070494,
+          10.523107497970587,
+          6.61860891820238,
+          5.770154901523768,
+          11.59558086860122,
+          9.669346547778083,
+          9.986700137078941
         ],
-        "shotDistances": [
-          7.0741344487361975,
-          13.408096534065914,
-          9.775720897100053
-        ],
-        "patterns": {
-          "rising": 2,
-          "driven": 1
-        },
-        "crowdedFraction": 0.0147,
-        "meanPlayerSpeed": 1.9651,
-        "eventSignature": "28cb2923c8d9e6d5",
-        "spatialSignature": "90e3e1ad440f9d49"
+        "shotDistances": [],
+        "patterns": {},
+        "crowdedFraction": 0.0241,
+        "meanPlayerSpeed": 1.7944,
+        "eventSignature": "c04ed2760f1d8c96",
+        "spatialSignature": "21ecc8759e95ab3a"
       },
       {
         "sides": 2,
         "seed": 1011,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 723.6887,
-        "passes": 6,
+        "ms": 385.6834,
+        "passes": 5,
         "received": 5,
-        "shots": 2,
+        "shots": 3,
         "goals": 0,
         "passDistances": [
           13.594623067549383,
           4.229588534324116,
-          5.0130669150851235,
-          4.383877525838124,
-          11.92939564704607,
-          7.492301078292142
+          5.23508124662058,
+          4.015643965384954,
+          7.52976173553356
         ],
-        "shotDistances": [],
+        "shotDistances": [
+          6.94661090874432,
+          4.527126207025702
+        ],
         "patterns": {
-          "free_kick": 2
+          "free_kick": 1,
+          "rising": 1,
+          "chip": 1
         },
-        "crowdedFraction": 0.0543,
-        "meanPlayerSpeed": 2.3308,
-        "eventSignature": "284f817a3e976b37",
-        "spatialSignature": "4ebc32051df4a343"
+        "crowdedFraction": 0.0389,
+        "meanPlayerSpeed": 2.3545,
+        "eventSignature": "817384398ca14513",
+        "spatialSignature": "62bbd8ca2ee95376"
       },
       {
         "sides": 3,
         "seed": 1011,
         "gameDuration": 30,
-        "wallDuration": 31.974999999999998,
-        "ms": 562.5338,
-        "passes": 1,
-        "received": 0,
-        "shots": 4,
-        "goals": 1,
+        "wallDuration": 35.925,
+        "ms": 381.9054,
+        "passes": 4,
+        "received": 2,
+        "shots": 6,
+        "goals": 3,
         "passDistances": [
-          14.218510796827148
+          11.093544857014958,
+          6.081601015083981,
+          4.983232847902234,
+          9.403781095509975
         ],
         "shotDistances": [
           11.458642305531122,
           2.7077010795133414,
-          11.035678545894163,
-          13.161911325556424
+          11.035678507831673,
+          10.538995567092869,
+          4.09530303257471,
+          10.89706778188079
         ],
         "patterns": {
-          "placed": 2,
-          "rising": 1,
-          "driven": 1
+          "placed": 3,
+          "rising": 3
         },
-        "crowdedFraction": 0.1158,
-        "meanPlayerSpeed": 2.5755,
-        "eventSignature": "27412248b7c2634e",
-        "spatialSignature": "cfd0b408d90263c8"
+        "crowdedFraction": 0.1301,
+        "meanPlayerSpeed": 2.4631,
+        "eventSignature": "084f8f57fe183bfa",
+        "spatialSignature": "55375c6ba1881e23"
       },
       {
         "sides": 4,
         "seed": 1011,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 427.761,
-        "passes": 6,
-        "received": 4,
-        "shots": 2,
+        "ms": 899.6673,
+        "passes": 5,
+        "received": 2,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           1.794042381599672,
-          4.958394764138945,
-          2.475295257052482,
-          5.030917987874909,
-          6.385969888616241,
-          6.492751008369656
+          5.008695288241776,
+          5.7142051029209355,
+          1.7947223037043314,
+          3.718713158768637
         ],
         "shotDistances": [
-          13.712985977494426,
-          3.6517089394844753
+          13.712985977494426
         ],
         "patterns": {
-          "placed": 1,
-          "driven": 1
+          "placed": 1
         },
-        "crowdedFraction": 0.0498,
-        "meanPlayerSpeed": 2.1155,
-        "eventSignature": "1107d464e627e060",
-        "spatialSignature": "401b553bf6864e6b"
+        "crowdedFraction": 0.0626,
+        "meanPlayerSpeed": 2.1369,
+        "eventSignature": "2d32d33798eb4eed",
+        "spatialSignature": "7ed431f4120393bd"
       },
       {
         "sides": 6,
         "seed": 1011,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1397.9904,
-        "passes": 7,
-        "received": 5,
-        "shots": 0,
+        "ms": 714.799,
+        "passes": 6,
+        "received": 1,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           14.673050082093654,
           4.363126832795405,
-          4.967979314361529,
-          11.39651729888873,
-          4.786758449310021,
-          4.537150872010297,
-          4.078212015007723
+          3.9797223594879405,
+          9.510130721906284,
+          10.537469036163209,
+          4.407320513992427
         ],
-        "shotDistances": [],
-        "patterns": {},
-        "crowdedFraction": 0.0251,
-        "meanPlayerSpeed": 1.7554,
-        "eventSignature": "18c03c00b59d7709",
-        "spatialSignature": "a51ff757fdc0c5aa"
+        "shotDistances": [
+          9.056654406665759,
+          12.63324850184244
+        ],
+        "patterns": {
+          "rising": 1,
+          "header": 1
+        },
+        "crowdedFraction": 0.0144,
+        "meanPlayerSpeed": 1.9189,
+        "eventSignature": "2414e82725eb1e54",
+        "spatialSignature": "4125741006944254"
       },
       {
         "sides": 2,
         "seed": 1012,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 414.4632,
-        "passes": 6,
-        "received": 5,
+        "ms": 373.3073,
+        "passes": 11,
+        "received": 8,
         "shots": 2,
         "goals": 0,
         "passDistances": [
-          5.044107153269144,
-          5.482950056428211,
-          3.3294447532850016,
-          4.099210287919957,
-          4.666886520263242,
-          8.566305744473217
+          5.127653452838938,
+          3.934829510368762,
+          3.072552647312073,
+          4.366839477815652,
+          1.8044374002914112,
+          4.125767266512519,
+          5.983820767378869,
+          9.270846325539877,
+          8.187918180264928,
+          5.988049103000561,
+          7.6579077574680054
         ],
         "shotDistances": [
-          5.252038756379969,
-          8.447446506417489
+          5.554551886276732,
+          13.606417080711365
+        ],
+        "patterns": {
+          "driven": 1,
+          "placed": 1
+        },
+        "crowdedFraction": 0.0474,
+        "meanPlayerSpeed": 2.2646,
+        "eventSignature": "1232c9aa0cbd9331",
+        "spatialSignature": "966b924dc1b4f567"
+      },
+      {
+        "sides": 3,
+        "seed": 1012,
+        "gameDuration": 30,
+        "wallDuration": 30,
+        "ms": 425.3076,
+        "passes": 6,
+        "received": 4,
+        "shots": 2,
+        "goals": 0,
+        "passDistances": [
+          7.49891291008257,
+          13.84166027029443,
+          5.803684375130824,
+          3.9996669463419328,
+          4.535008611565868,
+          5.561109813586985
+        ],
+        "shotDistances": [
+          12.734590531498167,
+          14.779314387609356
         ],
         "patterns": {
           "driven": 1,
           "rising": 1
         },
-        "crowdedFraction": 0.0281,
-        "meanPlayerSpeed": 2.1852,
-        "eventSignature": "a41e6373ba125de0",
-        "spatialSignature": "59571d1063aa608f"
-      },
-      {
-        "sides": 3,
-        "seed": 1012,
-        "gameDuration": 30,
-        "wallDuration": 32.275,
-        "ms": 443.9493,
-        "passes": 4,
-        "received": 3,
-        "shots": 5,
-        "goals": 1,
-        "passDistances": [
-          7.465209445070489,
-          11.971589623443808,
-          6.972408514915543,
-          2.908315614554731
-        ],
-        "shotDistances": [
-          7.646343730705326,
-          10.66960146139189,
-          15.973295210655696,
-          5.440598659406748,
-          8.386616639769596
-        ],
-        "patterns": {
-          "driven": 1,
-          "rising": 3,
-          "placed": 1
-        },
         "crowdedFraction": 0.129,
-        "meanPlayerSpeed": 2.646,
-        "eventSignature": "20ff0bbfd1468f77",
-        "spatialSignature": "3bac0e117755aa03"
+        "meanPlayerSpeed": 2.5027,
+        "eventSignature": "29b4c79b3e6f5763",
+        "spatialSignature": "be54e854d2644464"
       },
       {
         "sides": 4,
         "seed": 1012,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 640.8658,
-        "passes": 9,
+        "wallDuration": 31.974999999999998,
+        "ms": 565.8586,
+        "passes": 6,
         "received": 4,
-        "shots": 3,
-        "goals": 0,
+        "shots": 4,
+        "goals": 1,
         "passDistances": [
           11.829164243028016,
           9.145949156354881,
           8.16060899243439,
-          5.046808202103123,
-          9.116617228371547,
-          4.251814015287246,
-          15.246186281469818,
-          7.637447102243377,
-          4.134701864517136
+          13.355430492026294,
+          8.800844360749752,
+          10.578348947072795
         ],
         "shotDistances": [
           14.568296292648947,
-          15.580770455042085,
-          9.92987412147832
+          10.943592429793764,
+          5.45708412658802,
+          9.605620592265026
         ],
         "patterns": {
           "header": 1,
-          "driven": 1,
-          "placed": 1
+          "placed": 1,
+          "rising": 1,
+          "driven": 1
         },
-        "crowdedFraction": 0.0544,
-        "meanPlayerSpeed": 2.0616,
-        "eventSignature": "f029fbe874c701f0",
-        "spatialSignature": "caa3562af03f6696"
+        "crowdedFraction": 0.0533,
+        "meanPlayerSpeed": 2.3649,
+        "eventSignature": "2c86bbcdc4748f6a",
+        "spatialSignature": "c7870d3a21e87694"
       },
       {
         "sides": 6,
         "seed": 1012,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 1210.7411,
-        "passes": 7,
-        "received": 6,
-        "shots": 2,
-        "goals": 0,
+        "wallDuration": 32.50833333333333,
+        "ms": 582.0701,
+        "passes": 4,
+        "received": 4,
+        "shots": 4,
+        "goals": 1,
         "passDistances": [
           15.463418424781125,
           6.781598087291333,
           1.5732641174789141,
-          3.7855146767671037,
-          3.1905515526577455,
-          7.381085259997367,
-          9.717049108862636
+          6.271685067051478
         ],
         "shotDistances": [
-          14.907280294390722,
-          10.103092712959576
+          7.065768064831179,
+          11.924785288490085,
+          10.96751053801027,
+          4.695627795933617
         ],
         "patterns": {
           "rising": 1,
-          "driven": 1
+          "driven": 1,
+          "placed": 2
         },
-        "crowdedFraction": 0.0206,
-        "meanPlayerSpeed": 1.6067,
-        "eventSignature": "3b856d7a3893fe06",
-        "spatialSignature": "f4c173897fbf5c32"
+        "crowdedFraction": 0.0288,
+        "meanPlayerSpeed": 1.7092,
+        "eventSignature": "b4a663de4348555e",
+        "spatialSignature": "4bc97576ffad3360"
       },
       {
         "sides": 2,
         "seed": 1013,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 273.4257,
-        "passes": 13,
+        "ms": 322.6286,
+        "passes": 14,
         "received": 12,
-        "shots": 1,
+        "shots": 0,
         "goals": 0,
         "passDistances": [
           8.494902849292465,
           4.743533503714857,
           2.0949087579296295,
-          6.373022745866328,
-          7.312090201880856,
-          8.095486806731705,
-          1.7946099542208334,
-          9.509253677543338,
-          4.60471796181631,
-          4.5012346430114585,
-          6.177054065062375,
-          4.867524632487652,
-          5.817595989835356
+          6.373237350905258,
+          7.311634009888842,
+          8.095483336514071,
+          1.794186296573971,
+          9.290922522842228,
+          0.7632588603295866,
+          4.077772303059226,
+          5.363877350606627,
+          7.575176853470847,
+          5.0298383104017566,
+          6.069499882684499
         ],
         "shotDistances": [],
-        "patterns": {
-          "free_kick": 1
-        },
-        "crowdedFraction": 0.0578,
-        "meanPlayerSpeed": 2.1882,
-        "eventSignature": "87eee0fe45859049",
-        "spatialSignature": "1b6efe2ec7a1874f"
+        "patterns": {},
+        "crowdedFraction": 0.0439,
+        "meanPlayerSpeed": 2.2112,
+        "eventSignature": "003da240025964f6",
+        "spatialSignature": "31ccd420eaf80547"
       },
       {
         "sides": 3,
         "seed": 1013,
         "gameDuration": 30,
         "wallDuration": 32.05,
-        "ms": 222.3523,
-        "passes": 3,
+        "ms": 235.862,
+        "passes": 2,
         "received": 0,
-        "shots": 1,
+        "shots": 2,
         "goals": 1,
         "passDistances": [
           6.507357112568899,
-          7.3811263521382875,
-          4.683135977377181
+          7.381268782158182
         ],
         "shotDistances": [
-          9.643196031703475
+          9.643196031703475,
+          5.077885687564255
         ],
         "patterns": {
-          "rising": 1
+          "rising": 1,
+          "placed": 1
         },
-        "crowdedFraction": 0.1093,
-        "meanPlayerSpeed": 2.7298,
-        "eventSignature": "059c7558d30346c5",
-        "spatialSignature": "37d21bdbcd408661"
+        "crowdedFraction": 0.1049,
+        "meanPlayerSpeed": 2.6875,
+        "eventSignature": "5fbfb3723bfad837",
+        "spatialSignature": "fe920f4702334b8e"
       },
       {
         "sides": 4,
         "seed": 1013,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 297.5068,
-        "passes": 3,
-        "received": 1,
-        "shots": 2,
-        "goals": 0,
+        "wallDuration": 31.974999999999998,
+        "ms": 363.2262,
+        "passes": 4,
+        "received": 3,
+        "shots": 4,
+        "goals": 1,
         "passDistances": [
           13.16003821337503,
-          5.318465570680583,
-          11.76373554476865
+          7.396028211636067,
+          4.3098885054835305,
+          3.4422568171030794
         ],
         "shotDistances": [
-          11.398501460940203,
-          14.983414246041749
+          2.5342698198747273,
+          10.819189392828662,
+          14.37043004621706,
+          5.456751843224848
         ],
         "patterns": {
-          "rising": 1,
-          "driven": 1
+          "placed": 3,
+          "rising": 1
         },
-        "crowdedFraction": 0.048,
-        "meanPlayerSpeed": 2.4504,
-        "eventSignature": "bbc9d4cdf0a7a887",
-        "spatialSignature": "6eb1ce9f9aa5f4f2"
+        "crowdedFraction": 0.0512,
+        "meanPlayerSpeed": 2.5576,
+        "eventSignature": "dbd66148686dec5c",
+        "spatialSignature": "2a71d34807bb8dfe"
       },
       {
         "sides": 6,
         "seed": 1013,
         "gameDuration": 30,
-        "wallDuration": 32.21666666666667,
-        "ms": 597.9992,
+        "wallDuration": 32.358333333333334,
+        "ms": 554.6836,
         "passes": 5,
-        "received": 3,
+        "received": 2,
         "shots": 2,
         "goals": 1,
         "passDistances": [
           14.460917550534663,
-          9.590092497715135,
-          10.320242862284116,
-          13.979949665872828,
-          6.288596411252124
+          5.073925874918901,
+          2.578500390678313,
+          8.499788018750948,
+          10.556576230341241
         ],
         "shotDistances": [
-          9.485411434872233,
-          9.136701057368654
+          7.344935345050849,
+          8.481587611187658
         ],
         "patterns": {
-          "rising": 2
+          "placed": 2
         },
-        "crowdedFraction": 0.0215,
-        "meanPlayerSpeed": 1.7303,
-        "eventSignature": "83e0b99faf4e0194",
-        "spatialSignature": "1bcd6eed06c625f0"
+        "crowdedFraction": 0.0256,
+        "meanPlayerSpeed": 1.9303,
+        "eventSignature": "f07f805030fc754f",
+        "spatialSignature": "552ebb15f3cb1c6f"
       },
       {
         "sides": 2,
         "seed": 1014,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 357.9631,
-        "passes": 9,
-        "received": 8,
-        "shots": 2,
-        "goals": 0,
+        "wallDuration": 35.2,
+        "ms": 239.0802,
+        "passes": 14,
+        "received": 12,
+        "shots": 1,
+        "goals": 1,
         "passDistances": [
           4.928019366801934,
-          6.702237546551244,
-          6.471857489306569,
-          4.9489036478485735,
-          4.880137656964682,
-          6.447213077508586,
-          8.759153160407765,
-          4.270205333312954,
-          9.209411684208892
+          8.35894613454874,
+          2.8607768822932176,
+          3.7858218031777904,
+          7.682337173564356,
+          1.347720874271092,
+          4.532053317918587,
+          7.628201066234634,
+          6.232715938338161,
+          10.574202496695875,
+          4.180304450502354,
+          9.850114753607237,
+          5.654514477346593,
+          4.076672477881887
         ],
         "shotDistances": [
-          7.815482561920186,
-          11.78710945070912
+          8.836298132564487
         ],
         "patterns": {
-          "chip": 1,
-          "placed": 1
+          "rising": 1
         },
-        "crowdedFraction": 0.0427,
-        "meanPlayerSpeed": 2.3232,
-        "eventSignature": "099b60f6ebe8be8b",
-        "spatialSignature": "cc405d90e052c6f5"
+        "crowdedFraction": 0.0439,
+        "meanPlayerSpeed": 2.1255,
+        "eventSignature": "f5a7a5747b5eb0ea",
+        "spatialSignature": "a257e979fe0efddc"
       },
       {
         "sides": 3,
         "seed": 1014,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 334.7324,
-        "passes": 4,
-        "received": 0,
-        "shots": 1,
+        "ms": 316.7799,
+        "passes": 5,
+        "received": 3,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           6.453005571965111,
-          7.49446129833676,
-          5.775805170670616,
-          11.817315803402954
+          9.543280383120795,
+          2.746691022555836,
+          10.202105116548855,
+          4.186333506219257
         ],
         "shotDistances": [
-          5.410904369775719
+          10.034505813445524,
+          9.340346600464907
         ],
         "patterns": {
+          "placed": 1,
           "driven": 1
         },
-        "crowdedFraction": 0.1279,
-        "meanPlayerSpeed": 2.7072,
-        "eventSignature": "3864d12fe570e2d9",
-        "spatialSignature": "be307a7dd710b730"
+        "crowdedFraction": 0.1213,
+        "meanPlayerSpeed": 2.566,
+        "eventSignature": "3027a5646631cbda",
+        "spatialSignature": "88c6f6158e924391"
       },
       {
         "sides": 4,
         "seed": 1014,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 761.5156,
+        "ms": 489.3634,
         "passes": 5,
-        "received": 1,
+        "received": 2,
         "shots": 2,
         "goals": 0,
         "passDistances": [
           10.377777976708815,
           5.562492600677106,
           5.791286169377117,
-          3.6202333051241458,
-          13.330607879211257
+          3.6202334098994555,
+          10.628528679035584
         ],
         "shotDistances": [
           10.45454115213824,
-          13.01014465393346
+          7.664646869325056
         ],
         "patterns": {
           "driven": 1,
           "rising": 1
         },
-        "crowdedFraction": 0.0527,
-        "meanPlayerSpeed": 2.2341,
-        "eventSignature": "c3effab890c8f87f",
-        "spatialSignature": "228580d527a0c56c"
+        "crowdedFraction": 0.055,
+        "meanPlayerSpeed": 2.1937,
+        "eventSignature": "96318da9bb794f03",
+        "spatialSignature": "06a477ad016e3d91"
       },
       {
         "sides": 6,
         "seed": 1014,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1429.7777,
-        "passes": 6,
-        "received": 5,
+        "ms": 700.9799,
+        "passes": 5,
+        "received": 4,
         "shots": 1,
         "goals": 0,
         "passDistances": [
           14.820475530515937,
           7.596160079271154,
-          3.3822346228101368,
-          2.975107651926313,
-          3.8415824002405774,
-          1.7501473772711131
+          6.007796275415656,
+          3.7562114395519366,
+          3.9275090404493582
         ],
         "shotDistances": [
-          8.279982589366945
+          6.73119307026138
         ],
         "patterns": {
           "rising": 1
         },
-        "crowdedFraction": 0.0233,
-        "meanPlayerSpeed": 1.7252,
-        "eventSignature": "f623fe806716bf7b",
-        "spatialSignature": "aa7e4c0778d19987"
+        "crowdedFraction": 0.0253,
+        "meanPlayerSpeed": 1.7103,
+        "eventSignature": "02bc47e640a35b81",
+        "spatialSignature": "daa4afab84bffec3"
       },
       {
         "sides": 2,
         "seed": 1015,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 292.9136,
+        "ms": 303.8424,
         "passes": 13,
-        "received": 10,
-        "shots": 2,
+        "received": 11,
+        "shots": 0,
         "goals": 0,
         "passDistances": [
           8.049688339741403,
           2.049778583273576,
-          5.779312989137234,
-          2.4955741758634633,
-          2.9452416297404924,
-          5.942885861284698,
-          2.933025619850928,
-          5.375561314073897,
-          3.0140411480751657,
-          4.186265321241008,
-          8.622120463468919,
-          2.9820003210414847,
-          4.0880150314051
+          2.8371273023922963,
+          12.300743113151066,
+          5.71907014679643,
+          2.9407016332566775,
+          1.9353410468224284,
+          4.169617784440997,
+          8.605932366047831,
+          5.915790012568774,
+          3.635152994926494,
+          4.583715508341352,
+          8.545757365069893
         ],
-        "shotDistances": [
-          11.223090897310026,
-          15.537433862242475
-        ],
-        "patterns": {
-          "driven": 1,
-          "placed": 1
-        },
-        "crowdedFraction": 0.0539,
-        "meanPlayerSpeed": 2.0734,
-        "eventSignature": "ef9e6cf8a7359348",
-        "spatialSignature": "eae6ddac368e04c4"
+        "shotDistances": [],
+        "patterns": {},
+        "crowdedFraction": 0.0381,
+        "meanPlayerSpeed": 2.2062,
+        "eventSignature": "aece495412d6589f",
+        "spatialSignature": "aeb7879714d20220"
       },
       {
         "sides": 3,
         "seed": 1015,
         "gameDuration": 30,
         "wallDuration": 33.56666666666666,
-        "ms": 263.1941,
-        "passes": 6,
-        "received": 3,
-        "shots": 3,
+        "ms": 287.4598,
+        "passes": 2,
+        "received": 0,
+        "shots": 4,
         "goals": 2,
         "passDistances": [
           6.446391752737475,
-          5.523850645813041,
-          3.3513435878255997,
-          3.8716554412754984,
-          3.7138405862395256,
-          2.3768088845748805
+          5.523850645813041
         ],
         "shotDistances": [
           2.829998523566566,
           11.874287359295485,
-          10.545953584512704
+          10.545953001103006,
+          8.823120662021708
         ],
         "patterns": {
-          "rising": 1,
+          "rising": 2,
           "placed": 2
         },
-        "crowdedFraction": 0.0984,
-        "meanPlayerSpeed": 2.7202,
-        "eventSignature": "ead3ee53e441f2f2",
-        "spatialSignature": "269313b7665c1431"
+        "crowdedFraction": 0.0896,
+        "meanPlayerSpeed": 2.8311,
+        "eventSignature": "c3538ef112f888bc",
+        "spatialSignature": "44ee94a166774d6b"
       },
       {
         "sides": 4,
         "seed": 1015,
         "gameDuration": 30,
-        "wallDuration": 32.15,
-        "ms": 328.9667,
-        "passes": 7,
-        "received": 4,
+        "wallDuration": 32.1,
+        "ms": 410.7751,
+        "passes": 6,
+        "received": 2,
         "shots": 1,
         "goals": 1,
         "passDistances": [
           13.22076235108257,
           7.964482454074164,
-          5.579548234822992,
-          3.1664220138183863,
-          9.991915153569227,
-          3.448968501579185,
-          5.731106565554657
+          5.57954268921959,
+          3.1416663229962167,
+          9.989760961586262,
+          8.64594364235002
         ],
         "shotDistances": [
-          5.560929980106646
+          3.9002005038054843
         ],
         "patterns": {
           "placed": 1
         },
-        "crowdedFraction": 0.0597,
-        "meanPlayerSpeed": 2.2924,
-        "eventSignature": "3aba9b4f1a99bd70",
-        "spatialSignature": "e67f5db1100df5d6"
+        "crowdedFraction": 0.055,
+        "meanPlayerSpeed": 2.2884,
+        "eventSignature": "f6afefa10ad8c64d",
+        "spatialSignature": "9f45c9d0684df15d"
       },
       {
         "sides": 6,
         "seed": 1015,
         "gameDuration": 30,
-        "wallDuration": 32.74166666666667,
-        "ms": 669.6561,
-        "passes": 6,
-        "received": 5,
-        "shots": 3,
-        "goals": 1,
+        "wallDuration": 34.80833333333333,
+        "ms": 494.3562,
+        "passes": 1,
+        "received": 0,
+        "shots": 4,
+        "goals": 2,
         "passDistances": [
-          14.056340708350339,
-          7.447477649126986,
-          6.685143941412133,
-          8.63359594637857,
-          10.04824503072238,
-          5.708537760023016
+          3.378562104487683
         ],
         "shotDistances": [
           10.061462143693316,
           3.2191589383778183,
-          9.56345604538005
+          11.271609174904068,
+          7.140923595090109
         ],
         "patterns": {
           "rising": 1,
           "placed": 1,
-          "one_touch": 1
+          "driven": 2
         },
-        "crowdedFraction": 0.023,
-        "meanPlayerSpeed": 1.7385,
-        "eventSignature": "9e02b033b5256e61",
-        "spatialSignature": "17fc87931e662a5c"
+        "crowdedFraction": 0.0283,
+        "meanPlayerSpeed": 1.7711,
+        "eventSignature": "782f7476afcd7420",
+        "spatialSignature": "a665c5274764a98c"
       },
       {
         "sides": 2,
         "seed": 1016,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 239.0431,
+        "ms": 237.4291,
         "passes": 7,
-        "received": 6,
-        "shots": 0,
+        "received": 3,
+        "shots": 4,
         "goals": 0,
         "passDistances": [
-          5.551532946673493,
-          5.009678828297127,
-          7.346346539894219,
-          10.151890004401496,
-          3.8137415745077474,
-          7.1096366379556715,
-          2.5290651444214993
+          5.5958881614590705,
+          1.4463714708011999,
+          5.515838810877945,
+          5.38210930659175,
+          6.101355737523855,
+          5.223267915913342,
+          7.162510224229482
         ],
-        "shotDistances": [],
-        "patterns": {},
-        "crowdedFraction": 0.0211,
-        "meanPlayerSpeed": 1.8983,
-        "eventSignature": "9779f2e206930ec7",
-        "spatialSignature": "18146766d0e63a84"
+        "shotDistances": [
+          12.92465087485709,
+          9.66430330645541,
+          5.443664138089422
+        ],
+        "patterns": {
+          "driven": 2,
+          "free_kick": 1,
+          "placed": 1
+        },
+        "crowdedFraction": 0.0408,
+        "meanPlayerSpeed": 2.171,
+        "eventSignature": "f63c5c1e10ed72f4",
+        "spatialSignature": "7a919f064a067c10"
       },
       {
         "sides": 3,
         "seed": 1016,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 211.9974,
-        "passes": 3,
-        "received": 0,
+        "ms": 145.2234,
+        "passes": 5,
+        "received": 1,
         "shots": 2,
         "goals": 0,
         "passDistances": [
           3.336342778204958,
-          9.439525485693931,
-          4.9333045427525795
+          6.009428664677894,
+          12.469642312601156,
+          11.63377222953876,
+          8.325575541167085
         ],
         "shotDistances": [
           5.199398821866856,
-          7.483161701376636
+          3.2384974770128268
         ],
         "patterns": {
           "placed": 1,
-          "one_touch": 1
+          "driven": 1
         },
         "crowdedFraction": 0.0995,
-        "meanPlayerSpeed": 2.7916,
-        "eventSignature": "dddb16d578e22cec",
-        "spatialSignature": "e11347b44809424c"
+        "meanPlayerSpeed": 2.6583,
+        "eventSignature": "e95882ab324d6f04",
+        "spatialSignature": "229a1ab85c331c31"
       },
       {
         "sides": 4,
         "seed": 1016,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 398.8557,
-        "passes": 7,
-        "received": 3,
-        "shots": 1,
-        "goals": 0,
+        "wallDuration": 33.99166666666667,
+        "ms": 307.1911,
+        "passes": 5,
+        "received": 4,
+        "shots": 4,
+        "goals": 2,
         "passDistances": [
           9.925534060350742,
           7.96321144864914,
-          12.845669107658935,
-          6.876550896055317,
-          4.143197687283257,
-          11.176474720481467,
-          10.266011064598805
+          12.845656006117467,
+          9.713943202188615,
+          11.545786586961444
         ],
         "shotDistances": [
-          13.93019799961482
+          4.852099510302278,
+          2.5754157823308654,
+          12.941265787657457,
+          3.65108765595667
         ],
         "patterns": {
-          "driven": 1
+          "header": 1,
+          "rising": 2,
+          "placed": 1
         },
-        "crowdedFraction": 0.0632,
-        "meanPlayerSpeed": 2.1912,
-        "eventSignature": "a98b84adc3586b71",
-        "spatialSignature": "dd2e0fba75aad1a2"
+        "crowdedFraction": 0.0643,
+        "meanPlayerSpeed": 2.0982,
+        "eventSignature": "7df717db81ed0a5c",
+        "spatialSignature": "7d9dc418916dbb11"
       },
       {
         "sides": 6,
         "seed": 1016,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 859.1662,
-        "passes": 11,
-        "received": 6,
-        "shots": 1,
-        "goals": 0,
+        "wallDuration": 32.65,
+        "ms": 723.0926,
+        "passes": 7,
+        "received": 5,
+        "shots": 3,
+        "goals": 1,
         "passDistances": [
-          9.418929703349336,
-          10.841641432771535,
-          9.92000117890271,
-          12.026654545545233,
-          4.497997461522881,
-          3.5840968013884185,
-          2.2227689668120445,
-          5.100961248182288,
-          1.6730807501935618,
-          2.113757282115508,
-          11.755492561747317
+          9.418929563621063,
+          10.841611967165202,
+          9.922560041871872,
+          12.028937378583372,
+          4.492055035277294,
+          3.5536510218845345,
+          13.925677757323252
         ],
         "shotDistances": [
-          6.675758272785668
+          6.675593521301446,
+          10.567294055218726,
+          4.617341564315468
         ],
         "patterns": {
-          "placed": 1
+          "placed": 2,
+          "header": 1
         },
-        "crowdedFraction": 0.0229,
-        "meanPlayerSpeed": 1.7035,
-        "eventSignature": "8bdda6b8e7d4ba35",
-        "spatialSignature": "5c4dd0bc7f365747"
+        "crowdedFraction": 0.0211,
+        "meanPlayerSpeed": 1.7634,
+        "eventSignature": "b62980a3517cbfd2",
+        "spatialSignature": "fdbe8887b30f8ca5"
       },
       {
         "sides": 2,
         "seed": 1017,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 585.6841,
-        "passes": 12,
-        "received": 7,
+        "ms": 387.5816,
+        "passes": 13,
+        "received": 9,
         "shots": 0,
         "goals": 0,
         "passDistances": [
           8.774883735818246,
           6.341444792434744,
-          2.0746456067047405,
-          11.768036538295087,
-          8.84908896490891,
-          4.985398676566669,
-          6.350574793963424,
-          4.956160936916762,
-          8.438707250840547,
-          3.4775256162253854,
-          6.506454602717141,
-          6.017452516599665
+          4.820870171168466,
+          6.354945153445959,
+          5.328149735276908,
+          2.183013115063446,
+          9.180422273158877,
+          5.412070569148664,
+          6.668923756895476,
+          5.807826534485261,
+          11.774752936623939,
+          4.945234515494682,
+          6.384918314006152
         ],
         "shotDistances": [],
         "patterns": {},
-        "crowdedFraction": 0.0427,
-        "meanPlayerSpeed": 1.9984,
-        "eventSignature": "71f29253f29b7e87",
-        "spatialSignature": "cb1306a55520e04f"
+        "crowdedFraction": 0.0585,
+        "meanPlayerSpeed": 2.1636,
+        "eventSignature": "07fd2207a2cb837d",
+        "spatialSignature": "3cdb4d95df88af8c"
       },
       {
         "sides": 3,
         "seed": 1017,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 452.8964,
-        "passes": 6,
-        "received": 4,
-        "shots": 2,
-        "goals": 0,
+        "wallDuration": 34.15,
+        "ms": 322.0993,
+        "passes": 7,
+        "received": 2,
+        "shots": 4,
+        "goals": 2,
         "passDistances": [
           9.796306277402211,
-          11.585334866517654,
-          6.630384003649588,
-          7.440110934820862,
-          8.693916711051019,
-          7.455753137628698
+          11.585334865731417,
+          6.329669014564785,
+          3.402135137208752,
+          3.003000851038076,
+          8.13132762356745,
+          11.509916674477983
         ],
         "shotDistances": [
-          5.258582266867385,
-          2.880823379588564
+          5.258569040365758,
+          5.574811268516814,
+          7.375351512388412,
+          10.258921045404403
         ],
         "patterns": {
-          "placed": 1,
+          "placed": 3,
           "rising": 1
         },
-        "crowdedFraction": 0.1202,
-        "meanPlayerSpeed": 2.5787,
-        "eventSignature": "28205f6d757e8f50",
-        "spatialSignature": "86e16b6c8d92668b"
+        "crowdedFraction": 0.1111,
+        "meanPlayerSpeed": 2.5717,
+        "eventSignature": "3a34385f926e9f04",
+        "spatialSignature": "870cb3e4b55ccc4e"
       },
       {
         "sides": 4,
         "seed": 1017,
         "gameDuration": 30,
         "wallDuration": 32.208333333333336,
-        "ms": 478.8733,
-        "passes": 3,
-        "received": 0,
-        "shots": 4,
+        "ms": 485.3344,
+        "passes": 4,
+        "received": 1,
+        "shots": 5,
         "goals": 1,
         "passDistances": [
           13.338275235608622,
-          8.91571788131098,
-          14.671330449197702
+          8.915717863517884,
+          3.681535714805453,
+          14.919150858287326
         ],
         "shotDistances": [
           11.987520761525358,
-          8.946670984003408,
-          14.040181221018424,
-          11.607419990055249
+          8.945965180469697,
+          14.040077926672243,
+          3.5379042750686693,
+          10.81827585759064
         ],
         "patterns": {
-          "driven": 2,
-          "placed": 2
+          "driven": 4,
+          "placed": 1
         },
-        "crowdedFraction": 0.0498,
-        "meanPlayerSpeed": 2.3533,
-        "eventSignature": "969e771ebf0b34ea",
-        "spatialSignature": "6c96619f3c323d15"
+        "crowdedFraction": 0.0486,
+        "meanPlayerSpeed": 2.2863,
+        "eventSignature": "be275df5ba660110",
+        "spatialSignature": "36f006b8dfb8f10f"
       },
       {
         "sides": 6,
         "seed": 1017,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 911.8642,
-        "passes": 8,
-        "received": 5,
-        "shots": 2,
+        "ms": 759.2344,
+        "passes": 5,
+        "received": 2,
+        "shots": 3,
         "goals": 0,
         "passDistances": [
           14.593309518285455,
           9.638332188758653,
-          4.141448920091988,
-          6.191540231427911,
-          8.620601904830101,
-          5.660469440178528,
-          4.9358918729249615,
-          10.344973064971546
+          4.141448915313919,
+          4.710915988296298,
+          11.113693754474602
         ],
         "shotDistances": [
-          14.900718388793623,
-          8.941845659011905
+          14.900679444456713,
+          14.914945581133578,
+          5.551643485279378
         ],
         "patterns": {
           "placed": 1,
-          "chip": 1
+          "driven": 2
         },
-        "crowdedFraction": 0.0206,
-        "meanPlayerSpeed": 1.8533,
-        "eventSignature": "fe516770de6c7b91",
-        "spatialSignature": "e9dffda931e12daf"
+        "crowdedFraction": 0.0166,
+        "meanPlayerSpeed": 1.7878,
+        "eventSignature": "41373dea0d035960",
+        "spatialSignature": "d3bfc6ecd838a436"
       },
       {
         "sides": 2,
         "seed": 1018,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 290.3997,
-        "passes": 9,
-        "received": 6,
+        "ms": 233.2463,
+        "passes": 6,
+        "received": 4,
         "shots": 2,
         "goals": 0,
         "passDistances": [
           8.418866341598216,
           8.410482627163573,
-          5.191944595376478,
-          6.799528292069127,
-          4.415233448480172,
-          5.677018944884511,
-          5.636830007479034,
-          3.833580800949341,
-          4.574986447714421
+          6.842472214230854,
+          2.359621924700297,
+          3.21323097670173,
+          3.9793957297339286
         ],
         "shotDistances": [
-          11.985419455896485
+          12.83584706652049
         ],
         "patterns": {
           "placed": 1,
           "free_kick": 1
         },
-        "crowdedFraction": 0.0415,
-        "meanPlayerSpeed": 2.3344,
-        "eventSignature": "e0fe06baa0ab515d",
-        "spatialSignature": "ddbaabd5d84906e5"
+        "crowdedFraction": 0.0459,
+        "meanPlayerSpeed": 2.3249,
+        "eventSignature": "9cf935fc51af49d6",
+        "spatialSignature": "3d4a90a8ddcfe879"
       },
       {
         "sides": 3,
         "seed": 1018,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 267.9657,
-        "passes": 7,
-        "received": 4,
-        "shots": 3,
+        "ms": 177.3322,
+        "passes": 6,
+        "received": 3,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
-          8.17676212841701,
-          5.2138068123488335,
-          2.64767811292787,
-          13.27751964301292,
-          9.336925141991491,
-          8.473189175491473,
-          3.0226807582884843
+          8.176760374353153,
+          5.987140161792699,
+          7.872804368194034,
+          9.525458086851547,
+          5.51885146526342,
+          10.356016989520732
         ],
         "shotDistances": [
-          10.719475193326135,
-          1.8406952712595415,
-          11.36121335893981
+          14.326434694223229,
+          6.1530161531977585
         ],
         "patterns": {
-          "placed": 1,
-          "rising": 1,
-          "header": 1
+          "driven": 1,
+          "placed": 1
         },
-        "crowdedFraction": 0.1093,
-        "meanPlayerSpeed": 2.7015,
-        "eventSignature": "103e901fb176c50f",
-        "spatialSignature": "176665a4919a3052"
+        "crowdedFraction": 0.1104,
+        "meanPlayerSpeed": 2.5067,
+        "eventSignature": "afbaa253949c16e3",
+        "spatialSignature": "2a03f96492f6186f"
       },
       {
         "sides": 4,
         "seed": 1018,
         "gameDuration": 30,
-        "wallDuration": 34.666666666666664,
-        "ms": 904.6765,
+        "wallDuration": 34.275,
+        "ms": 364.9736,
         "passes": 6,
-        "received": 2,
-        "shots": 4,
+        "received": 3,
+        "shots": 5,
         "goals": 2,
         "passDistances": [
           12.718125208267828,
           8.926301704483993,
-          3.348103600377409,
-          10.466278044439903,
-          9.541746609435116,
-          14.997091502660087
+          3.3487122126661806,
+          4.403461853330054,
+          8.217478302920206,
+          4.683326054038227
         ],
         "shotDistances": [
-          5.511713046846098,
-          6.137812606596202,
-          5.706574484019785,
-          9.817855221627754
+          5.511324085295619,
+          6.053948736129375,
+          10.642092723247291,
+          10.642052672781949,
+          1.7495614283615928
         ],
         "patterns": {
-          "driven": 3,
+          "driven": 2,
+          "placed": 1,
+          "one_touch": 1,
           "rising": 1
         },
-        "crowdedFraction": 0.069,
-        "meanPlayerSpeed": 2.1293,
-        "eventSignature": "dfca3529685cf8ff",
-        "spatialSignature": "1577e650996519fd"
+        "crowdedFraction": 0.0488,
+        "meanPlayerSpeed": 2.2925,
+        "eventSignature": "3afb629193160dbd",
+        "spatialSignature": "439b5ce61414c945"
       },
       {
         "sides": 6,
         "seed": 1018,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 1197.9663,
-        "passes": 6,
-        "received": 4,
+        "ms": 971.6079,
+        "passes": 5,
+        "received": 1,
         "shots": 2,
         "goals": 0,
         "passDistances": [
-          9.56204350691045,
-          5.334132452701115,
-          4.089593853658837,
-          2.6988798345957483,
-          7.603696421688419,
-          5.101877652871777
+          8.384205254611512,
+          5.137804474543134,
+          5.510767258848203,
+          13.754261238172187,
+          4.4649872192696405
         ],
         "shotDistances": [
-          7.848045171210433,
-          7.860889463782171
+          9.128511353840869,
+          6.911939835236804
         ],
         "patterns": {
           "chip": 1,
-          "placed": 1
+          "header": 1
         },
-        "crowdedFraction": 0.0306,
-        "meanPlayerSpeed": 1.6104,
-        "eventSignature": "02746806dc75bfe3",
-        "spatialSignature": "9890e13ae68c9838"
+        "crowdedFraction": 0.0308,
+        "meanPlayerSpeed": 1.6553,
+        "eventSignature": "9d945cc3c5ccd926",
+        "spatialSignature": "6b2e5051cb4e1767"
       },
       {
         "sides": 2,
         "seed": 1019,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 398.2002,
-        "passes": 8,
-        "received": 5,
-        "shots": 3,
+        "ms": 202.0429,
+        "passes": 12,
+        "received": 9,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
           5.118883083876408,
@@ -5505,95 +5489,101 @@
           4.678620909770826,
           5.643012289355922,
           9.18237106503262,
-          5.698369547417529,
-          5.97458818670906,
-          4.958292918151348
+          8.049881258303524,
+          0.905421702748774,
+          5.320519284482164,
+          4.028808209945911,
+          7.020743599137728,
+          9.374642139099404,
+          3.8880748572275174
         ],
         "shotDistances": [
           12.629128646586699,
-          11.383528481897171,
-          5.742823660227296
+          8.37209122483493
         ],
         "patterns": {
-          "placed": 3
+          "placed": 2
         },
-        "crowdedFraction": 0.0463,
-        "meanPlayerSpeed": 2.2266,
-        "eventSignature": "6e6ec8645d4d9e63",
-        "spatialSignature": "0d3ec15d4d94de85"
+        "crowdedFraction": 0.0445,
+        "meanPlayerSpeed": 2.1616,
+        "eventSignature": "d53004fcac70fd39",
+        "spatialSignature": "e038bcf45009499a"
       },
       {
         "sides": 3,
         "seed": 1019,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 208.7231,
-        "passes": 6,
-        "received": 3,
+        "ms": 167.6763,
+        "passes": 5,
+        "received": 4,
         "shots": 1,
         "goals": 0,
         "passDistances": [
-          7.649703889360611,
-          4.057610514525488,
-          10.391041122863934,
-          9.52498681618508,
-          5.48081458562899,
-          5.923425042323263
+          7.6497038895380625,
+          4.057547996665961,
+          10.392961544300707,
+          10.85749136188515,
+          6.023266040886722
         ],
         "shotDistances": [
-          5.39911718307795
+          7.9872319802597715
         ],
         "patterns": {
-          "driven": 1
+          "placed": 1
         },
-        "crowdedFraction": 0.1486,
-        "meanPlayerSpeed": 2.7254,
-        "eventSignature": "e697f2e0061eb5c6",
-        "spatialSignature": "d6c55d6941f2c407"
+        "crowdedFraction": 0.1563,
+        "meanPlayerSpeed": 2.5698,
+        "eventSignature": "df1afeafd405ffb9",
+        "spatialSignature": "3c0852e485deebb6"
       },
       {
         "sides": 4,
         "seed": 1019,
         "gameDuration": 30,
-        "wallDuration": 32.275,
-        "ms": 482.5875,
-        "passes": 8,
-        "received": 3,
-        "shots": 3,
-        "goals": 1,
+        "wallDuration": 34.575,
+        "ms": 385.7826,
+        "passes": 10,
+        "received": 6,
+        "shots": 4,
+        "goals": 2,
         "passDistances": [
           10.634326898325327,
           7.85931005849987,
           6.026514929579174,
           12.205744431013757,
           10.323606713430904,
-          5.476845824723563,
-          4.94004426642817,
-          11.118164918231177
+          10.395496271137162,
+          6.452173814742544,
+          4.7440000696823805,
+          3.333059216464548,
+          6.0401837647059695
         ],
         "shotDistances": [
           7.213007415839048,
-          5.1708954280566415,
-          13.58101301075678
+          2.3533356280593027,
+          9.338027091815164,
+          2.899926094494883
         ],
         "patterns": {
           "header": 1,
           "driven": 1,
-          "rising": 1
+          "one_touch": 1,
+          "placed": 1
         },
-        "crowdedFraction": 0.044,
-        "meanPlayerSpeed": 2.1792,
-        "eventSignature": "cb7ace59d162724d",
-        "spatialSignature": "74d3bbf68a04f348"
+        "crowdedFraction": 0.048,
+        "meanPlayerSpeed": 1.9917,
+        "eventSignature": "b7b15ad1a0f04f7e",
+        "spatialSignature": "c55808d28714b54e"
       },
       {
         "sides": 6,
         "seed": 1019,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 716.8901,
-        "passes": 6,
-        "received": 4,
+        "ms": 687.0229,
+        "passes": 9,
+        "received": 6,
         "shots": 1,
         "goals": 0,
         "passDistances": [
@@ -5601,279 +5591,272 @@
           8.877386622301636,
           1.443245664790446,
           13.63005616971955,
-          10.025478052974515,
-          13.19983150545487
+          10.025478077883028,
+          5.17513104062858,
+          7.0805699696685584,
+          11.942856472939834,
+          7.2631711879847565
         ],
         "shotDistances": [
-          7.032105756205748
+          7.032106140824851
         ],
         "patterns": {
           "rising": 1
         },
-        "crowdedFraction": 0.0206,
-        "meanPlayerSpeed": 1.7527,
-        "eventSignature": "bbc0d2717c09c067",
-        "spatialSignature": "2beb46c9d76ed530"
+        "crowdedFraction": 0.0263,
+        "meanPlayerSpeed": 1.7451,
+        "eventSignature": "fea328a915941fa6",
+        "spatialSignature": "2583afccefff15fb"
       },
       {
         "sides": 2,
         "seed": 1020,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 312.9276,
-        "passes": 9,
-        "received": 7,
-        "shots": 2,
+        "ms": 322.2813,
+        "passes": 5,
+        "received": 4,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           5.283127942639152,
-          8.731656184401492,
-          5.445470391995274,
-          3.8731485326978365,
-          1.3581687697657912,
-          5.112486908452119,
-          7.564912522078396,
-          8.938620032346599,
-          4.879740492400809
+          8.865008690363073,
+          6.123288952534237,
+          6.894429155957312,
+          1.988229508655774
         ],
         "shotDistances": [
-          12.55042184912748
+          2.26524240214798
         ],
         "patterns": {
-          "free_kick": 1,
-          "driven": 1
+          "placed": 1
         },
-        "crowdedFraction": 0.067,
-        "meanPlayerSpeed": 2.3017,
-        "eventSignature": "0ff8ced4b177fd6d",
-        "spatialSignature": "f84cd77ba7c5d44f"
+        "crowdedFraction": 0.0258,
+        "meanPlayerSpeed": 1.8551,
+        "eventSignature": "39de0369192abc85",
+        "spatialSignature": "f672607cd9ffcb5f"
       },
       {
         "sides": 3,
         "seed": 1020,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 367.0851,
-        "passes": 3,
-        "received": 1,
-        "shots": 3,
+        "ms": 333.3324,
+        "passes": 7,
+        "received": 3,
+        "shots": 4,
         "goals": 0,
         "passDistances": [
           6.362129022360233,
-          12.394376389923375,
-          8.800517748919079
+          12.394377101161853,
+          9.722047150283153,
+          4.052099857908151,
+          2.82112282185931,
+          4.138702280909143,
+          8.314289425143619
         ],
         "shotDistances": [
-          7.275892712705769,
-          10.355674923707106,
-          5.455307725973421
+          7.1976733643409805,
+          9.890586756698115,
+          7.744941086432959,
+          11.116852134105962
         ],
         "patterns": {
           "rising": 1,
-          "driven": 1,
-          "placed": 1
+          "placed": 2,
+          "header": 1
         },
-        "crowdedFraction": 0.1082,
-        "meanPlayerSpeed": 2.5077,
-        "eventSignature": "6e3dc349bd83ddc2",
-        "spatialSignature": "24baa43510985fc3"
+        "crowdedFraction": 0.1235,
+        "meanPlayerSpeed": 2.5134,
+        "eventSignature": "f84859a93e75dfab",
+        "spatialSignature": "aef31a9a0ee988e8"
       },
       {
         "sides": 4,
         "seed": 1020,
         "gameDuration": 30,
-        "wallDuration": 32.016666666666666,
-        "ms": 720.4513,
+        "wallDuration": 30,
+        "ms": 385.6945,
         "passes": 4,
         "received": 1,
-        "shots": 2,
-        "goals": 1,
+        "shots": 1,
+        "goals": 0,
         "passDistances": [
           9.699004190890127,
           8.759995330386518,
-          2.871927686088443,
-          12.864273377889564
+          2.8729628457854504,
+          12.9035564146033
         ],
         "shotDistances": [
-          2.9767511869250605,
-          13.158413388990994
+          13.18271697485825
         ],
         "patterns": {
-          "rising": 1,
-          "placed": 1
+          "driven": 1
         },
-        "crowdedFraction": 0.058,
-        "meanPlayerSpeed": 2.3982,
-        "eventSignature": "ff2b6ac713a2f11e",
-        "spatialSignature": "59ee60bceb289d0b"
+        "crowdedFraction": 0.0603,
+        "meanPlayerSpeed": 2.3726,
+        "eventSignature": "2efe61e2b3d66c17",
+        "spatialSignature": "d6dfa6431625d6a3"
       },
       {
         "sides": 6,
         "seed": 1020,
         "gameDuration": 30,
-        "wallDuration": 34.28333333333333,
-        "ms": 1161.4597,
-        "passes": 5,
-        "received": 1,
-        "shots": 3,
-        "goals": 2,
+        "wallDuration": 30,
+        "ms": 670.7865,
+        "passes": 4,
+        "received": 2,
+        "shots": 2,
+        "goals": 0,
         "passDistances": [
           14.217489434649606,
           6.256895862666001,
-          6.783165587972544,
-          11.486483288756435,
-          7.152157189516185
+          6.832048677927339,
+          15.737982524826501
         ],
         "shotDistances": [
-          8.743042947577399,
-          2.602517186790304,
-          11.441149223074117
+          8.791557666548588,
+          11.00449601777869
         ],
         "patterns": {
           "rising": 1,
-          "placed": 1,
-          "driven": 1
+          "placed": 1
         },
-        "crowdedFraction": 0.0256,
-        "meanPlayerSpeed": 1.8199,
-        "eventSignature": "232eeb81e807eab3",
-        "spatialSignature": "65336a8d57ffec73"
+        "crowdedFraction": 0.0253,
+        "meanPlayerSpeed": 1.7132,
+        "eventSignature": "79c337c1a9e1032f",
+        "spatialSignature": "daaac29f9260da22"
       },
       {
         "sides": 2,
         "seed": 1021,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 302.8219,
-        "passes": 10,
-        "received": 6,
-        "shots": 1,
+        "ms": 276.9543,
+        "passes": 7,
+        "received": 7,
+        "shots": 3,
         "goals": 0,
         "passDistances": [
           8.624044573642324,
-          5.036972054574935,
-          7.730244158169488,
-          6.672998331511437,
-          4.549183086251502,
-          5.576211151286201,
-          4.1547165371181,
-          9.064720373007189,
-          12.790870641853282,
-          4.422086571846101
+          5.039345783466627,
+          6.509312598965487,
+          7.499127469212538,
+          7.333273568711207,
+          11.265829121649835,
+          1.5645339302933527
         ],
         "shotDistances": [
-          14.833539265931126
+          14.187173791318312,
+          6.980713667689482,
+          6.592443770836702
         ],
         "patterns": {
-          "placed": 1
+          "placed": 2,
+          "rising": 1
         },
-        "crowdedFraction": 0.0439,
-        "meanPlayerSpeed": 2.1302,
-        "eventSignature": "70b1bfc04010d363",
-        "spatialSignature": "b0f2bb967eb2f89f"
+        "crowdedFraction": 0.0381,
+        "meanPlayerSpeed": 2.1249,
+        "eventSignature": "82ad9950e99135bc",
+        "spatialSignature": "d4a7807ae7d64c50"
       },
       {
         "sides": 3,
         "seed": 1021,
         "gameDuration": 30,
-        "wallDuration": 32.175,
-        "ms": 219.4366,
+        "wallDuration": 30,
+        "ms": 209.579,
         "passes": 6,
-        "received": 4,
-        "shots": 1,
-        "goals": 1,
+        "received": 3,
+        "shots": 0,
+        "goals": 0,
         "passDistances": [
           9.765520000105681,
           4.668794255005801,
-          1.7585516346800785,
-          3.1840073333135015,
-          2.5642849067716273,
-          8.04818708855051
+          1.7583363499800648,
+          3.1867118334955133,
+          13.428576370504665,
+          2.176426529710368
         ],
-        "shotDistances": [
-          10.380394712919479
-        ],
-        "patterns": {
-          "one_touch": 1
-        },
-        "crowdedFraction": 0.1356,
-        "meanPlayerSpeed": 2.7647,
-        "eventSignature": "04a1f5739c7764d8",
-        "spatialSignature": "a04f666c151b0d3b"
+        "shotDistances": [],
+        "patterns": {},
+        "crowdedFraction": 0.1399,
+        "meanPlayerSpeed": 2.811,
+        "eventSignature": "6dca19cc8789ccb8",
+        "spatialSignature": "9ecc3a54234ca75b"
       },
       {
         "sides": 4,
         "seed": 1021,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 383.7232,
-        "passes": 5,
-        "received": 0,
-        "shots": 3,
+        "ms": 354.874,
+        "passes": 9,
+        "received": 5,
+        "shots": 1,
         "goals": 0,
         "passDistances": [
           13.552753838743195,
           9.069664191237559,
-          12.491700295531817,
-          12.999935752493801,
-          9.39597857168562
+          12.491677849141992,
+          11.01892347622775,
+          6.902583141038247,
+          10.108196560126881,
+          3.2713823316318704,
+          1.4943578467263148,
+          9.71487242518013
         ],
         "shotDistances": [
-          7.182942585627575,
-          5.81697477201737,
-          4.115984705329833
+          7.182942528472409
         ],
         "patterns": {
-          "driven": 2,
-          "placed": 1
+          "driven": 1
         },
-        "crowdedFraction": 0.041,
-        "meanPlayerSpeed": 2.108,
-        "eventSignature": "41f7ac34a5fd1586",
-        "spatialSignature": "a9be6d9274867a7d"
+        "crowdedFraction": 0.0597,
+        "meanPlayerSpeed": 2.1326,
+        "eventSignature": "5a0286c8f9275741",
+        "spatialSignature": "d78115b83cf4b931"
       },
       {
         "sides": 6,
         "seed": 1021,
         "gameDuration": 30,
-        "wallDuration": 32.8,
-        "ms": 632.6283,
-        "passes": 10,
-        "received": 6,
-        "shots": 2,
-        "goals": 1,
+        "wallDuration": 30,
+        "ms": 575.2138,
+        "passes": 5,
+        "received": 4,
+        "shots": 4,
+        "goals": 0,
         "passDistances": [
           14.934569178789197,
           5.716413208945927,
           3.8147873063542836,
           1.2847283934271023,
-          2.921796014503706,
-          10.631921533020428,
-          4.935192603513582,
-          13.998301136312973,
-          4.2119506222879854,
-          7.568942508596341
+          11.58174341011459
         ],
         "shotDistances": [
           6.543570914971038,
-          12.462178549356096
+          12.268663142260243,
+          9.489595015624277,
+          13.211708039652255
         ],
         "patterns": {
-          "placed": 2
+          "placed": 3,
+          "rising": 1
         },
-        "crowdedFraction": 0.0236,
-        "meanPlayerSpeed": 1.7915,
-        "eventSignature": "d43a9993b69c4ce6",
-        "spatialSignature": "43511c31c4a6497f"
+        "crowdedFraction": 0.0191,
+        "meanPlayerSpeed": 1.8416,
+        "eventSignature": "93de919acbf18b2c",
+        "spatialSignature": "b7df426d9bdfd532"
       },
       {
         "sides": 2,
         "seed": 1022,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 276.6354,
-        "passes": 10,
-        "received": 7,
+        "ms": 447.3058,
+        "passes": 11,
+        "received": 9,
         "shots": 1,
         "goals": 0,
         "passDistances": [
@@ -5883,119 +5866,120 @@
           1.9184248177203427,
           8.90401601544649,
           4.6139467251380015,
-          1.8179478330055552,
-          5.267865507164058,
-          9.42407949222103,
-          5.095691732007302
+          11.29644629558767,
+          3.4005548836661466,
+          3.8558054439437655,
+          9.210040951696431,
+          15.479588357558892
         ],
         "shotDistances": [
-          8.78918211230697
+          7.447486328415403
         ],
         "patterns": {
-          "placed": 1
+          "chip": 1
         },
-        "crowdedFraction": 0.0322,
-        "meanPlayerSpeed": 2.1054,
-        "eventSignature": "b35328d15d35dc0c",
-        "spatialSignature": "81faf5845fd680d1"
+        "crowdedFraction": 0.0345,
+        "meanPlayerSpeed": 2.1124,
+        "eventSignature": "7c467e55a33f9359",
+        "spatialSignature": "bd9cd618dbab39e4"
       },
       {
         "sides": 3,
         "seed": 1022,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 313.8661,
-        "passes": 3,
-        "received": 2,
-        "shots": 3,
-        "goals": 0,
+        "wallDuration": 31.974999999999998,
+        "ms": 339.1865,
+        "passes": 2,
+        "received": 1,
+        "shots": 4,
+        "goals": 1,
         "passDistances": [
           6.336660802609314,
-          10.570374100200867,
-          1.5699019977329305
+          10.57034218522882
         ],
         "shotDistances": [
-          14.083991903927036,
-          7.183541864362875,
-          8.088897237807911
+          14.084053458214255,
+          8.348729070755546,
+          4.730421788815858,
+          2.7103807984085826
         ],
         "patterns": {
-          "placed": 3
+          "placed": 2,
+          "driven": 2
         },
-        "crowdedFraction": 0.118,
-        "meanPlayerSpeed": 2.6387,
-        "eventSignature": "471514d112c34db0",
-        "spatialSignature": "0463ed1152256c31"
+        "crowdedFraction": 0.11,
+        "meanPlayerSpeed": 2.5062,
+        "eventSignature": "8ce129337744534d",
+        "spatialSignature": "91cdf09bc9f0b939"
       },
       {
         "sides": 4,
         "seed": 1022,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 408.7852,
-        "passes": 9,
-        "received": 5,
-        "shots": 1,
-        "goals": 0,
+        "wallDuration": 32.016666666666666,
+        "ms": 380.7694,
+        "passes": 6,
+        "received": 4,
+        "shots": 3,
+        "goals": 1,
         "passDistances": [
           9.88091178343788,
-          5.877792717512313,
-          7.390800027688336,
-          5.5978297017005305,
-          13.769845299685164,
-          7.128954548443976,
-          11.1481405806224,
-          1.6200688506183591,
-          3.863882716484324
+          5.601285598826108,
+          12.33292738086862,
+          8.448457164627639,
+          4.647327994709514,
+          3.63178206255399
         ],
         "shotDistances": [
-          7.609299783670502
+          12.384182686799265,
+          4.779291435716379,
+          13.488053372034821
         ],
         "patterns": {
-          "one_touch": 1
+          "driven": 3
         },
-        "crowdedFraction": 0.0515,
-        "meanPlayerSpeed": 2.2474,
-        "eventSignature": "d438e77783cd10f3",
-        "spatialSignature": "c9f0fc7bb50434fc"
+        "crowdedFraction": 0.0375,
+        "meanPlayerSpeed": 2.2384,
+        "eventSignature": "58be0738916d3653",
+        "spatialSignature": "aba85a9295dec1cc"
       },
       {
         "sides": 6,
         "seed": 1022,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 758.1206,
-        "passes": 6,
-        "received": 6,
-        "shots": 1,
+        "ms": 676.1071,
+        "passes": 4,
+        "received": 2,
+        "shots": 2,
         "goals": 0,
         "passDistances": [
-          15.292088651732731,
-          11.220186282137814,
-          7.811163068504326,
-          12.675170168808407,
-          3.3923220470122746,
-          13.427459388149233
+          15.292088637605845,
+          11.220330915157746,
+          7.385480321210627,
+          11.176039987001229
         ],
         "shotDistances": [
-          11.181980931306347
+          11.180993040670145,
+          5.607943036871806
         ],
         "patterns": {
-          "driven": 1
+          "driven": 1,
+          "rising": 1
         },
-        "crowdedFraction": 0.0214,
-        "meanPlayerSpeed": 1.5854,
-        "eventSignature": "2d79e6ca721e39ad",
-        "spatialSignature": "f37fc21d659f83c4"
+        "crowdedFraction": 0.0231,
+        "meanPlayerSpeed": 1.7641,
+        "eventSignature": "c49e0e45ed9c3486",
+        "spatialSignature": "aed6d6e73be82744"
       },
       {
         "sides": 2,
         "seed": 1023,
         "gameDuration": 30,
         "wallDuration": 35.53333333333333,
-        "ms": 810.0426,
-        "passes": 16,
-        "received": 16,
+        "ms": 325.6589,
+        "passes": 12,
+        "received": 8,
         "shots": 3,
         "goals": 1,
         "passDistances": [
@@ -6005,573 +5989,552 @@
           5.466897320449923,
           7.107178276480025,
           1.4595438662476476,
-          7.292045317906992,
-          5.375662517352743,
-          4.453662683588362,
-          3.343814276806993,
-          5.23143036552565,
-          9.231260562031903,
-          4.92522010310665,
-          7.510528135728215,
-          2.003677424852333,
-          7.960203854181254
+          6.702276755832524,
+          8.932615456695558,
+          10.146137707320497,
+          8.328879955091542,
+          1.3108847505060872,
+          2.450315936716463
         ],
         "shotDistances": [
           5.715782221233076,
-          4.868027307661965,
-          10.215797720627197
+          4.868027307661965
         ],
         "patterns": {
           "driven": 1,
           "rising": 1,
-          "one_touch": 1
+          "free_kick": 1
         },
-        "crowdedFraction": 0.0571,
-        "meanPlayerSpeed": 2.1036,
-        "eventSignature": "6e11833cc16cbbee",
-        "spatialSignature": "5a0b6fc14179eb37"
+        "crowdedFraction": 0.0517,
+        "meanPlayerSpeed": 2.1507,
+        "eventSignature": "023f798d54bbec64",
+        "spatialSignature": "aade0fec6a7da933"
       },
       {
         "sides": 3,
         "seed": 1023,
         "gameDuration": 30,
         "wallDuration": 34.95,
-        "ms": 581.6409,
-        "passes": 7,
+        "ms": 405.2942,
+        "passes": 5,
         "received": 2,
-        "shots": 4,
+        "shots": 5,
         "goals": 2,
         "passDistances": [
           7.2243243253690475,
-          7.093541310019042,
-          6.376857390928551,
-          6.765895409417496,
-          5.462442814560821,
-          1.3838059868994914,
-          4.566273427459833
+          7.093541167274537,
+          6.377647160622925,
+          2.6287764613173796,
+          3.6347733220880514
         ],
         "shotDistances": [
           11.376186899607237,
-          1.587212939165701,
-          5.191557948162492,
-          7.468560678448438
+          1.5872235297601955,
+          5.185797388805527,
+          5.429452562245304,
+          5.752415006728242
         ],
         "patterns": {
-          "driven": 2,
-          "rising": 1,
-          "placed": 1
+          "driven": 1,
+          "rising": 2,
+          "placed": 2
         },
-        "crowdedFraction": 0.1464,
-        "meanPlayerSpeed": 2.4134,
-        "eventSignature": "9841655856cc1b3a",
-        "spatialSignature": "d59b31e94bb70b90"
+        "crowdedFraction": 0.1454,
+        "meanPlayerSpeed": 2.4428,
+        "eventSignature": "ed22f56d9915b7e9",
+        "spatialSignature": "d597f27267080be6"
       },
       {
         "sides": 4,
         "seed": 1023,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 406.1342,
-        "passes": 5,
-        "received": 2,
+        "wallDuration": 33.95,
+        "ms": 546.6146,
+        "passes": 6,
+        "received": 3,
         "shots": 4,
-        "goals": 0,
+        "goals": 2,
         "passDistances": [
           4.704209726851286,
           4.137249172698647,
-          6.830544580362036,
-          5.797803313020186,
-          4.08353981302261
+          3.467571970990916,
+          5.419903014523739,
+          8.482702812184922,
+          3.456019129066523
         ],
         "shotDistances": [
           13.62687244297474,
-          5.100527293924212,
-          7.413856602047337,
-          4.551300828764
+          3.603008827384465,
+          10.512842156348718,
+          13.313992672481474
         ],
         "patterns": {
-          "driven": 3,
-          "placed": 1
+          "driven": 2,
+          "placed": 2
         },
-        "crowdedFraction": 0.0287,
-        "meanPlayerSpeed": 2.4056,
-        "eventSignature": "ce859428f5fa0d1f",
-        "spatialSignature": "f05f1b2b43c5b275"
+        "crowdedFraction": 0.0565,
+        "meanPlayerSpeed": 2.2659,
+        "eventSignature": "3372d96759a21d14",
+        "spatialSignature": "34520f115f377fa1"
       },
       {
         "sides": 6,
         "seed": 1023,
         "gameDuration": 30,
-        "wallDuration": 32.725,
-        "ms": 718.9595,
-        "passes": 6,
-        "received": 5,
-        "shots": 2,
-        "goals": 1,
+        "wallDuration": 35.05,
+        "ms": 841.9674,
+        "passes": 2,
+        "received": 2,
+        "shots": 4,
+        "goals": 2,
         "passDistances": [
           14.318558331625818,
-          9.279356569888575,
-          10.874319659161683,
-          5.705823390743997,
-          1.8817274442300833,
-          5.6972558034989
+          9.279356569888575
         ],
         "shotDistances": [
           9.770633213238977,
-          13.484799161730344
+          13.484791514149627,
+          2.06416059414733,
+          15.236938647327015
         ],
         "patterns": {
-          "driven": 2
+          "driven": 2,
+          "rising": 2
         },
-        "crowdedFraction": 0.0181,
-        "meanPlayerSpeed": 1.7072,
-        "eventSignature": "f4c0204cac85f5e2",
-        "spatialSignature": "ddac0000695bba62"
+        "crowdedFraction": 0.0166,
+        "meanPlayerSpeed": 1.8993,
+        "eventSignature": "adcd1b1808d5ae47",
+        "spatialSignature": "af014df753e30df4"
       },
       {
         "sides": 2,
         "seed": 1024,
         "gameDuration": 30,
         "wallDuration": 30,
-        "ms": 323.4162,
+        "ms": 265.602,
         "passes": 6,
         "received": 5,
         "shots": 2,
         "goals": 0,
         "passDistances": [
           8.354694571021403,
-          5.126689543613134,
-          2.380711865649117,
-          3.3469831519039555,
-          2.066304674745251,
-          3.561875539823064
+          2.278547233421149,
+          3.0304866364949916,
+          6.948876584004732,
+          5.6578759819907445,
+          3.7548949526857145
         ],
         "shotDistances": [
-          10.68514502098688
+          7.129138283525401
         ],
         "patterns": {
           "free_kick": 1,
-          "rising": 1
+          "chip": 1
         },
-        "crowdedFraction": 0.0384,
-        "meanPlayerSpeed": 2.2283,
-        "eventSignature": "8304a3f3ff595d2b",
-        "spatialSignature": "fb6bcd9ec93277d2"
+        "crowdedFraction": 0.0457,
+        "meanPlayerSpeed": 2.1105,
+        "eventSignature": "d903c1d6f9511c54",
+        "spatialSignature": "0067218d4f457b2f"
       },
       {
         "sides": 3,
         "seed": 1024,
         "gameDuration": 30,
-        "wallDuration": 33.575,
-        "ms": 279.3745,
-        "passes": 7,
-        "received": 5,
-        "shots": 3,
-        "goals": 2,
+        "wallDuration": 30,
+        "ms": 300.5619,
+        "passes": 6,
+        "received": 3,
+        "shots": 2,
+        "goals": 0,
         "passDistances": [
           9.754909394107946,
           9.796595778937574,
-          9.235456559331286,
-          1.9864596378099806,
-          11.884872194551141,
-          2.7396831147901954,
-          9.860523202778996
+          9.239376073536645,
+          8.881938471111066,
+          2.435812876753454,
+          11.996362732218985
         ],
         "shotDistances": [
           5.801985647759934,
-          7.766812737896563,
-          11.140960978063895
+          10.965176386121517
         ],
         "patterns": {
           "rising": 1,
-          "placed": 1,
           "driven": 1
         },
-        "crowdedFraction": 0.1367,
-        "meanPlayerSpeed": 2.4188,
-        "eventSignature": "a109a4b88f1456af",
-        "spatialSignature": "eef15d7bedc0a273"
+        "crowdedFraction": 0.1126,
+        "meanPlayerSpeed": 2.6485,
+        "eventSignature": "995bb5c11cc77ee9",
+        "spatialSignature": "de31b1d632a16535"
       },
       {
         "sides": 4,
         "seed": 1024,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 410.7491,
-        "passes": 7,
-        "received": 4,
+        "wallDuration": 32.25,
+        "ms": 401.5427,
+        "passes": 5,
+        "received": 2,
         "shots": 3,
-        "goals": 0,
+        "goals": 1,
         "passDistances": [
           13.322791569749747,
           7.544665327629792,
-          3.5407654880580224,
-          8.395728485548515,
-          9.50185697109098,
-          2.0825650631657164,
-          3.9423650382613897
+          3.5407571795004107,
+          8.167542934556087,
+          3.6131041112624884
         ],
         "shotDistances": [
-          7.9272623214068,
-          8.930593352799272,
-          3.6910688856953393
+          7.927279513856987,
+          2.5456273215919976,
+          12.736500460949573
         ],
         "patterns": {
-          "placed": 1,
-          "one_touch": 1,
+          "placed": 2,
           "rising": 1
         },
-        "crowdedFraction": 0.0556,
-        "meanPlayerSpeed": 2.1036,
-        "eventSignature": "931c6771a0b93b4a",
-        "spatialSignature": "7d59269b5c745aba"
+        "crowdedFraction": 0.0626,
+        "meanPlayerSpeed": 2.2538,
+        "eventSignature": "ebfcf7b267f37911",
+        "spatialSignature": "767aa6173e13a2aa"
       },
       {
         "sides": 6,
         "seed": 1024,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 589.5538,
+        "wallDuration": 34.266666666666666,
+        "ms": 1100.6133,
         "passes": 8,
-        "received": 3,
-        "shots": 2,
-        "goals": 0,
+        "received": 6,
+        "shots": 3,
+        "goals": 2,
         "passDistances": [
           14.86284220455763,
           9.364938381544409,
-          9.004051361071857,
-          5.7812370943917974,
-          7.569669032824688,
-          13.64686129244734,
-          8.557377643891476,
-          2.6989854885560636
+          9.004185631512904,
+          13.995543573481944,
+          5.325447123188798,
+          13.154970604722147,
+          5.616199052342071,
+          4.713630711826554
         ],
         "shotDistances": [
-          5.154970279857657,
-          10.944676124998734
+          13.854259241823518,
+          4.259810102142134,
+          8.889165339381083
         ],
         "patterns": {
-          "rising": 1,
-          "one_touch": 1
+          "header": 1,
+          "placed": 1,
+          "driven": 1
         },
-        "crowdedFraction": 0.0174,
-        "meanPlayerSpeed": 1.7082,
-        "eventSignature": "13f07145636e17ca",
-        "spatialSignature": "6fda8000cf3c9f0b"
+        "crowdedFraction": 0.0204,
+        "meanPlayerSpeed": 1.8053,
+        "eventSignature": "0460ccca56770b1b",
+        "spatialSignature": "808a345492e5bdf6"
       },
       {
         "sides": 2,
         "seed": 1025,
         "gameDuration": 30,
-        "wallDuration": 34.80833333333333,
-        "ms": 387.3056,
-        "passes": 9,
-        "received": 9,
-        "shots": 3,
-        "goals": 1,
+        "wallDuration": 30,
+        "ms": 514.3578,
+        "passes": 8,
+        "received": 5,
+        "shots": 2,
+        "goals": 0,
         "passDistances": [
           8.048083484826366,
           5.2636147377924685,
-          6.073140584735948,
-          2.845664304858189,
-          9.407659598958519,
-          6.3447356289644095,
-          8.361412463660331,
-          5.512205859746275,
-          5.934780635428445
+          5.932453768932153,
+          5.68707974430608,
+          4.2679369938401726,
+          4.042934871913136,
+          3.233525073471346,
+          4.238241703391068
         ],
         "shotDistances": [
-          7.781805179911313
+          4.956732813237301
         ],
         "patterns": {
-          "free_kick": 2,
-          "rising": 1
+          "free_kick": 1,
+          "placed": 1
         },
-        "crowdedFraction": 0.046,
-        "meanPlayerSpeed": 2.3496,
-        "eventSignature": "560e3ee68f47820e",
-        "spatialSignature": "554c33de66e37a0b"
+        "crowdedFraction": 0.0421,
+        "meanPlayerSpeed": 2.092,
+        "eventSignature": "64ea80cc12f1cbd4",
+        "spatialSignature": "8085c776cabcb211"
       },
       {
         "sides": 3,
         "seed": 1025,
         "gameDuration": 30,
         "wallDuration": 33.458333333333336,
-        "ms": 281.5181,
-        "passes": 6,
-        "received": 3,
+        "ms": 414.1052,
+        "passes": 4,
+        "received": 2,
         "shots": 4,
         "goals": 2,
         "passDistances": [
           6.43033296427188,
-          4.30377105312486,
-          2.315305477626008,
-          3.520655176666735,
-          5.099869125868168,
-          7.5273678527740655
+          4.3037711251529345,
+          2.3152991949393855,
+          3.5269676678563737
         ],
         "shotDistances": [
           13.33698200348444,
-          7.7130593526320546,
-          4.6492844616027895,
-          6.387763315086385
+          7.713059338214214,
+          4.637885300102042,
+          5.535489038128253
         ],
         "patterns": {
-          "driven": 3,
-          "placed": 1
+          "driven": 2,
+          "placed": 1,
+          "rising": 1
         },
-        "crowdedFraction": 0.14,
-        "meanPlayerSpeed": 2.5496,
-        "eventSignature": "7a78a087b96a7483",
-        "spatialSignature": "8212e3765aab54ee"
+        "crowdedFraction": 0.1267,
+        "meanPlayerSpeed": 2.6178,
+        "eventSignature": "4719d3a8e1b957b5",
+        "spatialSignature": "c1d5d39a951205ba"
       },
       {
         "sides": 4,
         "seed": 1025,
         "gameDuration": 30,
-        "wallDuration": 32.19166666666666,
-        "ms": 405.2241,
-        "passes": 8,
-        "received": 5,
-        "shots": 3,
-        "goals": 1,
+        "wallDuration": 30,
+        "ms": 459.2215,
+        "passes": 6,
+        "received": 2,
+        "shots": 2,
+        "goals": 0,
         "passDistances": [
           13.075229875243629,
           6.071927928154602,
           5.97695785509962,
-          8.431163130998176,
-          2.619568658956078,
-          3.4502312275364444,
-          4.316406243588653,
-          3.4667353016234292
+          8.431104433618906,
+          2.5363224941846347,
+          8.000346142536854
         ],
         "shotDistances": [
-          5.934857799749552,
-          4.221212363516389,
-          10.476454359543698
+          5.910521060770949,
+          15.2316447506987
         ],
         "patterns": {
-          "placed": 2,
-          "driven": 1
+          "placed": 2
         },
-        "crowdedFraction": 0.0565,
-        "meanPlayerSpeed": 2.0832,
-        "eventSignature": "cfdf82a77699178e",
-        "spatialSignature": "1752011ba398671d"
+        "crowdedFraction": 0.0498,
+        "meanPlayerSpeed": 2.1096,
+        "eventSignature": "e492493d9609cd23",
+        "spatialSignature": "16fb9034bb8d6af8"
       },
       {
         "sides": 6,
         "seed": 1025,
         "gameDuration": 30,
-        "wallDuration": 30,
-        "ms": 788.5698,
-        "passes": 9,
-        "received": 7,
-        "shots": 1,
-        "goals": 0,
+        "wallDuration": 31.974999999999998,
+        "ms": 1625.1183,
+        "passes": 4,
+        "received": 1,
+        "shots": 2,
+        "goals": 1,
         "passDistances": [
           15.341844478794375,
-          5.884658888378299,
-          7.134176934050477,
-          4.3152890880687576,
-          5.529288706008502,
-          3.9873155963734246,
-          2.5306181479495207,
-          3.0615271187913526,
-          2.9405176936864943
+          6.702402653767193,
+          15.111595280405272,
+          11.245064101119667
         ],
         "shotDistances": [
-          5.815255956718783
+          3.3364046510531953,
+          12.149737896474988
         ],
         "patterns": {
-          "driven": 1
+          "placed": 1,
+          "rising": 1
         },
-        "crowdedFraction": 0.0256,
-        "meanPlayerSpeed": 1.7607,
-        "eventSignature": "0aad54371e18fd57",
-        "spatialSignature": "b32974fe284eee26"
+        "crowdedFraction": 0.0221,
+        "meanPlayerSpeed": 1.6948,
+        "eventSignature": "ab3b3a24551084f4",
+        "spatialSignature": "2ad899bd5275d2ab"
       }
     ],
     "modes": {
       "2": {
         "matches": 25,
-        "passes": 254,
-        "received": 199,
-        "shots": 41,
-        "goals": 9,
+        "passes": 249,
+        "received": 188,
+        "shots": 40,
+        "goals": 8,
         "passDistance": {
-          "n": 254,
-          "p10": 2.9452,
-          "median": 5.5762,
-          "p90": 9.4177
+          "n": 249,
+          "p10": 2.183,
+          "median": 5.5424,
+          "p90": 9.2708
         },
         "shotDistance": {
-          "n": 31,
-          "p10": 5.252,
-          "median": 8.7259,
-          "p90": 12.5504
+          "n": 30,
+          "p10": 3.429,
+          "median": 6.9807,
+          "p90": 12.8358
         },
         "uniqueEventSignatures": 25,
         "uniqueSpatialSignatures": 25,
         "preparationMs": {
           "n": 25,
-          "p10": 276.6354,
-          "median": 398.2002,
-          "p90": 810.0426
+          "p10": 237.4291,
+          "median": 387.5816,
+          "p90": 554.346
         },
-        "meanCrowdedFraction": 0.0431,
-        "meanPlayerSpeed": 2.1976,
+        "meanCrowdedFraction": 0.0426,
+        "meanPlayerSpeed": 2.1631,
         "patterns": {
           "free_kick": 10,
-          "rising": 6,
+          "driven": 8,
           "placed": 13,
-          "header": 1,
-          "one_touch": 3,
-          "driven": 7,
-          "chip": 1
+          "one_touch": 2,
+          "rising": 4,
+          "chip": 3
         }
       },
       "3": {
         "matches": 25,
-        "passes": 126,
-        "received": 56,
-        "shots": 70,
+        "passes": 130,
+        "received": 57,
+        "shots": 69,
         "goals": 18,
         "passDistance": {
-          "n": 126,
-          "p10": 2.9083,
-          "median": 6.7126,
+          "n": 130,
+          "p10": 3.003,
+          "median": 6.4487,
           "p90": 11.5853
         },
         "shotDistance": {
-          "n": 70,
-          "p10": 3.1443,
-          "median": 8.3072,
-          "p90": 11.8743
+          "n": 69,
+          "p10": 3.4409,
+          "median": 8.8231,
+          "p90": 11.9045
         },
         "uniqueEventSignatures": 25,
         "uniqueSpatialSignatures": 25,
         "preparationMs": {
           "n": 25,
-          "p10": 219.4366,
-          "median": 415.0043,
-          "p90": 625.775
+          "p10": 177.3322,
+          "median": 377.1732,
+          "p90": 575.7365
         },
-        "meanCrowdedFraction": 0.119,
-        "meanPlayerSpeed": 2.6134,
+        "meanCrowdedFraction": 0.1173,
+        "meanPlayerSpeed": 2.6087,
         "patterns": {
-          "rising": 22,
-          "header": 2,
-          "driven": 20,
-          "placed": 20,
-          "one_touch": 5,
-          "chip": 1
+          "rising": 24,
+          "driven": 17,
+          "one_touch": 2,
+          "placed": 25,
+          "header": 1
         }
       },
       "4": {
         "matches": 25,
-        "passes": 149,
-        "received": 65,
-        "shots": 61,
-        "goals": 11,
+        "passes": 142,
+        "received": 72,
+        "shots": 64,
+        "goals": 16,
         "passDistance": {
-          "n": 149,
-          "p10": 3.4502,
-          "median": 7.8686,
-          "p90": 13.3228
+          "n": 142,
+          "p10": 3.4423,
+          "median": 8.1675,
+          "p90": 12.8457
         },
         "shotDistance": {
-          "n": 61,
-          "p10": 4.116,
-          "median": 8.593,
-          "p90": 13.6269
+          "n": 64,
+          "p10": 2.8999,
+          "median": 7.9273,
+          "p90": 13.4881
         },
         "uniqueEventSignatures": 25,
         "uniqueSpatialSignatures": 25,
         "preparationMs": {
           "n": 25,
-          "p10": 383.7232,
-          "median": 558.9631,
-          "p90": 849.4211
+          "p10": 363.2262,
+          "median": 489.3634,
+          "p90": 804.4247
         },
-        "meanCrowdedFraction": 0.0541,
-        "meanPlayerSpeed": 2.2047,
+        "meanCrowdedFraction": 0.0542,
+        "meanPlayerSpeed": 2.2441,
         "patterns": {
-          "driven": 25,
-          "placed": 17,
-          "rising": 12,
+          "driven": 24,
+          "placed": 20,
+          "rising": 13,
           "chip": 1,
-          "one_touch": 4,
-          "header": 2
+          "header": 4,
+          "one_touch": 2
         }
       },
       "6": {
         "matches": 25,
-        "passes": 160,
-        "received": 99,
-        "shots": 50,
-        "goals": 8,
+        "passes": 127,
+        "received": 74,
+        "shots": 63,
+        "goals": 14,
         "passDistance": {
-          "n": 160,
-          "p10": 2.5465,
-          "median": 7.5689,
-          "p90": 14.5933
+          "n": 127,
+          "p10": 3.3786,
+          "median": 9.4189,
+          "p90": 14.8628
         },
         "shotDistance": {
-          "n": 50,
-          "p10": 3.9698,
-          "median": 8.743,
-          "p90": 13.1373
+          "n": 63,
+          "p10": 4.5802,
+          "median": 9.0567,
+          "p90": 13.4848
         },
         "uniqueEventSignatures": 25,
         "uniqueSpatialSignatures": 25,
         "preparationMs": {
           "n": 25,
-          "p10": 632.6283,
-          "median": 972.0471,
-          "p90": 1398.7398
+          "p10": 575.2138,
+          "median": 809.61,
+          "p90": 1484.552
         },
-        "meanCrowdedFraction": 0.0217,
-        "meanPlayerSpeed": 1.7457,
+        "meanCrowdedFraction": 0.0223,
+        "meanPlayerSpeed": 1.7782,
         "patterns": {
-          "rising": 18,
-          "chip": 6,
-          "placed": 13,
-          "driven": 11,
-          "one_touch": 2
+          "rising": 19,
+          "chip": 3,
+          "placed": 22,
+          "driven": 15,
+          "header": 4
         }
       }
     },
-    "elapsedSeconds": 64.8027
+    "elapsedSeconds": 60.0372
   },
   "deltas": {
     "2": {
-      "crowdedFraction": 0.0033,
-      "meanPlayerSpeed": -0.2124,
+      "crowdedFraction": 0.0028,
+      "meanPlayerSpeed": -0.2469,
       "receivedFractionBefore": 0.8125,
-      "receivedFractionAfter": 0.7835,
-      "medianPreparationRatio": 1.5844
+      "receivedFractionAfter": 0.755,
+      "medianPreparationRatio": 1.5422
     },
     "3": {
-      "crowdedFraction": -0.0048,
-      "meanPlayerSpeed": -0.2311,
+      "crowdedFraction": -0.0065,
+      "meanPlayerSpeed": -0.2358,
       "receivedFractionBefore": 0.51,
-      "receivedFractionAfter": 0.4444,
-      "medianPreparationRatio": 1.4935
+      "receivedFractionAfter": 0.4385,
+      "medianPreparationRatio": 1.3574
     },
     "4": {
-      "crowdedFraction": -0.0002,
-      "meanPlayerSpeed": -0.2438,
+      "crowdedFraction": -0.0001,
+      "meanPlayerSpeed": -0.2044,
       "receivedFractionBefore": 0.5905,
-      "receivedFractionAfter": 0.4362,
-      "medianPreparationRatio": 1.5232
+      "receivedFractionAfter": 0.507,
+      "medianPreparationRatio": 1.3335
     },
     "6": {
-      "crowdedFraction": 0.0008,
-      "meanPlayerSpeed": -0.2162,
+      "crowdedFraction": 0.0014,
+      "meanPlayerSpeed": -0.1837,
       "receivedFractionBefore": 0.664,
-      "receivedFractionAfter": 0.6188,
-      "medianPreparationRatio": 1.739
+      "receivedFractionAfter": 0.5827,
+      "medianPreparationRatio": 1.4484
     }
   }
 }

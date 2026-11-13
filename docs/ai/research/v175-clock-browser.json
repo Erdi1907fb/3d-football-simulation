@@ -1,0 +1,132 @@
+{
+  "pass": true,
+  "modes": [
+    {
+      "sides": 2,
+      "lang": "tr",
+      "seed": 5,
+      "gameDuration": 60,
+      "liveDuration": 70.19166666666666,
+      "videoDuration": 74.69166666666666,
+      "goal": {
+        "type": "goal",
+        "at": 28.758333333333333,
+        "matchTime": 28.758333333333333,
+        "round": 1,
+        "team": 0,
+        "against": 1,
+        "ownGoal": false,
+        "pattern": "driven",
+        "actor": "Mattéo Guendouzi",
+        "actorIndex": 3,
+        "liveAt": 28.758333333333333
+      },
+      "resume": {
+        "type": "play_resumed",
+        "at": 33.641666666666666,
+        "matchTime": 28.758333333333333,
+        "round": 1,
+        "kind": "kickoff",
+        "liveAt": 33.641666666666666
+      },
+      "clockA": {
+        "elapsed": 28.758333333333333,
+        "paused": true,
+        "overtime": false,
+        "seconds": 32,
+        "text": "0:32"
+      },
+      "clockB": {
+        "elapsed": 28.758333333333333,
+        "paused": true,
+        "overtime": false,
+        "seconds": 32,
+        "text": "0:32"
+      },
+      "card": {
+        "name": "Mattéo Guendouzi",
+        "playerId": "248676",
+        "portrait": "assets/faces/players/2011.webp",
+        "logo": "assets/logos/fenerbahce.png",
+        "teamName": "Fenerbahçe",
+        "ownGoal": false,
+        "team": 0,
+        "at": 28.758333333333333,
+        "age": 0.1999999999999993
+      },
+      "exports": [
+        {
+          "file": "scorer-portrait-1080p60.mp4",
+          "draws": 12,
+          "orientation": "portrait",
+          "width": 1080,
+          "height": 1920,
+          "duration": 0.2
+        },
+        {
+          "file": "scorer-landscape-1080p60.mp4",
+          "draws": 12,
+          "orientation": "landscape",
+          "width": 1920,
+          "height": 1080,
+          "duration": 0.2
+        }
+      ]
+    },
+    {
+      "sides": 4,
+      "lang": "en",
+      "seed": 5,
+      "gameDuration": 60,
+      "liveDuration": 63.30833333333333,
+      "videoDuration": 71.58667871187825,
+      "goal": {
+        "type": "goal",
+        "at": 7.675,
+        "matchTime": 7.675,
+        "round": 1,
+        "team": 2,
+        "against": 1,
+        "ownGoal": false,
+        "pattern": "placed",
+        "actor": "Lamine Yamal",
+        "actorIndex": 8,
+        "liveAt": 7.675
+      },
+      "resume": {
+        "type": "play_resumed",
+        "at": 9.008333333333333,
+        "matchTime": 7.675,
+        "round": 1,
+        "kind": "centre-drop",
+        "liveAt": 9.008333333333333
+      },
+      "clockA": {
+        "elapsed": 7.675,
+        "paused": true,
+        "overtime": false,
+        "seconds": 53,
+        "text": "0:53"
+      },
+      "clockB": {
+        "elapsed": 7.675,
+        "paused": true,
+        "overtime": false,
+        "seconds": 53,
+        "text": "0:53"
+      },
+      "card": {
+        "name": "Lamine Yamal",
+        "playerId": "362150",
+        "portrait": "assets/faces/players/745.webp",
+        "logo": "assets/logos/barcelona.png",
+        "teamName": "FC Barcelona",
+        "ownGoal": false,
+        "team": 2,
+        "at": 7.675,
+        "age": 0.20000000000000018
+      }
+    }
+  ],
+  "errors": []
+}

@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V175 — 2026-11-13 UTC (Codex)
+- Japon Kale ve küçük sahada gol sonrası maç saati gerçek restart'a kadar durur. Video süresi beklemeleri içerir. Golcü adı, mevcut doğrulanmış fotoğraf ve gerçek takım logosu ortak güvenli HUD bandında gösterilir.
+- Mevcut motorda bağımsız seed akışları, tutarlı bireysel karakter, uygun seçeneklerden olasılıksal tercih ve baskı/denge/yorgunluktan fiziksel uygulama hataları. Blok/markaj/geçiş, hareket ataleti ve gerçek temasa bağlı kaleci sektirmesi; hata/gol kotası yok.
+- Mevcut analiz kipine ek olarak kompakt serbest 11v11 (UI 30/60/90 saniye); doğal P/FK tercihleri; isteğe bağlı gerçekleşmiş olay özeti ve aynı çizelgeye taşınan anlatım/SRT. Tüm sekiz aşama bitmedi: tam 90 dakika, geniş kalibrasyon, tam rig retarget, yeni 2v2/3v3 saha seçimi ve paslı FK açık.
+- 42/42 tam regresyon ve son kodda hedefli testler, 100 eski + 100 yeni arena, 8 farklı diziliş/seed örneği; gerçek 3D normal/P/FK/2/3/6 taraf tarayıcı kontrolleri. Son gol kartı her iki yönde 1080p60 H.264/AAC kısa test MP4'üne kodlandı. Görsel/istatistik karşılaştırması ve sınırlar: `research/VALIDATION-V175.md`.
+- Windows kaynak senkronizasyonu ayrı repoda; yerel 10 köprü testi geçti, CI paket testi ayrı kaydedilir. Canlı Hostinger dağıtımı yapılmadı.
+
 ## V174 — 2026-11-13 UTC (Codex)
 - NativeAAColmayan tarayıcıda yerel tembel AAC-LCkodlayıcı; istenenAACsesinin varlığı/kodeği/tam süresi doğrulanır, sessiz başarı kaldırıldı. NativeAACveeskiSafariAACrecorder yolu korunur; vendorlisans/kaynak/rebuildnotları eklendi.
 - Mevcut hafif grafik yolunda ağır gölgeler kapatıldı;1080p60çıktı ve normal highgörünüm korunur.
