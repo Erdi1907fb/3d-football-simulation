@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-13 UTC] Codex · V172 → V173 geliştirme başladı
+- Başlangıç `main=2ba43be`; dal `agent/codex/coordinated-football-v173`.
+- Kullanıcı beş önerinin hepsini sırayla yapmamızı ve Codex/Claude Code arasında kalıcı devir istemiştir. Ortak plan `FOOTBALL-ROADMAP.md`; TASKS T-286…T-290.
+- Bu kayıt başlangıç planıdır, beş aşama tamamlanmış değildir. T-286 temas/animasyon üzerinde inceleme başladı; sonraki somut adım gerçek alım/vuruş verisi ve kaleci pozunu birlikte düzeltmek.
+- Motor: League-Soccer Apache-2.0 yaklaşımı V172'de özgün JS uyarlaması; FM motoru/kodu aktarılmadı. Saha/forma/lig/veri korunur. V172 ölçümündeki6taraf alım kaybı üçüncü aşamanın hedefidir.
+- Ajan değiştirirken `git fetch` ve en yeni main/dal/kayıt okunmalı; açık sahiplik ve test sınırları TASKS/plan dosyasında. Sonuç/oyuncu istatistiği veya gerçek cihaz testi uydurulmaz.
+
 ## [2026-11-13 UTC] Codex · V171 → V172
 - Dal / commit / PR: `agent/codex/shared-football-intelligence`; temel `origin/main=21f1fd2`. Sürüm başlığı `V172: Ortak futbol zekâsı ve elemede değişen saha`. Kod ve bu devir aynı commit'te. Zorla push yok; canlı Hostinger dağıtımı yok.
 - Kullanıcı isteği: Windows motoru yaklaşımıyla web'in bütün modlarının oyuncu/oyun zekâsını geliştir, mevcut görüntüleri koru. Ek istek: Japon Kale elemede sadece kale kaybolmasın, kalan takım sayısının standart sahasına dönüşsün.

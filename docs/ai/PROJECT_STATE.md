@@ -14,6 +14,10 @@
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
 | Sürüm doğrulama | `build.php` → `assets/release-v172.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 172 |
 
+## Devam eden geliştirme — V173
+
+Kullanıcı beş aşamayı sırayla yetkilendirdi: temas/animasyon → takım birlikteliği → kalabalık arena → takım karakteri → gerçek kullanım/1080pvideo. [Ortak plan](FOOTBALL-ROADMAP.md), TASKS T-286…T-290. İlk aşama Codex tarafından başlatıldı; beşi henüz tamamlanmadı. League-Soccer referansı kullanılır; FM özel motoru/kodu aktarılmıyor.
+
 ## V172 — ortak zekâ ve eleme sahası
 
 - `football-intelligence.js`: hız/ivme/yön üzerinden yetişme süresi, top ve rakibin yetişme yarışından pas riski, güvenli destek açısı, pres devri, tekil koşucu markajı, gözleme dayalı kaleci. Normal11v11 (bülten/sezon/konsept aynı motor),5v5,Japon Kale,penaltı veFK bağlandı. League-Soccer yaklaşımından özgün JavaScript uyarlaması; C++ motorunun tamamı/WASM aktarımı değildir. Apache-2.0 lisansı `assets/vendor/league-soccer/LICENSE` içinde.
