@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V174 — 2026-11-13 UTC (Codex)
+- NativeAAColmayan tarayıcıda yerel tembel AAC-LCkodlayıcı; istenenAACsesinin varlığı/kodeği/tam süresi doğrulanır, sessiz başarı kaldırıldı. NativeAACveeskiSafariAACrecorder yolu korunur; vendorlisans/kaynak/rebuildnotları eklendi.
+- Mevcut hafif grafik yolunda ağır gölgeler kapatıldı;1080p60çıktı ve normal highgörünüm korunur.
+-37/37Node/PHPregresyonu +son guard/grafik hedefliPASS. Tam34,5sn5v5/2070gerçek1080×1920/60FPSH.264+AAC48kHzvideo; UIiptal/yeniden hazırlama, gerçek69.507.448baytindirme, ileri/geri ve normalhızsesliendedPASS. Tamffmpegdecodeve−7,7dBmaxsesPASS. İlkElectronindirmeharnessizaman aşımı düzeltildi; aynıSHA-256dosyasından teslim/oynatma devam ettirildi. Ayrıntıresearch/FULL-VIDEO-TEST-V174.md.
+- FizikselWindows/iPhone/Android testi ayrıca açık; LinuxyazılımGPU/AndroidUAemülasyonu cihaz kanıtı değildir. AI/saha/forma/PHPveriakışı değişmedi. CanlıHostinger/Windowsyayını yapılmadı.
+
 ## V173 — 2026-11-13 UTC (Codex)
 - Gerçek dondurulmuş alım/vuruş noktalarıyla ortak temas IK; doğru aktif/destek ayağı, erişilemez hedefi uzatmama. Grounded kalecide üst üste yükselme yerine tek itiş ve sınırlı gövde düzeltmesi.
 - Gerçek son pasa bağlı verkaç/üçüncü oyuncu, normal collective ve arena takım desteği; top kaybında örtü. Kalabalık arenada sektör tutma ve ayrı destek açıları; pas alıcısında yavaşlayan topa buluşma tahmini.

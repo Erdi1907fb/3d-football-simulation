@@ -1,0 +1,200 @@
+{
+  "softwareWebGL": true,
+  "pass": true,
+  "errors": [],
+  "environment": {
+    "hostPlatform": "Linux x86_64",
+    "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 14; TestDevice) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+    "physicalDevice": false,
+    "renderer": "ANGLE (Mesa, llvmpipe (LLVM 19.1.7 256 bits), OpenGL 4.5)",
+    "liteRender": true,
+    "graphics": {
+      "id": "high",
+      "label": "Yüksek / Video",
+      "targetFps": 60,
+      "maxDimension": 1920,
+      "tufts": 0,
+      "shadows": false,
+      "shadowSize": 512,
+      "crowd": "high",
+      "anisotropy": 16,
+      "lite": true
+    },
+    "fallback": false,
+    "aac": false,
+    "aacRecorder": [
+      "audio/mp4",
+      "video/mp4"
+    ]
+  },
+  "match": {
+    "seed": 1,
+    "duration": 34.5,
+    "shots": 4,
+    "teams": null
+  },
+  "cancelled": {
+    "duration": 34.5,
+    "withAudio": true,
+    "fps": 60,
+    "quality": "1080",
+    "width": 1080,
+    "height": 1920,
+    "events": 56,
+    "frames": 2,
+    "started": 1794580165548,
+    "audioEncoder": "software-aac",
+    "progress": 0.0004830917874396135,
+    "metrics": {
+      "frame": 1,
+      "total": 2070,
+      "queue": 1,
+      "packets": 0
+    },
+    "error": {
+      "name": "AbortError",
+      "message": "signal is aborted without reason"
+    }
+  },
+  "status": "Video hazır. Anlatım aşağıda aynı zaman çizelgesinde.",
+  "jobs": [
+    {
+      "duration": 34.5,
+      "withAudio": true,
+      "fps": 60,
+      "quality": "1080",
+      "width": 1080,
+      "height": 1920,
+      "events": 56,
+      "frames": 2,
+      "started": 1794580165548,
+      "audioEncoder": "software-aac",
+      "progress": 0.0004830917874396135,
+      "metrics": {
+        "frame": 1,
+        "total": 2070,
+        "queue": 1,
+        "packets": 0
+      },
+      "error": {
+        "name": "AbortError",
+        "message": "signal is aborted without reason"
+      }
+    },
+    {
+      "duration": 34.5,
+      "withAudio": true,
+      "fps": 60,
+      "quality": "1080",
+      "width": 1080,
+      "height": 1920,
+      "events": 56,
+      "frames": 2070,
+      "started": 1794580167888,
+      "audioEncoder": "software-aac",
+      "progress": 1,
+      "metrics": {
+        "frame": 2070,
+        "total": 2070,
+        "queue": 1,
+        "packets": 2068
+      },
+      "result": {
+        "audioVerified": true,
+        "method": "serial-frames",
+        "audioOmitted": false,
+        "storage": "disk",
+        "bytes": 69507448
+      },
+      "finished": 1794581133456
+    }
+  ],
+  "audioOmitted": false,
+  "deliveryResume": {
+    "reason": "Electron Playwright download event was not emitted; use native session will-download",
+    "sourceBytes": 69507448,
+    "sha256": "df7c2e1239cff1c4a1035b377d172a91e3d5b731cf44cc35f1f0f6dfc8d59492"
+  },
+  "download": {
+    "name": "next90sim-KucukSaha-1.mp4",
+    "bytes": 69507448,
+    "path": "next90sim-KucukSaha-1.mp4",
+    "nativeEvent": {
+      "done": true,
+      "state": "completed",
+      "name": "next90sim-KucukSaha-1.mp4",
+      "received": 69507448,
+      "total": 69507448
+    }
+  },
+  "metadata": {
+    "width": 1080,
+    "height": 1920,
+    "duration": 34.517333
+  },
+  "audio": {
+    "codec": "aac",
+    "duration": 34.51733333333333,
+    "channels": 1,
+    "sampleRate": 48000
+  },
+  "audioPass": true,
+  "seeks": [
+    27.613866400000003,
+    6.903466600000001,
+    33.517333,
+    0
+  ],
+  "playback": {
+    "ended": true,
+    "currentTime": 34.517333,
+    "duration": 34.517333,
+    "muted": false,
+    "framesPresented": 1710,
+    "quality": {}
+  },
+  "videoPass": true,
+  "previousHarnessFailure": {
+    "message": "page.evaluate: TypeError: Failed to fetch",
+    "stack": "page.evaluate: TypeError: Failed to fetch\n    at /workspace/football-web/tests/browser-full-match.cjs:52:23"
+  },
+  "ffprobe": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "r_frame_rate": "60/1",
+      "duration": "34.500000",
+      "nb_read_frames": "2070"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "channels": 1,
+      "r_frame_rate": "0/0",
+      "duration": "34.517333",
+      "nb_read_frames": "1618"
+    }
+  ],
+  "independentDecode": {
+    "pass": true,
+    "videoFrames": 2070,
+    "audioMeanDb": -30.6,
+    "audioMaxDb": -7.7
+  },
+  "regressions": {
+    "full": 37,
+    "passed": 37,
+    "finalTargeted": [
+      "audio-export.cjs",
+      "graphics.cjs"
+    ]
+  },
+  "scope": {
+    "physicalDevice": false,
+    "deployment": false,
+    "resume": "Completed original export recovered from OPFS; delivery/playback resumed with the byte-identical artifact. Electron native will-download used instead of Playwright download; actual saved file SHA-256 matches original. No second render or external audio insertion."
+  }
+}

@@ -19,3 +19,6 @@ m=mk(['GK','LB','CB','CB','RB','DM','CM','CM','LW','ST','RW']);t=C.targets(m.pl,
  const v=R('video-core.js');assert(v.includes("for(const latencyMode of['quality','realtime'])"),'quality latency first');assert(v.includes('job.isCut?.('),'key frame on camera cut');
  for(const f of['app.js','penalty-ui.js','freekick-ui.js'])assert(R(f).includes('__cut'),f+' reports camera cuts');}
 console.log(JSON.stringify({PASS:true,postfx:Object.keys(PF).length,snowPrints:30,rewindClears:true,rainSplash:true,backThree:true,backFour:true}));
+
+// Emergency compatibility mode keeps output resolution/model paths while removing heavy shadow allocations.
+const Graphics=require('../assets/graphics-settings.js');delete global.SEKME_LITE_RENDER;assert(Graphics.get('high').shadows);global.SEKME_LITE_RENDER=true;const emergency=Graphics.get('high');assert(emergency.lite&&!emergency.shadows&&emergency.shadowSize===512&&emergency.tufts===0);delete global.SEKME_LITE_RENDER;assert(Graphics.get('high').shadows);

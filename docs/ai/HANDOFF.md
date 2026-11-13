@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-13 UTC] Codex · V173 → V174 tamamlandı / fiziksel cihazlar açık
+- Dal `agent/codex/aac-video-finish`; temel main29201ad, checkpoint2734458. Kapatma başlığı `V174: AAC sesini ve tam maç video dışa aktarımını düzelt`; test sonrası main'e fast-forward push. En yeni gerçek durum bu kayıttır; aşağıdaki WIP/başarısız kayıtlar tarihseldir.
+- T-292/T-293done: nativeAACyoksa yerel @mediabunny/aac-encoder1.65.2tembel yükleme; native/recorderSafari yolu korunur. Ses yok/eksik/yanlışkodekse başarısız. AACvendor kaynak/lisansları, hedefli audio-exportguardtestleri var. HafifSEKME_LITE_RENDER ağır gölgeleri kapatır; normalhighaynı.
+- Tam37/37Node/PHP PASS; son native-recorderguard ve hafifgölge değişikliğine ayrıca audio-export/graphicsPASS. VERSION174/498dosyamanifest/build174filesMatch=true. Saha/forma/model/AI/PHPveri akışı değiştirilmedi; League-Soccer yaklaşımı JSzekâ katmanı V173kalır, FMözelmotoraktarımı yok.
+- Gerçek3D30sn5v5+4,5snsonuç=34,5sn/2070kare1080×1920/60FPSH.264+AAC48kHzmono;69.507.448bayt. UIiptal/yeniden hazırlama, gerçekindirme, dörtarama, sesaçık1xhızendedPASS; JSerror0. ffprobe2070kare, ffmpeg tamdecodehatasız, maxses−7,7dB. İlkElectronPlaywrightdownloadolayı zaman aşımına uğradı; tamamlanmışOPFSdosyası korundu, nativewill-downloadile teslim/oynatma aynıSHA-256dosyasından devam ettirildi. Yeniden render/sesekleme yok; harnessresumebelgeli.
+- Kanıt research/FULL-VIDEO-TEST-V174.md ve v174-full-video-validation.json. T-290yalnız gerçekWindows/iPhone/Android cihaz matrisi bakımındanpartial; fizikselcihaz yok. Önceki76,9snpenaltı testi tamamlanmış sayılmaz. T-291riskölçümü sonrakiiş. Sonraki hedefV175; canlıHostinger/Windowsinstaller yayını yapılmadı.
+
 ## [2026-11-13 UTC] Codex · V174 AAC düzeltmesi / son test sürüyor
 - Dal `agent/codex/aac-video-finish`; temel main29201ad. Ortam yeniden erişilebilir; önceki blocked test, tamamlandı varsayılmadı.
 - Gerçek sorun düzeltildi: native AAC yoksa yerel @mediabunny/aac-encoder1.65.2MPL/LGPLWASM paketi tembel yüklenir. Yerel AAC kayıt desteği açıkça varsa eski Safari yolu korunur. İstenen AAC izi yok/eksik/yanlış kodekse export hata verir; sessiz başarı yok.

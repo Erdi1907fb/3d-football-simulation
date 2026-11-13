@@ -11,7 +11,7 @@ Her aşamada yapılan, test edilen, eksik kalan, sıradaki somut adım ve commit
 | 2 / T-287 | Takım halinde oyun | done (V173) | Verkaç/üçüncü oyuncu/bindirme ve top kaybı sonrası savunma; kararlar gerçek sahiplik/koridor/oyuncu erişimine bağlı; gol kotası yok |
 | 3 / T-288 | Kalabalık Japon Kale | done (V173) | Özellikle6takımda destek/markaj dağılımı, top çevresine yığılma; V172 sabit örnekleriyle pas alımı/risk/sahipsiz top ve yakınlık ölçümü |
 | 4 / T-289 | Maç ve takım karakteri çeşitliliği | done (V173) | Tohumla tekrar üretilebilir farklı genişlik/tempo/doğrudanlık; gerçek oyuncu istatistiği veya doğrulanmış taktik iddiası yok; her mod kendi kurallarını korur |
-| 5 / T-290 | Gerçek kullanım / 1080p video | partial (V173) | Uzun oynatma/arama/iptal/yeniden hazırlama + yerel gerçek1080pMP4 üretme/çözümleme; tarayıcı/Windows/fiziksel telefon sonuçları ayrı, denenmeyen cihaz dürüstçe açık |
+| 5 / T-290 | Gerçek kullanım / 1080p video | partial (V174; yerel tamamlandı) | Tam34,5sn5v5sesli1080p60/2070kare, UIiptal/tekrar hazırlama/gerçekindirme/ileri-geri/1xhızended ve ffmpegdecodePASS; yalnız fizikselWindows/iPhone/Android matrisi açık |
 
 ## Motor ve tasarım kararları
 
@@ -61,3 +61,7 @@ Yerel T-290sonucu:51.4snzaman çizelgesi ileri/geri PASS, iptal/yeniden üretim 
 0.3snsessiz1080×1920/60FPSgerçek sahne klibi WebCodecs ve software yollarında
 üretildi, ffprobe/ffmpeg18ayrı kareyi çözdü. Detay research/v173-video-validation.json.
 Fiziksel Windows/telefon ve tam süreli sesli1080p maç hâlâ bekliyor; bu yüzden kısmi.
+
+
+## V174 — son yerel test kapandı (2026-11-13 UTC)
+T-292/T-293done: AACyoksa yerel yazılımAAC ve sesdoğrulama; hafifgrafikte ağırgölge düzeltmesi.37/37paket+sonhedefliPASS. Tam34,5sn5v5/2070kare1080p60+AAC, gerçekindirme/arama/sesaçık1xhızendedveffmpegdecodePASS. Electronharnessidüzeltildi; teslim/oynatma byte'ıaynı tamamlanmışdosyadan devam ettirildi. Raporresearch/FULL-VIDEO-TEST-V174.md. Beş aşamanın yerel çalışması bitti; T-290fizikselcihazlar bakımındanpartial. SonrakihedefV175/T-291. Canlıyayın yapılmadı.

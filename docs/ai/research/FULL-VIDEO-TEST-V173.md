@@ -40,3 +40,7 @@ Kaynak incelemesi: video-core serialEncode, recordedAudio başarısızlığında
 6. Ortam geri gelirse yerel günlükler: /workspace/artifacts/web-v173-full-video*.log ve web-v173-audio-probe.json. Başka ajanda bu yerel dosyaların bulunacağı garanti edilmez; yukarıdaki konsol gözlemleri kalıcı kayıttır.
 
 T-290 kısmi kalır. T-292 tam test çalışması ortam nedeniyle blocked. V173 sürümü, oyun/AI kodu ve canlı Hostinger yayını değiştirilmedi.
+
+
+## Sonraki kayıt — V174
+Yukarıdaki76,9snpenaltı denemesinin sonucu değiştirilmedi. Ortam geri geldikten sonra AACsorunu düzeltildi; ayrı tam34,5sn5v5maçı1080p60sesliüretilip indirme/arama/normalhızended/ffmpegdecodeile doğrulandı. [V174raporu](FULL-VIDEO-TEST-V174.md) ve [makinekanıtı](v174-full-video-validation.json). Fizikselcihazlar ayrıca açıktır.

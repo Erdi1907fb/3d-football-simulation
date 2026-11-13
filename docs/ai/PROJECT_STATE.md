@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V173** · 2026-11-13 UTC · Codex (gerçek temas, koordineli koşular, kalabalık arena ve takım karakteri)
+> Son güncelleme: **V174** · 2026-11-13 UTC · Codex (AAC düzeltmesi ve tam sesli1080pmaç testi)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,19 +8,24 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V173** (`VERSION`; `V173: Gerçek temas ve koordineli futbol geliştirmeleri`) |
-| Sonraki geliştirme hedefi | **V174** |
+| Kararlı sürüm | **V174** (`VERSION`; `V174: AAC sesini ve tam maç video dışa aktarımını düzelt`) |
+| Sonraki geliştirme hedefi | **V175** |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
-| Sürüm doğrulama | `build.php` → `assets/release-v173.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 173 |
+| Sürüm doğrulama | `build.php` → `assets/release-v174.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 174 |
 
-## Tam süreli sesli video testi — son durum
+## V174 — tam süreli sesli video / son durum
 
-2026-11-13: Gerçek UI iptal/yeniden başlatma geçti.76,9sn sesli1080p işinde native AAC desteği yoktu; recordedAudio1sn testinde `AAC audio unavailable` döndü. Tam iş sürerken çalışma ortamı bağlantısı koptu ve unavailable oldu. Tam dosya/sonuna kadar oynatma/indirme doğrulanmadı; T-292blocked,T-290partial. [Somut bulgu ve tekrar adımları](research/FULL-VIDEO-TEST-V173.md). Fiziksel cihaz testi yapılmadı; V173oyun kodu değişmedi.
+- NativeAACyoksa tembel yerel yazılımAAC; açık nativeAACrecorderSafari yolu korunur. İstenen ses yok/yanlış/kısaysa başarı yerine hata. Lisans/kaynak notları vendorveASSET-LICENSES'ta; medya dış servise gönderilmez.
+- Hafif uyumluluk yolunda ağır gölge bütçesi kapatıldı; normal highgrafik, saha/forma/model ve1080p60çıktı korunur.
+- Tam37/37Node/PHPpaketi PASS; son recorderguard/gölge değişikliklerine ayrıca hedefliPASS. GerçekAACentegrasyonu1sn1080p60+48kHzPASS.
+- Tam5v5maç:30snoyun+4,5snsonuç,2070gerçek1080×1920/60FPSkare ve34,517333snAACses;69.507.448bayt. UIiptal/yeniden hazırlama, gerçekindirme, dörtarama ve1xhız/sesaçık/endedPASS; JSerror0. ffmpeg tümkare/sesdecodehatasız, maxses−7,7dB. Electron indirme harnessi düzeltildi; teslim/oynatma aynıSHA-256dosyasından devam ettirildi, yeniden render/sesekleme yok.
+- T-292/T-293done; T-290yalnız fiziksel Windows/iPhone/Android doğrulaması bakımındanpartial. Linux/Chromium/Mesa veAndroidUAemülasyonu gerçekcihaz değildir. [Rapor](research/FULL-VIDEO-TEST-V174.md) / [makine kanıtı](research/v174-full-video-validation.json). Önceki76,9snpenaltı denemesi tarihsel olarak tamamlanmadı; eski rapor korunur.
+- Beş aşamada yerel kod/test çalışması bitti; cihaz matrisi açık. AIoyun kararları vePHPveri akışı değişmedi. Hostinger/Windowsinstaller dağıtımı yapılmadı. Sonraki hedefV175/T-291vefizikselcihazlar.
 
 ## V173 — beş aşamalı planın durumu
 
-- Kalıcı devir: [FOOTBALL-ROADMAP.md](FOOTBALL-ROADMAP.md); T-286…T-289kodları tamamlandı. T-290yerel tarayıcı/video denemeleri ilerletildi; fiziksel Windows/telefon ve tam süreli sesli1080p doğrulaması açık. Beş aşamanın bütünü done değildir.
+- Kalıcı devir: [FOOTBALL-ROADMAP.md](FOOTBALL-ROADMAP.md); T-286…T-289kodları tamamlandı. T-290yerel tam süreli sesli1080p doğrulaması V174’te tamamlandı; fiziksel Windows/telefon kontrolü açık. Cihaz matrisinin bütünü done değildir.
 - Gerçek dondurulmuş vuruş/alım noktası ve doğru aktif ayakla IK; uzaklaşan topu kovalamama, root/top değişmezliği. Grounded kalecide tek yükselme ve sınırlı gövde uzanması; mevcut klip root'u korunur. Mevcut authored normal sekanslarda gerçek nokta yoksa eski animasyon devam eder.
 - Ortak `football-intelligence`: gerçek son pasa bağlı verkaç/üçüncü oyuncu; normal collective ve arena takım planı. Arena desteği5Hzortak açı dağılımı, top kaybında örtü, topa katılmayan rakipte sektör koruma. Alıcı ball-aero kısa tahminiyle yavaşlayan topa buluşmaya gider.
 - Takım kimliğinden4sentetik profil: balanced/combination/vertical/wide. Genişlik/destek temposu/karar sabrı/pas ilerleme ağırlığı değişir. Açık taktikler öncelikli, `verified:false`; gerçek kulüp taktiği veya FM özel motoru iddiası yok.

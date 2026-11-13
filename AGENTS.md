@@ -66,7 +66,8 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; `--quick` `engine-test.cjs` hariç 35 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 37 test; `--quick` `engine-test.cjs` hariç 36 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
 | `node tests/football-intelligence.cjs` | Yetişme/pas koridoru/markaj ve gözleme dayalı fiziksel kaleci | ~2 sn |

@@ -207,3 +207,7 @@ Verkaç/üçüncü oyuncu gerçek son pas ve sahiplikle açılır, takım deste�
 
 ## D-038 · 2026-11-13 UTC · codex · kabul — AAC yoksa yerel yazılım kodlayıcısı, sessiz başarı yok
 MediaRecorder audio/mp4 desteği AAC garantisi değildir. Native AAC veya açık native AAC-recorder desteği yoksa yerel @mediabunny/aac-encoder1.65.2paketi tembel yüklenir. WebCodecs video ve bağımsız software video aynı AAC kaynağını kullanır. Ses istendiğinde mux sonunda AAC izi ve tam süre doğrulanır; kayıt/kodlama hatası sessiz MP4'e dönüştürülmez. Dış servise medya yüklenmez;1,1MBayrı LGPL/MPL vendor paketi kaynak/rebuild/lisanslarıyla korunur. Native AAC cihazı bu paketi indirmez.
+
+
+## D-039 · 2026-11-13 UTC · codex · kabul — Acil hafif çizimde gölge bütçesi
+Mevcut `SEKME_LITE_RENDER` bellek/uyumluluk yolunda `lite=true` yanında gölgeler kapatılır, shadowSize512 ve tufts0 olur. Önceden high profilinin2048/4096gölge bütçesi hafif yola taşınıyordu; yazılım GPU'da tam video testi ağırlaşıyordu. Normal high profil gölgeleri değişmez. Video çözünürlüğü1080p/60FPS kalır; gerçek maç süresi/kareleri, saha, oyuncu, forma ve fizik değiştirilmez. Yazılımsal GPU hızını fiziksel cihaz performansı diye raporlama.
