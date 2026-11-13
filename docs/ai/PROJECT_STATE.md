@@ -14,6 +14,10 @@
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) PHP 8.3.36, **cron kurulu değil** (2026-11-09 `durum.php`); veri ziyaretçi yenilemesiyle dolar (V141). |
 | Sürüm doğrulama | `build.php` → `assets/release-v173.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 173 |
 
+## Tam süreli sesli video testi — son durum
+
+2026-11-13: Gerçek UI iptal/yeniden başlatma geçti.76,9sn sesli1080p işinde native AAC desteği yoktu; recordedAudio1sn testinde `AAC audio unavailable` döndü. Tam iş sürerken çalışma ortamı bağlantısı koptu ve unavailable oldu. Tam dosya/sonuna kadar oynatma/indirme doğrulanmadı; T-292blocked,T-290partial. [Somut bulgu ve tekrar adımları](research/FULL-VIDEO-TEST-V173.md). Fiziksel cihaz testi yapılmadı; V173oyun kodu değişmedi.
+
 ## V173 — beş aşamalı planın durumu
 
 - Kalıcı devir: [FOOTBALL-ROADMAP.md](FOOTBALL-ROADMAP.md); T-286…T-289kodları tamamlandı. T-290yerel tarayıcı/video denemeleri ilerletildi; fiziksel Windows/telefon ve tam süreli sesli1080p doğrulaması açık. Beş aşamanın bütünü done değildir.
