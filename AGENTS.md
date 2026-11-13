@@ -239,3 +239,5 @@ dosyalardır.
 - `emergent-football.js` bağımsız RNG akışlarını korur. Mental karakterlerin bilinmeyen değerleri etiketli sentetik öncüllerdir, gerçek ölçüm sayılmaz. Pas değerlendirmesi ve fiziksel vuruş aynı nişan/hız yardımcılarını kullanır.
 - `free-football.js` 15–180snkompakt11v11; UI30/60/90. Tam90dakika veya kalibre edilmiş xT/VAEP iddiasında bulunma. Mevcut analiz kipini koru. İsteğe bağlı özet kesilirse görüntü, olay, ses/anlatım veSRT zamanlarını birlikte dönüştür.
 - Devam: `docs/ai/EMERGENT-FOOTBALL-PLAN.md`, `research/VALIDATION-V175.md`; kısmi aşamalar tamamlandı sayılmaz.
+
+- Kullanıcının 2026-11-13 son netleştirmesi: **ana hedef Hostinger web sürümü**. Bütün futbol geliştirmeleri web reposunda çalışmalı; Windows yalnız ek uyumluluk. Kullanıcıya web teslimini ve canlı dağıtım durumunu açıkça anlat. Web güncellemesi bir EXE paketi değildir.

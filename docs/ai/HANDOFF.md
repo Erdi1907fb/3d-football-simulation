@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-13 UTC] Codex · Son teslim: ana hedef Hostinger web
+- Kullanıcı Windows anlatımı nedeniyle hedefi yeniden netleştirdi: **bütün kalan geliştirmeler Hostinger web içindir**. Kod zaten kaynak web main V175 @fa331de'dedir. Windows çalışması ek uyumluluktu; hedef masaüstüne çevrilmez. JS/PHP web çalışması EXE/C++ sunucusu gerektirmez.
+- T-303 saat/golcü kartı tamam. Geniş sekiz aşamada kısmi kalanlar ve T-304…T-309 açık; tamamen bitti demeyin. Yapılan kod/test ve kısıtlar research/VALIDATION-V175.md'de.
+- Canlı Hostinger build.php son kontrolde170/filesMatch=true; V175 henüz dağıtılmadı. V170→V175 güncelleme ZIP'i55dosya/778257bayt;501kodhashi doğrulandı. Config/sunucu verisi/videolar dahil değil, silme yapmaz. Paket manifesti research/v175-web-update-package.json; gerçekZIP oturum artifact'i `/workspace/artifacts/Next90-Web-V170-to-V175.zip`.
+- Ek Windows uyumluluğu tamamlandı: W0.1.4/build-20, Actions43476769057 Node+Windows success; gerçek EXE ortak/kişisel/konsept/serbest11v11 ve kısa MP4 PASS, native C++32.7667snvideo complete/missing[]. Dört kısa web MP4 + native video indirildi/ffmpegdecode edildi; fizikselGPU testi değildir. Bu web odaklı sonraki işleri engellemez; Windows linkleri ayrı repoda kayıtlıdır.
+- Son bu kayıt yalnız belge/öncelik düzeltmesidir; runtime kod ve web ZIP @fa331de ile aynıdır. Canlıya yüklenmiş gibi konuşmayın.
+
 ## [2026-11-13 UTC] Codex · V175 kaynak kod ve yerel doğrulama
 - Dal `agent/codex/emergent-football-v175`, temel V174 / 46b9720. Ara checkpoint 4588b90; son commit bu kaydı içerir. Main'e normal fast-forward push yapılır; son remote SHA git'ten doğrulanır.
 - Kullanıcının son T-303 isteği tamam: Japon Kale ve iki takımlı küçük sahada gol sonrası sayaç gerçek restart'a kadar durur. `gameDuration` seçili oyun süresi, `liveDuration` ve video beklemelerle daha uzundur. Son ekran tam zaman değeri kullanır; erken eleme kalan süreyi sahte sıfırlamaz. Golcü adı/mevcut fotoğrafı/gerçek takım arması güvenli HUD içinde; serbest grupta forma logosu takım kimliği sayılmaz.

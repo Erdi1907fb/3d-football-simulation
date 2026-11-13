@@ -1,0 +1,15 @@
+{
+  "baseBuild": 170,
+  "targetBuild": 175,
+  "sourceCommit": "fa331de654d1e01b0816dfd2ee5e1d691e59c3dc",
+  "files": 55,
+  "codeHashesVerified": 501,
+  "bytes": 778257,
+  "sha256": "db4c5b3245f3f2f2fc44c25a11bf2519307761e39110e0afd56200192c639629",
+  "retainedHarmlessOldManifest": [
+    "assets/release-v170.json"
+  ],
+  "omits": "config.php, server data, videos, documentation/tests/tools; no deletions",
+  "liveProbeBuild": 170,
+  "deployed": false
+}
