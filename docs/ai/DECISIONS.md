@@ -204,3 +204,6 @@ Alım/vuruş noktası engine gözleminden dondurulur; pozu topun peşinden uzata
 
 ## D-036 · 2026-11-13 UTC · codex · kabul — Gözlenen pasla takım koşusu ve kimlikten sentetik karakter
 Verkaç/üçüncü oyuncu gerçek son pas ve sahiplikle açılır, takım desteği ayrı açılara atanır. Çok taraflı arenada topa katılmayan uzaktaki takım kendi sektörünü korur; bütün takımlar aynı taşıyıcıya yığılmaz. Alıcı yavaşlayan topa erişimini tahmin eder. Dört koçluk profili sentetiktir, `verified:false`; isim/ID korunur, sadece renk objesi stil kimliğini değiştiremez. Açık taktik öncelikli; skor/galip/uzun seri kotası yok. League-Soccer yaklaşımı genişletilir, FM özel kodu alınmaz.
+
+## D-038 · 2026-11-13 UTC · codex · kabul — AAC yoksa yerel yazılım kodlayıcısı, sessiz başarı yok
+MediaRecorder audio/mp4 desteği AAC garantisi değildir. Native AAC veya açık native AAC-recorder desteği yoksa yerel @mediabunny/aac-encoder1.65.2paketi tembel yüklenir. WebCodecs video ve bağımsız software video aynı AAC kaynağını kullanır. Ses istendiğinde mux sonunda AAC izi ve tam süre doğrulanır; kayıt/kodlama hatası sessiz MP4'e dönüştürülmez. Dış servise medya yüklenmez;1,1MBayrı LGPL/MPL vendor paketi kaynak/rebuild/lisanslarıyla korunur. Native AAC cihazı bu paketi indirmez.

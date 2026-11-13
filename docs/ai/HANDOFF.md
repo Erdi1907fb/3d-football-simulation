@@ -17,6 +17,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-13 UTC] Codex · V174 AAC düzeltmesi / son test sürüyor
+- Dal `agent/codex/aac-video-finish`; temel main29201ad. Ortam yeniden erişilebilir; önceki blocked test, tamamlandı varsayılmadı.
+- Gerçek sorun düzeltildi: native AAC yoksa yerel @mediabunny/aac-encoder1.65.2MPL/LGPLWASM paketi tembel yüklenir. Yerel AAC kayıt desteği açıkça varsa eski Safari yolu korunur. İstenen AAC izi yok/eksik/yanlış kodekse export hata verir; sessiz başarı yok.
+- Gerçek Linux/Chromium native AAC=false durumunda1sn1080p60H.264+AAC48kHz dosya üretildi; ffmpegmax_volume=-27.2dB(nonzero).37/37Node/PHP PASS; son Safari-recorder dalı unitte ayrıca PASS.
+- Tam senaryo testleri sürüyor. Özgün3Dpenaltı serisinin76,9sn/4614karesi SwiftShader'da çok yavaş; bitmiş sayılmadı. Görünümü sadeleştiren geçici deneyler fayda göstermediği için geri alındı; oyun/saha/forma/3Dmodelleri değiştirilmedi. Mesa llvmpipe yerel yazılım GPU ile5v5gerçek30snmaç+4,5snsonuç=34,5sn/2070kare UIexport testi çalışıyor. Başarı sonucu henüz ilan edilmedi.
+- scripts: tests/browser-full-match.cjs (tam5v5), browser-full-video.cjs(tamPserisi), browser-aac.cjs(kodek), audio-export.cjs(guard). NEXT90_TEST_NODE_MODULES dış modül yolu; gerçek cihaz kanıtı değil. Sonraki adım tam dosyayı indir/oynat/ara ve ffprobe/ffmpeg ile çöz, raporu/sürümü kapat.
+
 ## [2026-11-13 UTC] Codex · T-290 tam sesli test tamamlanamadı
 - Temel main ed30b08 (V173); kullanıcı son tam süreli sesli1080p testini istedi. Ürün kodu/sürüm/yayın değiştirilmedi.
 - Gerçek UI, Android UA emülasyonu + SAFE_EXPORT (ikinci denemede LITE), Linux/SwiftShader; fiziksel cihaz değil.76,9sn/14vuruş/4–3serisi için gerçek1080×1920/60FPS/withAudio=true işi başlatıldı. UI iptal/tekrar başlatma PASS; tam4614kare/indirme/sonuna kadar oynatma sonucu doğrulanmadı.

@@ -10,3 +10,7 @@ data/private/*
 /tests/browser-output/
 
 /tests/browser-video-output/
+
+/tests/browser-full-video-output/
+
+/tests/browser-aac-output/

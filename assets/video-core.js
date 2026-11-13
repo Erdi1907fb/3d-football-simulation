@@ -29,8 +29,8 @@ function useSoftware(env=globalThis,quality='auto'){return (quality==='1080'||qu
 // Audio-only recording runs beside frame generation, rather than adding a whole match afterwards.
 function prepareSoftwareAudio(job,env,media,info,cfg){
  const controller=new AbortController(),abort=()=>controller.abort();job.signal?.addEventListener('abort',abort,{once:true});if(job.signal?.aborted)abort();
- const task=(async()=>{if(!job.withAudio)return {native:false};try{check(controller.signal);let native=false;try{native=await wait(media.canEncodeAudio('aac',{sampleRate:48000,numberOfChannels:1,bitrate:cfg.audioBitrate}),controller.signal,5000);}catch(e){if(e.name==='AbortError')throw e;}if(native)return {native:true};const recorded=await recordedAudio({...job,signal:controller.signal,onProgress:null},env,media,info,cfg);return {native:false,recorded};}catch(e){if(e.name==='AbortError')return {native:false,cancelled:true};job.onAudioOmitted?.();return {native:false};}})();
- return {task,async dispose(){job.signal?.removeEventListener('abort',abort);controller.abort();await wait(task,null,5000).catch(()=>{});}};
+ const task=(async()=>{if(!job.withAudio)return {native:false};try{check(controller.signal);let native=false;try{native=await wait(media.canEncodeAudio('aac',{sampleRate:48000,numberOfChannels:1,bitrate:cfg.audioBitrate}),controller.signal,5000);}catch(e){if(e.name==='AbortError')throw e;}if(native)return {native:true};const recorded=await recordedAudio({...job,signal:controller.signal,onProgress:null},env,media,info,cfg);return {native:false,recorded};}catch(e){if(e.name==='AbortError')return {native:false,cancelled:true};throw audioFailure(e);}})();
+ task.catch(()=>{});return {task,async dispose(){job.signal?.removeEventListener('abort',abort);controller.abort();await wait(task,null,5000).catch(()=>{});}};
 }
 function coalesceWrites(parts,limit=262144){const out=[];let group=[],size=0,start=0;const flush=()=>{if(!size)return;const data=new Uint8Array(size);let at=0;for(const p of group){const b=new Uint8Array(p.data);data.set(b,at);at+=b.byteLength;}out.push({position:start,data:data.buffer});group=[];size=0;};for(const p of parts){const n=p.data.byteLength;if(size&&(p.position!==start+size||size+n>limit))flush();if(n>limit){out.push(p);continue;}if(!size)start=p.position;group.push(p);size+=n;}flush();return out;}
 async function softwareEncode(job,env,media,canvas,draw,info,cfg){
@@ -67,12 +67,12 @@ function avcRateConfig(config,cfg){
 }
 async function softwareAudio(result,job,env,media,info,cfg,audioTask){
  job.onStage?.('audio');const {recorded,native}=await wait(audioTask,job.signal,Math.max(15000,(info.duration+15)*1000));check(job.signal);
- if(!job.withAudio||!native&&!recorded)return normalizeMp4(result,job,env,media,cfg);
+ if(!job.withAudio)return normalizeMp4(result,job,env,media,cfg);if(!native&&!recorded)throw audioFailure(Error('Requested audio unavailable'));
  const input=new media.Input({formats:media.ALL_FORMATS,source:new media.BlobSource(result.blob)});let storage,output;
  try{const v=await input.getPrimaryVideoTrack(),vc=avcRateConfig(await v.getDecoderConfig(),cfg);storage=await streamStorage(env,media,cfg);output=new media.Output({target:storage.target,format:new media.Mp4OutputFormat({fastStart:'reserve',...(cfg.fps===120?{metadataFormat:'mdta'}:{})})});const vs=new media.EncodedVideoPacketSource('avc'),as=native?new media.AudioBufferSource({codec:'aac',quality:new media.Quality({bitrate:cfg.audioBitrate})}):new media.EncodedAudioPacketSource('aac');output.addVideoTrack(vs,{frameRate:(cfg.fps||FPS),maximumPacketCount:Math.ceil(info.duration*(cfg.fps||FPS)+8)});output.addAudioTrack(as,{maximumPacketCount:Math.ceil(info.duration*100+256)});setFullRateMetadata(output,cfg);await wait(output.start(),job.signal,15000);let until=0,index=0;
  for await(const raw of new media.EncodedPacketSink(v).packets()){const offset=result.trimStart||0;if(raw.timestamp<offset-.00001)continue;const p=offset?raw.clone({timestamp:Math.max(0,raw.timestamp-offset)}):raw;check(job.signal);if(native){while(until<info.duration&&until<=p.timestamp){const len=Math.min(1,info.duration-until);await wait(as.add(audioSegment(env,job.audioBuffers||{},info.events,until,len,info.duration)),job.signal);until+=len;}}else while(index<recorded.packets.length&&recorded.packets[index].timestamp<p.timestamp+1)await wait(as.add(recorded.packets[index++],{decoderConfig:recorded.config}),job.signal);await wait(vs.add(p,{decoderConfig:vc}),job.signal);}
  vs.close();as.close();await wait(output.finalize(),job.signal,20000);const blob=await wait(storage.finish(),job.signal,30000);await result.dispose?.();return {...result,blob,dispose:storage.dispose,storage:storage.method,trimStart:0,container:'standard-mp4'};
- }catch(e){try{await wait(output?.cancel(),null,3000);}catch{}await storage?.dispose();if(e.name==='AbortError')throw e;job.onAudioOmitted?.();return normalizeMp4(result,job,env,media,cfg);}finally{input.dispose();}
+ }catch(e){try{await wait(output?.cancel(),null,3000);}catch{}await storage?.dispose();if(e.name==='AbortError')throw e;await result.dispose?.();throw audioFailure(e);}finally{input.dispose();}
 }
 
 // STORE ZIP: preserves the MP4 bytes during messaging/upload, without transcoding or full-file buffering.
@@ -170,7 +170,38 @@ function liveAudio(a,buffers,events,duration,stream){
  const ambient=events[0]?.audioProfile?.ambient||'ambient';sample(buffers[ambient]?ambient:'ambient',0,ambientLevel(0,events),true);for(const e of(events.some(e=>e.type==='kickoff')?events:[{type:'whistle',elapsed:0},...events])){const t=e.elapsed||0;const opposition=oppositionCue(e,events);if(opposition)sample(opposition.key,t+opposition.delay,Array.from({length:Math.ceil(opposition.duration*20)+1},(_,i)=>oppositionMusicLevel(opposition,opposition.start+i/20)),opposition.loop,opposition.duration,opposition.attack,opposition.release);const team=teamCue(e,events);if(team)sample(team.key,t+team.delay,Array.from({length:Math.ceil(team.duration*20)+1},(_,i)=>teamMusicLevel(team,team.start+i/20,events)),team.loop,team.duration,team.attack,team.release);if(soundCue(e.type))sample(soundCue(e.type),t,soundCue(e.type)==='goal'?goalLevel(e,Math.min(.66,.48*(e.atmosphere||1))):.09*(e.atmosphere>1?2:1),false,soundDuration(e.type));else if(e.type.startsWith('var')){tone(t,530,.1,.04);tone(t+.13,710,.1,.04);}else if(['shot','clearance'].includes(e.type)){tone(t,120,.08,.045);}else if(whistleTypes.has(e.type)){const key=whistleKey(e.type);if(buffers[key])sample(key,t,.28);else for(const [offset,hz,length,gain] of whistleCues(e.type))tone(t+offset,hz,length,gain);}}
  return ()=>{for(const n of nodes){try{n.stop?.()}catch{}try{n.disconnect()}catch{}}master.disconnect();};
 }
-async function create(job){
+// Local, optional AAC-LC fallback. Native-capable browsers do not download it.
+let aacScript=null;const softwareAac=new WeakSet();
+function audioFailure(cause){const tr=typeof document!=='undefined'&&document.documentElement?.lang?.startsWith('tr'),e=Error(tr?'Ses kodlanamadı. Sesi kapatarak yeniden deneyebilir veya güncel bir tarayıcı kullanabilirsiniz.':'Audio could not be encoded. Disable sound or retry in an up-to-date browser.');e.code='audio-unavailable';e.cause=cause;return e;}
+async function ensureAudio(job,env,media,cfg){
+ if(!job.withAudio)return;check(job.signal);const config={sampleRate:cfg.sampleRate,numberOfChannels:1,bitrate:cfg.audioBitrate};
+ if(await wait(media.canEncodeAudio('aac',config),job.signal,5000)){job.onAudioEncoder?.(softwareAac.has(media)?'software-aac':'native-aac');return;}
+ if(env.MediaRecorder?.isTypeSupported?.('audio/mp4;codecs=mp4a.40.2')){job.onAudioEncoder?.('native-aac-recorder');return;}
+ try{
+  if(!env.MediabunnyAacEncoder?.registerAacEncoder){
+   if(!env.document?.createElement||!env.Worker||!env.WebAssembly)throw Error('Software AAC is unavailable');
+   if(!aacScript)aacScript=new Promise((resolve,reject)=>{const script=env.document.createElement('script');script.src='assets/vendor/mediabunny-aac/encoder.js?v=174';script.onload=resolve;script.onerror=()=>{script.remove();reject(Error('Software AAC could not load'));};env.document.head.appendChild(script);}).catch(e=>{aacScript=null;throw e;});
+   await wait(aacScript,job.signal,15000);
+  }
+  check(job.signal);env.MediabunnyAacEncoder.registerAacEncoder();softwareAac.add(media);
+  if(!await wait(media.canEncodeAudio('aac',config),job.signal,5000))throw Error('Software AAC rejected this format');
+  job.onAudioEncoder?.('software-aac');
+ }catch(e){if(e.name==='AbortError')throw e;
+  // Retain the original native AAC recorder fallback on older Safari.
+  if(env.MediaRecorder?.isTypeSupported?.('audio/mp4;codecs=mp4a.40.2'))return;
+  throw audioFailure(e);
+ }
+}
+async function verifyAudio(result,job,env,media,cfg){
+ if(!job.withAudio)return result;let input;try{
+  input=new media.Input({formats:media.ALL_FORMATS,source:new media.BlobSource(result.blob)});
+  const track=await wait(input.getPrimaryAudioTrack(),job.signal);if(!track||track.codec!=='aac'||result.audioOmitted)throw Error('Requested AAC audio track missing');
+  const duration=await wait(track.computeDuration(),job.signal);if(!Number.isFinite(duration)||Math.abs(duration-job.duration)>Math.max(.15,2/cfg.fps))throw Error('Incomplete AAC audio track');
+  return{...result,audioVerified:true};
+ }catch(e){if(e.name==='AbortError')throw e;throw audioFailure(e);}finally{input?.dispose();}
+}
+async function create(job){const env=job.env||globalThis,media=job.media||env.Mediabunny,cfg=settings(job);await ensureAudio(job,env,media,cfg);const result=await encode(job);try{return await verifyAudio(result,job,env,media,cfg);}catch(e){await result.dispose?.();throw e;}}
+async function encode(job){
  const env=job.env||globalThis,cfg=settings(job),media=job.media||env.Mediabunny,signal=job.signal,onProgress=job.onProgress||(()=>{});check(signal);
  const canvas=job.canvas||env.document.createElement('canvas');canvas.width=cfg.width;canvas.height=cfg.height;
  const info={duration:job.duration,events:audioEvents((job.events||[]).filter(e=>['kickoff','attack','shot','save','wide','clearance','ball_secured','ball_out','offside','interception','block','attack_end','goal','goal_pending','post','goal_disallowed','penalty','freeKick','corner','half','fulltime','yellow','red','foul','foul_whistle','var_start','var_decision'].includes(e.type)).map(e=>({...e,elapsed:e.at}))),score:job.score},draw=job.draw;
@@ -218,7 +249,7 @@ async function verifyResolution(result,media,cfg,signal){
   if(typeof globalThis.VideoDecoder==='function'&&media.VideoSampleSink){try{const sink=new media.VideoSampleSink(track);for(const t of[0,duration*.5,Math.max(0,duration-1/cfg.fps)]){const sample=await wait(sink.getSample(t),signal,10000);try{if(!sample||sample.displayWidth!==width||sample.displayHeight!==height)throw Error('Invalid decoded frame');}finally{sample?.close();}}}catch(error){if(error.name==='AbortError')throw error;try{return await verifyPlayback(result,cfg,signal);}catch(playbackError){if(playbackError.name==='AbortError')throw playbackError;const e=Error(cfg.fps+' FPS decoding failed: '+error.message+' / '+playbackError.message);e.code=cfg.fps===120?'fps120':'decode';throw e;}}}
   return {...result,width,height};}catch(e){await result.dispose?.();throw e;}finally{input.dispose();}
 }
-async function preflight(job,cfg=settings(job)){
+async function preflight(job,cfg=settings(job)){await ensureAudio(job,job.env||globalThis,job.media||(job.env||globalThis).Mediabunny,cfg);
  if(cfg.fps===120){const env=job.env||globalThis;let supported=false;try{supported=!!(await env.VideoDecoder?.isConfigSupported?.({codec:'avc1.420033',codedWidth:cfg.width,codedHeight:cfg.height}))?.supported;}catch{}if(!supported){const e=Error('120 FPS playback support could not be verified. Select 60 FPS to keep 1080p.');e.code='fps120';throw e;}}
  const env=job.env||globalThis,media=job.media||env.Mediabunny,software=useSoftware(env,job.quality)&&!job.forceNative;
  // Probe the fast platform encoder before selecting the independent iPhone fallback.
@@ -305,7 +336,7 @@ async function recordedAudio(job,env,media,info,cfg){
  }finally{clearTimeout(timer);clearTimeout(watchdog);if(visibility)env.document.removeEventListener('visibilitychange',visibility);if(abort)signal?.removeEventListener('abort',abort);if(recorder&&recorder.state!=='inactive')recorder.stop();stream.getTracks().forEach(t=>t.stop());cleanup?.();input?.dispose();if(a!==job.audioContext)await a.close().catch(()=>{});}
 }
 async function serialEncode(job,env,media,canvas,draw,info,cfg,config){
- const signal=job.signal;let recorded=null,audioDisabled=false;if(config.audioMode==='recorded'){job.onStage?.('audio');try{recorded=await recordedAudio(job,env,media,info,cfg);}catch(e){if(e.name==='AbortError')throw e;audioDisabled=true;job.onAudioOmitted?.();}}job.onStage?.('video');const onProgress=p=>job.onProgress?.(recorded?.packets?.length ? .12+p*.88 : p),storage=await streamStorage(env,media,cfg);
+ const signal=job.signal;let recorded=null,audioDisabled=false;if(config.audioMode==='recorded'){job.onStage?.('audio');try{recorded=await recordedAudio(job,env,media,info,cfg);}catch(e){if(e.name==='AbortError')throw e;throw audioFailure(e);}}job.onStage?.('video');const onProgress=p=>job.onProgress?.(recorded?.packets?.length ? .12+p*.88 : p),storage=await streamStorage(env,media,cfg);
  let output,video,audio,encoder,error=null,pending=Promise.resolve(),packets=0,expected=0,encodedBytes=0;
  try{output=new media.Output({target:storage.target,format:new media.Mp4OutputFormat({fastStart:'reserve',...(cfg.fps===120?{metadataFormat:'mdta'}:{})})});video=new media.EncodedVideoPacketSource('avc');output.addVideoTrack(video,{frameRate:(cfg.fps||FPS),maximumPacketCount:Math.ceil(info.duration*(cfg.fps||FPS)+4)});
  if(job.withAudio&&!audioDisabled){audio=recorded?new media.EncodedAudioPacketSource('aac'):new media.AudioBufferSource({codec:'aac',quality:new media.Quality({bitrate:cfg.audioBitrate})});output.addAudioTrack(audio,{maximumPacketCount:Math.ceil(info.duration*100+256)});}
@@ -343,5 +374,5 @@ async function capture(job,env,canvas,draw,info,cfg){
   });
  }finally{clearTimeout(timer);clearTimeout(watchdog);if(visibility)env.document.removeEventListener('visibilitychange',visibility);if(abort)signal?.removeEventListener('abort',abort);if(recorder){recorder.ondataavailable=null;recorder.onerror=null;recorder.onstop=null;if(recorder.state!=='inactive')try{recorder.stop();}catch{}}stream?.getTracks().forEach(t=>t.stop());cleanupAudio?.();if(a&&a!==job.audioContext)await a.close().catch(()=>{});}
 }
-return {build:96,cleanupStorage,normalPlayback,create,coalesceWrites,oppositionLevel,oppositionCue,oppositionCueAt,oppositionMusicLevel,loopBuffer,goalLevel,teamCue,teamCueAt,teamMusicLevel,ambientLevel,crowdLevel,soundCue,soundDuration,whistleKey,whistleCues,audioEvents,audioSegment,profile,settings,device,needsMedia,originalZip,useSoftware,prepareSoftwareAudio,softwareEncode,normalizeMp4,probeVideo,verifyPlayback,serialConfig,preflight,streamStorage,recordedAudio,audioRecorderMime,recorderMime,verifyResolution,WIDTH,HEIGHT,FPS,HOLD};
+return {build:96,ensureAudio,verifyAudio,cleanupStorage,normalPlayback,create,coalesceWrites,oppositionLevel,oppositionCue,oppositionCueAt,oppositionMusicLevel,loopBuffer,goalLevel,teamCue,teamCueAt,teamMusicLevel,ambientLevel,crowdLevel,soundCue,soundDuration,whistleKey,whistleCues,audioEvents,audioSegment,profile,settings,device,needsMedia,originalZip,useSoftware,prepareSoftwareAudio,softwareEncode,normalizeMp4,probeVideo,verifyPlayback,serialConfig,preflight,streamStorage,recordedAudio,audioRecorderMime,recorderMime,verifyResolution,WIDTH,HEIGHT,FPS,HOLD};
 });

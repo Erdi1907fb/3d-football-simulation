@@ -3,13 +3,13 @@
   "penaltyAnalyses": 100,
   "conceptAnalyses": 100,
   "winners": [
-    1,
-    0
+    0,
+    1
   ],
-  "scores": 21,
+  "scores": 22,
   "conceptResultSigns": [
-    1,
     -1,
+    1,
     0
   ],
   "series": 300,

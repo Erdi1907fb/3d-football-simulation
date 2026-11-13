@@ -133,3 +133,15 @@ Copyright 2019 Google LLC & Bastiaan Konings; license copy:
 `assets/vendor/league-soccer/LICENSE`. This is not a complete engine port.
 No player model, pitch, kit, face, image, animation or audio asset was added
 or replaced for this adaptation.
+
+## Local AAC-LC fallback (V174)
+
+`assets/vendor/mediabunny-aac/encoder.js` is the unmodified browser bundle from
+`@mediabunny/aac-encoder@1.65.2`, Vanilagy/contributors, MPL-2.0 (LICENSE beside it).
+Source: https://github.com/Vanilagy/mediabunny/tree/v1.65.2/packages/aac-encoder .
+The embedded unmodified FFmpeg AAC build is LGPL-2.1-or-later; COPYING.LGPLv2.1,
+FFMPEG-LICENSE.md, upstream README/build instructions and bridge.c accompany it.
+Pinned FFmpeg source:60a2818f76dcd1fee3155b1791304af104a0fc1b; Emscripten4.0.21.
+It includes no GPL/nonfree build components. Rebuild/replace the standalone bundle
+using the provided source instructions to use a modified AAC library. The AAC code
+is loaded locally only when native AAC is absent; no media is uploaded to a service.
