@@ -17,6 +17,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+## [2026-11-13 UTC] Codex · T-290 tam sesli test tamamlanamadı
+- Temel main ed30b08 (V173); kullanıcı son tam süreli sesli1080p testini istedi. Ürün kodu/sürüm/yayın değiştirilmedi.
+- Gerçek UI, Android UA emülasyonu + SAFE_EXPORT (ikinci denemede LITE), Linux/SwiftShader; fiziksel cihaz değil.76,9sn/14vuruş/4–3serisi için gerçek1080×1920/60FPS/withAudio=true işi başlatıldı. UI iptal/tekrar başlatma PASS; tam4614kare/indirme/sonuna kadar oynatma sonucu doğrulanmadı.
+- Somut ses hatası: AAC native desteği false; audio/mp4 MediaRecorder desteği olsa da uygulamanın recordedAudio yolu1sn gerçek testte AudioContext running iken “AAC audio unavailable” döndürdü. Sessiz çıktı başarı sayılmadı.
+- Engelleyici: exec-server bağlantısı koptu; recovery timed out; seçili ortam unavailable/connectivity offline. Tam çalışan sürecin sonu okunamadı. Bu testi geçti veya tam dosya hazır diye raporlama.
+- Yerel tests/browser-full-video.cjs taslağı ve günlükler ortamda commit/push edilmeden kaldı; başka ajanda dosya varmış kabul edilmez. Kalıcı bulgu/tekrar adımları: research/FULL-VIDEO-TEST-V173.md.
+- Durum: T-290partial, T-292blocked. T-293: AAC başarısızlığında istenen sesin kaybolup sessiz devam etme olasılığı kaynak yolunda incelenmeli; tamamlanmış sessiz dosya doğrudan gözlenmedi.
+- Sonraki adım: erişilebilir ortam/AAC destekli gerçek Windows/iPhone/Android üzerinde tam sesli export + indirme + normal hızda ended + ileri/geri + ffprobe/ffmpeg. Önce1sn AAC/çıktı codec'i kontrol et; kısa sessiz V173 testini bu test yerine sayma.
+
 ## [2026-11-13 UTC] Codex · V172 → V173 tamamlanan kod / açık cihaz doğrulaması
 - Dal: `agent/codex/coordinated-football-v173`; başlangıç main `2ba43be`, plan `82f3d7a`, ara WIP `fa0ca6f`. Kapatma başlığı `V173: Gerçek temas ve koordineli futbol geliştirmeleri`; bu kayıt son kod/raporlarla aynı commit'tedir. Eski WIP kayıtları tarihsel; son durum bu kayıttır.
 - Kullanıcı beş aşamayı sırayla yetkilendirdi ve Codex/Claude Code arasında kalıcı devir istedi. `FOOTBALL-ROADMAP.md`, TASKS T-286…T-290, AGENTS'in ilk okuma listesi güncellendi.
