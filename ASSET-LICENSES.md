@@ -159,3 +159,7 @@ Full source-specific terms and limits: `docs/ai/research/EMERGENT-SOURCES-V175.m
 
 ### V179 Competition Studio graphics
 `competition-broadcast.js` canvas layout and `competition-ceremony.js` procedural cup, pedestal and medals are original project code. Covers use existing game renders and already tracked team crest/kit assets; no new third-party photographs, logos, fonts, animations or generated art were downloaded. Existing crest/player likeness terms remain unchanged.
+
+
+### V180 action names / Orkun membership correction
+Competition action-name panels are original project code. Orkun Kökçü reuses the existing player profile/reference and portrait endpoint; no new photo/model/audio/font was downloaded. Club membership, number and position facts are sourced to the official Beşiktaş player page recorded on the player entry.

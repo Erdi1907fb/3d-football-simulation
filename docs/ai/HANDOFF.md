@@ -18,6 +18,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-14 UTC] Codex · V179 → V180 — Turnuvada seçici aksiyon ismi ve Beşiktaş Orkun
+- Dal:`agent/codex/competition-names-v180`; temel9865068. Hostingerweb/mainV180teslim; EXEdeğil. T-318done.
+- **Sonkullanıcınetleştirmesi:** tümoyuncularda kalıcıisim **istenmiyor**. Sadeceaksiyonaktörü; normalmaçgibi. `competition-labels.js` ortakPlayerLabel.select/arenaLabelSlots; gerçeksave/ball_securedaktorü, kayıtlıpasalıcısı, vuranoyuncu, penaltıGK. GirişteArena'nın topluad istisnası kapalı; seremoni/araekran/tekrarda isim yok. Enyakınoyuncuyu tahminetme.
+- Rendererlabels gerçekactor.headworldposition'u **son**kamera matrisinden projekte eder. Dörtarena+üç11v11kamera, ikioran ve MP4/önizlemeaynıdraw. ActionisimleriHUDüstünde. Kullanıcıyayanlışlıkla tümisimduvarıgeri ekleme.
+- OrkunKökçü272700profil/yüzkayıtları vardı ama1895Beşiktaşregistryhavuzunda yoktu. ResmîBJK:https://bjk.com.tr/tr/oyuncu/4997/orkun-kokcu.html ;10/CM/175cm. Varolanprofilehedefli ek, mevcutXIaynı; elle5veXIseçilebilir. Rating/fitness/resmîXIuydurulmadı, eskirosterasOfkorunur; membershipkanıtı oyuncuda. Altıclientrosterfetch?v180; canonicalv75JSONadıaynı, tarihîsezonlar değiştirilmedi.
+- **Test49/49PASS**, sonhedefli labels36gerçekpenaltıörneğiPASS. Chromiumgerçek5v5kupa+11v11lig;14kamera/oranaktöretiketi (Orkun/Raphinha) ve2kurtarışGKetikesi (JoanGarcía)PASS. Tümekranlarda tekaksiyonetiketi; seremoni0. 18kare0.3s1080×1920/60fpsH264AACisimliMP4nativeindirmePASS;9karedeaktifisim, bütünkarelerdeençok1isim. VideodandekodJPEGdagörselkontrolPASS. Kalıcıkanıt:`research/competition-v180/validation.json`; browser:`tests/browser-competition-labels.cjs`.
+- **Yayın:**yerelbuild180/release-v180511dosya; Hostingersaltokumada179/filesMatch=true. V180otomatikdağıtılmadı. `/workspace/artifacts/Next90Sim-Web-V180-Hostinger-Update.zip`mevcutV179public_htmlüstüneyama; config/data/assets silinmez. ZIP/bütünlüközeti `research/competition-v180/package.json`.
+- T-317tamçokdakikalıexportGPU/Hostingerkontrolü ve T-312eskiWIPf3aa2a4ayrıaçık. İsim/kadro düzeltmesi onları tamamlamaz. KısaMP4testini bütünuzunturnuvaverenderıgibi sunma.
+
 ## [2026-11-14 UTC] Codex · V178 → V179 — Next90Sim web Turnuva Stüdyosu
 - Dal: `agent/codex/competition-studio-v179`; main'e V179 fast-forward teslim. Temel178dfaa. Ana ürün Hostinger web; Windows/EXE işi değil.
 - **T-316 uygulandı:** `competition.html`:8takım/7maç kupa,4takım/6maç/3hafta lig; ortak5v5Arena ve11v11analizMatch. Elle5/XI/diziliş. Gerçek seçilen5/11kişilik PenaltıStüdyosu beraberlik çözümü. FIFA2022grup sıralaması/D-046; disiplin oyuncu kimliğine bağlı, aynıslotta değişen oyuncular ayrı. Büyük tarihîarşiv yüklenmez, mevcutkadrolar/katalogöncülleri.

@@ -1,0 +1,716 @@
+{
+  "build": 180,
+  "requiredSuite": {
+    "version": "180",
+    "ranAt": "2026-11-14T12:32:48.857Z",
+    "results": [
+      {
+        "test": "competition-labels.cjs",
+        "pass": true,
+        "seconds": 1.8,
+        "summary": "{\"pass\":true,\"selectiveOnly\":true,\"sharedNormalPolicy\":true,\"keeperAndReceiver\":true,\"noIntroNameWall\":true,\"penalties\":true,\"twoFormats\":true,\"besiktasOrkun\":true}"
+      },
+      {
+        "test": "competition-frames.cjs",
+        "pass": true,
+        "seconds": 14.6,
+        "summary": "{\"pass\":true,\"arenaPresentationParityFrames\":94,\"asyncFrameOrdering\":true,\"cancellation\":true,\"cancelledWorldCannotDisposeRetry\":true}"
+      },
+      {
+        "test": "competition.cjs",
+        "pass": true,
+        "seconds": 99.6,
+        "summary": "{\"pass\":true,\"league\":6,\"cup\":7,\"physicalShootouts\":4,\"normalAnalysisScore\":[1,3],\"normalLeagueMatches\":6,\"leagueSeconds\":355.5083333333333,\"cupSeconds\":648.7083333333334,\"coverage\":\"fixtures, ranking, conduct, seeded lots, roster validation, actual engines/replay, no future spoilers, continuous chapters, physical selected-five penalties, medals/trophy, equal fans, cancellation\"}"
+      },
+      {
+        "test": "penalty-goal-evidence.cjs",
+        "pass": true,
+        "seconds": 3.1,
+        "summary": "{\"pass\":true,\"series\":100,\"kicks\":1084,\"goals\":684,\"outcomes\":{\"goal\":684,\"save\":351,\"wide\":23,\"post\":26},\"oldContradictions\":0,\"coverage\":\"whole-ball swept goal-plane crossing agrees with outcome through physical flight and two-second tail; no desired-result resampling\"}"
+      },
+      {
+        "test": "arena-action.cjs",
+        "pass": true,
+        "seconds": 7.2,
+        "summary": "{\"pass\":true,\"decisionSamples\":3100,\"counts\":[{\"shot\":579,\"carry\":200,\"pass\":221},{\"shot\":862,\"carry\":56,\"pass\":82}],\"longShots\":64,\"games\":8,\"shots\":30,\"nonGoals\":19,\"coverage\":\"context-sensitive shooting probability, pass/carry diversity, no forced outcomes, forward near-goal carrying, bounded tempo, deterministic actual 5v5/arena games\"}"
+      },
+      {
+        "test": "touchline-safe.cjs",
+        "pass": true,
+        "seconds": 0.3,
+        "summary": "{\"pass\":true,\"frames\":1210,\"goalPoints\":38720,\"coverage\":\"2–6 live goal frames, portrait/landscape safe area, angle, continuity, deterministic seeking; unchanged safe HUD band\"}"
+      },
+      {
+        "test": "football-fixes.cjs",
+        "pass": true,
+        "seconds": 55,
+        "summary": "{\"pass\":true,\"openGoalSeeds\":120,\"goals\":35,\"returned\":2505,\"keeperControl\":true,\"grass\":{\"speed\":3.2133573376680378,\"distance\":10.807163070653427},\"legacy\":{\"speed\":4.951548210181898,\"distance\":12.641033347306418},\"eliminationMatches\":25,\"extended\":22,\"samples\":[{\"n\":3,\"seconds\":60,\"seed\":1,\"game\":79.75833333333333,\"winner\":2,\"goals\":6},{\"n\":3,\"seconds\":60,\"seed\":7,\"game\":77.875,\"winner\":2,\"goals\":4},{\"n\":3,\"seconds\":60,\"seed\":42,\"game\":114.21666666666667,\"winner\":1,\"goals\":6},{\"n\":3,\"seconds\":90,\"seed\":1,\"game\":79.75833333333333,\"winner\":2,\"goals\":6},{\"n\":3,\"seconds\":90,\"seed\":7,\"game\":87.55"
+      },
+      {
+        "test": "natural-studios.cjs",
+        "pass": true,
+        "seconds": 4.2,
+        "summary": "{\"pass\":true,\"series\":100,\"kicks\":1084,\"freekicks\":166,\"outcomes\":{\"goal\":684,\"save\":351,\"wide\":23,\"post\":26},\"fkOutcomes\":{\"wall\":60,\"wide\":20,\"goal\":48,\"save\":29,\"post\":9},\"techniques\":[\"outside-foot\",\"roof\",\"placed\",\"driven\",\"power-rise\",\"inside-foot\",\"chip\",\"high-corner\",\"roll\",\"disguised\",\"central\",\"side-netting\"],\"naturalSelection\":true,\"physicalClassification\":true,\"finiteNoForcedRareEventQuota\":true}"
+      },
+      {
+        "test": "free-football.cjs",
+        "pass": true,
+        "seconds": 22.3,
+        "summary": "{\"pass\":true,\"seconds\":30,\"score\":[0,1],\"goals\":1,\"passes\":13,\"targetIndependent\":true,\"rewind\":true,\"compactNotFull90Minutes\":true}"
+      },
+      {
+        "test": "emergent-football.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"pass\":true,\"seedStreams\":true,\"syntheticLabels\":true,\"cautious\":139,\"creative\":739,\"executionRatio\":3.292958375670879,\"pressureRatio\":2.7638141351314456,\"connectedBlock\":true,\"inertia\":true}"
+      },
+      {
+        "test": "highlight-intelligence.cjs",
+        "pass": true,
+        "seconds": 0,
+        "summary": "{\"pass\":true,\"observedOnly\":true,\"clips\":2,\"timelineRoundtrip\":true}"
+      },
+      {
+        "test": "arena-clock.cjs",
+        "pass": true,
+        "seconds": 18.6,
+        "summary": "{\"pass\":true,\"pauses\":17,\"smallPauses\":2,\"multiPauses\":15,\"scope\":\"wall/video clock separate from 60s match clock; stop through actual restart; score-card identity and rewind\"}"
+      },
+      {
+        "test": "audio-export.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"pass\":true,\"nativeWithoutDownload\":true,\"localFallbackSingleLoad\":true,\"cancellation\":true,\"missingWrongShortOmittedAudioRejected\":true,\"completeAacAccepted\":true}"
+      },
+      {
+        "test": "football-intelligence.cjs",
+        "pass": true,
+        "seconds": 1.9,
+        "summary": "{\"PASS\":true,\"arrivalAndMovingLanes\":true,\"uniqueCover\":true,\"observationOnly\":true,\"deterministicRewind\":true,\"physicalPenaltySaves\":61,\"physicalOverrides\":66,\"freeKickContacts\":14}"
+      },
+      {
+        "test": "contact-motion.cjs",
+        "pass": true,
+        "seconds": 1.5,
+        "summary": "{\"pass\":true,\"contacts\":4,\"coverage\":\"reachable left/right strike and frozen receive IK, no root/ball mutation, no departed-ball chasing, one keeper lift and bounded body correction\"}"
+      },
+      {
+        "test": "teamwork.cjs",
+        "pass": true,
+        "seconds": 12.1,
+        "summary": "{\"pass\":true,\"styles\":[\"balanced\",\"wide\",\"vertical\",\"combination\"],\"combinations\":1106,\"recoveries\":2060,\"sector\":4486,\"passes\":54,\"coverage\":\"stable synthetic team styles, observed wall-pass and third-man jobs, mirror symmetry, separated support lanes, real arena pass points, sector/recovery cover, deterministic seeking\"}"
+      },
+      {
+        "test": "arena-elimination.cjs",
+        "pass": true,
+        "seconds": 4.2,
+        "summary": "{\"pass\":true,\"stages\":[{\"count\":4,\"teams\":[0,1,2,3]},{\"count\":3,\"teams\":[0,2,3]},{\"count\":2,\"teams\":[0,3]}],\"coverage\":\"physical 4→3→2 layouts, identities, restart cut, replay, real goal meshes/surface, local disposal, camera, unchanged points mode\"}"
+      },
+      {
+        "test": "futsal-five.cjs",
+        "pass": true,
+        "seconds": 41.6,
+        "summary": "{\"pass\":true,\"games\":18,\"patterns\":[\"rising\",\"free_kick\",\"driven\",\"placed\",\"one_touch\",\"header\"],\"kickoffs\":6,\"finales\":16,\"hands\":78,\"crosses\":5,\"goalSideCover\":0.989,\"counts\":{\"drop\":46,\"block\":13,\"possession\":548,\"decision\":715,\"pass\":325,\"turnover\":202,\"tackle\":413,\"skill\":102,\"skill_result\":100,\"shot\":124,\"goal\":34,\"net_contact\":34,\"kickoff_setup\":6,\"play_resumed\":34,\"kickoff\":6,\"board\":80,\"duel_win\":73,\"save\":62,\"loose_ball\":33,\"foul\":22,\"free_kick\":6,\"keeper_catch\":16,\"keeper_distribution\":53,\"finish\":18,\"keeper_control\":37,\"keeper_spill\":7,\"advantage\":16,\"ceiling\":2,\"post\":2},\"coverage"
+      },
+      {
+        "test": "arena-balance.cjs",
+        "pass": true,
+        "seconds": 8.3,
+        "summary": "{\"pass\":true,\"games\":6,\"cameraFrames\":3119,\"passes\":53,\"shots\":25,\"maxKeeperTurn\":3.2,\"maxPlayerTravel\":5.775,\"coverage\":\"medium action context, fixed central press box, actual save time, collision anticipation, forward options, elastic net release and ball-loaded cloth\"}"
+      },
+      {
+        "test": "arena-football.cjs",
+        "pass": true,
+        "seconds": 12.4,
+        "summary": "{\"pass\":true,\"games\":12,\"passes\":109,\"completed\":83,\"shotDistances\":[8.38,9.59,11.5,10.83,9.99,8.3,4.59],\"coverage\":\"rectangle, turn/acceleration limits, real ground friction, receive timing, shooting channels, wall-aware keepers, real bank passes, kick preparation, balanced opening, short truthful result\"}"
+      },
+      {
+        "test": "arena-broadcast-flow.cjs",
+        "pass": true,
+        "seconds": 9,
+        "summary": "{\"pass\":true,\"games\":10,\"netGoals\":17,\"finales\":10,\"skills\":{\"true\":15,\"false\":11},\"coverage\":\"selective names, one presser, skill outcomes, moving scored ball, shared net physics/waves and rewind, full-side safe framing, real supporter finales, uncompressed HUD text\"}"
+      },
+      {
+        "test": "arena-duels.cjs",
+        "pass": true,
+        "seconds": 65.4,
+        "summary": "{\"pass\":true,\"games\":45,\"moves\":[\"roulette\",\"body-feint\",\"chop\",\"nutmeg\",\"drag-back\",\"step-over\",\"elastico\"],\"counts\":{\"drop\":101,\"block\":26,\"possession\":1032,\"decision\":1339,\"pass\":599,\"turnover\":386,\"tackle\":796,\"skill\":174,\"skill_result\":172,\"shot\":243,\"goal\":69,\"net_contact\":67,\"kickoff_setup\":13,\"play_resumed\":69,\"kickoff\":13,\"board\":147,\"duel_win\":143,\"save\":114,\"foul\":38,\"free_kick\":8,\"finish\":45,\"keeper_control\":74,\"keeper_distribution\":103,\"keeper_spill\":8,\"keeper_catch\":30,\"loose_ball\":59,\"post\":4,\"advantage\":30,\"ceiling\":3},\"coverage\":\"real skill/contact defence, box fouls/restarts,"
+      },
+      {
+        "test": "national-coverage.cjs",
+        "pass": true,
+        "seconds": 0.3,
+        "summary": "{\"pass\":true,\"teams\":85,\"players\":2224,\"conceptTeams\":85,\"coverage\":\"all 85 catalogue nations: real provider squads, no fake official XI, kits/three variants, current concept teams, normal match completion, all studio shared selectors and local textures\"}"
+      },
+      {
+        "test": "arena-rush.cjs",
+        "pass": true,
+        "seconds": 31.8,
+        "summary": "{\"pass\":true,\"games\":25,\"scoreSignatures\":8,\"winners\":4,\"lateChances\":10,\"coverage\":\"2–6 teams x five exact durations, continuous playback, late physical action/varied scores, timed elimination honesty, TR/EN timelines, safety aisles/walls/stewards, continuous pitch paint\"}"
+      },
+      {
+        "test": "small-sided.cjs",
+        "pass": true,
+        "seconds": 10.6,
+        "summary": "{\"pass\":true,\"passes\":209,\"saves\":54,\"goals\":35,\"draws\":1,\"cameraFrames\":5239,\"coverage\":\"5v5/3-per-side, free outfield positions + mandatory GK, centre-drop variation, actual passes/saves/scorer slots, equal local crowd, contiguous terraces, goal-specific cheers, oblique safe and continuous tracking\"}"
+      },
+      {
+        "test": "japon-net.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"pass\":true,\"coverage\":\"4.4/5/6 m physical net sizes, regular 12 cm grid, open goal mouth, six independent nets, shared normal-game material, local-only disposal\"}"
+      },
+      {
+        "test": "japon-camera.cjs",
+        "pass": true,
+        "seconds": 18.3,
+        "summary": "{\"pass\":true,\"triples\":10,\"complete\":4,\"frames\":3520,\"coverage\":\"monotonic arena areas/goal sizes, matching visible+physical bounds, 10/9/12/15/18 actors, per-role shot identities, critical action and goal frame inside Shorts/Reels safe region, all three cameras, deterministic seeking, requested legends\"}"
+      },
+      {
+        "test": "japon-kale.cjs",
+        "pass": true,
+        "seconds": 20.6,
+        "summary": "{\"pass\":true,\"games\":50,\"coverage\":\"2–6 sides, two formats, exact goal score, round reset, elimination, ranking, physical goal plane, highlights, seeded rewind, open lanes\"}"
+      },
+      {
+        "test": "commentary.cjs",
+        "pass": true,
+        "seconds": 2.3,
+        "summary": "{\"pass\":true,\"coverage\":\"TR/EN, exact exported times, all goals/eliminations, actual actors, corner without invented header, SRT, deterministic variation\"}"
+      },
+      {
+        "test": "freekick.cjs",
+        "pass": true,
+        "seconds": 22.5,
+        "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2108,\"outcomes\":{\"goal\":560,\"wide\":685,\"wall\":156,\"post\":153,\"save\":554},\"techniques\":[\"dip\",\"curl\",\"under\",\"power\",\"knuckle\",\"outside\",\"low-curl\",\"chip\",\"around\"],\"physicalMatch\":0.9986,\"earlyFinish\":41,\"suddenDeath\":93,\"samples\":936436,\"maxStep\":0.577,\"brandBoards\":true,\"sameSpotRounds\":1166,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":286,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1238,\"keeperCatches\":{\"clear\":172,\"rain\":78}}"
+      },
+      {
+        "test": "penalty.cjs",
+        "pass": true,
+        "seconds": 8,
+        "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4257,\"techniques\":{\"chip\":176,\"disguised\":147,\"placed\":649,\"power-rise\":320,\"roll\":326,\"high-corner\":359,\"inside-foot\":633,\"side-netting\":396,\"central\":257,\"driven\":596,\"outside-foot\":171,\"roof\":227},\"speedKmh\":{\"min\":54,\"median\":84,\"max\":111},\"maxStep60fps\":0.55,\"aeroKicks\":632,\"maxCurlMetres\":0.273}"
+      },
+      {
+        "test": "duo.cjs",
+        "pass": true,
+        "seconds": 4,
+        "summary": "{\"PASS\":true,\"penaltySeries\":120,\"freeKickSeries\":120}"
+      },
+      {
+        "test": "celebrations.cjs",
+        "pass": true,
+        "seconds": 0.4,
+        "summary": "{\"PASS\":true,\"celebrations\":106,\"small\":19,\"finaleSlideShare\":0.8,\"goalSlideShare\":0.41,\"runArmVariants\":35,\"moves\":45,\"arrivals\":8,\"teamRoutines\":14,\"posesChecked\":15264,\"posesWithMotion\":14852,\"planPackShare\":0.851,\"distinctPicked\":106}"
+      },
+      {
+        "test": "weather.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"PASS\":true,\"particles\":{\"high\":19600,\"balanced\":11900,\"low\":5600},\"restoresClear\":true,\"adoptsLateKits\":true,\"types\":[\"clear\",\"rain\",\"snow\"]}"
+      },
+      {
+        "test": "graphics.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"PASS\":true,\"postfx\":18,\"snowPrints\":30,\"rewindClears\":true,\"rainSplash\":true,\"backThree\":true,\"backFour\":true}"
+      },
+      {
+        "test": "kickoff-referee.cjs",
+        "pass": true,
+        "seconds": 28.2,
+        "summary": "{\"PASS\":true,\"samples\":360,\"minGap\":12.51}"
+      },
+      {
+        "test": "forecast.cjs",
+        "pass": true,
+        "seconds": 2.2,
+        "summary": "{\"PASS\":true,\"conceptPairs\":300,\"probabilitySumMaxError\":1.1102230246251565e-15,\"homeAdvantageRespected\":1,\"season\":{\"schedule\":30,\"tablePoints\":80,\"seededSimulation\":true}}"
+      },
+      {
+        "test": "forecast.php",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
+      },
+      {
+        "test": "national-competitions.php",
+        "pass": true,
+        "seconds": 0.4,
+        "summary": "{\"PASS\":true,\"forecasts\":[\"Armenia 1.26-1.17 Cyprus\",\"Türkiye 0.98-1.61 Belgium\",\"Albania 1.62-0.9 Finland\",\"Czechia 0.49-2.66 Spain\",\"England 2.42-0.5 Croatia\",\"Italia 1.01-1.52 France\"],\"turkiyeBelgium\":{\"home\":2,\"away\":4},\"xg\":{\"home\":0.9770247077337944,\"away\":1.6117217771333712},\"turkiyeXI\":[\"Uğurcan Çakır\",\"Ozan Kabak\",\"Abdülkerim Bardakcı\",\"Zeki Çelik\",\"İsmail Yüksek\",\"Salih Özcan\",\"Eren Elmalı\",\"Ferdi Kadıoğlu\",\"Yunus Akgün\",\"Aral Şimşir\",\"Hakan Çalhanoğlu\"],\"unl\":52,\"intl\":11,\"sample\":[\"Armenia v Cyprus\",\"Türkiye v Belgium\",\"Albania v Finland\",\"Czechia v Spain\"]}"
+      },
+      {
+        "test": "forecast-lock.php",
+        "pass": true,
+        "seconds": 0,
+        "summary": "{\"PASS\":true}"
+      },
+      {
+        "test": "callup-filter.php",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"PASS\":true,\"transfermarkt\":26}"
+      },
+      {
+        "test": "presentation.cjs",
+        "pass": true,
+        "seconds": 3.8,
+        "summary": "{"
+      },
+      {
+        "test": "variation.cjs",
+        "pass": true,
+        "seconds": 5.2,
+        "summary": "{"
+      },
+      {
+        "test": "recovery.cjs",
+        "pass": true,
+        "seconds": 0.8,
+        "summary": "{"
+      },
+      {
+        "test": "intent.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"PASS\":true,\"geometryCases\":500,\"netSamples\":210,\"freeSideAndRoof\":true,\"fixedMouthAndGround\":true,\"deterministicRewind\":true}"
+      },
+      {
+        "test": "remaster.cjs",
+        "pass": true,
+        "seconds": 0.9,
+        "summary": "{\"PASS\":true,\"tacticalTargets\":270,\"intents\":[\"inverted-cover\",\"rest-defence\",\"overlap\",\"pivot\",\"half-space\",\"weak-side-width\",\"wide-offer\",\"overlap-offer\",\"back-line\",\"goal-side-cover\",\"front-screen\",\"midfield-line\",\"fullback-width\",\"screen-pivot\",\"far-post-run\"],\"mirrorInvariant\":true,\"reciprocalAvoidance\":true,\"coincidentBodiesRecovered\":true,\"materialGroups\":[{\"before\":20,\"after\":14},{\"before\":20,\"after\":13}],\"deployBindings\":\"normal/concept/penalty\",\"shaderContract\":true}"
+      },
+      {
+        "test": "crests.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{\"PASS\":true,\"catalogTeams\":274,\"embeddedAssets\":294,\"lateImageRefresh\":true}"
+      },
+      {
+        "test": "search-test.cjs",
+        "pass": true,
+        "seconds": 0.1,
+        "summary": "{"
+      },
+      {
+        "test": "engine-test.cjs",
+        "pass": true,
+        "seconds": 113.5,
+        "summary": "{"
+      }
+    ],
+    "pass": true
+  },
+  "targetedFinal": {
+    "pass": true,
+    "selectiveOnly": true,
+    "sharedNormalPolicy": true,
+    "keeperAndReceiver": true,
+    "noIntroNameWall": true,
+    "penalties": true,
+    "twoFormats": true,
+    "besiktasOrkun": true,
+    "physicalPenaltySamples": 36
+  },
+  "browser": {
+    "pass": true,
+    "cases": [
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "landscape",
+        "camera": "touchline",
+        "tags": [
+          {
+            "x": 876.753315792533,
+            "y": 364.77372824839233,
+            "w": 162.41259765625,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 23,
+            "anchorX": 957.959614620658,
+            "anchorY": 402.77372824839233,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "landscape",
+        "camera": "broadcast",
+        "tags": [
+          {
+            "x": 872.8414221381984,
+            "y": 332.8228734767329,
+            "w": 162.41259765625,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 23,
+            "anchorX": 954.0477209663234,
+            "anchorY": 370.8228734767329,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "landscape",
+        "camera": "side-full",
+        "tags": [
+          {
+            "x": 967.9807542803703,
+            "y": 368.7352529372008,
+            "w": 162.41259765625,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 23,
+            "anchorX": 1049.1870531084953,
+            "anchorY": 406.7352529372008,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "landscape",
+        "camera": "press-follow",
+        "tags": [
+          {
+            "x": 849.6902416096196,
+            "y": 326.02177651282955,
+            "w": 162.41259765625,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 23,
+            "anchorX": 930.8965404377446,
+            "anchorY": 364.02177651282955,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "portrait",
+        "camera": "touchline",
+        "tags": [
+          {
+            "x": 396.6407845344562,
+            "y": 693.010795381881,
+            "w": 149.85498046875,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 21,
+            "anchorX": 471.5682747688312,
+            "anchorY": 731.010795381881,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "portrait",
+        "camera": "broadcast",
+        "tags": [
+          {
+            "x": 395.5954326648248,
+            "y": 687.85194637963,
+            "w": 149.85498046875,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 21,
+            "anchorX": 470.5229228991998,
+            "anchorY": 725.85194637963,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "portrait",
+        "camera": "side-full",
+        "tags": [
+          {
+            "x": 447.9152151721704,
+            "y": 709.4974309160308,
+            "w": 149.85498046875,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 21,
+            "anchorX": 522.8427054065454,
+            "anchorY": 747.4974309160308,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "orient": "portrait",
+        "camera": "press-follow",
+        "tags": [
+          {
+            "x": 388.0090232940877,
+            "y": 696.3195341462554,
+            "w": 149.85498046875,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 3,
+            "name": "Orkun Kökçü",
+            "text": "Orkun Kökçü",
+            "font": 21,
+            "anchorX": 462.9365135284627,
+            "anchorY": 734.3195341462554,
+            "color": 16052973,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "keeper": true,
+        "tags": [
+          {
+            "x": 287.4803549125522,
+            "y": 686.5208418183679,
+            "w": 138.22705078125,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 5,
+            "name": "Joan García",
+            "text": "Joan García",
+            "font": 21,
+            "anchorX": 356.5938803031772,
+            "anchorY": 724.5208418183679,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "orient": "landscape",
+        "camera": "broadcast",
+        "tags": [
+          {
+            "x": 227.01866170118728,
+            "y": 484.7755867775064,
+            "w": 122.7802734375,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 10,
+            "name": "Raphinha",
+            "text": "Raphinha",
+            "font": 23,
+            "anchorX": 288.4087984199373,
+            "anchorY": 522.7755867775064,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "orient": "landscape",
+        "camera": "wide",
+        "tags": [
+          {
+            "x": 786.8473580195717,
+            "y": 451.756326375824,
+            "w": 122.7802734375,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 10,
+            "name": "Raphinha",
+            "text": "Raphinha",
+            "font": 23,
+            "anchorX": 848.2374947383217,
+            "anchorY": 489.756326375824,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "orient": "landscape",
+        "camera": "tactical",
+        "tags": [
+          {
+            "x": 356.1138174398525,
+            "y": 574.9961735912856,
+            "w": 122.7802734375,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 10,
+            "name": "Raphinha",
+            "text": "Raphinha",
+            "font": 23,
+            "anchorX": 417.5039541586025,
+            "anchorY": 612.9961735912856,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "orient": "portrait",
+        "camera": "broadcast",
+        "tags": [
+          {
+            "x": 141.97743623728059,
+            "y": 751.7892552368176,
+            "w": 113.6689453125,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 10,
+            "name": "Raphinha",
+            "text": "Raphinha",
+            "font": 21,
+            "anchorX": 198.81190889353059,
+            "anchorY": 789.7892552368176,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "orient": "portrait",
+        "camera": "wide",
+        "tags": [
+          {
+            "x": 360.3071299369185,
+            "y": 752.4443307579968,
+            "w": 113.6689453125,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 10,
+            "name": "Raphinha",
+            "text": "Raphinha",
+            "font": 21,
+            "anchorX": 417.1416025931685,
+            "anchorY": 790.4443307579968,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "orient": "portrait",
+        "camera": "tactical",
+        "tags": [
+          {
+            "x": 171.6574240450539,
+            "y": 804.5781943197842,
+            "w": 113.6689453125,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 10,
+            "name": "Raphinha",
+            "text": "Raphinha",
+            "font": 21,
+            "anchorX": 228.4918967013039,
+            "anchorY": 842.5781943197842,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "keeper": true,
+        "tags": [
+          {
+            "x": 387.6473946078581,
+            "y": 703.9278391633485,
+            "w": 138.22705078125,
+            "h": 30,
+            "collision": 0,
+            "cost": 0,
+            "id": 0,
+            "name": "Joan García",
+            "text": "Joan García",
+            "font": 21,
+            "anchorX": 456.7609199984831,
+            "anchorY": 741.9278391633485,
+            "color": 19864,
+            "leader": false
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "excerptOnly": true,
+    "export": {
+      "file": "/workspace/artifacts/competition-names-v180/action-labels-portrait.mp4",
+      "frames": 18,
+      "framesWithName": 9,
+      "h264": true,
+      "aac": true
+    }
+  },
+  "limits": [
+    "Native export test is an actual 0.3-second 1080x1920/60fps/H264/AAC excerpt, not a complete competition export.",
+    "All four arena and three normal cameras tested in both orientations.",
+    "Live Hostinger read-only check build179/filesMatch=true; V180 not deployed."
+  ]
+}

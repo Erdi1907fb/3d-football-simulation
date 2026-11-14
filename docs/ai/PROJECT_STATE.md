@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V179** · 2026-11-14 UTC · Codex (Hostinger web Turnuva Stüdyosu)
+> Son güncelleme: **V180** · 2026-11-14 UTC · Codex (seçici aksiyon isimleri ve Beşiktaş Orkun)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,17 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V179** (`VERSION`; Turnuva Stüdyosu, V178 futbol/penaltı korunur) |
-| Sonraki geliştirme hedefi | **V180** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
+| Kaynak sürümü | **V180** (`VERSION`; turnuvada aksiyon ismi, Beşiktaş Orkun; V179/V178 korunur) |
+| Sonraki geliştirme hedefi | **V181** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build176 / filesMatch=true** (2026-11-14); V179 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v179.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 179 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V180 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v180.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 180 |
+
+## V180 — turnuvada aksiyondaki oyuncu ismi; Orkun Beşiktaş havuzunda
+
+- `competition-labels.js`: yalnız topu taşıyan/karşılayan/vuran veya kurtaran oyuncu. NormalortakPlayerLabel.select ve arenanınseçimkuralları; girişte topluisim ve seremonide kalıcıisim yok. Tümkameralar ve iki oran; aynıdraw önizleme/MP4. Gerçekheadanchor, HUD/Shorts/Reels güvenli alan.
+- Beşiktaş1895oyuncuhavuzuna OrkunKökçü272700,10numara,CM eklendi; eskiXI aynı, seçilebilir5veXI. Varolan yüzprofili korunur; resmîBJKmembershipkanıtı oyuncuda. Altırosterclient?v180; turnuva/JaponHTMLnocache.
+- Test/kanıt ve kalanlar:enüstHANDOFF. T-317tamuzunvideo ve T-312diğerfutbolWIPayrı açık; bu isim/kadro düzeltmesi onları tamamlamaz.
 
 ## V179 — web Turnuva Stüdyosu
 

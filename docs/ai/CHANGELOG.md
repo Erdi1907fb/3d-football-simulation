@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V180 — 2026-11-14 UTC (Codex)
+- Kupa/lig5v5ve11v11de aksiyon aktörünün ismi:ortakPlayerLabel/seçiciArena politikası; pasalıcısı, gerçekGK kurtarışı ve penaltı vurucu/GK. Herkesin üstünde sürekli isim yok; giriş/toplu/seremoni isimleri kapalı.
+- Gerçekbaşkonumu sonkameraylaprojeksiyon; önizleme/MP4aynıdraw,7kamera×2oran/HUDgüvenli alan.
+- BeşiktaşseçimkadrosunaOrkunKökçü272700,10numara/CM/resmîBJKmembership hedefli eklendi; varolanprofil/yüz, eskiXI korunur. Altırosteristemcisinde?v180, yeniHTMLgirişlerinocache.
+-49zorunluregresyonPASS;14kamera/oran+2GK,36gerçekpenaltıadı ve0.3sn1080p60H264/AACisimliMP4nativeindirme/dekodPASS. Kanıt:research/competition-v180/validation.json. TamuzunvideoT-317ve diğerfutbolT-312ayrı açık.
+
 ## V179 — 2026-11-14 UTC (Codex)
 - Hostinger web `competition.html`:Next90Sim CUP8takım/7maç,LEAGUE4takım/6maç/3hafta; elle5/XI/diziliş, ortakArena/analizMatch/gerçekPenaltı motorları.
 - Aynı sonuçlardan1920×1080ve1080×1920,60FPSsesliMP4 ayrı indirmeler. Gerçek oyun kapağıPNG+videoda kapak, istenen karePNG.

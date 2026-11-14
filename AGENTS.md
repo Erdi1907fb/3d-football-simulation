@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 48 test; `--quick` `engine-test.cjs` hariç 47 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 49 test; `--quick` `engine-test.cjs` hariç 48 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -275,3 +275,9 @@ dosyalardır.
 - Lig sıralaması açıkça FIFA2022grup ölçütleri:puan,genelaveraj,gol,H2Hpuan/averaj/gol,disiplin,kayıtlıkura. Gelecekteki sonuçları/ağaç katılımcılarını ara ekranlarda gösterme.5v5golbeklemeleri/penaltılar/ekranlar toplam videoyu uzatır;11v11özetlerine süre sınırı koyma.
 - CoverPNGgerçek renderdan; video ilk bölümü aynı kapak. Her kare PNGalınabilir. `video-core.prepareFrame(t)` asenkron sahne yüklemesini kodlanmış zamandan ayırır; bu işi gerçek zaman capture ile dışa aktarma. Yalnız bir canlı dünya ve bir maç replaycache tutulur. `arena-presentation.js` eskiUIhareketinin ortak çıkarımıdır;94kare V178parite testi korunur.
 - Yeni testler:`competition.cjs`,`competition-frames.cjs`; gerçekChromiumisteğe bağlı`browser-competition.cjs` kısa1080p60sesli alıntıları test eder. Kısa alıntı testi bütün çok dakikalı videonun tamamı dışa aktarıldı anlamına gelmez. T-312eskiWIPbu modla tamamlanmış olmaz.
+
+
+## 25. V180 — Turnuvada aksiyon ismi ve Orkun Kökçü
+- Kullanıcının son netleştirmesi: kupa/lig oyuncu isimleri **herkeste sürekli değil**, yalnız gerçek aksiyondaki oyuncuda. `competition-labels` normalde ortakPlayerLabel.select; gerçek save/ball_secured aktörü, pasın kayıtlı alıcısı; arenada mevcutlabelSlots (girişte topluisim istisnası kapalı). Penaltıda vurucu/hamle yapanGK. Tahminî enyakınoyuncuyu sahip sanma. Seremonilerde/tekrarda/araekranda toplu isim yok. Kamera/süre/seed isim seçiminden etkilenmez.
+- İsim katmanı ortakrenderer.draw yolunda önizleme/MP4/iki oran/tüm kameralarda; son kamera dönüşümünden sonra gerçekhead.worldPosition projekte edilir, HUD/platform güvenli bölge korunur.
+- BJK1895:Orkun272700 profil/yüz kaydı zaten vardı; seçilebilir kulüp rosterbench listesine CM/10 olarak resmîBJKoyuncu sayfasıyla hedefli eklendi. Eski XI/resmîkadro iddiasını değiştirme. Tüm rosterfetch URLleri?v180; tarihîsezon arşivlerine otomatik transfer uygulama.
