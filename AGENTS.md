@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 44 test; `--quick` `engine-test.cjs` hariç 43 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 46 test; `--quick` `engine-test.cjs` hariç 45 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -256,3 +256,15 @@ dosyalardır.
 ## 21. V177 — Touchline güvenli kadraj ve açık futbol düzeltmeleri
 - Touchline(1,.72,.35)eğik izleme açısı korunur; mevcut `frame.layout.goals` içindeki bütün canlı kale çerçeveleri/dip/ağ derinliği aksiyon güvenli alanına girer. Yakın kaleyi skor panelinin altına geri düşürmeyin. HUD güvenli bandı aynı kalır. `tests/touchline-safe.cjs` ve gerçek browser harness iki oranı kontrol eder.
 - Kullanıcının yeni süre talebi D-042, V176D-041uzatmasını aşar:60/75/90içinde ve seçilen limit korunarak fiziksel tek kazanan isteniyor. **Henüz uygulanmış/bitmiş sayılmaz.** T-312taslağı `agent/codex/web-football-v177` @f3aa2a4; bütünleşme başarısız olduğu için main'e alınmadı. Sonraki ajan bu kaynak taslağını ve HANDOFF'u okuyarak devam eder. Önceki dalı silmeyin veya bütün dalı test etmeden birleştirmeyin. Diğer penaltı/kaleci/VAR/zemin taslakları da oradadır.
+
+
+## 22. V178 — Arena aksiyonu, yakın kale yığılması değildir
+- Kullanıcının son netleştirmesi:T-314Japon Kale/5v5'te daha çok hücum/şut denemesidir. Orta saha/uzak şut, kombinasyon, koşu ve yakın bitiriş birlikte kalır; oyuncuları kale önüne yığma.11v11tahmin/analiz ayrı korunur.
+- `japon-engine`varsayılan`actionIntensity=1`,0yalnızAPI/A-Bkontrolü. Takım tempo/pas yönü/karar sıklığı ve güvenli fiziksel hazırlama, destek koşuları ve açık şut koridoru değerlendirmesi artar. Kale sayısı/saha ölçeğine uygun16–23mşut menzili; uzak şut seçilebilir ama zorunlu değil. Seçilen davranışın top/kaleci sonucu fiziksel kalır. Gol/direk/kurtarış kotası ve uygun skor/seed seçimi ekleme;0–0kalabilir.
+- `tests/arena-action.cjs`, `tools/validate-arena-action.cjs`; araştırma/istatistik sınırları `research/ARENA-ACTION-V178.md`. APIteamStylehâlâ sentetik koçluk öncülüdür; gerçek takım taktiği/gerçek tracking kalibrasyonu iddiası yok.
+- V178,T-312'nin tümünü tamamlamaz. AyrıWIPf3aa2a4dalını yeni kaynakla kontrollü birleştirerek devam et; uzatmasız/limitkorumalı eleme halen açık.
+
+
+## 23. V178 — Penaltı çizgisi/sonuç düzeltmesi (T-312'nin doğrulanan parçası)
+- Doğal penaltıda planlanan uçuş süresi gol kararı için son tarih değildir. Gerçek süpürülmüş tam-top çizgisi geçişi (52.61m), direk sonrası fiziksel devam ve varış vektörü sınıflandırmayı belirler. Kaleci sektirmesinden sonraki uçuş da izlenir. `goalEvidence` gerçek geçişi taşır; yanlış sonucu korumak için topu/kaleciyi değiştirmeyin.
+- `tests/penalty-goal-evidence.cjs`: uçuş ve2snkuyrukta ilk çizgi geçişi/sonuç tutarlılığı; eski kaynak karşılaştırmasında39çelişki yeniden üretildi, yeni1084vuruşta0. Bu yalnız sonuç düzeltmesidir. Kaleci el/ayak animasyonu ve T-312'nin diğer bölümleri halen ayrı WIP'tir.

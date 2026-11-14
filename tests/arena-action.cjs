@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict'),E=require('../assets/japon-engine'),I=require('../assets/football-intelligence'),Tac=require('../assets/japon-tactics');
+const goal={x:14,z:0,nx:1,nz:0,width:5},p={id:'carrier',x:7,z:0,team:0,active:true,role:'attacker',identity:{id:'carrier',name:'Carrier'}},mate={id:'mate',x:5,z:3,team:0,active:true,role:'defender'},keeper={id:'keeper',x:13,z:0,team:1,active:true,keeper:true};
+const counts=[{},{}];
+for(let action=0;action<=1;action++)for(let seed=1;seed<=1000;seed++){const q=I.arenaDecision(p,goal,[p,mate,keeper],()=>0,I.Emergent.stream(seed),{actionIntensity:action,keeper});counts[action][q.kind]=(counts[action][q.kind]||0)+1;assert(!('outcome'in q),'intent must not manufacture a goal/save');}
+assert(counts[1].shot>counts[0].shot,'good shooting windows receive higher probability');assert(counts[1].pass>0&&counts[1].carry>0,'retain passing and carrying options');
+for(const sign of [-1,1]){const g={...goal,x:14*sign,nx:sign},carrier={...p,x:12.5*sign},aim=Tac.carryTarget(carrier,g,null,[]);assert((aim.x-carrier.x)*sign>=0,'near-goal carrier does not turn back towards beaten cover');}
+let longShots=0;const far={...p,x:-6},farMate={...mate,x:-3},layout=require('../assets/japon-layout').create(6);for(let seed=1;seed<=1000;seed++){const q=I.arenaDecision(far,goal,[far,farMate,keeper],()=>0,I.Emergent.stream(seed),{actionIntensity:1,layout,keeper});if(q.kind==='shot')longShots++;}assert(longShots>0&&longShots<1000,'plausible midfield/long attempts stay probabilistic');
+const behind={...p,x:15};for(let seed=1;seed<=100;seed++)assert.notEqual(I.arenaDecision(behind,goal,[behind,mate,keeper],()=>0,I.Emergent.stream(seed),{actionIntensity:1,layout}).kind,'shot','no shooting backwards through the back of a goal');
+const sides=n=>Array.from({length:n},(_,i)=>({name:'Side '+i,keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},defender:{id:'d'+i,name:'Defender '+i},defender2:{id:'e'+i,name:'Other defender '+i},midfielder:{id:'m'+i,name:'Midfielder '+i},player:{id:'p'+i,name:'Player '+i}}));
+let games=0,shots=0,nonGoals=0;const signatures=new Set();
+for(const n of [2,4])for(const seed of [1,7,42,1001]){const options={sides:sides(n),seed,seconds:30,mode:'points'},c=E.create(options);assert.equal(c.actionIntensity,1);assert(c.styles.every(s=>s.tempo<=1.2&&s.actionIntensity===1));assert(c.gameDuration>=30);assert(c.frames.every(f=>Number.isFinite(f.ball.x)&&Number.isFinite(f.ball.y)&&Number.isFinite(f.ball.z)));const es=c.liveEvents,attempts=es.filter(e=>e.type==='shot').length,goals=es.filter(e=>e.type==='goal').length;shots+=attempts;nonGoals+=Math.max(0,attempts-goals);signatures.add(JSON.stringify(es.map(e=>[e.type,e.team,e.actorIndex,e.at])));games++;
+ if(n===2&&seed===1){const repeat=E.create(options);assert.deepEqual(repeat.liveEvents,c.liveEvents,'replay and export keep seeded decisions');}
+}
+assert(shots>0&&nonGoals>0,'real trajectories retain unsuccessful attempts');assert(signatures.size>1,'different seeds produce distinct football');
+console.log(JSON.stringify({pass:true,decisionSamples:3100,counts,longShots,games,shots,nonGoals,coverage:'context-sensitive shooting probability, pass/carry diversity, no forced outcomes, forward near-goal carrying, bounded tempo, deterministic actual 5v5/arena games'}));

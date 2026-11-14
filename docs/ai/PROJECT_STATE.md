@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V177** · 2026-11-14 UTC · Codex (Hostinger web Touchline güvenli kadraj)
+> Son güncelleme: **V178** · 2026-11-14 UTC · Codex (Hostinger web aksiyon ve penaltı çizgi sonucu)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,21 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V177** (`VERSION`; Touchline kamera düzeltmesi) |
-| Sonraki geliştirme hedefi | **V178** — yüksek aksiyon ve T-312 açık futbol düzeltmeleri |
+| Kararlı sürüm | **V178** (`VERSION`; arena aksiyonu, penaltı çizgi sonucu ve V177 kamera) |
+| Sonraki geliştirme hedefi | **V179** — T-312 kalan futbol düzeltmeleri ve T-315 indirme doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build176 / filesMatch=true** (2026-11-14); V177 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v177.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 177 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build176 / filesMatch=true** (2026-11-14); V178 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v178.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 178 |
+
+## V178 — daha çok ve farklı bölgelerden şut; penaltı gol tutarlılığı
+
+- Japon Kale/5v5 varsayılan yüksek aksiyon: ileri/ara pas, destek, karar ve sınırlı koşu temposu; açık koridorda orta/uzak/yakın şut tercihleri. Oyuncuları kale önüne yığma veya her şutu gole dönüştürme yok. 11v11 tahmin/analiz korunur. API `actionIntensity=0` A/B içindir.
+- 32 eşleştirme / 64 gerçek simülasyonda şut 5.94→7.59, uzak şut 1.38→2.59, kurtarış 3.63→4.59; gol ortalaması 1.69→1.69. Her modda gol/direk artışı iddiası yok. [Aksiyon kaydı](research/ARENA-ACTION-V178.md).
+- T-312'nin **penaltı çizgi/sonuç alt işi tamamlandı**: planlanan süre yerine gerçek tam-top çizgi geçişi, direk ve sektirme sonrası fiziksel devam. Eski 39 çelişki yeniden üretildi; yeni 1.084 doğal vuruşta 0. [Penaltı kaydı](research/PENALTY-GOAL-V178.md).
+- V177 Touchline güvenli kamera korunur. Son kaynakta iki mod ve iki video oranı gerçek WebGL görüntüleri geçti. İki 4 sn / 1080×1920 / 60 FPS / H.264 klip kodlama/dekod kontrolünü geçti. **Electron native indirme olayı testleri başarısız (T-315)**; üretilen dosyalar geçici File System'den korundu. Bunu Hostinger tarayıcısında başarılı indirme testi diye sunma.
+- T-312'nin kaleci el/ayak animasyonu, gelişmiş güvenli arena dağıtımı/alım/zemin, VAR değişikliği ve uzatmasız seçilen süre/limit içinde elemesi halen açık. Kaynak `agent/codex/web-football-v177` @f3aa2a4; bütünü main'e alınmadı. V178 ile kontrollü birleştir; kamera ve penaltı sonucu zaten yeni kaynakta.
+- Nihai kaynakta 45 quick regresyon ve ayrı engine-test (500 penaltı serisi/18 normal maç) geçti: toplam 46 kontrol. İsteğe bağlı native indirme testi ayrı başarısız/açık kaldı (T-315).
+- Canlı son kontrol V176/filesMatch=true. V178 kaynak/paket teslimi canlı Hostinger yüklemesi değildir. Nihai kayıt: [46 kontrol](research/v178-arena-action/verified-checks-46.json).
 
 ## V177 — Touchline kamera; diğer futbol düzeltmeleri ayrı açık iş
 

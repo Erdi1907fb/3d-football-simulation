@@ -2,6 +2,14 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V178 — 2026-11-14 UTC (Codex)
+- Son kaynakta45quickregresyon ve ayrı500penaltı/18normal maç engine-test PASS:toplam46kontrol. İsteğe bağlı nativeindirme olayı testi T-315açık kalır.
+- Penaltıda planlanan varış süresi yerine gerçek tam-top kale çizgisi geçişi ve direk/sektirme sonrası fiziksel devam sonucu belirler. Eski39görüntü/sonuç çelişkisi yeniden üretildi; yeni1084vuruşta0. Ayrıntı:research/PENALTY-GOAL-V178.md.
+- Japon Kale/5v5'te daha sık, farklı bölgelerden hücum/şut:bağlama uygun uzak/orta/yakın şut tercihleri, dikine/ara pas, destek ve karar temposu. Kale önüne yığılma, gol/direk/kurtarış kotası ve seed seçimi yok.11v11analizi korunur.
+- Yakın taşıyıcı eski şut kanalına geriye dönmez; kaleci dağıtım beklemesi kısalır. Fiziksel sonuç ve mevcut hız/ivme/temas/kaleci kuralları korunur.
+- 32eski/yeni eşleştirme/64simülasyonda ortalamaşut5.94→7.59,uzakşut1.38→2.59,kurtarış3.63→4.59;golortalaması1.69→1.69. Her modda gol/direk artışı iddiası yok. Kanıt:research/ARENA-ACTION-V178.md.
+- T-313Touchline güvenli kamera korunur. T-312diğer futbol düzeltmelerinin bütünü ayrıWIPdalında test/üretim bekliyor; bu sürümde tamamlandı sayılmaz.
+
 ## V177 — 2026-11-14 UTC (Codex)
 - Web Japon Kale/5v5Touchline kamerasında bütün canlı kale çerçeveleri skor panelinin üstündeki güvenli aksiyon alanına alınır. Eğik açı/yumuşak takip, iki oran ve Reels/Shorts skor bandı korunur.
 - Tam44/44testPASS. Yeni1210kare/38720kale köşesi regresyonu ve gerçekWebGL2/4takım×dikey/yatay kareler. Kanıt:research/TOUCHLINE-V177.md.

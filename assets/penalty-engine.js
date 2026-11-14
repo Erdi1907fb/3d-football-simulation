@@ -33,7 +33,7 @@ function deflectedPath(full,touch,spin){
  const point=touch.point,prior=aeroAt(full,Math.max(0,touch.time-.003)),dt=Math.min(.003,touch.time),velocity={x:(point.x-prior.x)/dt*.82,y:(point.y-prior.y)/dt*.8+.35,z:(point.z-prior.z)/dt*.75+Math.sign(point.z-touch.keeperZ)*.6},b=Aero.state(point,velocity,spin),samples=[];
  for(let t=0;t<touch.time;t+=Aero.STEP)samples.push({t,...aeroAt(full,t)});samples.push({t:touch.time,...point});
  let result=null;
- for(let i=0;i<180;i++){Aero.step(b);const post=Aero.woodwork(b);samples.push({t:touch.time+b.t,x:b.x,y:b.y,z:b.z});if(post){result='post';break;}if(b.x>=52.62){result=Math.abs(b.z)<3.55&&b.y<2.33?'goal':'wide';break;}if(b.vx<=0){result='wide';break;}}
+ for(let i=0;i<960;i++){const previous={...b};Aero.step(b);const post=Aero.woodwork(b);samples.push({t:touch.time+b.t,x:b.x,y:b.y,z:b.z});const cross=goalCrossing(previous,b);if(cross){result=cross.goal?'goal':'wide';break;}if(b.vx<=0){result='wide';break;}}
  if(!result)result='wide';
  const duration=samples.at(-1).t,n=Math.max(1,Math.ceil(duration/Aero.STEP)),frames=new Float32Array((n+1)*3);
  for(let i=0;i<=n;i++){const p=Aero.at(samples,duration*i/n);frames[i*3]=p.x;frames[i*3+1]=p.y;frames[i*3+2]=p.z;}
@@ -41,7 +41,10 @@ function deflectedPath(full,touch,spin){
 }
 
 // Natural studio attempts: classify the real flight/woodwork, never a sampled result.
-function goalLineFlight(kick){const b=Aero.state(FROM,kick.aero.launch,kick.spin),points=[{...FROM}];let result='wide',post=null;for(let i=1;i<=Math.ceil(kick.flight/Aero.STEP);i++){const previous={...b};Aero.step(b,Math.min(Aero.STEP,kick.flight-(i-1)*Aero.STEP));post=Aero.woodwork(b);points.push({x:b.x,y:b.y,z:b.z});if(post){result='post';break;}if(previous.x<52.5+R&&b.x>=52.5+R){result=Math.abs(b.z)<3.66-R&&b.y<2.44-R?'goal':'wide';break;}}const n=points.length-1,frames=new Float32Array(points.flatMap(p=>[p.x,p.y,p.z]));return{result,post,path:{frames,n,duration:Math.min(kick.flight,n*Aero.STEP),launch:kick.aero.launch},point:{x:b.x,y:b.y,z:b.z},outgoing:{x:b.vx,y:b.vy,z:b.vz}};}
+function goalCrossing(a,b){const plane=52.5+R;if(!(a.x<plane&&b.x>=plane))return null;const u=(plane-a.x)/(b.x-a.x),point={x:plane,y:a.y+(b.y-a.y)*u,z:a.z+(b.z-a.z)*u};return{point,fraction:u,goal:Math.abs(point.z)<3.66-R&&point.y<2.44-R&&point.y>=R-.001};}
+function goalLineFlight(kick){const b=Aero.state(FROM,kick.aero.launch,kick.spin),points=[{...FROM}];let result=null,post=null,evidence=null;for(let i=1;i<=Math.ceil(4/Aero.STEP);i++){const previous={...b};Aero.step(b);const hit=Aero.woodwork(b);if(hit&&!post)post={...hit,time:b.t};points.push({x:b.x,y:b.y,z:b.z});const cross=goalCrossing(previous,b);if(cross){result=cross.goal?'goal':post?'post':'wide';evidence={...cross,time:b.t-Aero.STEP+cross.fraction*Aero.STEP};break;}if(b.vx<=0&&b.x<52.5-R||Math.hypot(b.vx,b.vy,b.vz)<.15){result=post?'post':'wide';break;}}
+ if(!result)throw Object.assign(Error('Penalty trajectory did not resolve'),{code:'penalty-unresolved'});const n=points.length-1,frames=new Float32Array(points.flatMap(p=>[p.x,p.y,p.z]));return{result,post,evidence,path:{frames,n,duration:n*Aero.STEP,launch:kick.aero.launch},point:{x:b.x,y:b.y,z:b.z},outgoing:{x:b.vx,y:b.vy,z:b.vz}};}
+
 function physicalKick(kick,history,seed){
  const rng=random((seed^Math.imul(kick.index+1,0x4f1bbcdc))>>>0),model=Intelligence.penaltyPlan(history,rng,{naturalKeeper:natural(kick.keeper).includes('GK'),keeperTraits:Intelligence.Emergent.character(kick.keeper)}),proposed=kick.outcome;
  const target={...kick.target};if(proposed==='save')target.x=52.62;
@@ -68,7 +71,7 @@ function physicalKick(kick,history,seed){
   kick.saveKind=Math.abs(lateral)<.45&&height<1.5&&speed<28?'smother':height>1.75?'tip-over':lateral<0?'parry-left':'parry-right';
   kick.keeperContact={...touch};
  }else{
-  kick.aero=full;kick.target=target;kick.outcome=proposed==='save'?'goal':proposed;kick.saveKind=null;kick.keeperContactOffset=kick.flight;if(kick.naturalDecisions){const classified=goalLineFlight(kick);kick.aero=classified.path;kick.target=classified.point;kick.flight=classified.path.duration;kick.keeperContactOffset=kick.flight;kick.outcome=classified.result;kick.outgoing=classified.outgoing;kick.postKind=classified.post?(classified.post.part==='bar'?'crossbar':'upright'):null;kick.postNormal=classified.post?.normal||null;}
+  kick.aero=full;kick.target=target;kick.outcome=proposed==='save'?'goal':proposed;kick.saveKind=null;kick.keeperContactOffset=kick.flight;if(kick.naturalDecisions){const classified=goalLineFlight(kick);kick.aero=classified.path;kick.target=classified.point;kick.flight=classified.path.duration;kick.keeperContactOffset=kick.flight;kick.outcome=classified.result;kick.goalEvidence=classified.evidence;kick.outgoing=classified.outgoing;kick.postKind=classified.post?(classified.post.part==='bar'?'crossbar':'upright'):null;kick.postNormal=classified.post?.normal||null;}
  }
  const t=kick.flight,now=aeroAt(kick.aero,t),prev=aeroAt(kick.aero,Math.max(0,t-.004)),span=Math.min(.004,t)||.004;
  kick.incoming={x:(now.x-prev.x)/span,y:(now.y-prev.y)/span,z:(now.z-prev.z)/span};
@@ -128,4 +131,4 @@ function create(options){const rng=random(options.seed),rosters=options.lineups,
  }
  return{seed:options.seed>>>0,mode:options.mode,ruleSet,kicks,score,winner,duration,finaleAt,sample,keepers,shooters,partners,eligible,analysis:{basis:'physical-keeper-contact-with-explicit-shot-priors',intelligenceVersion:Intelligence.version,sourceRecords:kicks.filter(k=>k.basis==='penalty-record').length,customKeeper:keepers.map(p=>!natural(p).includes('GK')),rules:official?'alternating-five-early-clinch-then-equal-turn-sudden-death':'complete-five-each-then-equal-turn-sudden-death',initialKicks:10,automaticKeeperLast:true,rosterRepairs:rosters.map((t,i)=>eligible[i].filter(p=>!(t.players||[]).some(q=>String(q?.id)===String(p.id))).map(p=>p.id))}};
 }
-return{create,quality,takers,completeEleven,random};});
+return{create,quality,takers,completeEleven,random,goalCrossing};});

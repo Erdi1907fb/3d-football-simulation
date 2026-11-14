@@ -1,0 +1,37 @@
+{
+  "encodingPass": true,
+  "nativeDownloadEventPass": false,
+  "nativeDownloadNote": "Experimental Electron page.waitForEvent(download) timed out. UI reported ready and playable; exported MP4 files were recovered unchanged from that test profile temporary File System. Native Hostinger browser download was not verified.",
+  "fullMatchExport": false,
+  "audio": false,
+  "clips": [
+    {
+      "version": 177,
+      "seed": 5,
+      "seconds": 4,
+      "fps": 60,
+      "frames": 240,
+      "width": 1080,
+      "height": 1920,
+      "bytes": 8994209,
+      "sha256": "33f27c57eee6d6466feae1505b9b03389109f7162688592ce37ea493367d28f5",
+      "path": "/workspace/artifacts/v178-action-before-video/arena-action-1080x1920-60fps.mp4",
+      "decodedSamples": 5,
+      "distinctDecodedSamples": 5
+    },
+    {
+      "version": 178,
+      "seed": 5,
+      "seconds": 4,
+      "fps": 60,
+      "frames": 240,
+      "width": 1080,
+      "height": 1920,
+      "bytes": 7343949,
+      "sha256": "a3b9be0e087e1fb984dc4e5f9948e5be30ecfff7262004f9f57dfdfaa05d1669",
+      "path": "/workspace/artifacts/v178-action-video/arena-action-1080x1920-60fps.mp4",
+      "decodedSamples": 5,
+      "distinctDecodedSamples": 5
+    }
+  ]
+}

@@ -1,0 +1,1625 @@
+{
+  "method": "Same actual squads/seed/60 game seconds, baseline engine (or actionIntensity=0) versus actionIntensity=1; all seeds retained, no score/goal quota; API flag only for offline comparison",
+  "matches": [
+    {
+      "n": 2,
+      "seed": 1907,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 2,
+        "longShots": 0,
+        "zoneSeconds": 0.7000000000000011,
+        "zoneEntries": 1,
+        "shots": 2,
+        "passes": 27,
+        "completed": 19,
+        "saves": 2,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.224747641915226,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 2,
+        "zoneSeconds": 2.3000000000000007,
+        "zoneEntries": 3,
+        "shots": 6,
+        "passes": 24,
+        "completed": 18,
+        "saves": 5,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.203345857824134,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 2026,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 2,
+        "longShots": 2,
+        "zoneSeconds": 0.75,
+        "zoneEntries": 1,
+        "shots": 5,
+        "passes": 18,
+        "completed": 12,
+        "saves": 3,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.077801154207378,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 1,
+        "longShots": 2,
+        "zoneSeconds": 0,
+        "zoneEntries": 0,
+        "shots": 3,
+        "passes": 30,
+        "completed": 19,
+        "saves": 1,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 11.742125035363662,
+        "score": [
+          1,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 81,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 0,
+        "zoneSeconds": 3.4499999999999993,
+        "zoneEntries": 4,
+        "shots": 4,
+        "passes": 13,
+        "completed": 9,
+        "saves": 4,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 6.58603114443825,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 2,
+        "longShots": 3,
+        "zoneSeconds": 0.8500000000000041,
+        "zoneEntries": 3,
+        "shots": 8,
+        "passes": 20,
+        "completed": 13,
+        "saves": 4,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 8.186356739072782,
+        "score": [
+          0,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 991,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 0,
+        "zoneSeconds": 4.549999999999997,
+        "zoneEntries": 4,
+        "shots": 3,
+        "passes": 21,
+        "completed": 17,
+        "saves": 0,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 6.999063570046065,
+        "score": [
+          2,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 1,
+        "longShots": 2,
+        "zoneSeconds": 0.25,
+        "zoneEntries": 2,
+        "shots": 4,
+        "passes": 18,
+        "completed": 13,
+        "saves": 4,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.489674234058247,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 177,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 4,
+        "longShots": 1,
+        "zoneSeconds": 2.299999999999997,
+        "zoneEntries": 3,
+        "shots": 6,
+        "passes": 11,
+        "completed": 7,
+        "saves": 4,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 8.209179975304545,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 2,
+        "longShots": 1,
+        "zoneSeconds": 0.75,
+        "zoneEntries": 1,
+        "shots": 3,
+        "passes": 20,
+        "completed": 14,
+        "saves": 2,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.897932794861578,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 54321,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 0,
+        "zoneSeconds": 1.6000000000000014,
+        "zoneEntries": 3,
+        "shots": 3,
+        "passes": 24,
+        "completed": 16,
+        "saves": 2,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 1,
+        "blocks": 1,
+        "shotDistance": 7.184356802440534,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 4,
+        "longShots": 0,
+        "zoneSeconds": 0.5500000000000025,
+        "zoneEntries": 2,
+        "shots": 5,
+        "passes": 27,
+        "completed": 21,
+        "saves": 3,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 7.683174940968366,
+        "score": [
+          0,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 314,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 1,
+        "longShots": 1,
+        "zoneSeconds": 0,
+        "zoneEntries": 0,
+        "shots": 2,
+        "passes": 18,
+        "completed": 13,
+        "saves": 0,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 12.16309932504207,
+        "score": [
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 2,
+        "longShots": 1,
+        "zoneSeconds": 0.7500000000000018,
+        "zoneEntries": 2,
+        "shots": 4,
+        "passes": 25,
+        "completed": 17,
+        "saves": 3,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 7.435573760292161,
+        "score": [
+          0,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 2,
+      "seed": 2718,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 2,
+        "longShots": 0,
+        "zoneSeconds": 1.6500000000000021,
+        "zoneEntries": 2,
+        "shots": 2,
+        "passes": 27,
+        "completed": 19,
+        "saves": 1,
+        "goals": 1,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.240634834310377,
+        "score": [
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 1,
+        "longShots": 0,
+        "zoneSeconds": 0.6499999999999915,
+        "zoneEntries": 2,
+        "shots": 4,
+        "passes": 26,
+        "completed": 19,
+        "saves": 3,
+        "goals": 1,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 3.69326009645736,
+        "score": [
+          1,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 1907,
+      "before": {
+        "shortShots": 2,
+        "mediumShots": 4,
+        "longShots": 2,
+        "zoneSeconds": 6.100000000000005,
+        "zoneEntries": 8,
+        "shots": 8,
+        "passes": 12,
+        "completed": 5,
+        "saves": 8,
+        "goals": 1,
+        "ownGoals": 1,
+        "posts": 1,
+        "blocks": 1,
+        "shotDistance": 9.855153162586515,
+        "score": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 1,
+        "longShots": 5,
+        "zoneSeconds": 2.800000000000008,
+        "zoneEntries": 6,
+        "shots": 8,
+        "passes": 16,
+        "completed": 12,
+        "saves": 5,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 10.661375410133303,
+        "score": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 2026,
+      "before": {
+        "shortShots": 4,
+        "mediumShots": 3,
+        "longShots": 1,
+        "zoneSeconds": 4.299999999999995,
+        "zoneEntries": 9,
+        "shots": 8,
+        "passes": 12,
+        "completed": 5,
+        "saves": 6,
+        "goals": 4,
+        "ownGoals": 2,
+        "posts": 0,
+        "blocks": 3,
+        "shotDistance": 7.612893178715337,
+        "score": [
+          0,
+          2,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 3,
+        "longShots": 5,
+        "zoneSeconds": 5.7500000000000036,
+        "zoneEntries": 7,
+        "shots": 10,
+        "passes": 10,
+        "completed": 6,
+        "saves": 9,
+        "goals": 2,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 10.814010080783987,
+        "score": [
+          1,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 81,
+      "before": {
+        "shortShots": 3,
+        "mediumShots": 8,
+        "longShots": 0,
+        "zoneSeconds": 5.300000000000001,
+        "zoneEntries": 9,
+        "shots": 11,
+        "passes": 11,
+        "completed": 5,
+        "saves": 5,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 2,
+        "blocks": 2,
+        "shotDistance": 8.463209610482988,
+        "score": [
+          0,
+          1,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 8,
+        "longShots": 2,
+        "zoneSeconds": 6.70000000000001,
+        "zoneEntries": 6,
+        "shots": 12,
+        "passes": 9,
+        "completed": 6,
+        "saves": 6,
+        "goals": 4,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.680297731792848,
+        "score": [
+          0,
+          1,
+          2
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 991,
+      "before": {
+        "shortShots": 3,
+        "mediumShots": 5,
+        "longShots": 1,
+        "zoneSeconds": 3.0000000000000124,
+        "zoneEntries": 7,
+        "shots": 9,
+        "passes": 10,
+        "completed": 9,
+        "saves": 4,
+        "goals": 3,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 8.279315602513186,
+        "score": [
+          2,
+          1,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 5,
+        "mediumShots": 5,
+        "longShots": 2,
+        "zoneSeconds": 5.649999999999995,
+        "zoneEntries": 7,
+        "shots": 12,
+        "passes": 5,
+        "completed": 4,
+        "saves": 2,
+        "goals": 5,
+        "ownGoals": 0,
+        "posts": 1,
+        "blocks": 0,
+        "shotDistance": 8.252529621455473,
+        "score": [
+          3,
+          1,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 177,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 5,
+        "longShots": 3,
+        "zoneSeconds": 5.049999999999992,
+        "zoneEntries": 7,
+        "shots": 9,
+        "passes": 14,
+        "completed": 9,
+        "saves": 6,
+        "goals": 3,
+        "ownGoals": 2,
+        "posts": 1,
+        "blocks": 3,
+        "shotDistance": 10.785651075766584,
+        "score": [
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 6,
+        "longShots": 3,
+        "zoneSeconds": 2.8000000000000007,
+        "zoneEntries": 5,
+        "shots": 11,
+        "passes": 13,
+        "completed": 8,
+        "saves": 8,
+        "goals": 3,
+        "ownGoals": 2,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 9.744338667885634,
+        "score": [
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 54321,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 3,
+        "longShots": 2,
+        "zoneSeconds": 8.200000000000014,
+        "zoneEntries": 11,
+        "shots": 6,
+        "passes": 15,
+        "completed": 10,
+        "saves": 2,
+        "goals": 2,
+        "ownGoals": 1,
+        "posts": 1,
+        "blocks": 0,
+        "shotDistance": 9.982712057154622,
+        "score": [
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 10,
+        "longShots": 0,
+        "zoneSeconds": 2.5999999999999943,
+        "zoneEntries": 6,
+        "shots": 12,
+        "passes": 11,
+        "completed": 8,
+        "saves": 6,
+        "goals": 4,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 9.019147502894247,
+        "score": [
+          0,
+          2,
+          2
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 314,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 4,
+        "longShots": 2,
+        "zoneSeconds": 2.899999999999995,
+        "zoneEntries": 5,
+        "shots": 7,
+        "passes": 11,
+        "completed": 9,
+        "saves": 6,
+        "goals": 4,
+        "ownGoals": 1,
+        "posts": 1,
+        "blocks": 0,
+        "shotDistance": 9.867733245108738,
+        "score": [
+          2,
+          1,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 3,
+        "mediumShots": 9,
+        "longShots": 2,
+        "zoneSeconds": 5.450000000000003,
+        "zoneEntries": 7,
+        "shots": 14,
+        "passes": 13,
+        "completed": 8,
+        "saves": 8,
+        "goals": 5,
+        "ownGoals": 1,
+        "posts": 1,
+        "blocks": 2,
+        "shotDistance": 9.120253948466535,
+        "score": [
+          2,
+          1,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 3,
+      "seed": 2718,
+      "before": {
+        "shortShots": 3,
+        "mediumShots": 2,
+        "longShots": 3,
+        "zoneSeconds": 10.199999999999996,
+        "zoneEntries": 13,
+        "shots": 8,
+        "passes": 12,
+        "completed": 6,
+        "saves": 4,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 8.67309176923976,
+        "score": [
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 4,
+        "longShots": 3,
+        "zoneSeconds": 5.099999999999998,
+        "zoneEntries": 8,
+        "shots": 9,
+        "passes": 17,
+        "completed": 11,
+        "saves": 5,
+        "goals": 3,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.561949741584819,
+        "score": [
+          0,
+          0,
+          2
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 1907,
+      "before": {
+        "shortShots": 3,
+        "mediumShots": 3,
+        "longShots": 3,
+        "zoneSeconds": 4.099999999999994,
+        "zoneEntries": 6,
+        "shots": 9,
+        "passes": 14,
+        "completed": 10,
+        "saves": 6,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.980899006340582,
+        "score": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 6,
+        "longShots": 2,
+        "zoneSeconds": 0.5500000000000043,
+        "zoneEntries": 2,
+        "shots": 8,
+        "passes": 13,
+        "completed": 10,
+        "saves": 5,
+        "goals": 2,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 11.352675783158338,
+        "score": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 2026,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 1,
+        "longShots": 4,
+        "zoneSeconds": 2.5500000000000007,
+        "zoneEntries": 4,
+        "shots": 5,
+        "passes": 17,
+        "completed": 12,
+        "saves": 4,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 15.598014321181044,
+        "score": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 5,
+        "longShots": 5,
+        "zoneSeconds": 4.500000000000002,
+        "zoneEntries": 5,
+        "shots": 11,
+        "passes": 14,
+        "completed": 11,
+        "saves": 6,
+        "goals": 4,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 11.254832537337073,
+        "score": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 81,
+      "before": {
+        "shortShots": 3,
+        "mediumShots": 5,
+        "longShots": 2,
+        "zoneSeconds": 6.55000000000001,
+        "zoneEntries": 9,
+        "shots": 10,
+        "passes": 10,
+        "completed": 7,
+        "saves": 5,
+        "goals": 4,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 8.462457809142869,
+        "score": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 4,
+        "longShots": 3,
+        "zoneSeconds": 4.9500000000000135,
+        "zoneEntries": 9,
+        "shots": 9,
+        "passes": 11,
+        "completed": 8,
+        "saves": 3,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.917347704994423,
+        "score": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 991,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 3,
+        "longShots": 3,
+        "zoneSeconds": 2.4999999999999964,
+        "zoneEntries": 4,
+        "shots": 7,
+        "passes": 11,
+        "completed": 6,
+        "saves": 3,
+        "goals": 6,
+        "ownGoals": 4,
+        "posts": 1,
+        "blocks": 2,
+        "shotDistance": 9.954471762913434,
+        "score": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 1,
+        "longShots": 4,
+        "zoneSeconds": 3.4999999999999964,
+        "zoneEntries": 6,
+        "shots": 7,
+        "passes": 18,
+        "completed": 16,
+        "saves": 5,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 10.744276059220486,
+        "score": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 177,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 7,
+        "longShots": 1,
+        "zoneSeconds": 2.0000000000000018,
+        "zoneEntries": 4,
+        "shots": 8,
+        "passes": 9,
+        "completed": 7,
+        "saves": 3,
+        "goals": 3,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 9.726640033557453,
+        "score": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 1,
+        "longShots": 6,
+        "zoneSeconds": 5.800000000000003,
+        "zoneEntries": 8,
+        "shots": 9,
+        "passes": 15,
+        "completed": 10,
+        "saves": 4,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 11.733461927111144,
+        "score": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 54321,
+      "before": {
+        "shortShots": 3,
+        "mediumShots": 2,
+        "longShots": 2,
+        "zoneSeconds": 4.249999999999998,
+        "zoneEntries": 6,
+        "shots": 7,
+        "passes": 16,
+        "completed": 12,
+        "saves": 5,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 8.516333130837285,
+        "score": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 3,
+        "longShots": 2,
+        "zoneSeconds": 3.799999999999997,
+        "zoneEntries": 5,
+        "shots": 6,
+        "passes": 16,
+        "completed": 8,
+        "saves": 2,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 9.266707954393793,
+        "score": [
+          1,
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 314,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 0,
+        "zoneSeconds": 6.349999999999994,
+        "zoneEntries": 5,
+        "shots": 3,
+        "passes": 17,
+        "completed": 12,
+        "saves": 3,
+        "goals": 1,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 9.2858855425272,
+        "score": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 5,
+        "longShots": 1,
+        "zoneSeconds": 3.3500000000000014,
+        "zoneEntries": 4,
+        "shots": 7,
+        "passes": 14,
+        "completed": 10,
+        "saves": 3,
+        "goals": 4,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 9.384901962857944,
+        "score": [
+          1,
+          0,
+          1,
+          2
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 4,
+      "seed": 2718,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 5,
+        "longShots": 0,
+        "zoneSeconds": 4.599999999999987,
+        "zoneEntries": 8,
+        "shots": 6,
+        "passes": 11,
+        "completed": 6,
+        "saves": 5,
+        "goals": 2,
+        "ownGoals": 1,
+        "posts": 1,
+        "blocks": 0,
+        "shotDistance": 7.787944002200987,
+        "score": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 3,
+        "longShots": 2,
+        "zoneSeconds": 6.900000000000006,
+        "zoneEntries": 6,
+        "shots": 6,
+        "passes": 14,
+        "completed": 9,
+        "saves": 4,
+        "goals": 2,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 10.098057865699941,
+        "score": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 1907,
+      "before": {
+        "shortShots": 4,
+        "mediumShots": 2,
+        "longShots": 2,
+        "zoneSeconds": 4.4,
+        "zoneEntries": 6,
+        "shots": 8,
+        "passes": 17,
+        "completed": 15,
+        "saves": 3,
+        "goals": 4,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 7.850350775178001,
+        "score": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 2,
+        "zoneSeconds": 4.000000000000009,
+        "zoneEntries": 6,
+        "shots": 5,
+        "passes": 16,
+        "completed": 13,
+        "saves": 5,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 13.230821413857536,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 2026,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 3,
+        "longShots": 1,
+        "zoneSeconds": 5.199999999999989,
+        "zoneEntries": 8,
+        "shots": 5,
+        "passes": 15,
+        "completed": 10,
+        "saves": 3,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 1,
+        "blocks": 0,
+        "shotDistance": 10.662075157055808,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 2,
+        "longShots": 4,
+        "zoneSeconds": 5.950000000000005,
+        "zoneEntries": 7,
+        "shots": 7,
+        "passes": 13,
+        "completed": 12,
+        "saves": 3,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 1,
+        "blocks": 1,
+        "shotDistance": 13.354563399822966,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 81,
+      "before": {
+        "shortShots": 0,
+        "mediumShots": 3,
+        "longShots": 3,
+        "zoneSeconds": 1.75,
+        "zoneEntries": 1,
+        "shots": 6,
+        "passes": 12,
+        "completed": 9,
+        "saves": 3,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 11.702672608635567,
+        "score": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 1,
+        "mediumShots": 3,
+        "longShots": 4,
+        "zoneSeconds": 0.9999999999999964,
+        "zoneEntries": 2,
+        "shots": 8,
+        "passes": 21,
+        "completed": 13,
+        "saves": 8,
+        "goals": 1,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 10.182705545869833,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 991,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 2,
+        "longShots": 1,
+        "zoneSeconds": 6.449999999999996,
+        "zoneEntries": 5,
+        "shots": 4,
+        "passes": 14,
+        "completed": 9,
+        "saves": 2,
+        "goals": 1,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 9.705873377521238,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 3,
+        "mediumShots": 2,
+        "longShots": 2,
+        "zoneSeconds": 5.350000000000001,
+        "zoneEntries": 8,
+        "shots": 7,
+        "passes": 13,
+        "completed": 9,
+        "saves": 5,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 1,
+        "blocks": 0,
+        "shotDistance": 8.686166745192752,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 177,
+      "before": {
+        "shortShots": 2,
+        "mediumShots": 2,
+        "longShots": 1,
+        "zoneSeconds": 4.5,
+        "zoneEntries": 3,
+        "shots": 5,
+        "passes": 15,
+        "completed": 12,
+        "saves": 3,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 8.406072576319119,
+        "score": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 1,
+        "longShots": 4,
+        "zoneSeconds": 6.7500000000000036,
+        "zoneEntries": 7,
+        "shots": 7,
+        "passes": 15,
+        "completed": 7,
+        "saves": 4,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 13.588321352780733,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 54321,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 2,
+        "longShots": 2,
+        "zoneSeconds": 3.099999999999998,
+        "zoneEntries": 6,
+        "shots": 5,
+        "passes": 16,
+        "completed": 9,
+        "saves": 4,
+        "goals": 1,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 9.786728482485522,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 3,
+        "longShots": 4,
+        "zoneSeconds": 2.499999999999991,
+        "zoneEntries": 7,
+        "shots": 9,
+        "passes": 11,
+        "completed": 7,
+        "saves": 9,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 2,
+        "shotDistance": 11.826733886209553,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 314,
+      "before": {
+        "shortShots": 1,
+        "mediumShots": 4,
+        "longShots": 0,
+        "zoneSeconds": 1.8999999999999986,
+        "zoneEntries": 3,
+        "shots": 5,
+        "passes": 13,
+        "completed": 11,
+        "saves": 5,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 8.16264124516039,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 1,
+        "longShots": 4,
+        "zoneSeconds": 1.0000000000000036,
+        "zoneEntries": 4,
+        "shots": 7,
+        "passes": 9,
+        "completed": 6,
+        "saves": 4,
+        "goals": 0,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 12.127597114475984,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      }
+    },
+    {
+      "n": 6,
+      "seed": 2718,
+      "before": {
+        "shortShots": 2,
+        "mediumShots": 1,
+        "longShots": 1,
+        "zoneSeconds": 4.400000000000007,
+        "zoneEntries": 9,
+        "shots": 4,
+        "passes": 17,
+        "completed": 10,
+        "saves": 2,
+        "goals": 2,
+        "ownGoals": 0,
+        "posts": 0,
+        "blocks": 1,
+        "shotDistance": 6.556067772186936,
+        "score": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "seconds": 60
+      },
+      "after": {
+        "shortShots": 2,
+        "mediumShots": 2,
+        "longShots": 1,
+        "zoneSeconds": 5.549999999999997,
+        "zoneEntries": 7,
+        "shots": 5,
+        "passes": 20,
+        "completed": 18,
+        "saves": 3,
+        "goals": 2,
+        "ownGoals": 1,
+        "posts": 0,
+        "blocks": 0,
+        "shotDistance": 7.1034332371682085,
+        "score": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "seconds": 60
+      }
+    }
+  ],
+  "aggregate": {
+    "before": {
+      "shortShots": 1.28125,
+      "mediumShots": 3.1875,
+      "longShots": 1.375,
+      "zoneSeconds": 3.8953124999999993,
+      "zoneEntries": 5.4375,
+      "shots": 5.9375,
+      "passes": 15,
+      "completed": 10.21875,
+      "saves": 3.625,
+      "goals": 1.6875,
+      "ownGoals": 0.5,
+      "posts": 0.3125,
+      "blocks": 0.9375,
+      "shotDistance": 9.198431304766114,
+      "seconds": 60
+    },
+    "after": {
+      "shortShots": 1.40625,
+      "mediumShots": 3.34375,
+      "longShots": 2.59375,
+      "zoneSeconds": 3.387500000000001,
+      "zoneEntries": 5,
+      "shots": 7.59375,
+      "passes": 16.15625,
+      "completed": 11.375,
+      "saves": 4.59375,
+      "goals": 1.6875,
+      "ownGoals": 0.34375,
+      "posts": 0.125,
+      "blocks": 0.96875,
+      "shotDistance": 9.938685957938931,
+      "seconds": 60
+    }
+  }
+}

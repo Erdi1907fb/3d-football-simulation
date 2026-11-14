@@ -18,6 +18,19 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-14 UTC] Codex · V178 — Hostinger web aksiyon ve penaltı sonucu
+- Dal: `agent/codex/arena-action-v178`. Temel V177/75e8c55; ana teslim Hostinger web. V177 Touchline düzeltmesi pakette korunur.
+- **T-314 tamamlandı (temel ayar):** Kullanıcının son netleştirmesi kale önünde yığılma değil, farklı bölgelerden daha sık hücum/şut denemesidir. Arena varsayılan `actionIntensity=1`; sınırlı tempo/karar sıklığı, ileri/ara pas, destek ve açık koridorda orta/uzak/yakın şut. Fiziksel sonucu zorlama yok; 11v11 analizi değişmedi. API0 A/B içindir.
+- 32 aynı kadro/seed/süre çifti (64 simülasyon): şut5.94→7.59, uzakşut1.38→2.59, kurtarış3.63→4.59; golortalaması1.69→1.69. Her modda gol/direk artışı iddiası yok. `research/ARENA-ACTION-V178.md`, ham A/B JSON.
+- **T-312'nin penaltı çizgi/sonuç alt işi tamamlandı:** planlanan varış süresinde erken dışarı kararı yerine gerçek süpürülmüş tam-top çizgi geçişi, direk ve sektirme sonrası fiziksel devam. Eski39çelişki yeniden üretildi; yeni1084vuruşta0. El/ayak animasyonu değişmedi. `research/PENALTY-GOAL-V178.md`.
+- Testler: nihai kaynakta `tests/run-all.cjs --quick` (45 kontrol) ve `tests/engine-test.cjs` (500penaltı serisi/18normal maç) ayrı yürütüldü. Kesin sonuç `research/v178-arena-action/verified-checks-46.json` ve `tests/summary.json` içindedir. İlk koşulardaki eski davranış fikstürleri ve geçiciPHPspawnEPERM kayıtları araştırma notunda saklı; sonuç uydurulmadı.
+- Gerçek WebGL:2/4takım×dikey/yatay dört görüntü PASS. Eski/yeni iki4sn1080×1920/60FPS/H.264 MP4,240kare ve5ayrı örnek kare dekodu PASS. Fiziksel telefon/GPU veya tam süreli/sesli MP4 testi değildir.
+- **T-315 açık:** Deneysel Electron native `download` olayı iki testte240sTimeout verdi. UIvideo hazır/oynatılıyor; üretilen dosyalar testprofilinin geçiciFileSystemalanından değiştirilmeden alındı. Native Hostinger tarayıcısı indiriyor diye sunma; gerçekChrome/telefon doğrulaması yap. Son harness15sbekleme ve blob alternatifi raporlar, native başarısızlığı saklamaz. `clip-validation.json`.
+- **T-312'nin kalanları bitmedi:** kaleci el/ayak tutuş/parry animasyonu; arena gelişmiş güvenli dağıtım/alım/zemin;11v11ilerleme;VAR dışı değişiklik; seçilen60/75/90oyun saniyesi ve gol limiti içinde tek gerçek kazanan. Kaynak taslağı GitHub'da `agent/codex/web-football-v177` @f3aa2a4. Bütünü main'e alma:5–6takım/60s/limit2için64fiziksel aday başarısız. Kullanıcı uzatma/tek gole düşürmeyi reddetti(D-042); mevcut V176uzatması bu talebi karşılamaz.
+- Taslağı devam ettirirken V178 `actionIntensity`/takım tarzı/karar/şut menzili ve kamera düzeltmesini koru. Penaltı `goalCrossing`, `goalLineFlight`, sektirme sonrası devam zaten V178'dedir; eski dosyayı bütün olarak kopyalama. Kalan foot-contact/hold/animasyon ve arena/VAR parçalarını ayrı doğrula.
+- Canlı salt-okuma son kontrol V176/filesMatch=true; bu oturumda Hostinger'a yükleme yapılmadı. V176→V178 ZIP `public_html` üzerine açılır, veri/config/kadro/forma/yüzler korunur. Main push, canlı Hostinger yayını değildir.
+
+
 ## [2026-11-14 UTC] Codex · V177 — Touchline kamera (Hostinger web)
 - Dal:`agent/codex/touchline-safe-v177`; temel V176/dfdc4d2. T-313ayrı, test edilen kamera güncellemesi. Runtimeyalnızjapon-camera.jsve sürüm/cache referansları değişti.
 - Bütün canlı kale ağız/arka ağ/taban/üst köşeleri güvenli aksiyon çerçevesinde;Touchline eğik eksen ve mevcut ReelsHUDbandı korunur. Önizleme/geri sarma/MP4aynı yönetmeni kullanır.

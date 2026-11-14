@@ -231,3 +231,10 @@ Kullanıcı D-041'in normal süre sonrası tek golle uzatma çözümünü açık
 
 ## D-043 · 2026-11-14 · codex · kabul — Touchline'da bütün canlı kaleler HUD üstünde
 Touchline ekseni(1,.72,.35)korunur. Yalnız yakın hedef kaleyi sığdıran eski model yerine mevcut saha geometrisindeki bütün kalelerin ağız/arka ağ/taban/üst köşeleri izleme zarfına girer. Kamera hareketi ve zoom mevcut yumuşatma/seed bağımsız kayıt yolunu paylaşır. Dikey aksiyon64–884/295–1220ve HUD30–909/1296–1518; yatay70–1850/55–795ve HUD830–1052 korunur. Sonuç ekranı mevcut kısa yakın plandır. Fiziğe/kadroya/veri hattına müdahale yok.
+
+## D-044 · 2026-11-14 · codex · kabul — Doğal yüksek aksiyon davranış önceliğidir
+T-314ve kullanıcının son düzeltmesi:amaç kale önüne yığılma değil, farklı bölgelerden daha sık hücum/şut denemesidir. Arena teamStyleüstüne sınırlıtempo/doğrudanlık/karar sıklığı; destek koşusu; açık koridorda şut ve dikine/ara pasın bağlama uygun tercih olasılığı. Saha ölçeğine göre16–23mşut denemesi mümkün; teknik güç, açı, baskı/risk ve hazırlık kuralları korunur. Sonucu üreten fizik/kaleci becerisi değiştirilmez;0–0yasaklanmaz, direk/şut/gol sayacı kota olmaz. APIactionIntensity0A/Biçin eski niyet ağırlıklarını kullanır; varsayılan1. Normal11v11/analiz bu arena bayrağını kullanmaz. Yakın taşıyıcının 3.3mşut kanalına geri çekilmesi, goalplaneönünde ilerleme hedefiyle düzeltildi; skor zorlanmaz.
+
+
+## D-045 · 2026-11-14 · codex · kabul — Penaltı sonucu gerçek çizgi geçişinden gelir
+T-312'nin doğrulanan sonucu: planlanan uçuş süresi gol kararının son tarihi değildir. Fiziksel uçuş/direk devamı ve adım içindeki tam-top çizgi geçişi gerçek sonucu belirler; geçiş kanıtı kaydedilir. Kaleci sektirmesinin devamı da fiziksel kalır. Eski kaynakta yeniden üretilen 39 çelişki yeni 1.084 doğal vuruşta yoktur. Sonuç etiketi ile topu sonradan uydurma; el/ayak animasyonu bu alt işten ayrı açık konudur.

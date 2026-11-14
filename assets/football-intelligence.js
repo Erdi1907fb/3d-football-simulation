@@ -133,16 +133,19 @@
   return{clear:!near&&lanes.length>=2&&(empty||distance<4.5),target:lanes.sort((a,b)=>(keeper?gap(b.target,keeper)-gap(a.target,keeper):0))[0]?.target,distance,empty};
  }
  function arenaDecision(p,g,players,lane,rng,context={}){
+  // Arena entertainment changes intent, never the observed shot/save result.
+  const action=clamp(Number.isFinite(context.actionIntensity)?context.actionIntensity:0,0,1);
   const identity=p.identity||p,traits=p.traits||Emergent.character(identity),style=context.style||{directness:.5,patience:1},enemies=players.filter(q=>live(q)&&q.team!==p.team),friends=players.filter(q=>live(q)&&q.team===p.team&&q!==p),distance=gap(p,g),pressure=enemies.filter(q=>!q.keeper).reduce((n,q)=>n+Math.exp(-(gap(p,q)**2)/6),0),options=[],maxPass=context.layout?.count>2?15:18;
-  options.push({kind:'carry',utility:.36+traits.control*.18-Math.min(1,pressure)*.16,risk:pressure*.14});
+  options.push({kind:'carry',utility:.36+traits.control*.18-Math.min(1,pressure)*.16-action*(distance<14?.12:.03),risk:pressure*.14});
   for(const q of friends){const d=gap(p,q);if(d<1.6||d>maxPass)continue;const target=context.passAim?context.passAim(p,q):{x:q.x+(q.vx||0)*.22,z:q.z+(q.vz||0)*.22},risk=passWindow(p,target,enemies,{speed:context.passSpeed?context.passSpeed(d):12,receiver:q}).risk,gain=(distance-gap(q,g))/maxPass,control=pitchControl(target,[q],enemies),value=attackValue(target,g,{length:28,width:18})-attackValue(p,g,{length:28,width:18});
-   if(risk<Math.min(.68,.52+traits.vision*.12+pressure*.025))options.push({kind:'pass',receiver:q,utility:.35+gain*(.3+style.directness*.45)+control*.23+value*.35+Math.min(pressure,1.5)*.15-(q.keeper?.22:0),risk});
-   if(!q.keeper&&context.layout&&d>3&&d<13&&distance>6){const n=gap(q,g)||1,lead=Math.min(3.2,Math.max(1.5,n-4)),through={x:q.x+(g.x-q.x)/n*lead,z:q.z+(g.z-q.z)/n*lead},inside=context.layout.boundaries.every(e=>through.x*e.nx+through.z*e.nz<=e.d-.8),window=passWindow(p,through,enemies,{speed:13,receiver:q});if(inside&&window.risk<.72&&gap(through,g)<distance-1.5)options.push({kind:'pass',receiver:q,through,utility:.55+(distance-gap(through,g))*.025+traits.vision*.12,risk:window.risk,creative:.8});}
+   if(risk<Math.min(.68,.52+traits.vision*.12+pressure*.025))options.push({kind:'pass',receiver:q,utility:.35+gain*(.3+style.directness*.45)+action*Math.max(0,gain)*.3+control*.23+value*.35+Math.min(pressure,1.5)*.15-(q.keeper?.22:0),risk});
+   if(!q.keeper&&context.layout&&d>3&&d<13&&distance>6){const n=gap(q,g)||1,lead=Math.min(3.2,Math.max(1.5,n-4)),through={x:q.x+(g.x-q.x)/n*lead,z:q.z+(g.z-q.z)/n*lead},inside=context.layout.boundaries.every(e=>through.x*e.nx+through.z*e.nz<=e.d-.8),window=passWindow(p,through,enemies,{speed:13,receiver:q});if(inside&&window.risk<.72&&gap(through,g)<distance-1.5)options.push({kind:'pass',receiver:q,through,utility:.55+(distance-gap(through,g))*.025+traits.vision*.12+action*.12,risk:window.risk,creative:.8});}
    const depth=(g.x-q.x)*g.nx+(g.z-q.z)*g.nz;if(!q.keeper&&depth<8&&d>3&&d<14&&Math.abs(-p.x*g.nz+p.z*g.nx)>3&&pressure<2.5)options.push({kind:'cross',receiver:q,utility:.48+(1-pressure*.2)*.08,risk:Math.min(.9,risk*.7+.13),creative:.3});
   }
   const blocked=lane(p,g,players,p.team),depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,lateral=Math.abs(-p.x*g.nz+p.z*g.nx),angle=Math.atan2(g.width/2,Math.max(.1,distance));
-  if(distance<16&&depth>.6&&lateral<g.width*.5+depth*.9)options.push({kind:'shot',utility:.15+clamp((15-distance)/10,0,1)*.65+angle*.2+(context.keeper?.rushing?.12:0),risk:clamp(blocked*.20+Math.max(0,distance-7)*.025,0,.85),creative:distance>11?.4:0});
+  const shootingRange=action?clamp((context.layout?.apothem||14)+4,16,23):16;
+  if(distance<shootingRange&&depth>.6&&lateral<g.width*.5+depth*.9)options.push({kind:'shot',utility:.15+clamp((15-distance)/10,0,1)*.65+angle*.2+(context.keeper?.rushing?.12:0)+action*.38*(.45+.55*clamp((17-distance)/9,0,1))*(1-clamp(blocked/1.6,0,1)),risk:clamp(blocked*.20+Math.max(0,distance-7)*.025,0,.85),creative:distance>11?.4:0});
   const finish=finishingOpportunity(p,g,enemies),viable=finish.clear?options.filter(o=>o.kind==='shot'||o.kind==='pass'&&gap(o.receiver,g)<distance-1&&o.risk<.15):options;return Emergent.choose(viable.length?viable:options,traits,rng,{pressure,fatigue:p.fatigue||0});
  }
- return Object.freeze({finishingOpportunity,Emergent,pitchControl,attackValue,teamPlan,arenaDecision,teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v176'});
+ return Object.freeze({finishingOpportunity,Emergent,pitchControl,attackValue,teamPlan,arenaDecision,teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v178'});
 });

@@ -1,23 +1,41 @@
 {
- "version": "V176",
- "ranAt": "2026-11-13T21:44:38.256Z",
+ "version": "V178",
+ "ranAt": "2026-11-14T01:55:31.313Z",
  "results": [
+  {
+   "test": "penalty-goal-evidence.cjs",
+   "pass": true,
+   "seconds": 5.1,
+   "summary": ""
+  },
+  {
+   "test": "arena-action.cjs",
+   "pass": true,
+   "seconds": 7.4,
+   "summary": ""
+  },
+  {
+   "test": "touchline-safe.cjs",
+   "pass": true,
+   "seconds": 0.5,
+   "summary": ""
+  },
   {
    "test": "football-fixes.cjs",
    "pass": true,
-   "seconds": 38.3,
+   "seconds": 54.8,
    "summary": ""
   },
   {
    "test": "natural-studios.cjs",
    "pass": true,
-   "seconds": 2.6,
+   "seconds": 2.9,
    "summary": ""
   },
   {
    "test": "free-football.cjs",
    "pass": true,
-   "seconds": 12.8,
+   "seconds": 18.3,
    "summary": ""
   },
   {
@@ -35,19 +53,19 @@
   {
    "test": "arena-clock.cjs",
    "pass": true,
-   "seconds": 8.5,
+   "seconds": 13.7,
    "summary": ""
   },
   {
    "test": "audio-export.cjs",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0,
    "summary": ""
   },
   {
    "test": "football-intelligence.cjs",
    "pass": true,
-   "seconds": 1.2,
+   "seconds": 1.3,
    "summary": ""
   },
   {
@@ -59,109 +77,109 @@
   {
    "test": "teamwork.cjs",
    "pass": true,
-   "seconds": 2.9,
+   "seconds": 8.3,
    "summary": ""
   },
   {
    "test": "arena-elimination.cjs",
    "pass": true,
-   "seconds": 1.3,
+   "seconds": 3.5,
    "summary": ""
   },
   {
    "test": "futsal-five.cjs",
    "pass": true,
-   "seconds": 19.9,
+   "seconds": 30.1,
    "summary": ""
   },
   {
    "test": "arena-balance.cjs",
    "pass": true,
-   "seconds": 3.7,
+   "seconds": 5.8,
    "summary": ""
   },
   {
    "test": "arena-football.cjs",
    "pass": true,
-   "seconds": 6.8,
+   "seconds": 9.7,
    "summary": ""
   },
   {
    "test": "arena-broadcast-flow.cjs",
    "pass": true,
-   "seconds": 4.2,
+   "seconds": 6.6,
    "summary": ""
   },
   {
    "test": "arena-duels.cjs",
    "pass": true,
-   "seconds": 47.8,
+   "seconds": 38.2,
    "summary": ""
   },
   {
    "test": "national-coverage.cjs",
    "pass": true,
-   "seconds": 0.4,
+   "seconds": 0.3,
    "summary": ""
   },
   {
    "test": "arena-rush.cjs",
    "pass": true,
-   "seconds": 57.5,
+   "seconds": 29.7,
    "summary": ""
   },
   {
    "test": "small-sided.cjs",
    "pass": true,
-   "seconds": 20.4,
+   "seconds": 10.3,
    "summary": ""
   },
   {
    "test": "japon-net.cjs",
    "pass": true,
-   "seconds": 0.2,
+   "seconds": 0.1,
    "summary": ""
   },
   {
    "test": "japon-camera.cjs",
    "pass": true,
-   "seconds": 42.6,
+   "seconds": 18.7,
    "summary": ""
   },
   {
    "test": "japon-kale.cjs",
    "pass": true,
-   "seconds": 49.9,
+   "seconds": 20.4,
    "summary": ""
   },
   {
    "test": "commentary.cjs",
    "pass": true,
-   "seconds": 8.7,
+   "seconds": 2.2,
    "summary": ""
   },
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 40.8,
+   "seconds": 22.1,
    "summary": ""
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 12.5,
+   "seconds": 7.5,
    "summary": ""
   },
   {
    "test": "duo.cjs",
    "pass": true,
-   "seconds": 8.4,
+   "seconds": 4.1,
    "summary": ""
   },
   {
    "test": "celebrations.cjs",
    "pass": true,
-   "seconds": 0.6,
+   "seconds": 0.3,
    "summary": ""
   },
   {
@@ -179,25 +197,25 @@
   {
    "test": "kickoff-referee.cjs",
    "pass": true,
-   "seconds": 48.6,
+   "seconds": 28,
    "summary": ""
   },
   {
    "test": "forecast.cjs",
    "pass": true,
-   "seconds": 2.5,
+   "seconds": 1.9,
    "summary": ""
   },
   {
    "test": "forecast.php",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0,
    "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
   },
   {
    "test": "national-competitions.php",
    "pass": true,
-   "seconds": 0.2,
+   "seconds": 0.3,
    "summary": "{\"PASS\":true,\"forecasts\":[\"Armenia 1.26-1.17 Cyprus\",\"Türkiye 0.98-1.61 Belgium\",\"Albania 1.62-0.9 Finland\",\"Czechia 0.49-2.66 Spain\",\"England 2.42-0.5 Croatia\",\"Italia 1.01-1.52 France\"],\"turkiyeBelgium\":{\"home\":2,\"away\":4},\"xg\":{\"home\":0.9770247077337944,\"away\":1.6117217771333712},\"turkiyeXI\":[\"Uğurcan Çakır\",\"Ozan Kabak\",\"Abdülkerim Bardakcı\",\"Zeki Çelik\",\"İsmail Yüksek\",\"Salih Özcan\",\"Eren Elmalı\",\"Ferdi Kadıoğlu\",\"Yunus Akgün\",\"Aral Şimşir\",\"Hakan Çalhanoğlu\"],\"unl\":52,\"intl\":11,\"sample\":[\"Armenia v Cyprus\",\"Türkiye v Belgium\",\"Albania v Finland\",\"Czechia v Spain\"]}"
   },
   {
@@ -221,7 +239,7 @@
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.7,
+   "seconds": 5,
    "summary": ""
   },
   {
@@ -239,7 +257,7 @@
   {
    "test": "remaster.cjs",
    "pass": true,
-   "seconds": 1,
+   "seconds": 0.9,
    "summary": ""
   },
   {
@@ -252,12 +270,6 @@
    "test": "search-test.cjs",
    "pass": true,
    "seconds": 0,
-   "summary": ""
-  },
-  {
-   "test": "engine-test.cjs",
-   "pass": true,
-   "seconds": 145.9,
    "summary": ""
   }
  ],
