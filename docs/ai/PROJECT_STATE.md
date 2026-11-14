@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V176** · 2026-11-13 UTC · Codex (Hostinger web fizik/kaleci/bitiriş/eleme düzeltmeleri)
+> Son güncelleme: **V177** · 2026-11-14 UTC · Codex (Hostinger web Touchline güvenli kadraj)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,18 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V176** (`VERSION`; web düzeltmeleri ve yerel testler) |
-| Sonraki geliştirme hedefi | **V177** — kalibrasyon ve aşağıda açık kalan işler |
+| Kararlı sürüm | **V177** (`VERSION`; Touchline kamera düzeltmesi) |
+| Sonraki geliştirme hedefi | **V178** — yüksek aksiyon ve T-312 açık futbol düzeltmeleri |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build175 / filesMatch=true** (2026-11-13); V176 henüz Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v176.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 176 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build176 / filesMatch=true** (2026-11-14); V177 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v177.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 177 |
+
+## V177 — Touchline kamera; diğer futbol düzeltmeleri ayrı açık iş
+
+- Japon Kale ve5v5'te Touchline eğik ekseni korunur. Bütün canlı kalelerin ağız/arka ağ/taban/üst köşeleri güvenli aksiyon alanına alınır. Yakın kale skor panelinin altında kalmaz; HUD mevcutReels/Shorts bandında kalır. Aynı draw yolu önizleme/MP4/geri sarma için kullanılır.
+- Tam44/44testPASS. Yeni test1210kare/38720kale köşesi; gerçekWebGL2/4takım×iki oran. Komut/kanıt: [TOUCHLINE-V177](research/TOUCHLINE-V177.md).
+- **T-312 tamamlanmadı ve bu sürüme alınmadı:** penaltı sonucu/el–ayak,11v11 ilerleme, arena alım/kaleci dağıtımı, VAR değişiklik ve seçilen60/75/90içinde limit korunarak eleme. Kaynak taslağı `agent/codex/web-football-v177` @f3aa2a4; başarısız aday üretimi ve testler HANDOFF'ta. Kullanıcı uzatmayı reddetti(D-042); V176yayındaki uzatma davranışı yeni isteği karşılamış sayılmaz.
+- Kullanıcının son ilavesi T-314: arena/5v5yüksek doğal aksiyon; gol/direk/kurtarış kotası yok,11v11analizi ayrı. V178geliştirmesi başladı; bitmiş sayılmaz.
 
 ## V176 — son web düzeltmeleri
 

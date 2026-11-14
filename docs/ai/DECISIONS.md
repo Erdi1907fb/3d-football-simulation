@@ -225,3 +225,9 @@ Kullanıcı60/90sn çok kaleli elemede mutlaka sahada kazanan istedi. Seçili s�
 Seed1015 sorunu, kalecinin kendi taşıyıcısına çıkması ve topa dokunamayan taşıyıcının sahte sahipliğiydi. Kaleci yalnız serbest topa alım yapar; yakın takım arkadaşı kaçınması taşıyıcıyı toptan kovmaz. Durmuş topa uzun süre dokunamayan oyuncu kontrolü kaybeder; son alım/dokunuş zamanı birlikte değerlendirilir. Bu hata golleri zorlayarak çözülmedi.
 
 Kullanıcının ek talimatıyla yayın mod/tur açıklamaları ve uzun stüdyo bilgi notları kaldırılır. Anlamlı kontrol seçenekleri, skor/süre/kimlik/gerçek hata ve sonuçlar korunur. Fiziksel ve taktiksel çeşitlilik, mantıksız açık kale adaylarını elemekle birlikte sürer.
+
+## D-042 · 2026-11-14 · codex · değişti — Seçilen oyun süresinde eleme, WIP ayrımı
+Kullanıcı D-041'in normal süre sonrası tek golle uzatma çözümünü açıkça reddetti. Yeni hedef:60/75/90oyun saniyesi, seçilen gol limiti korunarak tek gerçek kazanan. Gol–restart molaları sayılmaz. Fiziksel senaryo üretme/doğrulama kullanılabilir; sahte gol, sonradan zorlanan sonuç, gizli süre/limit değişimi olmaz. Taslak `agent/codex/web-football-v177` @f3aa2a4henüz bu hedefi sağlamıyor;5–6takım/60s/limit2 başarısız. V177'ye alınmadı. V176'nın yayındaki davranışı bu düzeltme tamamlandı sayılmaz; T-312açık. Diğer yeni penaltı/kaleci/değişiklik taslakları da aynı dalda test bekliyor.
+
+## D-043 · 2026-11-14 · codex · kabul — Touchline'da bütün canlı kaleler HUD üstünde
+Touchline ekseni(1,.72,.35)korunur. Yalnız yakın hedef kaleyi sığdıran eski model yerine mevcut saha geometrisindeki bütün kalelerin ağız/arka ağ/taban/üst köşeleri izleme zarfına girer. Kamera hareketi ve zoom mevcut yumuşatma/seed bağımsız kayıt yolunu paylaşır. Dikey aksiyon64–884/295–1220ve HUD30–909/1296–1518; yatay70–1850/55–795ve HUD830–1052 korunur. Sonuç ekranı mevcut kısa yakın plandır. Fiziğe/kadroya/veri hattına müdahale yok.

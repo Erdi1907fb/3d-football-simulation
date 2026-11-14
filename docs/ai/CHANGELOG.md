@@ -2,6 +2,11 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V177 — 2026-11-14 UTC (Codex)
+- Web Japon Kale/5v5Touchline kamerasında bütün canlı kale çerçeveleri skor panelinin üstündeki güvenli aksiyon alanına alınır. Eğik açı/yumuşak takip, iki oran ve Reels/Shorts skor bandı korunur.
+- Tam44/44testPASS. Yeni1210kare/38720kale köşesi regresyonu ve gerçekWebGL2/4takım×dikey/yatay kareler. Kanıt:research/TOUCHLINE-V177.md.
+- T-312futbol taslağı başarısız sınırlandırılmış eleme/bütünleşme testleri nedeniyle ayrı dalda korunur; bu sürümde tamamlandı sayılmaz. Son yüksek aksiyon talebi T-314olarak V178hedefindedir.
+
 ## V176 — 2026-11-13 UTC (Codex)
 - Web: kale çizgisi derinlik çakışması, penaltı golü sonrası varış vektörü, esnek file ve gerçek top yüküyle ağ cebi.
 - Açık kale bitiriş kararı/normal fiziksel bitiriciye kontrol devri, arena geri pası ve yavaş topta ayak kontrolü, sönümlü kurtarış, çim direnci, kararlı hücum hedefi ve takım arkadaşı–taşıyıcı/kaleci takılmasının giderilmesi.

@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 43 test; `--quick` `engine-test.cjs` hariç 42 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 44 test; `--quick` `engine-test.cjs` hariç 43 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -81,6 +81,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 | `node tests/national-coverage.cjs` | 85 millî kadro/forma, ilk 11 doğruluğu, normal maç tamamlama ve güncel konsept takımlar | ~1 sn |
 | `node tests/small-sided.cjs` | 5v5/3 kişilik kadro, serbest saha seçimi/GK doğrulama, santra yarışı, fiziksel pas/kurtarış, eşit/birleşik tribün ve sürekli güvenli kamera | ~2 sn |
 | `node tests/japon-net.cjs` | Normal file dokusu, 4,4/5/6 m ölçü, açık kale ağzı, ayrı geometri ve ortak kaynakların korunması | <1 sn |
+| `node tests/touchline-safe.cjs` | Touchline:2–6kale×dikey/yatay, bütün kale köşeleri HUD üstünde; yumuşak takip/geri sarma/aynı açı | <1 sn |
 | `node tests/japon-camera.cjs` | Büyüyen 2–6 kale sahaları, 5v5/üçlü kadrolar/efsaneler, 4 kamera için Reels/Shorts güvenli izdüşümü ve geri sarma | ~1 sn |
 | `node tests/japon-kale.cjs` | 2–6 taraf, 50 senaryo, eleme/puan, tur sıfırlama, fiziksel gol çizgisi, özet zamanları, determinizm | ~2 sn |
 | `node tests/commentary.cjs` | TR/EN anlatım, gerçek olay/oyuncu, video zamanları, SRT | <1 sn |
@@ -250,3 +251,8 @@ dosyalardır.
 - Açık kale fırsatını uygun seçenek filtresiyle bitirin; rastlantı hareketin teknik sonucunda sürer. Analiz gol defterini değiştirmeyin; çelişen başlangıçları yeniden örnekleyin. `openFinish` normal fiziksel bitiriciye devirdir, yeni gol ekleme değildir.
 - Renk paleti League-Soccer'dan taşınmadı. Arena çim tinti yeşil kalmalı; world.pitchDetail.grass ile geç yüklenen PBR haritasını aynı sanıp nötr beyaz tint uygulamayın. Taraftar/forma paletini ve global pozlamayı sebepsiz değiştirmeyin.
 - Kanıt/komutlar: `docs/ai/research/FIXES-V176.md`, `tests/football-fixes.cjs`, `tools/validate-elimination.cjs`. Geniş sekiz aşama planı hâlâ kısmi; mikro düzeltmeler onu tamamlandı yapmaz.
+
+
+## 21. V177 — Touchline güvenli kadraj ve açık futbol düzeltmeleri
+- Touchline(1,.72,.35)eğik izleme açısı korunur; mevcut `frame.layout.goals` içindeki bütün canlı kale çerçeveleri/dip/ağ derinliği aksiyon güvenli alanına girer. Yakın kaleyi skor panelinin altına geri düşürmeyin. HUD güvenli bandı aynı kalır. `tests/touchline-safe.cjs` ve gerçek browser harness iki oranı kontrol eder.
+- Kullanıcının yeni süre talebi D-042, V176D-041uzatmasını aşar:60/75/90içinde ve seçilen limit korunarak fiziksel tek kazanan isteniyor. **Henüz uygulanmış/bitmiş sayılmaz.** T-312taslağı `agent/codex/web-football-v177` @f3aa2a4; bütünleşme başarısız olduğu için main'e alınmadı. Sonraki ajan bu kaynak taslağını ve HANDOFF'u okuyarak devam eder. Önceki dalı silmeyin veya bütün dalı test etmeden birleştirmeyin. Diğer penaltı/kaleci/VAR/zemin taslakları da oradadır.

@@ -1,4 +1,4 @@
-> **Kullanıcının son netleştirmesi (2026-11-13): Ana hedef Hostinger web sürümüdür. Bütün kalan futbol geliştirmeleri kaynak webde yapılacak; Windows ek uyumluluk kontrolüdür. Canlı son kontrolde V175; V176 kaynak ve web güncelleme paketi hazır, canlıya bu oturumda yükleme yapılmadı.**
+> **Kullanıcının son netleştirmesi (2026-11-14): Ana hedef Hostinger web sürümüdür. Bütün kalan futbol geliştirmeleri kaynak webde yapılacak; Windows ek uyumluluk kontrolüdür. Canlı son kontrolde V176/filesMatch=true; V177 kamera güncellemesi hazırlanıyor. T-312 futbol düzeltmeleri ayrı WIP dalında, yayınlanmaz.**
 
 # TASKS — görev panosu
 
@@ -6,10 +6,13 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V176 → V177
+## Aktif hedef: V177 kamera; V178 futbol düzeltmelerine devam
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-314 | Japon Kale/5v5: doğal yüksek aksiyon, yakın kaleye hücum, iyi destek/pas/şut, savunma/kurtarış/direk çeşitliliği;11v11analizi korunur | in-progress (V178) | codex | files: assets/japon-engine.js, japon-tactics.js, football-intelligence.js; aynı kadro/seed/oyun süresinde A/Bölçüm. Her şut gol olmaz,0–0yasaklanmaz; kota/sonuç seçimi yok. Dal agent/codex/arena-action-v178. |
+| T-313 | Touchline kamera: Japon Kale ve5v5 kaleleri HUD üstünde, skor/kimlik Reels güvenli bandında | done (V177) | codex | files: assets/japon-camera.js, tests/touchline-safe.cjs, tests/browser-touchline.cjs. Bütün canlı kale çerçeveleri, aynı eğik izleme açısı, iki oran; yayın kaydı research/TOUCHLINE-V177.md. |
+| T-312 | Penaltı gol/sonuç ve el/ayak;11v11 ilerleme;arena güvenli kaleci dağıtımı/zemin/alım;VAR dışında numaralı değişiklik;60/75/90s içine limit korunarak biten eleme | partial (V178 hedefi) | codex | Kaynak taslağı `agent/codex/web-football-v177` @f3aa2a4. **main'e birleşmedi.**64fiziksel adayda5–6takım/60s/limit2 tamamlanamadı; bütünleşme testleri FAIL. D-042; sonraki ajan bu dalı devir notundan devam ettirsin, WIP'i kararlı sanmasın. |
 | T-311 | Japon Kale/5v5 ve diğer stüdyolarda gereksiz aksiyon/eleme ve yardım açıklamalarını kaldır | done (V176) | codex | Yayındaki mod/tur başlığı, ölçü satırı, uzun yardım/subtitle ve P/FK notları gizlendi; işlevsel seçenekler, skor/süre/kimlik/hata ve sonuç kaldı. |
 | T-310 | Web: penaltı çizgisi/file/goal-tail; normal açık kale kararı; arena kaleci geri pası, zemin/sekme/çeviklik;60/90sn elemede gerçek kazanan; renk doğrulama; gereksiz mod bilgilerini kaldır | done (V176) | codex | files: assets/{scene,world-upgrade,penalty-engine,football-intelligence,possession-engine,ball-aero,japon-*}.js, giriş HTML/UI, tests/, sürüm/devir; Arjantin–Uruguay videosu/seed sağlanmadı, tariften yeniden üretilecek. |
 | T-304 | Karar çeşitliliğini koruyarak pas alımı, şut/mesafe/alan dağılımı ve hazırlama maliyetini kalibre et | todo | — | V175 karşılaştırmasında daha çok pas fakat daha düşük 3sn alım proxy'si; oyun saati farkını normalize et, gerçek olay/varış ölçümü ve uygun açık veriyle karşılaştır; gol/hata kotası ekleme. |

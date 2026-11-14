@@ -17,6 +17,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+
+## [2026-11-14 UTC] Codex · V177 — Touchline kamera (Hostinger web)
+- Dal:`agent/codex/touchline-safe-v177`; temel V176/dfdc4d2. T-313ayrı, test edilen kamera güncellemesi. Runtimeyalnızjapon-camera.jsve sürüm/cache referansları değişti.
+- Bütün canlı kale ağız/arka ağ/taban/üst köşeleri güvenli aksiyon çerçevesinde;Touchline eğik eksen ve mevcut ReelsHUDbandı korunur. Önizleme/geri sarma/MP4aynı yönetmeni kullanır.
+- Testler:touchline-safe1210kare/38720köşe PASS; gerçekChromium2/4takım×dikey/yatay4kare PASS,sıfırpageerror; PHPbuild177/filesMatchtrue501dosya. Tam44/44paketPASS(tests/summary.json);kanıt research/TOUCHLINE-V177.md.
+- Canlı salt-okuma kontrolü:V176/filesMatchtrue. Hostinger'a yükleme yapılmadı; V176→V177farkZIP'i hazırlanır. Mainpush ile canlı Hostinger yayını aynı şey değildir.
+- **T-312bitmedi.** Diğer penaltı/el–ayak/zemin/kaleci/11v11/VARkaynak taslağı `agent/codex/web-football-v177` @f3aa2a4dalına kaydedilip push edildi. Henüz main'e BİRLEŞTİRME.60s/5–6takım/limit2için64fiziksel aday başarısız;footIK/gerçek animasyon/sonuçyolu testleri eksik, eski iki fikstür FAIL. Kodun kalan kısmını silme/baştan yazma; bu not ve daldaki en üst WIPHANDOFF'tan devam et.
+- D-042kullanıcı düzeltmesi:seçilen60/75/90oyun saniyesi ve gol limiti korunmalı;uzatma/tek gole düşürme kabul edilmiyor. V176'nın eski uzatması istenen davranış tamamlandı sayılmaz. Fiziksel sonuç üretilemiyorsa sahte gol/şampiyon yazma.
+- Son kullanıcı yönlendirmesi T-314:Japon Kale/5v5yüksek doğal aksiyon;0–0olabilir fakat kale hücumları canlı olsun. 11v11analizi korunacak. Çalışma dalı`agent/codex/arena-action-v178`; aynıgerçekkadro/seed/süre A/Bkontrolü ve2bin karar örneği hazırlanıyor; T-312ile karıştırma.
+
 ## [2026-11-13 UTC] Codex · V176 — Hostinger web hata düzeltmeleri
 - Dal `agent/codex/web-football-v176`, temel9a505c1/V175. Son kod ve bu belge aynı commit'te main'e alınır. Kullanıcı bu sürümün Hostinger web olması gerektiğini netleştirdi; çalışma kaynak JS/PHP webde yapıldı.
 - T-310/T-311 tamam: penaltı kale boyası derinlik çakışması, gol sonrası gerçek hızın korunması ve yay/sönümlü file+gerçek top cep yükü; açık kale uygun seçenek filtresi ve mevcut fiziksel bitiriciye devir; geri/yavaş pası ayakla alan/dağıtan kaleci; arena çim direnci/sönümlüparry/daha kararlı yön/kale hedefi; açıklama kalabalığının kaldırılması. Formala/logo/veri/analiz korunur. Kullanıcıdaki Arjantin–Uruguay tek videosu/seed'i yok; birebir izledim demeyin.
