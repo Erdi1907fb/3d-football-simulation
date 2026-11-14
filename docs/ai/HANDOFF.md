@@ -17,6 +17,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ---
 
+
+## [2026-11-14 UTC] Codex · V176 → futbol düzeltmeleri (WIP; kararlı sürüm değildir)
+- Dal: `agent/codex/web-football-v177`. Kamera düzeltmesi ayrı V177 sürümüne ayrılacak; diğer değişiklikler bu dalda korunur ve sonraki hedefe taşınır.
+- T-312 **in-progress**: Penaltıda planlanan uçuş süresinde sınıflandırılan topun sonradan çizgiyi geçmesi düzeltildi; gerçek süpürülmüş çizgi kanıtı ve direk sonrası devam eklendi. El/ayak temas ayrımı, alçak tutuş pozu; normal taşıyıcının geri dönmesini önleyen ilerleme; arena alım/çim/dağıtım; VAR yanından değişiklik koreografisi yazıldı. Bunlar bütünleşmiş/kararlı ilan edilmedi.
+- Test kanıtı `/workspace/artifacts/v177-{natural-initial,penalty-initial,free-initial,arena-initial}.log`. Doğal100seri/1084vuruş, eski400seri/4257vuruş ve serbest/arena başlangıç kontrolleri geçti. Son fizik değişikliklerinden sonra hepsi tekrar doğrulanmalı.
+- **Bloker:** 60sn/5–6takım/limit2 için64fiziksel aday içinde tam eleme bulunamadı (`v177-bounded-probe2.log`). `create` açık `elimination-unresolved` hatası veriyor; bu haliyle main/yayın YAPMA. Sırf sonucu sağlamak için süre/limit/kaleci bastırma veya sahte gol ekleme.
+- Kullanıcı V176 uzatma/tek gole düşürmeyi reddetti: seçilen60/75/90oyun saniyesi ve seçilen1–5gol limiti korunmalı. Gol–yeniden oyun arası saat durur. D-041'in uzatma kuralı yeni talebe uygulanmaz.
+- İlk quick paket: `football-fixes.cjs` eski zorunlu yakın açık başlangıç fikstürü nedeniyle; `football-intelligence.cjs` ayak temasında eski el-contact beklentisi nedeniyle FAIL. Paket durduruldu; tüm paket PASS iddiası yok. Eski testleri anlamlı yeni fizik kurallarına uyarlayıp gerçek yeni regresyonlar ekle.
+- Eksik: foot-parry için gerçek ayak IK; düşük tutuş/sekme sonrası bütün yol ve animasyon görsel kanıtı; güvenli kaleci dağıtım/koruma ve değişiklik engel/el teması testleri; limitli süreye sığan fiziksel eleme üretimi. Ham aday ve probe/full determinizmi doğrulanmalı.
+- T-313 kamera kaynak düzeltmesi + `tests/touchline-safe.cjs`:1210kare/38720kale noktası PASS. Gerçek WebGL dört2/4takım×dikey/yatay kare PASS (`/workspace/artifacts/v177-touchline/`). Kamera testi ayrı kararlı dalda V176 temelinde yeniden çalıştırılacak.
+
 ## [2026-11-13 UTC] Codex · V176 — Hostinger web hata düzeltmeleri
 - Dal `agent/codex/web-football-v176`, temel9a505c1/V175. Son kod ve bu belge aynı commit'te main'e alınır. Kullanıcı bu sürümün Hostinger web olması gerektiğini netleştirdi; çalışma kaynak JS/PHP webde yapıldı.
 - T-310/T-311 tamam: penaltı kale boyası derinlik çakışması, gol sonrası gerçek hızın korunması ve yay/sönümlü file+gerçek top cep yükü; açık kale uygun seçenek filtresi ve mevcut fiziksel bitiriciye devir; geri/yavaş pası ayakla alan/dağıtan kaleci; arena çim direnci/sönümlüparry/daha kararlı yön/kale hedefi; açıklama kalabalığının kaldırılması. Formala/logo/veri/analiz korunur. Kullanıcıdaki Arjantin–Uruguay tek videosu/seed'i yok; birebir izledim demeyin.

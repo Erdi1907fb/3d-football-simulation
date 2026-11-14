@@ -129,7 +129,7 @@
  function finishingOpportunity(p,g,enemies){
   const nx=g.nx??1,nz=g.nz??0,width=g.width||7.32,depth=(g.x-p.x)*nx+(g.z-p.z)*nz,lateral=-(p.x-g.x)*nz+(p.z-g.z)*nx,distance=gap(p,g);
   if(depth<.35||depth>8||Math.abs(lateral)>width*.58||distance>9)return{clear:false};
-  const active=enemies.filter(q=>live(q)),keeper=active.find(q=>q.keeper),near=active.filter(q=>!q.keeper).some(q=>gap(p,q)<2.0),lanes=[-.27,0,.27].map(a=>{const target={x:g.x-nz*width*a,z:g.z+nx*width*a},dx=target.x-p.x,dz=target.z-p.z,dd=dx*dx+dz*dz;return{target,blocked:active.filter(q=>!q.keeper).some(q=>{const u=((q.x-p.x)*dx+(q.z-p.z)*dz)/dd;return u>.02&&u<1&&Math.hypot(q.x-p.x-u*dx,q.z-p.z-u*dz)<.7;})};}).filter(q=>!q.blocked),empty=!keeper||gap(keeper,g)>4.2||keeper.recoverUntil>0&&keeper.dive>.5;
+  const active=enemies.filter(q=>live(q)),keeper=active.find(q=>q.keeper),near=active.filter(q=>!q.keeper).some(q=>gap(p,q)<.65||gap(p,q)<2.0&&(q.x-p.x)*nx+(q.z-p.z)*nz>-.35),lanes=[-.27,0,.27].map(a=>{const target={x:g.x-nz*width*a,z:g.z+nx*width*a},dx=target.x-p.x,dz=target.z-p.z,dd=dx*dx+dz*dz;return{target,blocked:active.filter(q=>!q.keeper).some(q=>{const u=((q.x-p.x)*dx+(q.z-p.z)*dz)/dd;return u>.02&&u<1&&Math.hypot(q.x-p.x-u*dx,q.z-p.z-u*dz)<.7;})};}).filter(q=>!q.blocked),empty=!keeper||gap(keeper,g)>4.2||keeper.recoverUntil>0&&keeper.dive>.5;
   return{clear:!near&&lanes.length>=2&&(empty||distance<4.5),target:lanes.sort((a,b)=>(keeper?gap(b.target,keeper)-gap(a.target,keeper):0))[0]?.target,distance,empty};
  }
  function arenaDecision(p,g,players,lane,rng,context={}){
@@ -141,7 +141,7 @@
    const depth=(g.x-q.x)*g.nx+(g.z-q.z)*g.nz;if(!q.keeper&&depth<8&&d>3&&d<14&&Math.abs(-p.x*g.nz+p.z*g.nx)>3&&pressure<2.5)options.push({kind:'cross',receiver:q,utility:.48+(1-pressure*.2)*.08,risk:Math.min(.9,risk*.7+.13),creative:.3});
   }
   const blocked=lane(p,g,players,p.team),depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,lateral=Math.abs(-p.x*g.nz+p.z*g.nx),angle=Math.atan2(g.width/2,Math.max(.1,distance));
-  if(distance<16&&depth>.6&&lateral<g.width*.5+depth*.9)options.push({kind:'shot',utility:.15+clamp((15-distance)/10,0,1)*.65+angle*.2+(context.keeper?.rushing?.12:0),risk:clamp(blocked*.20+Math.max(0,distance-7)*.025,0,.85),creative:distance>11?.4:0});
+  if(distance<16&&depth>.6&&lateral<g.width*.5+depth*.9)options.push({kind:'shot',utility:.15+clamp((15-distance)/10,0,1)*.65+angle*.2+(context.urgency||0)*.55+(context.keeper?.rushing?.12:0),risk:clamp(blocked*.20+Math.max(0,distance-7)*.025,0,.85),creative:distance>11?.4:0});
   const finish=finishingOpportunity(p,g,enemies),viable=finish.clear?options.filter(o=>o.kind==='shot'||o.kind==='pass'&&gap(o.receiver,g)<distance-1&&o.risk<.15):options;return Emergent.choose(viable.length?viable:options,traits,rng,{pressure,fatigue:p.fatigue||0});
  }
  return Object.freeze({finishingOpportunity,Emergent,pitchControl,attackValue,teamPlan,arenaDecision,teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v176'});

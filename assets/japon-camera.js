@@ -36,6 +36,9 @@ function plan(contest,time,mode='broadcast'){
  for(const p of players.filter(p=>!p.keeper&&Math.hypot(p.x-f.ball.x,p.z-f.ball.z)<7).sort((a,b)=>Math.hypot(a.x-f.ball.x,a.z-f.ball.z)-Math.hypot(b.x-f.ball.x,b.z-f.ball.z)).slice(0,5))points.push({...p,y:.1},{...p,y:2.4});
  if(lead&&Math.hypot(lead.x-f.ball.x,lead.z-f.ball.z)<8)points.push({...lead,y:.1},{...lead,y:2.4});
  if(g){for(const side of[-1,1]){points.push({x:g.x-g.nz*(g.width/2+.3)*side,y:0,z:g.z+g.nx*(g.width/2+.3)*side});points.push({x:g.x-g.nz*(g.width/2+.3)*side,y:g.height+.4,z:g.z+g.nx*(g.width/2+.3)*side});}for(const side of[-1,1])points.push({x:g.x+g.nx*g.depth-g.nz*g.width*.5*side,y:g.height+.3,z:g.z+g.nz*g.depth+g.nx*g.width*.5*side});const keeper=players.find(p=>p.team===g.team&&p.keeper);if(keeper)points.push({...keeper,y:2.4});}
+ // Touchline retains its oblique tracking axis, but every live goal must stay
+ // above the score band even when play is at the opposite end of the arena.
+ if(mode==='touchline')for(const goal of contest.layout.goals)for(const side of[-1,1])for(const depth of[0,goal.depth])for(const y of[.05,goal.height+.3])points.push({x:goal.x+goal.nx*depth-goal.nz*(goal.width/2+.25)*side,y,z:goal.z+goal.nz*depth+goal.nx*(goal.width/2+.25)*side});
  const aim=new T.Vector3(centre.x,.9,centre.z);
  // Keep one side of the action: following a new goal must not reverse the screen.
  const axis=mode==='touchline'?new T.Vector3(1,.72,.35):press?new T.Vector3(0,.5,1):new T.Vector3(.08,.9,1);
