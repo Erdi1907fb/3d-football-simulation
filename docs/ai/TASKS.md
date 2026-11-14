@@ -1,4 +1,4 @@
-> **Kullanıcının son netleştirmesi (2026-11-14): Ana hedef Hostinger web sürümüdür. Bütün kalan futbol geliştirmeleri kaynak webde yapılacak; Windows ek uyumluluk kontrolüdür. Canlı son kontrolde V176/filesMatch=true; V177 kamera ve V178 aksiyon güncellemeleri kaynakta; T-312 futbol düzeltmeleri ayrı WIP dalında, bütünü yayınlanmaz.**
+> **2026-11-14: Hostinger web kaynak sürümü V181. Canlı salt-okumada V179/filesMatch=true; V181 ZIP ile yüklenmeyi bekler. Sezon/EN, lig2–6/şablonlar ve PK/FK zemin/toplama T-319…322 tamamlandı. T-317 tam uzun video testi ve T-312 diğer futbol WIP açık.**
 
 # TASKS — görev panosu
 
@@ -6,10 +6,14 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V179 web Turnuva Stüdyosu; T-312 ayrı WIP
+## Aktif hedef: V181 web sezon, lig şablonları ve stüdyo zemin tepkisi; T-312 ayrı WIP
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-322 | Kupa/lig yeni ayar, sezon ekranı ve yayın kartlarında İngilizce çeviri denetimi | done (V181) | codex | files: competition-ui/broadcast, tests/competition-seasons/branding; EN gerçek arayüz ve 36 yayın görüntüsü, TR/EN sezon metinleri PASS. |
+| T-321 | Lig2–6takım, kupa8; tüm mevcutyayınşablonları/varsayılanNext90Sim; sırayaözelUCL/UEL/UECLişaretleri | done (V181) | codex | files: competition-engine/UI/broadcast/renderer, broadcast.js, competition.html, tests/docs. Sezon/EN ile V181; puantablosurankbazlı, fikstürdekupaetiketi yok. |
+| T-320 | PenaltıGKeliylealçakalış animasyonu; yalnızPK/FK karda krampon/kayma izi/karparçacığı ve yağmurteması | done (V181) | codex | files: football-animation, penalty/freekick engine/UI, scene/weather/studio-ground, HTML/tests/docs. Skor/temas gerçeği korunur;11v11/arena zemin karı eklenmez. |
+| T-319 | Kupa/lig opsiyonel sezon1–20 ve takım başına öncekişampiyonluk0–20; yalnızvideo başı/sonu kupaikonlu geçmiş | done (V181) | codex | files: competition-engine/UI/broadcast/renderer, competition.html, tests/docs. V181; manuel seri geçmişi, şampiyona+1sonuç, ortakiki oran/MP4, disabledeskiakış. |
 | T-318 | Kupa/lig:5v5/11v11 bütün kameralarda aksiyondaki oyuncunun başüstü ismi (hepsi aynı anda değil); Beşiktaş Orkun Kökçü orta saha seçimi | done | codex | V180; yalnız aksiyon, toplu/giriş isimleri yok.49regresyon/14kamera-oran/2GK/36gerçekpenaltıörneği ve isimli kısa sesliMP4 nativeindirmePASS. MevcutXI korunarak10/CM kulüphavuzuna eklendi. research/competition-v180/validation.json. |
 | T-317 | Tam çok dakikalı kupa/lig 1080p60 sesliMP4:gerçekGPU/Hostinger, iki oran, dosya boyutu/bellek/indirme/geri sarma | todo | — | V179kod+tamfikstürve kısaMP4entegrasyonları doğrulandı; tümçokdakikalı3Drender hedefcihazda henüz yapılmadı. research/COMPETITION-V179.md. |
 | T-316 | Yeni uzun16:9/9:16 Turnuva Stüdyosu:8takım/7maç kupa,4takım/6maç lig;11v11analiz ve elle kadrolu5v5;fikstür/ağaç/puan/tekvideo;madalya/kupa seremonisi/eşit taraftar; gerçek oyun kapakPNG/karePNG | done | codex | files: competition.html, competition-* engine/UI/broadcast/render, mevcut analiz/maç/arena/scene/video ortak arayüzleri, tests/docs. V179:48zorunluregresyon+iki sesli1080p60kısaMP4nativeindirme/oynatmaPASS;4gerçekseremoniPASS. Tamuzunhedefcihazkontrolü T-317. T-312/T-315 ayrı açık kalır. Son istek:Next90Sim tammarka, tamadlıfikstür/yeni tablo; iki takım madalya, yalnızşampiyon kupa; ligde kendi sahası/tamtribün, kupada50/50. |

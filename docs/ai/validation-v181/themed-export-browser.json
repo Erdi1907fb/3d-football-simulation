@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "errors": [],
+  "cases": [],
+  "exports": [
+    {
+      "orient": "portrait",
+      "seconds": 0.3,
+      "theme": "en.1",
+      "h264": true,
+      "aac": true,
+      "fps": 60,
+      "decoded": true,
+      "maxVolumeDb": -18.2
+    },
+    {
+      "orient": "landscape",
+      "seconds": 0.3,
+      "theme": "en.1",
+      "h264": true,
+      "aac": true,
+      "fps": 60,
+      "decoded": true,
+      "maxVolumeDb": -18.2
+    }
+  ]
+}

@@ -2,6 +2,13 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V181 — 2026-11-14 UTC (Codex)
+- Opsiyonel sezon1–20 ve geçmiş şampiyonluk0–20; yalnız baş/son kupaikonlu kartlar, gerçek şampiyona tek artış, iki oran/tekrar idempotent.
+- Lig2–6 takım, kupa8;12 mevcut lig/kupa yayın şablonu ve Next90Sim varsayılanı. Maç skoru, ön/ara/sonuç, puan/fikstür/ağaç logolu görünüm. Her lig sırasına elle none/UCL/UEL/UECL.
+- Fikstür6şarlı sayfalar; gerçek olaylardan küçük saha istatistikleri. Yeni TR/EN arayüz ve video metinleri kontrolü.
+- PK/FK alçak kaleci toplamasında diz/gövde/two-hand IK ve yumuşak kaldırma. Yalnız iki stüdyoda karı açan krampon/kayma izleri, kar parçacıkları ve yağmur temas tepkisi. Diğer modların temiz zemini korunur.
+-52zorunlu regresyon+son hedefli testler PASS.35gerçek lig maçı,36yayın karesi,PK/FK kar/yağmur/geri sarma; iki oranda sezon ve şablonlu gerçek maç kısaH264/AACMP4nativeindirme/dekod/ses PASS. Kanıt: docs/ai/validation-v181. Tam çokdakikalı video T-317ayrı.
+
 ## V180 — 2026-11-14 UTC (Codex)
 - Kupa/lig5v5ve11v11de aksiyon aktörünün ismi:ortakPlayerLabel/seçiciArena politikası; pasalıcısı, gerçekGK kurtarışı ve penaltı vurucu/GK. Herkesin üstünde sürekli isim yok; giriş/toplu/seremoni isimleri kapalı.
 - Gerçekbaşkonumu sonkameraylaprojeksiyon; önizleme/MP4aynıdraw,7kamera×2oran/HUDgüvenli alan.

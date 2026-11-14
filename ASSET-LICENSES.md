@@ -163,3 +163,6 @@ Full source-specific terms and limits: `docs/ai/research/EMERGENT-SOURCES-V175.m
 
 ### V180 action names / Orkun membership correction
 Competition action-name panels are original project code. Orkun Kökçü reuses the existing player profile/reference and portrait endpoint; no new photo/model/audio/font was downloaded. Club membership, number and position facts are sourced to the official Beşiktaş player page recorded on the player entry.
+
+## V181 — studio-ground procedural response
+`assets/studio-ground.js`: original Next90Sim code, procedural cleat masks and contact particles. No external textures, motion capture or datasets. Existing competition logo files are reused under their existing notices; no new third-party assets.

@@ -1,0 +1,911 @@
+{
+  "pass": true,
+  "errors": [],
+  "formats": [
+    {
+      "format": "league",
+      "series": {
+        "enabled": true,
+        "season": 2,
+        "titles": {
+          "83": 0,
+          "86": 0,
+          "432": 0,
+          "436": 1
+        }
+      },
+      "champion": "432",
+      "opening": [
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "before": 1,
+          "total": 1,
+          "added": 0
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        }
+      ],
+      "final": [
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "before": 1,
+          "total": 1,
+          "added": 0
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "before": 0,
+          "total": 1,
+          "added": 1
+        },
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        }
+      ],
+      "chapters": [
+        {
+          "id": 0,
+          "kind": "cover",
+          "start": 0,
+          "end": 2.2,
+          "duration": 2.2,
+          "completed": 0
+        },
+        {
+          "id": 1,
+          "kind": "season-opening",
+          "start": 2.2,
+          "end": 9.2,
+          "duration": 7,
+          "completed": 0
+        },
+        {
+          "id": 2,
+          "kind": "opening",
+          "start": 9.2,
+          "end": 16.2,
+          "duration": 7,
+          "completed": 0
+        },
+        {
+          "id": 3,
+          "kind": "match-intro",
+          "start": 16.2,
+          "end": 19.2,
+          "duration": 3,
+          "matchId": "L1",
+          "completed": 0
+        },
+        {
+          "id": 4,
+          "kind": "match",
+          "start": 19.2,
+          "end": 58.49166666666666,
+          "duration": 39.291666666666664,
+          "matchId": "L1",
+          "completed": 0
+        },
+        {
+          "id": 5,
+          "kind": "match-result",
+          "start": 58.49166666666666,
+          "end": 62.49166666666666,
+          "duration": 4,
+          "matchId": "L1",
+          "completed": 1
+        },
+        {
+          "id": 6,
+          "kind": "standings-update",
+          "start": 62.49166666666666,
+          "end": 67.49166666666666,
+          "duration": 5,
+          "matchId": "L1",
+          "completed": 1
+        },
+        {
+          "id": 7,
+          "kind": "match-intro",
+          "start": 67.49166666666666,
+          "end": 70.49166666666666,
+          "duration": 3,
+          "matchId": "L2",
+          "completed": 1
+        },
+        {
+          "id": 8,
+          "kind": "match",
+          "start": 70.49166666666666,
+          "end": 104.99166666666666,
+          "duration": 34.5,
+          "matchId": "L2",
+          "completed": 1
+        },
+        {
+          "id": 9,
+          "kind": "match-result",
+          "start": 104.99166666666666,
+          "end": 108.99166666666666,
+          "duration": 4,
+          "matchId": "L2",
+          "completed": 2
+        },
+        {
+          "id": 10,
+          "kind": "standings-update",
+          "start": 108.99166666666666,
+          "end": 113.99166666666666,
+          "duration": 5,
+          "matchId": "L2",
+          "completed": 2
+        },
+        {
+          "id": 11,
+          "kind": "round-summary",
+          "start": 113.99166666666666,
+          "end": 119.99166666666666,
+          "duration": 6,
+          "round": 1,
+          "completed": 2
+        },
+        {
+          "id": 12,
+          "kind": "match-intro",
+          "start": 119.99166666666666,
+          "end": 122.99166666666666,
+          "duration": 3,
+          "matchId": "L3",
+          "completed": 2
+        },
+        {
+          "id": 13,
+          "kind": "match",
+          "start": 122.99166666666666,
+          "end": 157.49166666666667,
+          "duration": 34.5,
+          "matchId": "L3",
+          "completed": 2
+        },
+        {
+          "id": 14,
+          "kind": "match-result",
+          "start": 157.49166666666667,
+          "end": 161.49166666666667,
+          "duration": 4,
+          "matchId": "L3",
+          "completed": 3
+        },
+        {
+          "id": 15,
+          "kind": "standings-update",
+          "start": 161.49166666666667,
+          "end": 166.49166666666667,
+          "duration": 5,
+          "matchId": "L3",
+          "completed": 3
+        },
+        {
+          "id": 16,
+          "kind": "match-intro",
+          "start": 166.49166666666667,
+          "end": 169.49166666666667,
+          "duration": 3,
+          "matchId": "L4",
+          "completed": 3
+        },
+        {
+          "id": 17,
+          "kind": "match",
+          "start": 169.49166666666667,
+          "end": 203.99166666666667,
+          "duration": 34.5,
+          "matchId": "L4",
+          "completed": 3
+        },
+        {
+          "id": 18,
+          "kind": "match-result",
+          "start": 203.99166666666667,
+          "end": 207.99166666666667,
+          "duration": 4,
+          "matchId": "L4",
+          "completed": 4
+        },
+        {
+          "id": 19,
+          "kind": "standings-update",
+          "start": 207.99166666666667,
+          "end": 212.99166666666667,
+          "duration": 5,
+          "matchId": "L4",
+          "completed": 4
+        },
+        {
+          "id": 20,
+          "kind": "round-summary",
+          "start": 212.99166666666667,
+          "end": 218.99166666666667,
+          "duration": 6,
+          "round": 2,
+          "completed": 4
+        },
+        {
+          "id": 21,
+          "kind": "match-intro",
+          "start": 218.99166666666667,
+          "end": 221.99166666666667,
+          "duration": 3,
+          "matchId": "L5",
+          "completed": 4
+        },
+        {
+          "id": 22,
+          "kind": "match",
+          "start": 221.99166666666667,
+          "end": 256.4916666666667,
+          "duration": 34.5,
+          "matchId": "L5",
+          "completed": 4
+        },
+        {
+          "id": 23,
+          "kind": "match-result",
+          "start": 256.4916666666667,
+          "end": 260.4916666666667,
+          "duration": 4,
+          "matchId": "L5",
+          "completed": 5
+        },
+        {
+          "id": 24,
+          "kind": "standings-update",
+          "start": 260.4916666666667,
+          "end": 265.4916666666667,
+          "duration": 5,
+          "matchId": "L5",
+          "completed": 5
+        },
+        {
+          "id": 25,
+          "kind": "match-intro",
+          "start": 265.4916666666667,
+          "end": 268.4916666666667,
+          "duration": 3,
+          "matchId": "L6",
+          "completed": 5
+        },
+        {
+          "id": 26,
+          "kind": "match",
+          "start": 268.4916666666667,
+          "end": 302.9916666666667,
+          "duration": 34.5,
+          "matchId": "L6",
+          "completed": 5
+        },
+        {
+          "id": 27,
+          "kind": "match-result",
+          "start": 302.9916666666667,
+          "end": 306.9916666666667,
+          "duration": 4,
+          "matchId": "L6",
+          "completed": 6
+        },
+        {
+          "id": 28,
+          "kind": "standings-update",
+          "start": 306.9916666666667,
+          "end": 311.9916666666667,
+          "duration": 5,
+          "matchId": "L6",
+          "completed": 6
+        },
+        {
+          "id": 29,
+          "kind": "round-summary",
+          "start": 311.9916666666667,
+          "end": 317.9916666666667,
+          "duration": 6,
+          "round": 3,
+          "completed": 6
+        },
+        {
+          "id": 30,
+          "kind": "ceremony",
+          "start": 317.9916666666667,
+          "end": 330.9916666666667,
+          "duration": 13,
+          "matchId": "L3",
+          "completed": 6
+        },
+        {
+          "id": 31,
+          "kind": "champion-intro",
+          "start": 330.9916666666667,
+          "end": 333.9916666666667,
+          "duration": 3,
+          "completed": 6
+        },
+        {
+          "id": 32,
+          "kind": "champion-celebration",
+          "start": 333.9916666666667,
+          "end": 348.9916666666667,
+          "duration": 15,
+          "matchId": "L3",
+          "completed": 6
+        },
+        {
+          "id": 33,
+          "kind": "final-summary",
+          "start": 348.9916666666667,
+          "end": 356.9916666666667,
+          "duration": 8,
+          "completed": 6
+        },
+        {
+          "id": 34,
+          "kind": "season-summary",
+          "start": 356.9916666666667,
+          "end": 363.9916666666667,
+          "duration": 7,
+          "completed": 6
+        }
+      ],
+      "duration": 363.9916666666667
+    },
+    {
+      "format": "cup",
+      "series": {
+        "enabled": true,
+        "season": 3,
+        "titles": {
+          "83": 0,
+          "86": 0,
+          "360": 0,
+          "363": 0,
+          "364": 0,
+          "367": 0,
+          "432": 0,
+          "436": 2
+        }
+      },
+      "champion": "367",
+      "opening": [
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "before": 2,
+          "total": 2,
+          "added": 0
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "363",
+          "name": "Chelsea",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "364",
+          "name": "Liverpool",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "360",
+          "name": "Manchester United",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "367",
+          "name": "Tottenham Hotspur",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        }
+      ],
+      "final": [
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "before": 2,
+          "total": 2,
+          "added": 0
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "363",
+          "name": "Chelsea",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "364",
+          "name": "Liverpool",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "360",
+          "name": "Manchester United",
+          "before": 0,
+          "total": 0,
+          "added": 0
+        },
+        {
+          "id": "367",
+          "name": "Tottenham Hotspur",
+          "before": 0,
+          "total": 1,
+          "added": 1
+        }
+      ],
+      "chapters": [
+        {
+          "id": 0,
+          "kind": "cover",
+          "start": 0,
+          "end": 2.2,
+          "duration": 2.2,
+          "completed": 0
+        },
+        {
+          "id": 1,
+          "kind": "season-opening",
+          "start": 2.2,
+          "end": 9.2,
+          "duration": 7,
+          "completed": 0
+        },
+        {
+          "id": 2,
+          "kind": "opening",
+          "start": 9.2,
+          "end": 16.2,
+          "duration": 7,
+          "completed": 0
+        },
+        {
+          "id": 3,
+          "kind": "match-intro",
+          "start": 16.2,
+          "end": 19.2,
+          "duration": 3,
+          "matchId": "Q1",
+          "completed": 0
+        },
+        {
+          "id": 4,
+          "kind": "match",
+          "start": 19.2,
+          "end": 58.05,
+          "duration": 38.85,
+          "matchId": "Q1",
+          "completed": 0
+        },
+        {
+          "id": 5,
+          "kind": "match-result",
+          "start": 58.05,
+          "end": 62.05,
+          "duration": 4,
+          "matchId": "Q1",
+          "completed": 1
+        },
+        {
+          "id": 6,
+          "kind": "standings-update",
+          "start": 62.05,
+          "end": 67.05,
+          "duration": 5,
+          "matchId": "Q1",
+          "completed": 1
+        },
+        {
+          "id": 7,
+          "kind": "match-intro",
+          "start": 67.05,
+          "end": 70.05,
+          "duration": 3,
+          "matchId": "Q2",
+          "completed": 1
+        },
+        {
+          "id": 8,
+          "kind": "match",
+          "start": 70.05,
+          "end": 109.58333333333333,
+          "duration": 39.53333333333333,
+          "matchId": "Q2",
+          "completed": 1
+        },
+        {
+          "id": 9,
+          "kind": "match-result",
+          "start": 109.58333333333333,
+          "end": 113.58333333333333,
+          "duration": 4,
+          "matchId": "Q2",
+          "completed": 2
+        },
+        {
+          "id": 10,
+          "kind": "standings-update",
+          "start": 113.58333333333333,
+          "end": 118.58333333333333,
+          "duration": 5,
+          "matchId": "Q2",
+          "completed": 2
+        },
+        {
+          "id": 11,
+          "kind": "match-intro",
+          "start": 118.58333333333333,
+          "end": 121.58333333333333,
+          "duration": 3,
+          "matchId": "Q3",
+          "completed": 2
+        },
+        {
+          "id": 12,
+          "kind": "match",
+          "start": 121.58333333333333,
+          "end": 166.43333333333334,
+          "duration": 44.85,
+          "matchId": "Q3",
+          "completed": 2
+        },
+        {
+          "id": 13,
+          "kind": "match-result",
+          "start": 166.43333333333334,
+          "end": 170.43333333333334,
+          "duration": 4,
+          "matchId": "Q3",
+          "completed": 3
+        },
+        {
+          "id": 14,
+          "kind": "standings-update",
+          "start": 170.43333333333334,
+          "end": 175.43333333333334,
+          "duration": 5,
+          "matchId": "Q3",
+          "completed": 3
+        },
+        {
+          "id": 15,
+          "kind": "match-intro",
+          "start": 175.43333333333334,
+          "end": 178.43333333333334,
+          "duration": 3,
+          "matchId": "Q4",
+          "completed": 3
+        },
+        {
+          "id": 16,
+          "kind": "match",
+          "start": 178.43333333333334,
+          "end": 212.93333333333334,
+          "duration": 34.5,
+          "matchId": "Q4",
+          "completed": 3
+        },
+        {
+          "id": 17,
+          "kind": "shootout",
+          "start": 212.93333333333334,
+          "end": 259.23333333333335,
+          "duration": 46.3,
+          "matchId": "Q4",
+          "completed": 3
+        },
+        {
+          "id": 18,
+          "kind": "match-result",
+          "start": 259.23333333333335,
+          "end": 263.23333333333335,
+          "duration": 4,
+          "matchId": "Q4",
+          "completed": 4
+        },
+        {
+          "id": 19,
+          "kind": "standings-update",
+          "start": 263.23333333333335,
+          "end": 268.23333333333335,
+          "duration": 5,
+          "matchId": "Q4",
+          "completed": 4
+        },
+        {
+          "id": 20,
+          "kind": "round-summary",
+          "start": 268.23333333333335,
+          "end": 274.23333333333335,
+          "duration": 6,
+          "round": 1,
+          "completed": 4
+        },
+        {
+          "id": 21,
+          "kind": "match-intro",
+          "start": 274.23333333333335,
+          "end": 277.23333333333335,
+          "duration": 3,
+          "matchId": "S1",
+          "completed": 4
+        },
+        {
+          "id": 22,
+          "kind": "match",
+          "start": 277.23333333333335,
+          "end": 317.20833333333337,
+          "duration": 39.975,
+          "matchId": "S1",
+          "completed": 4
+        },
+        {
+          "id": 23,
+          "kind": "match-result",
+          "start": 317.20833333333337,
+          "end": 321.20833333333337,
+          "duration": 4,
+          "matchId": "S1",
+          "completed": 5
+        },
+        {
+          "id": 24,
+          "kind": "standings-update",
+          "start": 321.20833333333337,
+          "end": 326.20833333333337,
+          "duration": 5,
+          "matchId": "S1",
+          "completed": 5
+        },
+        {
+          "id": 25,
+          "kind": "match-intro",
+          "start": 326.20833333333337,
+          "end": 329.20833333333337,
+          "duration": 3,
+          "matchId": "S2",
+          "completed": 5
+        },
+        {
+          "id": 26,
+          "kind": "match",
+          "start": 329.20833333333337,
+          "end": 368.6416666666667,
+          "duration": 39.43333333333333,
+          "matchId": "S2",
+          "completed": 5
+        },
+        {
+          "id": 27,
+          "kind": "match-result",
+          "start": 368.6416666666667,
+          "end": 372.6416666666667,
+          "duration": 4,
+          "matchId": "S2",
+          "completed": 6
+        },
+        {
+          "id": 28,
+          "kind": "standings-update",
+          "start": 372.6416666666667,
+          "end": 377.6416666666667,
+          "duration": 5,
+          "matchId": "S2",
+          "completed": 6
+        },
+        {
+          "id": 29,
+          "kind": "round-summary",
+          "start": 377.6416666666667,
+          "end": 383.6416666666667,
+          "duration": 6,
+          "round": 2,
+          "completed": 6
+        },
+        {
+          "id": 30,
+          "kind": "match-intro",
+          "start": 383.6416666666667,
+          "end": 386.6416666666667,
+          "duration": 3,
+          "matchId": "F1",
+          "completed": 6
+        },
+        {
+          "id": 31,
+          "kind": "match",
+          "start": 386.6416666666667,
+          "end": 421.1416666666667,
+          "duration": 34.5,
+          "matchId": "F1",
+          "completed": 6
+        },
+        {
+          "id": 32,
+          "kind": "shootout",
+          "start": 421.1416666666667,
+          "end": 487.8416666666667,
+          "duration": 66.69999999999999,
+          "matchId": "F1",
+          "completed": 6
+        },
+        {
+          "id": 33,
+          "kind": "match-result",
+          "start": 487.8416666666667,
+          "end": 491.8416666666667,
+          "duration": 4,
+          "matchId": "F1",
+          "completed": 7
+        },
+        {
+          "id": 34,
+          "kind": "standings-update",
+          "start": 491.8416666666667,
+          "end": 496.8416666666667,
+          "duration": 5,
+          "matchId": "F1",
+          "completed": 7
+        },
+        {
+          "id": 35,
+          "kind": "round-summary",
+          "start": 496.8416666666667,
+          "end": 502.8416666666667,
+          "duration": 6,
+          "round": 3,
+          "completed": 7
+        },
+        {
+          "id": 36,
+          "kind": "ceremony",
+          "start": 502.8416666666667,
+          "end": 515.8416666666667,
+          "duration": 13,
+          "matchId": "F1",
+          "completed": 7
+        },
+        {
+          "id": 37,
+          "kind": "champion-intro",
+          "start": 515.8416666666667,
+          "end": 518.8416666666667,
+          "duration": 3,
+          "completed": 7
+        },
+        {
+          "id": 38,
+          "kind": "champion-celebration",
+          "start": 518.8416666666667,
+          "end": 533.8416666666667,
+          "duration": 15,
+          "matchId": "F1",
+          "completed": 7
+        },
+        {
+          "id": 39,
+          "kind": "final-summary",
+          "start": 533.8416666666667,
+          "end": 541.8416666666667,
+          "duration": 8,
+          "completed": 7
+        },
+        {
+          "id": 40,
+          "kind": "season-summary",
+          "start": 541.8416666666667,
+          "end": 548.8416666666667,
+          "duration": 7,
+          "completed": 7
+        }
+      ],
+      "duration": 548.8416666666667
+    }
+  ],
+  "exports": [
+    {
+      "orient": "portrait",
+      "file": "/workspace/artifacts/competition-seasons-v181/portrait-season-boards.mp4",
+      "seconds": 0.5,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60
+    },
+    {
+      "orient": "landscape",
+      "file": "/workspace/artifacts/competition-seasons-v181/landscape-season-boards.mp4",
+      "seconds": 0.5,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60
+    }
+  ],
+  "excerptOnly": true
+}

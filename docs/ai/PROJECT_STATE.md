@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V180** · 2026-11-14 UTC · Codex (seçici aksiyon isimleri ve Beşiktaş Orkun)
+> Son güncelleme: **V181** · 2026-11-14 UTC · Codex (sezon, lig2–6/şablonlar, stüdyo zemin tepkisi)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,23 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V180** (`VERSION`; turnuvada aksiyon ismi, Beşiktaş Orkun; V179/V178 korunur) |
-| Sonraki geliştirme hedefi | **V181** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
+| Kaynak sürümü | **V181** (`VERSION`; sezon, lig2–6, yayın şablonları, PK/FK zemin tepkisi) |
+| Sonraki geliştirme hedefi | **V182** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V180 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v180.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 180 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V181 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v181.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 181 |
+
+## V181 — sezon geçmişi, esnek lig ve stüdyo zemin tepkisi
+
+- Sezon geçmişi varsayılan kapalı. Açılırsa sezon1–20, takımın önceki şampiyonlukları0–20 elle seçilir. Yalnız açılış/kapanış7sn kartları; orta bölümde gösterilmez. Sıfırda kupaikonu yok. Final gerçek şampiyona bir ekler, kaynak girişleri değiştirmez; geri sarma/iki oran export sayıyı yeniden artırmaz. Bir sezonun sonu otomatik kaydedilen çok sezonlu veritabanı değildir; sonraki videonun geçmişini kullanıcı girer. Dosyalarda S02 gibi sezon etiketi vardır.
+- Lig2–6 takım tek devre, n(n−1)/2maç; tek sayıda bay. Kupa8/7maç. Tüm12 mevcut broadcast themes + none. Shared Broadcast live/panel kodu, yerel gerçek logo dosyaları; 11v11 pregame/halftime/finished aynı yayın renderer'ı. Küçük saha pregame5kişilik seçilen liste; sonuç şut/pas/kurtarış gerçek olaylardan, uydurma possession/xG yok. Fixtures6şarlı sayfalanır; uzun tabloların açılış/final/hafta kart süresi uzar.
+- League-only her sıra none/UCL/UEL/UECL; marker/logo/renk **rank** bazlı, takım kimliğine sabitlenmez. Fikstürde yok. Otomatik Avrupa turnuvası oluşturmaz, yalnız kullanıcının belirlediği sıralama görselleştirmesidir. None seçeneği özgün Next90Sim görünümünü korur.
+- TR/EN yeni UI ve sezon başlıkları, seçenekler, link, seedplaceholder, video bölümleri kontrol edilir. Kulüp/oyuncu özeladları çevrilmez.
+- Kaleci: fiziksel smother temasından önce diz/gövde eğilmesi, iki el IK, düşük tutuş noktasından1sn içinde göğse doğru kaldırma. PK/FK aynı Motion.keeperGather; diveRootLift eklenmez, kramponlar yere sabitlenir. Sonuç, şut fiziği ve temas anı korunur; top tutuş sonrası sürekli hareketle taşınır.
+- `studio-ground.js`: yalnız PK/FK, opsiyon bayrağı ve ince surfaceSample callback. Her vuruş60Hz sabit gait/rol/konum örneklerinden temas izleri, havadaki ayaklar hariç; cache ençok bir vuruş. Canvas kar maskesinde krampon/çivi/kayma izleri alttaki çimi açar; bounded256kar/yağmur parçacığı, temas yaşıyla analitik uçuş. İleri/geri arama/FPS/kamera aynı iz kaydını verir. Zemine tam sıvı/kar deformasyon fiziği eklenmedi; görsel temas tepkisidir ve gol fiziğini değiştirmez. Yeni texture/mocap/veriseti yok. `japonSides` açıkça hariç; 11v11/Japon/5v5'e kar örtüsü eklenmez.
+- Açık kalması gerekenler: T-317tamçokdakikalı1080p60export gerçekGPU/Hostinger testi; T-312diğer eski futbol/VAR/eleme düzeltmeleri ayrı WIPf3aa2a4, bu committe topluca tamamlanmış sayılmaz. Main push Hostinger dağıtımı değildir.
+
+- Doğrulama:52zorunlu regresyon ve son hedefli poz/yayın testleri PASS;35gerçek lig maçı,36yayın karesi; iki oranda sezon ve şablonlu maç kısaH264/AACMP4nativeindirme/ses PASS. Kalıcı raporlar: `docs/ai/validation-v181/`. Tam çokdakikalı video T-317açık.
 
 ## V180 — turnuvada aksiyondaki oyuncu ismi; Orkun Beşiktaş havuzunda
 

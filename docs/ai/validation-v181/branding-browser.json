@@ -1,0 +1,186 @@
+{
+  "pass": true,
+  "errors": [],
+  "cases": [
+    {
+      "theme": "none",
+      "orient": "landscape",
+      "phase": "opening"
+    },
+    {
+      "theme": "none",
+      "orient": "landscape",
+      "phase": "live"
+    },
+    {
+      "theme": "none",
+      "orient": "landscape",
+      "phase": "result"
+    },
+    {
+      "theme": "none",
+      "orient": "portrait",
+      "phase": "opening"
+    },
+    {
+      "theme": "none",
+      "orient": "portrait",
+      "phase": "live"
+    },
+    {
+      "theme": "none",
+      "orient": "portrait",
+      "phase": "result"
+    },
+    {
+      "theme": "en.1",
+      "orient": "landscape",
+      "phase": "opening"
+    },
+    {
+      "theme": "en.1",
+      "orient": "landscape",
+      "phase": "live"
+    },
+    {
+      "theme": "en.1",
+      "orient": "landscape",
+      "phase": "result"
+    },
+    {
+      "theme": "en.1",
+      "orient": "portrait",
+      "phase": "opening"
+    },
+    {
+      "theme": "en.1",
+      "orient": "portrait",
+      "phase": "live"
+    },
+    {
+      "theme": "en.1",
+      "orient": "portrait",
+      "phase": "result"
+    },
+    {
+      "theme": "tr.1",
+      "orient": "landscape",
+      "phase": "opening"
+    },
+    {
+      "theme": "tr.1",
+      "orient": "landscape",
+      "phase": "live"
+    },
+    {
+      "theme": "tr.1",
+      "orient": "landscape",
+      "phase": "result"
+    },
+    {
+      "theme": "tr.1",
+      "orient": "portrait",
+      "phase": "opening"
+    },
+    {
+      "theme": "tr.1",
+      "orient": "portrait",
+      "phase": "live"
+    },
+    {
+      "theme": "tr.1",
+      "orient": "portrait",
+      "phase": "result"
+    },
+    {
+      "theme": "ucl",
+      "orient": "landscape",
+      "phase": "opening"
+    },
+    {
+      "theme": "ucl",
+      "orient": "landscape",
+      "phase": "live"
+    },
+    {
+      "theme": "ucl",
+      "orient": "landscape",
+      "phase": "result"
+    },
+    {
+      "theme": "ucl",
+      "orient": "portrait",
+      "phase": "opening"
+    },
+    {
+      "theme": "ucl",
+      "orient": "portrait",
+      "phase": "live"
+    },
+    {
+      "theme": "ucl",
+      "orient": "portrait",
+      "phase": "result"
+    },
+    {
+      "theme": "uel",
+      "orient": "landscape",
+      "phase": "opening"
+    },
+    {
+      "theme": "uel",
+      "orient": "landscape",
+      "phase": "live"
+    },
+    {
+      "theme": "uel",
+      "orient": "landscape",
+      "phase": "result"
+    },
+    {
+      "theme": "uel",
+      "orient": "portrait",
+      "phase": "opening"
+    },
+    {
+      "theme": "uel",
+      "orient": "portrait",
+      "phase": "live"
+    },
+    {
+      "theme": "uel",
+      "orient": "portrait",
+      "phase": "result"
+    },
+    {
+      "theme": "uecl",
+      "orient": "landscape",
+      "phase": "opening"
+    },
+    {
+      "theme": "uecl",
+      "orient": "landscape",
+      "phase": "live"
+    },
+    {
+      "theme": "uecl",
+      "orient": "landscape",
+      "phase": "result"
+    },
+    {
+      "theme": "uecl",
+      "orient": "portrait",
+      "phase": "opening"
+    },
+    {
+      "theme": "uecl",
+      "orient": "portrait",
+      "phase": "live"
+    },
+    {
+      "theme": "uecl",
+      "orient": "portrait",
+      "phase": "result"
+    }
+  ]
+}

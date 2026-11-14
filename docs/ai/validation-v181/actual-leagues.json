@@ -1,0 +1,1290 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "teams": 2,
+      "matches": 1,
+      "seed": 181,
+      "seconds": 30,
+      "duration": 100.7,
+      "champion": "432",
+      "table": [
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 0,
+          "ga": 0,
+          "gd": 0,
+          "pts": 1,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 1,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": true,
+          "provisional": false,
+          "rank": 1
+        },
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "p": 1,
+          "w": 0,
+          "d": 1,
+          "l": 0,
+          "gf": 0,
+          "ga": 0,
+          "gd": 0,
+          "pts": 1,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 1,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": true,
+          "provisional": false,
+          "rank": 2
+        }
+      ],
+      "matchesEvidence": [
+        {
+          "id": "L1",
+          "home": "436",
+          "away": "432",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 11,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 1,
+              "saves": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teams": 3,
+      "matches": 3,
+      "seed": 181,
+      "seconds": 30,
+      "duration": 222.43333333333334,
+      "champion": "83",
+      "table": [
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "p": 2,
+          "w": 1,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 1,
+          "gd": 1,
+          "pts": 4,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 1
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "p": 2,
+          "w": 0,
+          "d": 2,
+          "l": 0,
+          "gf": 0,
+          "ga": 0,
+          "gd": 0,
+          "pts": 2,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 2
+        },
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "p": 2,
+          "w": 0,
+          "d": 1,
+          "l": 1,
+          "gf": 1,
+          "ga": 2,
+          "gd": -1,
+          "pts": 1,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 3
+        }
+      ],
+      "matchesEvidence": [
+        {
+          "id": "L1",
+          "home": "83",
+          "away": "432",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 4,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 3,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L2",
+          "home": "432",
+          "away": "436",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 3,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 12,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L3",
+          "home": "436",
+          "away": "83",
+          "score": [
+            1,
+            2
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 2,
+              "passes": 11,
+              "saves": 0
+            },
+            {
+              "goals": 2,
+              "shots": 0,
+              "passes": 4,
+              "saves": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teams": 4,
+      "matches": 6,
+      "seed": 181,
+      "seconds": 30,
+      "duration": 360.57500000000005,
+      "champion": "83",
+      "table": [
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "p": 3,
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "gf": 2,
+          "ga": 0,
+          "gd": 2,
+          "pts": 7,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 1
+        },
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "p": 3,
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "gf": 1,
+          "ga": 1,
+          "gd": 0,
+          "pts": 4,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 2
+        },
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "p": 3,
+          "w": 0,
+          "d": 3,
+          "l": 0,
+          "gf": 0,
+          "ga": 0,
+          "gd": 0,
+          "pts": 3,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 3
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "p": 3,
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "gf": 0,
+          "ga": 2,
+          "gd": -2,
+          "pts": 1,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 4
+        }
+      ],
+      "matchesEvidence": [
+        {
+          "id": "L1",
+          "home": "432",
+          "away": "83",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 16,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 0,
+              "passes": 1,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L2",
+          "home": "436",
+          "away": "86",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 4,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 2,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L3",
+          "home": "86",
+          "away": "432",
+          "score": [
+            1,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 5,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 6,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L4",
+          "home": "436",
+          "away": "83",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 3,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 6,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L5",
+          "home": "432",
+          "away": "436",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 6,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 7,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L6",
+          "home": "86",
+          "away": "83",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 3,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 2,
+              "passes": 12,
+              "saves": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teams": 5,
+      "matches": 10,
+      "seed": 181,
+      "seconds": 30,
+      "duration": 584.75,
+      "champion": "432",
+      "table": [
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "p": 4,
+          "w": 2,
+          "d": 1,
+          "l": 1,
+          "gf": 2,
+          "ga": 1,
+          "gd": 1,
+          "pts": 7,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 1
+        },
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "p": 4,
+          "w": 1,
+          "d": 3,
+          "l": 0,
+          "gf": 2,
+          "ga": 1,
+          "gd": 1,
+          "pts": 6,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 2
+        },
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "p": 4,
+          "w": 1,
+          "d": 3,
+          "l": 0,
+          "gf": 1,
+          "ga": 0,
+          "gd": 1,
+          "pts": 6,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 3
+        },
+        {
+          "id": "363",
+          "name": "Chelsea",
+          "p": 4,
+          "w": 1,
+          "d": 1,
+          "l": 2,
+          "gf": 1,
+          "ga": 2,
+          "gd": -1,
+          "pts": 4,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 4
+        },
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "p": 4,
+          "w": 0,
+          "d": 2,
+          "l": 2,
+          "gf": 1,
+          "ga": 3,
+          "gd": -2,
+          "pts": 2,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 5
+        }
+      ],
+      "matchesEvidence": [
+        {
+          "id": "L1",
+          "home": "432",
+          "away": "83",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 16,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 0,
+              "passes": 1,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L2",
+          "home": "436",
+          "away": "86",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 4,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 2,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L3",
+          "home": "83",
+          "away": "363",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 5,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 4,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L4",
+          "home": "436",
+          "away": "432",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 7,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 0,
+              "passes": 7,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L5",
+          "home": "363",
+          "away": "86",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 14,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 2,
+              "passes": 3,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L6",
+          "home": "83",
+          "away": "436",
+          "score": [
+            1,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 2,
+              "passes": 10,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 7,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L7",
+          "home": "436",
+          "away": "363",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 6,
+              "saves": 1
+            },
+            {
+              "goals": 1,
+              "shots": 3,
+              "passes": 2,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L8",
+          "home": "432",
+          "away": "86",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 6,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 1,
+              "saves": 2
+            }
+          ]
+        },
+        {
+          "id": "L9",
+          "home": "363",
+          "away": "432",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 5,
+              "saves": 1
+            },
+            {
+              "goals": 1,
+              "shots": 2,
+              "passes": 9,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L10",
+          "home": "86",
+          "away": "83",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 9,
+              "saves": 3
+            },
+            {
+              "goals": 0,
+              "shots": 4,
+              "passes": 2,
+              "saves": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "teams": 6,
+      "matches": 15,
+      "seed": 181,
+      "seconds": 30,
+      "duration": 856.775,
+      "champion": "86",
+      "table": [
+        {
+          "id": "86",
+          "name": "Real Madrid CF",
+          "p": 5,
+          "w": 3,
+          "d": 2,
+          "l": 0,
+          "gf": 4,
+          "ga": 1,
+          "gd": 3,
+          "pts": 11,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 1
+        },
+        {
+          "id": "363",
+          "name": "Chelsea",
+          "p": 5,
+          "w": 1,
+          "d": 3,
+          "l": 1,
+          "gf": 3,
+          "ga": 2,
+          "gd": 1,
+          "pts": 6,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 2
+        },
+        {
+          "id": "436",
+          "name": "Fenerbahçe",
+          "p": 5,
+          "w": 0,
+          "d": 5,
+          "l": 0,
+          "gf": 2,
+          "ga": 2,
+          "gd": 0,
+          "pts": 5,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 3
+        },
+        {
+          "id": "83",
+          "name": "FC Barcelona",
+          "p": 5,
+          "w": 0,
+          "d": 5,
+          "l": 0,
+          "gf": 0,
+          "ga": 0,
+          "gd": 0,
+          "pts": 5,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 4
+        },
+        {
+          "id": "432",
+          "name": "Galatasaray",
+          "p": 5,
+          "w": 0,
+          "d": 4,
+          "l": 1,
+          "gf": 1,
+          "ga": 2,
+          "gd": -1,
+          "pts": 4,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 5
+        },
+        {
+          "id": "364",
+          "name": "Liverpool",
+          "p": 5,
+          "w": 0,
+          "d": 3,
+          "l": 2,
+          "gf": 1,
+          "ga": 4,
+          "gd": -3,
+          "pts": 3,
+          "conduct": 0,
+          "headToHead": {
+            "pts": 0,
+            "gd": 0,
+            "gf": 0
+          },
+          "drawnLots": false,
+          "provisional": false,
+          "rank": 6
+        }
+      ],
+      "matchesEvidence": [
+        {
+          "id": "L1",
+          "home": "364",
+          "away": "86",
+          "score": [
+            0,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 12,
+              "saves": 1
+            },
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 2,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L2",
+          "home": "432",
+          "away": "363",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 5,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 8,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L3",
+          "home": "83",
+          "away": "436",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 9,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 1,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L4",
+          "home": "363",
+          "away": "364",
+          "score": [
+            2,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 2,
+              "shots": 0,
+              "passes": 5,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 13,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L5",
+          "home": "436",
+          "away": "86",
+          "score": [
+            1,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 0,
+              "passes": 8,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 9,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L6",
+          "home": "83",
+          "away": "432",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 3,
+              "passes": 2,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 7,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L7",
+          "home": "364",
+          "away": "436",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 10,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 4,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L8",
+          "home": "363",
+          "away": "83",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 2,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 6,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L9",
+          "home": "86",
+          "away": "432",
+          "score": [
+            1,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 3,
+              "passes": 9,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 3,
+              "saves": 2
+            }
+          ]
+        },
+        {
+          "id": "L10",
+          "home": "83",
+          "away": "364",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 1,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 5,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L11",
+          "home": "432",
+          "away": "436",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 5,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 0,
+              "passes": 10,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L12",
+          "home": "86",
+          "away": "363",
+          "score": [
+            1,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 7,
+              "saves": 0
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 10,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L13",
+          "home": "364",
+          "away": "432",
+          "score": [
+            1,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 3,
+              "saves": 2
+            },
+            {
+              "goals": 1,
+              "shots": 3,
+              "passes": 10,
+              "saves": 1
+            }
+          ]
+        },
+        {
+          "id": "L14",
+          "home": "83",
+          "away": "86",
+          "score": [
+            0,
+            0
+          ],
+          "statistics": [
+            {
+              "goals": 0,
+              "shots": 2,
+              "passes": 6,
+              "saves": 1
+            },
+            {
+              "goals": 0,
+              "shots": 1,
+              "passes": 2,
+              "saves": 0
+            }
+          ]
+        },
+        {
+          "id": "L15",
+          "home": "436",
+          "away": "363",
+          "score": [
+            1,
+            1
+          ],
+          "statistics": [
+            {
+              "goals": 1,
+              "shots": 2,
+              "passes": 5,
+              "saves": 0
+            },
+            {
+              "goals": 1,
+              "shots": 1,
+              "passes": 13,
+              "saves": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
