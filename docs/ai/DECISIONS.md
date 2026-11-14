@@ -255,3 +255,6 @@ Orkun272700kimlik/yüzprofili zaten vardı; Beşiktaş1895seçimkadrosunda yoktu
 
 ## V181 · 2026-11-14 · Codex · kabul — Seri metaverisi, rank ve temas izi
 Sezon geçmişi manuel metaveridir; simülasyon seed/kararlarını değiştirmez. Final artışı saf fonksiyondur. Avrupa kupası işaretleri ligde rank bazlı görseldir, otomatik katılım simülasyonu değildir. Yayın stilleri mevcut Broadcast modülünden alınır, ikinci scoreboard motoru yazılmaz. Stüdyo kar/yağmur izi callback ile sabit60Hz yeniden üretilir; kamera/FPS etkisi yok. İzler gait/kinematikten türetilen görsel tepkidir, ağır akışkan/kar fiziği veya topa sonuç müdahalesi değildir.
+
+## V182 · 2026-11-14 · Codex · kabul — temas dışındaki zemin aynı; HD logo doğrudan kaynaktan
+Beyaz overlay Mesh kullanılmaz. Siyah temas maskesi eski zemini aynen bırakır; yalnız temas yerlerinde orijinal materyal özellikleri kar görünümünden çıkarılır. Shader uniform nesneleri sabittir, hava değişiminde texture değeri yenilenir. Avrupa logoları mevcut1500pxkaynaklardan alfa boşluğu kırpılarak doğrudan çizilir; düşük çözünürlüklü yeni görsel dosyası veya thumbnail üretilmez.

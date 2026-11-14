@@ -1,0 +1,23 @@
+[
+  {
+    "path": "assets/competitions/ucl.png",
+    "width": 1500,
+    "height": 1500,
+    "sha256": "79f8e63e54cb393c581cd99d56e1ea08a151dee24ad610c5a2666b98a2924e31",
+    "sourceResampled": false
+  },
+  {
+    "path": "assets/competitions/uel.png",
+    "width": 1500,
+    "height": 1500,
+    "sha256": "55ffffa191b65dca68a92fd5dba0189730ba84e20a2a8567a6ae36033a89f45d",
+    "sourceResampled": false
+  },
+  {
+    "path": "assets/competitions/uecl.png",
+    "width": 1500,
+    "height": 1500,
+    "sha256": "85a99c0800e52332b56eb45957b27c426a5e6f3554acd3a2b263467c94a63e54",
+    "sourceResampled": false
+  }
+]

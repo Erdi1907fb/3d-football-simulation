@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V181** · 2026-11-14 UTC · Codex (sezon, lig2–6/şablonlar, stüdyo zemin tepkisi)
+> Son güncelleme: **V182** · 2026-11-14 UTC · Codex (kupa/Avrupa görselleri ve eski karlı zemin)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,17 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V181** (`VERSION`; sezon, lig2–6, yayın şablonları, PK/FK zemin tepkisi) |
-| Sonraki geliştirme hedefi | **V182** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
+| Kaynak sürümü | **V182** (`VERSION`; kupa/Avrupa tasarımı, temas dışındaki eski karlı zemin) |
+| Sonraki geliştirme hedefi | **V183** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V181 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v181.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 181 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V182 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v182.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 182 |
+
+## V182 — kupa geçmişi/Avrupa sıraları ve temas dışında önceki karlı zemin
+
+- Yeni metalik vektör kupa ve şampiyon kartı; sezon açılış/kapanışında aynı doğru geçmiş verileri. Sıralama logoları1500px kaynaktan doğrudan, daha büyük; üç kupa/sıra açıklama kartı. Uzun isimler istatistikle çakışmaz. Koyu başlıkta açık logo; ayar panelinde önizleme.
+- Beyaz kar kaplama düzlemi kaldırıldı. Eski hava/zemin shader görünümü temas dışında aynıdır; krampon/vuruş/kayma maskesi yalnız temas yerinde orijinal çimi açar. Materyal uniformları weather döngüsünde güvenle yenilenir. PK/FK dışına kar örtüsü eklenmez.
+-52zorunlu test ve hedefli shader/font düzeltmesi testleri PASS. Gerçek üretim fotoğrafları,yeni görsel kontroller (8sezon+14tasarım+8PK/FK ayrı gruplar), iki kısa sesli MP4; ayrıntılar en üst HANDOFF ve validation-v182. Tam uzun video hâlâ T-317.
 
 ## V181 — sezon geçmişi, esnek lig ve stüdyo zemin tepkisi
 

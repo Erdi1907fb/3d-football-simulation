@@ -1,0 +1,134 @@
+{
+  "pass": true,
+  "errors": [],
+  "pages": [
+    {
+      "mode": "penalty",
+      "phase": "run",
+      "ground": {
+        "kind": "snow",
+        "marks": 24,
+        "kick": 2,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 0.64026296813422,
+        "lift": 0,
+        "height": 0.2829797473182622
+      }
+    },
+    {
+      "mode": "penalty",
+      "phase": "contact",
+      "ground": {
+        "kind": "snow",
+        "marks": 25,
+        "kick": 2,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 1,
+        "lift": 0.0002980000000000203,
+        "height": 0.2829797473182622
+      }
+    },
+    {
+      "mode": "penalty",
+      "phase": "gather",
+      "ground": {
+        "kind": "snow",
+        "marks": 27,
+        "kick": 2,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 1,
+        "lift": 0.15625000000000064,
+        "height": 0.2829797473182622
+      }
+    },
+    {
+      "mode": "penalty",
+      "phase": "held",
+      "ground": {
+        "kind": "snow",
+        "marks": 27,
+        "kick": 2,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 1,
+        "lift": 0.9392500000000001,
+        "height": 0.2829797473182622
+      }
+    },
+    {
+      "mode": "freekick",
+      "phase": "run",
+      "ground": {
+        "kind": "snow",
+        "marks": 41,
+        "kick": 5,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 0,
+        "lift": 0,
+        "height": 1.2078896715109713
+      }
+    },
+    {
+      "mode": "freekick",
+      "phase": "contact",
+      "ground": {
+        "kind": "snow",
+        "marks": 47,
+        "kick": 5,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 1,
+        "lift": 0.0002980000000000137,
+        "height": 1.2078896715109713
+      }
+    },
+    {
+      "mode": "freekick",
+      "phase": "gather",
+      "ground": {
+        "kind": "snow",
+        "marks": 47,
+        "kick": 5,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 1,
+        "lift": 0.1562500000000025,
+        "height": 1.2078896715109713
+      }
+    },
+    {
+      "mode": "freekick",
+      "phase": "held",
+      "ground": {
+        "kind": "snow",
+        "marks": 47,
+        "kick": 5,
+        "contactOnly": true,
+        "surfaceMaterials": 2
+      },
+      "gather": {
+        "prepare": 1,
+        "lift": 0.9392500000000027,
+        "height": 1.2078896715109713
+      }
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 'use strict';
 const A=require('node:assert/strict'),E=require('../assets/competition-engine'),B=require('../assets/competition-broadcast');
+const tiny={font:'600 46px Arial',measureText(t){return{width:String(t).length*Number(this.font.split(' ')[1].replace('px',''))*.5}}};A.equal(B.fitText(tiny,'0 → 1',95,14).value,'0 → 1','minimum-size labels measure their own font');
 const teams=Array.from({length:8},(_,i)=>({id:String(i+1),name:'Team '+(i+1),identity:{short:'T'+(i+1)}}));
 const hooks={playMatch:async record=>({stats:[{gf:2},{gf:0}],duration:30,events:[{type:'goal',at:5,team:0}]}),yield:async()=>{}};
 (async()=>{for(const format of['league','cup']){const chosen=teams.slice(0,format==='cup'?8:4),options={format,field:'five',seconds:30,seed:181,teams:chosen,draw:false},plain=await E.prepare(options,hooks),disabled=await E.prepare({...options,series:{enabled:false,season:'invalid',titles:{1:999}}},hooks),before={1:1,2:0,3:20,4:2},enabled=await E.prepare({...options,series:{enabled:true,season:2,titles:before}},hooks);

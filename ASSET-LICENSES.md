@@ -166,3 +166,6 @@ Competition action-name panels are original project code. Orkun Kökçü reuses 
 
 ## V181 — studio-ground procedural response
 `assets/studio-ground.js`: original Next90Sim code, procedural cleat masks and contact particles. No external textures, motion capture or datasets. Existing competition logo files are reused under their existing notices; no new third-party assets.
+
+## V182 — season trophies, qualification layout and contact mask
+Original Next90Sim Canvas trophy illustration and layout; no new external assets. Existing UCL/UEL/UECL 1500×1500 PNG sources are unchanged (hashes: docs/ai/validation-v182/logo-sources.json). Runtime alpha-bound cropping draws directly from original images; no resized replacement files or thumbnails. Ground response uses the original turf material and an original contact mask, without a new snow carpet texture. Existing logo notices remain applicable.

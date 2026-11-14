@@ -1,4 +1,4 @@
-> **2026-11-14: Hostinger web kaynak sürümü V181. Canlı salt-okumada V179/filesMatch=true; V181 ZIP ile yüklenmeyi bekler. Sezon/EN, lig2–6/şablonlar ve PK/FK zemin/toplama T-319…322 tamamlandı. T-317 tam uzun video testi ve T-312 diğer futbol WIP açık.**
+> **2026-11-14: Web kaynak V182; kupa/Avrupa görselleri yenilendi, PK/FK beyaz kaplama kaldırılıp eski zemin görünümü ve temas izleri korundu. Canlı179/filesMatch=true; main push Hostinger dağıtımı değildir. T-317/T-312 açık.**
 
 # TASKS — görev panosu
 
@@ -10,6 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-323 | Sezon başı/sonu kupa tasarımı, profesyonel Avrupa sıraları/HD logo; PK/FK eski zemin görünümü + yalnız temas izleri; yeni fotoğraflar | done (V182) | codex |52regresyon, iki oran foto/MP4, HDkaynak/gerçekmetin/temas shader testleri PASS. files: competition-broadcast/UI/CSS, studio-ground/weather/scene, tests, sürüm/devir belgeleri. |
 | T-322 | Kupa/lig yeni ayar, sezon ekranı ve yayın kartlarında İngilizce çeviri denetimi | done (V181) | codex | files: competition-ui/broadcast, tests/competition-seasons/branding; EN gerçek arayüz ve 36 yayın görüntüsü, TR/EN sezon metinleri PASS. |
 | T-321 | Lig2–6takım, kupa8; tüm mevcutyayınşablonları/varsayılanNext90Sim; sırayaözelUCL/UEL/UECLişaretleri | done (V181) | codex | files: competition-engine/UI/broadcast/renderer, broadcast.js, competition.html, tests/docs. Sezon/EN ile V181; puantablosurankbazlı, fikstürdekupaetiketi yok. |
 | T-320 | PenaltıGKeliylealçakalış animasyonu; yalnızPK/FK karda krampon/kayma izi/karparçacığı ve yağmurteması | done (V181) | codex | files: football-animation, penalty/freekick engine/UI, scene/weather/studio-ground, HTML/tests/docs. Skor/temas gerçeği korunur;11v11/arena zemin karı eklenmez. |

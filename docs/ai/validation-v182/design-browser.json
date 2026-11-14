@@ -1,0 +1,73 @@
+{
+  "pass": true,
+  "errors": [],
+  "cases": [
+    {
+      "n": 4,
+      "orient": "portrait",
+      "kind": "opening"
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "kind": "final-summary"
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "kind": "season-opening"
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "kind": "season-summary"
+    },
+    {
+      "n": 4,
+      "orient": "landscape",
+      "kind": "opening"
+    },
+    {
+      "n": 4,
+      "orient": "landscape",
+      "kind": "final-summary"
+    },
+    {
+      "n": 4,
+      "orient": "landscape",
+      "kind": "season-opening"
+    },
+    {
+      "n": 4,
+      "orient": "landscape",
+      "kind": "season-summary"
+    },
+    {
+      "n": 6,
+      "orient": "portrait",
+      "kind": "opening"
+    },
+    {
+      "n": 6,
+      "orient": "landscape",
+      "kind": "opening"
+    }
+  ],
+  "sources": [
+    {
+      "src": "http://127.0.0.1:42041/assets/competitions/ucl.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "http://127.0.0.1:42041/assets/competitions/uel.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "http://127.0.0.1:42041/assets/competitions/uecl.png",
+      "width": 1500,
+      "height": 1500
+    }
+  ]
+}

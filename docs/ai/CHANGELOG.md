@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V182 — 2026-11-14 UTC (Codex)
+- Kupa/lig sezon açılışı ve kapanışı yeniden tasarlandı: metalik vektör kupa, şampiyon kartı, kulüp armaları, okunaklı kupa toplamları ve +1. Sıfır şampiyonlukta takım kupası yok; seri verisi/simülasyon değişmedi.
+- Avrupa sıraları: daha büyük HD logo, renkli sıra çizgisi ve sıra numaralarını açıklayan üç kupa kartı. Sıra ayarlarında logo önizlemesi. 1500px orijinaller aynı; ölçeklenmiş dosya/thumbnail yok. 4/6takım ve iki oranda uzun kulüp adları ile istatistikler çakışmaz. Koyu başlıkta açık logo kullanılır.
+- PK/FK V181'in aşırı beyaz kar kaplama düzlemi kaldırıldı. Eski hava/zemin görünümü korunur; sadece krampon/vuruş/kayma temas maskesi orijinal çim rengini açar, kar/yağmur parçacıkları sürer. Geri sarma ve snow/rain/clear/snow yeniden kullanımı doğrulandı.
+-52zorunlu regresyon PASS; gerçek 4/6lig ve8takım kupa tasarım kareleri,PK/FK shader/iz kontrolleri, iki kısa1080p60H264/AACsezon MP4 indirmesi PASS. Son metin/maske düzeltmeleri hedefli testlerle doğrulandı. Tam çokdakikalı T-317 hâlâ açık.
+
 ## V181 — 2026-11-14 UTC (Codex)
 - Opsiyonel sezon1–20 ve geçmiş şampiyonluk0–20; yalnız baş/son kupaikonlu kartlar, gerçek şampiyona tek artış, iki oran/tekrar idempotent.
 - Lig2–6 takım, kupa8;12 mevcut lig/kupa yayın şablonu ve Next90Sim varsayılanı. Maç skoru, ön/ara/sonuç, puan/fikstür/ağaç logolu görünüm. Her lig sırasına elle none/UCL/UEL/UECL.
