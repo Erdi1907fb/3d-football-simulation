@@ -1,0 +1,442 @@
+{
+  "build": 179,
+  "base": "178dfaa",
+  "requiredSuite": {
+    "pass": true,
+    "count": 48,
+    "results": [
+      {
+        "test": "competition-frames.cjs",
+        "pass": true,
+        "seconds": 15
+      },
+      {
+        "test": "competition.cjs",
+        "pass": true,
+        "seconds": 31
+      },
+      {
+        "test": "penalty-goal-evidence.cjs",
+        "pass": true,
+        "seconds": 3.9
+      },
+      {
+        "test": "arena-action.cjs",
+        "pass": true,
+        "seconds": 8.7
+      },
+      {
+        "test": "touchline-safe.cjs",
+        "pass": true,
+        "seconds": 0.5
+      },
+      {
+        "test": "football-fixes.cjs",
+        "pass": true,
+        "seconds": 71.3
+      },
+      {
+        "test": "natural-studios.cjs",
+        "pass": true,
+        "seconds": 4.1
+      },
+      {
+        "test": "free-football.cjs",
+        "pass": true,
+        "seconds": 27.1
+      },
+      {
+        "test": "emergent-football.cjs",
+        "pass": true,
+        "seconds": 0.3
+      },
+      {
+        "test": "highlight-intelligence.cjs",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "arena-clock.cjs",
+        "pass": true,
+        "seconds": 21.3
+      },
+      {
+        "test": "audio-export.cjs",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "football-intelligence.cjs",
+        "pass": true,
+        "seconds": 2.6
+      },
+      {
+        "test": "contact-motion.cjs",
+        "pass": true,
+        "seconds": 2.1
+      },
+      {
+        "test": "teamwork.cjs",
+        "pass": true,
+        "seconds": 10.1
+      },
+      {
+        "test": "arena-elimination.cjs",
+        "pass": true,
+        "seconds": 4.4
+      },
+      {
+        "test": "futsal-five.cjs",
+        "pass": true,
+        "seconds": 44
+      },
+      {
+        "test": "arena-balance.cjs",
+        "pass": true,
+        "seconds": 7.4
+      },
+      {
+        "test": "arena-football.cjs",
+        "pass": true,
+        "seconds": 13.2
+      },
+      {
+        "test": "arena-broadcast-flow.cjs",
+        "pass": true,
+        "seconds": 10.4
+      },
+      {
+        "test": "arena-duels.cjs",
+        "pass": true,
+        "seconds": 72.9
+      },
+      {
+        "test": "national-coverage.cjs",
+        "pass": true,
+        "seconds": 0.4
+      },
+      {
+        "test": "arena-rush.cjs",
+        "pass": true,
+        "seconds": 73.7
+      },
+      {
+        "test": "small-sided.cjs",
+        "pass": true,
+        "seconds": 10.9
+      },
+      {
+        "test": "japon-net.cjs",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "japon-camera.cjs",
+        "pass": true,
+        "seconds": 27.4
+      },
+      {
+        "test": "japon-kale.cjs",
+        "pass": true,
+        "seconds": 37.2
+      },
+      {
+        "test": "commentary.cjs",
+        "pass": true,
+        "seconds": 5.5
+      },
+      {
+        "test": "freekick.cjs",
+        "pass": true,
+        "seconds": 40.9
+      },
+      {
+        "test": "penalty.cjs",
+        "pass": true,
+        "seconds": 8.9
+      },
+      {
+        "test": "duo.cjs",
+        "pass": true,
+        "seconds": 6.2
+      },
+      {
+        "test": "celebrations.cjs",
+        "pass": true,
+        "seconds": 0.4
+      },
+      {
+        "test": "weather.cjs",
+        "pass": true,
+        "seconds": 0.2
+      },
+      {
+        "test": "graphics.cjs",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "kickoff-referee.cjs",
+        "pass": true,
+        "seconds": 52.6
+      },
+      {
+        "test": "forecast.cjs",
+        "pass": true,
+        "seconds": 3.4
+      },
+      {
+        "test": "forecast.php",
+        "pass": true,
+        "seconds": 0.4
+      },
+      {
+        "test": "national-competitions.php",
+        "pass": true,
+        "seconds": 0.5
+      },
+      {
+        "test": "forecast-lock.php",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "callup-filter.php",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "presentation.cjs",
+        "pass": true,
+        "seconds": 6.3
+      },
+      {
+        "test": "variation.cjs",
+        "pass": true,
+        "seconds": 9.5
+      },
+      {
+        "test": "recovery.cjs",
+        "pass": true,
+        "seconds": 2.2
+      },
+      {
+        "test": "intent.cjs",
+        "pass": true,
+        "seconds": 0.2
+      },
+      {
+        "test": "remaster.cjs",
+        "pass": true,
+        "seconds": 2.7
+      },
+      {
+        "test": "crests.cjs",
+        "pass": true,
+        "seconds": 0.4
+      },
+      {
+        "test": "search-test.cjs",
+        "pass": true,
+        "seconds": 0.1
+      },
+      {
+        "test": "engine-test.cjs",
+        "pass": true,
+        "seconds": 268.8
+      }
+    ]
+  },
+  "browser": {
+    "pass": true,
+    "excerptOnly": true,
+    "exports": [
+      {
+        "orient": "landscape",
+        "file": "/workspace/artifacts/competition-v179-final/landscape.mp4",
+        "video": "h264",
+        "audio": "aac",
+        "rms": 0.057663195442885715,
+        "duration": 0.768,
+        "width": 1920,
+        "height": 1080,
+        "ended": true
+      },
+      {
+        "orient": "portrait",
+        "file": "/workspace/artifacts/competition-v179-final/portrait.mp4",
+        "video": "h264",
+        "audio": "aac",
+        "rms": 0.057663195442885715,
+        "duration": 0.768,
+        "width": 1080,
+        "height": 1920,
+        "ended": true
+      }
+    ],
+    "leagueMatches": 6,
+    "cupMatches": 7,
+    "normalLeagueMatches": 6,
+    "leagueVideoSeconds": 369.08333333333337,
+    "normalLeagueVideoSeconds": 929.6106612581751,
+    "errors": []
+  },
+  "ceremonies": {
+    "pass": true,
+    "errors": [],
+    "report": [
+      {
+        "format": "cup",
+        "field": "five",
+        "kind": "ceremony",
+        "phase": "medals",
+        "winner": 1,
+        "actors": 10,
+        "crowd": {
+          "counts": [
+            280,
+            280
+          ]
+        },
+        "stadium": {
+          "version": 61,
+          "source": "original-procedural-modular-architecture",
+          "glb": "assets/stadiums/modular-detail.glb",
+          "runtime": "shared-data-geometry",
+          "seatCount": 12800,
+          "seatBackrests": 12800,
+          "quality": "high",
+          "architectureInstances": 25728,
+          "drawCalls": 7,
+          "timeOfDay": "night",
+          "advertisements": 0,
+          "adErrors": [],
+          "skyBytes": 1024,
+          "shadowCastingLights": 0,
+          "realShadowMaps": 0,
+          "ready": true
+        }
+      },
+      {
+        "format": "cup",
+        "field": "five",
+        "kind": "champion-celebration",
+        "phase": "champions",
+        "winner": 1,
+        "home": false,
+        "actors": 5,
+        "crowd": {
+          "counts": [
+            280,
+            280
+          ]
+        },
+        "stadium": {
+          "version": 61,
+          "source": "original-procedural-modular-architecture",
+          "glb": "assets/stadiums/modular-detail.glb",
+          "runtime": "shared-data-geometry",
+          "seatCount": 12800,
+          "seatBackrests": 12800,
+          "quality": "high",
+          "architectureInstances": 25728,
+          "drawCalls": 7,
+          "timeOfDay": "night",
+          "advertisements": 0,
+          "adErrors": [],
+          "skyBytes": 1024,
+          "shadowCastingLights": 0,
+          "realShadowMaps": 0,
+          "ready": true
+        }
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "kind": "ceremony",
+        "phase": "medals",
+        "winner": 0,
+        "actors": 22,
+        "crowd": {
+          "total": 20688,
+          "allHome": false
+        },
+        "stadium": {
+          "version": 61,
+          "source": "original-procedural-modular-architecture",
+          "glb": "assets/stadiums/modular-detail.glb",
+          "runtime": "shared-data-geometry",
+          "seatCount": 12800,
+          "seatBackrests": 12800,
+          "quality": "high",
+          "architectureInstances": 25728,
+          "drawCalls": 7,
+          "timeOfDay": "night",
+          "advertisements": 0,
+          "adErrors": [],
+          "skyBytes": 1024,
+          "shadowCastingLights": 0,
+          "realShadowMaps": 0,
+          "ready": true
+        }
+      },
+      {
+        "format": "league",
+        "field": "eleven",
+        "kind": "champion-celebration",
+        "phase": "champions",
+        "winner": 0,
+        "home": true,
+        "actors": 11,
+        "crowd": {
+          "total": 20688,
+          "allHome": true
+        },
+        "stadium": {
+          "version": 61,
+          "source": "original-procedural-modular-architecture",
+          "glb": "assets/stadiums/modular-detail.glb",
+          "runtime": "shared-data-geometry",
+          "seatCount": 12800,
+          "seatBackrests": 12800,
+          "quality": "high",
+          "architectureInstances": 25728,
+          "drawCalls": 7,
+          "timeOfDay": "night",
+          "advertisements": 0,
+          "adErrors": [],
+          "skyBytes": 1024,
+          "shadowCastingLights": 0,
+          "realShadowMaps": 0,
+          "ready": true
+        }
+      }
+    ]
+  },
+  "targetedFinal": {
+    "pass": true,
+    "league": 6,
+    "cup": 7,
+    "physicalShootouts": 4,
+    "normalAnalysisScore": [
+      1,
+      3
+    ],
+    "normalLeagueMatches": 6,
+    "leagueSeconds": 355.5083333333333,
+    "cupSeconds": 648.7083333333334,
+    "coverage": "fixtures, ranking, conduct, seeded lots, roster validation, actual engines/replay, no future spoilers, continuous chapters, physical selected-five penalties, medals/trophy, equal fans, cancellation"
+  },
+  "frameRegression": {
+    "pass": true,
+    "arenaPresentationParityFrames": 94,
+    "asyncFrameOrdering": true,
+    "cancellation": true,
+    "cancelledWorldCannotDisposeRetry": true
+  },
+  "limits": [
+    "Entire multi-minute 1080p60 export not rendered end to end on target GPU",
+    "No Hostinger deployment; live read-only build176/filesMatch=true",
+    "Initial harness hidden-5v5-control wait fixed for eleven; early portrait 240s timeout superseded by successful shorter final excerpts"
+  ]
+}

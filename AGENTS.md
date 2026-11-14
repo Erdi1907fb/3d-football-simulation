@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 46 test; `--quick` `engine-test.cjs` hariç 45 test | ~2,5 dk (quick ~1 dk) |
+| `node tests/run-all.cjs [--quick]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 48 test; `--quick` `engine-test.cjs` hariç 47 test | ~2,5 dk (quick ~1 dk) |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -268,3 +268,10 @@ dosyalardır.
 ## 23. V178 — Penaltı çizgisi/sonuç düzeltmesi (T-312'nin doğrulanan parçası)
 - Doğal penaltıda planlanan uçuş süresi gol kararı için son tarih değildir. Gerçek süpürülmüş tam-top çizgisi geçişi (52.61m), direk sonrası fiziksel devam ve varış vektörü sınıflandırmayı belirler. Kaleci sektirmesinden sonraki uçuş da izlenir. `goalEvidence` gerçek geçişi taşır; yanlış sonucu korumak için topu/kaleciyi değiştirmeyin.
 - `tests/penalty-goal-evidence.cjs`: uçuş ve2snkuyrukta ilk çizgi geçişi/sonuç tutarlılığı; eski kaynak karşılaştırmasında39çelişki yeniden üretildi, yeni1084vuruşta0. Bu yalnız sonuç düzeltmesidir. Kaleci el/ayak animasyonu ve T-312'nin diğer bölümleri halen ayrı WIP'tir.
+
+
+## 24. V179 — Turnuva Stüdyosu
+- `competition.html`:8takım/7maç tek maç kupa;4takım/6maç/3hafta lig. Ortak mevcut5v5/11v11analiz/penaltı motorları; sıfırdan fizik yok. Aynı hazırlanmış sonuçlar iki1080p60video oranında yeniden oynatılır. Kupa beraberliğinde seçilen5/11kadroyla fiziksel Penaltı Stüdyosu; gizli skor/galip yok.
+- Lig sıralaması açıkça FIFA2022grup ölçütleri:puan,genelaveraj,gol,H2Hpuan/averaj/gol,disiplin,kayıtlıkura. Gelecekteki sonuçları/ağaç katılımcılarını ara ekranlarda gösterme.5v5golbeklemeleri/penaltılar/ekranlar toplam videoyu uzatır;11v11özetlerine süre sınırı koyma.
+- CoverPNGgerçek renderdan; video ilk bölümü aynı kapak. Her kare PNGalınabilir. `video-core.prepareFrame(t)` asenkron sahne yüklemesini kodlanmış zamandan ayırır; bu işi gerçek zaman capture ile dışa aktarma. Yalnız bir canlı dünya ve bir maç replaycache tutulur. `arena-presentation.js` eskiUIhareketinin ortak çıkarımıdır;94kare V178parite testi korunur.
+- Yeni testler:`competition.cjs`,`competition-frames.cjs`; gerçekChromiumisteğe bağlı`browser-competition.cjs` kısa1080p60sesli alıntıları test eder. Kısa alıntı testi bütün çok dakikalı videonun tamamı dışa aktarıldı anlamına gelmez. T-312eskiWIPbu modla tamamlanmış olmaz.

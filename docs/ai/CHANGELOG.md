@@ -2,6 +2,14 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V179 — 2026-11-14 UTC (Codex)
+- Hostinger web `competition.html`:Next90Sim CUP8takım/7maç,LEAGUE4takım/6maç/3hafta; elle5/XI/diziliş, ortakArena/analizMatch/gerçekPenaltı motorları.
+- Aynı sonuçlardan1920×1080ve1080×1920,60FPSsesliMP4 ayrı indirmeler. Gerçek oyun kapağıPNG+videoda kapak, istenen karePNG.
+- Her maçta güncel tablo/ağaç; ayrıca hafta/tur özeti. Tam fikstür adları, açık zeminli yayın tablosu, Next90Sim tammarka; logo üstündeki oyuncusayısı etiketi kaldırıldı.
+- İki takım altın/gümüş madalya alır; kupayı yalnızşampiyon taraftarıyla kaldırır. Kupada50/50taraftar; ligde ayrı kulüpsahası/stadyumunda bütüntribün şampiyonundur.
+- FIFA2022grup sıralama ölçütleri ve seedlikura; seçilen5/11kişilik fizikselkupa penaltıları; gelecekteki sonuçlar gizli. Asenkronsahne yüklemeleri sabitvideo/ses zamanının dışında.
+- 48zorunluregresyonPASS. Kısa gerçek1080p60sesliMP4indirme/oynatma tarayıcı kontrolleri ve tamfikstürsimülasyonları; bütünçokdakikalı3Drender hedefcihazda ayrıca doğrulanmalı. Ayrıntı:research/COMPETITION-V179.md. T-312eskiWIPayrı açık.
+
 ## V178 — 2026-11-14 UTC (Codex)
 - Son kaynakta45quickregresyon ve ayrı500penaltı/18normal maç engine-test PASS:toplam46kontrol. İsteğe bağlı nativeindirme olayı testi T-315açık kalır.
 - Penaltıda planlanan varış süresi yerine gerçek tam-top kale çizgisi geçişi ve direk/sektirme sonrası fiziksel devam sonucu belirler. Eski39görüntü/sonuç çelişkisi yeniden üretildi; yeni1084vuruşta0. Ayrıntı:research/PENALTY-GOAL-V178.md.

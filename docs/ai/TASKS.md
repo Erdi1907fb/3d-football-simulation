@@ -6,10 +6,12 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V178 aksiyon; T-312 futbol düzeltmelerine devam
+## Aktif hedef: V179 web Turnuva Stüdyosu; T-312 ayrı WIP
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-317 | Tam çok dakikalı kupa/lig 1080p60 sesliMP4:gerçekGPU/Hostinger, iki oran, dosya boyutu/bellek/indirme/geri sarma | todo | — | V179kod+tamfikstürve kısaMP4entegrasyonları doğrulandı; tümçokdakikalı3Drender hedefcihazda henüz yapılmadı. research/COMPETITION-V179.md. |
+| T-316 | Yeni uzun16:9/9:16 Turnuva Stüdyosu:8takım/7maç kupa,4takım/6maç lig;11v11analiz ve elle kadrolu5v5;fikstür/ağaç/puan/tekvideo;madalya/kupa seremonisi/eşit taraftar; gerçek oyun kapakPNG/karePNG | done | codex | files: competition.html, competition-* engine/UI/broadcast/render, mevcut analiz/maç/arena/scene/video ortak arayüzleri, tests/docs. V179:48zorunluregresyon+iki sesli1080p60kısaMP4nativeindirme/oynatmaPASS;4gerçekseremoniPASS. Tamuzunhedefcihazkontrolü T-317. T-312/T-315 ayrı açık kalır. Son istek:Next90Sim tammarka, tamadlıfikstür/yeni tablo; iki takım madalya, yalnızşampiyon kupa; ligde kendi sahası/tamtribün, kupada50/50. |
 | T-315 | Deneysel Electron kısa MP4 testinde native indirme olayı gelmiyor; gerçek Hostinger tarayıcısında bağlantı/indirmeyi doğrula | partial | codex | İki4sn1080p60H.264dosya oluştu/oynatılıyor ve240kare dekodPASS; download event iki denemede240sTimeout. Dosyalar testprofilinin geçiciFSalanından korundu. ÜretimChromebugı olarak doğrulanmış değildir; research/v178-arena-action/clip-validation.json. |
 | T-314 | Japon Kale/5v5: doğal yüksek aksiyon, yakın kaleye hücum, iyi destek/pas/şut, savunma/kurtarış/direk çeşitliliği;11v11analizi korunur | done (V178; temel ayar) | codex | files: assets/japon-engine.js, japon-tactics.js, football-intelligence.js, tests/arena-action.cjs.32eşleştirilmiş60smaç, farklı uzak/orta/yakın şutlar, daha hızlı destek/kararlar.0–0kota/seedfiltresi yok;11v11analizi değişmedi. Kanıt research/ARENA-ACTION-V178.md. |
 | T-313 | Touchline kamera: Japon Kale ve5v5 kaleleri HUD üstünde, skor/kimlik Reels güvenli bandında | done (V177) | codex | files: assets/japon-camera.js, tests/touchline-safe.cjs, tests/browser-touchline.cjs. Bütün canlı kale çerçeveleri, aynı eğik izleme açısı, iki oran; yayın kaydı research/TOUCHLINE-V177.md. |

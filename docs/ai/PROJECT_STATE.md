@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V178** · 2026-11-14 UTC · Codex (Hostinger web aksiyon ve penaltı çizgi sonucu)
+> Son güncelleme: **V179** · 2026-11-14 UTC · Codex (Hostinger web Turnuva Stüdyosu)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,19 @@
 
 | Alan | Değer |
 |---|---|
-| Kararlı sürüm | **V178** (`VERSION`; arena aksiyonu, penaltı çizgi sonucu ve V177 kamera) |
-| Sonraki geliştirme hedefi | **V179** — T-312 kalan futbol düzeltmeleri ve T-315 indirme doğrulaması |
+| Kaynak sürümü | **V179** (`VERSION`; Turnuva Stüdyosu, V178 futbol/penaltı korunur) |
+| Sonraki geliştirme hedefi | **V180** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build176 / filesMatch=true** (2026-11-14); V178 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v178.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 178 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build176 / filesMatch=true** (2026-11-14); V179 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v179.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 179 |
+
+## V179 — web Turnuva Stüdyosu
+
+- `competition.html`, ana menüde Turnuva Stüdyosu.8takım/7maç kupa;4takım/6maç/3hafta lig. Mevcut5v5ve11v11analiz motorları; elle5/XIveformasyon, tohum, kamera, süre.
+- Aynı turnuvadan16:9/9:16,1080p60sesliMP4 ayrı indirmeler. İlk kapak, maç/hafta/tur araları, tablo/ağaç ve fizikselmadalya/kupa seremonisi. KapakPNGve herhangi karePNG ayrıca indirilebilir.
+- Lig sırası FIFA2022grup kriterleri(D-046); kupa beraberliğinde yalnız seçilen kadroyla ortak fiziksel penaltılar. Gelecek sonuçlar ara ekranlara sızmaz. Kadrolar mevcutkaynak; kataloğun güç öncülleri gerçekölçüm değildir.
+- Tekdünya/tekreplaycache; asenkron sahne yükleme offline videozamanını uzatmaz. Büyük tarihîveri indirmesi veya Windowsservisi gerekmez.
+- Test/dışaaktarma kapsamı: `research/COMPETITION-V179.md`. Tam çokdakikalı1080pvideo hedefcihazda ayrıca test edilmeli; kısa alıntıyı tamvideo gibi sunmayın. Hostinger'a dağıtılmadı. T-312eskiWIPayrı açık.
 
 ## V178 — daha çok ve farklı bölgelerden şut; penaltı gol tutarlılığı
 

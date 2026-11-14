@@ -47,7 +47,7 @@ async function softwareEncode(job,env,media,canvas,draw,info,cfg){
   try{for(let i=0;i<count;i++){
    check(job.signal);if(env.document?.hidden)throw Error('Keep the page visible while preparing video');
    // Only one frame in the worker and one next-frame readback: bounded overlap, no queue growth.
-   const changed=draw(i/(cfg.fps||FPS)),pixels=changed===false&&hasFrame?null:ctx.getImageData(0,0,cfg.width,cfg.height);if(flight)await flight;hasFrame=true;
+   if(job.prepareFrame)await wait(job.prepareFrame(i/(cfg.fps||FPS)),job.signal,120000);const changed=draw(i/(cfg.fps||FPS)),pixels=changed===false&&hasFrame?null:ctx.getImageData(0,0,cfg.width,cfg.height);if(flight)await flight;hasFrame=true;
    flight=(async()=>{if(!pixels)return send({type:'frame',repeat:true});try{return await send({type:'frame',rgba:pixels.data.buffer},[pixels.data.buffer]);}catch(e){if(e.name!=='DataCloneError')throw e;const copy=new Uint8Array(pixels.data);return send({type:'frame',rgba:copy.buffer},[copy.buffer]);}})();flight.catch(()=>{});
    job.onProgress?.((i+1)/count*.9);job.onMetrics?.({frame:i+1,total:count,queue:flight?1:0});if(i%4===0)await yieldTask();
   }if(flight)await flight;}finally{if(flight)await flight.catch(()=>{});}
@@ -84,7 +84,7 @@ async function originalZip(blob,name,signal){
  const end=new Uint8Array(22),e=new DataView(end.buffer);e.setUint32(0,0x06054b50,true);e.setUint16(8,1,true);e.setUint16(10,1,true);e.setUint32(12,central.length,true);e.setUint32(16,head.length+blob.size,true);return new Blob([head,blob,central,end],{type:'application/zip'});
 }
 
-function soundCue(type){return ['goal','goal_pending'].includes(type)?'goal':['post','save','wide','goal_disallowed'].includes(type)?'miss':null;}
+function soundCue(type){return ['goal','goal_pending','ceremony_cheer'].includes(type)?'goal':['post','save','wide','goal_disallowed'].includes(type)?'miss':null;}
 function soundDuration(type){return type==='goal_pending'?.6:Infinity;}
 function oppositionLevel(e){if(!['goal','goal_pending'].includes(e?.type)||![0,1].includes(e.venueHost)||![0,1].includes(e.team)||e.team===e.venueHost)return 0;return .22*Math.min(1.2,Math.max(1,Number(e.atmosphere)||1));}
 function goalLevel(e,base=.48){return base*(oppositionLevel(e)>0?.48:1);}
@@ -204,7 +204,7 @@ async function create(job){const env=job.env||globalThis,media=job.media||env.Me
 async function encode(job){
  const env=job.env||globalThis,cfg=settings(job),media=job.media||env.Mediabunny,signal=job.signal,onProgress=job.onProgress||(()=>{});check(signal);
  const canvas=job.canvas||env.document.createElement('canvas');canvas.width=cfg.width;canvas.height=cfg.height;
- const info={duration:job.duration,events:audioEvents((job.events||[]).filter(e=>['kickoff','attack','shot','save','wide','clearance','ball_secured','ball_out','offside','interception','block','attack_end','goal','goal_pending','post','goal_disallowed','penalty','freeKick','corner','half','fulltime','yellow','red','foul','foul_whistle','var_start','var_decision'].includes(e.type)).map(e=>({...e,elapsed:e.at}))),score:job.score},draw=job.draw;
+ const info={duration:job.duration,events:audioEvents((job.events||[]).filter(e=>['kickoff','attack','shot','save','wide','clearance','ball_secured','ball_out','offside','interception','block','attack_end','goal','goal_pending','post','goal_disallowed','penalty','freeKick','corner','half','fulltime','yellow','red','foul','foul_whistle','var_start','var_decision','ceremony_cheer'].includes(e.type)).map(e=>({...e,elapsed:e.at}))),score:job.score},draw=job.draw;
  try{cfg.expectedDuration=info.duration;onProgress(0);if(!Number.isFinite(info.duration)||info.duration<=0)throw Error('Invalid match duration');
   const native=job.encodingConfig||await preflight({...job,env,media},cfg);
   if(native?.software)return await softwareEncode(job,env,media,canvas,draw,info,cfg);
@@ -214,6 +214,8 @@ async function encode(job){
     job.onFramesComplete?.();if(parallelAudio)result=await softwareAudio(result,job,env,media,info,cfg,parallelAudio.task);job.onStage?.('verify');return await verifyResolution(result,media,cfg,signal);
    }catch(e){await result?.dispose?.();throw e;}finally{await parallelAudio?.dispose();}
   }
+  // Chaptered exports need an offline encoder so asynchronous scene loads never enter the video clock.
+  if(job.prepareFrame)return await softwareEncode(job,env,media,canvas,draw,info,cfg);
   // Timed capture is an automatic fallback, never user-operated screen recording.
   const captured=await capture(job,env,canvas,draw,info,cfg);return await verifyResolution(await normalizeMp4(captured,job,env,media,cfg),media,cfg,signal);
  }finally{if(!job.canvas){canvas.width=1;canvas.height=1;}}
@@ -345,7 +347,7 @@ async function serialEncode(job,env,media,canvas,draw,info,cfg,config){
   for(let i=0;i<count;i++){
    check(signal);if(env.document?.hidden)throw Error('Export interrupted');if(error)throw error;const time=i/(cfg.fps||FPS);
    if(recorded){while(audioIndex<recorded.packets.length&&recorded.packets[audioIndex].timestamp<time+1){await wait(audio.add(recorded.packets[audioIndex++],{decoderConfig:recorded.config}),signal);}}else if(audio&&time>=audioUntil){const duration=Math.min(1,info.duration-audioUntil);if(duration>0){await wait(audio.add(audioSegment(env,job.audioBuffers||{},info.events,audioUntil,duration,info.duration)),signal);audioUntil+=duration;}}
-   draw(time);const frame=new env.VideoFrame(canvas,{timestamp:Math.round(i*1e6/(cfg.fps||FPS)),duration:Math.round((i+1)*1e6/(cfg.fps||FPS))-Math.round(i*1e6/(cfg.fps||FPS))});
+   if(job.prepareFrame)await wait(job.prepareFrame(time),signal,120000);draw(time);const frame=new env.VideoFrame(canvas,{timestamp:Math.round(i*1e6/(cfg.fps||FPS)),duration:Math.round((i+1)*1e6/(cfg.fps||FPS))-Math.round(i*1e6/(cfg.fps||FPS))});
    try{encoder.encode(frame,{keyFrame:i%Math.max(1,Math.round((cfg.fps||FPS)*2))===0||(i>0&&!!job.isCut?.(time,1/(cfg.fps||FPS)))});/* V133: a fresh key frame on every camera cut keeps the first frames of the new shot sharp */expected++;}finally{frame.close();}
    // Flush only at the end: frequent flushes cut temporal compression and stall the GPU.
    // Bound queued surfaces; dequeue does not reset the codec's reference pictures.

@@ -155,3 +155,7 @@ MIT by the provider's dataset card; its short sample was used only for an offlin
 angle-extraction prototype, not as ready-made game animation. FIFA is conceptual
 reference only. No StatsBomb raw data or derived product parameters are shipped.
 Full source-specific terms and limits: `docs/ai/research/EMERGENT-SOURCES-V175.md`.
+
+
+### V179 Competition Studio graphics
+`competition-broadcast.js` canvas layout and `competition-ceremony.js` procedural cup, pedestal and medals are original project code. Covers use existing game renders and already tracked team crest/kit assets; no new third-party photographs, logos, fonts, animations or generated art were downloaded. Existing crest/player likeness terms remain unchanged.

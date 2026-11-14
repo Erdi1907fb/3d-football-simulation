@@ -18,6 +18,17 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-14 UTC] Codex · V178 → V179 — Next90Sim web Turnuva Stüdyosu
+- Dal: `agent/codex/competition-studio-v179`; main'e V179 fast-forward teslim. Temel178dfaa. Ana ürün Hostinger web; Windows/EXE işi değil.
+- **T-316 uygulandı:** `competition.html`:8takım/7maç kupa,4takım/6maç/3hafta lig; ortak5v5Arena ve11v11analizMatch. Elle5/XI/diziliş. Gerçek seçilen5/11kişilik PenaltıStüdyosu beraberlik çözümü. FIFA2022grup sıralaması/D-046; disiplin oyuncu kimliğine bağlı, aynıslotta değişen oyuncular ayrı. Büyük tarihîarşiv yüklenmez, mevcutkadrolar/katalogöncülleri.
+- Tek sonuç/timeline iki1080p60orana; ayrı sesliH264/AACMP4indirmeleri. Asenkronsahne yüklemesi video/seszamanının dışında; tekdünya/tekreplaycache. İptal sonrası eskiworld yenisini kapatamaz (ready/faces iki yarış regresyonu).
+- Kullanıcının son düzeltmeleri: marka tam **Next90Sim CUP / Next90Sim LEAGUE**; logoüstünde5v5/2v2etiketi yok. Açıkzeminliyayın tablosu, puansütunu, haftalaraayrılan tamadlıfikstür. Hermaçsonutablosu/ağaç, ayrıca haftatur özeti. Gerçek oyun kapağı ayrıPNGve videoda; herkonumdanPNGkare.
+- İki takım madalya; ayrı şampiyon geçişi ve yalnızkazanan kupa. Kupada tribün50/50; ligde kendi kulüp kimlikli küçük/büyükstadyum ve bütün taraftar şampiyonun. Sonkamerada oyuncular+kupayla kendi tribünleri birlikte. Mevcutprosedürelstadyum modeli; hergerçekstadın yeni lisanslı kopyası iddiası yok.
+- Bulunan/düzeltilen hata:11v11madalyada eski golkutlama kamera nesnesi hedefxbekliyordu; özelseremonide temizlendi. Browserharnessin11v11de gizlenen5v5süre alanını seçmeye çalışması düzeltildi; bu uygulamasimülasyon takılması değildi.
+- **Testler:**48/48zorunlusuitePASS; sonhedefliCompetitionveFramesPASS. Gerçek6küçüksaha lig/7kupa+4fiziksel5kişilikpenaltı+6analizlig;94V178hareketparitesi; iptal/yeniden deneme. NormalChromiumda iki0.75sgerçek1080p60kısaMP4nativeindirme/H264/AAC/rms0.05766/dekod/ileri-geri/sonunakadarıoynatmaPASS. PNGnativeindirmeve2oran sonuçkorumaPASS. Gerçekseremoni10→5ve22→11aktörPASS; kupada280/280fan, ligşampiyonunda20688fanin hepsi şampiyona ait. Kalıcıkanıt:`research/competition-v179/validation.json`, araştırma:`research/COMPETITION-V179.md`.
+- **Açık:**T-317tamçokdakikalı1080p60GPU/Hostingerindirme doğrulaması. Kısaalıntıyı tamvideorenderıgibi sunma; örnek11v11lig timeline929.61s. Sosyalplatformsüre uygunluğu iddiası yok. T-312eskiWIPf3aa2a4ayrı; tamamlandı sayma/wholebranchmergeyapma. T-315eskiElectronindirme deneyi Hostingerüretimhatasıolarak doğrulanmadı; yeni yerelChromiumnativeindirmeleriPASS.
+- **Yayın:**build179/release-v179510dosya yerel filesMatch=true. Canlı saltokumada hâlâ176/filesMatch=true, otomatik dağıtılmadı. `/workspace/artifacts/Next90Sim-Web-V179-Hostinger-Update.zip` mevcut176–178kurulumununpublic_htmlüstüne28kod dosyalıgüncelleme;config/data/assets silinmez. SonZIPözeti `research/competition-v179/package.json`.
+
 ## [2026-11-14 UTC] Codex · V178 — Hostinger web aksiyon ve penaltı sonucu
 - Dal: `agent/codex/arena-action-v178`. Temel V177/75e8c55; ana teslim Hostinger web. V177 Touchline düzeltmesi pakette korunur.
 - **T-314 tamamlandı (temel ayar):** Kullanıcının son netleştirmesi kale önünde yığılma değil, farklı bölgelerden daha sık hücum/şut denemesidir. Arena varsayılan `actionIntensity=1`; sınırlı tempo/karar sıklığı, ileri/ara pas, destek ve açık koridorda orta/uzak/yakın şut. Fiziksel sonucu zorlama yok; 11v11 analizi değişmedi. API0 A/B içindir.
