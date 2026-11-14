@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V182** · 2026-11-14 UTC · Codex (kupa/Avrupa görselleri ve eski karlı zemin)
+> Son güncelleme: **V183** · 2026-11-14 UTC · Codex (iPhone ortak indirme/disk/kurtarma)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,17 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V182** (`VERSION`; kupa/Avrupa tasarımı, temas dışındaki eski karlı zemin) |
-| Sonraki geliştirme hedefi | **V183** — T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
+| Kaynak sürümü | **V183** (`VERSION`; iPhone disk/HTTP indirme ve kurtarma) |
+| Sonraki geliştirme hedefi | **V184** — gerçek cihaz T-325/T-317 ve T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V182 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v182.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 182 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V183 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v183.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 183 |
+
+## V183 — iPhone indirme
+
+- Core: OPFS worker sync fallback,32MiBRAMtavanı,1080p60; tek release callback mux/decode öncesinde. iOS sahneleri balanced/compact ve sonunda bırakılır. Desktop çıktısı korunur.
+- Ortak HTTP teslim bütün modlara ve season/swap'a bağlı. localStorage hazır linkler; sessionStorage son doğrulanmış OPFS dosyasının tekrar-aktarımı için tek sekmeli geçici metadata/token. Link için yeniden render gerekmez. Pending kayıt bitmemiş render checkpoint'i değildir.
+-53regresyon ve hedefli son kontroller;70MBtamdosya kes/reload/devam/birebirSHA, sekiz kısa UI çıktı yolu ve iki gerçek maç sahnesi geçişi PASS. FizikseliPhone13/tam çokdakikalı yeni render doğrulanmadı. Kanıt en üst HANDOFF/validation-v183.
 
 ## V182 — kupa geçmişi/Avrupa sıraları ve temas dışında önceki karlı zemin
 

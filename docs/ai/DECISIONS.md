@@ -258,3 +258,6 @@ Sezon geçmişi manuel metaveridir; simülasyon seed/kararlarını değiştirmez
 
 ## V182 · 2026-11-14 · Codex · kabul — temas dışındaki zemin aynı; HD logo doğrudan kaynaktan
 Beyaz overlay Mesh kullanılmaz. Siyah temas maskesi eski zemini aynen bırakır; yalnız temas yerlerinde orijinal materyal özellikleri kar görünümünden çıkarılır. Shader uniform nesneleri sabittir, hava değişiminde texture değeri yenilenir. Avrupa logoları mevcut1500pxkaynaklardan alfa boşluğu kırpılarak doğrudan çizilir; düşük çözünürlüklü yeni görsel dosyası veya thumbnail üretilmez.
+
+## V183 · 2026-11-14 · Codex · kabul — iOS dosyası GPU ile RAMde yarışmasın
+Safari async OPFS yazıcısı yoksa Worker SyncAccessHandle kullanılır; disk yokken sınırsız parçalı RAM çıktı yasaktır. Video kareleri tamamlandıktan sonra sahne bırakılır, mux/decode sonra yapılır. Bütün modlar aynı same-origin parça aktarım/HTTP dosya yoluna geçer. Doğrulanmış son dosyanın pending metadata/upload yetkisi yalnız aynı sekmenin sessionStorage alanında tutulur; public hazır link geçmişinde token yoktur. Bu tasarım yeniden yüklemeden sonra dosya aktarımını sürdürür; yarım bir simülasyon renderını sürdürmez.

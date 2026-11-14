@@ -14,7 +14,7 @@ function create(env=globalThis){let capability;
  const path=(action,session)=>endpoint()+'?action='+action+(session?'&id='+encodeURIComponent(session.id):'');
  async function supported(){
   if(!/^https?:$/.test(env.location?.protocol||'')||!env.crypto?.subtle||!env.fetch)return false;
-  if(!capability)capability=request(env,path('capabilities'),{},null,12000).then(c=>c.supported&&c.chunkBytes>0?c:false).catch(()=>{capability=null;return false;});return capability;
+  if(!capability)capability=request(env,path('capabilities'),{},null,12000).then(c=>c.supported&&c.chunkBytes>0?c:false).catch(()=>{capability=null;return false;});const result=await capability;if(!result)capability=null;return result;
  }
  async function upload(file,name,{signal,onProgress=()=>{},session=null,onSession=()=>{}}={}){
   const caps=await supported();if(!caps)throw failure('Server download unavailable',503);if(file.size>caps.maxBytes)throw failure('Temporary storage limit',413);

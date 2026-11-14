@@ -22,7 +22,7 @@ function vd_unlock($h): void {flock($h,LOCK_UN);fclose($h);}
 function vd_auth(array $m,string $token): void {if(!hash_equals($m['secret'],hash('sha256',$token)))throw new UnexpectedValueException('token');}
 function vd_public(array $m): array {return ['id'=>$m['id'],'size'=>$m['size'],'offset'=>$m['offset'],'ready'=>$m['ready'],'expires'=>$m['expires']];}
 function vd_create(array $cfg,int $size,string $name,string $mime,string $owner): array {
-    if($size<12||$size>(int)($cfg['video_export_max_bytes']??1073741824))throw new LengthException('size');
+    if($size<12||$size>(int)($cfg['video_export_max_bytes']??8589934592))throw new LengthException('size');
     if(!in_array($mime,['video/mp4','video/webm','application/zip'],true))throw new InvalidArgumentException('type');
     $root=vd_root($cfg);$pool=fopen($root.'/.pool.lock','c');if(!$pool||!flock($pool,LOCK_EX))throw new RuntimeException('lock');
     try{$used=0;$pending=0;foreach(glob($root.'/*.json')?:[] as $p){$m=json_decode((string)file_get_contents($p),true);$id=basename($p,'.json');if(!preg_match('/^[a-f0-9]{32}$/D',$id))continue;

@@ -1,0 +1,329 @@
+{
+ "version": "V183",
+ "ranAt": "2026-11-14T20:52:15.833Z",
+ "rerunOf": "2026-11-14T20:40:04.134Z",
+ "rerunFiles": [
+  "competition-frames.cjs"
+ ],
+ "results": [
+  {
+   "test": "ios-downloads.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "competition-seasons.cjs",
+   "pass": true,
+   "seconds": 1.3,
+   "summary": ""
+  },
+  {
+   "test": "competition-branding.cjs",
+   "pass": true,
+   "seconds": 11.2,
+   "summary": ""
+  },
+  {
+   "test": "studio-ground.cjs",
+   "pass": true,
+   "seconds": 0.7,
+   "summary": ""
+  },
+  {
+   "test": "competition-labels.cjs",
+   "pass": true,
+   "seconds": 1.9,
+   "summary": ""
+  },
+  {
+   "test": "competition.cjs",
+   "pass": true,
+   "seconds": 57.7,
+   "summary": ""
+  },
+  {
+   "test": "penalty-goal-evidence.cjs",
+   "pass": true,
+   "seconds": 1.8,
+   "summary": ""
+  },
+  {
+   "test": "arena-action.cjs",
+   "pass": true,
+   "seconds": 3.4,
+   "summary": ""
+  },
+  {
+   "test": "touchline-safe.cjs",
+   "pass": true,
+   "seconds": 0.2,
+   "summary": ""
+  },
+  {
+   "test": "football-fixes.cjs",
+   "pass": true,
+   "seconds": 37.1,
+   "summary": ""
+  },
+  {
+   "test": "natural-studios.cjs",
+   "pass": true,
+   "seconds": 2,
+   "summary": ""
+  },
+  {
+   "test": "free-football.cjs",
+   "pass": true,
+   "seconds": 12.6,
+   "summary": ""
+  },
+  {
+   "test": "emergent-football.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "highlight-intelligence.cjs",
+   "pass": true,
+   "seconds": 0,
+   "summary": ""
+  },
+  {
+   "test": "arena-clock.cjs",
+   "pass": true,
+   "seconds": 8.3,
+   "summary": ""
+  },
+  {
+   "test": "audio-export.cjs",
+   "pass": true,
+   "seconds": 0,
+   "summary": ""
+  },
+  {
+   "test": "football-intelligence.cjs",
+   "pass": true,
+   "seconds": 0.9,
+   "summary": ""
+  },
+  {
+   "test": "contact-motion.cjs",
+   "pass": true,
+   "seconds": 0.7,
+   "summary": ""
+  },
+  {
+   "test": "teamwork.cjs",
+   "pass": true,
+   "seconds": 5.3,
+   "summary": ""
+  },
+  {
+   "test": "arena-elimination.cjs",
+   "pass": true,
+   "seconds": 1.9,
+   "summary": ""
+  },
+  {
+   "test": "futsal-five.cjs",
+   "pass": true,
+   "seconds": 23.6,
+   "summary": ""
+  },
+  {
+   "test": "arena-balance.cjs",
+   "pass": true,
+   "seconds": 4.5,
+   "summary": ""
+  },
+  {
+   "test": "arena-football.cjs",
+   "pass": true,
+   "seconds": 6.9,
+   "summary": ""
+  },
+  {
+   "test": "arena-broadcast-flow.cjs",
+   "pass": true,
+   "seconds": 4.3,
+   "summary": ""
+  },
+  {
+   "test": "arena-duels.cjs",
+   "pass": true,
+   "seconds": 37.9,
+   "summary": ""
+  },
+  {
+   "test": "national-coverage.cjs",
+   "pass": true,
+   "seconds": 0.3,
+   "summary": ""
+  },
+  {
+   "test": "arena-rush.cjs",
+   "pass": true,
+   "seconds": 30.5,
+   "summary": ""
+  },
+  {
+   "test": "small-sided.cjs",
+   "pass": true,
+   "seconds": 10,
+   "summary": ""
+  },
+  {
+   "test": "japon-net.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "japon-camera.cjs",
+   "pass": true,
+   "seconds": 18.8,
+   "summary": ""
+  },
+  {
+   "test": "japon-kale.cjs",
+   "pass": true,
+   "seconds": 21.9,
+   "summary": ""
+  },
+  {
+   "test": "commentary.cjs",
+   "pass": true,
+   "seconds": 2.4,
+   "summary": ""
+  },
+  {
+   "test": "freekick.cjs",
+   "pass": true,
+   "seconds": 22.4,
+   "summary": ""
+  },
+  {
+   "test": "penalty.cjs",
+   "pass": true,
+   "seconds": 5.1,
+   "summary": ""
+  },
+  {
+   "test": "duo.cjs",
+   "pass": true,
+   "seconds": 3.5,
+   "summary": ""
+  },
+  {
+   "test": "celebrations.cjs",
+   "pass": true,
+   "seconds": 0.3,
+   "summary": ""
+  },
+  {
+   "test": "weather.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "graphics.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "kickoff-referee.cjs",
+   "pass": true,
+   "seconds": 27,
+   "summary": ""
+  },
+  {
+   "test": "forecast.cjs",
+   "pass": true,
+   "seconds": 1.8,
+   "summary": ""
+  },
+  {
+   "test": "forecast.php",
+   "pass": true,
+   "seconds": 0,
+   "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
+  },
+  {
+   "test": "national-competitions.php",
+   "pass": true,
+   "seconds": 0.2,
+   "summary": "{\"PASS\":true,\"forecasts\":[\"Armenia 1.26-1.17 Cyprus\",\"Türkiye 0.98-1.61 Belgium\",\"Albania 1.62-0.9 Finland\",\"Czechia 0.49-2.66 Spain\",\"England 2.42-0.5 Croatia\",\"Italia 1.01-1.52 France\"],\"turkiyeBelgium\":{\"home\":2,\"away\":4},\"xg\":{\"home\":0.9770247077337944,\"away\":1.6117217771333712},\"turkiyeXI\":[\"Uğurcan Çakır\",\"Ozan Kabak\",\"Abdülkerim Bardakcı\",\"Zeki Çelik\",\"İsmail Yüksek\",\"Salih Özcan\",\"Eren Elmalı\",\"Ferdi Kadıoğlu\",\"Yunus Akgün\",\"Aral Şimşir\",\"Hakan Çalhanoğlu\"],\"unl\":52,\"intl\":11,\"sample\":[\"Armenia v Cyprus\",\"Türkiye v Belgium\",\"Albania v Finland\",\"Czechia v Spain\"]}"
+  },
+  {
+   "test": "forecast-lock.php",
+   "pass": true,
+   "seconds": 0,
+   "summary": "{\"PASS\":true}"
+  },
+  {
+   "test": "callup-filter.php",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": "{\"PASS\":true,\"transfermarkt\":26}"
+  },
+  {
+   "test": "presentation.cjs",
+   "pass": true,
+   "seconds": 4,
+   "summary": ""
+  },
+  {
+   "test": "variation.cjs",
+   "pass": true,
+   "seconds": 5.3,
+   "summary": ""
+  },
+  {
+   "test": "recovery.cjs",
+   "pass": true,
+   "seconds": 0.8,
+   "summary": ""
+  },
+  {
+   "test": "intent.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "remaster.cjs",
+   "pass": true,
+   "seconds": 0.8,
+   "summary": ""
+  },
+  {
+   "test": "crests.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "search-test.cjs",
+   "pass": true,
+   "seconds": 0,
+   "summary": ""
+  },
+  {
+   "test": "engine-test.cjs",
+   "pass": true,
+   "seconds": 113,
+   "summary": ""
+  },
+  {
+   "test": "competition-frames.cjs",
+   "pass": true,
+   "seconds": 13.7,
+   "summary": ""
+  }
+ ],
+ "pass": true
+}

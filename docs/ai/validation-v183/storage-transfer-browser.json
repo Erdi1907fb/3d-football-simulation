@@ -1,0 +1,47 @@
+{
+  "pass": true,
+  "physicalIphoneTest": false,
+  "errors": [],
+  "short": {
+    "url": "http://127.0.0.1:44769/export.php?action=file&id=4574fcb1ac073657b411a7bac6ec26df",
+    "storage": "disk-sync-worker",
+    "lifecycle": [
+      "video",
+      "release",
+      "finalize",
+      "verify",
+      "delivery"
+    ],
+    "bytes": 53758,
+    "audio": true
+  },
+  "large": {
+    "bytes": 69507448,
+    "sha256": "df7c2e1239cff1c4a1035b377d172a91e3d5b731cf44cc35f1f0f6dfc8d59492",
+    "source": "existing complete V174 3D small-sided export; transport test, not a fresh full-match render",
+    "resumed": true,
+    "range": true,
+    "noPageNavigation": true,
+    "recoveredAfterReload": true,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1080,
+          "height": 1920,
+          "avg_frame_rate": "60/1"
+        },
+        {
+          "codec_name": "aac",
+          "avg_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "34.517333",
+        "size": "69507448"
+      }
+    }
+  }
+}

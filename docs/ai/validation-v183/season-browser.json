@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "physicalIphone": false,
+  "excerptSeconds": 0.2,
+  "cases": [
+    {
+      "mode": "season",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": false,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    }
+  ],
+  "errors": []
+}

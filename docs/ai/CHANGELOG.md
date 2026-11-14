@@ -2,6 +2,12 @@
 
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
+## V183 — 2026-11-14 UTC (Codex)
+- iPhone için Safari worker-only OPFS disk yazımı ve32MiB sınırlı RAM fallback;1080p60 korunur. Büyük MP4ler tek bellek tamponuna birikmez.
+- Bütün video modlarında ortak HTTP indirme/Range/offset devamı, hazır link geçmişi ve aynı sekmede doğrulanmış OPFS dosyasından yenileme sonrası devam. Birincil indirme uygulamayı aynı sekmede blob'a götürmez. Eski season/swap dahil.
+- Kareler bittikten sonra GPU sahnesi mux/decode/indirme aşamasından önce bırakılır; iOS balanced/compact, isteğe bağlı yeniden önizleme. Genel WakeLock. Serverde max dosya8GiB; mevcut8GiBtoplam/boşdisk/TTL korumaları aynı.
+-53regresyon + son hedefli testler PASS; gerçek70MBtamdosya kesilme/reload/devam/SHA/Range; sekiz UI kısa MP4 yolu ve iki maç sahnesi geçişi PASS. FizikseliPhone13 ve tam yeni çokdakikalı render hâlâ doğrulanmadı (T-325/T-317). Kanıt validation-v183.
+
 ## V182 — 2026-11-14 UTC (Codex)
 - Kupa/lig sezon açılışı ve kapanışı yeniden tasarlandı: metalik vektör kupa, şampiyon kartı, kulüp armaları, okunaklı kupa toplamları ve +1. Sıfır şampiyonlukta takım kupası yok; seri verisi/simülasyon değişmedi.
 - Avrupa sıraları: daha büyük HD logo, renkli sıra çizgisi ve sıra numaralarını açıklayan üç kupa kartı. Sıra ayarlarında logo önizlemesi. 1500px orijinaller aynı; ölçeklenmiş dosya/thumbnail yok. 4/6takım ve iki oranda uzun kulüp adları ile istatistikler çakışmaz. Koyu başlıkta açık logo kullanılır.

@@ -11,7 +11,7 @@ try{
         vd_file($cfg,(string)($_GET['id']??''),$method);exit;
     }
     header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');
-    if($action==='capabilities'&&$method==='GET'){$root=vd_root($cfg);$out=['supported'=>is_writable($root),'chunkBytes'=>2097152,'maxBytes'=>(int)($cfg['video_export_max_bytes']??1073741824)];}
+    if($action==='capabilities'&&$method==='GET'){$root=vd_root($cfg);$out=['supported'=>is_writable($root),'chunkBytes'=>2097152,'maxBytes'=>(int)($cfg['video_export_max_bytes']??8589934592)];}
     else{
         if($method!=='POST'){http_response_code(405);header('Allow: POST');exit;}
         $origin=$_SERVER['HTTP_ORIGIN']??null;$host=$_SERVER['HTTP_HOST']??'';$scheme=(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off')?'https':'http';

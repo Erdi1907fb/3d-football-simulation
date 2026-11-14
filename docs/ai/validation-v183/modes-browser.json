@@ -1,0 +1,113 @@
+{
+  "pass": true,
+  "physicalIphone": false,
+  "excerptSeconds": 0.2,
+  "cases": [
+    {
+      "mode": "normal",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "concept",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "penalty",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "freekick",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "small",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "japon",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "competition",
+      "trace": {
+        "frames": 12,
+        "released": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    }
+  ],
+  "errors": []
+}

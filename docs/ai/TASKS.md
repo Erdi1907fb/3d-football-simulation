@@ -1,4 +1,4 @@
-> **2026-11-14: Web kaynak V182; kupa/Avrupa görselleri yenilendi, PK/FK beyaz kaplama kaldırılıp eski zemin görünümü ve temas izleri korundu. Canlı179/filesMatch=true; main push Hostinger dağıtımı değildir. T-317/T-312 açık.**
+> **2026-11-14: Web kaynak V183. iPhone ortak disk/HTTP indirme ve hazır dosya kurtarma. Son canlı kontrol179/filesMatch=true; main push Hostinger dağıtımı değildir. T-325 gerçek iPhone, T-317 tam uzun yeni render ve T-312 açık.**
 
 # TASKS — görev panosu
 
@@ -6,10 +6,12 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V181 web sezon, lig şablonları ve stüdyo zemin tepkisi; T-312 ayrı WIP
+## Aktif hedef: V183 iPhone dosya indirme; gerçek cihaz T-325 ve T-312 ayrı WIP
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-325 | Fiziksel iPhone13/Safari veya Chrome üzerinde V183 uzun tam Türkiye–Fransa/kupa indirmesi | blocked | codex | Bu ortamda fiziksel iPhone yok. V183 kod/OPFS/HTTP akışı ve sekiz mod kısa gerçek çıktısı test edildi; gerçek iOS bellek öldürmesi sertifikası değildir. Hostinger dağıtımı da yapılmadı. |
+| T-324 | iPhone13 tüm modlarda eksiksiz MP4 indirme; disk yazımı, düşük bellek, ortak HTTP teslim ve hazır dosya kurtarma | done (V183) | codex |53regresyon + hedefli son testler; sekiz gerçek UI akışı, aktif iki maç geçişi,70MBkes/kaldığı yerden/sayfa yenileme/byteSHA PASS. files: video-core/transfer/delivery/storage-worker, tüm export UI/renderer, tests/docs. Fiziksel iPhone kontrolü T-325. |
 | T-323 | Sezon başı/sonu kupa tasarımı, profesyonel Avrupa sıraları/HD logo; PK/FK eski zemin görünümü + yalnız temas izleri; yeni fotoğraflar | done (V182) | codex |52regresyon, iki oran foto/MP4, HDkaynak/gerçekmetin/temas shader testleri PASS. files: competition-broadcast/UI/CSS, studio-ground/weather/scene, tests, sürüm/devir belgeleri. |
 | T-322 | Kupa/lig yeni ayar, sezon ekranı ve yayın kartlarında İngilizce çeviri denetimi | done (V181) | codex | files: competition-ui/broadcast, tests/competition-seasons/branding; EN gerçek arayüz ve 36 yayın görüntüsü, TR/EN sezon metinleri PASS. |
 | T-321 | Lig2–6takım, kupa8; tüm mevcutyayınşablonları/varsayılanNext90Sim; sırayaözelUCL/UEL/UECLişaretleri | done (V181) | codex | files: competition-engine/UI/broadcast/renderer, broadcast.js, competition.html, tests/docs. Sezon/EN ile V181; puantablosurankbazlı, fikstürdekupaetiketi yok. |

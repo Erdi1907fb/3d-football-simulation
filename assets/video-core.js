@@ -1,5 +1,5 @@
 /* Independent, bounded-memory match export. No screen/camera/microphone capture. */
-(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory(require('./team-audio.js'));else root.SekmeVideo=factory(root.SekmeTeamAudio);})(typeof globalThis!=='undefined'?globalThis:this,function(TeamAudio){
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory(require('./team-audio.js'),require('./video-delivery'));else root.SekmeVideo=factory(root.SekmeTeamAudio,root.Next90VideoDelivery);})(typeof globalThis!=='undefined'?globalThis:this,function(TeamAudio,Delivery){
 'use strict';
 const FPS=60,HOLD=4.5,WIDTH=1080,HEIGHT=1920;
 const FULL_RATE_KEY='com.apple.quicktime.full-frame-rate-playback-intent';
@@ -200,7 +200,8 @@ async function verifyAudio(result,job,env,media,cfg){
   return{...result,audioVerified:true};
  }catch(e){if(e.name==='AbortError')throw e;throw audioFailure(e);}finally{input?.dispose();}
 }
-async function create(job){const env=job.env||globalThis,media=job.media||env.Mediabunny,cfg=settings(job);await ensureAudio(job,env,media,cfg);const result=await encode(job);try{return await verifyAudio(result,job,env,media,cfg);}catch(e){await result.dispose?.();throw e;}}
+async function create(job){let framesDone=false;const notify=job.onFramesComplete;job={...job,onFramesComplete(){if(framesDone)return;framesDone=true;notify?.();}};const env=job.env||globalThis,media=job.media||env.Mediabunny,cfg=settings(job);let wake;try{try{wake=await wait(env.navigator?.wakeLock?.request('screen'),job.signal,5000);}catch(e){if(e.name==='AbortError')throw e;}await ensureAudio(job,env,media,cfg);const result=await encode(job);try{const checked=await verifyAudio(result,job,env,media,cfg);return Delivery?await Delivery.prepare(checked,job,env):checked;}catch(e){await result.dispose?.();throw e;}}finally{try{await wake?.release();}catch{}}}
+
 async function encode(job){
  const env=job.env||globalThis,cfg=settings(job),media=job.media||env.Mediabunny,signal=job.signal,onProgress=job.onProgress||(()=>{});check(signal);
  const canvas=job.canvas||env.document.createElement('canvas');canvas.width=cfg.width;canvas.height=cfg.height;
@@ -263,21 +264,22 @@ async function preflight(job,cfg=settings(job)){await ensureAudio(job,job.env||g
 // Seekable small blocks allow a standard MP4 header/index without one contiguous heap buffer.
 const liveStorageNames=new Set();let lastStorageSweep=0,diskDisabled=false;
 function storageFailure(error){diskDisabled=true;const e=Error("Video storage stopped responding");e.code="storage-stall";e.cause=error;return e;}
-async function cleanupStorage(directory,now=Date.now()){
+async function cleanupStorage(directory,now=Date.now(),protectedNames=new Set()){
  if(!directory?.entries||now-lastStorageSweep<60000)return 0;lastStorageSweep=now;let removed=0,seen=0;
- try{for await(const [name]of directory.entries()){if(++seen>512)break;const match=/^sekme-export-(\d{13})-[a-z0-9]+\.mp4$/.exec(name);if(match&&now-Number(match[1])>2*3600000&&!liveStorageNames.has(name)){await directory.removeEntry(name);removed++;}}}catch{}return removed;
+ try{for await(const [name]of directory.entries()){if(++seen>512)break;const match=/^sekme-export-(\d{13})-[a-z0-9]+\.mp4$/.exec(name);if(match&&now-Number(match[1])>2*3600000&&!liveStorageNames.has(name)&&!protectedNames.has(name)){await directory.removeEntry(name);removed++;}}}catch{}return removed;
 }
+async function workerWritable(env,name){const worker=new env.Worker('assets/video-storage-worker.js?v=183');let seq=0;const pending=new Map(),send=m=>wait(new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});try{worker.postMessage({...m,id},m.data?[m.data]:[]);}catch(e){pending.delete(id);reject(e);}}),null,15000);worker.onmessage=({data})=>{const p=pending.get(data.id);if(!p)return;pending.delete(data.id);data.error?p.reject(Error(data.error)):p.resolve();};worker.onerror=e=>{for(const p of pending.values())p.reject(Error(e.message||'Device storage worker failed'));pending.clear();};try{await send({type:'open',name});}catch(e){worker.terminate();throw e;}return{write:({position,data})=>send({type:'write',position,data:data.buffer}),async close(){try{await send({type:'close'});}finally{worker.terminate();}},async abort(){try{await send({type:'abort'});}finally{worker.terminate();}}};}
 async function streamStorage(env,media,cfg){
- let directory,handle,writable,name,closed=false,bytes=0;const blocks=new Map(),BLOCK=65536;
- try{directory=diskDisabled?null:await wait(env.navigator?.storage?.getDirectory?.(),null,5000);if(directory){await wait(cleanupStorage(directory),null,5000);name='sekme-export-'+Date.now()+'-'+Math.random().toString(36).slice(2)+'.mp4';handle=await wait(directory.getFileHandle(name,{create:true}),null,5000);writable=await wait(handle.createWritable(),null,5000);liveStorageNames.add(name);}}catch{try{if(name)await wait(directory?.removeEntry(name),null,3000);}catch{}liveStorageNames.delete(name);directory=handle=writable=null;}
+ let directory,handle,writable,name,workerDisk=false,closed=false,bytes=0;const blocks=new Map(),BLOCK=65536;
+ try{directory=diskDisabled&&!cfg.ios?null:await wait(env.navigator?.storage?.getDirectory?.(),null,5000);if(directory){await wait(cleanupStorage(directory,Date.now(),new Set([Delivery?.pending(env)?.fileName].filter(Boolean))),null,5000);name='sekme-export-'+Date.now()+'-'+Math.random().toString(36).slice(2)+'.mp4';handle=await wait(directory.getFileHandle(name,{create:true}),null,5000);try{writable=await wait(handle.createWritable(),null,5000);}catch(error){if(!env.Worker)throw error;writable=await workerWritable(env,name);workerDisk=true;}liveStorageNames.add(name);}}catch{try{if(name)await wait(directory?.removeEntry(name),null,3000);}catch{}liveStorageNames.delete(name);directory=handle=writable=null;}
  const stream=new WritableStream({async write({data,position}){
-  if(!Number.isSafeInteger(position)||position<0)throw Error('Invalid MP4 write position');const end=position+data.byteLength;if(end>cfg.maxBytes)throw Error('Video file too large');
+  if(!Number.isSafeInteger(position)||position<0)throw Error('Invalid MP4 write position');const end=position+data.byteLength;if(end>cfg.maxBytes)throw Error('Video file too large');if(!writable&&cfg.ios&&end>32*1024*1024){const e=Error(env.document?.documentElement?.lang==='tr'?'Geçici disk alanı kullanılamıyor. Telefonda yer açıp Safari’de yeniden dene.':'Temporary disk storage is unavailable. Free device storage and retry in Safari.');e.code='storage-unavailable';throw e;}
   const copy=new Uint8Array(data.byteLength);copy.set(data);
   if(writable){try{await wait(writable.write({type:'write',position,data:copy}),null,15000);}catch(e){throw storageFailure(e);}}else for(let from=0;from<copy.length;){const at=position+from,index=Math.floor(at/BLOCK),offset=at%BLOCK,n=Math.min(BLOCK-offset,copy.length-from);let block=blocks.get(index);if(!block){block=new Uint8Array(BLOCK);blocks.set(index,block);}block.set(copy.subarray(from,from+n),offset);from+=n;}bytes=Math.max(bytes,end);
  },async close(){if(writable){try{await wait(writable.close(),null,15000);closed=true;}catch(e){throw storageFailure(e);}}}});
  const target=new media.StreamTarget(stream,{chunked:true,chunkSize:256*1024});
  const dispose=async()=>{liveStorageNames.delete(name);if(writable&&!closed)try{await wait(writable.abort(),null,3000);}catch{}if(name)try{await wait(directory?.removeEntry(name),null,3000);}catch{}blocks.clear();};
- return {target,stream,async finish(){if(!bytes)throw Error('Empty video');if(handle){try{return await wait(handle.getFile(),null,10000);}catch(e){throw storageFailure(e);}}const parts=[];for(let at=0;at<bytes;at+=BLOCK){const n=Math.min(BLOCK,bytes-at),block=blocks.get(at/BLOCK)||new Uint8Array(n);parts.push(block.subarray(0,n));}const blob=new Blob(parts,{type:'video/mp4'});blocks.clear();return blob;},dispose,method:writable?'disk':'fragments'};
+ return {target,stream,async finish(){if(!bytes)throw Error('Empty video');if(handle){try{if(writable&&!closed){await wait(writable.close(),null,15000);closed=true;}return await wait(handle.getFile(),null,10000);}catch(e){throw storageFailure(e);}}const parts=[];for(let at=0;at<bytes;at+=BLOCK){const n=Math.min(BLOCK,bytes-at),block=blocks.get(at/BLOCK)||new Uint8Array(n);parts.push(block.subarray(0,n));}const blob=new Blob(parts,{type:'video/mp4'});blocks.clear();return blob;},dispose,method:workerDisk?'disk-sync-worker':writable?'disk':'fragments'};
 }
 // Standard, seekable MP4 with its index reserved at the start, suitable for file sharing.
 async function normalizeMp4(result,job,env,media,cfg){
@@ -356,7 +358,7 @@ async function serialEncode(job,env,media,canvas,draw,info,cfg,config){
    onProgress(Math.min(.99,(i+1)/count));job.onMetrics?.({frame:i+1,total:count,queue:encoder.encodeQueueSize,packets});await yieldTask();/* V136: yield every frame so the page never stutters while exporting */
   }
   await wait(encoder.flush(),signal,30000);await wait(pending,signal);if(error)throw error;
-  if(packets!==expected)throw Error('Incomplete encoded video');encoder.close();encoder=null;audio?.close();video.close();job.onStage?.('finalize');await wait(output.finalize(),signal,30000);check(signal);
+  if(packets!==expected)throw Error('Incomplete encoded video');encoder.close();encoder=null;audio?.close();video.close();job.onFramesComplete?.();job.onStage?.('finalize');await wait(output.finalize(),signal,30000);check(signal);
   const blob=await wait(storage.finish(),job.signal,30000);if(blob.size>cfg.maxBytes)throw Error('Video file too large');onProgress(1);
   return {blob,dispose:storage.dispose,storage:storage.method,extension:'mp4',score:info.score,method:'serial-frames',audioOmitted:audioDisabled,width:cfg.width,height:cfg.height,container:'standard-mp4'};
  }catch(e){if(encoder&&encoder.state!=='closed')try{encoder.close()}catch{}try{await wait(output?.cancel(),null,3000);}catch{}await storage.dispose();throw e;}
@@ -376,5 +378,5 @@ async function capture(job,env,canvas,draw,info,cfg){
   });
  }finally{clearTimeout(timer);clearTimeout(watchdog);if(visibility)env.document.removeEventListener('visibilitychange',visibility);if(abort)signal?.removeEventListener('abort',abort);if(recorder){recorder.ondataavailable=null;recorder.onerror=null;recorder.onstop=null;if(recorder.state!=='inactive')try{recorder.stop();}catch{}}stream?.getTracks().forEach(t=>t.stop());cleanupAudio?.();if(a&&a!==job.audioContext)await a.close().catch(()=>{});}
 }
-return {build:96,ensureAudio,verifyAudio,cleanupStorage,normalPlayback,create,coalesceWrites,oppositionLevel,oppositionCue,oppositionCueAt,oppositionMusicLevel,loopBuffer,goalLevel,teamCue,teamCueAt,teamMusicLevel,ambientLevel,crowdLevel,soundCue,soundDuration,whistleKey,whistleCues,audioEvents,audioSegment,profile,settings,device,needsMedia,originalZip,useSoftware,prepareSoftwareAudio,softwareEncode,normalizeMp4,probeVideo,verifyPlayback,serialConfig,preflight,streamStorage,recordedAudio,audioRecorderMime,recorderMime,verifyResolution,WIDTH,HEIGHT,FPS,HOLD};
+return {resultUrl:(result,env=globalThis)=>Delivery?Delivery.link(env,result):env.URL.createObjectURL(result.blob),build:183,ensureAudio,verifyAudio,cleanupStorage,normalPlayback,create,coalesceWrites,oppositionLevel,oppositionCue,oppositionCueAt,oppositionMusicLevel,loopBuffer,goalLevel,teamCue,teamCueAt,teamMusicLevel,ambientLevel,crowdLevel,soundCue,soundDuration,whistleKey,whistleCues,audioEvents,audioSegment,profile,settings,device,needsMedia,originalZip,useSoftware,prepareSoftwareAudio,softwareEncode,normalizeMp4,probeVideo,verifyPlayback,serialConfig,preflight,streamStorage,recordedAudio,audioRecorderMime,recorderMime,verifyResolution,WIDTH,HEIGHT,FPS,HOLD};
 });
