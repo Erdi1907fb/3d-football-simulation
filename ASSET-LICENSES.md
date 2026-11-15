@@ -172,3 +172,5 @@ Original Next90Sim Canvas trophy illustration and layout; no new external assets
 
 ## V183 — iOS export/delivery
 Original Next90Sim OPFS worker and delivery/recovery code. No new third-party dependency or external media asset. Existing Mediabunny/AAC/H264 notices remain applicable.
+
+- V184 cover layout, backpass receiving/planning and validation code are original project code. Existing club and competition image sources are reused at their original resolution; no new third-party imagery/data/animation was introduced. Screenshots are captures of the existing game renderer.

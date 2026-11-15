@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "games": 12,
+  "passes": 96,
+  "completed": 64,
+  "shotDistances": [
+    8.44,
+    11.35,
+    9.41,
+    7.98,
+    7.72,
+    11.08,
+    17.46
+  ],
+  "coverage": "rectangle, turn/acceleration limits, real ground friction, receive timing, shooting channels, wall-aware keepers, real bank passes, kick preparation, balanced opening, short truthful result"
+}

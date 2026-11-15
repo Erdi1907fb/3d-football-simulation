@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V183 iPhone dosya indirme; gerçek cihaz T-325 ve T-312 ayrı WIP
+## Aktif hedef: V184 kapak/şablon, üst 11v11 skorbord ve 5v5 güvenli fizik/pas
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-326 | Kupa/lig kapakta şablon logosu/adı, dinamik takım sayısı, HD Avrupa hedefleri; 11v11 üst skorbord; 5v5 kale seçimi ve kendi kalesine pas/zemin dengesi | done (V184) | codex | files: competition-engine/UI/renderer/broadcast, japon-engine/tactics, HTML/tests/docs. 55regresyon +sonopt-in kontrolü;64gerçekA/Bsimülasyon, ilkgeri-pas ve son-kare/active hataları düzeltildi. Kapakta sıra yazıları isteğe bağlı/varsayılanHayır. TR/EN/iki oran fotoğraflar; sahte gol/sonuç kotası yok. |
 | T-325 | Fiziksel iPhone13/Safari veya Chrome üzerinde V183 uzun tam Türkiye–Fransa/kupa indirmesi | blocked | codex | Bu ortamda fiziksel iPhone yok. V183 kod/OPFS/HTTP akışı ve sekiz mod kısa gerçek çıktısı test edildi; gerçek iOS bellek öldürmesi sertifikası değildir. Hostinger dağıtımı da yapılmadı. |
 | T-324 | iPhone13 tüm modlarda eksiksiz MP4 indirme; disk yazımı, düşük bellek, ortak HTTP teslim ve hazır dosya kurtarma | done (V183) | codex |53regresyon + hedefli son testler; sekiz gerçek UI akışı, aktif iki maç geçişi,70MBkes/kaldığı yerden/sayfa yenileme/byteSHA PASS. files: video-core/transfer/delivery/storage-worker, tüm export UI/renderer, tests/docs. Fiziksel iPhone kontrolü T-325. |
 | T-323 | Sezon başı/sonu kupa tasarımı, profesyonel Avrupa sıraları/HD logo; PK/FK eski zemin görünümü + yalnız temas izleri; yeni fotoğraflar | done (V182) | codex |52regresyon, iki oran foto/MP4, HDkaynak/gerçekmetin/temas shader testleri PASS. files: competition-broadcast/UI/CSS, studio-ground/weather/scene, tests, sürüm/devir belgeleri. |

@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "coverCounts": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "ratios": 2,
+  "languages": 2,
+  "normalTopBroadcast": true,
+  "goalSizes": [
+    4.4,
+    5,
+    6
+  ],
+  "backpassGeometry": true,
+  "rankCaptionsOptIn": true
+}

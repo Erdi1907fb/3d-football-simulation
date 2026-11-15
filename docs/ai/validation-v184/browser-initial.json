@@ -1,0 +1,176 @@
+{
+  "pass": true,
+  "physicalDevice": false,
+  "errors": [],
+  "cases": [
+    {
+      "n": 4,
+      "orient": "landscape",
+      "lang": "tr",
+      "photo": "4teams-landscape-tr-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 4,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "4teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "lang": "tr",
+      "photo": "4teams-portrait-tr-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "4teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 6,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "6teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 6,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "6teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 8,
+      "orient": "landscape",
+      "lang": "tr",
+      "photo": "8teams-landscape-tr-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 8,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "8teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 8,
+      "orient": "portrait",
+      "lang": "tr",
+      "photo": "8teams-portrait-tr-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 8,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "8teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 2,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "2teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 2,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "2teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 3,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "3teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 3,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "3teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 5,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "5teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 5,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "5teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "kind": "11v11",
+      "orient": "landscape",
+      "top": 48.6
+    },
+    {
+      "kind": "11v11",
+      "orient": "portrait",
+      "top": 197.76
+    }
+  ],
+  "sources": [
+    {
+      "src": "assets/logos/fenerbahce.png",
+      "width": 700,
+      "height": 700
+    },
+    {
+      "src": "assets/logos/galatasaray.png",
+      "width": 700,
+      "height": 700
+    },
+    {
+      "src": "assets/logos/besiktas.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/logos/trabzonspor.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/logos/man-utd.png",
+      "width": 700,
+      "height": 700
+    },
+    {
+      "src": "assets/competitions/tr.1.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/competitions/ucl.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/competitions/uel.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/competitions/uecl.png",
+      "width": 1500,
+      "height": 1500
+    }
+  ]
+}

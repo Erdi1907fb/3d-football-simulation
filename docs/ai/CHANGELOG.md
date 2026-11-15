@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V184 · 2026-11-15
+- Kupa/lig kapaklarında dinamik takım sayısı, taşmayan iki dil, seçilen şablonun gerçek adı/logosu ve lig Avrupa hedefleri ve varsayılan kapalı sıra yazısı seçeneği; mevcut yüksek çözünürlüklü kaynaklar korunur.
+- 11v11 turnuva skorboard'u normal üst yayın yolunda; 5v5 kale boyutu seçimi fizik ve görüntüye birlikte bağlı.
+- Kaleciye güvenli geri pas açısı, gerçek yörüngeyi karşılama, eski destek yönünü bırakma ve daha dengeli top yuvarlanması; son andaki kurtarışlar son tekrar karesinde korunur.
+- Test/karşılaştırma/fotoğraf kanıtı: validation-v184 ve HANDOFF. Hostinger'a otomatik dağıtılmadı.
+
 Biçim: en yeni sürüm üstte. Ayrıntılı eski sürüm notları: `docs/archive/SURUM-v10x.txt`.
 
 ## V183 — 2026-11-14 UTC (Codex)

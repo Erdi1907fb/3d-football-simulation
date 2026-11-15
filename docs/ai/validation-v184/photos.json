@@ -1,0 +1,161 @@
+{
+  "actualGameRenders": true,
+  "generatedIllustrations": false,
+  "rankNumbersDefault": false,
+  "photos": [
+    {
+      "file": "4teams-landscape-en-cover-with-ranks.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 543618,
+      "sha256": "9ae456c3f6f47db35856c544ce6549fe2fa50004de3d85e262355456948dda58"
+    },
+    {
+      "file": "4teams-landscape-en-cover.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 540686,
+      "sha256": "742d9084706fa754da20c6c99b9a32b5316a34778c722df5af840b7501a1f27d"
+    },
+    {
+      "file": "4teams-landscape-tr-cover-with-ranks.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 567500,
+      "sha256": "2993858348bc1042c8d07cc7cdc84f804dd8b726adb6aeadfec1e04637b858a4"
+    },
+    {
+      "file": "4teams-landscape-tr-cover.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 565919,
+      "sha256": "3eb7b6868856ec72c8ebdb9abf832e4ad1709f9b9212538db0485aa6498d1736"
+    },
+    {
+      "file": "4teams-portrait-en-cover-with-ranks.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 237533,
+      "sha256": "96bbbb9396658950d1602bc3cdf7066d072bb9928f8f9a75dc81f5e2c09e274b"
+    },
+    {
+      "file": "4teams-portrait-en-cover.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 234712,
+      "sha256": "4ea9618c44d6878586d944cd6d80e0b9f728353c62a5a5a99f86c8d512d9289b"
+    },
+    {
+      "file": "4teams-portrait-tr-cover-with-ranks.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 238338,
+      "sha256": "e196ef3f391edc6ded50c7201b28761a6379c3b4f51a62c039a7f814ca4ad8e9"
+    },
+    {
+      "file": "4teams-portrait-tr-cover.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 236621,
+      "sha256": "662e35df733a9920f5738fa347850185397d8530170d9fdef8bb0b36c10555ad"
+    },
+    {
+      "file": "6teams-landscape-en-cover.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 637866,
+      "sha256": "b97675d2eed46bde6fb987659506249f7d90a1c1d6c13ab483028270d1635553"
+    },
+    {
+      "file": "6teams-portrait-en-cover.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 245755,
+      "sha256": "701d5d2106bf965fa29880be022b8505d22bd377c60cc77f91250a19f1e7ddc4"
+    },
+    {
+      "file": "8teams-landscape-en-cover.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 598264,
+      "sha256": "325d61bcc19171fa43650b7e2a65f72f944b72fdca234d3136bcb6ca247f7e8e"
+    },
+    {
+      "file": "8teams-landscape-tr-cover.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 616958,
+      "sha256": "63944e17c39141ae4f681c3d985c0012403c9a63a90838b718e40984d2180bc2"
+    },
+    {
+      "file": "8teams-portrait-en-cover.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 296968,
+      "sha256": "051feb8bccf8c502ff2248edafedf99ec17223b066cffd1489e2762751e2cc8a"
+    },
+    {
+      "file": "8teams-portrait-tr-cover.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 303331,
+      "sha256": "883cd32c4b6b8dc5ac0d77ea8ec102591f25ea098c7eca84f69068159d8828dc"
+    },
+    {
+      "file": "competition-controls.png",
+      "width": 308,
+      "height": 859,
+      "bytes": 35534,
+      "sha256": "bc83c5634474361c196982d45771f620099dec2d18abdd85b26357133662478a"
+    },
+    {
+      "file": "cover-rank-option-no-tr.png",
+      "width": 308,
+      "height": 928,
+      "bytes": 51939,
+      "sha256": "9474361c1c96d93679be74ce836432c867a0cf2f11ec1d81e8ffb857ac076b85"
+    },
+    {
+      "file": "cover-rank-option-yes-tr.png",
+      "width": 308,
+      "height": 928,
+      "bytes": 52599,
+      "sha256": "66a2fc5ac5f0b293c54968c1ce690675d6032a339142fd5dfe5ebef2678a33ba"
+    },
+    {
+      "file": "eleven-landscape-top-hud.jpg",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 449657,
+      "sha256": "578189cef348a84abe65d4603ef0af8ea6e30c276bbcb83c295e107e6ee20a14"
+    },
+    {
+      "file": "eleven-portrait-top-hud.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 583690,
+      "sha256": "d2ed9aeb3db94d342d75f2ba4cf8dbbbe1b1124e44d9cc9705ca66f6a1c0b993"
+    },
+    {
+      "file": "goal-size-4.4.png",
+      "width": 308,
+      "height": 68,
+      "bytes": 3421,
+      "sha256": "0b728411330a09beedb86ad38ec575fe959c14492e4e4e40406f4452100dbff3"
+    },
+    {
+      "file": "goal-size-5.png",
+      "width": 308,
+      "height": 68,
+      "bytes": 3423,
+      "sha256": "ab5e07315c68d469ca59b2d98e881cdd5825833b4ca674f2beb59a09ba093260"
+    },
+    {
+      "file": "goal-size-6.png",
+      "width": 308,
+      "height": 68,
+      "bytes": 3279,
+      "sha256": "5bce31393ad4752cd8010ba2eea9f2d93773ed459b46aca8f1e1025527bad8c0"
+    }
+  ]
+}

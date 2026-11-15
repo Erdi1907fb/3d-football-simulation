@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 53 test; `--quick` `engine-test.cjs` hariç 52 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
+| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 55 test; `--quick` `engine-test.cjs` hariç 54 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -281,3 +281,11 @@ dosyalardır.
 - Kullanıcının son netleştirmesi: kupa/lig oyuncu isimleri **herkeste sürekli değil**, yalnız gerçek aksiyondaki oyuncuda. `competition-labels` normalde ortakPlayerLabel.select; gerçek save/ball_secured aktörü, pasın kayıtlı alıcısı; arenada mevcutlabelSlots (girişte topluisim istisnası kapalı). Penaltıda vurucu/hamle yapanGK. Tahminî enyakınoyuncuyu sahip sanma. Seremonilerde/tekrarda/araekranda toplu isim yok. Kamera/süre/seed isim seçiminden etkilenmez.
 - İsim katmanı ortakrenderer.draw yolunda önizleme/MP4/iki oran/tüm kameralarda; son kamera dönüşümünden sonra gerçekhead.worldPosition projekte edilir, HUD/platform güvenli bölge korunur.
 - BJK1895:Orkun272700 profil/yüz kaydı zaten vardı; seçilebilir kulüp rosterbench listesine CM/10 olarak resmîBJKoyuncu sayfasıyla hedefli eklendi. Eski XI/resmîkadro iddiasını değiştirme. Tüm rosterfetch URLleri?v180; tarihîsezon arşivlerine otomatik transfer uygulama.
+
+
+## 26. V184 — kapak kimliği, üst 11v11 yayın ve küçük saha geri pasları
+- Kupa/lig kapağı seçilen yayın şablonunun gerçek logosu/adını, dinamik takım sayısını ve taşmayan ayrı metin sütununu kullanır. Lig alt bandı UCL/UEL/UECL kaynak logolarını gösterir; `showQualificationRanks` varsayılanfalse, yalnız kullanıcı Evet seçerse kapak/video açılışında yapılandırılmış sıra numaraları yazılır; kupada Avrupa’ya otomatik katılım iddiası yoktur, tek maçlı eleme metni vardır. Default Next90Sim kimliği korunur. Takım logosunu düşük kaliteli thumb ile değiştirme.
+- 11v11 turnuva skorbordu aynı normal `Shared.render`/Scene.overlay yolunda üsttedir; arena HUD dönüşümü yalnız küçük saha/penaltı içindir.
+- Turnuvada kale genişliği4.4/5/6 UI→kaydedilmiş competition→fizik→renderer aynı ölçüdür; mevcut arena saha ölçeği sözleşmesi korunur.
+- Geri pas kaleciye direklerin dışında uygun açıyla; seçenek/teknik uygulama aynı passAim helper’ını kullanır. Kaleci gerçek gözlenen top yolunu karşılar, bank pası geri pasta kullanılmaz. Kaliteye bağlı teknik hata korunur; gol denetimini değiştirip kendi kalesine golleri silmeyin. Yeni sahiplik eski destek hedefinin steer geçmişini kullanmaz.
+- Kanıt ve sınırlar: en üst HANDOFF; `competition-cover.cjs`, `arena-backpass.cjs`, `tools/validate-arena-control.cjs`, isteğe bağlı `browser-competition-cover.cjs`. Gerçek cihaz ve tam uzun dışa aktarım T-325/T-317 olarak açık kalır.

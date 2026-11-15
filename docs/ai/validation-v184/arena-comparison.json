@@ -1,0 +1,1704 @@
+{
+  "pass": true,
+  "baseline": "b66dd9945f9c62fc6a14dfffaebe29710a5791e7",
+  "mode": "5v5",
+  "surface": "clear",
+  "goalWidth": 5,
+  "gameSeconds": 60,
+  "matchedPairs": 32,
+  "simulations": 64,
+  "physicalGoalDetectionUnchanged": true,
+  "realTrackingCalibration": false,
+  "summary": {
+    "before": {
+      "goals": 41,
+      "own": 14,
+      "backpassOwn": 13,
+      "shots": 149,
+      "passes": 782,
+      "backpasses": 57,
+      "keeperControls": 37,
+      "saves": 68,
+      "longShots": 50,
+      "turnovers": 361,
+      "loose": 64
+    },
+    "after": {
+      "goals": 42,
+      "own": 0,
+      "backpassOwn": 0,
+      "shots": 165,
+      "passes": 842,
+      "backpasses": 36,
+      "keeperControls": 25,
+      "saves": 61,
+      "longShots": 66,
+      "turnovers": 341,
+      "loose": 18
+    }
+  },
+  "rows": [
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 1,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 16,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 3,
+        "longShots": 2,
+        "turnovers": 6,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 28,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 1,
+        "longShots": 1,
+        "turnovers": 13,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 2,
+      "before": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 26,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 3,
+        "turnovers": 10,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 25,
+        "backpasses": 3,
+        "keeperControls": 1,
+        "saves": 0,
+        "longShots": 2,
+        "turnovers": 9,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 3,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 19,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 4,
+        "longShots": 0,
+        "turnovers": 11,
+        "loose": 6,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 23,
+        "backpasses": 1,
+        "keeperControls": 2,
+        "saves": 2,
+        "longShots": 3,
+        "turnovers": 13,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 4,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 29,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 16,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 8,
+        "passes": 23,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 3,
+        "longShots": 4,
+        "turnovers": 10,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 5,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 22,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 4,
+        "longShots": 3,
+        "turnovers": 8,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 7,
+        "passes": 19,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 3,
+        "longShots": 2,
+        "turnovers": 11,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 6,
+      "before": {
+        "goals": 2,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 3,
+        "passes": 26,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 2,
+        "turnovers": 10,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 56.28333333333333,
+            "actor": "Leandro Trossard",
+            "last": [
+              {
+                "type": "possession",
+                "at": 54.43333333333333,
+                "matchTime": 50.09166666666667,
+                "round": 1,
+                "team": 0,
+                "actor": "Leandro Trossard",
+                "actorIndex": 4
+              },
+              {
+                "type": "pass",
+                "at": 55.11666666666667,
+                "matchTime": 50.775,
+                "round": 1,
+                "team": 0,
+                "actor": "Leandro Trossard",
+                "actorIndex": 4,
+                "receiver": "Alexander Nübel",
+                "receiverIndex": 0,
+                "backpass": true,
+                "point": {
+                  "x": 3.740161757469851,
+                  "y": 0.11,
+                  "z": -3.130559829284787
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 21,
+        "backpasses": 0,
+        "keeperControls": 1,
+        "saves": 4,
+        "longShots": 1,
+        "turnovers": 9,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 7,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 19,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 12,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 27,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 1,
+        "longShots": 1,
+        "turnovers": 9,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 8,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 24,
+        "backpasses": 2,
+        "keeperControls": 2,
+        "saves": 3,
+        "longShots": 0,
+        "turnovers": 11,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 8,
+        "passes": 23,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 3,
+        "longShots": 3,
+        "turnovers": 14,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 9,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 22,
+        "backpasses": 6,
+        "keeperControls": 6,
+        "saves": 1,
+        "longShots": 0,
+        "turnovers": 9,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 28,
+        "backpasses": 2,
+        "keeperControls": 2,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 8,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 10,
+      "before": {
+        "goals": 3,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 6,
+        "passes": 28,
+        "backpasses": 2,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 7,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 42.141666666666666,
+            "actor": "Mattéo Guendouzi",
+            "last": [
+              {
+                "type": "possession",
+                "at": 39.34166666666667,
+                "matchTime": 33.9,
+                "round": 1,
+                "team": 1,
+                "actor": "Mattéo Guendouzi",
+                "actorIndex": 8
+              },
+              {
+                "type": "pass",
+                "at": 40.03333333333333,
+                "matchTime": 34.59166666666667,
+                "round": 1,
+                "team": 1,
+                "actor": "Mattéo Guendouzi",
+                "actorIndex": 8,
+                "receiver": "Ederson",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": -6.212984998164646,
+                  "y": 0.11,
+                  "z": -3.587881136430164
+                },
+                "pattern": "wall",
+                "bankPoint": {
+                  "x": -9.217233539975119,
+                  "z": -8.89
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 31,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 1,
+        "longShots": 1,
+        "turnovers": 7,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 11,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 21,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 5,
+        "longShots": 4,
+        "turnovers": 13,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 3,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 7,
+        "passes": 31,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 3,
+        "longShots": 4,
+        "turnovers": 13,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 12,
+      "before": {
+        "goals": 4,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 6,
+        "passes": 27,
+        "backpasses": 4,
+        "keeperControls": 3,
+        "saves": 0,
+        "longShots": 0,
+        "turnovers": 6,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 59.666666666666664,
+            "actor": "Salih Özcan",
+            "last": [
+              {
+                "type": "possession",
+                "at": 57.074999999999996,
+                "matchTime": 41.49166666666667,
+                "round": 1,
+                "team": 0,
+                "actor": "Salih Özcan",
+                "actorIndex": 3
+              },
+              {
+                "type": "pass",
+                "at": 58.525,
+                "matchTime": 42.94166666666666,
+                "round": 1,
+                "team": 0,
+                "actor": "Salih Özcan",
+                "actorIndex": 3,
+                "receiver": "Alexander Nübel",
+                "receiverIndex": 0,
+                "backpass": true,
+                "point": {
+                  "x": 2.600817333952497,
+                  "y": 0.11,
+                  "z": 0.02681425985645039
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 28,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 3,
+        "turnovers": 13,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 13,
+      "before": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 31,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 0,
+        "turnovers": 12,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 28,
+        "backpasses": 2,
+        "keeperControls": 1,
+        "saves": 3,
+        "longShots": 1,
+        "turnovers": 12,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 14,
+      "before": {
+        "goals": 1,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 5,
+        "passes": 24,
+        "backpasses": 2,
+        "keeperControls": 1,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 11,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 43.80833333333333,
+            "actor": "Leandro Trossard",
+            "last": [
+              {
+                "type": "possession",
+                "at": 41.25833333333333,
+                "matchTime": 41.25833333333333,
+                "round": 1,
+                "team": 0,
+                "actor": "Leandro Trossard",
+                "actorIndex": 4
+              },
+              {
+                "type": "pass",
+                "at": 42.09166666666667,
+                "matchTime": 42.09166666666667,
+                "round": 1,
+                "team": 0,
+                "actor": "Leandro Trossard",
+                "actorIndex": 4,
+                "receiver": "Alexander Nübel",
+                "receiverIndex": 0,
+                "backpass": true,
+                "point": {
+                  "x": -0.9190447257478439,
+                  "y": 0.11,
+                  "z": -6.075064251256374
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 30,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 13,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 15,
+      "before": {
+        "goals": 1,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 4,
+        "passes": 21,
+        "backpasses": 4,
+        "keeperControls": 2,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 10,
+        "loose": 4,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 4.666666666666667,
+            "actor": "Mattéo Guendouzi",
+            "last": [
+              {
+                "type": "possession",
+                "at": 1.5416666666666667,
+                "matchTime": 1.5416666666666667,
+                "round": 1,
+                "team": 1,
+                "actor": "Mattéo Guendouzi",
+                "actorIndex": 8
+              },
+              {
+                "type": "pass",
+                "at": 3.1,
+                "matchTime": 3.1,
+                "round": 1,
+                "team": 1,
+                "actor": "Mattéo Guendouzi",
+                "actorIndex": 8,
+                "receiver": "Ederson",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": 1.5055267125340868,
+                  "y": 0.11,
+                  "z": -0.4852668800804643
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 3,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 28,
+        "backpasses": 2,
+        "keeperControls": 0,
+        "saves": 1,
+        "longShots": 4,
+        "turnovers": 10,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "1895",
+        "436"
+      ],
+      "seed": 16,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 19,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 9,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 26,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 0,
+        "longShots": 1,
+        "turnovers": 7,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 1,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 1,
+        "passes": 33,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 0,
+        "longShots": 0,
+        "turnovers": 14,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 23,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 12,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 2,
+      "before": {
+        "goals": 2,
+        "own": 2,
+        "backpassOwn": 2,
+        "shots": 6,
+        "passes": 21,
+        "backpasses": 4,
+        "keeperControls": 1,
+        "saves": 4,
+        "longShots": 3,
+        "turnovers": 9,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 20.425,
+            "actor": "Pau Cubarsí",
+            "last": [
+              {
+                "type": "possession",
+                "at": 18.333333333333332,
+                "matchTime": 18.333333333333332,
+                "round": 1,
+                "team": 0,
+                "actor": "Pau Cubarsí",
+                "actorIndex": 1
+              },
+              {
+                "type": "pass",
+                "at": 19.375,
+                "matchTime": 19.375,
+                "round": 1,
+                "team": 0,
+                "actor": "Pau Cubarsí",
+                "actorIndex": 1,
+                "receiver": "Joan García",
+                "receiverIndex": 0,
+                "backpass": true,
+                "point": {
+                  "x": 4.674815195483744,
+                  "y": 0.11,
+                  "z": 2.360783443595791
+                },
+                "pattern": "ground"
+              }
+            ]
+          },
+          {
+            "at": 28.316666666666666,
+            "actor": "Rodri",
+            "last": [
+              {
+                "type": "possession",
+                "at": 26.416666666666668,
+                "matchTime": 21.008333333333333,
+                "round": 1,
+                "team": 0,
+                "actor": "Rodri",
+                "actorIndex": 3
+              },
+              {
+                "type": "pass",
+                "at": 27.258333333333333,
+                "matchTime": 21.85,
+                "round": 1,
+                "team": 0,
+                "actor": "Rodri",
+                "actorIndex": 3,
+                "receiver": "Joan García",
+                "receiverIndex": 0,
+                "backpass": true,
+                "point": {
+                  "x": 4.088962749615617,
+                  "y": 0.11,
+                  "z": -1.0642945002019326
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 22,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 3,
+        "longShots": 2,
+        "turnovers": 12,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 3,
+      "before": {
+        "goals": 3,
+        "own": 2,
+        "backpassOwn": 2,
+        "shots": 3,
+        "passes": 32,
+        "backpasses": 5,
+        "keeperControls": 2,
+        "saves": 1,
+        "longShots": 0,
+        "turnovers": 18,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 26.633333333333333,
+            "actor": "Gerard Martín",
+            "last": [
+              {
+                "type": "possession",
+                "at": 24.875,
+                "matchTime": 24.875,
+                "round": 1,
+                "team": 0,
+                "actor": "Gerard Martín",
+                "actorIndex": 2
+              },
+              {
+                "type": "pass",
+                "at": 25.675,
+                "matchTime": 25.675,
+                "round": 1,
+                "team": 0,
+                "actor": "Gerard Martín",
+                "actorIndex": 2,
+                "receiver": "Joan García",
+                "receiverIndex": 0,
+                "backpass": true,
+                "point": {
+                  "x": 4.74924356963796,
+                  "y": 0.11,
+                  "z": -3.6331140221227964
+                },
+                "pattern": "ground"
+              }
+            ]
+          },
+          {
+            "at": 65.05833333333334,
+            "actor": "Bernardo Silva",
+            "last": [
+              {
+                "type": "possession",
+                "at": 63.083333333333336,
+                "matchTime": 52.475,
+                "round": 1,
+                "team": 1,
+                "actor": "Bernardo Silva",
+                "actorIndex": 8
+              },
+              {
+                "type": "pass",
+                "at": 63.85,
+                "matchTime": 53.24166666666667,
+                "round": 1,
+                "team": 1,
+                "actor": "Bernardo Silva",
+                "actorIndex": 8,
+                "receiver": "Andriy Lunin",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": -1.3156887697061077,
+                  "y": 0.11,
+                  "z": -1.9425516351502126
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 27,
+        "backpasses": 2,
+        "keeperControls": 2,
+        "saves": 3,
+        "longShots": 3,
+        "turnovers": 11,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 4,
+      "before": {
+        "goals": 1,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 2,
+        "passes": 24,
+        "backpasses": 2,
+        "keeperControls": 1,
+        "saves": 1,
+        "longShots": 0,
+        "turnovers": 12,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 15.233333333333333,
+            "actor": "Vinícius Júnior",
+            "last": [
+              {
+                "type": "possession",
+                "at": 12.883333333333333,
+                "matchTime": 12.883333333333333,
+                "round": 1,
+                "team": 1,
+                "actor": "Vinícius Júnior",
+                "actorIndex": 9
+              },
+              {
+                "type": "pass",
+                "at": 13.833333333333334,
+                "matchTime": 13.833333333333334,
+                "round": 1,
+                "team": 1,
+                "actor": "Vinícius Júnior",
+                "actorIndex": 9,
+                "receiver": "Andriy Lunin",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": 0.2056342394079685,
+                  "y": 0.11,
+                  "z": 3.4140882277016638
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 28,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 9,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 5,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 8,
+        "passes": 20,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 4,
+        "longShots": 2,
+        "turnovers": 11,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 27,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 1,
+        "longShots": 4,
+        "turnovers": 7,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 6,
+      "before": {
+        "goals": 1,
+        "own": 1,
+        "backpassOwn": 0,
+        "shots": 7,
+        "passes": 22,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 4,
+        "longShots": 4,
+        "turnovers": 12,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 22.991666666666667,
+            "actor": "Anthony Gordon",
+            "last": [
+              {
+                "type": "possession",
+                "at": 19.6,
+                "matchTime": 19.6,
+                "round": 1,
+                "team": 0,
+                "actor": "Anthony Gordon",
+                "actorIndex": 4
+              },
+              {
+                "type": "pass",
+                "at": 21.15,
+                "matchTime": 21.15,
+                "round": 1,
+                "team": 0,
+                "actor": "Anthony Gordon",
+                "actorIndex": 4,
+                "receiver": "Pau Cubarsí",
+                "receiverIndex": 1,
+                "backpass": false,
+                "point": {
+                  "x": -1.3379109203727755,
+                  "y": 0.11,
+                  "z": -0.052303995337068844
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 22,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 2,
+        "turnovers": 7,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 7,
+      "before": {
+        "goals": 3,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 7,
+        "passes": 21,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 1,
+        "longShots": 3,
+        "turnovers": 7,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 61.708333333333336,
+            "actor": "Dean Huijsen",
+            "last": [
+              {
+                "type": "possession",
+                "at": 59.53333333333333,
+                "matchTime": 48.35,
+                "round": 1,
+                "team": 1,
+                "actor": "Dean Huijsen",
+                "actorIndex": 7
+              },
+              {
+                "type": "pass",
+                "at": 60.583333333333336,
+                "matchTime": 49.4,
+                "round": 1,
+                "team": 1,
+                "actor": "Dean Huijsen",
+                "actorIndex": 7,
+                "receiver": "Andriy Lunin",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": -6.463707745227821,
+                  "y": 0.11,
+                  "z": 5.428926076366676
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 3,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 25,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 1,
+        "longShots": 1,
+        "turnovers": 10,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 8,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 7,
+        "passes": 21,
+        "backpasses": 2,
+        "keeperControls": 2,
+        "saves": 3,
+        "longShots": 3,
+        "turnovers": 10,
+        "loose": 5,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 8,
+        "passes": 20,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 5,
+        "longShots": 3,
+        "turnovers": 12,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 9,
+      "before": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 28,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 5,
+        "turnovers": 18,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 3,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 26,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 0,
+        "turnovers": 13,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 10,
+      "before": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 27,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 2,
+        "turnovers": 15,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 26,
+        "backpasses": 0,
+        "keeperControls": 1,
+        "saves": 3,
+        "longShots": 5,
+        "turnovers": 9,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 11,
+      "before": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 24,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 13,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 3,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 28,
+        "backpasses": 2,
+        "keeperControls": 2,
+        "saves": 2,
+        "longShots": 0,
+        "turnovers": 11,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 12,
+      "before": {
+        "goals": 1,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 2,
+        "passes": 26,
+        "backpasses": 4,
+        "keeperControls": 3,
+        "saves": 1,
+        "longShots": 1,
+        "turnovers": 10,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 3.716666666666667,
+            "actor": "Bernardo Silva",
+            "last": [
+              {
+                "type": "possession",
+                "at": 1.425,
+                "matchTime": 1.425,
+                "round": 1,
+                "team": 1,
+                "actor": "Bernardo Silva",
+                "actorIndex": 8
+              },
+              {
+                "type": "pass",
+                "at": 2.225,
+                "matchTime": 2.225,
+                "round": 1,
+                "team": 1,
+                "actor": "Bernardo Silva",
+                "actorIndex": 8,
+                "receiver": "Andriy Lunin",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": 0.8747777709896508,
+                  "y": 0.11,
+                  "z": -0.17837373768082343
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 23,
+        "backpasses": 3,
+        "keeperControls": 3,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 6,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 13,
+      "before": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 28,
+        "backpasses": 2,
+        "keeperControls": 0,
+        "saves": 3,
+        "longShots": 0,
+        "turnovers": 17,
+        "loose": 4,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 2,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 36,
+        "backpasses": 3,
+        "keeperControls": 1,
+        "saves": 0,
+        "longShots": 0,
+        "turnovers": 12,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 14,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 2,
+        "passes": 28,
+        "backpasses": 5,
+        "keeperControls": 3,
+        "saves": 1,
+        "longShots": 1,
+        "turnovers": 11,
+        "loose": 2,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 3,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 6,
+        "passes": 36,
+        "backpasses": 1,
+        "keeperControls": 1,
+        "saves": 2,
+        "longShots": 3,
+        "turnovers": 10,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 15,
+      "before": {
+        "goals": 1,
+        "own": 1,
+        "backpassOwn": 1,
+        "shots": 3,
+        "passes": 25,
+        "backpasses": 3,
+        "keeperControls": 2,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 10,
+        "loose": 3,
+        "gameDuration": 60,
+        "ownEvidence": [
+          {
+            "at": 4.766666666666667,
+            "actor": "Bernardo Silva",
+            "last": [
+              {
+                "type": "possession",
+                "at": 1.5416666666666667,
+                "matchTime": 1.5416666666666667,
+                "round": 1,
+                "team": 1,
+                "actor": "Bernardo Silva",
+                "actorIndex": 8
+              },
+              {
+                "type": "pass",
+                "at": 3.175,
+                "matchTime": 3.175,
+                "round": 1,
+                "team": 1,
+                "actor": "Bernardo Silva",
+                "actorIndex": 8,
+                "receiver": "Andriy Lunin",
+                "receiverIndex": 5,
+                "backpass": true,
+                "point": {
+                  "x": 1.6541886826968668,
+                  "y": 0.11,
+                  "z": -0.5654461411844101
+                },
+                "pattern": "ground"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 3,
+        "passes": 26,
+        "backpasses": 3,
+        "keeperControls": 1,
+        "saves": 1,
+        "longShots": 2,
+        "turnovers": 14,
+        "loose": 0,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    },
+    {
+      "teams": [
+        "83",
+        "86"
+      ],
+      "seed": 16,
+      "before": {
+        "goals": 1,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 4,
+        "passes": 28,
+        "backpasses": 0,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 1,
+        "turnovers": 13,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      },
+      "after": {
+        "goals": 0,
+        "own": 0,
+        "backpassOwn": 0,
+        "shots": 5,
+        "passes": 28,
+        "backpasses": 1,
+        "keeperControls": 0,
+        "saves": 2,
+        "longShots": 2,
+        "turnovers": 15,
+        "loose": 1,
+        "gameDuration": 60,
+        "ownEvidence": []
+      }
+    }
+  ]
+}

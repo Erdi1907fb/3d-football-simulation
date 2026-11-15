@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "passes": 187,
+  "saves": 57,
+  "goals": 32,
+  "draws": 4,
+  "cameraFrames": 5068,
+  "coverage": "5v5/3-per-side, free outfield positions + mandatory GK, centre-drop variation, actual passes/saves/scorer slots, equal local crowd, contiguous terraces, goal-specific cheers, oblique safe and continuous tracking"
+}

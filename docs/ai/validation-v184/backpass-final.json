@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "regressionSeeds": [
+    6,
+    10,
+    12,
+    14,
+    15
+  ],
+  "own": 0,
+  "backpasses": 4,
+  "feet": 3,
+  "shots": 24,
+  "observedInterception": true,
+  "groundDeceleration": true,
+  "deterministic": true
+}

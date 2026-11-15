@@ -1,0 +1,101 @@
+{
+  "pass": true,
+  "physicalDevice": false,
+  "errors": [],
+  "cases": [
+    {
+      "n": 4,
+      "orient": "landscape",
+      "lang": "tr",
+      "photo": "4teams-landscape-tr-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 4,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "4teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "lang": "tr",
+      "photo": "4teams-portrait-tr-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 4,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "4teams-portrait-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 6,
+      "orient": "landscape",
+      "lang": "en",
+      "photo": "6teams-landscape-en-cover.jpg",
+      "fit": true
+    },
+    {
+      "n": 6,
+      "orient": "portrait",
+      "lang": "en",
+      "photo": "6teams-portrait-en-cover.jpg",
+      "fit": true
+    }
+  ],
+  "sources": [
+    {
+      "src": "assets/logos/man-utd.png",
+      "width": 700,
+      "height": 700
+    },
+    {
+      "src": "assets/logos/man-city.png",
+      "width": 700,
+      "height": 700
+    },
+    {
+      "src": "assets/logos/liverpool.png",
+      "width": 700,
+      "height": 700
+    },
+    {
+      "src": "assets/logos/everton.png",
+      "width": 500,
+      "height": 500
+    },
+    {
+      "src": "assets/logos/tottenham.png",
+      "width": 500,
+      "height": 500
+    },
+    {
+      "src": "assets/logos/chelsea.png",
+      "width": 500,
+      "height": 500
+    },
+    {
+      "src": "assets/competitions/en.1.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/competitions/ucl.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/competitions/uel.png",
+      "width": 1500,
+      "height": 1500
+    },
+    {
+      "src": "assets/competitions/uecl.png",
+      "width": 1500,
+      "height": 1500
+    }
+  ]
+}

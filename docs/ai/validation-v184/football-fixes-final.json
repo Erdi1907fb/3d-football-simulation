@@ -1,0 +1,219 @@
+{
+  "pass": true,
+  "openGoalSeeds": 120,
+  "goals": 35,
+  "returned": 2505,
+  "keeperControl": true,
+  "grass": {
+    "speed": 3.2133573376680378,
+    "distance": 10.807163070653427
+  },
+  "legacy": {
+    "speed": 4.951548210181898,
+    "distance": 12.641033347306418
+  },
+  "eliminationMatches": 25,
+  "extended": 24,
+  "samples": [
+    {
+      "n": 3,
+      "seconds": 60,
+      "seed": 1,
+      "game": 72.44166666666666,
+      "winner": 2,
+      "goals": 4
+    },
+    {
+      "n": 3,
+      "seconds": 60,
+      "seed": 7,
+      "game": 127.50833333333333,
+      "winner": 0,
+      "goals": 4
+    },
+    {
+      "n": 3,
+      "seconds": 60,
+      "seed": 42,
+      "game": 191.29166666666666,
+      "winner": 1,
+      "goals": 6
+    },
+    {
+      "n": 3,
+      "seconds": 90,
+      "seed": 1,
+      "game": 72.44166666666666,
+      "winner": 2,
+      "goals": 4
+    },
+    {
+      "n": 3,
+      "seconds": 90,
+      "seed": 7,
+      "game": 127.50833333333333,
+      "winner": 0,
+      "goals": 4
+    },
+    {
+      "n": 3,
+      "seconds": 90,
+      "seed": 42,
+      "game": 111.6,
+      "winner": 1,
+      "goals": 9
+    },
+    {
+      "n": 4,
+      "seconds": 60,
+      "seed": 1,
+      "game": 93.21666666666667,
+      "winner": 1,
+      "goals": 7
+    },
+    {
+      "n": 4,
+      "seconds": 60,
+      "seed": 7,
+      "game": 239.68333333333334,
+      "winner": 3,
+      "goals": 5
+    },
+    {
+      "n": 4,
+      "seconds": 60,
+      "seed": 42,
+      "game": 162.30833333333334,
+      "winner": 0,
+      "goals": 4
+    },
+    {
+      "n": 4,
+      "seconds": 90,
+      "seed": 1,
+      "game": 93.21666666666667,
+      "winner": 1,
+      "goals": 7
+    },
+    {
+      "n": 4,
+      "seconds": 90,
+      "seed": 7,
+      "game": 239.68333333333334,
+      "winner": 3,
+      "goals": 5
+    },
+    {
+      "n": 4,
+      "seconds": 90,
+      "seed": 42,
+      "game": 162.30833333333334,
+      "winner": 0,
+      "goals": 4
+    },
+    {
+      "n": 5,
+      "seconds": 60,
+      "seed": 1,
+      "game": 282.75,
+      "winner": 0,
+      "goals": 7
+    },
+    {
+      "n": 5,
+      "seconds": 60,
+      "seed": 7,
+      "game": 279.7416666666667,
+      "winner": 1,
+      "goals": 6
+    },
+    {
+      "n": 5,
+      "seconds": 60,
+      "seed": 42,
+      "game": 109.49166666666666,
+      "winner": 2,
+      "goals": 5
+    },
+    {
+      "n": 5,
+      "seconds": 90,
+      "seed": 1,
+      "game": 282.75,
+      "winner": 0,
+      "goals": 7
+    },
+    {
+      "n": 5,
+      "seconds": 90,
+      "seed": 7,
+      "game": 279.7416666666667,
+      "winner": 1,
+      "goals": 6
+    },
+    {
+      "n": 5,
+      "seconds": 90,
+      "seed": 42,
+      "game": 368.7833333333333,
+      "winner": 2,
+      "goals": 6
+    },
+    {
+      "n": 5,
+      "seconds": 90,
+      "seed": 1015,
+      "game": 174.69166666666666,
+      "winner": 2,
+      "goals": 8
+    },
+    {
+      "n": 6,
+      "seconds": 60,
+      "seed": 1,
+      "game": 113.45833333333333,
+      "winner": 2,
+      "goals": 8
+    },
+    {
+      "n": 6,
+      "seconds": 60,
+      "seed": 7,
+      "game": 131.39166666666665,
+      "winner": 0,
+      "goals": 6
+    },
+    {
+      "n": 6,
+      "seconds": 60,
+      "seed": 42,
+      "game": 117.325,
+      "winner": 0,
+      "goals": 6
+    },
+    {
+      "n": 6,
+      "seconds": 90,
+      "seed": 1,
+      "game": 118.73333333333333,
+      "winner": 3,
+      "goals": 9
+    },
+    {
+      "n": 6,
+      "seconds": 90,
+      "seed": 7,
+      "game": 200.475,
+      "winner": 5,
+      "goals": 7
+    },
+    {
+      "n": 6,
+      "seconds": 90,
+      "seed": 42,
+      "game": 117.325,
+      "winner": 0,
+      "goals": 6
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "physicalDevice": false,
+  "errors": [],
+  "cases": [
+    {
+      "goalSizes": [
+        4.4,
+        5,
+        6
+      ],
+      "fieldVisibility": true
+    }
+  ],
+  "sources": []
+}

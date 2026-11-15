@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V183** · 2026-11-14 UTC · Codex (iPhone ortak indirme/disk/kurtarma)
+> Son güncelleme: **V184** · 2026-11-15 UTC · Codex (kapak kimliği, üst skorboard ve 5v5 geri pasları)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,19 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V183** (`VERSION`; iPhone disk/HTTP indirme ve kurtarma) |
-| Sonraki geliştirme hedefi | **V184** — gerçek cihaz T-325/T-317 ve T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
+| Kaynak sürümü | **V184** (`VERSION`; kapak/üst yayın/kale seçimi/5v5 kontrol) |
+| Sonraki geliştirme hedefi | **V185** — gerçek cihaz T-325/T-317 ve T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build179 / filesMatch=true** (2026-11-14); V183 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v183.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 183 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V184 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v184.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 184 |
+
+## V184 — kapak/şablon, üst normal yayın ve küçük saha güvenliği
+
+- Kapak ve ilk video kartı aynı kaynaktan: dinamik2–6/8takım, ayrı güvenli metin sütunu, seçilen yayın şablonunun gerçek HD logosu ve TR/EN adı. Lig alt bandında UCL/UEL/UECL orijinal logoları. Kapak/video açılışındaki sıra yazıları opsiyonel, varsayılanHayır; Evet ise kullanıcı tarafından seçilmiş sıralar gösterilir. Puan tablosu işaretleri ayrı korunur. Kupa ayrı eleme dili kullanır; otomatik Avrupa katılımı üretmez. Dikey kimlik bandı x56–884, y252–1510.
+- 11v11 kupa/lig aynı normal Shared.render/Scene.overlay yoluna döndü; skorboard üstte. 5v5/penaltı alt güvenli HUD korunur. Turnuvada kale seçimi4.4/5/6m; kaydedilen değer fizik ve sahneye birlikte taşınır, standart5m korunur.
+- Ortak arena: kaleciye güvenli yan geri pas, ulaşılabilirlik/alan filtresi, duvar pası olmadan gerçek gözlenen topa karşılama. Kendi oyuncusuna destek açısı kaleci kurtarışı değildir. Yeni sahiplik eski destek yönünü temizler, kontrollü dokunuş daha az topu açar, kuru zemin1.9m/s² temel yuvarlanma direnci kullanır. Normal11v11 fizik/tahmin ve gerçek gol koşulu değişmez.
+- Son kısmi20Hz aralıkta kurtarış/alış olsa da son tekrar karesi yazılır. Elenen oyuncuların active bayrağı saha küçülmeden önce takım kaydıyla eşitlenir. İki taraf ve çok kale, santra/süre/eleme kuralları korunur; T-312 kalan eski işler bu değişiklikle tamamlanmış sayılmaz.
+- Karşılaştırma:32eşleştirilmiş60sn5v5 (64simülasyon), V183'te13geri pas kaynaklı kendi kalesine gol → yeni örneklerde0; şut149→165, pas782→842, loose-ball64→18. Bu örneklemde iyileşmedir; bütün rastgele maçlarda sıfır kendi golü veya gerçek tracking kalibrasyonu iddiası değildir. Kalıcı kanıt validation-v184 ve en üst HANDOFF.
 
 ## V183 — iPhone indirme
 

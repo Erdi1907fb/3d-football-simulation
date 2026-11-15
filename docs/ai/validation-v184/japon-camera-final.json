@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "triples": 10,
+  "complete": 4,
+  "frames": 4000,
+  "coverage": "monotonic arena areas/goal sizes, matching visible+physical bounds, 10/9/12/15/18 actors, per-role shot identities, critical action and goal frame inside Shorts/Reels safe region, all three cameras, deterministic seeking, requested legends"
+}
