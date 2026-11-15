@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 56 test; `--quick` `engine-test.cjs` hariç 55 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
+| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 57 test; `--quick` `engine-test.cjs` hariç 56 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -298,3 +298,8 @@ dosyalardır.
 - Kadraj doğrulaması yalnız state.players sayısı değildir: gerçek actor head projeksiyonları ve misafirlerin görünürlüğü/kadrajı da test edilir. V184 özgün GS–FB/seed184 karesi eski sınıfla yeniden üretildi; open-pitch-canopy çatı kamerayı kapatıyordu.
 - showSeasonOnCover varsayılanfalse ve series.enabled koşullu; kullanıcı seçerse Sezon N / Season N kapak ve aynı ilk video karesinde, mevcut sezon panolarından bağımsız.
 - T-328 iPhone13 iOS26.6.2 Safari Ana Ekrana Ekle %85–86 reset ayrı sonraki önceliktir; V185 bu mobil sorunu çözdü sayılmaz.
+
+## 28. V186 — mobil export bellek ömrü
+- iOS native encoder2snGOP; flush+pending drain+close sonra yenisi. Globaltimestamps/mux/audio korunur, yeni blok keyframe. Queue1; masaüstü high/quality tekencoder/queue2. Yazılım readback iOS tekRGBA uçuşu.
+- mobileExport1080p60hedeflidir; çözünürlük düşürmez.512forma/low yakıncrowd/gölgesiz. Tümkoltuklar ve HDlogolar korunur. PK/FKhazırvideo preloadnone.
+- tests/ios-encoder.cjs ve browser-ios-encoder.cjs. ChromiumiPhoneUA fizikselWebKitdeğildir. T-328cihazresetinin ortadankalkması doğrulanmadan doneyazılmaz; T-325/T-317açık.

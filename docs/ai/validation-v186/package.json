@@ -1,0 +1,12 @@
+{
+  "build": 186,
+  "fromBuild": 179,
+  "files": 51,
+  "bytes": 1112029,
+  "sha256": "1245db79cb4d6898fd40f6435ec9e0d38fbfb6002725f6fa7640c0924622366e",
+  "buildCheck": {
+    "build": 186,
+    "filesMatch": true,
+    "mismatches": []
+  }
+}

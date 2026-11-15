@@ -16,7 +16,7 @@ let m=mk(['GK','CB','CB','CB','LWB','RWB','CM','CM','AM','ST','ST']),t=C.targets
 m=mk(['GK','LB','CB','CB','RB','DM','CM','CM','LW','ST','RW']);t=C.targets(m.pl,{x:5,z:0},0,1,m.prof,[{press:.5},{press:.5}],12,7,{time:1});assert(t[2].z<0&&t[3].z>0,'back four CBs either side');
 // V133 export quality: no full-frame dark dip between camera cuts; offline encoder rate control; key frame on cuts.
 {const fs=require('fs'),R=n=>fs.readFileSync(__dirname+'/../assets/'+n,'utf8');assert(!R('broadcast.js').includes('rgba(8,22,31,${state.transition'),'no dark transition veil');
- const v=R('video-core.js');assert(v.includes("for(const latencyMode of['quality','realtime'])"),'quality latency first');assert(v.includes('job.isCut?.('),'key frame on camera cut');
+ const v=R('video-core.js');assert(v.includes("cfg.ios?['realtime','quality']:['quality','realtime']"),'desktop quality first; iOS bounded realtime first');assert(v.includes('job.isCut?.('),'key frame on camera cut');
  for(const f of['app.js','penalty-ui.js','freekick-ui.js'])assert(R(f).includes('__cut'),f+' reports camera cuts');}
 console.log(JSON.stringify({PASS:true,postfx:Object.keys(PF).length,snowPrints:30,rewindClears:true,rainSplash:true,backThree:true,backFour:true}));
 

@@ -1,0 +1,40 @@
+{
+  "pass": true,
+  "physicalIphone": false,
+  "excerptSeconds": 0.2,
+  "cases": [
+    {
+      "mode": "penalty",
+      "trace": {
+        "frames": 12,
+        "released": 1,
+        "encoderBlocks": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    },
+    {
+      "mode": "freekick",
+      "trace": {
+        "frames": 12,
+        "released": 1,
+        "encoderBlocks": 1
+      },
+      "h264": true,
+      "aac": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "http": true,
+      "noNavigation": true,
+      "released": true
+    }
+  ],
+  "errors": []
+}

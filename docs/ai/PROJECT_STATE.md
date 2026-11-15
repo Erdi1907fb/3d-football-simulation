@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V185** · 2026-11-15 UTC · Codex (normal kamera, tam kadro kutlaması, sezon kapağı)
+> Son güncelleme: **V186** · 2026-11-15 UTC · Codex (iPhone hazırlama bellek sınırları; V185 kamera/kutlama korunur)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,16 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V185** (`VERSION`; stadyum/kamera, tam kadro seremoni, sezon etiketi) |
-| Sonraki geliştirme hedefi | **V186** — öncelik T-328 iPhone PWA hazırlama belleği; T-325/T-317 ve T-312 ayrı açık |
+| Kaynak sürümü | **V186** (`VERSION`; stadyum/kamera, tam kadro seremoni, sezon etiketi) |
+| Sonraki geliştirme hedefi | **V187** — T-328/T-325 fiziksel iPhone doğrulaması; T-325/T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V185 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v185.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 185 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V186 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v186.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 186 |
+
+## V186 — iPhone hazırlama belleği
+- iOS native kodlayıcı2snblok,tekcanlıencoder/queue1; aynıMP4/ses/globaltimestamp. Desktop yol korunur. Yazılımda RGBA readback ardışık.
+- mobileExport profili bütünmodlarda,512sabitforma,lowyakıncrowd,gölgesiz;1080p60hedef ve tümkoltuklar korunur. PK/FK hazırvideo preloadnone.
+-57/57regresyonPASS. Gerçek Chromium iki1080p60/AAC4.1sn örnek3encoder/246frame tamdecodehatasız. AltıUIakışında kısaMP4/HTTPindirme/sayfada kalma/releasePASS. FizikselSafari veya tamuzunvideo testi değildir. T-328kısmi, T-325cihazdoğrulaması açık.
 
 ## V185 — güvenli normal kamera ve tam kadro seremoni
 

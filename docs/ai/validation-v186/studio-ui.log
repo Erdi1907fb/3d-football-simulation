@@ -1,0 +1,17 @@
+Scripts "build/three.js" and "build/three.min.js" are deprecated with r150+, and will be removed with r160. Please use ES Modules or alternatives: https://threejs.org/docs/index.html#manual/en/introduction/Installation
+export penalty
+progress penalty {"trace":{"frames":2,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 8%",""]}
+progress penalty {"trace":{"frames":4,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 25%",""]}
+progress penalty {"trace":{"frames":6,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 42%",""]}
+progress penalty {"trace":{"frames":8,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 58%",""]}
+progress penalty {"trace":{"frames":10,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 75%",""]}
+progress penalty {"trace":{"frames":12,"released":1,"encoderBlocks":1},"status":["Video hazırlanıyor · 0%",""]}
+PASS penalty
+export freekick
+progress freekick {"trace":{"frames":3,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 17%",""]}
+progress freekick {"trace":{"frames":5,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 33%",""]}
+progress freekick {"trace":{"frames":7,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 50%",""]}
+progress freekick {"trace":{"frames":10,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 75%",""]}
+progress freekick {"trace":{"frames":12,"released":0,"encoderBlocks":1},"status":["Video hazırlanıyor · 92%",""]}
+PASS freekick
+{"pass":true,"modes":2,"excerptsOnly":true,"physicalIphone":false}

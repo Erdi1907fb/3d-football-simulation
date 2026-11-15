@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V186 · 2026-11-15
+- iPhone native kodlayıcı2snbloklarla referans belleğini bırakır; tek canlı encoder/queue1, aynıMP4 ve globalzaman. Desktop yol korunur.
+- Ortak mobileExport GPUprofili, sabit512forma baskısı ve ertelenmiş PK/FK hazırvideo decoder;1080p60 ve HDlogolar korunur. YazılımRGBuffer okumaları iOS üzerinde ardışık.
+-57regresyon, altı kısaUIindirme akışı ve üç bloklu iki gerçek1080p60/AAC MP4 tam çözümleme geçti; fizikseliPhone/uzunvideo doğrulaması hâlâ açık.
+
 ## V185 · 2026-11-15
 - 11v11 turnuva normal maç kamerasıyla aynı güvenli iç stadyum kadrajını/smoothing'i kullanır; gri çatı engeli kaldırıldı.
 - Lig kendi kimliği ve taraftarıyla, kupa50/50 final tribünüyle; madalyalar ve yalnız şampiyonun tam kadro/teknik ekipli24snkutlaması. Paylaşılan madalya geometrisi, yeniden kullanılan awards dünyası, elle taşınıp baş üstüne kaldırılan kupa.

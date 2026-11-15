@@ -269,3 +269,6 @@ Safari async OPFS yazıcısı yoksa Worker SyncAccessHandle kullanılır; disk y
 
 ## D-049 · 2026-11-15 · V185 — kamera tek kaynaktır, kutlama gerçek kadrodan gelir
 Normal11v11 Scene.update kamerası yeniden arena fit yapılmadan korunur. Seremoni aynı stadyum iç sınırını kullanır; gizli top hedef değildir. Lig tek şampiyon taraftarı, kupa50/50; mevcut benç/koç ve iki genel teknik görevli gerçek oyuncu kimliği uydurulmadan kutlamaya katılır. Animasyon kök görünürlüğü instanced forma/ayakkabıya aktarılır. Sezon kapak metni ayrı varsayılan kapalı seçenektir. Fizik/skor değişmez. V185 mobil hazırlama reseti çözümü değildir.
+
+## D-050 · 2026-11-15 · V186 — çıktı küçültmek yerine bellek ömrünü sınırla
+İndirmenin OPFS/HTTP olması render belleğini sınırlandırmaz. iOS için kodlayıcı2snGOP aralarında kapatılır; yeni kaynak açmadan önce paketler boşaltılır. Globaltimestamp ve aynı mux/audio korunur; fizik/analiz tekrar üretilmez. 1080p60ölçü düşürülmez. MobileExport yalnız GPUayrıntısı ve forma doku churn’ünü azaltır, tribün doluluğu ve HDlogolar değişmez. Gerçekcihaz logu olmadığından resetin kesinnedeni veya çözüldüğü iddiaedilmez.

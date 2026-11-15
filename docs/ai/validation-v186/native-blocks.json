@@ -1,0 +1,66 @@
+{
+  "pass": true,
+  "physicalIphone": false,
+  "cases": [
+    {
+      "orientation": "portrait",
+      "config": {
+        "codec": "avc1.42E02A",
+        "width": 1080,
+        "height": 1920,
+        "bitrate": 16000000,
+        "framerate": 60,
+        "latencyMode": "realtime",
+        "bitrateMode": "variable",
+        "hardwareAcceleration": "no-preference",
+        "avc": {
+          "format": "avc"
+        },
+        "audioMode": "native"
+      },
+      "frames": 246,
+      "encoderBlocks": 3,
+      "queue": 0,
+      "video": {
+        "width": 1080,
+        "height": 1920,
+        "rate": "60/1"
+      },
+      "audio": {
+        "codec": "aac",
+        "duration": "4.117333"
+      },
+      "decodeErrors": 0
+    },
+    {
+      "orientation": "landscape",
+      "config": {
+        "codec": "avc1.42E02A",
+        "width": 1920,
+        "height": 1080,
+        "bitrate": 16000000,
+        "framerate": 60,
+        "latencyMode": "realtime",
+        "bitrateMode": "variable",
+        "hardwareAcceleration": "no-preference",
+        "avc": {
+          "format": "avc"
+        },
+        "audioMode": "native"
+      },
+      "frames": 246,
+      "encoderBlocks": 3,
+      "queue": 0,
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "rate": "60/1"
+      },
+      "audio": {
+        "codec": "aac",
+        "duration": "4.117333"
+      },
+      "decodeErrors": 0
+    }
+  ]
+}
