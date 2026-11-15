@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 55 test; `--quick` `engine-test.cjs` hariç 54 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
+| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 56 test; `--quick` `engine-test.cjs` hariç 55 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -289,3 +289,12 @@ dosyalardır.
 - Turnuvada kale genişliği4.4/5/6 UI→kaydedilmiş competition→fizik→renderer aynı ölçüdür; mevcut arena saha ölçeği sözleşmesi korunur.
 - Geri pas kaleciye direklerin dışında uygun açıyla; seçenek/teknik uygulama aynı passAim helper’ını kullanır. Kaleci gerçek gözlenen top yolunu karşılar, bank pası geri pasta kullanılmaz. Kaliteye bağlı teknik hata korunur; gol denetimini değiştirip kendi kalesine golleri silmeyin. Yeni sahiplik eski destek hedefinin steer geçmişini kullanmaz.
 - Kanıt ve sınırlar: en üst HANDOFF; `competition-cover.cjs`, `arena-backpass.cjs`, `tools/validate-arena-control.cjs`, isteğe bağlı `browser-competition-cover.cjs`. Gerçek cihaz ve tam uzun dışa aktarım T-325/T-317 olarak açık kalır.
+
+
+## 27. V185 — normal kamera ve tam kadro kutlaması
+- 11v11 maçta Scene.update sonrası kamera yeniden fit edilmez. Normal sampleCamera=engine.sample, kamera ve stadyum kuralı tek kaynaktır. Ek seremoni kamerası world.constrainCamera kullanır. Seremonide gizlenen top kamera hedefi yapılmaz.
+- Lig madalya+kutlama kendi stadyum kimliği ve tek taraftarla; kupa tarafsız ve tam50/50. Benç/forma/taraftar/flag materyalleri karıştırılmaz. İkinci takım madalya alır; şampiyon bölümünde rakip oyuncu/benç/teknik ekip gizlenir.
+- 11v11 şampiyonluğu:24sn ayrı bölüm, orta sahada ilk kupa, mevcut sahne yedekleri/koç+iki isimsiz teknik görevli, taraftara toplu koşu ve ikinci kupa kaldırma. Gerçek yardımcı antrenör isimleri uydurulmaz; bençte aktifXI ile aynı oyuncu iki kez gösterilmez. Madalya geometrisi paylaşılır; awards dünyası iki aşamada yeniden kullanılır.
+- Kadraj doğrulaması yalnız state.players sayısı değildir: gerçek actor head projeksiyonları ve misafirlerin görünürlüğü/kadrajı da test edilir. V184 özgün GS–FB/seed184 karesi eski sınıfla yeniden üretildi; open-pitch-canopy çatı kamerayı kapatıyordu.
+- showSeasonOnCover varsayılanfalse ve series.enabled koşullu; kullanıcı seçerse Sezon N / Season N kapak ve aynı ilk video karesinde, mevcut sezon panolarından bağımsız.
+- T-328 iPhone13 iOS26.6.2 Safari Ana Ekrana Ekle %85–86 reset ayrı sonraki önceliktir; V185 bu mobil sorunu çözdü sayılmaz.

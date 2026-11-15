@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V185 · 2026-11-15
+- 11v11 turnuva normal maç kamerasıyla aynı güvenli iç stadyum kadrajını/smoothing'i kullanır; gri çatı engeli kaldırıldı.
+- Lig kendi kimliği ve taraftarıyla, kupa50/50 final tribünüyle; madalyalar ve yalnız şampiyonun tam kadro/teknik ekipli24snkutlaması. Paylaşılan madalya geometrisi, yeniden kullanılan awards dünyası, elle taşınıp baş üstüne kaldırılan kupa.
+- Sezon numarası için kapak/video açılışında ayrı, varsayılan kapalı TR/EN seçenek.
+-56regresyon ve gerçek fotoğraf/aktör projeksiyonları. iPhone PWA%85–86 reset ayrıT-328; bu sürümde çözülmüş sayılmaz.
+
 ## V184 · 2026-11-15
 - Kupa/lig kapaklarında dinamik takım sayısı, taşmayan iki dil, seçilen şablonun gerçek adı/logosu ve lig Avrupa hedefleri ve varsayılan kapalı sıra yazısı seçeneği; mevcut yüksek çözünürlüklü kaynaklar korunur.
 - 11v11 turnuva skorboard'u normal üst yayın yolunda; 5v5 kale boyutu seçimi fizik ve görüntüye birlikte bağlı.

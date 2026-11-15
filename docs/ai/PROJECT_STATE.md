@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V184** · 2026-11-15 UTC · Codex (kapak kimliği, üst skorboard ve 5v5 geri pasları)
+> Son güncelleme: **V185** · 2026-11-15 UTC · Codex (normal kamera, tam kadro kutlaması, sezon kapağı)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,19 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V184** (`VERSION`; kapak/üst yayın/kale seçimi/5v5 kontrol) |
-| Sonraki geliştirme hedefi | **V185** — gerçek cihaz T-325/T-317 ve T-312 kalan futbol düzeltmeleri; tam uzun video gerçek cihaz doğrulaması |
+| Kaynak sürümü | **V185** (`VERSION`; stadyum/kamera, tam kadro seremoni, sezon etiketi) |
+| Sonraki geliştirme hedefi | **V186** — öncelik T-328 iPhone PWA hazırlama belleği; T-325/T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V184 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v184.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 184 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V185 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v185.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 185 |
+
+## V185 — güvenli normal kamera ve tam kadro seremoni
+
+- 11v11 kupa/lig normal Scene kamera/smoothing ile birebir; Arena.fit sonrası normal kamerayı bozma kaldırıldı. Özgün GS–FB/seed184 karesinde eski kamera y25.73'e çıkıp `open-pitch-canopy` içine giriyordu. Yeni normal sınır y≤22 ve tribün görünümü aynı karede doğrulandı. Ek seremoni fit'i ortak constrainCamera ile güvenli; gizli topa dönmez.
+- Lig madalyaları ve kupa kutlaması şampiyonun stadyum kimliği/tek taraftar; kupa madalyaları aynı final sahası/50–50. Gümüş madalyalar önce, altın sonra; kupa bölümünde yalnız şampiyonunXI ve mevcut yedek/koç/iki genel teknik personeli. Kazanan taraf değişse de kimlikler korunur.
+- 24sn11v11kutlama: orta saha ilk kupa→taraftara geçiş→ikinci kupa/coşku. Kupa yürüyüşte ellerde, tam kaldırmada baş üstünde; yedekler/personel altın madalyalı. Aynı gerçek oyuncu iki kez eklenmez. Beşli modların mevcut akışı korunur.
+- Sezon kapağı ayrı opt-in, varsayılanHayır; yalnız sezon geçmişi açıkken Sezon1/Season1 uygun üst başlıkta. Aynı kapak ilk video karesidir; mevcut sezon panoları ve Avrupa sırası opt-in'i bağımsızdır.
+-56zorunlu kontrol +son değişen alan testleri; gerçek render 12normal kamera, özgün gri bant önce/sonra, iki format×iki oran×altı seremoni anı; aktör/misafir projeksiyonu, sayılar/kimlikler/medalyalar/tribün dağılımı doğrulanır. Kanıt en üst HANDOFF/validation-v185. Fiziksel iPhone ve yeni tam uzun MP4 bu bölümde test edilmedi. T-328 ardından ele alınacak.
 
 ## V184 — kapak/şablon, üst normal yayın ve küçük saha güvenliği
 

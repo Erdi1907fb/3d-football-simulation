@@ -1,0 +1,121 @@
+{
+  "pass": true,
+  "physicalDevice": false,
+  "errors": [],
+  "cases": [
+    {
+      "kind": "match",
+      "format": "grey",
+      "orient": "landscape",
+      "camera": "broadcast",
+      "position": [
+        29.53960888600228,
+        14.416434207404297,
+        21.762751898305233
+      ],
+      "same": true,
+      "guard": {
+        "active": true,
+        "limitY": 22,
+        "limitX": 58.5,
+        "limitZ": 44
+      },
+      "before": null
+    },
+    {
+      "kind": "match",
+      "format": "grey",
+      "orient": "portrait",
+      "camera": "broadcast",
+      "position": [
+        29.53960888600228,
+        18.13264804634371,
+        21.78379543350655
+      ],
+      "same": true,
+      "guard": {
+        "active": true,
+        "limitY": 22,
+        "limitX": 58.5,
+        "limitZ": 44
+      },
+      "before": null
+    },
+    {
+      "kind": "season-cover",
+      "orient": "landscape",
+      "lang": "tr",
+      "show": false
+    },
+    {
+      "kind": "season-cover",
+      "orient": "landscape",
+      "lang": "tr",
+      "show": true
+    },
+    {
+      "kind": "season-cover",
+      "orient": "landscape",
+      "lang": "en",
+      "show": false
+    },
+    {
+      "kind": "season-cover",
+      "orient": "landscape",
+      "lang": "en",
+      "show": true
+    },
+    {
+      "kind": "season-cover",
+      "orient": "portrait",
+      "lang": "tr",
+      "show": false
+    },
+    {
+      "kind": "season-cover",
+      "orient": "portrait",
+      "lang": "tr",
+      "show": true
+    },
+    {
+      "kind": "season-cover",
+      "orient": "portrait",
+      "lang": "en",
+      "show": false
+    },
+    {
+      "kind": "season-cover",
+      "orient": "portrait",
+      "lang": "en",
+      "show": true
+    }
+  ],
+  "baseline": "V184",
+  "originalLegacy": {
+    "position": [
+      29.675644164430903,
+      25.73445345911249,
+      42.7005924096318
+    ],
+    "hits": [
+      {
+        "name": "open-pitch-canopy",
+        "color": "273a4d",
+        "point": [
+          29.675644164430903,
+          25.140370399365167,
+          41.02601845521097
+        ]
+      },
+      {
+        "name": "open-pitch-canopy",
+        "color": "273a4d",
+        "point": [
+          29.675644164430903,
+          24.95065448122159,
+          39.89675724282253
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "formats": 2,
+  "optionalDefaultOff": true,
+  "noMatchChanges": true,
+  "noMiddleScreens": true,
+  "oneChampionIncrement": true,
+  "inputImmutable": true,
+  "rangeValidation": true,
+  "zeroTrophyStart": true,
+  "twoLayouts": true
+}

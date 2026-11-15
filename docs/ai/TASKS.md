@@ -1,4 +1,4 @@
-> **2026-11-14: Web kaynak V183. iPhone ortak disk/HTTP indirme ve hazır dosya kurtarma. Son canlı kontrol179/filesMatch=true; main push Hostinger dağıtımı değildir. T-325 gerçek iPhone, T-317 tam uzun yeni render ve T-312 açık.**
+> **2026-11-15: Kaynak V185. Kamera/stadyum, tam kadro kutlaması ve isteğe bağlı sezon kapağı doğrulandı. Son canlı kontrol183/filesMatch=true; main push Hostinger dağıtımı değildir. T-328 iPhone PWA hazırlama reseti sonraki öncelik; fiziksel cihaz testi açık.**
 
 # TASKS — görev panosu
 
@@ -6,10 +6,14 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V184 kapak/şablon, üst 11v11 skorbord ve 5v5 güvenli fizik/pas
+## Aktif hedef: V185 kamera/stadyum ve 11v11 lig/kupa seremonileri; sonra iPhone PWA bellek
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-330 | 11v11şampiyon kutlamasına mevcut yedekler/koç ve genel teknik ekip; orta saha kupası/madalyalar ve coşkulu taraftar kutlaması | done (V185) | codex |11XI+mevcut gerçek benç, koç+2adıuydurulmayan teknik görevli. Ortada ilk kupa→taraftara koşu→ikinci kaldırış; gerçek kadraj/projeksiyon ve24foto. |
+| T-329 | Sezon açıkken kapakta ve video ilk karesinde SezonN/SeasonN gösterme ayrı seçimi | done (V185) | codex | showSeasonOnCover varsayılanfalse; bağımsız TR/EN seçenek, üst marka bandı.8kapak+2UI/Nodeinput testleri. |
+| T-328 | iPhone13 Safari Ana Ekran uygulamasında FK%85–86 yeniden yükleme; bütün modlarda hazırlama/indirme bellek ve süre optimizasyonu | todo | codex | Kullanıcı önceliği: önce T-327 main push. Fiziksel iPhone yok; iOS26.6.2 (kullanıcı beyanı), Safari Ana Ekrana Ekle/PWA. Vuruş sayısı/FPS bilinmiyor. PWA yaşam döngüsü, encoder/scene peak ve geri kazanım incelenecek. |
+| T-327 | 11v11 turnuva kamerasını normal maçla aynı güvenli iç kadraja getir; gri stadyum engelini teşhis et; lig kendi stadı/tam taraftar, kupa50/50, iki takım madalya/tek şampiyon kupa ve fotoğraflar | done (V185) | codex | files: scene, competition-renderer/presentation/ceremony, stadium-customization, tests/docs. Önce main push, sonra T-328. |
 | T-326 | Kupa/lig kapakta şablon logosu/adı, dinamik takım sayısı, HD Avrupa hedefleri; 11v11 üst skorbord; 5v5 kale seçimi ve kendi kalesine pas/zemin dengesi | done (V184) | codex | files: competition-engine/UI/renderer/broadcast, japon-engine/tactics, HTML/tests/docs. 55regresyon +sonopt-in kontrolü;64gerçekA/Bsimülasyon, ilkgeri-pas ve son-kare/active hataları düzeltildi. Kapakta sıra yazıları isteğe bağlı/varsayılanHayır. TR/EN/iki oran fotoğraflar; sahte gol/sonuç kotası yok. |
 | T-325 | Fiziksel iPhone13/Safari veya Chrome üzerinde V183 uzun tam Türkiye–Fransa/kupa indirmesi | blocked | codex | Bu ortamda fiziksel iPhone yok. V183 kod/OPFS/HTTP akışı ve sekiz mod kısa gerçek çıktısı test edildi; gerçek iOS bellek öldürmesi sertifikası değildir. Hostinger dağıtımı da yapılmadı. |
 | T-324 | iPhone13 tüm modlarda eksiksiz MP4 indirme; disk yazımı, düşük bellek, ortak HTTP teslim ve hazır dosya kurtarma | done (V183) | codex |53regresyon + hedefli son testler; sekiz gerçek UI akışı, aktif iki maç geçişi,70MBkes/kaldığı yerden/sayfa yenileme/byteSHA PASS. files: video-core/transfer/delivery/storage-worker, tüm export UI/renderer, tests/docs. Fiziksel iPhone kontrolü T-325. |

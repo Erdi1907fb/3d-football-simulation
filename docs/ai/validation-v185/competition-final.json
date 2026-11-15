@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "league": 6,
+  "cup": 7,
+  "physicalShootouts": 5,
+  "normalAnalysisScore": [
+    1,
+    3
+  ],
+  "normalLeagueMatches": 6,
+  "leagueSeconds": 360.10833333333335,
+  "cupSeconds": 692.2666666666665,
+  "coverage": "fixtures, ranking, conduct, seeded lots, roster validation, actual engines/replay, no future spoilers, continuous chapters, physical selected-five penalties, medals/trophy, equal fans, cancellation"
+}

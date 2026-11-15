@@ -1,0 +1,9 @@
+{
+  "PASS": true,
+  "postfx": 18,
+  "snowPrints": 30,
+  "rewindClears": true,
+  "rainSplash": true,
+  "backThree": true,
+  "backFour": true
+}

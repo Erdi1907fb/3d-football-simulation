@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "leagueCounts": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "cup": 8,
+  "themes": 12,
+  "ratios": 2,
+  "actualEventStatistics": true,
+  "qualificationByRank": true,
+  "fixturePagination": true,
+  "englishCards": true
+}

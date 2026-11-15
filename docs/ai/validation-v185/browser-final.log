@@ -1,0 +1,51 @@
+Scripts "build/three.js" and "build/three.min.js" are deprecated with r150+, and will be removed with r160. Please use ES Modules or alternatives: https://threejs.org/docs/index.html#manual/en/introduction/Installation
+fixture league 1/6
+fixture league 2/6
+fixture league 3/6
+fixture league 4/6
+fixture league 5/6
+fixture league 6/6
+fixture cup 1/7
+fixture cup 2/7
+fixture cup 3/7
+fixture cup 4/7
+fixture cup 5/7
+fixture cup 6/7
+fixture cup 7/7
+match league landscape broadcast
+match league landscape wide
+match league landscape tactical
+match league portrait broadcast
+match league portrait wide
+match league portrait tactical
+awards league landscape silver
+awards league landscape gold
+awards league landscape centre
+awards league landscape lift
+awards league landscape walk
+awards league landscape fans
+awards league portrait silver
+awards league portrait gold
+awards league portrait centre
+awards league portrait lift
+awards league portrait walk
+awards league portrait fans
+match cup landscape broadcast
+match cup landscape wide
+match cup landscape tactical
+match cup portrait broadcast
+match cup portrait wide
+match cup portrait tactical
+awards cup landscape silver
+awards cup landscape gold
+awards cup landscape centre
+awards cup landscape lift
+awards cup landscape walk
+awards cup landscape fans
+awards cup portrait silver
+awards cup portrait gold
+awards cup portrait centre
+awards cup portrait lift
+awards cup portrait walk
+awards cup portrait fans
+{"pass":true,"cases":36,"legacy":{"position":[40.74130716444928,17.470609061512594,26.105654225075956],"hits":[{"name":"floodlight-beam","point":[40.741307164449275,14.040314339705322,14.570117410841917]},{"name":"floodlight-beam","point":[40.74130716444928,14.950919025297331,14.875445969714136]}]}}

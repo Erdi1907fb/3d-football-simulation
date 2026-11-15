@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "normalCameraUnmodified": true,
+  "formats": 2,
+  "fields": 2,
+  "winnerSides": 2,
+  "silverBeforeGold": true,
+  "fullTeamsVisible": true,
+  "onlyChampionLifts": true,
+  "trophyCarriedBeforeLift": true
+}

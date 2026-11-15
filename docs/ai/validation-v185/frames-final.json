@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "arenaPresentationParityFrames": 94,
+  "asyncFrameOrdering": true,
+  "cancellation": true,
+  "cancelledWorldCannotDisposeRetry": true
+}

@@ -1,0 +1,2 @@
+Scripts "build/three.js" and "build/three.min.js" are deprecated with r150+, and will be removed with r160. Please use ES Modules or alternatives: https://threejs.org/docs/index.html#manual/en/introduction/Installation
+{"pass":true,"contacts":4,"coverage":"reachable left/right strike and frozen receive IK, no root/ball mutation, no departed-ball chasing, one keeper lift and bounded body correction"}

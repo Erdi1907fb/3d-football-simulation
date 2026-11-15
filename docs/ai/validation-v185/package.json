@@ -1,0 +1,40 @@
+{
+  "build": 185,
+  "photos": [
+    "grey-landscape-broadcast-match.jpg",
+    "grey-portrait-broadcast-match.jpg",
+    "season-on-landscape-tr.jpg",
+    "season-on-portrait-en.jpg",
+    "season-controls-tr.png",
+    "season-controls-en.png",
+    "league-landscape-gold.jpg",
+    "league-landscape-lift.jpg",
+    "league-landscape-fans.jpg",
+    "league-portrait-gold.jpg",
+    "league-portrait-lift.jpg",
+    "league-portrait-fans.jpg",
+    "cup-landscape-gold.jpg",
+    "cup-landscape-lift.jpg",
+    "cup-landscape-fans.jpg",
+    "cup-portrait-gold.jpg",
+    "cup-portrait-lift.jpg",
+    "cup-portrait-fans.jpg"
+  ],
+  "packages": [
+    {
+      "file": "Next90Sim-Web-V185-Hostinger-Update.zip",
+      "bytes": 1110680,
+      "sha256": "45effda21466160de25bb8730816a455589f83c8c2be7069b7c2802c4de6379a"
+    },
+    {
+      "file": "Next90Sim-V185-Fotograflar.zip",
+      "bytes": 10544349,
+      "sha256": "1b5099cf36e373dbeff4d6fb6951e2cc8bdb57ba959926ec9d0f98829a1ffd14"
+    }
+  ],
+  "buildCheck": {
+    "build": 185,
+    "filesMatch": true,
+    "mismatches": []
+  }
+}

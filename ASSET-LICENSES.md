@@ -174,3 +174,5 @@ Original Next90Sim Canvas trophy illustration and layout; no new external assets
 Original Next90Sim OPFS worker and delivery/recovery code. No new third-party dependency or external media asset. Existing Mediabunny/AAC/H264 notices remain applicable.
 
 - V184 cover layout, backpass receiving/planning and validation code are original project code. Existing club and competition image sources are reused at their original resolution; no new third-party imagery/data/animation was introduced. Screenshots are captures of the existing game renderer.
+
+- V185 ceremony guests reuse existing registered bench/coach actors and the project’s original generic technical-staff model; no names/likenesses of unknown assistants are asserted. Original procedural trophy/medals and crowd excitement are reused. New screenshots are actual renderer captures, with no generated imagery.
