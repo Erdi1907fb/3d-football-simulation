@@ -1,0 +1,14 @@
+{
+  "photos": [
+    "kit-detail.jpg",
+    "landscape-match.jpg",
+    "portrait-match.jpg",
+    "landscape-lift.jpg",
+    "portrait-lift.jpg",
+    "after.jpg"
+  ],
+  "bytes": 5187165,
+  "sha256": "13f34a6b6566f10266a7961bc51e85e877a61d45bd2cacdfb663b9f6d541b4b6",
+  "realRenderer": true,
+  "retouched": false
+}

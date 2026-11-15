@@ -1,0 +1,798 @@
+{
+  "teams": [
+    {
+      "name": "Galatasaray",
+      "kit": {
+        "shirt": 15046964,
+        "stripe": 11154221,
+        "shorts": 11154221,
+        "socks": 10497320,
+        "number": 16777215,
+        "keeper": 1645080,
+        "style": "solid",
+        "variant": "home",
+        "keeperSet": {
+          "variant": "gk_third",
+          "texture": "assets/kits/2026-27/galatasaray-gk_third.webp",
+          "layout": "fm26",
+          "shirt": 1645080,
+          "stripe": 14329856,
+          "shorts": 14395392,
+          "socks": 14329856,
+          "number": 16777215,
+          "numberOutline": 1055012,
+          "font": "condensed",
+          "palette": [
+            {
+              "color": 1645080,
+              "weight": 0.303
+            },
+            {
+              "color": 14329856,
+              "weight": 0.188
+            }
+          ],
+          "style": "solid",
+          "season": "2026-27",
+          "source": "fmkitshub"
+        },
+        "selection": {
+          "contrast": 46.1,
+          "preferred": false,
+          "season": "2026-27"
+        },
+        "texture": "assets/kits/2026-27/galatasaray-home.webp",
+        "layout": "fm26",
+        "numberOutline": 1055012,
+        "font": "condensed",
+        "palette": [
+          {
+            "color": 15046964,
+            "weight": 0.474
+          },
+          {
+            "color": 11154221,
+            "weight": 0.423
+          }
+        ],
+        "season": "2026-27",
+        "source": "fmkitshub"
+      }
+    },
+    {
+      "name": "Fenerbahçe",
+      "kit": {
+        "shirt": 1189703,
+        "stripe": 1189703,
+        "shorts": 1057859,
+        "socks": 1057859,
+        "number": 16777215,
+        "keeper": 2843801,
+        "style": "solid",
+        "variant": "third",
+        "keeperSet": {
+          "variant": "gk_away",
+          "texture": "assets/kits/2026-27/fenerbahce-gk_away.webp",
+          "layout": "fm26",
+          "shirt": 2843801,
+          "stripe": 2843801,
+          "shorts": 2582177,
+          "socks": 2648220,
+          "number": 16777215,
+          "numberOutline": 1055012,
+          "font": "condensed",
+          "palette": [
+            {
+              "color": 2843801,
+              "weight": 0.353
+            }
+          ],
+          "style": "solid",
+          "season": "2026-27",
+          "source": "fmkitshub"
+        },
+        "selection": {
+          "contrast": 46.1,
+          "preferred": false,
+          "season": "2026-27"
+        },
+        "texture": "assets/kits/2026-27/fenerbahce-third.webp",
+        "layout": "fm26",
+        "numberOutline": 1055012,
+        "font": "condensed",
+        "palette": [
+          {
+            "color": 1189703,
+            "weight": 0.616
+          }
+        ],
+        "season": "2026-27",
+        "source": "fmkitshub"
+      }
+    }
+  ],
+  "actors": [
+    {
+      "name": "EDERSON",
+      "official": false,
+      "index": 0,
+      "keeper": 16732043,
+      "kit": "assets/kits/2026-27/fenerbahce-gk_away.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": [
+        {
+          "name": "keeper-glove-l",
+          "type": "SphereGeometry",
+          "material": "MeshStandardMaterial",
+          "position": [
+            -1.2767874108883566,
+            1.2811287442932813,
+            29.853718192765218
+          ]
+        },
+        {
+          "name": "keeper-glove-r",
+          "type": "SphereGeometry",
+          "material": "MeshStandardMaterial",
+          "position": [
+            -2.5444771071273227,
+            1.8805507066308187,
+            29.874681154022667
+          ]
+        },
+        {
+          "name": "fullbody-clothed-athlete",
+          "type": "BufferGeometry",
+          "material": "MeshStandardMaterial",
+          "position": [
+            -2.04,
+            0,
+            29.65
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SEMEDO",
+      "official": false,
+      "index": 1,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "ŠKRINIAR",
+      "official": false,
+      "index": 2,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "BROWN",
+      "official": false,
+      "index": 3,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "MERCAN",
+      "official": false,
+      "index": 4,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "GUENDOUZI",
+      "official": false,
+      "index": 5,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "KANTÉ",
+      "official": false,
+      "index": 6,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "AKTÜRKOGLU",
+      "official": false,
+      "index": 7,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "KAHVECI",
+      "official": false,
+      "index": 8,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "AYDIN",
+      "official": false,
+      "index": 9,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "LUKAKU",
+      "official": false,
+      "index": 10,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Tarık Çetin",
+      "official": false,
+      "index": 0,
+      "keeper": 16732043,
+      "kit": "assets/kits/2026-27/fenerbahce-gk_away.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": [
+        {
+          "name": "keeper-glove-l",
+          "type": "SphereGeometry",
+          "material": "MeshStandardMaterial",
+          "position": [
+            -2.346124910382084,
+            1.7488695586768388,
+            27.49882062559714
+          ]
+        },
+        {
+          "name": "keeper-glove-r",
+          "type": "SphereGeometry",
+          "material": "MeshStandardMaterial",
+          "position": [
+            -2.969070790581253,
+            1.7506057197718976,
+            27.56381841443569
+          ]
+        },
+        {
+          "name": "fullbody-clothed-athlete",
+          "type": "BufferGeometry",
+          "material": "MeshStandardMaterial",
+          "position": [
+            -2.7,
+            0,
+            27.1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mert Günok",
+      "official": false,
+      "index": 0,
+      "keeper": 3111935,
+      "kit": "assets/kits/2026-27/fenerbahce-gk_away.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Kuzey Sapaz",
+      "official": false,
+      "index": 0,
+      "keeper": 16053488,
+      "kit": "assets/kits/2026-27/fenerbahce-gk_away.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Yiğit Efe Demir",
+      "official": false,
+      "index": 15,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Mert Müldür",
+      "official": false,
+      "index": 16,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Kojo Peprah Oppong",
+      "official": false,
+      "index": 17,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Ognjen Mimović",
+      "official": false,
+      "index": 18,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Ismail Yüksek",
+      "official": false,
+      "index": 19,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Mert Hakan Yandaş",
+      "official": false,
+      "index": 20,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Bartuğ Elmaz",
+      "official": false,
+      "index": 21,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Abdou Aziz Fall",
+      "official": false,
+      "index": 22,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Vedat Muriqi",
+      "official": false,
+      "index": 24,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Dorgeles Nene",
+      "official": false,
+      "index": 25,
+      "kit": "assets/kits/2026-27/fenerbahce-third.webp",
+      "atlas": true,
+      "shirt": "f8f8f8",
+      "textureWidth": 1024,
+      "pink": []
+    },
+    {
+      "name": "Dirk Kuyt",
+      "official": true,
+      "index": 22,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "Technical staff",
+      "official": true,
+      "index": 23,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "Technical staff",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "steward",
+      "official": true,
+      "index": 24,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "ballboy",
+      "official": true,
+      "index": 30,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "ballboy",
+      "official": true,
+      "index": 30,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "ballboy",
+      "official": true,
+      "index": 30,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    },
+    {
+      "name": "ballboy",
+      "official": true,
+      "index": 30,
+      "atlas": false,
+      "textureWidth": 0,
+      "pink": []
+    }
+  ]
+}

@@ -66,7 +66,7 @@ Kökten çalıştır (Node 18+). Hepsi geçmeden sürüm “kararlı” ilan edi
 
 | Komut | Kapsam | Süre |
 |---|---|---|
-| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 57 test; `--quick` `engine-test.cjs` hariç 56 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
+| `node tests/run-all.cjs [--quick] [--failed]` | **Hepsini çalıştırır**, `tests/summary.json` yazar; tam paket 58 test; `--quick` `engine-test.cjs` hariç 57 test | ~2,5 dk (quick ~1 dk); --failed aynı sürümde önceki başarısız kontrolleri tekrarlar |
 | `node tests/audio-export.cjs` | Native AAC / yerel yazılım AAC seçimi, iptal, eksik/yanlış/kısa ses izinin reddi | <1 sn |
 | `node tests/contact-motion.cjs` | Gerçek vuruş/alım IK, erişim ve root/top değişmezliği; tek kaleci yükselmesi | ~1 sn |
 | `node tests/teamwork.cjs` | Verkaç/üçüncü oyuncu, destek açıları, sektör/geçiş örtüsü ve sentetik takım karakteri | ~3 sn |
@@ -303,3 +303,8 @@ dosyalardır.
 - iOS native encoder2snGOP; flush+pending drain+close sonra yenisi. Globaltimestamps/mux/audio korunur, yeni blok keyframe. Queue1; masaüstü high/quality tekencoder/queue2. Yazılım readback iOS tekRGBA uçuşu.
 - mobileExport1080p60hedeflidir; çözünürlük düşürmez.512forma/low yakıncrowd/gölgesiz. Tümkoltuklar ve HDlogolar korunur. PK/FKhazırvideo preloadnone.
 - tests/ios-encoder.cjs ve browser-ios-encoder.cjs. ChromiumiPhoneUA fizikselWebKitdeğildir. T-328cihazresetinin ortadankalkması doğrulanmadan doneyazılmaz; T-325/T-317açık.
+
+## 29. V187 — turnuva kit kimliği
+- studio- takımID'sini canonical kulüpID'si ile değiştirme. kitCatalogId yalnız görsel manifest anahtarıdır; C.pair alan+GKseçimi, yeni ve eski analysisPayload'a uygulanır. Tarihîtakımlara bugünün forması otomatik atanmaz.
+- world.kitInfo.failed turnuvada sessiz düzrenkMP4yerine kontrollü yeniden deneme hatasıdır. tests/competition-kits.cjs fizik/olayların değişmediğini kitmetadata hariç kontrol eder.
+- Pembe keeper-glove parçaları yalnız gerçek kalecilerde normalekipmandır. Sahaoyuncularında eldiven olup olmadığını aktör+malzeme ile doğrula; fotoğrafa bakarak varsayma.

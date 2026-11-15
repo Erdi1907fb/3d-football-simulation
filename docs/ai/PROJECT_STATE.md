@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V186** · 2026-11-15 UTC · Codex (iPhone hazırlama bellek sınırları; V185 kamera/kutlama korunur)
+> Son güncelleme: **V187** · 2026-11-15 UTC · Codex (turnuva forma atlasları normal11v11ile aynı)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,17 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V186** (`VERSION`; stadyum/kamera, tam kadro seremoni, sezon etiketi) |
-| Sonraki geliştirme hedefi | **V187** — T-328/T-325 fiziksel iPhone doğrulaması; T-325/T-317 ve T-312 ayrı açık |
+| Kaynak sürümü | **V187** (`VERSION`; normal11v11forma eşitliği; önceki mobil/kamera korunur) |
+| Sonraki geliştirme hedefi | **V188** — T-328/T-325 fiziksel iPhone doğrulaması; T-325/T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
-| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V186 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v186.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 186 |
+| Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
+| Sürüm doğrulama | `build.php` → `assets/release-v187.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 187 |
+
+## V187 — turnuva ve kutlama formaları
+- Turnuva studio-ID'leri manifestte gerçek kulüpID'sini bulamıyordu;11v11ham Conceptpayload da forma seçimi yapılmadan Match.create'a gidiyordu. matchAppearance mevcut kimliği/analizi koruyup kitCatalogId ile ortak Catalog.pair seçimini yapar. Önceden kaydedilmiş analysisPayload da salt görünüm olarak yükseltilir.
+- Saha ve kaleci atlasları normal11v11ile eşit. SahnekitInfo üzerinden başarısız gerçekasset yüklemesi turnuvada sessiz düzrenkvideo yerine yeniden deneme hatası verir.
+- Önceki fotoğrafta pembe nesneler keeper-glove-l/r ve kaleci el materyalleriydi: Ederson+TarıkÇetin; sahaoyuncusu ellerinde pembe malzeme yok. Normal11v11eldivenleri ve kimlikten seçilen mevcut renk korunur; doğrulanmış gerçek eldiven markası/rengi iddiası değildir.
+- Yeni görüntülerde1024px kaynak atlasları ilk11+yedeklere uygulanır; orijinalHDvarlıklar yeniden sıkıştırılmaz. Fizik/skor/olaylar korunur.
 
 ## V186 — iPhone hazırlama belleği
 - iOS native kodlayıcı2snblok,tekcanlıencoder/queue1; aynıMP4/ses/globaltimestamp. Desktop yol korunur. Yazılımda RGBA readback ardışık.

@@ -1,0 +1,38 @@
+{
+  "build": 187,
+  "fromBuild": 179,
+  "files": 76,
+  "kitAssets": [
+    "assets/kits/2026-27/besiktas-away.webp",
+    "assets/kits/2026-27/besiktas-gk_away.webp",
+    "assets/kits/2026-27/besiktas-gk_home.webp",
+    "assets/kits/2026-27/besiktas-gk_third.webp",
+    "assets/kits/2026-27/besiktas-home.webp",
+    "assets/kits/2026-27/besiktas-third.webp",
+    "assets/kits/2026-27/fenerbahce-away.webp",
+    "assets/kits/2026-27/fenerbahce-gk_away.webp",
+    "assets/kits/2026-27/fenerbahce-gk_home.webp",
+    "assets/kits/2026-27/fenerbahce-gk_third.webp",
+    "assets/kits/2026-27/fenerbahce-home.webp",
+    "assets/kits/2026-27/fenerbahce-third.webp",
+    "assets/kits/2026-27/galatasaray-away.webp",
+    "assets/kits/2026-27/galatasaray-gk_away.webp",
+    "assets/kits/2026-27/galatasaray-gk_home.webp",
+    "assets/kits/2026-27/galatasaray-gk_third.webp",
+    "assets/kits/2026-27/galatasaray-home.webp",
+    "assets/kits/2026-27/galatasaray-third.webp",
+    "assets/kits/2026-27/trabzonspor-away.webp",
+    "assets/kits/2026-27/trabzonspor-gk_away.webp",
+    "assets/kits/2026-27/trabzonspor-gk_home.webp",
+    "assets/kits/2026-27/trabzonspor-gk_third.webp",
+    "assets/kits/2026-27/trabzonspor-home.webp",
+    "assets/kits/2026-27/trabzonspor-third.webp"
+  ],
+  "bytes": 4661529,
+  "sha256": "3c0618c15750b9c018387eee930539ee9e114a152cdeedbf897400aeb522a86b",
+  "buildCheck": {
+    "build": 187,
+    "filesMatch": true,
+    "mismatches": []
+  }
+}

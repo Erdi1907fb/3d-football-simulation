@@ -1,4 +1,4 @@
-> **2026-11-15: Kaynak V186. Kamera/stadyum, tam kadro kutlaması ve isteğe bağlı sezon kapağı doğrulandı. Son canlı kontrol183/filesMatch=true; main push Hostinger dağıtımı değildir. T-328 hazırlama belleği azaltıldı; cihazdaki resetin bitişi doğrulanmadı; fiziksel cihaz testi açık.**
+> **2026-11-15: Kaynak V187. Kamera/stadyum, tam kadro kutlaması ve isteğe bağlı sezon kapağı doğrulandı. Son canlı kontrol183/filesMatch=true; main push Hostinger dağıtımı değildir. T-328 hazırlama belleği azaltıldı; cihazdaki resetin bitişi doğrulanmadı; fiziksel cihaz testi açık.**
 
 # TASKS — görev panosu
 
@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V186 iPhone PWA hazırlama belleği; V185 kamera ve kutlama main’de
+## Aktif hedef: V187 turnuvada normal11v11ile aynı gerçek formalar ve pembe kaleci ekipmanı teşhisi
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-331 | Turnuva maç/kutlamada normal11v11 HDformaları, pembe el parçaları teşhis/düzeltme ve yeni görüntü | done (V187) | codex | files: competition-engine/renderer, kit-selection, tests/docs.12eşleşme normalfield+GKtextureeşit; eskiAnalysisPayload saltgörünümyükseltme;24/24atlas1024; eksikassetreject/dispose;58regresyonPASS;6gerçekfoto. Pembeparçalaryalnızkalecieldivenleri. |
 | T-330 | 11v11şampiyon kutlamasına mevcut yedekler/koç ve genel teknik ekip; orta saha kupası/madalyalar ve coşkulu taraftar kutlaması | done (V185) | codex |11XI+mevcut gerçek benç, koç+2adıuydurulmayan teknik görevli. Ortada ilk kupa→taraftara koşu→ikinci kaldırış; gerçek kadraj/projeksiyon ve24foto. |
 | T-329 | Sezon açıkken kapakta ve video ilk karesinde SezonN/SeasonN gösterme ayrı seçimi | done (V185) | codex | showSeasonOnCover varsayılanfalse; bağımsız TR/EN seçenek, üst marka bandı.8kapak+2UI/Nodeinput testleri. |
 | T-328 | iPhone13 Safari Ana Ekran uygulamasında FK%85–86 yeniden yükleme; bütün modlarda hazırlama/indirme bellek ve süre optimizasyonu | partial (V186) | codex | Önce V185mainpush06a0510tamamlandı. files: video-core, graphics-settings, scene, app, PK/FK/Japon/competitionrenderer, tests/docs.2snencoder/queue1,sabit512forma,mobileExport. Fiziksel iPhone yok; iOS26.6.2 (kullanıcı beyanı), Safari Ana Ekrana Ekle/PWA. Vuruş sayısı/FPS bilinmiyor. Nativeiki1080p60/AACüçblok/246frame tamdecodePASS; fizikseliOSresetbittiğidoğrulanmadı. |

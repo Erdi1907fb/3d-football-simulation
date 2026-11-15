@@ -272,3 +272,6 @@ Normal11v11 Scene.update kamerası yeniden arena fit yapılmadan korunur. Seremo
 
 ## D-050 · 2026-11-15 · V186 — çıktı küçültmek yerine bellek ömrünü sınırla
 İndirmenin OPFS/HTTP olması render belleğini sınırlandırmaz. iOS için kodlayıcı2snGOP aralarında kapatılır; yeni kaynak açmadan önce paketler boşaltılır. Globaltimestamp ve aynı mux/audio korunur; fizik/analiz tekrar üretilmez. 1080p60ölçü düşürülmez. MobileExport yalnız GPUayrıntısı ve forma doku churn’ünü azaltır, tribün doluluğu ve HDlogolar değişmez. Gerçekcihaz logu olmadığından resetin kesinnedeni veya çözüldüğü iddiaedilmez.
+
+## D-051 · 2026-11-15 · V187 — simülasyon kimliği ve forma kaynağı ayrıdır
+Turnuva team.id=studio-providerId kalır. kitCatalogId yalnız manifest çözümlemesini kanonik kulübe bağlar; geçmiş takım tanımlarına kendiliğinden yeni sezon forması atanmaz. Ham/kayıtlı Conceptanalizleri görsel seçimde Catalog.pair'dan geçer, analiz ve fizik tekrar yazılmaz. Pembe keeper-glove parçaları bozuk doku veya oyuncunun elinde bir sevinç nesnesi değildir; normal11v11kaleci ekipmanı olarak korunur. Bilinen gerçek asset başarısızsa sessiz düzrenk turnuva videosu üretilmez.

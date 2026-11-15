@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V187 · 2026-11-15
+- Kupa/lig11v11maç/kutlama formaları ortak gerçek saha/kaleci atlaslarına bağlandı; eski kayıtlı turnuvalar da görünüm olarak yükseltilir. studio-ID/analiz/oyuncular korunur.
+- Bilinen forma dosyası yüklenemezse hatalı düzrenkMP4 hazırlanmaz; açık yeniden deneme hatası.
+-58regresyon,12eşleşme formaeşitliği ve gerçekbrowser/6fotoğraf doğrulamasıPASS.
+- Pembe parçalar gerçek sahne incelemesinde yalnız kaleci eldivenleridir. Mevcut normal11v11ekipmanı korunur.
+
 ## V186 · 2026-11-15
 - iPhone native kodlayıcı2snbloklarla referans belleğini bırakır; tek canlı encoder/queue1, aynıMP4 ve globalzaman. Desktop yol korunur.
 - Ortak mobileExport GPUprofili, sabit512forma baskısı ve ertelenmiş PK/FK hazırvideo decoder;1080p60 ve HDlogolar korunur. YazılımRGBuffer okumaları iOS üzerinde ardışık.

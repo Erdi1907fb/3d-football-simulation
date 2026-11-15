@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "players": 24,
+  "textured": 24,
+  "pinkOnlyKeepers": true,
+  "normalMatchActorParity": true,
+  "failedAssetRejected": true,
+  "photos": [
+    "landscape-lift.jpg",
+    "landscape-match.jpg",
+    "portrait-lift.jpg",
+    "portrait-match.jpg",
+    "kit-detail.jpg",
+    "after.jpg"
+  ]
+}
