@@ -314,5 +314,5 @@ dosyalardır.
 - Turnuva 3D sahnesi (`sceneFixture/sceneImages`) seçilen yayın şablonunu taşır; şablonsuzda Next90Sim. `setCrests` anahtarları 0/1/competition'dır, {home,away} değil.
 - Turnuva dışa aktarma hızı 1.0–3.0x yalnız zaman ölçeğidir; simülasyonu/sonucu yeniden üretme.
 - `OpenFootball.outerNet` ıskalanan/ölü topun dış fileden kaleye girmesini engeller; gol yolu/containNet ayrıdır. tests/v188-fixes.cjs.
-- Kullanıcı kararı: 5v5 arenanın oyununa ve panolarına dokunma (skorbord yeterli). İyileştirme hedefi 11v11.
+- Kullanıcı kararı: 5v5 arenanın oyununa dokunma; tek istisna turnuvada seçilen şablonun LED panolarda @next90sim ile dönüşümlü görünmesi. İyileştirme hedefi 11v11.
 - Güncel teknik direktör geçersiz kılmaları `assets/coach-overrides.json` (sunucu `pp_coach_override`); FB = Emre Belözoğlu.

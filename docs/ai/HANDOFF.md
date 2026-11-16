@@ -18,6 +18,11 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-16 UTC] Claude · V188 (son) — 5v5 LED'de seçilen lig şablonu
+- Kullanıcı: 5v5'te yalnız LED panolarda seçilen şablon (hangi lig/kupa seçiliyse) dönebilir; fazlası yok. 11v11 panolar normal canlı maçtaki gibi: bazı panolar Next90Sim/@next90sim, ortadaki yarışma panosu şablon (ortak stadium-boards; şablonsuzda Next90Sim).
+- japon-arena create/createStage opsiyonel `extra` → japon-venue LED brand hücreleri dönüşümlü: şablon logosu (competitionIconLight) + adı / @next90sim. Yalnız competition-renderer şablon seçiliyse geçirir; japon-kale.html ve 5v5 oyun/fizik değişmez. LED dokusu tarayıcıda tr.1/en.1/es.1 için kontrol edildi.
+
+
 ## [2026-11-16 UTC] Claude · V188 (devam) — 5v5 geri alındı, Emre Belözoğlu, 11v11 shield
 - Kullanıcı: eksiklikler 11v11'deydi; 5v5 arenaya (oyun/panolar) hiçbir şekilde dokunma, skorbord yeterli. Fenerbahçe teknik direktörü Emre Belözoğlu (canlı maçlar + turnuvalar).
 - 5v5 geri alma: japon-engine (openTouch/coverFor), japon-arena (extra/competitionLabel), japon-venue (LED şablon adı) f3e8edd haline döndü; arena-elimination seed7'ye geri döndü; v188-fixes'ten arena bölümü çıkarıldı. 11v11 seremoni/pano şablon kimliği, yüzler, video hızı ve dış file düzeltmeleri korunur.

@@ -64,14 +64,23 @@
   function ledTexture(sides, brand, owned) {
     if (!hasCanvas) return null;
     const cell = 512, items = [];
-    for (const s of sides) { items.push({ kind: 'team', side: s }); items.push({ kind: 'brand' }); }
+    sides.forEach((s, i) => { items.push({ kind: 'team', side: s }); items.push({ kind: 'brand', competition: !!brand?.competition && i % 2 === 0 }); });
     const c = canvas(cell * items.length, 64), x = c.getContext('2d');
     items.forEach((it, i) => {
       const x0 = i * cell;
       if (it.kind === 'brand') {
         x.fillStyle = '#05101a'; x.fillRect(x0, 0, cell, 64);
         x.fillStyle = '#f2f6f8'; x.font = '700 38px Arial'; x.textAlign = 'center'; x.textBaseline = 'middle';
-        x.fillText(String(brand?.instagram || '@next90sim'), x0 + cell / 2, 34);
+        // V188: a selected league/cup broadcast template shares the LED loop with the house handle
+        // (only when the competition studio passes one; other arena pages are unchanged).
+        if (it.competition) {
+          const im = brand.competitionImage, ok = im && (im.naturalWidth || im.width), size = 50, logoW = ok ? size * (im.naturalWidth || im.width) / (im.naturalHeight || im.height) : 0, lw = Math.min(logoW, 90);
+          x.font = '700 30px Arial'; let label = String(brand.competition).toUpperCase(); const room = cell - 50 - (ok ? lw + 14 : 0);
+          while (label.length > 4 && x.measureText(label).width > room) label = label.slice(0, -1);
+          const total = (ok ? lw + 14 : 0) + x.measureText(label).width, left = x0 + (cell - total) / 2;
+          if (ok) { try { x.drawImage(im, left, 7, lw, lw * (im.naturalHeight || im.height) / (im.naturalWidth || im.width) > size ? size : lw * (im.naturalHeight || im.height) / (im.naturalWidth || im.width)); } catch {} }
+          x.textAlign = 'left'; x.fillText(label, left + (ok ? lw + 14 : 0), 34); x.textAlign = 'center';
+        } else x.fillText(String(brand?.instagram || '@next90sim'), x0 + cell / 2, 34);
         x.fillStyle = '#35d07f'; x.fillRect(x0 + 40, 6, cell - 80, 3); x.fillRect(x0 + 40, 55, cell - 80, 3);
       } else {
         const team = it.side.team || {}, a = css(team.kit?.shirt ?? team.primary ?? 0x224466), b = css(team.kit?.stripe ?? team.secondary ?? 0xffffff);

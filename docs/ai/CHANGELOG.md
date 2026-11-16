@@ -5,7 +5,7 @@
 - Seremoni bezleri ve reklam panoları seçilen yayın şablonunu taşır: şablonsuzda Next90Sim, örn. Trendyol Süper Lig'de lig logosu ortada, oynayan takım armaları iki yanda. Turnuva arması {home,away} yerine sahnenin beklediği 0/1/competition anahtarlarıyla verilir. 5v5 LED panolar seçilen şablon adını @next90sim ile dönüşümlü gösterir.
 - Turnuva videosu 1.0x–3.0x (0,1 adım) hızda üretilebilir; sonuç/fizik değişmez, ses efektleri doğal perdede yeniden zamanlanır, kare sayısı azalır.
 - Kaleyi ıskalayan şut ya da oyun dışı top artık yan/üst/arka filenin dışından kale içine geçemez (önce 3.726 ıskanın 225'i file içinden geçiyordu, şimdi 0). Sonuçlar değişmez.
-- Kullanıcı isteğiyle 5v5 arena oyun/pano değişiklikleri geri alındı (arena V187 ile aynı).
+- Kullanıcı isteğiyle 5v5 arena oyun değişiklikleri geri alındı; turnuvada yalnız LED panolar seçilen lig/kupa şablonunun logosu+adını @next90sim ile dönüşümlü gösterir.
 - Fenerbahçe teknik direktörü Emre Belözoğlu: kadro verisi, bülten ve canlı maçlar için coach-overrides.json.
 - 11v11: topu koruma (shield) yalnız öndeki baskıcıya karşı ve kısa adım; önü boşken geri koşma yok.
 
