@@ -131,8 +131,18 @@ function containNet(b,dt=1/120){
  if(b.y>roof){const p=panel(b.y-roof,b.vy,.16,dt,b.netElastic);b.y=roof+p.over;b.vy=p.speed;contact=true;}
  if(contact||b.x>back-.025||Math.abs(b.z)>side-.025||b.y>roof-.025){const damp=Math.pow(b.netElastic?.985:.75,dt/.01);b.vx*=damp;b.vz*=damp;b.spin=(b.spin||0)*damp;}
 }
+// V188: a ball that missed the goal mouth cannot pass through the OUTSIDE of the side/roof/back netting
+// into the goal volume (it looked like a goal from behind). Entry face is read from the previous step;
+// the net absorbs most of the normal velocity. Goal-mouth (front) entries are untouched.
+function outerNet(previous,b){const sx=Math.sign(b.x)||1,ax=Math.abs(b.x),R=.11,front=52.5,back=54.49+R+.03,side=3.66+R,roof=2.44+R;
+ if(!(ax>front&&ax<back&&Math.abs(b.z)<side&&b.y<roof))return null;const px=Math.abs(previous.x)*(Math.sign(previous.x)===sx?1:-1);
+ if(px<=front)return null;let face=null;
+ if(Math.abs(previous.z)>=side){face='side';const sz=Math.sign(previous.z)||1;b.z=sz*side;b.vz=-b.vz*.12;b.vx*=.55;b.vy*=.7;}
+ else if(previous.y>=roof){face='roof';b.y=roof;b.vy=Math.abs(b.vy)*.10;b.vx*=.6;b.vz*=.6;}
+ else if(px>=back){face='back';b.x=sx*back;b.vx=-b.vx*.12;b.vz*=.6;b.vy*=.7;}
+ else return null;b.spin=(b.spin||0)*.5;return face;}
 function blockContact(previous,ball,defender,reach=.49,ceiling=1.75){const v=sub(ball,previous),n=v.x*v.x+v.z*v.z;if(n<1e-12)return null;
  const raw=dot(sub(defender,previous),v)/n;if(raw<0||raw>1)return null;const q=raw,p={x:previous.x+v.x*q,z:previous.z+v.z*q,y:previous.y+(ball.y-previous.y)*q};return p.y<=ceiling&&distance(p,defender)<=reach?{...p,fraction:q}:null;
 }
-return Object.freeze({supportOffer,passSafety,pressureIntensity,counterpressScore,phase,defensivePlan,evadeMarker,dribbleSpace,duelEstimate,throughBall,passPace,pursuit,arrive,rollDistance,rollRange,passFlight,containNet,blockContact,version:'open-football-port-2',upstream:'9bb183af844980ff0c398597868b635aff191674'});
+return Object.freeze({supportOffer,passSafety,pressureIntensity,counterpressScore,phase,defensivePlan,evadeMarker,dribbleSpace,duelEstimate,throughBall,passPace,pursuit,arrive,rollDistance,rollRange,passFlight,containNet,outerNet,blockContact,version:'open-football-port-2',upstream:'9bb183af844980ff0c398597868b635aff191674'});
 });

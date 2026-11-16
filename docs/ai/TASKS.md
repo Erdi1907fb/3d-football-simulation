@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V187 turnuvada normal11v11ile aynı gerçek formalar ve pembe kaleci ekipmanı teşhisi
+## Aktif hedef: V188 turnuva yüzleri, şablon logoları, video hızı, dış file ve arena oyun düzeltmeleri
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-332 | Turnuva: 11v11 oyuncu yüzleri, seremoni/pano şablon logoları (Next90Sim / seçilen lig), 1.0–3.0x video hızı, dış fileden geçen top, arena yarı dönük alım + kademe savunma | done (V188) | claude | files: player-faces, competition-renderer/ui, competition.html, japon-arena/venue, open-football-adapter, football-physics, ball-boundary, japon-engine, tests/v188-fixes. 11v11 Normal maç AI'ına dokunulmadı. |
 | T-331 | Turnuva maç/kutlamada normal11v11 HDformaları, pembe el parçaları teşhis/düzeltme ve yeni görüntü | done (V187) | codex | files: competition-engine/renderer, kit-selection, tests/docs.12eşleşme normalfield+GKtextureeşit; eskiAnalysisPayload saltgörünümyükseltme;24/24atlas1024; eksikassetreject/dispose;58regresyonPASS;6gerçekfoto. Pembeparçalaryalnızkalecieldivenleri. |
 | T-330 | 11v11şampiyon kutlamasına mevcut yedekler/koç ve genel teknik ekip; orta saha kupası/madalyalar ve coşkulu taraftar kutlaması | done (V185) | codex |11XI+mevcut gerçek benç, koç+2adıuydurulmayan teknik görevli. Ortada ilk kupa→taraftara koşu→ikinci kaldırış; gerçek kadraj/projeksiyon ve24foto. |
 | T-329 | Sezon açıkken kapakta ve video ilk karesinde SezonN/SeasonN gösterme ayrı seçimi | done (V185) | codex | showSeasonOnCover varsayılanfalse; bağımsız TR/EN seçenek, üst marka bandı.8kapak+2UI/Nodeinput testleri. |

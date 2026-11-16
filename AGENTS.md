@@ -308,3 +308,10 @@ dosyalardır.
 - studio- takımID'sini canonical kulüpID'si ile değiştirme. kitCatalogId yalnız görsel manifest anahtarıdır; C.pair alan+GKseçimi, yeni ve eski analysisPayload'a uygulanır. Tarihîtakımlara bugünün forması otomatik atanmaz.
 - world.kitInfo.failed turnuvada sessiz düzrenkMP4yerine kontrollü yeniden deneme hatasıdır. tests/competition-kits.cjs fizik/olayların değişmediğini kitmetadata hariç kontrol eder.
 - Pembe keeper-glove parçaları yalnız gerçek kalecilerde normalekipmandır. Sahaoyuncularında eldiven olup olmadığını aktör+malzeme ile doğrula; fotoğrafa bakarak varsayma.
+
+## 30. V188 — turnuva yüzleri, şablon kimliği, video hızı, dış file
+- 11v11 turnuva kimlikleri `…-sideN-` öneklidir; yüz eşlemesi `SekmeFaces.sourceId` ve kitCatalogId/katalog anahtarıyla kadro bulur. Öneki kaldırma veya ham ID varsayma.
+- Turnuva 3D sahnesi (`sceneFixture/sceneImages`) seçilen yayın şablonunu taşır; şablonsuzda Next90Sim. `setCrests` anahtarları 0/1/competition'dır, {home,away} değil.
+- Turnuva dışa aktarma hızı 1.0–3.0x yalnız zaman ölçeğidir; simülasyonu/sonucu yeniden üretme.
+- `OpenFootball.outerNet` ıskalanan/ölü topun dış fileden kaleye girmesini engeller; gol yolu/containNet ayrıdır. tests/v188-fixes.cjs.
+- Arena `openTouch` (yarı dönük alım) ve `coverFor` (baskıcı geçilince radius*.95 içinde kademe) rastgelelik kullanmaz; kapsamı genişletirken gol/şut dengesini ölç.

@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V187** · 2026-11-15 UTC · Codex (turnuva forma atlasları normal11v11ile aynı)
+> Son güncelleme: **V188** · 2026-11-16 UTC · Claude (turnuva yüzleri, şablon logoları, video hızı, dış file, arena alım/kademe)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,17 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V187** (`VERSION`; normal11v11forma eşitliği; önceki mobil/kamera korunur) |
+| Kaynak sürümü | **V188** (`VERSION`; normal11v11forma eşitliği; önceki mobil/kamera korunur) |
 | Sonraki geliştirme hedefi | **V188** — T-328/T-325 fiziksel iPhone doğrulaması; T-325/T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v187.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 187 |
+| Sürüm doğrulama | `build.php` → `assets/release-v188.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 188 |
+
+## V188 — turnuva yüzleri/şablon kimliği/video hızı
+- player-faces kaynak ID (sideN öneki) + rosterFor; competition-renderer sceneFixture/sceneImages ile 3D pano/seremoni seçilen şablonu (yoksa Next90Sim) taşır; 5v5 LED şablon adı.
+- competition-ui 1.0–3.0x dışa aktarma hızı (zaman ölçekli çizim + ses olayları).
+- OpenFootball.outerNet: ıskalanan/ölü top dış fileden kaleye giremez (shot + Boundary.bake).
+- japon-engine openTouch (yarı dönük alım) ve coverFor (baskıcı geçilince kademe). tests/v188-fixes.cjs.
 
 ## V187 — turnuva ve kutlama formaları
 - Turnuva studio-ID'leri manifestte gerçek kulüpID'sini bulamıyordu;11v11ham Conceptpayload da forma seçimi yapılmadan Match.create'a gidiyordu. matchAppearance mevcut kimliği/analizi koruyup kitCatalogId ile ortak Catalog.pair seçimini yapar. Önceden kaydedilmiş analysisPayload da salt görünüm olarak yükseltilir.

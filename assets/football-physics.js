@@ -34,6 +34,7 @@ function shot({start,target,power,spin=0,keeper,defenders=[],reaction=.2,reach=1
    }
    if(!result&&b.x>53.5){result='wide';contact={x:b.x,y:b.y,z:b.z,time:t};}
   }
+  if(result&&result!=='goal'&&OpenFootball?.outerNet)OpenFootball.outerNet(previous,b);
   if(!probe&&result&&result!=='goal'&&!exit){if(previous.x<52.61&&b.x>=52.61){const p=interpolate(52.61);exit={kind:result==='save'?'corner':'goalKick',team:result==='save'?'attacking':'defending',time:t,...p};}else if(Math.abs(previous.z)<34.11&&Math.abs(b.z)>=34.11)exit={kind:'throwIn',time:t,x:b.x,y:b.y,z:b.z};}
   if(probe&&result)return{result,contact,impact:contact?.time||t};
   // Flexible net absorbs the shot instead of returning it onto the pitch during VAR.
@@ -48,5 +49,5 @@ function shot({start,target,power,spin=0,keeper,defenders=[],reaction=.2,reach=1
  if(result==='goal'){visible[Math.round(.7/STEP)].x=Math.max(52.62,visible[Math.round(.7/STEP)].x);}
  return {result,contact,impact,exit,saveStyle,keeperTouch,netPoint,netContactAt:netContactAt==null?null:.7+netContactAt-impact,frames:visible,step:STEP,trajectory:raw,verifiedPhysics:true};
 }
-return{STEP,R,advance,pass,shot,at,containNet:OpenFootball.containNet,rollDistance:OpenFootball.rollDistance,version:'grass-impact-roll-v101'};
+return{STEP,R,advance,pass,shot,at,containNet:OpenFootball.containNet,outerNet:OpenFootball.outerNet,rollDistance:OpenFootball.rollDistance,version:'grass-impact-roll-v101'};
 });
