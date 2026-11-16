@@ -18,6 +18,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-16 UTC] Claude · V188 (son) — 11v11 oyun zekâsı ve turnuva hava durumu
+- Kullanıcı: oyuncu davranışı istekleri esas 11v11 içindi; analiz/gol şekilleri değişebilir (milli ara). Turnuvaya (5v5 ve 11v11) açık/yağmurlu/karlı hava seçeneği, varsayılan açık.
+- Hava: competition.html #competitionWeather (Açık hava/Yağmurlu hava/Karlı hava, varsayılan clear; localStorage tercihine bakılmaz). competition-engine c.weather; 5v5 Arena.create'e (yalnız rain/snow ise) `weather` geçer → japon ball surface fiziği, Japon Kale ile aynı. Renderer Scene.create({weather}) → ortak weather.js görseli (11v11 normal haftanın maçları ile aynı; karda zemin kaplaması aynı hafif seviye). Eski kayıtlarda weather yok → clear/aynı fizik. Tarayıcıda 11v11 yağmur, 5v5 kar karesi kontrol edildi.
+- 11v11 kök neden (possession-engine, 16 maçlık turnuva örneklemi): OF.defensivePlan zaten primary (top–kale hattı 0,75 m) ve cover (4,2 m geride kademe) görevleri veriyordu; ancak cover Formation.target bloğuna, OE.shape ofsetlerine ve Collective harmanlamasına giriyor, primary de ofset/harmanlamayla görev noktasından çekiliyordu. Artık topa sahip rakip varken primary/cover görev noktasını korur; Formation dışlama listesi [primary,cover].
+- Taşıyıcı (decide): kendi yarı/orta üçte (relative x<30) ileri koni (10 m) boşsa carry ağırlığı ×1.8, yatay/geri pas ×0.55; öndeki takım arkadaşının net bitiriş fırsatı varsa uygulanmaz (V176 openFinish testi bunu yakaladı: ilk sürüm x<44 iken açık bitiriş 0,25→1,6 sn gecikti, düzeltildi). Shield yalnız öndeki baskıcıya ve kısa adım (önceki kayıt).
+- Ölçüm (4 eşleşme×4 tohum lig 11v11, duran top hariç; temel→yeni): açık önlü taşıyıcı <1 m/s %10.0→%8.3, ort. ileri hız 4.34→4.41, kaleye 35 m içinde kale tarafında 4 m'de savunmacısız taşıyıcı %70.0→%66.7, en yakın savunmacı 3.07→2.74 m. Skorlar ledger ile aynı; pas/şut sayıları biraz değişir. match.js targets() içine denenen ayrı kademe kuralı ölçümde etkisizdi (liveGeometry çoğunlukta) ve geri alındı.
+- T-334 hâlâ partial: bu, analiz özetinin canlı bölümünü iyileştirir; daha geniş blok/hat derinliği ve hücum koşuları için ölçüm betiği mantığı yukarıda.
+
+
 ## [2026-11-16 UTC] Claude · V188 (son) — 5v5 LED'de seçilen lig şablonu
 - Kullanıcı: 5v5'te yalnız LED panolarda seçilen şablon (hangi lig/kupa seçiliyse) dönebilir; fazlası yok. 11v11 panolar normal canlı maçtaki gibi: bazı panolar Next90Sim/@next90sim, ortadaki yarışma panosu şablon (ortak stadium-boards; şablonsuzda Next90Sim).
 - japon-arena create/createStage opsiyonel `extra` → japon-venue LED brand hücreleri dönüşümlü: şablon logosu (competitionIconLight) + adı / @next90sim. Yalnız competition-renderer şablon seçiliyse geçirir; japon-kale.html ve 5v5 oyun/fizik değişmez. LED dokusu tarayıcıda tr.1/en.1/es.1 için kontrol edildi.

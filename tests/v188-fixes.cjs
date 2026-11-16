@@ -20,4 +20,11 @@ for(const sign of[1,-1]){const path=t=>{const u=Math.max(0,t-4);return{x:sign*(5
 // 3. Competition 11v11 rosters prefix ids per side; photographic faces use the source id.
 A.equal(Faces.sourceId('studio-432-side0-193149'),'193149');A.equal(Faces.sourceId('studio-436-side1-fm-309328'),'fm-309328');A.equal(Faces.sourceId('176948'),'176948');
 
-console.log(JSON.stringify({pass:true,wideShots:wide,goals}));
+// 4. Competition weather: default clear, stored with the competition and replayed into 5v5 ball physics.
+(async()=>{const C=require('../assets/competition-engine.js'),R=require('../assets/club-rosters-v75.json');
+ const base={format:'league',field:'five',seed:5,seconds:30,teams:['436','432'].map(id=>C.entry(R,id))};
+ const clear=await C.prepare(base),snow=await C.prepare({...base,weather:'snow'}),bad=await C.prepare({...base,weather:'hail'});
+ A.equal(clear.weather,'clear');A.equal(snow.weather,'snow');A.equal(bad.weather,'clear');
+ const m=snow.matches[0],e=C.buildMatch(m,snow);A.deepEqual(e.stats.map(s=>s.gf),m.score,'snow replay matches its recorded score');
+ console.log(JSON.stringify({pass:true,wideShots:wide,goals,weather:[clear.weather,snow.weather]}));})().catch(e=>{console.error(e);process.exit(1);});
+

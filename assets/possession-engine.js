@@ -42,7 +42,12 @@ function simulate(c,initial,foot,attempt){
   }
   const nearest=enemies.filter(o=>!o.keeper).sort((a,b)=>gap(p,a)-gap(p,b))[0],beat=nearest?OF.duelEstimate(profile,profiles[nearest.id],{running:p.speed>3,wide:Math.abs(p.z)>18,cover:enemies.filter(o=>gap(p,o)<5).length>1}):.8,
   space=OF.dribbleSpace(me,opponents,{x:me.x+5,z:me.z});
-  opts.push({type:'carry',weight:(.7+beat*2.4+(space?.value||0)*.5-pressure*.25)*(c.liveGeometry&&attempt>=10&&p.id===c.team*11+(c.finisher??9)?5:1)});
+  // V188: with an open lane toward goal (no opponent in the forward cone) the carrier drives on: carrying
+  // is favoured and square/backward recycling passes lose weight, unless a team-mate ahead already has a
+  // clear finishing chance (then the release stays first). Probabilistic choice is kept.
+  const releaseClear=friends.some(f=>{const q=relative(f,dir);return !f.keeper&&q.x>me.x+2&&Intelligence.finishingOpportunity(q,{x:52.5,z:0,width:7.32},opponents).clear;}),openFront=!releaseClear&&!p.keeper&&me.x<30&&!opponents.some(o=>{if(o.dismissed)return false;const along=o.x-me.x,side=Math.abs(o.z-me.z);return along>-.5&&along<10&&side<along*.55+1.6;});
+  if(openFront)for(const o of opts)if(o.friend&&['pass','loft'].includes(o.type)&&relative(o.friend,dir).x<me.x+2)o.weight*=.55;
+  opts.push({type:'carry',weight:(.7+beat*2.4+(space?.value||0)*.5-pressure*.25)*(openFront?1.8:1)*(c.liveGeometry&&attempt>=10&&p.id===c.team*11+(c.finisher??9)?5:1)});
   const front=nearest&&relative(nearest,dir),blocked=front&&gap(me,front)<3.2&&front.x>me.x-.5;// V188: shield only against a goal-side presser; with an open front the carrier drives on.
   if(pressure>.2&&blocked)opts.push({type:'shield',weight:.2+(1-beat)*pressure});
   if(me.x>(free?16:27)&&Math.abs(me.z)<23)opts.push({type:'shot',weight:free?.18+Math.max(0,me.x-20)/16:.65+(me.x-27)/11});
@@ -77,10 +82,13 @@ function simulate(c,initial,foot,attempt){
       const target=role==='CB'||role==='DM'?anchor:{x:anchor.x*.6+offer.x*.4,z:anchor.z*.6+offer.z*.4},evaded=OF.evadeMarker(canon,target,b,world.defenders,profile,profiles,t);
       q={x:evaded.x*dir,z:evaded.z*dir};}
    }else{const duty=world.plan.duties[p.id];if(duty?.target)q={x:duty.target.x*dir,z:duty.target.z*dir};else{const x=clamp(b.x+(['CB','LB','RB'].includes(role)?11:role==='DM'?4:-4),-40,47);q={x:x*dir,z:clamp(home.z*.72+b.z*.25,-29,29)*dir};}}
-   if(c.ai.formation99&&owner!==p.id&&!(flight?.type==='pass'&&flight.receiver===p.id))q=Formation.target(c,p,q,old,ball,world.side,direction(p.team),[world.plan.primary]);
-   if(c.ai.openEngine&&owner!==p.id&&!(flight?.type==='pass'&&flight.receiver===p.id)){if(!world.oeOffsets[p.id]){const shaped=OE.shape(p,q,old,ball,profile,c.ai.tactics[p.team],isAttack,direction(p.team));world.oeOffsets[p.id]={x:shaped.x-q.x,z:shaped.z-q.z};}const d=world.oeOffsets[p.id];q={x:q.x+d.x,z:q.z+d.z};}
+   // V188: the presser and the cover defender (kademe) keep their duty point; block shaping, positional
+   // offsets and collective blending no longer pull them back into the line.
+   const duty=!isAttack&&world.plan.duties[p.id],dutyLocked=duty&&['primary','cover'].includes(duty.mode)&&owner!=null;
+   if(c.ai.formation99&&owner!==p.id&&!dutyLocked&&!(flight?.type==='pass'&&flight.receiver===p.id))q=Formation.target(c,p,q,old,ball,world.side,direction(p.team),[world.plan.primary,world.plan.cover]);
+   if(c.ai.openEngine&&owner!==p.id&&!dutyLocked&&!(flight?.type==='pass'&&flight.receiver===p.id)){if(!world.oeOffsets[p.id]){const shaped=OE.shape(p,q,old,ball,profile,c.ai.tactics[p.team],isAttack,direction(p.team));world.oeOffsets[p.id]={x:shaped.x-q.x,z:shaped.z-q.z};}const d=world.oeOffsets[p.id];q={x:q.x+d.x,z:q.z+d.z};}
    if(giveAndGo?.actor===p.id&&giveAndGo.target&&p.team===world.side&&t-giveAndGo.at<1.8&&owner!==p.id){const r=giveAndGo.target;q={x:r.x,z:r.z};}
-   const collective=world.collective[p.id];if(collective&&!(giveAndGo?.actor===p.id&&giveAndGo.target&&t-giveAndGo.at<1.8)&&owner!==p.id&&!(flight?.type==='pass'&&flight.receiver===p.id)){const w=collective.blend;q={x:q.x+(collective.x-q.x)*w,z:q.z+(collective.z-q.z)*w};}
+   const collective=!dutyLocked&&world.collective[p.id];if(collective&&!(giveAndGo?.actor===p.id&&giveAndGo.target&&t-giveAndGo.at<1.8)&&owner!==p.id&&!(flight?.type==='pass'&&flight.receiver===p.id)){const w=collective.blend;q={x:q.x+(collective.x-q.x)*w,z:q.z+(collective.z-q.z)*w};}
    if(owner==null&&!flight){const contenders=players.filter(a=>a.team===p.team&&!a.keeper&&!a.dismissed).sort((a,b)=>Intelligence.arrival(a,ball,{speed:profiles[a.id].pace,acceleration:profiles[a.id].acceleration})-Intelligence.arrival(b,ball,{speed:profiles[b.id].pace,acceleration:profiles[b.id].acceleration}));if(contenders[0]?.id===p.id||!c.ai.formation99&&contenders[1]?.id===p.id){const v={x:loose?.vx||0,z:loose?.vz||0};q=OF.pursuit(p,ball,v,profile.pace);}}
    if(isAttack&&owner!==p.id&&!(flight?.type==='pass'&&flight.receiver===p.id)){const line=world.defenders.filter(o=>!o.dismissed).map(o=>o.x).sort((a,b)=>b-a)[1]??52.5;const onside=Math.max(world.b.x,line)-4.0;if(q.x*dir>0)q.x=Math.min(q.x*dir,Math.max(0,onside))*dir;}
    return{x:clamp(q.x,-50.5,51.5),z:clamp(q.z,-32.8,32.8)};

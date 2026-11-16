@@ -11,7 +11,8 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
 | T-333 | Fenerbahçe TD Emre Belözoğlu (canlı + turnuva) | done (V188) | claude | files: club-rosters-v75, bulletin-data, faces/staff-portraits, coach-overrides.json, server/lineup-freshness.php |
-| T-334 | 11v11 oyuncu yerleşimi/savunma kademesi/önü boş taşıyıcı daha gerçekçi | partial | claude | V188 yalnız shield düzeltmesi. Ledger'a bağlı analiz motoru; HANDOFF ölçümleri. |
+| T-335 | Turnuva hava durumu seçeneği (5v5+11v11, varsayılan açık) | done (V188) | claude | files: competition.html, competition-ui/engine/renderer, tests/v188-fixes |
+| T-334 | 11v11 oyuncu yerleşimi/savunma kademesi/önü boş taşıyıcı daha gerçekçi | partial | claude | V188: possession-engine primary/cover görev kilidi, açık önde sürme, shield. Ölçümler HANDOFF. Daha geniş blok/koşu işi açık. |
 | T-332 | Turnuva: 11v11 oyuncu yüzleri, seremoni/pano şablon logoları (Next90Sim / seçilen lig), 1.0–3.0x video hızı, dış fileden geçen top | done (V188) | claude | files: player-faces, competition-renderer/ui, competition.html, open-football-adapter, football-physics, ball-boundary, tests/v188-fixes. 5v5 arena kullanıcı isteğiyle değiştirilmedi. |
 | T-331 | Turnuva maç/kutlamada normal11v11 HDformaları, pembe el parçaları teşhis/düzeltme ve yeni görüntü | done (V187) | codex | files: competition-engine/renderer, kit-selection, tests/docs.12eşleşme normalfield+GKtextureeşit; eskiAnalysisPayload saltgörünümyükseltme;24/24atlas1024; eksikassetreject/dispose;58regresyonPASS;6gerçekfoto. Pembeparçalaryalnızkalecieldivenleri. |
 | T-330 | 11v11şampiyon kutlamasına mevcut yedekler/koç ve genel teknik ekip; orta saha kupası/madalyalar ve coşkulu taraftar kutlaması | done (V185) | codex |11XI+mevcut gerçek benç, koç+2adıuydurulmayan teknik görevli. Ortada ilk kupa→taraftara koşu→ikinci kaldırış; gerçek kadraj/projeksiyon ve24foto. |

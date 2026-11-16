@@ -8,6 +8,8 @@
 - Kullanıcı isteğiyle 5v5 arena oyun değişiklikleri geri alındı; turnuvada yalnız LED panolar seçilen lig/kupa şablonunun logosu+adını @next90sim ile dönüşümlü gösterir.
 - Fenerbahçe teknik direktörü Emre Belözoğlu: kadro verisi, bülten ve canlı maçlar için coach-overrides.json.
 - 11v11: topu koruma (shield) yalnız öndeki baskıcıya karşı ve kısa adım; önü boşken geri koşma yok.
+- 11v11: baskıcı ve kademe savunmacısı görev noktasını korur (blok/şekil katmanları geri çekmez); önü boş taşıyıcı geri/yatay pas yerine daha çok sürer. Kaleye yakın serbest topçu %70→%66,7.
+- Turnuva hazırlığına Açık/Yağmurlu/Karlı hava seçeneği (varsayılan açık); 5v5 top fiziği ve görsel ortak hava sistemiyle.
 
 ## V187 · 2026-11-15
 - Kupa/lig11v11maç/kutlama formaları ortak gerçek saha/kaleci atlaslarına bağlandı; eski kayıtlı turnuvalar da görünüm olarak yükseltilir. studio-ID/analiz/oyuncular korunur.

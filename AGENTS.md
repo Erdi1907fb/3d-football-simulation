@@ -316,3 +316,4 @@ dosyalardır.
 - `OpenFootball.outerNet` ıskalanan/ölü topun dış fileden kaleye girmesini engeller; gol yolu/containNet ayrıdır. tests/v188-fixes.cjs.
 - Kullanıcı kararı: 5v5 arenanın oyununa dokunma; tek istisna turnuvada seçilen şablonun LED panolarda @next90sim ile dönüşümlü görünmesi. İyileştirme hedefi 11v11.
 - Güncel teknik direktör geçersiz kılmaları `assets/coach-overrides.json` (sunucu `pp_coach_override`); FB = Emre Belözoğlu.
+- 11v11 possession-engine: topa sahip rakip varken defensivePlan primary/cover görev noktası Formation/OE/Collective tarafından ezilmez. Açık önde sürme yalnız x<30 ve öndeki arkadaşın net bitirişi yokken. Turnuva `weather` (clear/rain/snow) kayıtla saklanır; 5v5 fiziğine yalnız rain/snow geçer.
