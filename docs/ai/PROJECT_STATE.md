@@ -15,10 +15,10 @@
 | Sürüm doğrulama | `build.php` → `assets/release-v188.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 188 |
 
 ## V188 — turnuva yüzleri/şablon kimliği/video hızı
-- player-faces kaynak ID (sideN öneki) + rosterFor; competition-renderer sceneFixture/sceneImages ile 3D pano/seremoni seçilen şablonu (yoksa Next90Sim) taşır; 5v5 LED şablon adı.
+- player-faces kaynak ID (sideN öneki) + rosterFor; competition-renderer sceneFixture/sceneImages ile 11v11 3D pano/seremoni seçilen şablonu (yoksa Next90Sim) taşır.
 - competition-ui 1.0–3.0x dışa aktarma hızı (zaman ölçekli çizim + ses olayları).
 - OpenFootball.outerNet: ıskalanan/ölü top dış fileden kaleye giremez (shot + Boundary.bake).
-- japon-engine openTouch (yarı dönük alım) ve coverFor (baskıcı geçilince kademe). tests/v188-fixes.cjs.
+- 5v5 arena V187 ile aynı (kullanıcı isteği). coach-overrides.json canlı koç geçersiz kılma (FB: Emre Belözoğlu). possession-engine shield yalnız öndeki baskıcıya. tests/v188-fixes.cjs.
 
 ## V187 — turnuva ve kutlama formaları
 - Turnuva studio-ID'leri manifestte gerçek kulüpID'sini bulamıyordu;11v11ham Conceptpayload da forma seçimi yapılmadan Match.create'a gidiyordu. matchAppearance mevcut kimliği/analizi koruyup kitCatalogId ile ortak Catalog.pair seçimini yapar. Önceden kaydedilmiş analysisPayload da salt görünüm olarak yükseltilir.

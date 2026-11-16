@@ -1,0 +1,16 @@
+{
+  "asOf": "2026-11-16T03:00:00+03:00",
+  "note": "Kullanıcının bildirdiği güncel teknik direktörler. Canlı/turnuva maçlarında sağlayıcı verisinin önüne geçer; resmî değişiklikte güncelleyin.",
+  "entries": [
+    {
+      "team": "Fenerbahçe",
+      "espnId": "436",
+      "from": "2026-11-16",
+      "coach": {
+        "id": "manager:225",
+        "name": "Emre Belözoğlu",
+        "source": "user-report: Fenerbahçe teknik direktörü"
+      }
+    }
+  ]
+}

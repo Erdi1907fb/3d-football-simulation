@@ -64,17 +64,14 @@
   function ledTexture(sides, brand, owned) {
     if (!hasCanvas) return null;
     const cell = 512, items = [];
-    sides.forEach((s, i) => { items.push({ kind: 'team', side: s }); items.push({ kind: 'brand', competition: !!brand?.competition && i % 2 === 0 }); });
+    for (const s of sides) { items.push({ kind: 'team', side: s }); items.push({ kind: 'brand' }); }
     const c = canvas(cell * items.length, 64), x = c.getContext('2d');
     items.forEach((it, i) => {
       const x0 = i * cell;
       if (it.kind === 'brand') {
         x.fillStyle = '#05101a'; x.fillRect(x0, 0, cell, 64);
         x.fillStyle = '#f2f6f8'; x.font = '700 38px Arial'; x.textAlign = 'center'; x.textBaseline = 'middle';
-        // V188: a selected competition template shares the LED loop with the house handle.
-        let label = it.competition ? String(brand.competition).toUpperCase() : String(brand?.instagram || '@next90sim');
-        if (it.competition) { x.font = '700 32px Arial'; while (label.length > 4 && x.measureText(label).width > cell - 70) label = label.slice(0, -1); }
-        x.fillText(label, x0 + cell / 2, 34);
+        x.fillText(String(brand?.instagram || '@next90sim'), x0 + cell / 2, 34);
         x.fillStyle = '#35d07f'; x.fillRect(x0 + 40, 6, cell - 80, 3); x.fillRect(x0 + 40, 55, cell - 80, 3);
       } else {
         const team = it.side.team || {}, a = css(team.kit?.shirt ?? team.primary ?? 0x224466), b = css(team.kit?.stripe ?? team.secondary ?? 0xffffff);

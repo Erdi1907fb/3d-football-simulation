@@ -43,7 +43,8 @@ function simulate(c,initial,foot,attempt){
   const nearest=enemies.filter(o=>!o.keeper).sort((a,b)=>gap(p,a)-gap(p,b))[0],beat=nearest?OF.duelEstimate(profile,profiles[nearest.id],{running:p.speed>3,wide:Math.abs(p.z)>18,cover:enemies.filter(o=>gap(p,o)<5).length>1}):.8,
   space=OF.dribbleSpace(me,opponents,{x:me.x+5,z:me.z});
   opts.push({type:'carry',weight:(.7+beat*2.4+(space?.value||0)*.5-pressure*.25)*(c.liveGeometry&&attempt>=10&&p.id===c.team*11+(c.finisher??9)?5:1)});
-  if(pressure>.2)opts.push({type:'shield',weight:.2+(1-beat)*pressure});
+  const front=nearest&&relative(nearest,dir),blocked=front&&gap(me,front)<3.2&&front.x>me.x-.5;// V188: shield only against a goal-side presser; with an open front the carrier drives on.
+  if(pressure>.2&&blocked)opts.push({type:'shield',weight:.2+(1-beat)*pressure});
   if(me.x>(free?16:27)&&Math.abs(me.z)<23)opts.push({type:'shot',weight:free?.18+Math.max(0,me.x-20)/16:.65+(me.x-27)/11});
   const opportunity=Intelligence.finishingOpportunity(me,{x:52.5,z:0,width:7.32},opponents),viable=opportunity.clear?opts.filter(o=>o.type==='shot'||o.type==='pass'&&o.friend.x*dir>me.x+1&&Math.abs(o.friend.z)<3):opts;const selected=E.choose((viable.length?viable:opts).map(o=>({...o,creative:o.type==='through'?.9:o.type==='loft'?.4:0,utility:Math.log(Math.max(.0001,o.weight))})),profile.traits||E.character(p,profile),decisionRng,{pressure,fatigue:p.fatigue||0});nextDecision=t+((c.liveGeometry?.42:.35)+rng()*(c.liveGeometry?.75:.55))*(c.ai.tactics[p.team].style?.patience||1);
   if(['pass','loft','cross','through'].includes(selected.type)){const f=selected.friend,target=selected.aim||Intent.lead(p,f,c.liveGeometry?14:18);release(p,target,t,selected.type,f.id);return;}
@@ -55,7 +56,9 @@ function simulate(c,initial,foot,attempt){
    if(free||shot.result!=='goal'){horizon=free?freeSeconds:Math.min(17,Math.max(horizon,t+8.0));flight={type:'shot',start:t,end:t+Math.min(shot.impact+.45,2.4),shot,dir,passer:p.id,team:p.team,reported:false};owner=null;control=null;trace('shot',t,{team:p.team,actor:p.id,xg:.10,onTarget:shot.result==='save'||shot.result==='block'});action('shot',t,{actor:p.id,outcome:shot.result,x:p.x,z:p.z});return;}
   }
   const probe=Collective.carry(p,enemies,profile,dir),forward=probe?relative(probe,dir):space||{x:me.x+3,z:me.z},side=selected.type==='shield'?-1:1;
-  carryAim={x:clamp((me.x+(forward.x-me.x)*side*2)*dir,-49,49),z:clamp((me.z+(forward.z-me.z)*2)*dir,-31,31)};
+  const presser=selected.type==='shield'&&enemies.filter(o=>!o.keeper).sort((a,b)=>gap(p,a)-gap(p,b))[0],away=presser&&relative(presser,dir),ax=away?me.x-away.x:-1,az=away?me.z-away.z:0,al=Math.hypot(ax,az)||1;
+   // V188: a shield turns the body away from the presser (short protective step), not a long retreat toward the own goal.
+   carryAim=selected.type==='shield'?{x:clamp((me.x+ax/al*1.6)*dir,-49,49),z:clamp((me.z+az/al*1.6)*dir,-31,31)}:{x:clamp((me.x+(forward.x-me.x)*side*2)*dir,-49,49),z:clamp((me.z+(forward.z-me.z)*2)*dir,-31,31)};
   action(selected.type==='shield'?'shield':'carry',t,{actor:p.id,x:p.x,z:p.z,target:{...carryAim}});
  }
  for(let tick=0;tick<=Math.ceil((free?freeSeconds:17)/DT);tick++){

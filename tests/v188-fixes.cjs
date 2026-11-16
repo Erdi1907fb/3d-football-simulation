@@ -1,7 +1,7 @@
 'use strict';
-// V188: outside-net containment, competition face ids, arena cover/half-turn reception.
+// V188: outside-net containment and competition face ids.
 const A=require('node:assert/strict');
-const P=require('../assets/football-physics.js'),Boundary=require('../assets/ball-boundary.js'),Faces=require('../assets/player-faces.js'),E=require('../assets/japon-engine.js');
+const P=require('../assets/football-physics.js'),Boundary=require('../assets/ball-boundary.js'),Faces=require('../assets/player-faces.js');
 
 // 1. A missed shot never travels through the side/roof netting into the goal volume.
 let seed=7;const rnd=()=>(seed=(seed*1664525+1013904223)>>>0)/4294967296;
@@ -20,12 +20,4 @@ for(const sign of[1,-1]){const path=t=>{const u=Math.max(0,t-4);return{x:sign*(5
 // 3. Competition 11v11 rosters prefix ids per side; photographic faces use the source id.
 A.equal(Faces.sourceId('studio-432-side0-193149'),'193149');A.equal(Faces.sourceId('studio-436-side1-fm-309328'),'fm-309328');A.equal(Faces.sourceId('176948'),'176948');
 
-// 4. Arena: deterministic, cover role appears near goal, half-turn reception keeps physics finite.
-const sides=n=>Array.from({length:n},(_,i)=>({name:'Side '+i,keeper:{id:'k'+i,name:'Keeper '+i,roles:['GK']},defender:{id:'d'+i,name:'Defender '+i},defender2:{id:'e'+i,name:'Other defender '+i},midfielder:{id:'m'+i,name:'Midfielder '+i},player:{id:'p'+i,name:'Player '+i}}));
-let covers=0,opens=0;
-for(const s of[3,11,27]){const a=E.create({sides:sides(2),seed:s,seconds:45,mode:'points'}),b=E.create({sides:sides(2),seed:s,seconds:45,mode:'points'});
- A.deepEqual(a.events.map(e=>[e.type,+e.t?.toFixed?.(4)||e.at]),b.events.map(e=>[e.type,+e.t?.toFixed?.(4)||e.at]),'same seed same match');
- A(a.frames.every(f=>Number.isFinite(f.ball.x)&&Number.isFinite(f.ball.z)&&f.players.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.z))));
- covers+=a.frames.filter(f=>f.players.some(p=>p.supportIntent==='cover')).length;opens+=new Set(a.frames.flatMap(f=>f.players.map(p=>p.openTouchAt).filter(Number.isFinite))).size;}
-A(covers>0,'second defender cover is used');A(opens>0,'open half-turn receptions occur');
-console.log(JSON.stringify({pass:true,wideShots:wide,goals,coverFrames:covers,openReceptions:opens}));
+console.log(JSON.stringify({pass:true,wideShots:wide,goals}));
