@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V191 · 2026-11-17
+- 5v5/Japon Kale turnuvasında maç süresi seçimi: 1 dakika, 75 sn, 90 sn.
+- Deneme (varsayılan kapalı): 5v5 lig maçı oynanırken köşede canlı puan durumu.
+
 ## V190 · 2026-11-17
 - Turnuva Stüdyosu'na Japon Kale: lig (3–6 takım, her hafta tüm takımlar tek çok kaleli oyunda, sıralama puanı, puan durumu, Avrupa sıraları, sezonlar) ve kupa (8 takım, iki dörtlü eleme yarı finali, dörtlü eleme finali). Japon arenası, kamerası, skorbordu (ELENDİ), maç kartları, fikstür ve kupa ağacı.
 - Arena karar ayarı: 5v5 turnuva maçlarında 2,13 gol / 8,1 şut; Japon Kale ortalama ~2,35 gol.

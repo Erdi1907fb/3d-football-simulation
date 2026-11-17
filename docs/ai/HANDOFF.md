@@ -18,6 +18,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V190 → V191 — 5v5 süre seçimi ve canlı puan durumu DENEMESİ
+- Kullanıcı: 5v5 lig/kupada 60/75/90 sn süre seçimi; oynanırken puan durumu görünümünü yalnız deneme olarak göster (beğenmezse kodlardan kaldırılacak). Ayrıca ara ekransız akış hakkında görüş istedi (yanıt sohbette).
+- Süre: competitionSeconds seçenekleri yalnız 1 dakika (60) / 75 / 90 sn, etiket "Maç süresi (5v5 / Japon Kale)". Engine clamp 30–180 aynı (eski kayıtlar).
+- DENEME `liveTable` (varsayılan kapalı, yalnız 5v5 lig): UI onay kutusu; c.liveTable; broadcast.liveTable dikeyde x30/y268 (üst platform alanının altında, skorbordun çok üstünde), yatayda sağ üst; oynanan maçlar + o anki canlı skorla geçici sıralama, sahadaki iki takım kırmızı nokta ile. Gelecek maç bilgisi yok. Görseller docs/ai/validation-v191. Kullanıcı reddederse kaldırılacak yerler: competition.html liveTableField, competition-ui liveTable (labels/values/hidden/invalidate), competition-engine c.liveTable, competition-broadcast liveTable+entry, competition-renderer çağrısı.
+- Testler: run-all --quick 59/59 PASS.
+
+
 ## [2026-11-17 UTC] Claude · V189 → V190 — Turnuva Stüdyosu'na Japon Kale ve arena ayarı
 - Kullanıcı: savunma/atak/sürekli aksiyonu daha da incele, Japon Kale'ye de uygula; Lig/Kupa (sıralama, Avrupa sıraları, sezonlar, tüm seçenekler) aynen Japon Kale için de olsun. Soruya yanıtı: "Her hafta çok kaleli" — her hafta/tur tüm takımlar tek Japon Kale oyununda.
 - Arena: arenaDecision şut bonusu 14,5→15 m ve +%20 güç, ileri pas bonusu/ yatay-geri ceza biraz arttı. Gerçek kadrolu 5v5 120 maç: 1,90→2,13 gol, 7,6→8,1 şut, 0-0 %12,5→%10,8. Japon Kale (3/4/6 kale, 75 oyun) V188→V189/V190: 2,0→2,35 gol, kaleye yakın serbest taşıyıcı %46→%39–42 (değişim Japon'da nötr, 5v5'te olumlu). Japon Kale V189 ayarlarını zaten ortak motordan alıyordu.
