@@ -18,6 +18,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V191 → V192 — Lig "Hızlı akış" seçeneği (5v5, 11v11, Japon Kale)
+- Kullanıcı: canlı puan durumu beğenildi; seçenek olarak: işaretliyse lig videosu kapak/açılış olmadan direkt ilk maçla başlasın, maç içinde puan durumu+skorbord (seçili şablonla), her maç sonunda hızlı kısa puan durumu sahnesi, sonra sıradaki maç. Kupada yok.
+- competition-engine `fastFlow` (yalnız lig, tüm saha türleri): cover/season-opening/opening/match-intro/match-result/round-summary eklenmez; her maçtan sonra 4 sn 'standings-update' (mevcut tablo+fikstür panosu). c.liveTable=fastFlow (eski 5v5 liveTable API'si de kabul). Final/şampiyon/sezon özet bölümleri aynı. Kapak PNG'si ayrıca üretilebilir (videoda yok). 11v11 maç bölümü kendi maç öncesi tanıtım/seremonisini içerir (maç motorunun parçası).
+- broadcast.liveTable genelleşti: 5v5 (eski), 11v11 (üst skorbord nedeniyle tablo altta: dikey y=1518−h, yatay sağ alt; maç öncesi tanıtımda gizli), Japon (canlı arena puanlarından geçici sıra/yerleşim puanı, tüm takımlar canlı).
+- UI: önceki deneme kutusu artık "Hızlı akış: video ligin ilk maçıyla başlar, puan durumu maç içinde görünür" (yalnız lig formatında görünür). T-338 kullanıcı onayıyla seçenek oldu.
+- Tarayıcı: Trendyol şablonu + aksiyon kamerası ile 5v5/Japon/11v11 ilk kare, 1. maç, ara tablo, 2. maç; görsel docs/ai/validation-v192. Testler: competition-japon.cjs hızlı akış kontrolleri; node tests/run-all.cjs → 60/60 PASS; build192 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V191 (devam) — canlı puan durumu: aksiyon kamerası + şablon
 - Kullanıcı: canlı puan durumunu aksiyon kamerasında (broadcast) ve Trendyol Süper Lig şablonuyla görmek istedi. Tablo zaten kameradan bağımsız çiziliyordu; şablon seçiliyse başlıkta şablon logosu (competitionIconLight/markPath), şablon koyu zemini, vurgu rengiyle alt çizgi/puanlar/canlı satır vurgusu eklendi. Şablonsuzda eski görünüm.
 - Görseller: docs/ai/validation-v191/canli-puan-trendyol-aksiyon-{dikey,yatay}.jpg. Hâlâ DENEME (T-338); kaldırma listesi önceki kayıtta.

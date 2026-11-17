@@ -6,11 +6,12 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V191 5v5 süre seçimi ve canlı puan durumu denemesi
+## Aktif hedef: V192 lig hızlı akış seçeneği
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-338 | 5v5 lig/kupa 60/75/90 sn; maç sırasında canlı puan durumu DENEMESİ (kullanıcı onayı bekleniyor) | partial (V191) | claude | Onaylanmazsa liveTable kodunu kaldır (HANDOFF V191 listesi). |
+| T-339 | Lig hızlı akış seçeneği (ilk maçla başla, maç içi canlı puan durumu, kısa ara tablo) 5v5/11v11/Japon | done (V192) | claude | files: competition-engine/broadcast/renderer/ui, tests/competition-japon |
+| T-338 | 5v5 lig/kupa 60/75/90 sn; canlı puan durumu | done (V191→V192 seçenek) | claude | Kullanıcı beğendi; hızlı akış seçeneğine bağlandı. |
 | T-337 | Turnuva Stüdyosu'na Japon Kale lig/kupa (her hafta çok kaleli) + arena aksiyon ince ayarı | done (V190) | claude | files: competition-engine/renderer/broadcast/ui, football-intelligence, tests/competition-japon. 3D madalya töreni Japon'da yok (kart). |
 | T-336 | 5v5 her modda düzenli savunma + daha çok atak/şut/gol, turnuva 5v5 golcü kartı | done (V189) | claude | files: football-intelligence, japon-engine, japon-tactics, competition-renderer, tests/v188-fixes, arena-elimination seed8 |
 | T-333 | Fenerbahçe TD Emre Belözoğlu (canlı + turnuva) | done (V188) | claude | files: club-rosters-v75, bulletin-data, faces/staff-portraits, coach-overrides.json, server/lineup-freshness.php |

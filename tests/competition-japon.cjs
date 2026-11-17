@@ -1,5 +1,5 @@
 'use strict';
-// V190: Japon Kale league/cup inside the Competition Studio.
+// V190: Japon Kale league/cup inside the Competition Studio. V192: league fast flow.
 const A=require('node:assert/strict'),E=require('../assets/competition-engine.js'),R=require('../assets/club-rosters-v75.json');
 (async()=>{
  const teams=ids=>ids.map(id=>E.entry(R,id));
@@ -22,5 +22,9 @@ const A=require('node:assert/strict'),E=require('../assets/competition-engine.js
  for(const m of cup.matches)A.equal(new Set(m.ranks).size,4,'elimination gives a full physical order '+m.id);
  const [s1,s2,f]=cup.matches;A.deepEqual(f.teams,[s1.order[0],s1.order[1],s2.order[0],s2.order[1]]);A.equal(cup.champion,f.order[0]);
  const opening=E.view(cup,1).fixtures.find(x=>x.id==='F1');A(opening.teams.every(id=>id===null),'finalists are not revealed before the semis');
+ // V192 fast flow (league only, every field): video opens on the first match; one short table scene between matches.
+ for(const field of['five','japon']){const fast=await E.prepare({format:'league',field,seed:21,seconds:60,fastFlow:true,teams:teams(['436','432','1895','997'])});A.equal(fast.chapters[0].kind,'match','fast flow starts on the first match ('+field+')');A(fast.liveTable);A(!fast.chapters.some(ch=>['cover','opening','match-intro','match-result','round-summary'].includes(ch.kind)));
+  const kinds=fast.chapters.map(ch=>ch.kind);for(let i=0;i<kinds.length-1;i++)if(kinds[i]==='match')A.equal(kinds[i+1],'standings-update');A(fast.chapters.filter(ch=>ch.kind==='standings-update').every(ch=>ch.duration<=4));}
+ const cupFast=await E.prepare({format:'cup',field:'five',seed:3,seconds:60,fastFlow:true,teams:teams(['436','432','1895','997','435','437','83','86'])});A.equal(cupFast.chapters[0].kind,'cover','cup keeps its normal flow');
  console.log(JSON.stringify({pass:true,league:{weeks:league.matches.length,goals:league.matches.map(m=>m.goals),champion:league.champion},cup:{champion:cup.champion,durations:cup.matches.map(m=>+m.regulationDuration.toFixed(1))}}));
 })().catch(e=>{console.error(e);process.exit(1);});

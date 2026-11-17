@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V192 · 2026-11-17
+- Lig için "Hızlı akış" seçeneği (5v5, 11v11, Japon Kale): video ilk maçla başlar, maç içinde şablonlu canlı puan durumu, maç aralarında 4 sn puan durumu/fikstür.
+
 ## V191 · 2026-11-17
 - 5v5/Japon Kale turnuvasında maç süresi seçimi: 1 dakika, 75 sn, 90 sn.
 - Deneme (varsayılan kapalı): 5v5 lig maçı oynanırken köşede canlı puan durumu.

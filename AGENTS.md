@@ -321,3 +321,6 @@ dosyalardır.
 ## 31. V190 — Turnuva Stüdyosu Japon Kale
 - Kullanıcı kararı: Japon Kale turnuvasında her hafta/tur bütün takımlar TEK çok kaleli oyunda oynar (ikili maç değil). Lig 3–6 takım/points modu/yerleşim puanı; kupa 8 takım, iki dörtlü eleme yarı finali + dörtlü eleme finali (gol yiyen elenir, sıralama fiziksel). Kura yalnız ligdeki tam eşitlikte.
 - Japon kayıtları `teams/goals/ranks/placementPoints/order` taşır; `score[2]`/home-away varsayımı yapan kodu Japon için çağırma. Fikstür nesnelerini prepare sırasında mutasyona uğratma (spoiler).
+
+## 32. V192 — Lig hızlı akış
+- `fastFlow` yalnız ligde ve her saha türünde: video ilk maçla açılır, maç içinde `liveTable` (şablon renk/logo), maçlar arası tek 4 sn tablo+fikstür. Kupa normal akışta kalır. Canlı tablo gelecek maç bilgisi göstermez; 11v11'de üst skorbordla çakışmaması için altta durur.
