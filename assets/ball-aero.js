@@ -29,7 +29,7 @@ function step(b,dt=STEP){
  // Spin decays slowly in air (time constant ≈ 9 s) and quickly while rolling.
  const decay=Math.exp(-dt*(air?.11:2.2));b.wx*=decay;b.wy*=decay;b.wz*=decay;
  let event=null;
- if(b.y<R||b.continuousGround&&b.y<=R+1e-6){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){const keep=Math.max(0,1-((b.rollingResistance??.55)*sf.roll*dt)/v);b.vx*=keep;b.vz*=keep;}else b.vx=b.vz=0;}}
+ if(b.y<R||b.continuousGround&&b.y<=R+1e-6){const impact=-b.vy,sf=b.surface||SURFACES.clear;b.y=R;if(impact>.6){const e=clamp(.62-impact*.012,.42,.6)*sf.bounce;b.vy=impact*e;const grip=Math.min(.97,clamp(.86-impact*.008,.72,.86)*sf.grip);b.vx*=grip;b.vz*=grip;b.bounces++;event={type:'ground',speed:impact};}else{b.vy=0;const v=Math.hypot(b.vx,b.vz);if(v>.02){/* V193 opt-in (arena): a ground-struck ball first skids on the turf (kinetic friction ~0.4 g) until it rolls at 5/7 of its speed, then rolling resistance */const skid=b.skid>0?Math.min(b.skid,3.9*sf.grip*dt):0;if(skid)b.skid-=skid;const keep=Math.max(0,1-((b.rollingResistance??.55)*sf.roll*dt+skid)/v);b.vx*=keep;b.vz*=keep;}else{b.vx=b.vz=0;b.skid=0;}}}
  return event;
 }
 // Woodwork: two uprights (vertical cylinders) and the crossbar (horizontal).

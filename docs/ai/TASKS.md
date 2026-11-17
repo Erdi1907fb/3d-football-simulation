@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V192 lig hızlı akış seçeneği
+## Aktif hedef: V193 haftanın maçından 5v5 + penaltı, hızlı akış haftalık, top kayması
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-340 | Hızlı akış hafta/tur sonu tablo (lig+kupa); arena top kayması; haftanın maçından 5v5 + penaltı içeriği | done (V193) | claude | files: competition-engine/ui/broadcast/renderer, penalty-engine fixedOrder, ball-aero skid, japon-engine, app.js/index.html, tests/competition-japon. Canlı PHP akışı test edilmedi. |
 | T-339 | Lig hızlı akış seçeneği (ilk maçla başla, maç içi canlı puan durumu, kısa ara tablo) 5v5/11v11/Japon | done (V192) | claude | files: competition-engine/broadcast/renderer/ui, tests/competition-japon |
 | T-338 | 5v5 lig/kupa 60/75/90 sn; canlı puan durumu | done (V191→V192 seçenek) | claude | Kullanıcı beğendi; hızlı akış seçeneğine bağlandı. |
 | T-337 | Turnuva Stüdyosu'na Japon Kale lig/kupa (her hafta çok kaleli) + arena aksiyon ince ayarı | done (V190) | claude | files: competition-engine/renderer/broadcast/ui, football-intelligence, tests/competition-japon. 3D madalya töreni Japon'da yok (kart). |

@@ -324,3 +324,6 @@ dosyalardır.
 
 ## 32. V192 — Lig hızlı akış
 - `fastFlow` yalnız ligde ve her saha türünde: video ilk maçla açılır, maç içinde `liveTable` (şablon renk/logo), maçlar arası tek 4 sn tablo+fikstür. Kupa normal akışta kalır. Canlı tablo gelecek maç bilgisi göstermez; 11v11'de üst skorbordla çakışmaması için altta durur.
+
+## 33. V193 — Haftanın maçı ek içerikleri
+- Maç merkezindeki "5v5 kapışma"/"Penaltı atışları" competition.html `format:'single'` kullanır; 11v11 analiz akışını değiştirmez. Penaltıda kullanıcı sırası `fixedOrder` ile korunur. Hızlı akışta tablo yalnız hafta/tur sonunda. Arena `skid` yalnız japon-engine ballState'te açıktır; diğer modlara taşıma.

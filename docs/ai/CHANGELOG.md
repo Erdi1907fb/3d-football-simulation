@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V193 · 2026-11-17
+- Hızlı akış lig ve kupada: maçlar arasında kısa sonuç, hafta/tur sonunda ayrıntılı tablo veya kupa ağacı.
+- 5v5/Japon Kale: yerden vurulan top önce çimde kayıp hız kaybeder (daha az kayma).
+- Haftanın maçından 5v5 kapışma (60/75/90 sn) ve penaltı atışları; beşli ve penaltıcılar varsayılan seçilir, değiştirilebilir.
+
 ## V192 · 2026-11-17
 - Lig için "Hızlı akış" seçeneği (5v5, 11v11, Japon Kale): video ilk maçla başlar, maç içinde şablonlu canlı puan durumu, maç aralarında 4 sn puan durumu/fikstür.
 

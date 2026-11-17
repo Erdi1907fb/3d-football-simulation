@@ -2,7 +2,7 @@
    Metres/seconds; no authored goals, score correction or unseeded randomness. */
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'),require('./japon-layout.js'),require('./japon-duels.js'),require('./japon-net.js'),require('./japon-tactics.js'));else r.Next90Japon=f(r.Next90BallAero,r.Next90JaponLayout,r.Next90JaponDuels,r.Next90JaponNet,r.Next90JaponTactics);})(typeof globalThis!=='undefined'?globalThis:this,function(A,Layout,Duels,Net,Tactics){'use strict';
 const DT=1/120,R=.11,clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),dist=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
-function ballState(p,v,w,opt){return{...A.state(p,v,w,{...opt,rollingResistance:1.9}),continuousGround:true};}
+function ballState(p,v,w,opt){const ground=(p.y??R)<R+.05&&Math.abs(v.y||0)<1;return{...A.state(p,v,w,{...opt,rollingResistance:1.9}),continuousGround:true,skid:ground?Math.hypot(v.x,v.z)*2/7:0};}
 function random(seed){let s=seed>>>0||1;return()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return(s>>>0)/4294967296;};}
 function ability(p){const raw=Number(p.rating)||7;return clamp(raw>10?(raw-50)/45:(raw-5)/4,0,1);}
 function goalsFor(n,goalWidth=5){return Layout.create(n,goalWidth).goals;}
