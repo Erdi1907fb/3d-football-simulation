@@ -18,6 +18,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V194 → V195 — Haftanın maçı penaltısı normal Penaltı Stüdyosu'nda
+- Kullanıcı: penaltılarda V194'teki turnuva görünümünü (şablon skorbordu, golcü şeridi, PEN) istemedi; normal Penaltı Stüdyosu (üst panel, 5 yuvarlak yeşil/kırmızı, VURUŞ/KALEDE) aynen korunacak, yalnız ilgili ligin şablonundan küçük dokunuş. 5v5 tarafı (şablon skorbordu, golcü) kalacak.
+- Maç merkezindeki "Penaltı atışları" artık penalty.html?home=<espnId>&away=<espnId>&theme=<competitionId> açar. penalty-ui: home/away varsa takım seçimlerini ön ayarlar (registry'de yoksa eski varsayılan FB–GS); theme geçerli bir yayın şablonuysa üst panelde sol kenarda şablon vurgu şeridi ve sağdaki next90 logosu yerine lig logosu (altında küçük next90sim). Parametresiz stüdyo birebir eski.
+- V194'ün turnuva penaltı değişiklikleri geri alındı: kupa/tek maç shootout kamerası tekrar Japon fit, penaltı golcü şeridi ve PEN etiketi (broadcast/domestic clockLabel) kaldırıldı. Kalanlar: 5v5 varsayılan 'broadcast' kamera, tek maç dikey, theme parametresi ile 5v5 şablonu, shootoutKicks.shooterId.
+- Tarayıcı: penalty.html?home=432&away=11429&theme=tr.1 (GS–Samsunspor, Trendyol) ve parametresiz karşılaştırma docs/ai/validation-v195. Hata yok.
+- Testler: node tests/run-all.cjs → 60/60 PASS; build195 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V193 → V194 — Haftanın maçı 5v5/penaltı kendi stüdyo görünümünde + lig şablonu
 - Kullanıcı: tek maç penaltı ve 5v5 kendi stüdyolarındaki gibi görünsün (penaltı kamerası Penaltı Stüdyosu gibi, 5v5 normal aksiyon açısı); maçın ligi neyse onun şablonu (skorbord, golcü); örnekleri önümüzdeki haftanın bülteninden al (GS–Samsunspor), oynanmış maçlardan değil.
 - Penaltı (competition-renderer shootout): Japon fit kamera kaldırıldı; Penaltı Stüdyosu planı: penalty-wide fov52 [27.8,3.1,.3]→[49.3,-.15,-.9], 2.+ vuruşlarda düdük kesmesi, bitince Next90PenaltyStage.winnerCamera. Golde golcü şeridi (fotoğraf player-portraits shooterId ile, logo, GOL · isim, 2,4 sn); shootoutKicks.shooterId eklendi. Şablon skorbordunda saat yerine PEN/PENS (broadcast/domestic live `clockLabel` opt-in; normal maçlar değişmez).

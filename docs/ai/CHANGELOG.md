@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V195 · 2026-11-17
+- Haftanın maçı "Penaltı atışları" normal Penaltı Stüdyosu'nu iki takım seçili açar; yalnız küçük lig şablonu dokunuşu (vurgu şeridi + lig logosu). V194'teki turnuva penaltı görünüm değişiklikleri geri alındı.
+
 ## V194 · 2026-11-17
 - Haftanın maçı penaltıları Penaltı Stüdyosu kamerasıyla, 5v5 normal aksiyon açısıyla; maçın lig şablonu otomatik (ör. Trendyol Süper Lig), golcü şeridi penaltıda da, skorbordda PEN.
 
