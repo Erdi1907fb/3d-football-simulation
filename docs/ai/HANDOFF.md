@@ -18,6 +18,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V193 → V194 — Haftanın maçı 5v5/penaltı kendi stüdyo görünümünde + lig şablonu
+- Kullanıcı: tek maç penaltı ve 5v5 kendi stüdyolarındaki gibi görünsün (penaltı kamerası Penaltı Stüdyosu gibi, 5v5 normal aksiyon açısı); maçın ligi neyse onun şablonu (skorbord, golcü); örnekleri önümüzdeki haftanın bülteninden al (GS–Samsunspor), oynanmış maçlardan değil.
+- Penaltı (competition-renderer shootout): Japon fit kamera kaldırıldı; Penaltı Stüdyosu planı: penalty-wide fov52 [27.8,3.1,.3]→[49.3,-.15,-.9], 2.+ vuruşlarda düdük kesmesi, bitince Next90PenaltyStage.winnerCamera. Golde golcü şeridi (fotoğraf player-portraits shooterId ile, logo, GOL · isim, 2,4 sn); shootoutKicks.shooterId eklendi. Şablon skorbordunda saat yerine PEN/PENS (broadcast/domestic live `clockLabel` opt-in; normal maçlar değişmez).
+- 5v5: kamera varsayılanı her 5v5/Japon turnuvada 'broadcast' (5v5 stüdyosunun dengeli aksiyon yayını); kullanıcı değiştirirse korunur. Tek maçta dikey 1080×1920 varsayılan.
+- Şablon: maç merkezi bağlantısı `theme=<fixture.competitionId>` (SekmeBroadcast.themes'te varsa) ekler; competition-ui bunu seçer. Süper Lig → tr.1.
+- Örnek: canlı sitenin bülteninde GS (432)–Samsunspor (11429), 21 Kasım, tr.1. Bu maçın tahmini henüz yayımlanmadığından api lineups 400 (Unknown fixture) — registry kadrolarıyla test edildi; yayımlanınca extras ile son analiz kadrosu gelir. Görseller docs/ai/validation-v194.
+- Testler: node tests/run-all.cjs → 60/60 PASS; build194 filesMatch=true. Tarayıcı: competition.html?single=penalties|five&home=432&away=11429&theme=tr.1 UI hazırlama + kareler, hata yok.
+
+
 ## [2026-11-17 UTC] Claude · V192 → V193 — Haftalık hızlı akış, top kayması, haftanın maçından 5v5 + penaltı
 - Kullanıcı: (1) hızlı akış ligde VE kupada; aynı hafta/turdaki maçlar arasında yalnız kazanan/sonuç kısa kartı, ayrıntılı tablo hafta/tur bitince; maç arası tablo kaldırılsın. (2) 5v5/Japon Kale'de top zeminde çok kayıyor. (3) Haftanın her maçı için 11v11 analizine ek: aynı iki takımla 5v5 kapışma (60/75/90 sn) ve penaltı atışları; beşliyi ve penaltıcıları kullanıcı seçer, varsayılanı biz seçeriz, seçime göre analiz/sonuç.
 - (1) competition-engine: fastFlow artık her formatta; her maçtan sonra 2,6 sn match-result, round sonunda 4,5 sn round-summary (lig tablo+fikstür, kupa ağacı, Japon tablo/ağaç). standings-update fastFlow'da yok. Canlı tablo yalnız ligde. UI etiketi güncellendi; kutu her formatta görünür (tek maçta gizli).

@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V194 · 2026-11-17
+- Haftanın maçı penaltıları Penaltı Stüdyosu kamerasıyla, 5v5 normal aksiyon açısıyla; maçın lig şablonu otomatik (ör. Trendyol Süper Lig), golcü şeridi penaltıda da, skorbordda PEN.
+
 ## V193 · 2026-11-17
 - Hızlı akış lig ve kupada: maçlar arasında kısa sonuç, hafta/tur sonunda ayrıntılı tablo veya kupa ağacı.
 - 5v5/Japon Kale: yerden vurulan top önce çimde kayıp hız kaybeder (daha az kayma).
