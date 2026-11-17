@@ -18,6 +18,20 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V188 → V189 — 5v5/Japon Kale aksiyonu, düzenli savunma ve turnuva gol kartı
+- Dal claude/league-cup-arena-improvements-6buh8h; main'e fast-forward. Kullanıcı: 5v5 içeren her yerde (küçük saha stüdyosu, Japon Kale, turnuva 5v5) savunma düzgün dursun, önü boş hücumcu vursun, hızlı pas/atak, daha çok kaleye gidiş ve gol (her maç değil ama 3-0/4-1 de olabilsin), kargaşa olmasın. Turnuva 5v5'te golcü kartı skorbordun üstünde, santrada kaybolsun.
+- Ölçüm kökü (gerçek FB/GS/BJK/TS kadroları, 60 sn lig, 120 maç): V188 0,78 gol/maç, 4,9 şut, %50 0-0. Kararların ~%70'i kendi yarıda; 7 m içinde bile %45 şut, %38 sürme; pas hazırlığında oyuncu tam duruyor; alımda top kendi kalesine geri yuvarlanıyor.
+- Değişiklikler (yalnız arena yolu; 11v11/penaltı/FK etkilenmez):
+  - football-intelligence.arenaDecision (context.layout): 14,5 m içinde şut yolu açıklığına göre şut faydası artar; 9 m içinde açık yolda sürme cezası; baskısız uzakta sürme +; ileri pas +, baskısız yatay/geri pas −; 14,5–18 m açık yol uzak şut +.
+  - japon-engine: karar aralığı ~%20 kısa; first-time şut olasılığı .4→.55; pas hazırlığında koşarak pas (top adımla taşınır); openTouch yarı dönük alım; coverFor kademe (radius*.95, baskıcı geçilince); taşıyıcı/destek/savunma hızları biraz arttı (4.25→4.75 taşıyıcı, destek 4→4.6, savunma 4.7/4.8→5.0/5.1), saha oyuncusu ivmesi 5.5→6.4 (kaleci aynı).
+  - japon-tactics.support: forvet hattı topun ~5,4–6,3 m önünde, orta saha önde; defans -4.2.
+  - Denenip geri alınanlar (ölçümde kötüleştirdi): yüksek alanda baskıyı gevşetme (mid-block), baskı altında pas zorlaması, daha düşük pas riski eşiği, daha yüksek takım temposu/directness.
+- Sonuç (120 maç): 1,90 gol/maç, 7,6 şut, %12,5 0-0; skor dağılımında 4-0, 5-1, 3-2, 4-1 de var. Genel test kenarları (generic) 2,55 gol. Kaleye yakın serbest taşıyıcı %52→%50,9. Sonuçlar fiziksel; skor kotası yok.
+- Turnuva 5v5 gol kartı: competition-renderer preloadGoalCards/drawGoalBanner, Next90JaponBroadcast.goalCard verisi (doğrulanmış fotoğraf + kulüp logosu), GOL/GOAL · isim, KENDİ KALESİNE GOL/OWN GOAL; golden itibaren play_resumed (santra) olayına ya da 3,8 sn'ye kadar, skorbordun üstünde. Önizleme/MP4 aynı draw yolu. Tarayıcıda şablonsuz ve Trendyol şablonunda dikey kare kontrol edildi.
+- Testler: tam run-all ilk koşuda 58 PASS + arena-elimination FAIL (seed7 4→3→2 sonrası kimlik koşulu yeni arena kararlarıyla oluşmuyor; V185/V188 emsaliyle aynı kurallar seed8 ile) → --failed PASS. v188-fixes'e gerçek kadrolu 12 maçlık arena aksiyon eşiği eklendi (≥1,2 gol, <%40 golsüz, ≥6 şut).
+- Açık: T-334 11v11 (kısmi). Arena dengesi gerçek tracking kalibrasyonu değildir; eğlence ağırlıklı karar ayarıdır.
+
+
 ## [2026-11-16 UTC] Claude · V188 (son) — 11v11 oyun zekâsı ve turnuva hava durumu
 - Kullanıcı: oyuncu davranışı istekleri esas 11v11 içindi; analiz/gol şekilleri değişebilir (milli ara). Turnuvaya (5v5 ve 11v11) açık/yağmurlu/karlı hava seçeneği, varsayılan açık.
 - Hava: competition.html #competitionWeather (Açık hava/Yağmurlu hava/Karlı hava, varsayılan clear; localStorage tercihine bakılmaz). competition-engine c.weather; 5v5 Arena.create'e (yalnız rain/snow ise) `weather` geçer → japon ball surface fiziği, Japon Kale ile aynı. Renderer Scene.create({weather}) → ortak weather.js görseli (11v11 normal haftanın maçları ile aynı; karda zemin kaplaması aynı hafif seviye). Eski kayıtlarda weather yok → clear/aynı fizik. Tarayıcıda 11v11 yağmur, 5v5 kar karesi kontrol edildi.

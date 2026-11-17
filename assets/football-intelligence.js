@@ -145,6 +145,14 @@
   const blocked=lane(p,g,players,p.team),depth=(g.x-p.x)*g.nx+(g.z-p.z)*g.nz,lateral=Math.abs(-p.x*g.nz+p.z*g.nx),angle=Math.atan2(g.width/2,Math.max(.1,distance));
   const shootingRange=action?clamp((context.layout?.apothem||14)+4,16,23):16;
   if(distance<shootingRange&&depth>.6&&lateral<g.width*.5+depth*.9)options.push({kind:'shot',utility:.15+clamp((15-distance)/10,0,1)*.65+angle*.2+(context.keeper?.rushing?.12:0)+action*.38*(.45+.55*clamp((17-distance)/9,0,1))*(1-clamp(blocked/1.6,0,1)),risk:clamp(blocked*.20+Math.max(0,distance-7)*.025,0,.85),creative:distance>11?.4:0});
+  // V189 arena attacking intent (5v5 / Japon Kale / competition): a player with an open lane near goal
+  // shoots instead of dribbling on, forward passes beat sideways recycling and the carrier keeps driving
+  // into space. Only intent changes; ball flight, keeper and result remain physical.
+  if(context.layout){const shot=options.find(o=>o.kind==='shot'),open=1-clamp(blocked/1.2,0,1);
+   if(shot&&distance<14.5)shot.utility+=(.34+.60*clamp((13-distance)/7,0,1))*(.35+.65*open);else if(shot&&distance<18&&open>.7&&pressure<1)shot.utility+=.16;
+   for(const o of options){if(o.kind==='carry'&&shot&&distance<9&&open>.5)o.utility-=.30;
+    if(o.kind==='carry'&&!shot&&distance>9&&pressure<.6)o.utility+=.12;
+    if(o.kind==='pass'&&!o.through&&o.receiver){const gain=distance-gap(o.receiver,g);o.utility+=gain>1.5?.10+Math.min(.25,gain*.03):pressure<.8?-.12:0;}}}
   const finish=finishingOpportunity(p,g,enemies),viable=finish.clear?options.filter(o=>o.kind==='shot'||o.kind==='pass'&&gap(o.receiver,g)<distance-1&&o.risk<.15):options;return Emergent.choose(viable.length?viable:options,traits,rng,{pressure,fatigue:p.fatigue||0});
  }
  return Object.freeze({finishingOpportunity,Emergent,pitchControl,attackValue,teamPlan,arenaDecision,teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v178'});

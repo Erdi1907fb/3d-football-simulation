@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V188 turnuva yüzleri, şablon logoları, video hızı, dış file ve arena oyun düzeltmeleri
+## Aktif hedef: V189 5v5/Japon Kale aksiyonu ve turnuva gol kartı
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-336 | 5v5 her modda düzenli savunma + daha çok atak/şut/gol, turnuva 5v5 golcü kartı | done (V189) | claude | files: football-intelligence, japon-engine, japon-tactics, competition-renderer, tests/v188-fixes, arena-elimination seed8 |
 | T-333 | Fenerbahçe TD Emre Belözoğlu (canlı + turnuva) | done (V188) | claude | files: club-rosters-v75, bulletin-data, faces/staff-portraits, coach-overrides.json, server/lineup-freshness.php |
 | T-335 | Turnuva hava durumu seçeneği (5v5+11v11, varsayılan açık) | done (V188) | claude | files: competition.html, competition-ui/engine/renderer, tests/v188-fixes |
 | T-334 | 11v11 oyuncu yerleşimi/savunma kademesi/önü boş taşıyıcı daha gerçekçi | partial | claude | V188: possession-engine primary/cover görev kilidi, açık önde sürme, shield. Ölçümler HANDOFF. Daha geniş blok/koşu işi açık. |

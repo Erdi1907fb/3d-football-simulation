@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V189 · 2026-11-17
+- 5v5 / Japon Kale / turnuva 5v5: açık şut yolunda vurma, ileri pas ve sürme önceliği, koşarak pas, yarı dönük alım, ileride duran forvet hattı, kademe savunması, daha hızlı oyuncular. Gerçek kadrolu 60 sn turnuva maçlarında 0,78→1,90 gol, 4,9→7,6 şut, 0-0 %50→%12,5.
+- Turnuva 5v5'te golcü kartı (fotoğraf, logo, GOL/GOAL · isim) skorbordun üstünde, santraya kadar.
+
 ## V188 · 2026-11-16
 - Turnuva 11v11: kadro kimlikleri `studio-…-sideN-` önekli olduğu için fotoğraflı yüzler eşleşmiyordu (2/123). Yüz çalışma zamanı kaynak oyuncu kimliğini ve kitCatalogId/katalog anahtarıyla kadro profilini kullanır (53 fotoğraflı kafa).
 - Seremoni bezleri ve reklam panoları seçilen yayın şablonunu taşır: şablonsuzda Next90Sim, örn. Trendyol Süper Lig'de lig logosu ortada, oynayan takım armaları iki yanda. Turnuva arması {home,away} yerine sahnenin beklediği 0/1/competition anahtarlarıyla verilir. 5v5 LED panolar seçilen şablon adını @next90sim ile dönüşümlü gösterir.

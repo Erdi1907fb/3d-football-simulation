@@ -314,6 +314,6 @@ dosyalardır.
 - Turnuva 3D sahnesi (`sceneFixture/sceneImages`) seçilen yayın şablonunu taşır; şablonsuzda Next90Sim. `setCrests` anahtarları 0/1/competition'dır, {home,away} değil.
 - Turnuva dışa aktarma hızı 1.0–3.0x yalnız zaman ölçeğidir; simülasyonu/sonucu yeniden üretme.
 - `OpenFootball.outerNet` ıskalanan/ölü topun dış fileden kaleye girmesini engeller; gol yolu/containNet ayrıdır. tests/v188-fixes.cjs.
-- Kullanıcı kararı: 5v5 arenanın oyununa dokunma; tek istisna turnuvada seçilen şablonun LED panolarda @next90sim ile dönüşümlü görünmesi. İyileştirme hedefi 11v11.
+- V189 kullanıcı kararı: 5v5 içeren tüm modlarda (küçük saha, Japon Kale, turnuva) daha çok atak/şut/gol ve düzenli savunma istenir; arena karar/hareket ayarları (arenaDecision layout dalı, koşarak pas, openTouch, coverFor, hızlar) buna hizmet eder. Değiştirirken gerçek kadrolu 60 sn turnuva ölçümünü (gol/şut/0-0) ve tests/v188-fixes eşiğini koru; skor kotası/uydurma yok. Turnuva 5v5 golcü kartı skorbord üstünde, santraya kadar.
 - Güncel teknik direktör geçersiz kılmaları `assets/coach-overrides.json` (sunucu `pp_coach_override`); FB = Emre Belözoğlu.
 - 11v11 possession-engine: topa sahip rakip varken defensivePlan primary/cover görev noktası Formation/OE/Collective tarafından ezilmez. Açık önde sürme yalnız x<30 ve öndeki arkadaşın net bitirişi yokken. Turnuva `weather` (clear/rain/snow) kayıtla saklanır; 5v5 fiziğine yalnız rain/snow geçer.
