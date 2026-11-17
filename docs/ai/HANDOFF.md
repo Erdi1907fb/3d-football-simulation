@@ -18,6 +18,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V195 → V196 — 4 takımlı kupa (yarı finalden)
+- Kullanıcı: kupada 8 takım (çeyrek final) yanında 4 takım (yarı final) seçeneği; 5v5, 11v11 ve Japon Kale'de, şablon/oynanış aynı.
+- competition-engine plan: cup 4 veya 8 takım; 4'te S1/S2 yarı final + F1 final (tek maç, beraberlikte fiziksel penaltı aynı). planJapon cup 4: tek dört kaleli eleme finali F1 (goalLimit1, ≥60 sn), 8 eski hâli. Hata metni "Select 4 or 8 different teams".
+- broadcast: bracket 4 takımda 2 sütun (YARI FİNAL/FİNAL), başlık alt yazıları takım sayısına göre, kapak rota metni (YARI FİNAL · FİNAL / DÖRT KALELİ ELEME FİNALİ), Japon tek final kartı ortalı, 8'e özel dipnot yalnız 8'de.
+- UI: "Kupa takım sayısı" (8 · çeyrek finalden / 4 · yarı finalden), yalnız kupa formatında; format etiketi "Kupa · 4 veya 8 takım". Hızlı akış ve tüm diğer seçenekler aynı.
+- Tarayıcı: 4 takımlı 5v5 ve Japon kupası yatayda tüm bölüm türleri (docs/ai/validation-v196). Testler: competition-japon.cjs 4 takımlı kupa kontrolleri; node tests/run-all.cjs → 60/60 PASS; build196 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V194 → V195 — Haftanın maçı penaltısı normal Penaltı Stüdyosu'nda
 - Kullanıcı: penaltılarda V194'teki turnuva görünümünü (şablon skorbordu, golcü şeridi, PEN) istemedi; normal Penaltı Stüdyosu (üst panel, 5 yuvarlak yeşil/kırmızı, VURUŞ/KALEDE) aynen korunacak, yalnız ilgili ligin şablonundan küçük dokunuş. 5v5 tarafı (şablon skorbordu, golcü) kalacak.
 - Maç merkezindeki "Penaltı atışları" artık penalty.html?home=<espnId>&away=<espnId>&theme=<competitionId> açar. penalty-ui: home/away varsa takım seçimlerini ön ayarlar (registry'de yoksa eski varsayılan FB–GS); theme geçerli bir yayın şablonuysa üst panelde sol kenarda şablon vurgu şeridi ve sağdaki next90 logosu yerine lig logosu (altında küçük next90sim). Parametresiz stüdyo birebir eski.

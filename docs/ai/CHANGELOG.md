@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V196 · 2026-11-17
+- Kupaya 4 takımlı seçenek: 5v5/11v11 yarı final + final, Japon Kale tek dört kaleli eleme finali. Kupa ağacı, kapak ve başlıklar takım sayısına uyar.
+
 ## V195 · 2026-11-17
 - Haftanın maçı "Penaltı atışları" normal Penaltı Stüdyosu'nu iki takım seçili açar; yalnız küçük lig şablonu dokunuşu (vurgu şeridi + lig logosu). V194'teki turnuva penaltı görünüm değişiklikleri geri alındı.
 

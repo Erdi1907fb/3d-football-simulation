@@ -328,3 +328,4 @@ dosyalardır.
 ## 33. V193 — Haftanın maçı ek içerikleri
 - Maç merkezindeki "5v5 kapışma"/"Penaltı atışları" competition.html `format:'single'` kullanır; 11v11 analiz akışını değiştirmez. Penaltıda kullanıcı sırası `fixedOrder` ile korunur. Hızlı akışta tablo yalnız hafta/tur sonunda. Arena `skid` yalnız japon-engine ballState'te açıktır; diğer modlara taşıma.
 - V195: haftanın maçı penaltısı normal Penaltı Stüdyosu'dur (penalty.html?home&away&theme); stüdyo görünümünü değiştirme, şablon yalnız küçük dokunuş. Turnuva shootout görünümü V193 hâlindedir.
+- V196: kupa 4 veya 8 takım; 4'te yarı finalden (Japon: tek dörtlü eleme finali). Kupa kodunda 8 takım/çeyrek final varsayma.

@@ -33,5 +33,9 @@ const A=require('node:assert/strict'),E=require('../assets/competition-engine.js
  const pens=await E.prepare({format:'single',content:'penalties',field:'five',seed:5,teams:pk});A.deepEqual(pens.chapters.map(ch=>ch.kind),['shootout','match-result']);const kicks=pens.matches[0].shootoutKicks;
  for(const team of[0,1]){const names=kicks.filter(k=>k.team===team).slice(0,5).map(k=>k.actor),want=pk[team].penalty.slice(1).map(id=>pk[team].roster.players.find(p=>String(p.id)===String(id)).name);A.deepEqual(names,want.slice(0,names.length),'kick order follows the selection');}
  A(pens.matches[0].penalties[0]!==pens.matches[0].penalties[1]&&pens.champion);
+ // V196 four-team cups: 5v5/11v11 semis + final; Japon one 4-goal elimination final.
+ const cup4=await E.prepare({format:'cup',field:'five',seed:4,seconds:60,teams:teams(['436','432','1895','997'])});A.deepEqual(cup4.matches.map(m=>m.id),['S1','S2','F1']);A.deepEqual([cup4.matches[2].home,cup4.matches[2].away],[cup4.matches[0].winner,cup4.matches[1].winner]);A.equal(cup4.champion,cup4.matches[2].winner);A(cup4.matches.every(m=>m.winner));
+ const jk4=await E.prepare({format:'cup',field:'japon',seed:4,seconds:60,teams:teams(['436','432','1895','997'])});A.deepEqual(jk4.matches.map(m=>m.id),['F1']);A.equal(new Set(jk4.matches[0].ranks).size,4);A.equal(jk4.champion,jk4.matches[0].order[0]);
+ await A.rejects(E.prepare({format:'cup',field:'five',seed:1,seconds:60,teams:teams(['436','432','1895','997','435','437'])}),/4 or 8/);
  console.log(JSON.stringify({pass:true,league:{weeks:league.matches.length,goals:league.matches.map(m=>m.goals),champion:league.champion},cup:{champion:cup.champion,durations:cup.matches.map(m=>+m.regulationDuration.toFixed(1))}}));
 })().catch(e=>{console.error(e);process.exit(1);});

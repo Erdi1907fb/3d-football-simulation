@@ -41,7 +41,8 @@
   const n=teams.length;if(new Set(teams.map(t=>t.id)).size!==n)throw Error('A team cannot enter twice');
   const ids=draw?shuffle(teams.map(t=>t.id),Concept.hash(seed+'|fixtures')):teams.map(t=>t.id);
   if(format==='league'){if(n<3||n>6)throw Error('Japon Kale league needs 3 to 6 teams');const weeks=Math.max(2,n-1);return Array.from({length:weeks},(_,w)=>({id:'J'+(w+1),stage:'league',round:w+1,index:w,teams:ids.map((_,k)=>ids[(k+w)%n])}));}
-  if(n!==8)throw Error('Select 8 different teams');
+  if(n===4)return[{id:'F1',stage:'final',round:1,index:0,teams:ids.slice(),advance:1}];/* V196: 4-team Japon cup = one 4-goal elimination final */
+  if(n!==8)throw Error('Select 4 or 8 different teams');
   return[{id:'S1',stage:'semi',round:1,index:0,teams:ids.slice(0,4),advance:2},{id:'S2',stage:'semi',round:1,index:1,teams:ids.slice(4,8),advance:2},{id:'F1',stage:'final',round:2,index:2,teamsFrom:[['S1',0],['S1',1],['S2',0],['S2',1]],advance:1}];
  }
  function japonOrder(record,seed){const lots=new Map(shuffle(record.teams.slice(),Concept.hash(seed+'|japon-lots|'+record.id)).map((id,i)=>[id,i]));return record.teams.map((id,i)=>({id,i})).sort((a,b)=>record.ranks[a.i]-record.ranks[b.i]||record.arenaPoints[b.i]-record.arenaPoints[a.i]||record.goals[b.i]-record.goals[a.i]||record.against[a.i]-record.against[b.i]||lots.get(a.id)-lots.get(b.id)).map(x=>x.id);}
@@ -55,9 +56,11 @@
  function japonSides(entries){return entries.map(e=>({name:e.name,label:e.name,isTeam:true,logo:e.identity.logo,team:copy(e.identity),keeper:copy(e.five[0]),defender:copy(e.five[1]),player:copy(e.five[4])}));}
  function plan(format,teams,seed,draw=true){
   if(format==='single'){if(teams.length!==2||teams[0].id===teams[1].id)throw Error('Choose two different teams');return[{id:'M1',stage:'single',round:1,index:0,home:teams[0].id,away:teams[1].id}];}
-  const count=format==='cup'?8:format==='league'?teams.length:0;if(format==='league'&&(count<2||count>6)||format==='cup'&&teams.length!==8||!count)throw Error(format==='league'?'Select between 2 and 6 teams':'Select 8 different teams');if(new Set(teams.map(t=>t.id)).size!==count)throw Error('A team cannot enter twice');
+  const count=format==='cup'?([4,8].includes(teams.length)?teams.length:8):format==='league'?teams.length:0;if(format==='league'&&(count<2||count>6)||format==='cup'&&teams.length!==count||!count)throw Error(format==='league'?'Select between 2 and 6 teams':'Select 4 or 8 different teams');if(new Set(teams.map(t=>t.id)).size!==count)throw Error('A team cannot enter twice');
   const ids=draw?shuffle(teams.map(t=>t.id),Concept.hash(seed+'|fixtures')):teams.map(t=>t.id);
   if(format==='league')return Season.schedule(ids,false).flat().map((m,i)=>({...m,id:'L'+(i+1),stage:'league',index:i}));
+  // V196: a 4-team cup starts at the semi-finals (same single-leg rules, same final).
+  if(count===4)return[{id:'S1',stage:'semi',round:1,index:0,home:ids[0],away:ids[1]},{id:'S2',stage:'semi',round:1,index:1,home:ids[2],away:ids[3]},{id:'F1',stage:'final',round:2,index:2,homeFrom:'S1',awayFrom:'S2'}];
   return[...Array.from({length:4},(_,i)=>({id:'Q'+(i+1),stage:'quarter',round:1,index:i,home:ids[i*2],away:ids[i*2+1]})),{id:'S1',stage:'semi',round:2,index:4,homeFrom:'Q1',awayFrom:'Q2'},{id:'S2',stage:'semi',round:2,index:5,homeFrom:'Q3',awayFrom:'Q4'},{id:'F1',stage:'final',round:3,index:6,homeFrom:'S1',awayFrom:'S2'}];
  }
  function seriesSettings(value,teams){const enabled=value?.enabled===true;if(!enabled)return{enabled:false};const integer=(raw,min,max,label)=>{const n=Number(raw);if(!Number.isInteger(n)||n<min||n>max)throw Error('Invalid '+label);return n;};const season=integer(value.season??1,1,20,'season (1–20)'),titles={};for(const t of teams)titles[t.id]=integer(value.titles?.[t.id]??0,0,20,'previous titles (0–20)');return{enabled:true,season,titles};}
