@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V199 · 2026-11-17
+- Tüm video indirme ekranlarında cihaz seçimi: Otomatik / Bilgisayar · hızlı / Telefon · güvenli (algılanan cihaz gösterilir, seçim hatırlanır).
+- Bilgisayarda çizim ve donanım kodlama üst üste çalışır (kuyruk 3 kare); telefon yolu aynen.
+
 ## V198 · 2026-11-17
 - Canlı puan durumunda O/P (P/PTS) başlıkları rakam sütunlarıyla tam hizalı; tüm modlar ve şablonlar.
 

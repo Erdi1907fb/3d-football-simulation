@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V198 canlı tablo sütun hizası
+## Aktif hedef: V199 video cihaz profili
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-346 | Video cihaz profili (otomatik/bilgisayar/telefon) + masaüstü kodlama kuyruğu | done (V199) | claude | files: video-core, device-profile.js, 5 HTML. Gerçek cihaz hızı ölçülmedi. |
 | T-345 | Canlı tablo O/P başlık hizası (tüm modlar) | done (V198) | claude | files: competition-broadcast |
 | T-344 | Canlı puan durumu üstüne lig adı + sezon şeridi (TR/EN), sezon 1–100 | done (V197) | claude | files: competition-broadcast, competition-engine, competition-ui |
 | T-343 | Kupa 4 takım (yarı finalden) seçeneği, tüm saha türleri | done (V196) | claude | files: competition-engine/broadcast/ui, competition.html, tests/competition-japon |

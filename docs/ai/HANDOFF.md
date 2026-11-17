@@ -18,6 +18,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V198 → V199 — Video cihaz profili seçimi ve masaüstü kodlama akışı
+- Kullanıcı: telefon/bilgisayar otomatik algılansın, emin olunamayan durumlar için indirmede seçim olsun; bilgisayarda donanımı zorlamadan hızlandırma; hiçbir modda indirme sorunu çıkmasın; düşük kullanım hakkıyla ekonomik.
+- video-core.device(): localStorage 'next90.deviceProfile' = desktop|phone geçersiz kılma (yoksa eski otomatik algılama; `detected` alanı eklendi). Tüm modlar (normal maç, 5v5/Japon, turnuva, PK, FK) aynı fonksiyonu kullandığından telefon bellek profili/HTTP teslimi ve masaüstü yolu seçime göre çalışır.
+- Yeni assets/device-profile.js: exportBegin/competitionExport/japonExport/penaltyExport/fkExport düğmelerinin yanına "Video cihazı · algılanan: …" + Otomatik / Bilgisayar · hızlı / Telefon · güvenli seçici (TR/EN), seçim tarayıcıda saklanır. 5 sayfaya script eklendi.
+- Masaüstü native kodlayıcı kuyruğu 2→3 kare (çizim ile donanım kodlama üst üste); iOS/telefon 1 kare aynen. Ek GPU paralel sahne, hız aşırtma veya sınırsız döngü eklenmedi.
+- Video hızı (1.0–3.0x) ile bağımsız; hızlı videoda kare sayısı azaldığından süre de azalır.
+- Kısıtlar: gerçek iPhone/ekran kartı ölçümü yok; kazanç kullanıcı makinesinde doğrulanmalı. Kare kopyası/worker taşımaları riskli olduğu için yapılmadı.
+- Testler: node tests/run-all.cjs → 60/60 PASS (ios-encoder, audio-export, ios-downloads dahil); 5 sayfada seçici tarayıcı kontrolü; build199 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V197 → V198 — Canlı tablo sütun başlığı hizası
 - Kullanıcı: canlı puan durumunda O/P (EN P/PTS) başlıkları rakam sütunlarının tam üstünde değildi; her lig/mod için düzelt.
 - competition-broadcast.liveTable: tek sağa hizalı "O   P" metni yerine iki ayrı başlık, rakamlarla aynı merkezlerde (x+w-62 oynanan, x+w-24 puan). Ortak fonksiyon olduğundan 5v5, 11v11, Japon ve tüm şablonlarda geçerli. Görsel docs/ai/validation-v198.
