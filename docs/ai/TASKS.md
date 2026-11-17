@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V196 4 takımlı kupa
+## Aktif hedef: V197 canlı tablo lig/sezon şeridi
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-344 | Canlı puan durumu üstüne lig adı + sezon şeridi (TR/EN), sezon 1–100 | done (V197) | claude | files: competition-broadcast, competition-engine, competition-ui |
 | T-343 | Kupa 4 takım (yarı finalden) seçeneği, tüm saha türleri | done (V196) | claude | files: competition-engine/broadcast/ui, competition.html, tests/competition-japon |
 | T-342 | Haftanın maçı penaltısı: normal Penaltı Stüdyosu + küçük lig dokunuşu; V194 turnuva penaltı görünümünü geri al | done (V195) | claude | files: penalty-ui, app.js, competition-renderer/broadcast, broadcast.js, domestic-broadcast.js |
 | T-341 | Haftanın maçı 5v5/penaltı: stüdyo kamerası, lig şablonu, golcü, PEN | done (V194) | claude | files: competition-renderer/broadcast/ui/engine, broadcast.js+domestic-broadcast.js clockLabel, app.js theme param |

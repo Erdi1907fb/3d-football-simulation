@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V197 · 2026-11-17
+- Maç içi canlı puan durumunun üstünde şablonlu lig adı ve sezon şeridi (TR/EN); sezon seçimi 1–100.
+
 ## V196 · 2026-11-17
 - Kupaya 4 takımlı seçenek: 5v5/11v11 yarı final + final, Japon Kale tek dört kaleli eleme finali. Kupa ağacı, kapak ve başlıklar takım sayısına uyar.
 

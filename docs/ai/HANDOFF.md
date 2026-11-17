@@ -18,6 +18,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V196 → V197 — Canlı puan durumu üstünde lig + sezon şeridi
+- Kullanıcı: maç içi canlı puan durumunun hemen üstünde, ligin şablonuyla ve TR/EN adla "Trendyol Süper Lig Sezon 1 / Premier Lig Sezon 1" gibi şerit; sezon seçimi 100'e kadar.
+- competition-broadcast.liveTable: tablonun üstünde 40 px şerit (şablon koyu zemin, vurgu sol çubuk + alt çizgi). Ad: tr.1 Trendyol Süper Lig, en.1 Premier Lig/Premier League, es.1, de.1, fr.1, it.1, UEFA adları TR/EN; şablonsuzda turnuva adı (eventTitle). Sezon yalnız "Sezon serisi" açıksa: " · SEZON N" / " · SEASON N". 5v5/Japon'da tablo şerit kadar aşağı kaydı (dikey y=314, yatay 86); 11v11'de tablo altta, şerit üstünde.
+- Sezon: UI 1–100, seriesSettings 1–100 (önceki kayıtlar geçerli).
+- Görsel docs/ai/validation-v197 (tr.1 Sezon 7, en.1 TR Sezon 1, en.1 EN Season 42). Testler: run-all 59 PASS + competition-seasons (eski 20 sezon sınırı testi kullanıcı kararıyla 100/101 olarak güncellendi) --failed PASS → 60/60; build197 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V195 → V196 — 4 takımlı kupa (yarı finalden)
 - Kullanıcı: kupada 8 takım (çeyrek final) yanında 4 takım (yarı final) seçeneği; 5v5, 11v11 ve Japon Kale'de, şablon/oynanış aynı.
 - competition-engine plan: cup 4 veya 8 takım; 4'te S1/S2 yarı final + F1 final (tek maç, beraberlikte fiziksel penaltı aynı). planJapon cup 4: tek dört kaleli eleme finali F1 (goalLimit1, ≥60 sn), 8 eski hâli. Hata metni "Select 4 or 8 different teams".
