@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V198 · 2026-11-17
+- Canlı puan durumunda O/P (P/PTS) başlıkları rakam sütunlarıyla tam hizalı; tüm modlar ve şablonlar.
+
 ## V197 · 2026-11-17
 - Maç içi canlı puan durumunun üstünde şablonlu lig adı ve sezon şeridi (TR/EN); sezon seçimi 1–100.
 

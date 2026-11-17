@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V197 → V198 — Canlı tablo sütun başlığı hizası
+- Kullanıcı: canlı puan durumunda O/P (EN P/PTS) başlıkları rakam sütunlarının tam üstünde değildi; her lig/mod için düzelt.
+- competition-broadcast.liveTable: tek sağa hizalı "O   P" metni yerine iki ayrı başlık, rakamlarla aynı merkezlerde (x+w-62 oynanan, x+w-24 puan). Ortak fonksiyon olduğundan 5v5, 11v11, Japon ve tüm şablonlarda geçerli. Görsel docs/ai/validation-v198.
+- Testler: run-all --quick 59/59 PASS; build198 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V196 → V197 — Canlı puan durumu üstünde lig + sezon şeridi
 - Kullanıcı: maç içi canlı puan durumunun hemen üstünde, ligin şablonuyla ve TR/EN adla "Trendyol Süper Lig Sezon 1 / Premier Lig Sezon 1" gibi şerit; sezon seçimi 100'e kadar.
 - competition-broadcast.liveTable: tablonun üstünde 40 px şerit (şablon koyu zemin, vurgu sol çubuk + alt çizgi). Ad: tr.1 Trendyol Süper Lig, en.1 Premier Lig/Premier League, es.1, de.1, fr.1, it.1, UEFA adları TR/EN; şablonsuzda turnuva adı (eventTitle). Sezon yalnız "Sezon serisi" açıksa: " · SEZON N" / " · SEASON N". 5v5/Japon'da tablo şerit kadar aşağı kaydı (dikey y=314, yatay 86); 11v11'de tablo altta, şerit üstünde.
