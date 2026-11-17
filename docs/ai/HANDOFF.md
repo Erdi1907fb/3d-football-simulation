@@ -18,6 +18,16 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V189 → V190 — Turnuva Stüdyosu'na Japon Kale ve arena ayarı
+- Kullanıcı: savunma/atak/sürekli aksiyonu daha da incele, Japon Kale'ye de uygula; Lig/Kupa (sıralama, Avrupa sıraları, sezonlar, tüm seçenekler) aynen Japon Kale için de olsun. Soruya yanıtı: "Her hafta çok kaleli" — her hafta/tur tüm takımlar tek Japon Kale oyununda.
+- Arena: arenaDecision şut bonusu 14,5→15 m ve +%20 güç, ileri pas bonusu/ yatay-geri ceza biraz arttı. Gerçek kadrolu 5v5 120 maç: 1,90→2,13 gol, 7,6→8,1 şut, 0-0 %12,5→%10,8. Japon Kale (3/4/6 kale, 75 oyun) V188→V189/V190: 2,0→2,35 gol, kaleye yakın serbest taşıyıcı %46→%39–42 (değişim Japon'da nötr, 5v5'te olumlu). Japon Kale V189 ayarlarını zaten ortak motordan alıyordu.
+- competition-engine: field 'japon'. planJapon: lig 3–6 takım, max(2,n-1) hafta, her hafta bütün takımlar (sıra döndürülür), points modu; kupa 8 takım: S1/S2 dörtlü yarı final + F1 dörtlü final, eleme modu (goalLimit1, ≥60 sn, gol yiyen elenir, sıralama fiziksel; uzatma Japon motorunun kendi kuralı). Yerleşim puanı = n − sıra; paylaşılan sıralar kapladıkları sıraların ortalamasını (aşağı yuvarlı) alır, hepsi eşitse 1'er. japonStandings: puan, birincilik, averaj, atılan, kayıtlı kura. japonOrder: rank, arena puanı, gol, yenilen, kayıtlı kura (kupada eleme sırası zaten tam). Seremoni/kutlama 3D bölümleri Japon'da yok; her oyunun kendi Japon finali/podyumu video içinde, sonra şampiyon kartı + final özeti (+sezon). Fikstür nesneleri mutasyona uğramaz (açılışta finalistler görünmez).
+- Renderer ensureJapon: Japon stüdyosuyla aynı Scene(japonSides, japonSize 3)+JaponArena+JaponCamera; golcü kartı ve LED şablon adı burada da. Broadcast: japonHud (n takım, ELENDİ), japonCard (giriş/sonuç sıralı gol+puan), japonFixtures, japonBracket, tablo başlıkları (1./D), kapak metni. UI: saha seçeneğine Japon Kale; ligde <3 takım devre dışı; 5v5 kadro kartındaki 5 kişiden kaleci + 1. defans + forvet kullanılır (ayrı 3'lü seçici yok).
+- Tarayıcı (Chromium/SwiftShader) kontrolü: lig ve kupa, dikey+yatay, bütün bölüm türleri ve UI'dan hazırlama; hata yok. Tam uzun MP4 dışa aktarımı yapılmadı.
+- Testler: yeni tests/competition-japon.cjs (+run-all). node tests/run-all.cjs → 60/60 PASS (engine-test dahil); build190 filesMatch=true.
+- Açık/kısıt: Japon turnuvasında 3D madalya töreni yok (kart tabanlı); Japon kadro seçimi 5'li karttan türetilir.
+
+
 ## [2026-11-17 UTC] Claude · V188 → V189 — 5v5/Japon Kale aksiyonu, düzenli savunma ve turnuva gol kartı
 - Dal claude/league-cup-arena-improvements-6buh8h; main'e fast-forward. Kullanıcı: 5v5 içeren her yerde (küçük saha stüdyosu, Japon Kale, turnuva 5v5) savunma düzgün dursun, önü boş hücumcu vursun, hızlı pas/atak, daha çok kaleye gidiş ve gol (her maç değil ama 3-0/4-1 de olabilsin), kargaşa olmasın. Turnuva 5v5'te golcü kartı skorbordun üstünde, santrada kaybolsun.
 - Ölçüm kökü (gerçek FB/GS/BJK/TS kadroları, 60 sn lig, 120 maç): V188 0,78 gol/maç, 4,9 şut, %50 0-0. Kararların ~%70'i kendi yarıda; 7 m içinde bile %45 şut, %38 sürme; pas hazırlığında oyuncu tam duruyor; alımda top kendi kalesine geri yuvarlanıyor.

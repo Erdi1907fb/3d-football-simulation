@@ -149,10 +149,10 @@
   // shoots instead of dribbling on, forward passes beat sideways recycling and the carrier keeps driving
   // into space. Only intent changes; ball flight, keeper and result remain physical.
   if(context.layout){const shot=options.find(o=>o.kind==='shot'),open=1-clamp(blocked/1.2,0,1);
-   if(shot&&distance<14.5)shot.utility+=(.34+.60*clamp((13-distance)/7,0,1))*(.35+.65*open);else if(shot&&distance<18&&open>.7&&pressure<1)shot.utility+=.16;
+   if(shot&&distance<15)shot.utility+=(.42+.66*clamp((13-distance)/7,0,1))*(.35+.65*open);else if(shot&&distance<18&&open>.7&&pressure<1)shot.utility+=.16;
    for(const o of options){if(o.kind==='carry'&&shot&&distance<9&&open>.5)o.utility-=.30;
     if(o.kind==='carry'&&!shot&&distance>9&&pressure<.6)o.utility+=.12;
-    if(o.kind==='pass'&&!o.through&&o.receiver){const gain=distance-gap(o.receiver,g);o.utility+=gain>1.5?.10+Math.min(.25,gain*.03):pressure<.8?-.12:0;}}}
+    if(o.kind==='pass'&&!o.through&&o.receiver){const gain=distance-gap(o.receiver,g);o.utility+=gain>1.5?.14+Math.min(.3,gain*.035):pressure<.8?-.16:0;}}}
   const finish=finishingOpportunity(p,g,enemies),viable=finish.clear?options.filter(o=>o.kind==='shot'||o.kind==='pass'&&gap(o.receiver,g)<distance-1&&o.risk<.15):options;return Emergent.choose(viable.length?viable:options,traits,rng,{pressure,fatigue:p.fatigue||0});
  }
  return Object.freeze({finishingOpportunity,Emergent,pitchControl,attackValue,teamPlan,arenaDecision,teamStyle,combinations,distributeOffers,arrival,passWindow,support,pressers,mark,keeperRead,keeperStep,sampleKeeper,penaltyPlan,key,version:'shared-intelligence-v178'});

@@ -317,3 +317,7 @@ dosyalardır.
 - V189 kullanıcı kararı: 5v5 içeren tüm modlarda (küçük saha, Japon Kale, turnuva) daha çok atak/şut/gol ve düzenli savunma istenir; arena karar/hareket ayarları (arenaDecision layout dalı, koşarak pas, openTouch, coverFor, hızlar) buna hizmet eder. Değiştirirken gerçek kadrolu 60 sn turnuva ölçümünü (gol/şut/0-0) ve tests/v188-fixes eşiğini koru; skor kotası/uydurma yok. Turnuva 5v5 golcü kartı skorbord üstünde, santraya kadar.
 - Güncel teknik direktör geçersiz kılmaları `assets/coach-overrides.json` (sunucu `pp_coach_override`); FB = Emre Belözoğlu.
 - 11v11 possession-engine: topa sahip rakip varken defensivePlan primary/cover görev noktası Formation/OE/Collective tarafından ezilmez. Açık önde sürme yalnız x<30 ve öndeki arkadaşın net bitirişi yokken. Turnuva `weather` (clear/rain/snow) kayıtla saklanır; 5v5 fiziğine yalnız rain/snow geçer.
+
+## 31. V190 — Turnuva Stüdyosu Japon Kale
+- Kullanıcı kararı: Japon Kale turnuvasında her hafta/tur bütün takımlar TEK çok kaleli oyunda oynar (ikili maç değil). Lig 3–6 takım/points modu/yerleşim puanı; kupa 8 takım, iki dörtlü eleme yarı finali + dörtlü eleme finali (gol yiyen elenir, sıralama fiziksel). Kura yalnız ligdeki tam eşitlikte.
+- Japon kayıtları `teams/goals/ranks/placementPoints/order` taşır; `score[2]`/home-away varsayımı yapan kodu Japon için çağırma. Fikstür nesnelerini prepare sırasında mutasyona uğratma (spoiler).

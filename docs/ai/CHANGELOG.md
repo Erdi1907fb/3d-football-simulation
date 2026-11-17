@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V190 · 2026-11-17
+- Turnuva Stüdyosu'na Japon Kale: lig (3–6 takım, her hafta tüm takımlar tek çok kaleli oyunda, sıralama puanı, puan durumu, Avrupa sıraları, sezonlar) ve kupa (8 takım, iki dörtlü eleme yarı finali, dörtlü eleme finali). Japon arenası, kamerası, skorbordu (ELENDİ), maç kartları, fikstür ve kupa ağacı.
+- Arena karar ayarı: 5v5 turnuva maçlarında 2,13 gol / 8,1 şut; Japon Kale ortalama ~2,35 gol.
+
 ## V189 · 2026-11-17
 - 5v5 / Japon Kale / turnuva 5v5: açık şut yolunda vurma, ileri pas ve sürme önceliği, koşarak pas, yarı dönük alım, ileride duran forvet hattı, kademe savunması, daha hızlı oyuncular. Gerçek kadrolu 60 sn turnuva maçlarında 0,78→1,90 gol, 4,9→7,6 şut, 0-0 %50→%12,5.
 - Turnuva 5v5'te golcü kartı (fotoğraf, logo, GOL/GOAL · isim) skorbordun üstünde, santraya kadar.
