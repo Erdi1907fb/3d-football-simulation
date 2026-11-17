@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V191 (devam) — canlı puan durumu: aksiyon kamerası + şablon
+- Kullanıcı: canlı puan durumunu aksiyon kamerasında (broadcast) ve Trendyol Süper Lig şablonuyla görmek istedi. Tablo zaten kameradan bağımsız çiziliyordu; şablon seçiliyse başlıkta şablon logosu (competitionIconLight/markPath), şablon koyu zemini, vurgu rengiyle alt çizgi/puanlar/canlı satır vurgusu eklendi. Şablonsuzda eski görünüm.
+- Görseller: docs/ai/validation-v191/canli-puan-trendyol-aksiyon-{dikey,yatay}.jpg. Hâlâ DENEME (T-338); kaldırma listesi önceki kayıtta.
+- Testler: competition, competition-frames, competition-cover, competition-branding PASS.
+
+
 ## [2026-11-17 UTC] Claude · V190 → V191 — 5v5 süre seçimi ve canlı puan durumu DENEMESİ
 - Kullanıcı: 5v5 lig/kupada 60/75/90 sn süre seçimi; oynanırken puan durumu görünümünü yalnız deneme olarak göster (beğenmezse kodlardan kaldırılacak). Ayrıca ara ekransız akış hakkında görüş istedi (yanıt sohbette).
 - Süre: competitionSeconds seçenekleri yalnız 1 dakika (60) / 75 / 90 sn, etiket "Maç süresi (5v5 / Japon Kale)". Engine clamp 30–180 aynı (eski kayıtlar).
