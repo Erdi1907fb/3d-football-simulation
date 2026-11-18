@@ -11,6 +11,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
+| T-362 | Maç sayfası penaltı sekmesi "sahne kurulamadı" (analiz XI ↔ kulüp dizilişi) | done (V214) | claude | files: app.js, penalty-ui, competition-ui. |
 | T-361 | Her penaltı serisi sonunda kazanan sevinci; dikey penaltı tablosu/canlı tablo güvenli alan | done (V213) | claude | files: competition-renderer, competition-broadcast. |
 | T-360 | Penaltı turnuvası kutlaması 11v11 stadyumda Penaltı Stüdyosu sevinci (V211 5v5 töreni yerine) | done (V212) | claude | files: competition-presentation (penaltyFinale), competition-renderer, competition-engine. |
 | T-359 | Penaltı turnuvası şampiyon töreni + taraftarla (ligde evinde) kutlama | done (V211) | claude | files: competition-engine, competition-renderer; test competition-japon. |

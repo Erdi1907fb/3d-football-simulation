@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-19 UTC] Claude · V213 → V214 — Penaltı sekmesi "sahne kurulamadı" düzeltmesi
+- Kullanıcı: ana sayfadaki haftalık maçta Penaltılar sekmesi "Hazırlanamadı: Oyuncu kimlikleriyle sahne kurulamadı" (GS–Samsunspor); diğer maçlarda da varsa düzelt, siteye yükle.
+- Kök neden (canlı api.php?action=lineups ile yeniden üretildi): penalty-ui extras analiz XI'ini (slot/position korunur) reg.team.formation ile SekmePlayers→buildLineup'a veriyor; Samsunspor kaydı 3-5-2, analiz 4-2-3-1 → "Starters cannot fill this formation" → lineups null. Bu hafta 30 maç/60 takımda 9 takım etkileniyordu (Málaga, Hull, Brighton, Napoli, Levante, Çorum, Dortmund, Milan, Frosinone).
+- Düzeltme: app.js matchExtras formation (teams[i].formation). penalty-ui ve competition-ui extras: formation = [analiz, kayıt, tüm formasyonlar] içinden buildLineup'ın kabul ettiği ilki; hiçbiri olmazsa (tutarsız XI, Brighton: DM yok) analiz/kayıt dizilişinin slotlarına en yakın mevki ataması. 60/60 takım sahne kurulabilir (sayfa kodu gövdesiyle node'da doğrulandı); GS–Samsunspor gerçek veri Playwright: formasyonlu ve eski oturum (formasyonsuz) ikisi de "Hazır".
+- Testler: node tests/run-all.cjs --quick → 59/59 PASS; build214 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V212 → V213 — Seri sonu sevinci, dikey güvenli alan
 - Kullanıcı: diğer modlarda maç bitince kazanan kısa sevinç yapıyordu, penaltı kupası/liginde yok; YouTube Shorts'ta dikey penaltı tablosunun sol tarafı (etiket, armalar) kesik.
 - renderer shootout dalı: engine.winner!=null ve local≥finaleAt → P.penaltyFinale(engine,template,local-finaleAt,winner) + Stage.winnerCamera (FINAL=5,5 sn içinde; bölüm süresi değişmedi), HUD finished skorla, penaltı liginde canlı tablo. Tüm turnuva shootout'larına uygulanır.

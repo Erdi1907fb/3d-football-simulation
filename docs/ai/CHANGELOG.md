@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V214 · 2026-11-19
+- Düzeltme: maç sayfası "Penaltılar" sekmesi bazı maçlarda "Hazırlanamadı: Oyuncu kimlikleriyle sahne kurulamadı" veriyordu (ör. GS–Samsunspor). Sebep: analiz XI'i kulüp kaydının dizilişine oturtuluyordu (Samsunspor kayıt 3-5-2, analiz 4-2-3-1 → buildLineup reddi). Artık analizin dizilişi gönderilir/kullanılır; uymazsa kadroya oturan ilk diziliş, o da yoksa (tutarsız sağlayıcı XI, ör. Brighton) en yakın mevki ataması. Bu haftanın 60 takımının 9'u etkileniyordu; 60/60 sahne kurulabilir. 5v5 sekmesi de aynı dizilişi alır.
+
 ## V213 · 2026-11-18
 - Turnuvadaki her penaltı serisinin sonunda (penaltı ligi/kupası, haftanın maçı penaltı, 5v5/11v11 kupa beraberlik penaltıları) kazanan takım Penaltı Stüdyosu'ndaki gibi kısa sevinç yapar (serinin kendi 5,5 sn bitiş payında; ligde beraberlikte sevinç yok).
 - Dikey video: penaltı skor tablosu ve penaltı liginin canlı puan durumu Shorts/Reels güvenli alanına alındı (soldan 118 px; uzun telefonlarda kenarlardan ~95 px kırpılıyor).
