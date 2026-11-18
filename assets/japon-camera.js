@@ -3,7 +3,7 @@
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'),require('./japon-layout.js'));else r.Next90JaponCamera=f(r.THREE,r.Next90JaponLayout);})(typeof globalThis!=='undefined'?globalThis:this,function(T,Layout){'use strict';
 const SAFE={left:64,right:884,top:295,bottom:1220},WIDTH=1080,HEIGHT=1920;
 const LANDSCAPE_SAFE={left:70,right:1850,top:55,bottom:795};
-function safe(camera){return camera?.userData?.orientation==='landscape'?LANDSCAPE_SAFE:SAFE;}
+function safe(camera){return camera?.userData?.safeOverride||(camera?.userData?.orientation==='landscape'?LANDSCAPE_SAFE:SAFE);}/* V208: a cover can fit its shot inside the region the cover photo actually shows */
 const v=p=>new T.Vector3(p.x,p.y??0,p.z),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 function fit(camera,points,axis,aim,fov=48,margin=.94){
  const landscape=camera.userData.orientation==='landscape',width=landscape?1920:WIDTH,height=landscape?1080:HEIGHT,bounds=safe(camera);camera.userData.width=width;camera.userData.height=height;camera.clearViewOffset();camera.aspect=width/height;camera.fov=fov;camera.near=1.5;camera.far=300;

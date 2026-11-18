@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V208 · 2026-11-18
+- Penaltı turnuvası kapak fotoğrafı (yatay + dikey): kapak karesi kapaktaki fotoğraf kırpımına göre ayrı kamera ile çekilir; kalenin tamamı, kaleci, atıcı ve kaleye giden top birlikte (ilk 6 atıştaki ilk gol, top kaleye ~0,28 sn kala).
+
 ## V207 · 2026-11-18
 - Japon Kale / 5v5 stüdyosu: kendi hava durumu seçimi (Açık/Yağmurlu/Karlı, varsayılan açık). Diğer sayfalardaki ortak hava tercihi (telefonda "karlı" kalmış olabilir) artık buraya sızmıyor; hem sahne hem top fiziği seçimi kullanır.
 - Japon Kale eleme: iki takım (kaleci + 2) kalınca saha 22 × 16 m (önce 5v5'in 28 × 18 m sahası açılıyordu). 5v5 modu değişmedi.

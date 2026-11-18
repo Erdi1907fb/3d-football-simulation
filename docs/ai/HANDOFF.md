@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V207 → V208 — Penaltı turnuvası kapak çekimi
+- Kullanıcı: (soru) penaltı turnuvası da ilk atışla başlayıp maç arası kısa sonuç, hafta/tur sonunda tablo/ağaç mı? → Evet, "Hızlı akış" işaretliyse (V204 penTour fastFlow: shootout → match-result 2,6 sn → round-summary yalnız tur/hafta sonu). Kapak fotoğrafında kale/kaleci kesik; kale + oyuncu tam görünsün, yatay ve dikey.
+- Sebep: B.cover tam kareyi fotoğraf alanına "cover" kırpıyor (dikey kare 1080×1920 → 828×520 bant), kamera kırpıma göre değil.
+- competition-renderer cover(): shootout kapağında this.coverBand = fotoğraf kırpımının kare içindeki bölgesi (%5/%6 iç pay, 1080/1920 kamera koordinatı); frame shootout dalı coverBand varsa kale köşeleri + atıcı (0/2 m) + kaleci + top noktalarıyla fit (eksen -1,.34,.2; fov 40; margin .9), safeOverride sonra silinir. Zaman: ilk 6 atıştaki ilk golün resolvedAt-0,28. japon-camera safe() camera.userData.safeOverride'ı kabul eder (başka kullanıcı yok).
+- Testler: japon-camera, competition-cover, competition-frames, arena-broadcast-flow, competition-japon PASS; Playwright yatay+dikey kapak (Trendyol şablon) görsel kontrol; node tests/run-all.cjs --quick → 59/59 PASS; build208 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V206 → V207 — Japon hava, ikili Japon sahası, video hızlandırma
 - Kullanıcı: dikey penaltı turnuvası örnekleri; telefonda Japon Kale (belki diğerleri) tam karlı açılıyor, hava seçimi yok; dünkü kalan hızlandırmalar (fan çalışsa da donanıma zarar yoksa); Japon Kale'de son iki takımda saha 5v5 kadar büyük.
 - Hava: japon-kale.html #japonWeather (varsayılan clear, ortak next90.weather.v1 tercihini KULLANMAZ). japon-ui arenaWeather() → Next90Japon.create weather + SekmeScene.create weather; değişimde world.setWeather + invalidate. Diğer stüdyolarda görünür data-weather seçicisi zaten var; turnuva stüdyosu kendi seçimini kullanıyor.
