@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V207 · 2026-11-18
+- Japon Kale / 5v5 stüdyosu: kendi hava durumu seçimi (Açık/Yağmurlu/Karlı, varsayılan açık). Diğer sayfalardaki ortak hava tercihi (telefonda "karlı" kalmış olabilir) artık buraya sızmıyor; hem sahne hem top fiziği seçimi kullanır.
+- Japon Kale eleme: iki takım (kaleci + 2) kalınca saha 22 × 16 m (önce 5v5'in 28 × 18 m sahası açılıyordu). 5v5 modu değişmedi.
+- Video (bilgisayar): kareler arası bekleme MessageChannel ile (setTimeout 4 ms sınırı ve arka plan kısıtlaması yok), kodlayıcı kuyruğu 3 → 5. Hata düzeltmesi: kodlama döngüsü sekme gizlenince "Export interrupted" ile duruyordu (V200 arka plan render'ı fiilen bozuktu) → artık yalnız telefonda durur. Telefon yolu değişmedi.
+
 ## V206 · 2026-11-18
 - Turnuva penaltılarında Penaltı Stüdyosu alt bandı: VURUŞ (atıcı + takım) / KALEDE (kaleci + takım), vuruş anında teknik (· km/h), sonuçta GOL / KALECİDE / DİREK vb. — stüdyo metinleriyle aynı.
 - Penaltı liginde canlı puan durumu her zaman açık (yatay + dikey), üstünde lig adı şeridi (şablon adı TR/EN, sezon).

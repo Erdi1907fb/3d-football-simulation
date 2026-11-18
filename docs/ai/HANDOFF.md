@@ -18,6 +18,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V206 → V207 — Japon hava, ikili Japon sahası, video hızlandırma
+- Kullanıcı: dikey penaltı turnuvası örnekleri; telefonda Japon Kale (belki diğerleri) tam karlı açılıyor, hava seçimi yok; dünkü kalan hızlandırmalar (fan çalışsa da donanıma zarar yoksa); Japon Kale'de son iki takımda saha 5v5 kadar büyük.
+- Hava: japon-kale.html #japonWeather (varsayılan clear, ortak next90.weather.v1 tercihini KULLANMAZ). japon-ui arenaWeather() → Next90Japon.create weather + SekmeScene.create weather; değişimde world.setWeather + invalidate. Diğer stüdyolarda görünür data-weather seçicisi zaten var; turnuva stüdyosu kendi seçimini kullanıyor.
+- Saha: japon-layout create(count,goalWidth,{compact}) — count 2 + compact → apothem 11, yarı genişlik 8 (22×16, 352 m²). japon-engine resizeRound compact:!small. Test arena-elimination güncellendi (2'li aşama 22×16; L.create(2) 28×18 kalır).
+- Video: video-core fastYield (MessageChannel, Node'da unref) masaüstünde her karede; queueLimit masaüstü 5. serialEncode'daki document.hidden → 'Export interrupted' artık yalnız cfg.ios (Chromium'da gizli sekme simülasyonu: eski sürüm durdu, yeni 360 kare tamamladı). Ölçüm (SwiftShader/yazılım kodlayıcı, 6 sn 1080p): ~4,2 sn her iki sürüm — burada fark ölçülemedi; kazanç gerçek GPU'da ve arka planda beklenir. Karelerin fazladan 2D kopyası (WebGL→2D overlay canvas) mimari gereği kaldı.
+- Testler: arena/japon testleri PASS, ios-encoder/ios-downloads/audio-export PASS; Playwright iPhone 13 + snow tercihiyle Japon sayfası; node tests/run-all.cjs → 60/60 PASS; build207 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V205 → V206 — Penaltıda atıcı/kaleci bandı, penaltı liginde canlı puan durumu
 - Kullanıcı: klasik penaltı sunumu değişmesin (atan ve kaledeki isim yazıyla görünsün), yalnız şablon eklemeleri + lig formatı; ligde otomatik canlı puan durumu (yatay+dikey), lig adıyla.
 - competition-broadcast: penaltyMatchup() = penalty-ui drawMatchup kopyası (açık panel, takım rengi çizgisi, VURUŞ/KALEDE, ad, takım; teknik + km/h; sonuç etiketi). penaltyBoard içinde, panelin 158 birim üstünde; intro/finished'da yok. penaltyTechnique/penaltyResult stüdyo metinleri.
