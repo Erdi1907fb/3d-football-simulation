@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V212 · 2026-11-18
+- Penaltı turnuvası şampiyon kutlaması V211'deki 5v5 arena töreni yerine 11v11 stadyumunda Penaltı Stüdyosu'nun klasik seri sonu sevinci: kazanan takım köşeye koşar, taraftarı önünde toplu sevinç (armsWide), kaybedenler başı önde; stüdyo kazanan kamerası; ŞAMPİYON kartı. 12 sn, champion-intro'dan sonra. 5v5 töreni ve penaltı beşlisi override'ı kaldırıldı.
+
 ## V211 · 2026-11-18
 - Penaltı turnuvası (lig + kupa) sonuna diğer formatlardaki gibi madalya/kupa töreni ve şampiyonun taraftarıyla kutlaması eklendi (ligde kendi sahasında). Kutlayan beşli: takımın penaltı kalecisi + ilk dört penaltıcısı.
 

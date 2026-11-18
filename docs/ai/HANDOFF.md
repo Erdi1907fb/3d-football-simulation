@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V211 → V212 — Penaltı turnuvası: stüdyo sevinci 11v11 stadyumda
+- Kullanıcı: V211 kutlama görselleri 5v5 arenası; 11v11 sahasında, Penaltı Stüdyosu'nun klasik sevinci istendi.
+- competition-presentation penaltyFinale(contest,template,age,celebrating): penalty() son karesi üstüne penalty-ui stateAt finished dalının kopyası (Next90PenaltyStage.winnerPose, age≥2,5 grup sevinci Next90CelebrationPack 'big', kaybedenler headDown/crouch/headInHands), kamera Stage.winnerCamera (yatayda fov −8).
+- competition-engine penTour sonu: champion-intro (3) + champion-celebration (12, penaltyFinale:true, şampiyon+ikinci maçı), ceremony yok; V211 e.five override'ı kaldırıldı. renderer: champion-celebration penaltıda ensure 'shootout' (aynı 11v11 penaltı sahnesi) + yeni dal; V211 buildMatch iskeleti kaldırıldı. Kutlayan taraf = tören maçında şampiyonun tarafı (ligde maçı kaybetmiş/berabere olsa da).
+- Testler: competition-japon güncellendi PASS; Playwright kupa (Trendyol) yatay+dikey 3 an kare; node tests/run-all.cjs --quick → 59/59 PASS; build212 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V210 → V211 — Penaltı turnuvası şampiyon kutlaması
 - Kullanıcı: penaltı turnuvasında (kupa, muhtemelen lig) şampiyon evinde/taraftarıyla kutlamıyor; diğer formatlardaki gibi eklensin.
 - competition-engine penTour sonu: ceremony (13 sn) + champion-intro + champion-celebration (15 sn) + final-summary (+season-summary); ceremonyMatch = şampiyon+ikinci maçı (yoksa şampiyonun bir maçı). penTour'da e.five = penaltyLineup keeper + ilk 4 atıcı (GK ise).
