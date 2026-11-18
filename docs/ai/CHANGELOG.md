@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V202 · 2026-11-18
+- Penaltı sırası 1–11 (11. varsayılan kaleci, ör. Uğurcan Çakır / Ederson); seçenekler tüm kadro (GK dahil), "oynayamaz"/"kadro dışı" etiketli.
+- Uygun olmayan oyuncu tespiti: availability/available=false, injured/suspended, maç tarihinde aktif absenceWindow, analizin çıkardığı oyuncular (availabilityRepair.excluded). Varsayılana girmez; sıra kayar, yerine sıradaki/yedek girer; kullanıcı isterse seçebilir.
+- 5v5 ve penaltı: analiz dışı kulüp oyuncuları seçenek olarak listelenir; analiz mevkisi korunur (yedeğin mevki dışı oynadığı XI'lerde sahne kurulumu bozulmaz).
+
 ## V201 · 2026-11-18
 - Penaltı Stüdyosu takım modu: "Penaltı sırası (1–10)" düzenleyicisi; varsayılan sıra uygun ilk 11'den (kaleci sonda), değişiklikte "yeniden hazırla" uyarısı; penalty-engine fixedOrder ile atış sırası birebir uygulanır.
 - Maç haftası 5v5/penaltı varsayılanları: sakat/cezalı/uygun olmayan oyuncular hariç, önce analizin ilk 11'i; değişiklikte "Analizi yeniden hazırla" mesajı.

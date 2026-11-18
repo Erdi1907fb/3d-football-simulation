@@ -18,6 +18,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V201 → V202 — Penaltı sırası 1–11, sakat/cezalı varsayılan dışı
+- Kullanıcı: 11'de veriler ne yansıtıyorsa; sakat/cezalı/kadroda olmayan varsayılan penaltı sırasına ve 5v5'e girmesin (sıra kaysın, sıradaki atsın), ama seçeneklerde kalsın, seçerse simülasyon ona göre; sıra 1–11, kaleci de (Uğurcan, Ederson).
+- app.js matchExtras: her tarafa out (source.availabilityRepair.excluded, norm anahtar) + date (fx.date).
+- penalty-ui: unavailable() = availability/available=false/status/aktif absenceWindow(matchDate); usable = !unavailable && !squadOut. extras: XI+yedek işaretli, kalan kulüp oyuncuları squadOut ile yedeğe (seçilebilir). defaultOrder: uygun XI dış saha (E.takers), eksikse uygun yedek, 11. = seçili/uygun kaleci. 11 select; fixedOrder 11 olunca players=sıra. Kaleci seçimi değişince 11. slot (GK ise) güncellenir. Varsayılan kaleci seçimi uygun GK.
+- norm (penalty-ui + competition-ui): analiz slot.role/position korunur (mevki dışı yedekli XI'de buildLineup "Starters cannot fill this formation" hatası → "Oyuncu kimlikleriyle sahne kurulamadı" önlenir).
+- competition-ui: notUsable ile defaultFive/defaultPenalty; seçeneklerde "oynayamaz"/"kadro dışı" etiketi.
+- Testler: Playwright sahte matchExtras (Osimhen out) → varsayılan sırada yok, 11. Uğurcan; elle 1. sıraya koyunca yeniden hazırla ve atışlar ona göre; 5v5 varsayılanda yok, seçenekte etiketli. node tests/run-all.cjs --quick → 59/59 PASS; build202 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V200 → V201 — Penaltı sırası düzenleme, uygun ilk 11 varsayılanları
 - Kullanıcı: maçın 5v5 ve penaltılarında varsayılanlar o maçın muhtemel 11'inden gelsin, uygun olmayan (ör. sakat Osimhen) oynamasın/penaltı atmasın; penaltı sırası elle değiştirilebilsin (ilk 11'e göre varsayılan), 5v5'te oyuncu değişebilsin; değişince "analizi yeniden hazırla" desin ve simülasyon buna göre yeniden üretilsin.
 - penalty-ui: takım modunda #penaltyOrder0/1 (details, 10 select, varsayılan E.takers uygun XI + kaleci); kickOrder benzersizse prepare rosters'ı sıraya göre kurar, fixedOrder:true ile E.create; ilk atıcı seçimi takım modunda gizli. Değişiklik invalidate → yeniden hazırla.

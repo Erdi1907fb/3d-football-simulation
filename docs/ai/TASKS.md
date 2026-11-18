@@ -10,6 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-349 | Penaltı sırası 1–11 (kaleci dahil); sakat/cezalı/kadro dışı varsayılan dışı ama seçilebilir (5v5 + penaltı) | done (V202) | claude | files: penalty-ui, competition-ui, app.js. |
 | T-348 | Maç penaltı sırası düzenleme (1–10, ilk 11 varsayılan) + 5v5/penaltı uygun oyuncu varsayılanları | done (V201) | claude | files: penalty-ui, competition-ui. Gerçek sakat oyuncuyla tarayıcı testi yok. |
 | T-347 | Masaüstü arka plan render; PK kaleci titremesi; maç sayfasında 11v11/5v5/Penaltı sekmeleri (analize dayalı) | done (V200) | claude | files: video-core, video-ui, penalty-engine, index.html, app.js, competition-ui, penalty-ui. Gerçek arka plan/cihaz testi yok. |
 | T-346 | Video cihaz profili (otomatik/bilgisayar/telefon) + masaüstü kodlama kuyruğu | done (V199) | claude | files: video-core, device-profile.js, 5 HTML. Gerçek cihaz hızı ölçülmedi. |
