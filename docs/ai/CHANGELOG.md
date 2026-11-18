@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V211 · 2026-11-18
+- Penaltı turnuvası (lig + kupa) sonuna diğer formatlardaki gibi madalya/kupa töreni ve şampiyonun taraftarıyla kutlaması eklendi (ligde kendi sahasında). Kutlayan beşli: takımın penaltı kalecisi + ilk dört penaltıcısı.
+
 ## V210 · 2026-11-18
 - Japon Kale: "Girişte format anlatılsın mı?" (Evet varsayılan / Hayır). Evet: videonun ortasında ~3 sn kısa kural kartı (0,25–3,45 sn, yumuşak giriş/çıkış), TR/EN sayfa diline göre. Puan: +1 gol atan, −1 gol yiyen, N saniye sonunda en çok puan kazanır. Eleme: 1/2 gol yiyen elenir, son kalan kazanır, "Hepsi N saniyede biter" (sürede modu) ya da "Süre biterse ani ölüm". 5v5 küçük sahada yok.
 

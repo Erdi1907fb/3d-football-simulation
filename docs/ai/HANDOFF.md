@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V210 → V211 — Penaltı turnuvası şampiyon kutlaması
+- Kullanıcı: penaltı turnuvasında (kupa, muhtemelen lig) şampiyon evinde/taraftarıyla kutlamıyor; diğer formatlardaki gibi eklensin.
+- competition-engine penTour sonu: ceremony (13 sn) + champion-intro + champion-celebration (15 sn) + final-summary (+season-summary); ceremonyMatch = şampiyon+ikinci maçı (yoksa şampiyonun bir maçı). penTour'da e.five = penaltyLineup keeper + ilk 4 atıcı (GK ise).
+- competition-renderer ensure(): record.content==='penalties' ve awards → E.buildMatch({...record,content:null,score:null}) yalnız 5v5 arena iskeleti (skor kontrolü yok, cache'lenmez); V204'teki "replay differs" engeli kalktı. Lig: homeCelebration (şampiyonun sahası/taraftarı) mevcut 5v5 mantığıyla.
+- Testler: competition-japon (lig: ceremony+celebration var, tören maçında şampiyon; kupa: kutlama finalde) PASS; Playwright kupa (Trendyol) + lig tören/kutlama kareleri hatasız; node tests/run-all.cjs --quick → 59/59 PASS; build211 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V209 → V210 — Japon Kale giriş kural kartı
 - Kullanıcı: maç başında kısa hook yazısı: puan modunda gol atan +1, gol yiyen −1; elemede 1/2 gol yiyen elenir; TR/EN; videonun ortasında ~3 sn, göz yormayan; "girişte format anlatılsın mı" seçeneği, Japon Kale'nin hem eleme hem puan modunda.
 - japon-ui rulesCard(t): draw() sonunda (ctx ölçekli koordinatta; dikey 1080 genişlik, yatay 1920), alfa 0,25–0,55 giriş, 3,10–3,45 çıkış, hafif ölçek. Kural metinleri engine ile birebir (points: ga→points--, gf→points++; elimination goalLimit; sürede = mode elimination && !playToWinner). #japonRulesIntro (yes/no, küçük sahada gizli); değişimde yalnız yeniden çizim (simülasyon değişmez).
