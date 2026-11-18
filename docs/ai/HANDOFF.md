@@ -18,6 +18,14 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-17 UTC] Claude · V199 → V200 — Arka planda render (bilgisayar), kaleci titremesi, maç sayfasında 3 mod
+- Kullanıcı: bilgisayarda sekme arka plandayken/başka uygulama açıkken render durmasın; penaltıda kaleci köşe↔orta↔köşe titremesi; maç sayfasında 11v11 / 5v5 / Penaltı aynı sayfada analize dayalı modlar (stüdyolara götürmesin), 5v5 varsayılan 60 sn, oyuncu/süre değişimi sonucu etkilesin.
+- Arka plan: video-ui normal maç export'u sekme gizlenince BİLEREK iptal ediyordu → yalnız mobilde iptal. video-core.create: masaüstünde (device().mobile=false) Web Lock 'next90-video-export' (Chrome dondurmaz/atmaz) + 20 Hz ~-66 dBFS duyulmaz ton (sekme ses çalıyor sayılır, arka plan zamanlayıcı kısıtlaması yok); bitince bırakılır. Telefon değişmedi. Gerçek arka plan davranışı bu ortamda (headless) doğrulanamadı.
+- Kaleci: penalty-engine poseSide = sampleKeeper vz işareti; dalış sonunda kaleci yerleşirken vz ~0,1 sn ters dönüyor, poz öbür köşeye aynalanıyordu (12 tohum: dalış sırasında yön değişimi olan vuruş 21/71 → 0/106). Artık |z|>0,2 iken yer değiştirme yönü.
+- Maç sayfası: #matchModes sekmeleri (11v11 analiz / 5v5 maç / Penaltılar) ve #extraFrameWrap aynı köken iframe; sekme değişimi sayfa içinde, 11v11 duraklatılır. sessionStorage next90.matchExtras: son analiz XI/yedek + analiz takım gücü (fixture strength). 5v5: competition.html?single=five&embed=1 kendini otomatik hazırlar (60 sn varsayılan; beşli/süre değiştirip "hazırla" ile yeniden), takım gücü sağlayıcı rating'lerini ±%8 ağırlıklar; penalty.html?embed=1&extras=1 aynı son kadroları kullanır, takımlar ön seçili, normal Penaltı Stüdyosu görünümü. Eski V193 bağlantı düğmeleri kaldırıldı.
+- Testler: tarayıcıda kayıtlı FB–Liverpool payloadıyla üç sekme (hata yok); node tests/run-all.cjs → 60/60 PASS; build200 filesMatch=true.
+
+
 ## [2026-11-17 UTC] Claude · V198 → V199 — Video cihaz profili seçimi ve masaüstü kodlama akışı
 - Kullanıcı: telefon/bilgisayar otomatik algılansın, emin olunamayan durumlar için indirmede seçim olsun; bilgisayarda donanımı zorlamadan hızlandırma; hiçbir modda indirme sorunu çıkmasın; düşük kullanım hakkıyla ekonomik.
 - video-core.device(): localStorage 'next90.deviceProfile' = desktop|phone geçersiz kılma (yoksa eski otomatik algılama; `detected` alanı eklendi). Tüm modlar (normal maç, 5v5/Japon, turnuva, PK, FK) aynı fonksiyonu kullandığından telefon bellek profili/HTTP teslimi ve masaüstü yolu seçime göre çalışır.

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V200 · 2026-11-17
+- Bilgisayarda video hazırlama arka planda (başka sekme/uygulama açıkken) devam eder; telefon davranışı aynı.
+- Penaltıda kalecinin dalış sonunda öbür köşeye anlık dönme titremesi düzeltildi.
+- Maç sayfasında 11v11 analiz / 5v5 maç / Penaltılar sekmeleri; 5v5 ve penaltılar son analiz kadroları ve takım gücüyle sayfa içinde.
+
 ## V199 · 2026-11-17
 - Tüm video indirme ekranlarında cihaz seçimi: Otomatik / Bilgisayar · hızlı / Telefon · güvenli (algılanan cihaz gösterilir, seçim hatırlanır).
 - Bilgisayarda çizim ve donanım kodlama üst üste çalışır (kuyruk 3 kare); telefon yolu aynen.

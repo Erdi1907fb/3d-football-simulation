@@ -6,10 +6,11 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V199 video cihaz profili
+## Aktif hedef: V200 arka plan render, kaleci düzeltmesi, maç sayfası 3 mod
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-347 | Masaüstü arka plan render; PK kaleci titremesi; maç sayfasında 11v11/5v5/Penaltı sekmeleri (analize dayalı) | done (V200) | claude | files: video-core, video-ui, penalty-engine, index.html, app.js, competition-ui, penalty-ui. Gerçek arka plan/cihaz testi yok. |
 | T-346 | Video cihaz profili (otomatik/bilgisayar/telefon) + masaüstü kodlama kuyruğu | done (V199) | claude | files: video-core, device-profile.js, 5 HTML. Gerçek cihaz hızı ölçülmedi. |
 | T-345 | Canlı tablo O/P başlık hizası (tüm modlar) | done (V198) | claude | files: competition-broadcast |
 | T-344 | Canlı puan durumu üstüne lig adı + sezon şeridi (TR/EN), sezon 1–100 | done (V197) | claude | files: competition-broadcast, competition-engine, competition-ui |

@@ -204,7 +204,14 @@ async function verifyAudio(result,job,env,media,cfg){
   return{...result,audioVerified:true};
  }catch(e){if(e.name==='AbortError')throw e;throw audioFailure(e);}finally{input?.dispose();}
 }
-async function create(job){let framesDone=false;const notify=job.onFramesComplete;job={...job,onFramesComplete(){if(framesDone)return;framesDone=true;notify?.();}};const env=job.env||globalThis,media=job.media||env.Mediabunny,cfg=settings(job);let wake;try{try{wake=await wait(env.navigator?.wakeLock?.request('screen'),job.signal,5000);}catch(e){if(e.name==='AbortError')throw e;}await ensureAudio(job,env,media,cfg);const result=await encode(job);try{const checked=await verifyAudio(result,job,env,media,cfg);return Delivery?await Delivery.prepare(checked,job,env):checked;}catch(e){await result.dispose?.();throw e;}}finally{try{await wake?.release();}catch{}}}
+// V200 desktop background export: hold a Web Lock (Chrome does not freeze/discard a page holding one) and
+// play a sub-audible 20 Hz tone (~-66 dBFS) so the tab counts as playing audio and is exempt from
+// background timer throttling. Phones keep their existing foreground-only behaviour.
+function backgroundKeepAlive(env){if(device(env).mobile)return()=>{};let release=null,ctx=null;
+ try{env.navigator?.locks?.request?.('next90-video-export',()=>new Promise(r=>{release=r;})).catch(()=>{});}catch{}
+ try{const AC=env.AudioContext||env.webkitAudioContext;if(AC){ctx=new AC();const osc=ctx.createOscillator(),gain=ctx.createGain();osc.frequency.value=20;gain.gain.value=.0005;osc.connect(gain).connect(ctx.destination);osc.start();ctx.resume?.().catch(()=>{});}}catch{}
+ return()=>{try{release?.();}catch{}try{ctx?.close?.();}catch{}};}
+async function create(job){let framesDone=false;const notify=job.onFramesComplete;job={...job,onFramesComplete(){if(framesDone)return;framesDone=true;notify?.();}};const env=job.env||globalThis,media=job.media||env.Mediabunny,cfg=settings(job),stopKeepAlive=job.env?()=>{}:backgroundKeepAlive(env);let wake;try{try{wake=await wait(env.navigator?.wakeLock?.request('screen'),job.signal,5000);}catch(e){if(e.name==='AbortError')throw e;}await ensureAudio(job,env,media,cfg);const result=await encode(job);try{const checked=await verifyAudio(result,job,env,media,cfg);return Delivery?await Delivery.prepare(checked,job,env):checked;}catch(e){await result.dispose?.();throw e;}}finally{stopKeepAlive();try{await wake?.release();}catch{}}}
 
 async function encode(job){
  const env=job.env||globalThis,cfg=settings(job),media=job.media||env.Mediabunny,signal=job.signal,onProgress=job.onProgress||(()=>{});check(signal);
