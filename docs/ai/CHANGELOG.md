@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V205 · 2026-11-18
+- Turnuva Stüdyosu penaltı içeriği (penaltı ligi/kupası + haftanın maçı penaltı): oyun içi skor tablosu Penaltı Stüdyosu'nun aynısı (5 yuvarlak: atılan yeşil ✓, kaçan kırmızı ✗, sıradaki gri; ani ölüm ayraçlı ek yuvarlaklar). Lig şablonu seçilirse sol kenarda lig rengi, sağda lig logosu ve üstte "HAFTA 1/3 · PENALTILAR" / "YARI FİNAL · PENALTILAR" etiketi; şablon kapak/tablo/tanıtım ekranlarında da geçerli.
+
 ## V204 · 2026-11-18
 - Turnuva Stüdyosu yeni oyun alanı: **Penaltı turnuvası** (lig 2–6 takım / kupa 4–8 takım). Her takım kaleci + 5 penaltıcı (sıra düzenlenebilir, varsayılan uygun ilk 11'den).
 - Lig: maç başına 5'er penaltı (complete-five-each, maxRounds 5), ani ölüm yok; eşitlik beraberlik (1 puan), atılan/yenilen penaltılar averaja. Kupa: resmi atış (erken bitiş + ani ölüm), her maçta galip.

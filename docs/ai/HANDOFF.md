@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V204 → V205 — Turnuva penaltılarında stüdyo skor tablosu + lig şablonu
+- Kullanıcı: lig şablonları skorlara/lige/kupaya/oyun içine uygulanabilsin; penaltı kısmı değişmesin: 5 penaltı yuvarlağı, atılan yeşil, kaçan kırmızı.
+- competition-broadcast: penaltyBoard() — penalty-ui draw() üst skor panelinin birebir kopyası (1012×146 panel, arma, ad, skor, 5 yuvarlak + ani ölüm ayraç/4 ek, ✓/✗ işaretleri, 0,22 sn büyüme), tema varsa 8 px accent şerit + lig ikonu + 'next90sim', yoksa marka logosu. Üstte koyu zeminli "stageLabel · PENALTILAR". hud(): shootout && record.content==='penalties' ise yalnız bu panel (tema competitionLive/generic HUD yerine). 5v5/11v11 kupa beraberlik penaltıları eski HUD'da kaldı.
+- Tema seçimi zaten tüm modlarda açık; Trendyol (tr.1) ile penaltı ligi: kapak "Trendyol Süper Lig Penaltı Ligi", tanıtım/tablo kırmızı şablon, penaltı paneli kırmızı şerit + lig logosu doğrulandı.
+- Testler: competition-frames, arena-broadcast-flow, competition-japon PASS; Playwright tema'lı lig kareleri + ani ölümlü kupa paneli görsel kontrol; node tests/run-all.cjs --quick → 59/59 PASS; build205 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V203 → V204 — Penaltı turnuvası (lig/kupa)
 - Kullanıcı: Lig/Kupa stüdyosuna 11v11 ve 5v5 yanına penaltı turnuvası; ligde ilk 5 penaltıda eşitlik beraberlik (sonrası yok), atılan/yenilen tabloya; kupa 4 (yarı final) veya 8 (çeyrek final); kapak; kaleci + 5 penaltıcı sırası değiştirilebilir, varsayılan bizim sıra.
 - UI: competitionField 'penalties' → motor {field:'five', content:'penalties'}; penaltyMode() lig/kupada da; süre/kale boyu gizli; autoName (PENALTI LİGİ/KUPASI, EN PENALTY …).
