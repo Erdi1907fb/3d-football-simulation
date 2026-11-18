@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V206 · 2026-11-18
+- Turnuva penaltılarında Penaltı Stüdyosu alt bandı: VURUŞ (atıcı + takım) / KALEDE (kaleci + takım), vuruş anında teknik (· km/h), sonuçta GOL / KALECİDE / DİREK vb. — stüdyo metinleriyle aynı.
+- Penaltı liginde canlı puan durumu her zaman açık (yatay + dikey), üstünde lig adı şeridi (şablon adı TR/EN, sezon).
+
 ## V205 · 2026-11-18
 - Turnuva Stüdyosu penaltı içeriği (penaltı ligi/kupası + haftanın maçı penaltı): oyun içi skor tablosu Penaltı Stüdyosu'nun aynısı (5 yuvarlak: atılan yeşil ✓, kaçan kırmızı ✗, sıradaki gri; ani ölüm ayraçlı ek yuvarlaklar). Lig şablonu seçilirse sol kenarda lig rengi, sağda lig logosu ve üstte "HAFTA 1/3 · PENALTILAR" / "YARI FİNAL · PENALTILAR" etiketi; şablon kapak/tablo/tanıtım ekranlarında da geçerli.
 

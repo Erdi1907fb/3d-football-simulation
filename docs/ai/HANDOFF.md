@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V205 → V206 — Penaltıda atıcı/kaleci bandı, penaltı liginde canlı puan durumu
+- Kullanıcı: klasik penaltı sunumu değişmesin (atan ve kaledeki isim yazıyla görünsün), yalnız şablon eklemeleri + lig formatı; ligde otomatik canlı puan durumu (yatay+dikey), lig adıyla.
+- competition-broadcast: penaltyMatchup() = penalty-ui drawMatchup kopyası (açık panel, takım rengi çizgisi, VURUŞ/KALEDE, ad, takım; teknik + km/h; sonuç etiketi). penaltyBoard içinde, panelin 158 birim üstünde; intro/finished'da yok. penaltyTechnique/penaltyResult stüdyo metinleri.
+- competition-engine: penaltı liginde c.liveTable=true. renderer shootout: liveTable(f.score) (intro hariç). Test competition-japon güncellendi (liveTable beklenir).
+- Testler: competition-japon/frames/arena-broadcast-flow PASS; canvas kontrolü (Trendyol şablon, yatay/dikey) + WebGL lig kareleri; node tests/run-all.cjs --quick → 59/59 PASS; build206 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V204 → V205 — Turnuva penaltılarında stüdyo skor tablosu + lig şablonu
 - Kullanıcı: lig şablonları skorlara/lige/kupaya/oyun içine uygulanabilsin; penaltı kısmı değişmesin: 5 penaltı yuvarlağı, atılan yeşil, kaçan kırmızı.
 - competition-broadcast: penaltyBoard() — penalty-ui draw() üst skor panelinin birebir kopyası (1012×146 panel, arma, ad, skor, 5 yuvarlak + ani ölüm ayraç/4 ek, ✓/✗ işaretleri, 0,22 sn büyüme), tema varsa 8 px accent şerit + lig ikonu + 'next90sim', yoksa marka logosu. Üstte koyu zeminli "stageLabel · PENALTILAR". hud(): shootout && record.content==='penalties' ise yalnız bu panel (tema competitionLive/generic HUD yerine). 5v5/11v11 kupa beraberlik penaltıları eski HUD'da kaldı.

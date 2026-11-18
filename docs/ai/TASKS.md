@@ -11,6 +11,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
+| T-354 | Turnuva penaltılarında atıcı/kaleci alt bandı + penaltı liginde canlı puan durumu | done (V206) | claude | files: competition-broadcast, competition-renderer, competition-engine. |
 | T-353 | Turnuva penaltılarında Penaltı Stüdyosu 5 yuvarlak skor tablosu + lig şablonu dokunuşu | done (V205) | claude | file: competition-broadcast (penaltyBoard). |
 | T-352 | Turnuva Stüdyosu: penaltı turnuvası (lig 5'er atış beraberlikli, kupa 4/8 takım ani ölümlü) | done (V204) | claude | files: competition-engine, penalty-engine (maxRounds), competition-ui, competition-broadcast, competition-renderer; test competition-japon. |
 | T-351 | Kulüp maçlarında BSD /events/{id}/lineups/ unavailable_players (injured/suspended + reason) ile sakat/cezalı işaretleme | open | — | Şu an yalnız millî maçta kullanılıyor (bsd_national_lineup). GS–Samsunspor 216051: Leão, Uğurcan, Osimhen injured döndü. Kullanıcı onayı bekleniyor. |
