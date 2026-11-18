@@ -18,6 +18,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V200 → V201 — Penaltı sırası düzenleme, uygun ilk 11 varsayılanları
+- Kullanıcı: maçın 5v5 ve penaltılarında varsayılanlar o maçın muhtemel 11'inden gelsin, uygun olmayan (ör. sakat Osimhen) oynamasın/penaltı atmasın; penaltı sırası elle değiştirilebilsin (ilk 11'e göre varsayılan), 5v5'te oyuncu değişebilsin; değişince "analizi yeniden hazırla" desin ve simülasyon buna göre yeniden üretilsin.
+- penalty-ui: takım modunda #penaltyOrder0/1 (details, 10 select, varsayılan E.takers uygun XI + kaleci); kickOrder benzersizse prepare rosters'ı sıraya göre kurar, fixedOrder:true ile E.create; ilk atıcı seçimi takım modunda gizli. Değişiklik invalidate → yeniden hazırla.
+- competition-ui: defaultFive/defaultPenalty availability==='unavailable' / status injured|suspended hariç, önce XI (yedek yalnız rol eksikse); invalidate mesajı "Oyuncu/süre değişti. Analizi yeniden hazırla ▶".
+- Testler: tarayıcıda penalty.html?home=432&away=11429 sıra değişimi → atışlar yeni sırayla (Batrakov, Osimhen, Yunus, Barış Alper, Sallai), hata yok; node tests/run-all.cjs → 60/60 PASS; build201 filesMatch=true.
+- Dikkat: uygunluk bayrağı analiz payload'ında yoksa oyuncu uygun sayılır; analiz XI'ine girmeyen sakatlar zaten dışarıda.
+
 ## [2026-11-17 UTC] Claude · V199 → V200 — Arka planda render (bilgisayar), kaleci titremesi, maç sayfasında 3 mod
 - Kullanıcı: bilgisayarda sekme arka plandayken/başka uygulama açıkken render durmasın; penaltıda kaleci köşe↔orta↔köşe titremesi; maç sayfasında 11v11 / 5v5 / Penaltı aynı sayfada analize dayalı modlar (stüdyolara götürmesin), 5v5 varsayılan 60 sn, oyuncu/süre değişimi sonucu etkilesin.
 - Arka plan: video-ui normal maç export'u sekme gizlenince BİLEREK iptal ediyordu → yalnız mobilde iptal. video-core.create: masaüstünde (device().mobile=false) Web Lock 'next90-video-export' (Chrome dondurmaz/atmaz) + 20 Hz ~-66 dBFS duyulmaz ton (sekme ses çalıyor sayılır, arka plan zamanlayıcı kısıtlaması yok); bitince bırakılır. Telefon değişmedi. Gerçek arka plan davranışı bu ortamda (headless) doğrulanamadı.

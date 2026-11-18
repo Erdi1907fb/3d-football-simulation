@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V201 · 2026-11-18
+- Penaltı Stüdyosu takım modu: "Penaltı sırası (1–10)" düzenleyicisi; varsayılan sıra uygun ilk 11'den (kaleci sonda), değişiklikte "yeniden hazırla" uyarısı; penalty-engine fixedOrder ile atış sırası birebir uygulanır.
+- Maç haftası 5v5/penaltı varsayılanları: sakat/cezalı/uygun olmayan oyuncular hariç, önce analizin ilk 11'i; değişiklikte "Analizi yeniden hazırla" mesajı.
+
 ## V200 · 2026-11-17
 - Bilgisayarda video hazırlama arka planda (başka sekme/uygulama açıkken) devam eder; telefon davranışı aynı.
 - Penaltıda kalecinin dalış sonunda öbür köşeye anlık dönme titremesi düzeltildi.
