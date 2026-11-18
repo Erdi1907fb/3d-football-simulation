@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V202 → V203 — Skorbordda hafta x/y ve kupa turu; veri kaynağı araştırması
+- Kullanıcı: lig maçında skorborda "Hafta 1/3" gibi toplamla; kupada çeyrek/yarı final/final (EN quarter/semi/final). Ayrıca kaliteli, çekilebilir ek veri kaynakları (sakatlık/kadro) soruldu.
+- competition-broadcast: stageLabel(c,m,en) — league → 'HAFTA r/total' ('MATCHWEEK r/total'; total = c.matches lig max round); diğerleri stageName. hud (5v5 + tema), maç tanıtımı, japonHud (lig), 11v11 overlay/Shared.render competition adına ' · etiket' eklendi.
+- Araştırma: mevcut BSD (sports.bzzoiro.com) /api/v2/events/{id}/lineups/ kulüp maçlarında da unavailable_players veriyor (GS–Samsunspor 216051: Leão hamstring, Uğurcan omuz, Osimhen diz; Samsunspor: Celil Yüksel, Fatih Kaya) + predicted XI; ama sistem bunu yalnız millî maçta kullanıyor → T-351 (kullanıcı onayı bekleniyor, kod değişmedi). Ücretli alternatifler: Sportmonks (Süper Lig sakat/ceza), API-Football (injuries, kapsam bayrağı), SportsDataIO, Goalserve.
+- Testler: competition-frames, arena-broadcast-flow, competition-japon PASS; Playwright HUD görüntüsü (HAFTA 1/3, ÇEYREK FİNAL, Japon HAFTA 1/3); node tests/run-all.cjs --quick → 59/59 PASS; build203 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V201 → V202 — Penaltı sırası 1–11, sakat/cezalı varsayılan dışı
 - Kullanıcı: 11'de veriler ne yansıtıyorsa; sakat/cezalı/kadroda olmayan varsayılan penaltı sırasına ve 5v5'e girmesin (sıra kaysın, sıradaki atsın), ama seçeneklerde kalsın, seçerse simülasyon ona göre; sıra 1–11, kaleci de (Uğurcan, Ederson).
 - app.js matchExtras: her tarafa out (source.availabilityRepair.excluded, norm anahtar) + date (fx.date).

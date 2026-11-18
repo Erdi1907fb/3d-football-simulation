@@ -10,6 +10,8 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
+| T-351 | Kulüp maçlarında BSD /events/{id}/lineups/ unavailable_players (injured/suspended + reason) ile sakat/cezalı işaretleme | open | — | Şu an yalnız millî maçta kullanılıyor (bsd_national_lineup). GS–Samsunspor 216051: Leão, Uğurcan, Osimhen injured döndü. Kullanıcı onayı bekleniyor. |
 | T-349 | Penaltı sırası 1–11 (kaleci dahil); sakat/cezalı/kadro dışı varsayılan dışı ama seçilebilir (5v5 + penaltı) | done (V202) | claude | files: penalty-ui, competition-ui, app.js. |
 | T-348 | Maç penaltı sırası düzenleme (1–10, ilk 11 varsayılan) + 5v5/penaltı uygun oyuncu varsayılanları | done (V201) | claude | files: penalty-ui, competition-ui. Gerçek sakat oyuncuyla tarayıcı testi yok. |
 | T-347 | Masaüstü arka plan render; PK kaleci titremesi; maç sayfasında 11v11/5v5/Penaltı sekmeleri (analize dayalı) | done (V200) | claude | files: video-core, video-ui, penalty-engine, index.html, app.js, competition-ui, penalty-ui. Gerçek arka plan/cihaz testi yok. |

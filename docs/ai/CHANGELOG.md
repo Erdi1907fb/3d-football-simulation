@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V203 · 2026-11-18
+- Turnuva skorbordu: lig maçlarında "HAFTA 1/3" / "MATCHWEEK 1/3" (toplam hafta), kupada tur adı (ÇEYREK FİNAL / YARI FİNAL / FİNAL; EN QUARTER-FINAL / SEMI-FINAL / FINAL). 5v5, Japon Kale ve 11v11 (tema/temasız) skorbordu + maç tanıtımı.
+
 ## V202 · 2026-11-18
 - Penaltı sırası 1–11 (11. varsayılan kaleci, ör. Uğurcan Çakır / Ederson); seçenekler tüm kadro (GK dahil), "oynayamaz"/"kadro dışı" etiketli.
 - Uygun olmayan oyuncu tespiti: availability/available=false, injured/suspended, maç tarihinde aktif absenceWindow, analizin çıkardığı oyuncular (availabilityRepair.excluded). Varsayılana girmez; sıra kayar, yerine sıradaki/yedek girer; kullanıcı isterse seçebilir.
