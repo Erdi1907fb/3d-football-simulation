@@ -18,6 +18,11 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V209 → V210 — Japon Kale giriş kural kartı
+- Kullanıcı: maç başında kısa hook yazısı: puan modunda gol atan +1, gol yiyen −1; elemede 1/2 gol yiyen elenir; TR/EN; videonun ortasında ~3 sn, göz yormayan; "girişte format anlatılsın mı" seçeneği, Japon Kale'nin hem eleme hem puan modunda.
+- japon-ui rulesCard(t): draw() sonunda (ctx ölçekli koordinatta; dikey 1080 genişlik, yatay 1920), alfa 0,25–0,55 giriş, 3,10–3,45 çıkış, hafif ölçek. Kural metinleri engine ile birebir (points: ga→points--, gf→points++; elimination goalLimit; sürede = mode elimination && !playToWinner). #japonRulesIntro (yes/no, küçük sahada gizli); değişimde yalnız yeniden çizim (simülasyon değişmez).
+- Testler: Playwright dikey puan + yatay 2-gol eleme kareleri (1,6 sn kart var, 3,8 sn yok), hata yok; node tests/run-all.cjs --quick → 59/59 PASS; build210 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V208 → V209 — Japon eleme süresi, her yerde video hızı
 - Kullanıcı: Japon Kale elemede seçilen 60/75/90 sn içinde bütün eleme bitsin (video uzamasın) — ama iki seçenek: sürede sonuçlansın / simülasyona göre uzayabilsin; 1 ve 2 golde eleme için. Video hızı seçimi Japon Kale, 5v5, 11v11 analiz ve tüm indirme yerlerine; kısalan süre yazsın.
 - japon-engine: options.finish==='timed' (ve seconds verilmiş) → timedFinish; playToWinner kapalı. deadline(j)=(maxTime-6.3-1.6)*(j+1)/(n-1) VİDEO zamanı (t); geçildiyse ve duraklama yoksa en kötü takım (roundGA desc, ga desc, gf asc, seed kurası) 'elimination' {reason:'time'} ile elenir, goal yolu gibi tur/round olayları; tek takım kalınca ended. timed modda celebrationDuration = max(3, min(normal, maxTime-podium-liveEnd)). finish verilmezse (turnuva stüdyosu dahil) eski davranış. 3/4/6 takım × 1/2 gol × 60/75/90 × 5 tohum: tüm elemeler yapıldı, video ≤ seçilen sn.

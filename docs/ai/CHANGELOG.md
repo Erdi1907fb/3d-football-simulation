@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V210 · 2026-11-18
+- Japon Kale: "Girişte format anlatılsın mı?" (Evet varsayılan / Hayır). Evet: videonun ortasında ~3 sn kısa kural kartı (0,25–3,45 sn, yumuşak giriş/çıkış), TR/EN sayfa diline göre. Puan: +1 gol atan, −1 gol yiyen, N saniye sonunda en çok puan kazanır. Eleme: 1/2 gol yiyen elenir, son kalan kazanır, "Hepsi N saniyede biter" (sürede modu) ya da "Süre biterse ani ölüm". 5v5 küçük sahada yok.
+
 ## V209 · 2026-11-18
 - Japon Kale eleme: yeni "Eleme süresi" ayarı — "Seçilen sürede sonuçlansın" (varsayılan) / "Simülasyona göre uzayabilsin" (eski ani ölüm uzatması). Sürede modunda her elemenin video-zamanı son saniyesi var; o ana kadar gol ile elenen yoksa turda en çok gol yiyen (eşitlikte toplam yenilen, atılan, kura) elenir; kazanan sahnesi dahil video seçilen 60/75/90 sn'yi aşmaz. 1 ve 2 golde eleme için geçerli.
 - Video hızı (1.0–3.0x) artık her indirme yerinde: Japon Kale, 5v5 küçük saha, Penaltı, Serbest Vuruş ve maç merkezi (11v11 analiz). Seçenekler kısalan süreyi yazar ("1.5x · 0:40"). Hız SekmeVideo.create içinde uygulanır (select[data-video-speed] veya job.speed); fizik/sonuç aynı, ses tonu korunur, dosya adına "-1.5x" eklenir. Turnuva Stüdyosu kendi seçimini kullanmaya devam eder.
