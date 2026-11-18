@@ -11,6 +11,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
+| T-357 | Japon eleme "seçilen sürede sonuçlansın / uzayabilsin"; tüm indirme yerlerinde video hızı | done (V209) | claude | files: japon-engine, japon-ui, japon-kale.html, video-core (withSpeed), device-profile (hız kutusu); test arena-elimination. |
 | T-356 | Penaltı turnuvası kapak fotoğrafı: kale + kaleci + atıcı + top, kırpıma göre kamera | done (V208) | claude | files: competition-renderer (cover/coverBand), japon-camera (safeOverride). |
 | T-355 | Japon/5v5 hava seçimi (varsayılan açık); Japon eleme 2 takım sahası 22×16; masaüstü video hızlandırma + gizli sekmede durma hatası | done (V207) | claude | files: japon-kale.html, japon-ui, japon-layout, japon-engine, video-core; test arena-elimination. Gerçek GPU/telefon ölçümü yok. |
 | T-354 | Turnuva penaltılarında atıcı/kaleci alt bandı + penaltı liginde canlı puan durumu | done (V206) | claude | files: competition-broadcast, competition-renderer, competition-engine. |

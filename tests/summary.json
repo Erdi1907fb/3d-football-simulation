@@ -1,23 +1,23 @@
 {
- "version": "V208",
- "ranAt": "2026-11-18T11:17:43.911Z",
+ "version": "V209",
+ "ranAt": "2026-11-18T12:11:55.431Z",
  "results": [
   {
    "test": "v188-fixes.cjs",
    "pass": true,
-   "seconds": 18.9,
+   "seconds": 20.2,
    "summary": "{\"pass\":true,\"wideShots\":2314,\"goals\":60,\"weather\":[\"clear\",\"snow\"],\"arena\":{\"games\":12,\"goalsPerGame\":1.5,\"goalless\":2,\"shotsPerGame\":7.3}}"
   },
   {
    "test": "competition-japon.cjs",
    "pass": true,
-   "seconds": 23.3,
+   "seconds": 25.6,
    "summary": "{\"pass\":true,\"league\":{\"weeks\":3,\"goals\":[[1,0,0,0],[1,0,1,1],[0,1,1,0]],\"champion\":\"997\"},\"cup\":{\"champion\":\"435\",\"durations\":[44.5,89.9,62.8]}}"
   },
   {
    "test": "competition-kits.cjs",
    "pass": true,
-   "seconds": 23.5,
+   "seconds": 25.1,
    "summary": "{\"pass\":true,\"pairings\":12,\"fieldAndKeeperParity\":true,\"oldSavedAnalyses\":true,\"unchangedEventsAndPhysics\":true,\"historicIdentityPreserved\":true}"
   },
   {
@@ -35,7 +35,7 @@
   {
    "test": "competition-cover.cjs",
    "pass": true,
-   "seconds": 2,
+   "seconds": 2.1,
    "summary": "{\"pass\":true,\"coverCounts\":[2,3,4,5,6,8],\"ratios\":2,\"languages\":2,\"normalTopBroadcast\":true,\"goalSizes\":[4.4,5,6],\"backpassGeometry\":true,\"rankCaptionsOptIn\":true,\"seasonCoverOptIn\":true}"
   },
   {
@@ -53,73 +53,73 @@
   {
    "test": "competition-seasons.cjs",
    "pass": true,
-   "seconds": 0.7,
+   "seconds": 0.8,
    "summary": "{\"pass\":true,\"formats\":2,\"optionalDefaultOff\":true,\"noMatchChanges\":true,\"noMiddleScreens\":true,\"oneChampionIncrement\":true,\"inputImmutable\":true,\"rangeValidation\":true,\"zeroTrophyStart\":true,\"twoLayouts\":true}"
   },
   {
    "test": "competition-branding.cjs",
    "pass": true,
-   "seconds": 14.9,
+   "seconds": 16.1,
    "summary": "{\"pass\":true,\"leagueCounts\":[2,3,4,5,6],\"cup\":8,\"themes\":12,\"ratios\":2,\"actualEventStatistics\":true,\"qualificationByRank\":true,\"fixturePagination\":true,\"englishCards\":true}"
   },
   {
    "test": "studio-ground.cjs",
    "pass": true,
-   "seconds": 0.8,
+   "seconds": 1,
    "summary": "{\"pass\":true,\"seededSeekTrace\":true,\"contacts\":3,\"lowGatherCrouches\":true,\"airborneFeetExcluded\":true,\"visualOnly\":true}"
   },
   {
    "test": "competition-labels.cjs",
    "pass": true,
-   "seconds": 2.8,
+   "seconds": 2.7,
    "summary": "{\"pass\":true,\"selectiveOnly\":true,\"sharedNormalPolicy\":true,\"keeperAndReceiver\":true,\"noIntroNameWall\":true,\"penalties\":true,\"twoFormats\":true,\"besiktasOrkun\":true,\"physicalPenaltySamples\":36}"
   },
   {
    "test": "competition-frames.cjs",
    "pass": true,
-   "seconds": 11.4,
+   "seconds": 11.8,
    "summary": "{\"pass\":true,\"arenaPresentationParityFrames\":106,\"asyncFrameOrdering\":true,\"cancellation\":true,\"cancelledWorldCannotDisposeRetry\":true}"
   },
   {
    "test": "competition.cjs",
    "pass": true,
-   "seconds": 93.8,
+   "seconds": 95.1,
    "summary": "{\"pass\":true,\"league\":6,\"cup\":7,\"physicalShootouts\":3,\"normalAnalysisScore\":[1,3],\"normalLeagueMatches\":6,\"leagueSeconds\":359.9583333333333,\"cupSeconds\":586.075,\"coverage\":\"fixtures, ranking, conduct, seeded lots, roster validation, actual engines/replay, no future spoilers, continuous chapters, physical selected-five penalties, medals/trophy, equal fans, cancellation\"}"
   },
   {
    "test": "penalty-goal-evidence.cjs",
    "pass": true,
-   "seconds": 2.4,
+   "seconds": 2.1,
    "summary": "{\"pass\":true,\"series\":100,\"kicks\":1084,\"goals\":684,\"outcomes\":{\"goal\":684,\"save\":351,\"wide\":23,\"post\":26},\"oldContradictions\":0,\"coverage\":\"whole-ball swept goal-plane crossing agrees with outcome through physical flight and two-second tail; no desired-result resampling\"}"
   },
   {
    "test": "arena-action.cjs",
    "pass": true,
-   "seconds": 4.3,
+   "seconds": 4.6,
    "summary": "{\"pass\":true,\"decisionSamples\":3100,\"counts\":[{\"shot\":579,\"carry\":200,\"pass\":221},{\"shot\":862,\"carry\":56,\"pass\":82}],\"longShots\":43,\"games\":8,\"shots\":47,\"nonGoals\":35,\"coverage\":\"context-sensitive shooting probability, pass/carry diversity, no forced outcomes, forward near-goal carrying, bounded tempo, deterministic actual 5v5/arena games\"}"
   },
   {
    "test": "touchline-safe.cjs",
    "pass": true,
-   "seconds": 0.3,
+   "seconds": 0.2,
    "summary": "{\"pass\":true,\"frames\":1210,\"goalPoints\":38720,\"coverage\":\"2–6 live goal frames, portrait/landscape safe area, angle, continuity, deterministic seeking; unchanged safe HUD band\"}"
   },
   {
    "test": "football-fixes.cjs",
    "pass": true,
-   "seconds": 55.5,
+   "seconds": 56,
    "summary": "{\"pass\":true,\"openGoalSeeds\":120,\"goals\":35,\"returned\":2505,\"keeperControl\":true,\"grass\":{\"speed\":3.2133573376680378,\"distance\":10.807163070653427},\"legacy\":{\"speed\":4.951548210181898,\"distance\":12.641033347306418},\"eliminationMatches\":25,\"extended\":23,\"samples\":[{\"n\":3,\"seconds\":60,\"seed\":1,\"game\":84.05,\"winner\":2,\"goals\":3},{\"n\":3,\"seconds\":60,\"seed\":7,\"game\":33.55,\"winner\":2,\"goals\":7},{\"n\":3,\"seconds\":60,\"seed\":42,\"game\":83.7,\"winner\":1,\"goals\":6},{\"n\":3,\"seconds\":90,\"seed\":1,\"game\":101.225,\"winner\":0,\"goals\":4},{\"n\":3,\"seconds\":90,\"seed\":7,\"game\":33.55,\"winner\":2,\"goals\":7},{\"n\":3,\"second"
   },
   {
    "test": "natural-studios.cjs",
    "pass": true,
-   "seconds": 2.2,
+   "seconds": 2.1,
    "summary": "{\"pass\":true,\"series\":100,\"kicks\":1084,\"freekicks\":166,\"outcomes\":{\"goal\":684,\"save\":351,\"wide\":23,\"post\":26},\"fkOutcomes\":{\"wall\":60,\"wide\":20,\"goal\":48,\"save\":29,\"post\":9},\"techniques\":[\"outside-foot\",\"roof\",\"placed\",\"driven\",\"power-rise\",\"inside-foot\",\"chip\",\"high-corner\",\"roll\",\"disguised\",\"central\",\"side-netting\"],\"naturalSelection\":true,\"physicalClassification\":true,\"finiteNoForcedRareEventQuota\":true}"
   },
   {
    "test": "free-football.cjs",
    "pass": true,
-   "seconds": 22.7,
+   "seconds": 23,
    "summary": "{\"pass\":true,\"seconds\":30,\"score\":[0,1],\"goals\":1,\"passes\":5,\"targetIndependent\":true,\"rewind\":true,\"compactNotFull90Minutes\":true}"
   },
   {
@@ -137,7 +137,7 @@
   {
    "test": "arena-clock.cjs",
    "pass": true,
-   "seconds": 13.2,
+   "seconds": 13.6,
    "summary": "{\"pass\":true,\"pauses\":20,\"smallPauses\":9,\"multiPauses\":11,\"scope\":\"wall/video clock separate from 60s match clock; stop through actual restart; score-card identity and rewind\"}"
   },
   {
@@ -155,67 +155,67 @@
   {
    "test": "contact-motion.cjs",
    "pass": true,
-   "seconds": 0.7,
+   "seconds": 0.8,
    "summary": "{\"pass\":true,\"contacts\":4,\"coverage\":\"reachable left/right strike and frozen receive IK, no root/ball mutation, no departed-ball chasing, one keeper lift and bounded body correction\"}"
   },
   {
    "test": "teamwork.cjs",
    "pass": true,
-   "seconds": 6,
+   "seconds": 6.4,
    "summary": "{\"pass\":true,\"styles\":[\"balanced\",\"wide\",\"vertical\",\"combination\"],\"combinations\":755,\"recoveries\":1339,\"sector\":4350,\"passes\":39,\"coverage\":\"stable synthetic team styles, observed wall-pass and third-man jobs, mirror symmetry, separated support lanes, real arena pass points, sector/recovery cover, deterministic seeking\"}"
   },
   {
    "test": "arena-elimination.cjs",
    "pass": true,
-   "seconds": 1.2,
+   "seconds": 10,
    "summary": "{\"pass\":true,\"stages\":[{\"count\":4,\"teams\":[0,1,2,3]},{\"count\":3,\"teams\":[1,2,3]},{\"count\":2,\"teams\":[1,2]}],\"coverage\":\"physical 4→3→2 layouts, identities, restart cut, replay, real goal meshes/surface, local disposal, camera, unchanged points mode\"}"
   },
   {
    "test": "futsal-five.cjs",
    "pass": true,
-   "seconds": 27.2,
+   "seconds": 29.5,
    "summary": "{\"pass\":true,\"games\":18,\"patterns\":[\"driven\",\"free_kick\",\"placed\",\"rising\",\"chip\",\"one_touch\",\"header\",\"penalty\"],\"kickoffs\":11,\"finales\":16,\"hands\":93,\"crosses\":1,\"goalSideCover\":0.99,\"counts\":{\"drop\":49,\"block\":22,\"possession\":553,\"decision\":722,\"shot\":177,\"board\":77,\"skill\":110,\"tackle\":433,\"foul\":19,\"free_kick\":6,\"skill_result\":109,\"keeper_catch\":24,\"keeper_distribution\":50,\"pass\":282,\"turnover\":233,\"loose_ball\":12,\"save\":69,\"keeper_control\":26,\"duel_win\":92,\"goal\":42,\"net_contact\":41,\"kickoff_setup\":11,\"play_resumed\":42,\"kickoff\":11,\"finish\":18,\"keeper_spill\":6,\"post\":7,\"penalty\":1,\"advan"
   },
   {
    "test": "arena-balance.cjs",
    "pass": true,
-   "seconds": 4.3,
+   "seconds": 5,
    "summary": "{\"pass\":true,\"games\":6,\"cameraFrames\":2975,\"passes\":43,\"shots\":34,\"maxKeeperTurn\":3.2,\"maxPlayerTravel\":5.798,\"coverage\":\"medium action context, fixed central press box, actual save time, collision anticipation, forward options, elastic net release and ball-loaded cloth\"}"
   },
   {
    "test": "arena-football.cjs",
    "pass": true,
-   "seconds": 8.3,
+   "seconds": 9.3,
    "summary": "{\"pass\":true,\"games\":12,\"passes\":90,\"completed\":62,\"shotDistances\":[13.81,10.55,7.2,16.66,12.84,10.39,4.74,5.52,11.33,10.66,10.19,12.51,17.27,9.64,10.36,12.08,9.29],\"coverage\":\"rectangle, turn/acceleration limits, real ground friction, receive timing, shooting channels, wall-aware keepers, real bank passes, kick preparation, balanced opening, short truthful result\"}"
   },
   {
    "test": "arena-broadcast-flow.cjs",
    "pass": true,
-   "seconds": 5.5,
+   "seconds": 6.2,
    "summary": "{\"pass\":true,\"games\":10,\"netGoals\":13,\"finales\":8,\"skills\":{\"true\":13,\"false\":10},\"coverage\":\"selective names, one presser, skill outcomes, moving scored ball, shared net physics/waves and rewind, full-side safe framing, real supporter finales, uncompressed HUD text\"}"
   },
   {
    "test": "arena-duels.cjs",
    "pass": true,
-   "seconds": 48.3,
+   "seconds": 51.2,
    "summary": "{\"pass\":true,\"games\":45,\"moves\":[\"roulette\",\"elastico\",\"nutmeg\",\"drag-back\",\"step-over\",\"chop\",\"body-feint\"],\"counts\":{\"drop\":96,\"block\":49,\"possession\":1015,\"decision\":1360,\"shot\":336,\"board\":156,\"skill\":191,\"tackle\":812,\"foul\":33,\"free_kick\":9,\"skill_result\":188,\"keeper_catch\":48,\"keeper_distribution\":85,\"pass\":527,\"turnover\":435,\"loose_ball\":19,\"save\":127,\"keeper_control\":37,\"duel_win\":145,\"goal\":71,\"net_contact\":68,\"kickoff_setup\":20,\"play_resumed\":71,\"kickoff\":20,\"finish\":45,\"keeper_spill\":17,\"post\":8,\"advantage\":24,\"ceiling\":2},\"coverage\":\"real skill/contact defence, box fouls/restarts, "
   },
   {
    "test": "national-coverage.cjs",
    "pass": true,
-   "seconds": 0.3,
+   "seconds": 0.4,
    "summary": "{\"pass\":true,\"teams\":85,\"players\":2224,\"conceptTeams\":85,\"coverage\":\"all 85 catalogue nations: real provider squads, no fake official XI, kits/three variants, current concept teams, normal match completion, all studio shared selectors and local textures\"}"
   },
   {
    "test": "arena-rush.cjs",
    "pass": true,
-   "seconds": 42.2,
+   "seconds": 44.8,
    "summary": "{\"pass\":true,\"games\":25,\"scoreSignatures\":10,\"winners\":4,\"lateChances\":10,\"coverage\":\"2–6 teams x five exact durations, continuous playback, late physical action/varied scores, timed elimination honesty, TR/EN timelines, safety aisles/walls/stewards, continuous pitch paint\"}"
   },
   {
    "test": "small-sided.cjs",
    "pass": true,
-   "seconds": 12.7,
+   "seconds": 15.3,
    "summary": "{\"pass\":true,\"passes\":164,\"saves\":81,\"goals\":29,\"draws\":3,\"cameraFrames\":4760,\"coverage\":\"5v5/3-per-side, free outfield positions + mandatory GK, centre-drop variation, actual passes/saves/scorer slots, equal local crowd, contiguous terraces, goal-specific cheers, oblique safe and continuous tracking\"}"
   },
   {
@@ -227,43 +227,43 @@
   {
    "test": "japon-camera.cjs",
    "pass": true,
-   "seconds": 22,
+   "seconds": 24,
    "summary": "{\"pass\":true,\"triples\":10,\"complete\":4,\"frames\":3820,\"coverage\":\"monotonic arena areas/goal sizes, matching visible+physical bounds, 10/9/12/15/18 actors, per-role shot identities, critical action and goal frame inside Shorts/Reels safe region, all three cameras, deterministic seeking, requested legends\"}"
   },
   {
    "test": "japon-kale.cjs",
    "pass": true,
-   "seconds": 25.2,
+   "seconds": 27.8,
    "summary": "{\"pass\":true,\"games\":50,\"coverage\":\"2–6 sides, two formats, exact goal score, round reset, elimination, ranking, physical goal plane, highlights, seeded rewind, open lanes\"}"
   },
   {
    "test": "commentary.cjs",
    "pass": true,
-   "seconds": 2.2,
+   "seconds": 2.6,
    "summary": "{\"pass\":true,\"coverage\":\"TR/EN, exact exported times, all goals/eliminations, actual actors, corner without invented header, SRT, deterministic variation\"}"
   },
   {
    "test": "freekick.cjs",
    "pass": true,
-   "seconds": 33.4,
+   "seconds": 37.3,
    "summary": "{\"PASS\":true,\"version\":110,\"contests\":240,\"kicks\":2108,\"outcomes\":{\"goal\":560,\"wide\":685,\"wall\":156,\"post\":153,\"save\":554},\"techniques\":[\"dip\",\"curl\",\"under\",\"power\",\"knuckle\",\"outside\",\"low-curl\",\"chip\",\"around\"],\"physicalMatch\":0.9986,\"earlyFinish\":41,\"suddenDeath\":93,\"samples\":936436,\"maxStep\":0.577,\"brandBoards\":true,\"sameSpotRounds\":1166,\"mirroredPairs\":800,\"spotPresets\":{\"right-wide\":400,\"left-wide\":400,\"long\":400,\"central\":400,\"right\":400,\"left\":400},\"nationalWallCountries\":16,\"lyingWallPlayers\":286,\"lyingPlayerBlocks\":1,\"setPieceChecks\":1238,\"keeperCatches\":{\"clear\":172,\"rain\":78}}"
   },
   {
    "test": "penalty.cjs",
    "pass": true,
-   "seconds": 5.7,
+   "seconds": 6.3,
    "summary": "{\"PASS\":true,\"series\":400,\"kicks\":4257,\"techniques\":{\"chip\":176,\"disguised\":147,\"placed\":649,\"power-rise\":320,\"roll\":326,\"high-corner\":359,\"inside-foot\":633,\"side-netting\":396,\"central\":257,\"driven\":596,\"outside-foot\":171,\"roof\":227},\"speedKmh\":{\"min\":54,\"median\":84,\"max\":111},\"maxStep60fps\":0.55,\"aeroKicks\":632,\"maxCurlMetres\":0.273}"
   },
   {
    "test": "duo.cjs",
    "pass": true,
-   "seconds": 4.7,
+   "seconds": 5.5,
    "summary": "{\"PASS\":true,\"penaltySeries\":120,\"freeKickSeries\":120}"
   },
   {
    "test": "celebrations.cjs",
    "pass": true,
-   "seconds": 0.3,
+   "seconds": 0.4,
    "summary": "{\"PASS\":true,\"celebrations\":106,\"small\":19,\"finaleSlideShare\":0.8,\"goalSlideShare\":0.41,\"runArmVariants\":35,\"moves\":45,\"arrivals\":8,\"teamRoutines\":14,\"posesChecked\":15264,\"posesWithMotion\":14852,\"planPackShare\":0.851,\"distinctPicked\":106}"
   },
   {
@@ -281,7 +281,7 @@
   {
    "test": "kickoff-referee.cjs",
    "pass": true,
-   "seconds": 36.1,
+   "seconds": 39.2,
    "summary": "{\"PASS\":true,\"samples\":360,\"minGap\":12.51}"
   },
   {
@@ -293,7 +293,7 @@
   {
    "test": "forecast.php",
    "pass": true,
-   "seconds": 0,
+   "seconds": 0.1,
    "summary": "{\"PASS\":true,\"failures\":0,\"xg\":[4.5,0.22683355000699826],\"quality\":\"history\"}"
   },
   {
@@ -305,7 +305,7 @@
   {
    "test": "forecast-lock.php",
    "pass": true,
-   "seconds": 0,
+   "seconds": 0.1,
    "summary": "{\"PASS\":true}"
   },
   {
@@ -317,19 +317,19 @@
   {
    "test": "presentation.cjs",
    "pass": true,
-   "seconds": 4.2,
+   "seconds": 4.5,
    "summary": "{"
   },
   {
    "test": "variation.cjs",
    "pass": true,
-   "seconds": 5.7,
+   "seconds": 6.4,
    "summary": "{"
   },
   {
    "test": "recovery.cjs",
    "pass": true,
-   "seconds": 1,
+   "seconds": 1.2,
    "summary": "{"
   },
   {
@@ -341,19 +341,25 @@
   {
    "test": "remaster.cjs",
    "pass": true,
-   "seconds": 0.9,
+   "seconds": 1,
    "summary": "{\"PASS\":true,\"tacticalTargets\":270,\"intents\":[\"inverted-cover\",\"rest-defence\",\"overlap\",\"pivot\",\"half-space\",\"weak-side-width\",\"wide-offer\",\"overlap-offer\",\"back-line\",\"goal-side-cover\",\"front-screen\",\"midfield-line\",\"fullback-width\",\"screen-pivot\",\"far-post-run\"],\"mirrorInvariant\":true,\"reciprocalAvoidance\":true,\"coincidentBodiesRecovered\":true,\"materialGroups\":[{\"before\":20,\"after\":14},{\"before\":20,\"after\":13}],\"deployBindings\":\"normal/concept/penalty\",\"shaderContract\":true}"
   },
   {
    "test": "crests.cjs",
    "pass": true,
-   "seconds": 0.1,
+   "seconds": 0.2,
    "summary": "{\"PASS\":true,\"catalogTeams\":274,\"embeddedAssets\":294,\"lateImageRefresh\":true}"
   },
   {
    "test": "search-test.cjs",
    "pass": true,
    "seconds": 0,
+   "summary": "{"
+  },
+  {
+   "test": "engine-test.cjs",
+   "pass": true,
+   "seconds": 194.7,
    "summary": "{"
   }
  ],

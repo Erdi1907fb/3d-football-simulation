@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V209 · 2026-11-18
+- Japon Kale eleme: yeni "Eleme süresi" ayarı — "Seçilen sürede sonuçlansın" (varsayılan) / "Simülasyona göre uzayabilsin" (eski ani ölüm uzatması). Sürede modunda her elemenin video-zamanı son saniyesi var; o ana kadar gol ile elenen yoksa turda en çok gol yiyen (eşitlikte toplam yenilen, atılan, kura) elenir; kazanan sahnesi dahil video seçilen 60/75/90 sn'yi aşmaz. 1 ve 2 golde eleme için geçerli.
+- Video hızı (1.0–3.0x) artık her indirme yerinde: Japon Kale, 5v5 küçük saha, Penaltı, Serbest Vuruş ve maç merkezi (11v11 analiz). Seçenekler kısalan süreyi yazar ("1.5x · 0:40"). Hız SekmeVideo.create içinde uygulanır (select[data-video-speed] veya job.speed); fizik/sonuç aynı, ses tonu korunur, dosya adına "-1.5x" eklenir. Turnuva Stüdyosu kendi seçimini kullanmaya devam eder.
+
 ## V208 · 2026-11-18
 - Penaltı turnuvası kapak fotoğrafı (yatay + dikey): kapak karesi kapaktaki fotoğraf kırpımına göre ayrı kamera ile çekilir; kalenin tamamı, kaleci, atıcı ve kaleye giden top birlikte (ilk 6 atıştaki ilk gol, top kaleye ~0,28 sn kala).
 

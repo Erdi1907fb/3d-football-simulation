@@ -18,6 +18,13 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V208 → V209 — Japon eleme süresi, her yerde video hızı
+- Kullanıcı: Japon Kale elemede seçilen 60/75/90 sn içinde bütün eleme bitsin (video uzamasın) — ama iki seçenek: sürede sonuçlansın / simülasyona göre uzayabilsin; 1 ve 2 golde eleme için. Video hızı seçimi Japon Kale, 5v5, 11v11 analiz ve tüm indirme yerlerine; kısalan süre yazsın.
+- japon-engine: options.finish==='timed' (ve seconds verilmiş) → timedFinish; playToWinner kapalı. deadline(j)=(maxTime-6.3-1.6)*(j+1)/(n-1) VİDEO zamanı (t); geçildiyse ve duraklama yoksa en kötü takım (roundGA desc, ga desc, gf asc, seed kurası) 'elimination' {reason:'time'} ile elenir, goal yolu gibi tur/round olayları; tek takım kalınca ended. timed modda celebrationDuration = max(3, min(normal, maxTime-podium-liveEnd)). finish verilmezse (turnuva stüdyosu dahil) eski davranış. 3/4/6 takım × 1/2 gol × 60/75/90 × 5 tohum: tüm elemeler yapıldı, video ≤ seçilen sn.
+- japon-ui/html: #eliminationFinish (timed varsayılan), yalnız eleme modunda görünür; değişimde invalidate. Next90JaponStudio.videoDuration getter.
+- video-core withSpeed(job): job.speed veya select[data-video-speed]; duration/sp, events at/elapsed/videoTime /sp, draw/prepareFrame/isCut zaman*sp, downloadName -N.Nx. Turnuva stüdyosu kendi ölçeklemesini yapar ve select[data-video-speed] içermez (çift uygulanmaz). device-profile.js: competitionExport dışındaki export düğmelerine "Video hızı" kutusu (localStorage next90.videoSpeed, etiketler süreyi gösterir: penalty/freekick contest.duration, Japon videoDuration, maç merkezi Sekme3D.videoDuration).
+- Testler: arena-elimination'a timed/overtime kontrolleri; Chromium MP4: 6 sn @2x → 3,0 sn video, 180 kare; 6 sayfada kutu kontrolü; node tests/run-all.cjs → 60/60 PASS; build209 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V207 → V208 — Penaltı turnuvası kapak çekimi
 - Kullanıcı: (soru) penaltı turnuvası da ilk atışla başlayıp maç arası kısa sonuç, hafta/tur sonunda tablo/ağaç mı? → Evet, "Hızlı akış" işaretliyse (V204 penTour fastFlow: shootout → match-result 2,6 sn → round-summary yalnız tur/hafta sonu). Kapak fotoğrafında kale/kaleci kesik; kale + oyuncu tam görünsün, yatay ve dikey.
 - Sebep: B.cover tam kareyi fotoğraf alanına "cover" kırpıyor (dikey kare 1080×1920 → 828×520 bant), kamera kırpıma göre değil.
