@@ -18,6 +18,15 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V203 → V204 — Penaltı turnuvası (lig/kupa)
+- Kullanıcı: Lig/Kupa stüdyosuna 11v11 ve 5v5 yanına penaltı turnuvası; ligde ilk 5 penaltıda eşitlik beraberlik (sonrası yok), atılan/yenilen tabloya; kupa 4 (yarı final) veya 8 (çeyrek final); kapak; kaleci + 5 penaltıcı sırası değiştirilebilir, varsayılan bizim sıra.
+- UI: competitionField 'penalties' → motor {field:'five', content:'penalties'}; penaltyMode() lig/kupada da; süre/kale boyu gizli; autoName (PENALTI LİGİ/KUPASI, EN PENALTY …).
+- competition-engine: penTour (content penalties && format!=='single'), c.penaltyTournament, liveTable kapalı; döngüde homeFrom çözümü, record.score=record.penalties=şut skoru, winner lig beraberlikte null; bölümler match-intro/shootout/match-result/(lig standings-update)/round-summary, fast flow destekli; sonda champion-intro + final-summary (+season-summary), ceremony/champion-celebration yok (5v5 maç motoru yok). buildShootout: lig → format complete-five-each + maxRounds 5. displayName tema + Penaltı Ligi/Kupası. view fixtures'a content.
+- penalty-engine: options.maxRounds → kickLimit, winner null serbest (yalnız bu seçenekle).
+- renderer: match-intro penaltı turnuvasında 'shootout' sahnesini hazırlar (yoksa buildMatch "replay differs" hatası).
+- broadcast: stageLabel penaltıda yalnız single için "HAFTANIN MAÇI"; tema HUD "HAFTA 1/3 · PENALTILAR"; ağaçta penaltı turnuvasında ek "PEN" satırı yok; alt başlık "5'er penaltı, beraberlik var" / "Penaltı atışları".
+- Testler: competition-japon'a V204 lig (10 atış, beraberlik null, puanlar) + kupa 4/8 eklendi; Playwright lig (3 takım) ve kupa (4 takım) hazırlık + kapak/tanıtım/penaltı/sonuç/tablo/şampiyon kareleri hatasız. node tests/run-all.cjs → 60/60 PASS; build204 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V202 → V203 — Skorbordda hafta x/y ve kupa turu; veri kaynağı araştırması
 - Kullanıcı: lig maçında skorborda "Hafta 1/3" gibi toplamla; kupada çeyrek/yarı final/final (EN quarter/semi/final). Ayrıca kaliteli, çekilebilir ek veri kaynakları (sakatlık/kadro) soruldu.
 - competition-broadcast: stageLabel(c,m,en) — league → 'HAFTA r/total' ('MATCHWEEK r/total'; total = c.matches lig max round); diğerleri stageName. hud (5v5 + tema), maç tanıtımı, japonHud (lig), 11v11 overlay/Shared.render competition adına ' · etiket' eklendi.

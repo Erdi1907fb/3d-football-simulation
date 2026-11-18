@@ -90,7 +90,8 @@ function create(options){const rng=random(options.seed),rosters=options.lineups,
  // V138 2v2 player duel: each side's two players alternate (A1, B1, A2, B2, ...).
  const partners=duel&&Array.isArray(options.partners)&&options.partners.every(p=>p?.id)?options.partners:null;
  const kicks=[],score=[0,0],taken=[0,0];let winner=null;
- for(let k=0;k<220&&winner===null;k++){
+ /* V204 penalty league: maxRounds caps the shootout (5 each); a level score stays a draw */const kickLimit=Number(options.maxRounds)>0?Number(options.maxRounds)*2:220;
+ for(let k=0;k<kickLimit&&winner===null;k++){
   const team=k%2,turn=taken[team],p=duel?(partners&&turn%2===1?partners[team]:shooters[team]):eligible[team][turn%eligible[team].length],keeper=keepers[1-team],q=quality(p),record=keeper.penaltySaveRecord,gk=natural(keeper).includes('GK');let keeperAdjustment=gk?0:.095,keeperBasis=gk?'natural-goalkeeper-prior':'outfield-goalkeeper-estimate';if(validRecord(record,'saved')){const rate=(record.saved+.18*15)/(record.attempts+15);keeperAdjustment=clamp(.18-rate,-.075,.075);keeperBasis='observed-save-record';}
   const probability=clamp(q.value+keeperAdjustment,.56,.90),r=rng();let outcome=options.naturalDecisions?'goal':r<probability?'goal':r<probability+(1-probability)*.67?'save':r<probability+(1-probability)*.84?'post':'wide';const side=rng()<.5?-1:1,shotStyle=options.naturalDecisions?Intelligence.Emergent.choose(Object.entries(STYLE_WEIGHTS.goal).map(([kind,w])=>({kind,utility:Math.log(w)*.3,risk:['chip','roof','side-netting'].includes(kind)?.45:.1,creative:['chip','disguised'].includes(kind)?.8:0})),Intelligence.Emergent.character(p,{shooting:q.value}),Intelligence.Emergent.stream(Intelligence.Emergent.hash(options.seed+'|penalty-choice|'+k))).kind:pickStyle(outcome,rng()),footInfo=Feet.resolve(p),rawFoot=footInfo.foot,foot=['left','l'].includes(rawFoot)?'left':['both','b'].includes(rawFoot)?(rng()<.5?'left':'right'):'right';
   let z=(1.55+rng()*1.82)*side,y=.24+rng()*.63,flight=.48+rng()*.08;
@@ -117,7 +118,7 @@ function create(options){const rng=random(options.seed),rosters=options.lineups,
   kicks[k].spin=spinFor(technique,foot);
   physicalKick(kicks[k],kicks.slice(0,k),options.seed);outcome=kicks[k].outcome;if(outcome==='goal'){rebound(kicks[k].target,kicks[k].outgoing,0,true);kicks[k].netContact=tailCache.get(kicks[k].target).netContact;}taken[team]++;if(outcome==='goal')score[team]++;kicks[k].scoreAfter=score.slice();if(official&&taken[0]<=5&&taken[1]<=5){if(score[0]>score[1]+5-taken[1])winner=0;else if(score[1]>score[0]+5-taken[0])winner=1;}if(taken[0]===taken[1]&&taken[0]>=5&&score[0]!==score[1])winner=score[0]>score[1]?0:1;
  }
- if(winner===null)throw Error('Shoot-out exceeded safety limit; choose another scenario');const finaleAt=INTRO+kicks.length*KICK,duration=finaleAt+FINAL;
+ if(winner===null&&!(Number(options.maxRounds)>0))throw Error('Shoot-out exceeded safety limit; choose another scenario');const finaleAt=INTRO+kicks.length*KICK,duration=finaleAt+FINAL;
  function sample(time){time=clamp(time,0,duration);const i=clamp(Math.floor((time-INTRO+1e-9)/KICK),0,kicks.length-1),kick=kicks[i],age=clamp(time-kick.start,0,KICK),travel=clamp((age-kick.contact)/kick.flight,0,1),finished=time>=finaleAt,flightAge=Math.max(0,age-kick.contact),tail=Math.max(0,flightAge-kick.flight);let ball={...FROM};
   if(age>=kick.contact){ball=kick.aero?aeroAt(kick.aero,Math.min(flightAge,kick.flight)):point(FROM,kick.target,kick.flight,flightAge);if(travel>=1)ball=kick.saveKind==='smother'?{...kick.target}:rebound(kick.target,kick.outgoing,tail,kick.outcome==='goal');}
   if(!kick.aero&&age>=kick.contact&&flightAge<kick.flight&&!kick.glove)ball.z+=kick.swerve*Math.sin(Math.PI*travel)**2;

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V204 · 2026-11-18
+- Turnuva Stüdyosu yeni oyun alanı: **Penaltı turnuvası** (lig 2–6 takım / kupa 4–8 takım). Her takım kaleci + 5 penaltıcı (sıra düzenlenebilir, varsayılan uygun ilk 11'den).
+- Lig: maç başına 5'er penaltı (complete-five-each, maxRounds 5), ani ölüm yok; eşitlik beraberlik (1 puan), atılan/yenilen penaltılar averaja. Kupa: resmi atış (erken bitiş + ani ölüm), her maçta galip.
+- Bölümler: kapak, açılış, maç tanıtımı (penaltı sahnesi), penaltılar, sonuç, (lig) maç sonrası tablo, hafta/tur özeti, şampiyon ve final özeti; 5v5 madalya sahneleri yok. Varsayılan ad Next90Sim PENALTI LİGİ / KUPASI (EN PENALTY LEAGUE / CUP); şablonda "… Penaltı Ligi/Kupası".
+- penalty-engine: maxRounds seçeneği (yalnız verilirse; diğer modlar değişmedi).
+
 ## V203 · 2026-11-18
 - Turnuva skorbordu: lig maçlarında "HAFTA 1/3" / "MATCHWEEK 1/3" (toplam hafta), kupada tur adı (ÇEYREK FİNAL / YARI FİNAL / FİNAL; EN QUARTER-FINAL / SEMI-FINAL / FINAL). 5v5, Japon Kale ve 11v11 (tema/temasız) skorbordu + maç tanıtımı.
 
