@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V213 · 2026-11-18
+- Turnuvadaki her penaltı serisinin sonunda (penaltı ligi/kupası, haftanın maçı penaltı, 5v5/11v11 kupa beraberlik penaltıları) kazanan takım Penaltı Stüdyosu'ndaki gibi kısa sevinç yapar (serinin kendi 5,5 sn bitiş payında; ligde beraberlikte sevinç yok).
+- Dikey video: penaltı skor tablosu ve penaltı liginin canlı puan durumu Shorts/Reels güvenli alanına alındı (soldan 118 px; uzun telefonlarda kenarlardan ~95 px kırpılıyor).
+
 ## V212 · 2026-11-18
 - Penaltı turnuvası şampiyon kutlaması V211'deki 5v5 arena töreni yerine 11v11 stadyumunda Penaltı Stüdyosu'nun klasik seri sonu sevinci: kazanan takım köşeye koşar, taraftarı önünde toplu sevinç (armsWide), kaybedenler başı önde; stüdyo kazanan kamerası; ŞAMPİYON kartı. 12 sn, champion-intro'dan sonra. 5v5 töreni ve penaltı beşlisi override'ı kaldırıldı.
 

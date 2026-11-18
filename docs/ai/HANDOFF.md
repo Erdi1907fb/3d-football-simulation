@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-18 UTC] Claude · V212 → V213 — Seri sonu sevinci, dikey güvenli alan
+- Kullanıcı: diğer modlarda maç bitince kazanan kısa sevinç yapıyordu, penaltı kupası/liginde yok; YouTube Shorts'ta dikey penaltı tablosunun sol tarafı (etiket, armalar) kesik.
+- renderer shootout dalı: engine.winner!=null ve local≥finaleAt → P.penaltyFinale(engine,template,local-finaleAt,winner) + Stage.winnerCamera (FINAL=5,5 sn içinde; bölüm süresi değişmedi), HUD finished skorla, penaltı liginde canlı tablo. Tüm turnuva shootout'larına uygulanır.
+- broadcast: penaltyBoard dikeyde x=118, w=836; liveTable dikeyde record.content==='penalties' ise x=118 (diğer modlar değişmedi — aynı kırpma riski onlarda da var, kullanıcı istemedi).
+- Testler: competition-frames PASS; Playwright kupa (Trendyol) dikey orta/son 4,3/son 1 sn + yatay kareler; node tests/run-all.cjs --quick → 59/59 PASS; build213 filesMatch=true.
+
 ## [2026-11-18 UTC] Claude · V211 → V212 — Penaltı turnuvası: stüdyo sevinci 11v11 stadyumda
 - Kullanıcı: V211 kutlama görselleri 5v5 arenası; 11v11 sahasında, Penaltı Stüdyosu'nun klasik sevinci istendi.
 - competition-presentation penaltyFinale(contest,template,age,celebrating): penalty() son karesi üstüne penalty-ui stateAt finished dalının kopyası (Next90PenaltyStage.winnerPose, age≥2,5 grup sevinci Next90CelebrationPack 'big', kaybedenler headDown/crouch/headInHands), kamera Stage.winnerCamera (yatayda fov −8).
