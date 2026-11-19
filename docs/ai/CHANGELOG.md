@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V216 · 2026-11-19
+- Maç merkezi video indirme: yeni "Video başlangıcı" seçimi — "Seremoniyle" (eski, 10/30 sn maç önü), "Kısa tanıtım (1 sn) + santra düdüğü" (ev sahibi–deplasman tanıtım kartından 1,2 sn, sonra santra) ve "Direkt santra düdüğü · seremonisiz". Simülasyon aynı; yalnız dışa aktarılan zaman çizelgesi kesilir (öne çıkanlar ile aynı klip yapısı, ses olayları kaydırılır). Haftanın bütün maçlarında geçerli.
+
 ## V215 · 2026-11-19
 - Düzeltme: maç sayfasında Penaltılar/5v5 sekmesinde video üretilirken indirme yarıda kesilip sayfa 11v11'e dönüyordu. Sebep: 90 sn'de bir (ve sekmeye dönüşte) çalışan muhtemel 11 yenilemesi, 11v11 başlatılmamışken kadro değişince maçı yeniden yükleyip sekmeleri 11v11'e sıfırlıyor ve penaltı çerçevesini kapatıyordu. Artık ek sekme açıkken yenileme yapılmaz; aynı maç yeniden yüklenirse açık sekme/süren video korunur.
 - Ek: ek sekmeye geçince 11v11 sahnesinin GPU belleği boşaltılır (geri dönünce yeniden kurulur); sayfa yenilenirse aynı maçta kaldığın sekme yeniden açılır.

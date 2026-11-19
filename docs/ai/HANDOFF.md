@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-19 UTC] Claude · V215 → V216 — Maç videosunu santradan başlatma
+- Kullanıcı: haftanın maçlarında 10/30 sn seremoni dışında (1) direkt santra düdüğüyle başlayan, (2) ortadaki ev sahibi–deplasman kartından ~1–1,5 sn gösterip hemen santraya geçen iki indirme seçeneği.
+- app.js prepareExport({start}): 'kickoff' → klip [whistle, son]; 'teaser' → [[0,35, 1,55], [whistle, son]] (tanıtım kartı pregame intro 0–2 sn / 30 sn planda 0–3 sn). whistle = match.events ilk 'kickoff'.videoAt (10 ya da 30). Highlights planı ile aynı arayüz (clips/duration/events/sourceTime) → yorum zaman çizelgesi, kesit anahtar karesi, sesler kayar. Highlights seçiliyse o önceliklidir. video-ui iki prepareExport çağrısına start:$('exportStart').value; index.html export diyaloğunda #exportStart (TR/EN etiket video-ui'de).
+- Doğrulama: canlı GS–Samsunspor replay ile prepareExport karesi: teaser 0,6/1,17 sn tanıtım kartı, 1,22 sn santra (00:00); kickoff 0 sn santra; süreler 107,3 / 98,5 / 97,3 sn. Tam MP4 burada üretilmedi (SwiftShader).
+- Testler: node tests/run-all.cjs --quick → 59/59 PASS; build216 filesMatch=true.
+
 ## [2026-11-19 UTC] Claude · V214 → V215 — Ek sekmede export kesilmesi
 - Kullanıcı: penaltılar artık hazırlanıyor ama video indirilirken duruyor, sayfa "yenileniyor" ve 11v11'e dönüyor; tüm maçlar için çöz.
 - Kök neden: app.js refreshWaitingLineups (setInterval 90 sn + visibilitychange) → started=false iken lineupIdentity değişirse loadFixture → matchExtras → show('eleven') → extraFrame src kaldırılır → iframe export ölür. Penaltı sekmesinde 11v11 hiç başlamadığından sık tetiklenir. Playwright'ta canlı replay+lineups ile yeniden üretildi (çerçeve export sırasında kayboldu).
