@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V215 · 2026-11-19
+- Düzeltme: maç sayfasında Penaltılar/5v5 sekmesinde video üretilirken indirme yarıda kesilip sayfa 11v11'e dönüyordu. Sebep: 90 sn'de bir (ve sekmeye dönüşte) çalışan muhtemel 11 yenilemesi, 11v11 başlatılmamışken kadro değişince maçı yeniden yükleyip sekmeleri 11v11'e sıfırlıyor ve penaltı çerçevesini kapatıyordu. Artık ek sekme açıkken yenileme yapılmaz; aynı maç yeniden yüklenirse açık sekme/süren video korunur.
+- Ek: ek sekmeye geçince 11v11 sahnesinin GPU belleği boşaltılır (geri dönünce yeniden kurulur); sayfa yenilenirse aynı maçta kaldığın sekme yeniden açılır.
+
 ## V214 · 2026-11-19
 - Düzeltme: maç sayfası "Penaltılar" sekmesi bazı maçlarda "Hazırlanamadı: Oyuncu kimlikleriyle sahne kurulamadı" veriyordu (ör. GS–Samsunspor). Sebep: analiz XI'i kulüp kaydının dizilişine oturtuluyordu (Samsunspor kayıt 3-5-2, analiz 4-2-3-1 → buildLineup reddi). Artık analizin dizilişi gönderilir/kullanılır; uymazsa kadroya oturan ilk diziliş, o da yoksa (tutarsız sağlayıcı XI, ör. Brighton) en yakın mevki ataması. Bu haftanın 60 takımının 9'u etkileniyordu; 60/60 sahne kurulabilir. 5v5 sekmesi de aynı dizilişi alır.
 

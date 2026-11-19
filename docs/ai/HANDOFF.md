@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-19 UTC] Claude · V214 → V215 — Ek sekmede export kesilmesi
+- Kullanıcı: penaltılar artık hazırlanıyor ama video indirilirken duruyor, sayfa "yenileniyor" ve 11v11'e dönüyor; tüm maçlar için çöz.
+- Kök neden: app.js refreshWaitingLineups (setInterval 90 sn + visibilitychange) → started=false iken lineupIdentity değişirse loadFixture → matchExtras → show('eleven') → extraFrame src kaldırılır → iframe export ölür. Penaltı sekmesinde 11v11 hiç başlamadığından sık tetiklenir. Playwright'ta canlı replay+lineups ile yeniden üretildi (çerçeve export sırasında kayboldu).
+- Düzeltme: refreshWaitingLineups studio.extra-mode iken çalışmaz; matchExtras aynı fixture + açık ek sekme + yüklü çerçeve ise sıfırlamaz. Ek: Sekme3D.releaseGraphics/restoreGraphics (ek sekmede 11v11 world dispose + renderer 1×1, dönüşte refreshGraphics); sessionStorage next90.matchMode ile aynı maç yeniden açılınca sekme geri gelir (matchSelected sonrası).
+- Testler: Playwright maç sayfası (canlı GS–Samsunspor replay/lineups, sahte kadro değişimi + 90 sn + visibilitychange): V214 çerçeveyi kapatıp 11v11'e döndü, V215 120 sn boyunca sekme açık, export ilerliyor, 0 yenileme. node tests/run-all.cjs --quick → 59/59 PASS; build215 filesMatch=true.
+
 ## [2026-11-19 UTC] Claude · V213 → V214 — Penaltı sekmesi "sahne kurulamadı" düzeltmesi
 - Kullanıcı: ana sayfadaki haftalık maçta Penaltılar sekmesi "Hazırlanamadı: Oyuncu kimlikleriyle sahne kurulamadı" (GS–Samsunspor); diğer maçlarda da varsa düzelt, siteye yükle.
 - Kök neden (canlı api.php?action=lineups ile yeniden üretildi): penalty-ui extras analiz XI'ini (slot/position korunur) reg.team.formation ile SekmePlayers→buildLineup'a veriyor; Samsunspor kaydı 3-5-2, analiz 4-2-3-1 → "Starters cannot fill this formation" → lineups null. Bu hafta 30 maç/60 takımda 9 takım etkileniyordu (Málaga, Hull, Brighton, Napoli, Levante, Çorum, Dortmund, Milan, Frosinone).
