@@ -12,6 +12,22 @@
     "fbAwayGoal": {
       "url": "assets/audio/fb-away-goal.mp3",
       "duration": 10.55
+    },
+    "fbChant": {
+      "url": "assets/audio/fb-chant.mp3",
+      "duration": 36.0
+    },
+    "fbGoal": {
+      "url": "assets/audio/fb-goal.mp3",
+      "duration": 12.15
+    },
+    "bjkChant": {
+      "url": "assets/audio/bjk-chant.mp3",
+      "duration": 40.8
+    },
+    "bjkGoal": {
+      "url": "assets/audio/bjk-goal.mp3",
+      "duration": 15.5
     }
   },
   "teams": [
@@ -25,16 +41,16 @@
     {
       "id": "fenerbahce",
       "name": "Fenerbahçe",
-      "homeChant": null,
+      "homeChant": "fbChant",
       "awayChant": "fbAwayGoal",
-      "homeGoal": null
+      "homeGoal": "fbGoal"
     },
     {
       "id": "besiktas",
       "name": "Beşiktaş",
-      "homeChant": null,
+      "homeChant": "bjkChant",
       "awayChant": null,
-      "homeGoal": null
+      "homeGoal": "bjkGoal"
     },
     {
       "id": "trabzonspor",

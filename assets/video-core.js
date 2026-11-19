@@ -112,7 +112,7 @@ function teamCue(e,events=[],key='elapsed'){
  // rather than the source file, owns the stop time; short clips loop locally.
  let end=Number.isFinite(e.musicEnd)?e.musicEnd:start+meta.duration;end=Math.min(end,start+90);
  for(const next of events){const t=Number(next[key]??next.videoAt??next.at??0);if(t>at&&['attack','kickoff','half','fulltime','goal_disallowed','var_start','replay'].includes(next.type))end=Math.min(end,t);}
- const duration=end-start;return duration>.12?{id:asset+'|'+at,key:asset,start,eventAt:at,gain:asset==='gsGoal'?.40:.38,delay,duration,loop:true,attack:.12,release:Math.min(.85,duration/2)}:null;
+ const duration=end-start;return duration>.12?{id:asset+'|'+at,key:asset,start,eventAt:at,gain:['gsGoal','fbGoal','bjkGoal'].includes(asset)?.40:.38/* V218: home goal songs share the Galatasaray level */,delay,duration,loop:true,attack:.12,release:Math.min(.85,duration/2)}:null;
 }
 function teamCueAt(t,events=[]){let active=null;for(const e of events){const cue=teamCue(e,events);if(cue&&t>=cue.start&&t<cue.start+cue.duration)active={...cue,offset:t-cue.start};}return active;}
 function ambientLevel(t,events=[],profile=events[0]?.audioProfile,level=events[0]?.atmosphere||1){

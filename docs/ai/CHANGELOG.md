@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V218 · 2026-11-19
+- 11v11 kulüp sesleri: Fenerbahçe ev sahibiyken FB tezahüratı (tribün) + FB gol müziği; Beşiktaş ev sahibiyken "Muhteşem Beşiktaş Taraftarı" tezahüratı + BJK gol müziği. Galatasaray'daki gibi gol anında önce normal taraftar sevinci, 0,8 sn sonra kulüp müziği; sevinç sahnesi bitince kısılır. Seviyeler GS'ye eşitlendi (gol −20 dB, tezahürat −23 dB); FB tezahüratı ~10 dB kısıldı ve tizleri yumuşatıldı; BJK gol müziği başı korunarak 15,5 sn'ye (sondan, sönmeli) indirildi. M4A kaynaklar MP3'e çevrildi.
+
 ## V217 · 2026-11-19
 - Maç merkezi: "Kapak fotoğrafı · 9:16" ve "· 16:9" düğmeleri (video indirme penceresinde). Videonun açılış yayın kartı (ortada tarih + stadyum, solda ev sahibi, sağda deplasman arma/adı, stadyum arka planı) 1080×1920 / 1920×1080 PNG olarak iner.
 

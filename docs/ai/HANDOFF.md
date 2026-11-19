@@ -18,6 +18,12 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-19 UTC] Claude · V217 → V218 — FB/BJK ev sahibi sesleri
+- Kullanıcı 4 dosya verdi: FB gol müziği (m4a 12,2 sn), Muhteşem Beşiktaş Taraftarı (mp3 40,9 sn), BJK gol müziği (mp3 43,1 sn), FB tezahürat (m4a 36 sn, fazla yüksek). İstek: GS gibi yalnız 11v11'de ev sahibi maçlarda tezahürat (ambient) ve gol müziği; önce normal taraftar sevinci sonra müzik; uzunsa sondan kısalt.
+- ffmpeg ile mono/32 kHz/96 kbps MP3 (GS ile aynı biçim): fb-goal (−6,1 dB, 0,7 sn sönme), bjk-goal (ilk 15,5 sn, −4,5 dB, 1,2 sn sönme), bjk-chant (−7,6 dB, giriş/çıkış 0,25/0,35 sn), fb-chant (highshelf 4,5 kHz −5 dB + kompresör 2,5:1 + −7,6 dB). Ortalama seviyeler: gol −20 dB, tezahürat −23/−23,5 dB (GS: −20,1 / −23,0).
+- team-audio-config: tracks fbChant/fbGoal/bjkChant/bjkGoal; Fenerbahçe homeChant fbChant + homeGoal fbGoal (awayChant fbAwayGoal aynı); Beşiktaş homeChant bjkChant + homeGoal bjkGoal. Mevcut teamCue mantığı (0,8 sn gecikme, musicEnd'e kadar, loop) değişmedi; video-core kazancı fbGoal/bjkGoal için GS gibi .40.
+- Doğrulama: SekmeTeamAudio.profile ev/deplasman eşleşmeleri; Chromium decodeAudioData süreleri 12,16/36,03/15,5/40,82 sn. node tests/run-all.cjs --quick → 59/59 PASS; build218 filesMatch=true.
+
 ## [2026-11-19 UTC] Claude · V216 → V217 — Maç kapak fotoğrafı
 - Kullanıcı: haftanın maçlarında videonun başındaki yayın kartını (stat, tarih, solda/sağda takım arması ve adı) 9:16 ve 16:9 kapak fotoğrafı olarak indirme.
 - video-ui downloadCover(portrait): Sekme3D.prepareExport({1080×1920 | 1920×1080, withAudio:false, start:'full'}) → draw(0,9 sn, pregame intro kartı) ×3 → PNG indir (Next90Sim-<ev>-<dep>-kapak-9x16|16x9.png) → prepared.restore(). index.html #coverPortrait/#coverLandscape (TR/EN etiket video-ui'de); export sürerken çalışmaz.
