@@ -11,6 +11,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
+| T-365 | Maç merkezi kapak fotoğrafı (açılış kartı) 9:16 + 16:9 PNG | done (V217) | claude | files: video-ui.js, index.html. |
 | T-364 | Maç merkezi video başlangıcı: seremoniyle / kısa tanıtım + santra / direkt santra | done (V216) | claude | files: app.js (prepareExport start), video-ui.js, index.html. |
 | T-363 | Maç sayfası penaltı/5v5 sekmesinde export yarıda kesilip 11v11'e dönme | done (V215) | claude | file: app.js (refreshWaitingLineups, matchExtras, release/restoreGraphics). |
 | T-362 | Maç sayfası penaltı sekmesi "sahne kurulamadı" (analiz XI ↔ kulüp dizilişi) | done (V214) | claude | files: app.js, penalty-ui, competition-ui. |

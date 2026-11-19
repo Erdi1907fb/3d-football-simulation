@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V217 · 2026-11-19
+- Maç merkezi: "Kapak fotoğrafı · 9:16" ve "· 16:9" düğmeleri (video indirme penceresinde). Videonun açılış yayın kartı (ortada tarih + stadyum, solda ev sahibi, sağda deplasman arma/adı, stadyum arka planı) 1080×1920 / 1920×1080 PNG olarak iner.
+
 ## V216 · 2026-11-19
 - Maç merkezi video indirme: yeni "Video başlangıcı" seçimi — "Seremoniyle" (eski, 10/30 sn maç önü), "Kısa tanıtım (1 sn) + santra düdüğü" (ev sahibi–deplasman tanıtım kartından 1,2 sn, sonra santra) ve "Direkt santra düdüğü · seremonisiz". Simülasyon aynı; yalnız dışa aktarılan zaman çizelgesi kesilir (öne çıkanlar ile aynı klip yapısı, ses olayları kaydırılır). Haftanın bütün maçlarında geçerli.
 

@@ -18,6 +18,11 @@ Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 ---
 
 
+## [2026-11-19 UTC] Claude · V216 → V217 — Maç kapak fotoğrafı
+- Kullanıcı: haftanın maçlarında videonun başındaki yayın kartını (stat, tarih, solda/sağda takım arması ve adı) 9:16 ve 16:9 kapak fotoğrafı olarak indirme.
+- video-ui downloadCover(portrait): Sekme3D.prepareExport({1080×1920 | 1920×1080, withAudio:false, start:'full'}) → draw(0,9 sn, pregame intro kartı) ×3 → PNG indir (Next90Sim-<ev>-<dep>-kapak-9x16|16x9.png) → prepared.restore(). index.html #coverPortrait/#coverLandscape (TR/EN etiket video-ui'de); export sürerken çalışmaz.
+- Doğrulama: canlı GS–Samsunspor replay ile iki PNG indirildi (1080×1920, 1920×1080), kart görsel olarak kullanıcının örneğiyle aynı. node tests/run-all.cjs --quick → 59/59 PASS; build217 filesMatch=true.
+
 ## [2026-11-19 UTC] Claude · V215 → V216 — Maç videosunu santradan başlatma
 - Kullanıcı: haftanın maçlarında 10/30 sn seremoni dışında (1) direkt santra düdüğüyle başlayan, (2) ortadaki ev sahibi–deplasman kartından ~1–1,5 sn gösterip hemen santraya geçen iki indirme seçeneği.
 - app.js prepareExport({start}): 'kickoff' → klip [whistle, son]; 'teaser' → [[0,35, 1,55], [whistle, son]] (tanıtım kartı pregame intro 0–2 sn / 30 sn planda 0–3 sn). whistle = match.events ilk 'kickoff'.videoAt (10 ya da 30). Highlights planı ile aynı arayüz (clips/duration/events/sourceTime) → yorum zaman çizelgesi, kesit anahtar karesi, sesler kayar. Highlights seçiliyse o önceliklidir. video-ui iki prepareExport çağrısına start:$('exportStart').value; index.html export diyaloğunda #exportStart (TR/EN etiket video-ui'de).
