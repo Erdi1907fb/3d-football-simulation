@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V219 · 2026-11-20
+- Yeni "Eğlence Arenası" (fun.html, ana sayfa bağlantısı): Minyatür Kale, Dev Kale, Ayak Tenisi.
+- Minyatür Kale (japon-kale.html?mode=mini): 5v5 sahada 1,5 × 0,9 m kaleler, kalecisiz (kaleci yuvası oyun dışı, 4 saha oyuncusu). Dev Kale (?mode=giant): 8 × 3,2 m kaleler, kalecili. Küçük saha ekranında "Kale çeşidi" seçimi. Kale ölçüsü saha ölçüsünden bağımsız (japon-layout opts.goal), ceza alanı kaleye göre genişler.
+- Ayak Tenisi (footvolley.html): UNIF futnet kuralları — 1,10 m file, 12,8 × 9 m (3v3: 18 × 9 m) saha, kendi sahada tek sekme, tekli 2 / ikili-üçlü 3 dokunuş, ikili-üçlüde aynı oyuncu üst üste dokunamaz; set 5/7/11/15 (2 fark, 15 tavan), tek set ya da 3'te 2. Ortak top aerodinamiği; oyuncular uçuşu tahmin edip yetişebilen oynar, son dokunuş boş bölgeye vole/kafa; hatalar fiziksel (file, aut, çift sekme). Kulüp + oyuncu seçimi, hava, 9:16 / 16:9, iki kamera, skor tablosu, sayı bandı, kazanan kartı, MP4 + video hızı + cihaz profili. Saha stadyumun bir yarı alanında, tam tribün.
+
 ## V218 · 2026-11-19
 - 11v11 kulüp sesleri: Fenerbahçe ev sahibiyken FB tezahüratı (tribün) + FB gol müziği; Beşiktaş ev sahibiyken "Muhteşem Beşiktaş Taraftarı" tezahüratı + BJK gol müziği. Galatasaray'daki gibi gol anında önce normal taraftar sevinci, 0,8 sn sonra kulüp müziği; sevinç sahnesi bitince kısılır. Seviyeler GS'ye eşitlendi (gol −20 dB, tezahürat −23 dB); FB tezahüratı ~10 dB kısıldı ve tizleri yumuşatıldı; BJK gol müziği başı korunarak 15,5 sn'ye (sondan, sönmeli) indirildi. M4A kaynaklar MP3'e çevrildi.
 

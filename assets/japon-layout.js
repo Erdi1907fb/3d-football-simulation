@@ -3,18 +3,18 @@
 function area(vertices){return Math.abs(vertices.reduce((sum,a,i)=>{const b=vertices[(i+1)%vertices.length];return sum+a.x*b.z-b.x*a.z;},0))/2;}
 function create(count,goalWidth=5,opts={}){
  if(!Number.isInteger(count)||count<2||count>6)throw Error('Arena needs 2–6 goals');
- const scale=Math.max(.8,Math.min(1.4,Number(goalWidth)/5||1)),duel=count===2&&opts.compact===true/* V207: Japon elimination down to two trios (keeper + 2 each) gets a 22 × 16 m pitch, not the 5v5 28 × 18 m one */,apothem=(duel?11:[0,0,14,11.5,14.5,17,19][count])*scale;
+ const custom=opts.goal&&Number(opts.goal.width)>0&&Number(opts.goal.height)>0?opts.goal:null/* V219 fun arena: goal size independent of the pitch (mini / giant goals) */,scale=custom?1:Math.max(.8,Math.min(1.4,Number(goalWidth)/5||1)),duel=count===2&&opts.compact===true/* V207: Japon elimination down to two trios (keeper + 2 each) gets a 22 × 16 m pitch, not the 5v5 28 × 18 m one */,apothem=(duel?11:[0,0,14,11.5,14.5,17,19][count])*scale;
  let corners;
  if(count===2){const half=(duel?8:9)*scale;corners=[{x:-apothem,z:-half},{x:apothem,z:-half},{x:apothem,z:half},{x:-apothem,z:half}];}
  else{const radius=apothem/Math.cos(Math.PI/count);corners=Array.from({length:count},(_,i)=>{const a=-Math.PI/2+(i+.5)*2*Math.PI/count;return{x:Math.cos(a)*radius,z:Math.sin(a)*radius};});}
  // Cut off empty corners; the playable perimeter and visible boards are identical.
  const vertices=count===2?corners:corners.flatMap((a,i)=>{const prev=corners[(i+corners.length-1)%corners.length],next=corners[(i+1)%corners.length],bevel=count===2?.10:.12;return[{x:a.x+(prev.x-a.x)*bevel,z:a.z+(prev.z-a.z)*bevel},{x:a.x+(next.x-a.x)*bevel,z:a.z+(next.z-a.z)*bevel}];});
  const boundaries=vertices.map((a,i)=>{const b=vertices[(i+1)%vertices.length],dx=b.x-a.x,dz=b.z-a.z,len=Math.hypot(dx,dz);let nx=dz/len,nz=-dx/len,d=nx*a.x+nz*a.z;if(d<0){nx=-nx;nz=-nz;d=-d;}return{a,b,nx,nz,d};});
- const goals=Array.from({length:count},(_,team)=>{const a=count===2?team*Math.PI:-Math.PI/2+team*2*Math.PI/count,nx=Math.cos(a),nz=Math.sin(a);return{team,x:nx*apothem,z:nz*apothem,nx,nz,width:5*scale,height:2.1*scale,radius:apothem,depth:1.5*scale};});
+ const goals=Array.from({length:count},(_,team)=>{const a=count===2?team*Math.PI:-Math.PI/2+team*2*Math.PI/count,nx=Math.cos(a),nz=Math.sin(a);return{team,x:nx*apothem,z:nz*apothem,nx,nz,width:custom?custom.width:5*scale,height:custom?custom.height:2.1*scale,radius:apothem,depth:custom?(custom.depth||Math.max(.6,custom.height*.8)):1.5*scale};});
  const xs=vertices.map(p=>p.x),zs=vertices.map(p=>p.z),width=Math.max(...xs)-Math.min(...xs),length=Math.max(...zs)-Math.min(...zs);
  return{count,scale,apothem,vertices,boundaries,goals,width,length,area:area(vertices),shape:count===2?'rectangle':count===3?'triangle':count===4?'square':count===5?'pentagon':'hexagon'};
 }
-function penaltyArea(layout,team){const g=layout.goals.find(g=>g.team===team);return{team,depth:5.4*layout.scale,halfWidth:4.9*layout.scale,spot:5*layout.scale};}
+function penaltyArea(layout,team){const g=layout.goals.find(g=>g.team===team);return{team,depth:5.4*layout.scale,halfWidth:Math.max(4.9*layout.scale,(g?.width||0)/2+1.4),spot:5*layout.scale};}
 function inGoalArea(p,layout,team){const g=layout.goals.find(g=>g.team===team),a=penaltyArea(layout,team),depth=g.radius-p.x*g.nx-p.z*g.nz,lateral=-p.x*g.nz+p.z*g.nx;return depth>=0&&depth<=a.depth&&Math.abs(lateral)<=a.halfWidth;}
 function inPenaltyArea(p,layout,team){return layout.count===2&&inGoalArea(p,layout,team);}
 function foulRestart(layout,point,against,at,until){const penalty=inPenaltyArea(point,layout,against),g=layout.goals.find(g=>g.team===against),distance=penaltyArea(layout,against).spot;return{kind:penalty?'penalty':'free_kick',spot:penalty?{x:g.x-g.nx*distance,z:g.z-g.nz*distance}:contain({x:point.x,z:point.z},layout,.8),until:penalty?Math.max(until,at+5):until};}
