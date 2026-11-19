@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V220 · 2026-11-20
+- Ayak tenisi v2 (footvolley-engine 'footvolley-v2'): ikili/üçlüde takım toplam en çok 3 dokunuş ve her oyuncu bir kez; tekli 1 ya da 2 dokunuş; kendi sahada tek sekme. Sayı hedefi 1–10 (ilk ulaşan), set 1–3 kazanan; tek sette skor tablosunda set sütunu yok.
+- Fizik/karar: ivmeli koşu modeliyle yetişme; konfor yüksekliğine göre temas seçimi; sektirme, pas, kafa pas, pasör (3v3), vole, kafa, smaç, aşırtma, kısa top, alttan; servis topu bırakıp vurma; spin gerçek uçuşa işler; içeri sekip dışarı giden top çift sekme sayılır.
+- Görüntü: futbol çizgileri (orta saha, yay, ceza alanı, penaltı noktası, korner bayrağı, kaleler) gizli; saha tam orta noktada, arkada reklam panoları/tribün. Topa değen oyuncunun adı + vuruş rozeti, top izi, sekme halkası (aut kırmızı), temas parlaması.
+
 ## V219 · 2026-11-20
 - Yeni "Eğlence Arenası" (fun.html, ana sayfa bağlantısı): Minyatür Kale, Dev Kale, Ayak Tenisi.
 - Minyatür Kale (japon-kale.html?mode=mini): 5v5 sahada 1,5 × 0,9 m kaleler, kalecisiz (kaleci yuvası oyun dışı, 4 saha oyuncusu). Dev Kale (?mode=giant): 8 × 3,2 m kaleler, kalecili. Küçük saha ekranında "Kale çeşidi" seçimi. Kale ölçüsü saha ölçüsünden bağımsız (japon-layout opts.goal), ceza alanı kaleye göre genişler.

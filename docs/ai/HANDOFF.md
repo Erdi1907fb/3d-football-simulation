@@ -4,6 +4,13 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V219 → V220
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği (özet): ayak tenisinde topa değen oyuncunun adı; daha iyi fizik; kural: 2v2/3v3 takım toplam 3 dokunuş, her oyuncu 1 kez; 1v1 en çok 2; tek sekme; futbol çizgileri kalksın, saha tam ortada; sayı 1–10, set 1–3, tek sette set sütunu yok.
+- Yapılanlar: footvolley-engine.js v2 (rules(), reach() ivmeli koşu, replan konfor maliyeti, touch türleri, servis bırak-vur, spin, çift sekme düzeltmesi). footvolley-ui.js: OX=0, hideFootball(), effects() (iz, sekme halkası, AUT, parlama), nameLabel(), hud() set sütunu koşullu. footvolley.html seçenekleri. tests/footvolley.cjs güncel.
+- Tamamlanmayanlar: T-368 genel fizik/görünüm turu (11v11, 5v5, penaltı, serbest vuruş) açık; T-351 kullanıcı bekleniyor. Mini/dev kalede saniye, hız ve 9:16/16:9 seçimleri V219'dan beri mevcut.
+- Test: run-all --quick tümü PASS.
+
 ## [YYYY-MM-DD] <Ajan> · V<başlangıç> → V<bitiş/hedef>
 - Dal / commit / PR:
 - Kullanıcı isteği (özet):
