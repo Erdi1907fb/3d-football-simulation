@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V223 · 2026-11-20
+- Saha çizgileri gerçek boya: ışık ve gölge alır (tribün ve oyuncu gölgesi çizginin üstüne düşer), kenarları püskürtme gibi yumuşak, çim dokusu boyayı hafifçe kırar. Önce ışıksız, her koşulda parlayan düz şeritti. Üçgenler yukarı bakacak şekilde yeniden sarıldı.
+- Yakın plan 3D çim: kameranın baktığı yerde 110 bin (Dengeli 45 bin; Düşük/mobil hafif ve karda kapalı) gerçek çim yaprağı. Yapraklar dünyada sabit (kamera kayınca kaymaz), biçme şeridine ve stadyum gölgesine uyar, kameradan 4–12 m arasında kısalıp kaybolur; yayın yüksekliğindeki çekimlerde görünmez, gol sevinci/kenar/penaltı yakın planlarında kramponların çevresinde gerçek çim yüzeyi.
+
 ## V222 · 2026-11-20
 - Görünüm (renk/parlaklık/kontrast ayarı yok; geometri ve doku): 11v11 stadında çim artık çizgilerde bitmiyor — aynı PBR çim ve aynı biçme şeritleri reklam panolarına kadar uzanıyor (yanlarda 78 m, kale arkalarında birer şerit daha). Önce çizgi dışı alan düz, dokusuz koyu petrol renkli taban kutusuydu; kale/file gölgeleri de görünmüyordu. Penaltı ve serbest vuruş stüdyosu aynı sahneyi kullandığı için orada da geçerli.
 - Kale ağzı, penaltı noktası ve orta nokta aşınması yeniden çizildi: yumuşak turuncu lekeler yerine koşu yönünde binlerce kısa krampon izi, ezilmiş soluk yaprak ve dağınık kum-toprak lekeleri (512 px, anizotropik).

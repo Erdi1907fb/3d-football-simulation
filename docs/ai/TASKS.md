@@ -13,6 +13,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
 | T-367 | Eğlence Arenası: minyatür kale (kalecisiz), dev kale, ayak tenisi (futnet) | done (V219) | claude | files: fun.html, footvolley.html, footvolley-engine.js, footvolley-ui.js, japon-layout/engine/ui/camera, arena-presentation, device-profile, penalty-link; test footvolley.cjs. Gerçek cihazda tam video denenmedi. |
 | T-369 | Ayak tenisi v2: 3 dokunuş/oyuncu başı 1, tekli 2; sayı 1–10, set 1–3; isim etiketi; futbol çizgileri gizli, saha ortada | done | Claude | V220 |
+| T-372 | Premium saha: ışık/gölge alan çizgi boyası, yakın plan 3D çim yaprakları | done | Claude | V223 |
 | T-371 | Görünüm kalitesi (renk ayarsız): çim panolara kadar, aşınma dokusu, 5v5 önlük çimi | done | Claude | V222 · Sırada aday: kameraman/fotoğrafçı yüz ve gövde detayı (yakın planda kaba). |
 | T-370 | Ayak tenisi özel hareketleri: makaslama, pedalada, göğüs, uyluk; hazırlık evresi; partner ayrışması | done | Claude | V221 |
 | T-368 | Genel fizik/hareket/görünüm iyileştirme turu (11v11, 5v5, penaltı, serbest vuruş) | done (V221) | Claude | tools/physics-audit.cjs ölçümü; 5v5 katı gövde, 11v11 serbest akış vuruş hazırlığı. Kalan gözlem: 11v11 analizde %0,2 oyuncu-karede >20 m/s² yön değişimi (küçük hız çukurları), 5v5 en yüksek koşu 5,8 m/sn (bilinçli ölçek, değiştirilmedi). |

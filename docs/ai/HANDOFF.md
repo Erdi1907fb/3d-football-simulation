@@ -4,6 +4,12 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V222 → V223
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği: fotoğrafçıdan çok, sahayı gerçek ve premium hissettiren detaylı görünüm geliştirmeleri (parlaklık/kontrast değil).
+- Yapılanlar: scene.js pitchStroke — MeshBasic (ışıksız) → MeshStandard, `across` niteliğiyle yumuşak kenar + taneli boya, üçgen sarımı yukarı (önce aşağı bakıyordu; ışıklı malzemede siyah çıkıyordu), gölgeler açıkken receiveShadow. pitch-detail.js `blades()` — InstancedBufferGeometry, 24 m karo kameranın önüne sarılır (dünya-sabit), mesafeyle boy 0'a iner, normal her iki yüzde yukarı (yoksa arka yüzler siyah tüy gibi), biçme şeridi rengi. scene.js: high 110k / balanced 45k / low 0, lite ve kar kapalı, japonSides gizler.
+- Kontrol: 11v11 yayın + gol sevinci yakın planı + penaltı stüdyosu gerçek Chromium kareleri. Testler run-all --quick.
+
 ## [2026-11-20] Claude · V221 → V222
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği: görünüm kalite düzeltmeleri; parlaklık/kontrast ile oynayan basit iş istemiyor (bkz. V121/V143 dersi).

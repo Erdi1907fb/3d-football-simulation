@@ -22,4 +22,22 @@ function create(stadium,options={}){const bytes=source(),grass=new T.DataTexture
  const resolution=options.quality==='high'?'2k':'1k',ready=Promise.all(['broadcast','normal','roughness','detail'].map(kind=>load('assets/pitch/turf-'+kind+'-'+resolution+'.webp'))).then(maps=>{if(disposed)return;if(maps.every(Boolean)){maps[0].colorSpace=T.SRGBColorSpace;maps[3].colorSpace=T.SRGBColorSpace;info.broadcastSurface=true;info.detailFadeMetres=[7,24];info.source='TextureCan Ground0040 CC0';info.pbrLoaded=true;info.size=resolution==='2k'?2048:1024;}return maps;});
  return{grass,grassNormal,tufts,info,ready,bind(materials,meshes){return ready.then(maps=>{if(disposed||!maps?.every(Boolean))return;materials.forEach((m,i)=>applyPBR(m,maps,i));for(const m of meshes){const g=m.geometry.clone(),p=g.attributes.position,uv=g.attributes.uv;for(let i=0;i<p.count;i++)uv.setXY(i,(p.getX(i)+m.position.x)/3.0,(p.getZ(i)+m.position.z)/3.0);uv.needsUpdate=true;m.geometry=g;}});},dispose(){disposed=true;owned.forEach(t=>t.dispose());}};
 }
-return{create,applyPBR};});
+
+/* V223 premium close-up turf: a field of real 3D grass blades around the camera's view. The blades sit at fixed world
+ * positions (a tile wrapped around the view, so nothing slides when the camera moves), take the mowing stripe and the
+ * stadium shadows like the turf, and shrink to nothing 4–12 m from the lens, so broadcast-height shots cost nothing
+ * visible while touchline, penalty and celebration close-ups get a living grass surface around the boots. */
+function blades(parent,options={}){const count=Math.max(0,Math.round(options.count||0));if(!count)return null;
+ const TILE=24,g=new T.InstancedBufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute([-.5,0,0,.5,0,0,.08,1,0],3));g.setAttribute('normal',new T.Float32BufferAttribute([0,1,0,0,1,0,0,1,0],3));
+ const off=new Float32Array(count*3);for(let i=0;i<count;i++){off[i*3]=((i*.7548776662466927)%1)*TILE;off[i*3+1]=((i*.5698402909980532)%1)*TILE;off[i*3+2]=(hash(i,17)%100000)/100000;}
+ g.setAttribute('aBlade',new T.InstancedBufferAttribute(off,3));g.instanceCount=count;g.boundingSphere=new T.Sphere(new T.Vector3(),1e4);
+ const uniforms={uCenter:{value:new T.Vector2()},uTile:{value:TILE},uBound:{value:new T.Vector2(options.boundX||63,options.boundZ||39)},uNear:{value:4},uFar:{value:12}};
+ const m=new T.MeshStandardMaterial({color:0xffffff,roughness:.9,metalness:0,side:T.DoubleSide});m.userData.broadcastSurface=true;
+ m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,uniforms);
+  sh.vertexShader='attribute vec3 aBlade;uniform vec2 uCenter;uniform float uTile;uniform vec2 uBound;uniform float uNear;uniform float uFar;varying float vTip;varying float vStripe;varying float vShade;\n'+sh.vertexShader.replace('#include <beginnormal_vertex>','vec3 objectNormal=vec3(0.0,1.0,0.0);').replace('#include <begin_vertex>',
+   'vec2 wb=uCenter+mod(aBlade.xy-uCenter+0.5*uTile,uTile)-0.5*uTile;float sd=aBlade.z;float dc=distance(vec3(wb.x,0.0,wb.y),cameraPosition);float grow=1.0-smoothstep(uNear,uFar,dc);float inside=step(abs(wb.x),uBound.x)*step(abs(wb.y),uBound.y);float hgt=(0.022+0.024*fract(sd*7.31))*grow*inside;float ang=sd*6.2831853;vec2 dir=vec2(cos(ang),sin(ang));vec2 lean=vec2(cos(sd*41.0),sin(sd*41.0))*(0.25+0.35*fract(sd*3.7))*position.y*position.y*hgt;vec3 transformed=vec3(wb.x,0.0,wb.y)+vec3(dir.x,0.0,dir.y)*position.x*(0.0055+0.0025*fract(sd*13.0))*(1.0-0.85*position.y)+vec3(lean.x,position.y*hgt,lean.y);vTip=position.y;vStripe=mod(floor((wb.x+52.5)/5.25),2.0);vShade=fract(sd*23.7);');
+  sh.fragmentShader='varying float vTip;varying float vStripe;varying float vShade;\n'+sh.fragmentShader.replace('#include <normal_fragment_begin>','#include <normal_fragment_begin>\nnormal=normalize((viewMatrix*vec4(0.0,1.0,0.0,0.0)).xyz);/* both faces of a blade are lit like the turf they grow from */').replace('#include <color_fragment>','#include <color_fragment>\nvec3 bladeBase=mix(vec3(0.055,0.16,0.045),vec3(0.07,0.19,0.055),vStripe);vec3 bladeTip=mix(vec3(0.10,0.25,0.065),vec3(0.12,0.29,0.075),vStripe);diffuseColor.rgb=mix(bladeBase,bladeTip,vTip)*(0.86+0.28*vShade);');};
+ const mesh=new T.Mesh(g,m);mesh.name='turf-blades';mesh.frustumCulled=false;mesh.receiveShadow=!!options.shadows;mesh.userData.noBatch=true;mesh.renderOrder=1;
+ const fwd=new T.Vector3();mesh.onBeforeRender=(r,sc,cam)=>{cam.getWorldDirection(fwd);const flat=Math.hypot(fwd.x,fwd.z)||1;uniforms.uCenter.value.set(cam.position.x+fwd.x/flat*7,cam.position.z+fwd.z/flat*7);};
+ parent.add(mesh);return{mesh,count,dispose(){g.dispose();m.dispose();}};}
+return{create,applyPBR,blades};});
