@@ -4,6 +4,13 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V227 → V228
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği (ayak tenisi): başta yalnız isim; dikey yakın kamera sahayı/aksiyonu kesiyordu — hepsi görünsün, yatay gibi yandan seçeneği; smaçlar çok dışarı gidiyor; ama tekdüze olmasın (çizgi, hemen dışı, file); yıldız/ikon oyuncular hem oyuncu hem takım olarak, formalarıyla.
+- Yapılanlar: footvolley-ui.js nameLabel kind=''; portraitFit(view) — ikili arama ile mesafe, ekran-üst ekseninde ortalama (4 geçiş), el/fov: yan .98/68°, dip .64/52°; VIRTUAL havuzlar (fv:stars = penalty-guests rating 8.6, fv:legends = japon-legends 8.4), kitBox/fvKit seçimi ('own' = 1. oyuncunun kit + teamLogo), ensureScene sanal registry kaydı fv-virtual-i (forma kulübünün GK + oyuncuları ile 11'e tamamlanır). footvolley-engine.js attackTarget(sigma) pay = 1.2σ (%14 çizgi .2), hata .46×err, LINE=.08, net-cord (%50, 'cross' olayı netcord:true).
+- Kontrol: Chromium — dikey yan/dip, 1v1/2v2/3v3; Messi·Ronaldo (Inter Miami forması/logosu) vs Nesta·Cole. tests/footvolley.cjs geçer.
+- Not: dikey yan açıda saha küçük kalır (9:16'da 18 m sahanın tamamı yandan ancak böyle sığar); büyük görüntü için "Dip çizgi arkası".
+
 ## [2026-11-20] Claude · V226 → V227
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği: animasyon/görünüm/grafik/fizik/duruş/vücut — ne varsa geliştirmeye devam.

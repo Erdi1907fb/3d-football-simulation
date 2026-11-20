@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V228 · 2026-11-20
+- Ayak tenisi: oyuncunun üstünde yalnızca topa dokunan oyuncunun adı (vuruş rozeti — VOLE, MAKASLAMA, GÖĞÜS… — kaldırıldı).
+- Dikey (9:16) kamera çözülerek çerçevelenir: saha + dip çizgilerin 2,4 m, yan çizgilerin 1,8 m dışı ve 3,6 m yüksekliğe kadar oyun alanı skor tablosunun altında her zaman kadrajda; dikeyde ortalanır, sabit (titremez). "Yayın · yandan" yatay yayın gibi yandan, "Dip çizgi arkası" sahayı büyük gösterir. Yatay açılar aynı.
+- Hücum isabeti: hedef artık hep çizginin dibi değil; oyuncu vuruş isabetine göre çizgiden pay bırakır, %14'ü bilerek çizgiye oynar. Çizgiye değen top içeri (5 cm çizgi + temas). File teması: fileyi sıyıran top yarı yarıya karşıya süzülür. Hücum sonrası aut: kafa %68→%43, vole %57→%29, smaç %33→%15, makaslama %67→%40 (ölçüm 36 maç).
+- Yıldızlar, ikonlar ve efsaneler: takım listesinde "★ Yıldızlar ve ikonlar · 100" (penaltı/serbest vuruştaki yıldızlar: Messi, Ronaldo…) ve "★ Efsaneler · 29"; oyuncular tek tek seçilir. Forma: oyuncunun kendi kulüp renkleri ve logosu (1. oyuncu) ya da herhangi bir kulüp; skor tablosunda oyuncu soyadları (ör. "Messi · Ronaldo"). Aynı yıldız iki tarafta oynayamaz.
+
 ## V227 · 2026-11-20
 - Gol sevinci (11v11 ve ortak sahne): mocap sevinç klibi almayan takım arkadaşlarının kolları ±1,25–1,45 rad yana açık "uçak kanadı" pozundaydı. Yerine: grupta omuz kucaklama (kollar öne-yana, dirsek bükük), koşu/katılmada tek kol yumruk havada, alkış veya iki kol V şeklinde yukarıda.
 - Kenar fotoğrafçıları: kubbe saç yerine siperli kep (bazıları ters takar, vizöre değmez); üç kep rengi.
