@@ -76,7 +76,7 @@ function openTarget(c,p,q,t,players){
    if(duty.mode==='trackRunner'&&duty.mark!=null){const runner=players[duty.mark];if(Math.hypot(runner.vx,runner.vz)>5)c.ai.telemetry.defence.fastRun=(c.ai.telemetry.defence.fastRun||0)+1;}
   }
  }else if(p.team===c.team&&w.possession===c.team){
-  const core=[c.finisher,c.midActor,c.wideActor].includes(p.id%11),fade=clamp((3.8-t)/.60),owner=ball.owner===p.id;
+  const core=[c.finisher,c.midActor,c.wideActor].includes(p.id%11),fade=clamp((3.8-t)/.60),owner=ball.owner===p.id;/* V224 no retreat in front of goal: a finisher who already has the ball inside shooting range never carries it back to the authored strike spot behind him; he squares up and moves at the goal, and the strike is taken from where he really is (prepareFinish reads the actual position). */if(owner&&p.id%11===(c.finisher??9)&&q.x<p.x-.4&&Math.hypot(52.5-p.x,p.z)<26){q={x:Math.min(46.8,p.x+.9),z:p.z*.88};out={...q};c.ai.telemetry.noRetreat=(c.ai.telemetry.noRetreat||0)+1;}
   if(owner&&t<3.2){const near=opponents.filter(o=>!o.keeper&&dist(p,o)<5).sort((a,b)=>dist(a,p)-dist(b,p))[0];if(near){const odds=OpenFootball.duelEstimate(profile,c.ai.profiles[near.id],{running:p.speed>3,wide:Math.abs(p.z)>18,squared:Math.cos(near.heading-Math.atan2(p.x-near.x,p.z-near.z))>.5,cover:opponents.filter(o=>dist(p,o)<5).length>1}),space=OpenFootball.dribbleSpace(p,opponents,q);
     if(space&&odds>.35+w.pressure*.10){out={x:q.x+(space.x-p.x)*.65*fade,z:q.z+(space.z-p.z)*.85*fade};c.ai.telemetry.dribble++;}
    }

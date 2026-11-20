@@ -4,6 +4,14 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V223 → V224
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği: koşu/top sürme/vuruş gerçek insan vücuduna uygun, salınmayan; her mod; kale yakınında geri pas/geri dönme yerine kaleye dönüp şut.
+- Tespit: clips.glb her koşu klibi tek adım; kök çeviri ölçüldü — ballcontrol/walk/000 1,26 m/0,25 sn, sprint 1,68 m/0,24 sn. football-clips.js tüm kliplere 1,68 m/adım uyguluyordu (koşu klibinde ayak kayması). templates/* ve movement/walk/* klipleri bu iskelette bacakları neredeyse oynatmıyor (görsel deneme) — klip seçimi değişmedi. footvolley gait 1,9× fazlaydı. Vuruş mocap maskesi .55.
+- Yapılanlar: football-clips.js STEP tablosu + stepPhase() (a.root.userData.stepPhase ile entegre; 2,5 m üstü atlamada yeniden çapalar), kick mask .85. footvolley-engine gait metre. football-ai.js openTarget: bitirici top sahibi, kaleye <26 m ve şablon hedefi gerisindeyse q = ileri/merkez (telemetry.noRetreat).
+- Ölçüm araçları scratchpad'de (turn11/near/gaitratio); bacak/mesafe oranı 11v11 1,009, serbest 1,000, 5v5 1,001, footvolley 1,000 (önce 1,9).
+- Kalan: penaltı/serbest vuruş koşusu süreye bağlı gait (≈3,3 m/sn), değiştirilmedi.
+
 ## [2026-11-20] Claude · V222 → V223
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği: fotoğrafçıdan çok, sahayı gerçek ve premium hissettiren detaylı görünüm geliştirmeleri (parlaklık/kontrast değil).

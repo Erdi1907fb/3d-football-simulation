@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V224 · 2026-11-20
+- Koşu (tüm modlar, ortak oyuncu iskeleti): her mocap klibi kendi gerçek adım uzunluğuyla oynatılır (koşu 1,26 m, sprint/top sürme 1,68 m). Önce hepsi 1,68 m'ye göre ilerliyordu; maçın çoğunu oluşturan koşu klibi mesafeye göre üçte bir yavaş kalıyor, ayaklar kayıyor, gövde süzülüp salınıyordu. Adım fazı entegre edilir: hız değişince bacaklar döngüde sıçramaz.
+- Ayak tenisi: bacak döngüsü gerçek mesafenin 1,9 katıydı (V219 hatası) — düzeltildi.
+- Vuruşlar: mocap vuruş klibinin ağırlığı %55 → %85 (kol salınımı, gövde dönüşü, takip hareketi); temas IK ile ayak topa yine kilitli.
+- Kale önü kararı (11v11 maç merkezi ve turnuva): hazırlık topu bitiriciye şut menzilinde (≤26 m) bıraktığında forvet, yazılı şablonun gerisindeki şut noktasına topla geri koşmaz; kaleye dönüp ilerler ve gerçek konumundan vurur. Ölçüm (8 maç, kaleye 24 m içinde top sahibi): kaleden uzaklaşma %7,6 → %0,7, ≥0,8 sn geri dönüş 5 → 0. Skorlar/goller aynı (12 tohum).
+
 ## V223 · 2026-11-20
 - Saha çizgileri gerçek boya: ışık ve gölge alır (tribün ve oyuncu gölgesi çizginin üstüne düşer), kenarları püskürtme gibi yumuşak, çim dokusu boyayı hafifçe kırar. Önce ışıksız, her koşulda parlayan düz şeritti. Üçgenler yukarı bakacak şekilde yeniden sarıldı.
 - Yakın plan 3D çim: kameranın baktığı yerde 110 bin (Dengeli 45 bin; Düşük/mobil hafif ve karda kapalı) gerçek çim yaprağı. Yapraklar dünyada sabit (kamera kayınca kaymaz), biçme şeridine ve stadyum gölgesine uyar, kameradan 4–12 m arasında kısalıp kaybolur; yayın yüksekliğindeki çekimlerde görünmez, gol sevinci/kenar/penaltı yakın planlarında kramponların çevresinde gerçek çim yüzeyi.
