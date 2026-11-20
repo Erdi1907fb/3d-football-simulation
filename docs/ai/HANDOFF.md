@@ -4,6 +4,14 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V221 → V222
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği: görünüm kalite düzeltmeleri; parlaklık/kontrast ile oynayan basit iş istemiyor (bkz. V121/V143 dersi).
+- Tespit (gerçek Chromium kareleri, maç merkezi 11v11 + 5v5 + penaltı): çizgi dışı alan scene.js taban kutusu (164×128, 0x173529) — dokusuz petrol rengi; kale aşınması yumuşak radyal lekeler — turuncu bulut; 5v5 japon-venue önlüğü 0x173c22 — petrol bant.
+- Yapılanlar: scene.js turf şeritleri 20→24 (RUNOFF=2), derinlik 68→78; UV dünya koordinatlı olduğu için doku ölçeği aynı. Aşınma kanvası 256→512, krampon izi çizgileri + kum-toprak noktaları. japon-venue önlük rengi 0x2b7642.
+- Kontrol: önce/sonra kareleri (11v11 iki açı, 5v5 üç kare, penaltı) — hata yok. Testler: run-all --quick.
+- Sırada aday: fotoğrafçı/kameraman yakın planda kutu gövde ve yüzsüz kafa (press-photographers.js, makeActor).
+
 ## [2026-11-20] Claude · V220 → V221
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği (özet): ayak tenisine özel hareketler (makaslama vb.); ardından onay beklemeden genel fizik turu (T-368: 11v11, 5v5, penaltı, serbest vuruş), ölçümlü ve mevcut modları bozmadan.

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V222 · 2026-11-20
+- Görünüm (renk/parlaklık/kontrast ayarı yok; geometri ve doku): 11v11 stadında çim artık çizgilerde bitmiyor — aynı PBR çim ve aynı biçme şeritleri reklam panolarına kadar uzanıyor (yanlarda 78 m, kale arkalarında birer şerit daha). Önce çizgi dışı alan düz, dokusuz koyu petrol renkli taban kutusuydu; kale/file gölgeleri de görünmüyordu. Penaltı ve serbest vuruş stüdyosu aynı sahneyi kullandığı için orada da geçerli.
+- Kale ağzı, penaltı noktası ve orta nokta aşınması yeniden çizildi: yumuşak turuncu lekeler yerine koşu yönünde binlerce kısa krampon izi, ezilmiş soluk yaprak ve dağınık kum-toprak lekeleri (512 px, anizotropik).
+- 5v5 / Japon Kale: saha ile tribün arasındaki önlük koyu petrol bant yerine sahayla aynı çim.
+
 ## V221 · 2026-11-20
 - Ayak tenisine özel hareketler: makaslama (sırtı fileye, gövde havada yatay, bacaklar makas), pedalada / shark attack (zıplayıp bacağı yandan yükseğe kaldırıp fileye doğru aşağı vurma), göğüs kontrolü (geriye esneme, kollar açık) ve uyluk sektirmesi. Etiketler: MAKASLAMA!, PEDALADA!, GÖĞÜS, UYLUK. Vuruşların hazırlık evresi artık temas öncesinde görünür (kareler geriye dönük pozlanır). İkili/üçlüde takım arkadaşları üst üste binmez.
 - Genel fizik turu (ölçümlü, `tools/physics-audit.cjs`): 5v5/Japon Kale'de oyuncu gövdeleri katı — üst üste binen kare oranı %2,04 → %0 (çakışan çift-kare 429 → 11, en yakın 3 cm → 22 cm üstü), ivme/dönüş ölçüleri değişmedi. 11v11 serbest akışta vuruş hazırlık salınımı (temastan 0,22 sn önce) artık çizilir (önce 0 kare). 11v11 analiz modu, penaltı ve serbest vuruş ölçümünde gövde çakışması/zemine giren top yok; büyük top/oyuncu sıçramaları geçiş kararmalarının altında.
