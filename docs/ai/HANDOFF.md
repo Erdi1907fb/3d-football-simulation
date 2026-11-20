@@ -4,6 +4,13 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V220 → V221
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği (özet): ayak tenisine özel hareketler (makaslama vb.); ardından onay beklemeden genel fizik turu (T-368: 11v11, 5v5, penaltı, serbest vuruş), ölçümlü ve mevcut modları bozmadan.
+- Yapılanlar: footvolley-engine.js — hareket türleri (bicycle, shark/pedalada, chest, thigh), MOVES zamanlaması, pose()/patchBack() ile temas öncesi kareler geriye dönük pozlanır (hazırlık görünür), partner ayrışması. footvolley-ui.js — window.Next90FootvolleyPose (iskelet pozları), etiketler, Studio.project. scene.js — tek satır kanca (p.fvMove varsa Next90FootvolleyPose). japon-engine.js — bodies(): 0,58 m altı gövde çakışmasını her adımda/kayıtta ayırır (dalış hariç). free-football.js — sonraki vuruş 0,22 sn önceden okunur (hazırlık salınımı). tools/physics-audit.cjs eklendi. tests/arena-backpass.cjs tohum listesine 5 eklendi (katı gövdeler kaleci-kontrol anlarını ilk beş tohumdan çıkardı; 30 tohumda oran 9→10, aynı).
+- Ölçüm (physics-audit): 5v5 çakışma %2,04→%0; ivme 61,7→65,9‰, keskin dönüş 2,1→1,5‰. 11v11 serbest: hazırlık kareleri 0→77/121 (tohum 3/4). 11v11 analiz/penaltı/serbest vuruş: çakışma ve zemine giren top yok.
+- Tamamlanmayanlar: 11v11 analizdeki küçük hız çukurları (%0,2 oyuncu-kare >20 m/s²) ve 5v5 5,8 m/sn tavanı bilinçli olarak değiştirilmedi. T-351 kullanıcı bekleniyor.
+
 ## [2026-11-20] Claude · V219 → V220
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği (özet): ayak tenisinde topa değen oyuncunun adı; daha iyi fizik; kural: 2v2/3v3 takım toplam 3 dokunuş, her oyuncu 1 kez; 1v1 en çok 2; tek sekme; futbol çizgileri kalksın, saha tam ortada; sayı 1–10, set 1–3, tek sette set sütunu yok.

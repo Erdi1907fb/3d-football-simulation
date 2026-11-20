@@ -52,32 +52,42 @@ function create(options={}){
  function touch(p){const team=p.team,contactH=b.y;if(possession!==team)newPossession(team);touches++;touchedBy.add(p);rallyKicks++;lastToucher=p;lastTeam=team;const left=rule.once?Math.min(rule.touches-touches,players.filter(q=>q.team===team&&!touchedBy.has(q)).length):rule.touches-touches,s=team?-1:1,speedIn=hyp(b.vx,b.vy,b.vz),nearNet=Math.abs(b.x)<2.3,header=contactH>1.3,foot=Math.sin(p.slot*2.3+rallyKicks*1.7)>0?'right':'left',from={x:b.x,y:b.y,z:b.z};
   const skill=(p.skill-5)/4.5,difficulty=clamp(speedIn/20,0,1)*.6+(contactH<.28?.28:0)+(header?.1:0),fatigue=1+rallyKicks/32;
   const teammates=players.filter(q=>q.team===team&&q!==p&&!touchedBy.has(q)),attack=left<=0||(n===1&&touches===1&&(speedIn<6.5&&contactH>.55&&contactH<1.7?rng()<.35:rng()<.15))||(n>1&&touches===1&&rng()<.08);
-  let kind,aim,time,spin={x:0,y:0,z:0},err;
+  let kind,move=null,aim,time,spin={x:0,y:0,z:0},err;
   if(!attack){/* control/set: singles pop the ball up to yourself; doubles pass to the partner; triples set high near the net for the attacker */
    const mate=n===1?p:(n===3&&touches===2?teammates[0]:teammates.sort((a,c)=>Math.abs(a.x)-Math.abs(c.x))[0])||p,setter=n===3&&touches===2,dest=setter?{x:-s*(1.0+rng()*.6),z:clamp(mate.z*.6,-3,3)}:n===1?{x:clamp(p.x+s*(.25+rng()*.4),-C.half+.5,C.half-.5),z:clamp(p.z+(rng()-.5)*.6,-C.width/2+.5,C.width/2-.5)}:{x:mate.x+s*.3,z:mate.z};
-   if(Math.sign(dest.x)!==(team?1:-1))dest.x=(team?1:-1)*1.0;kind=n===1?(header?'header-control':'juggle'):setter?'set':header?'header-pass':'pass';time=n===1?.85+rng()*.2:setter?1.05+rng()*.2:.95+rng()*.25;err=clamp((.55-skill*.3+difficulty*.6)*fatigue,.18,1.4);
+   if(Math.sign(dest.x)!==(team?1:-1))dest.x=(team?1:-1)*1.0;kind=n===1?(header?'header-control':'juggle'):setter?'set':header?'header-pass':'pass';
+   /* V221 footvolley control moves: chest trap between waist and head height, thigh pop at knee-to-waist height */if(!header&&contactH>=1.0)move='chest';else if(contactH>=.5&&contactH<.85&&rng()<.45)move='thigh';if(move&&!setter)kind=move;time=n===1?.85+rng()*.2:setter?1.05+rng()*.2:.95+rng()*.25;err=clamp((.55-skill*.3+difficulty*.6+(move==='chest'?.06:0))*fatigue,.18,1.4);
    aim={x:dest.x+gauss(rng)*.32*err,y:setter?1.75:n===1?.95:1.05,z:dest.z+gauss(rng)*.32*err};launch(from,aim,time,spin);
    if(setter&&mate){mate.tx=dest.x;mate.tz=dest.z;}
   }else{
-   kind=nearNet&&contactH>1.6&&rng()<(n===1?.45:.8)?'smash':header?'header':contactH<.35?'scoop':rng()<.14?'drop':rng()<.18?'lob':'volley';
+   kind=nearNet&&contactH>1.6&&rng()<(n===1?.45:.8)?'smash':!nearNet&&contactH>1.25&&contactH<2.1&&rng()<.16?'bicycle':header?'header':contactH<.35?'scoop':rng()<.14?'drop':rng()<.18?'lob':'volley';
+   /* V221 footvolley strikes: the smash is a jumping side kick over the net ("pedalada"/shark attack) about half the time; the bicycle (makaslama) is struck with the back to the net */if(kind==='smash'&&rng()<.5)move='shark';if(kind==='bicycle')move='bicycle';
    const tgt=attackTarget(team,kind);time=kind==='smash'?clamp(.32+hyp(tgt.x-from.x,tgt.z-from.z)/30,.32,.7):kind==='drop'?.85+rng()*.2:kind==='lob'?1.45+rng()*.35:kind==='scoop'?1.05+rng()*.3:clamp(.48+hyp(tgt.x-from.x,tgt.z-from.z)/17+(header?.12:0)+rng()*.22,.48,1.35);
    spin=kind==='lob'?{x:0,y:0,z:-s*6}:kind==='drop'?{x:0,y:0,z:-s*9}:{x:0,y:(rng()-.5)*4,z:s*(5+rng()*9)};
    for(let k=0;k<7&&!clears(from,tgt,time,spin,kind==='drop'?.06:.12);k++)time+=kind==='smash'?.06:.14;/* the clearance check flies the real spin (topspin dips) */
-   const hard={smash:.5,header:.15,scoop:.35,drop:.3,lob:.1,volley:0}[kind];err=clamp((.85-skill*.55+difficulty*.9+hard)*fatigue,.25,2.3);
+   const hard={smash:.5,bicycle:.45,header:.15,scoop:.35,drop:.3,lob:.1,volley:0}[kind];err=clamp((.85-skill*.55+difficulty*.9+hard)*fatigue,.25,2.3);
    aim={x:tgt.x+gauss(rng)*.55*err,y:R,z:tgt.z+gauss(rng)*.55*err};launch(from,aim,clamp(time+gauss(rng)*.04*err,.3,2.0),spin);}
-  const jump=contactH>1.72||kind==='smash';p.kick={at:t,foot,point:{...from},header:header||kind==='smash'};if(jump){p.jumpAt=t-.18;p.jumpHeight=clamp(contactH-1.55,.18,.62);}
-  lastTouch={at:t,actor:players.indexOf(p),kind,team};emit('touch',t,{team,actor:p.identity?.name,actorIndex:players.indexOf(p),kind,touch:touches,attack,speedKmh:Math.round(hyp(b.vx,b.vy,b.vz)*3.6),point:{...from}});plan=null;
+  const label=move==='shark'?'shark':kind,jump=!move&&(contactH>1.72||kind==='smash');p.kick={at:t,foot,point:{...from},header:!move&&(header||kind==='smash'),move,away:move==='bicycle'?Math.atan2(-s,0):null};if(jump){p.jumpAt=t-.18;p.jumpHeight=clamp(contactH-1.55,.18,.62);}
+  lastTouch={at:t,actor:players.indexOf(p),kind:label,team};patchBack(p);emit('touch',t,{team,actor:p.identity?.name,actorIndex:players.indexOf(p),kind:label,move,touch:touches,attack,speedKmh:Math.round(hyp(b.vx,b.vy,b.vz)*3.6),point:{...from}});plan=null;
   // teammates reposition: after a set the attacker attacks the ball, the others cover
   for(const q of players)if(q.team===team&&q!==p&&!touchedBy.has(q)&&!attack){/* moves on replan */}}
 
  function point(win,reason){score[win]++;lastPoint={team:win,reason,at:t,by:lastTouch};emit('point',t,{team:win,reason,score:score.slice()});phase='point';pauseUntil=t+2.3;for(const p of players){if(p.team===win)p.celebrate={at:t};else p.sad={at:t};}if(serveTeam!==win){serveTeam=win;serverSlot[win]++;}
   if(score[win]>=target){setScore[win]++;setLog.push(score.slice());emit('set',t,{team:win,score:score.slice(),sets:setScore.slice()});if(setScore[win]>=setsToWin){ended=true;winner=win;pauseUntil=t+3.4;emit('finish',t+1.4,{winner:win,sets:setScore.slice()});}else{score[0]=score[1]=0;pauseUntil=t+3.0;}}}
 
- function snap(){frames.push({t,ball:b?{x:b.x,y:b.y,z:b.z}:null,players:players.map(p=>{const k=p.kick,age=k?t-k.at:9,j=t-p.jumpAt,c=p.celebrate&&t-p.celebrate.at<2.3?t-p.celebrate.at:null,sd=p.sad&&t-p.sad.at<2.0?t-p.sad.at:null;return{x:p.x,z:p.z,heading:p.heading,speed:p.speed,gait:p.gait,kicking:!!k&&!k.header&&age>-.22&&age<.3,kickPhase:k?clamp((age+.22)/.52,0,1):0,kickFoot:k?.foot,strikePoint:k&&!k.header?k.point:null,headingBall:!!k&&k.header&&age>-.2&&age<.28,jump:j>=0&&j<.62?Math.sin(j/.62*Math.PI)*p.jumpHeight:0,celebrate:c,sad:sd};}),score:score.slice(),sets:setScore.slice(),phase,serveTeam,possession,touches,lastPoint,lastTouch,lastBounce});}
+ /* Move timing (lead before contact, total length). Contact happens at lead/total of the move phase. */
+ const MOVES={bicycle:[.4,1.0],shark:[.3,.72],chest:[.24,.62],thigh:[.2,.52]};
+ function pose(p,time,heading){const k=p.kick,age=k?time-k.at:9,j=time-p.jumpAt,c=p.celebrate&&time-p.celebrate.at<2.3?time-p.celebrate.at:null,sd=p.sad&&time-p.sad.at<2.0?time-p.sad.at:null,m=k?.move?MOVES[k.move]:null,inMove=!!m&&age>-m[0]&&age<m[1]-m[0];
+  let h=heading;if(inMove&&k.away!=null){/* turn the back to the net for the bicycle */let d=k.away-h;while(d>Math.PI)d-=2*Math.PI;while(d<-Math.PI)d+=2*Math.PI;const w=clamp((age+m[0])/.22,0,1)*clamp((m[1]-m[0]-age)/.25,0,1);h+=d*w*w*(3-2*w);}
+  return{heading:h,kicking:!m&&!!k&&!k.header&&age>-.22&&age<.3,kickPhase:k?clamp((age+.22)/.52,0,1):0,kickFoot:k?.foot,strikePoint:k&&!k.header&&!m?k.point:null,headingBall:!m&&!!k&&k.header&&age>-.2&&age<.28,jump:j>=0&&j<.62?Math.sin(j/.62*Math.PI)*p.jumpHeight:0,move:inMove?k.move:null,movePhase:inMove?clamp((age+m[0])/m[1],0,1):0,celebrate:c,sad:sd};}
+ /* frames are written as the rally runs, so the wind-up before a contact is drawn by re-posing the striker in the frames just before it */
+ function patchBack(p){const i=players.indexOf(p),lead=p.kick.move?MOVES[p.kick.move][0]:.22,jumpLead=p.jumpAt>t-1?t-p.jumpAt:0;for(let f=frames.length-1;f>=0&&frames[f].t>=t-Math.max(lead,jumpLead)-.02;f--){const q=frames[f].players[i];Object.assign(q,pose(p,frames[f].t,q.heading),{celebrate:q.celebrate,sad:q.sad});}}
+ function snap(){frames.push({t,ball:b?{x:b.x,y:b.y,z:b.z}:null,players:players.map(p=>({x:p.x,z:p.z,speed:p.speed,gait:p.gait,...pose(p,t,p.heading)})),score:score.slice(),sets:setScore.slice(),phase,serveTeam,possession,touches,lastPoint,lastTouch,lastBounce});}
 
  setUpServe();snap();
  for(let step=0;step<maxTime/DT&&!(ended&&t>=pauseUntil);step++){t+=DT;
   for(const p of players){let tx=p.tx??p.x,tz=p.tz??p.z;const sgn=p.team?1:-1;if(phase==='play'){if(plan&&plan.player===p){const back=plan.bounced?.35:.28;tx=plan.x-Math.sin(p.heading)*back;tz=plan.z-Math.cos(p.heading)*back*.4;}else{const h=homeX(p.team,p.slot);tx=h.x;tz=h.z;if(possession===p.team&&canTouch(p)&&plan&&plan.team===p.team&&plan.player!==p){/* offer for the next touch: step toward the ball's side */tx=h.x*.8;tz=h.z*.8+plan.z*.2;}if(possession!==p.team&&b){/* defending: shade toward where the attack can go */tz=h.z*.85+clamp(b.z,-3,3)*.15;}}}
+   if(!(plan&&plan.player===p))for(const q of players)if(q!==p&&q.team===p.team){/* V221 partners keep apart instead of stacking on the same spot */const ex=p.x-q.x,ez=p.z-q.z,e=hyp(ex,ez);if(e<1.7){const ux=e>.01?ex/e:0,uz=e>.01?ez/e:(p.slot<q.slot?-1:1);tx+=ux*(1.7-e)*1.4;tz+=uz*(1.7-e)*1.4;}}
    tx=clamp(tx,sgn<0?-C.half-1.8:.3,sgn<0?-.3:C.half+1.8);tz=clamp(tz,-C.width/2-1.3,C.width/2+1.3);const dx=tx-p.x,dz=tz-p.z,d=hyp(dx,dz),max=6.7*(.86+.14*(p.skill-5)/4.5),want=d>.04?Math.min(max,d*4.4):0,ax=(dx/(d||1))*want-p.vx,az=(dz/(d||1))*want-p.vz,acc=Math.min(1,9.5*DT/Math.max(.01,hyp(ax,az)));p.vx+=ax*acc;p.vz+=az*acc;p.x+=p.vx*DT;p.z+=p.vz*DT;p.speed=hyp(p.vx,p.vz);p.gait+=p.speed*DT*1.9;
    const look=b?Math.atan2(b.x-p.x,b.z-p.z):p.heading;let dh=look-p.heading;while(dh>Math.PI)dh-=2*Math.PI;while(dh<-Math.PI)dh+=2*Math.PI;p.heading+=dh*Math.min(1,DT*7.5);}
   if(phase==='serve'){const p=b.held;if(p){const s=p.team?1:-1;b.x=p.x-s*.32;b.z=p.z;if(t<pauseUntil)b.y=1.02;else{const age=t-pauseUntil;b.y=Math.max(.42,1.02-.5*G*age*age);}}

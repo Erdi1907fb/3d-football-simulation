@@ -40,7 +40,7 @@ function disposeScene(){if(court){court.traverse(o=>{o.geometry?.dispose?.();o.m
 
 const SLOT=[4,3,1],OX=0;/* V220: the court sits on the centre spot; every football marking, goal and flag is hidden *//* scene slots (keeper 0, defender 1, defender2 2, midfielder 3, player 4) for the 1st/2nd/3rd player */
 function stateAt(t){const f=contest.sample(t),s=clone(template),n=contest.perSide;Object.assign(s,{time:t,t,physicsTime:t,presentationTime:t,phase:'play',pregame:null,endSequence:null,cardCut:null,substitution:null,review:null,refereeCut:null,replay:false,ruleReplay:null,celebration:null,lastGoal:null,goalCelebration:false,offsideEvidence:false,dir:1,flank:1,ball:f.ball?{...f.ball,x:f.ball.x+OX}:{x:OX,y:R,z:0},focus:{x:OX,y:1,z:0},owner:null,events:[],score:[0,0],ballRoll:{x:(f.ball?.z||0)/R,z:-(f.ball?.x||0)/R},ballTrace:[],penaltyShootout:{active:false}});s.chance={...s.chance,result:'wide',team:0,type:'open',pattern:'open',physicalShot:null,penaltyContact:null,resolution:null,retain:false,followUpGoal:false};
- s.players=s.players.map((p,slot)=>{const side=Math.floor(slot/11),k=slots[side]?slots[side].indexOf(slot):-1;if(k<0||k>=n)return{...p,dismissed:true};const q=f.players[side*n+k],id=chosen[side][k];return{...p,id:slot,team:side,playerId:id.id,playerName:id.name,name:id.name,dismissed:false,keeper:false,arenaKeeper:false,keeperGrounded:false,x:q.x+OX,z:q.z,heading:q.heading,speed:q.speed,gait:q.gait*Math.PI*2/2.15,kicking:q.kicking,kickPhase:q.kickPhase,strikePoint:q.strikePoint?{...q.strikePoint,x:q.strikePoint.x+OX}:null,kickFoot:q.kickFoot||'right',headingBall:q.headingBall,jump:q.jump,celebrate:q.celebrate!=null,celebrationAge:q.celebrate||0,celebrationTime:q.celebrate||0,celebrationStage:'solo',celebrationStyle:'fistPump',dive:0,receiving:false};});return{s,f};}
+ s.players=s.players.map((p,slot)=>{const side=Math.floor(slot/11),k=slots[side]?slots[side].indexOf(slot):-1;if(k<0||k>=n)return{...p,dismissed:true};const q=f.players[side*n+k],id=chosen[side][k];return{...p,id:slot,team:side,playerId:id.id,playerName:id.name,name:id.name,dismissed:false,keeper:false,arenaKeeper:false,keeperGrounded:false,x:q.x+OX,z:q.z,heading:q.heading,speed:q.speed,gait:q.gait*Math.PI*2/2.15,kicking:q.kicking,kickPhase:q.kickPhase,strikePoint:q.strikePoint?{...q.strikePoint,x:q.strikePoint.x+OX}:null,kickFoot:q.kickFoot||'right',headingBall:q.headingBall,jump:q.jump,fvMove:q.move,fvMovePhase:q.movePhase,celebrate:q.celebrate!=null,celebrationAge:q.celebrate||0,celebrationTime:q.celebrate||0,celebrationStage:'solo',celebrationStyle:'fistPump',dive:0,receiving:false};});return{s,f};}
 
 function camera(f){const cam=world.camera,C=contest.court,bx=f.ball?.x||0,L=landscape(),view=$('fvCamera').value;cam.clearViewOffset?.();let pos,aim,fov;
  if(view==='baseline'){pos=[-(C.half+(L?8:7)),L?4.8:6.6,1.4];aim=[bx*.25,.7,0];fov=L?44:54;}
@@ -50,7 +50,7 @@ function camera(f){const cam=world.camera,C=contest.court,bx=f.ball?.x||0,L=land
 
 function panel(x,y,w,h,c){ctx.fillStyle=c;ctx.beginPath();ctx.roundRect(x,y,w,h,10);ctx.fill();}
 function text(s,x,y,size,c='#fff',align='left',max=900,weight=800){ctx.font=`${weight} ${size}px Arial,sans-serif`;ctx.fillStyle=c;ctx.textAlign=align;ctx.textBaseline='middle';let v=String(s);while(ctx.measureText(v).width>max&&v.length>2)v=v.slice(0,-2)+'…';ctx.fillText(v,x,y);}
-const KINDS={juggle:['SEKTİRDİ','JUGGLE'],'header-control':['KAFAYLA KONTROL','HEADED CONTROL'],pass:['PAS','PASS'],'header-pass':['KAFA PASI','HEADED PASS'],set:['PASÖR','SET'],volley:['VOLE','VOLLEY'],header:['KAFA','HEADER'],smash:['SMAÇ!','SMASH!'],lob:['AŞIRTMA','LOB'],drop:['KISA TOP','DROP SHOT'],scoop:['ALTTAN','SCOOP'],serve:['SERVİS','SERVE']};
+const KINDS={juggle:['SEKTİRDİ','JUGGLE'],'header-control':['KAFAYLA KONTROL','HEADED CONTROL'],pass:['PAS','PASS'],'header-pass':['KAFA PASI','HEADED PASS'],set:['PASÖR','SET'],volley:['VOLE','VOLLEY'],header:['KAFA','HEADER'],smash:['SMAÇ!','SMASH!'],lob:['AŞIRTMA','LOB'],drop:['KISA TOP','DROP SHOT'],scoop:['ALTTAN','SCOOP'],serve:['SERVİS','SERVE'],bicycle:['MAKASLAMA!','BICYCLE KICK!'],shark:['PEDALADA!','SHARK ATTACK!'],chest:['GÖĞÜS','CHEST'],thigh:['UYLUK','THIGH']};
 function project(p){const v=new T.Vector3(p.x+OX,p.y,p.z).project(world.camera);return{x:(v.x+1)/2*screen.width,y:(1-v.y)/2*screen.height,z:v.z};}
 function effects(f,t){/* ball trail, bounce ring (red when out), contact flash */const C=contest.court;ctx.save();
  if(f.ball&&f.phase==='play'){const pts=[];for(let i=10;i>=0;i--){const q=contest.sample(Math.max(0,t-i*.022)).ball;if(q)pts.push(project(q));}ctx.lineCap='round';for(let i=1;i<pts.length;i++){if(pts[i].z>1||pts[i-1].z>1)continue;ctx.globalAlpha=i/pts.length*.55;ctx.strokeStyle='#ffffff';ctx.lineWidth=(i/pts.length)*screen.width/260;ctx.beginPath();ctx.moveTo(pts[i-1].x,pts[i-1].y);ctx.lineTo(pts[i].x,pts[i].y);ctx.stroke();}}
@@ -86,6 +86,25 @@ async function boot(){try{status(tr('Kadrolar açılıyor…','Loading squads…
   $('fvPer').onchange=()=>{fillPlayers(0);fillPlayers(1);invalidate();};for(const id of['fvPoints','fvSets','fvWeather'])$(id).onchange=invalidate;$('fvOrientation').onchange=()=>{size();if(contest)draw(clock);};$('fvCamera').onchange=()=>{if(contest)draw(clock);};
   $('fvBuild').onclick=prepare;$('fvPlay').onclick=()=>{if(!contest)return;if(clock>=contest.duration)clock=0;playing=!playing;};$('fvSeek').oninput=()=>{if(!contest)return;playing=false;clock=Number($('fvSeek').value)/1000*contest.duration;draw(clock);};$('fvExport').onclick=exportVideo;$('fvCancel').onclick=()=>controller?.abort();
   $('fvLang').onclick=()=>{location.search=lang==='en'?'':'?lang=en';};status(tr('Takımları ve oyuncuları seç, sonra “Maçı hazırla”.','Choose teams and players, then “Prepare match”.'));requestAnimationFrame(loop);}catch(e){status(String(e.message||e));}}
-window.Next90FootvolleyStudio={prepare,draw,stateAt,exportVideo,get contest(){return contest;},get videoDuration(){return contest?.duration||0;},get busy(){return busy;}};
+/* V221 footvolley-specific body moves on the shared rig (scene.js calls this after the football poses):
+ * bicycle kick (makaslama, back to the net, body laid out in the air, scissoring legs), shark attack / pedalada
+ * (jumping side kick, leg cocked high then whipped down over the net), chest trap (arched back, arms open) and
+ * thigh pop. Legs: [0] right, [1] left; hip.x < 0 swings the leg forward/up; waist.x < 0 leans back. */
+const ss=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
+window.Next90FootvolleyPose=function(a,p){const u=p.fvMovePhase||0,kick=p.kickFoot==='left'?1:0,K=a.legs[kick],S=a.legs[1-kick],side=kick?1:-1,set=(j,x,y=0,z=0)=>j.rotation.set(x,y,z),arms=(fn)=>a.arms.forEach((arm,k)=>fn(arm,k?1:-1,k===kick));
+ if(p.fvMove==='bicycle'){const c=.4,lean=u<c?-1.55*ss(u/c):-1.55+1.25*ss((u-c)/(1-c));a.body.position.y=.42*Math.sin(Math.PI*Math.min(1,u/.92));a.waist.rotation.set(lean,0,0);
+  set(K.hip,u<c?-.3-2.15*ss(u/c):-2.45-.35*ss((u-c)/.2)+2.4*ss((u-c-.2)/.45));set(K.knee,u<c?.9*Math.sin(Math.PI*u/c):.2*ss((u-c)/(1-c)));set(K.boot,.35);
+  set(S.hip,u<.3?-1.9*ss(u/.3):u<c+.1?-1.9+1.5*ss((u-.3)/(c-.2)):-.4+.2*ss((u-c-.1)/.4));set(S.knee,.55);set(S.boot,.2);
+  arms((arm,sg)=>{set(arm.shoulder,-.5+.8*ss(u/c),0,sg*(.4+.8*ss(u/c)));set(arm.elbow,-.35);});a.head.rotation.x=-.35*ss(u/c);}
+ else if(p.fvMove==='shark'){const c=.42,env=ss(u/.25)*(1-ss((u-.75)/.25));a.body.position.y=.55*Math.sin(Math.PI*Math.min(1,u/.9));a.waist.rotation.set(-.1*env,0,side*.45*env);
+  set(K.hip,u<c?-2.4*ss(u/c*1.25):-2.3+2.0*ss((u-c)/.3),0,side*.35*env);set(K.knee,u<c?1.3*ss(u/c*1.6)*(1-ss((u-c*.75)/(c*.25))):.08);set(K.boot,.25);
+  set(S.hip,.15*env);set(S.knee,.4*env);set(S.boot,.3*env);
+  arms((arm,sg,own)=>{if(own){set(arm.shoulder,-1.3*env,0,sg*.3);set(arm.elbow,-.6);}else{set(arm.shoulder,-.2*env,0,sg*1.35*env);set(arm.elbow,-.25);}});a.head.rotation.x=.25*env;}
+ else if(p.fvMove==='chest'){const env=ss(u/.3)*(1-ss((u-.6)/.4)),push=Math.max(0,Math.sin(Math.PI*Math.min(1,Math.max(0,(u-.39)/.2))));a.waist.rotation.set(-.38*env+.12*push,0,0);
+  a.legs.forEach(l=>{set(l.hip,.18*env);set(l.knee,.42*env);set(l.boot,-.22*env);});a.body.position.y=-.03*env;
+  arms((arm,sg)=>{set(arm.shoulder,.55*env,0,sg*.9*env);set(arm.elbow,-.5*env);});a.head.rotation.x=.35*env;}
+ else if(p.fvMove==='thigh'){const c=.38,env=u<c?ss(u/c):1-ss((u-c-.1)/(.9-c));set(K.hip,-1.45*env);set(K.knee,1.5*env);set(K.boot,.3*env);set(S.knee,.15*env);
+  arms((arm,sg)=>{set(arm.shoulder,-.1,0,sg*.45*env);set(arm.elbow,-.5);});a.head.rotation.x=.4*env;}};
+window.Next90FootvolleyStudio={prepare,draw,stateAt,exportVideo,project,get contest(){return contest;},get videoDuration(){return contest?.duration||0;},get busy(){return busy;}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();

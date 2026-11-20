@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V221 · 2026-11-20
+- Ayak tenisine özel hareketler: makaslama (sırtı fileye, gövde havada yatay, bacaklar makas), pedalada / shark attack (zıplayıp bacağı yandan yükseğe kaldırıp fileye doğru aşağı vurma), göğüs kontrolü (geriye esneme, kollar açık) ve uyluk sektirmesi. Etiketler: MAKASLAMA!, PEDALADA!, GÖĞÜS, UYLUK. Vuruşların hazırlık evresi artık temas öncesinde görünür (kareler geriye dönük pozlanır). İkili/üçlüde takım arkadaşları üst üste binmez.
+- Genel fizik turu (ölçümlü, `tools/physics-audit.cjs`): 5v5/Japon Kale'de oyuncu gövdeleri katı — üst üste binen kare oranı %2,04 → %0 (çakışan çift-kare 429 → 11, en yakın 3 cm → 22 cm üstü), ivme/dönüş ölçüleri değişmedi. 11v11 serbest akışta vuruş hazırlık salınımı (temastan 0,22 sn önce) artık çizilir (önce 0 kare). 11v11 analiz modu, penaltı ve serbest vuruş ölçümünde gövde çakışması/zemine giren top yok; büyük top/oyuncu sıçramaları geçiş kararmalarının altında.
+
 ## V220 · 2026-11-20
 - Ayak tenisi v2 (footvolley-engine 'footvolley-v2'): ikili/üçlüde takım toplam en çok 3 dokunuş ve her oyuncu bir kez; tekli 1 ya da 2 dokunuş; kendi sahada tek sekme. Sayı hedefi 1–10 (ilk ulaşan), set 1–3 kazanan; tek sette skor tablosunda set sütunu yok.
 - Fizik/karar: ivmeli koşu modeliyle yetişme; konfor yüksekliğine göre temas seçimi; sektirme, pas, kafa pas, pasör (3v3), vole, kafa, smaç, aşırtma, kısa top, alttan; servis topu bırakıp vurma; spin gerçek uçuşa işler; içeri sekip dışarı giden top çift sekme sayılır.
