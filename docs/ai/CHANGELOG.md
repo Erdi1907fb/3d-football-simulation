@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V226 · 2026-11-20
+- 5v5 / Japon Kale tribünü 11v11 yoğunluğunda: 5 → 7 teras sırası (0,8 m derinlik, üst tribüne kadar), kişi aralığı 0,50 m; 2 takımda 770 → 1.288 taraftar (eşit). Arka duvar yükseltildi, koridorda beş görevli.
+- Meşaleler: gol atan tarafın terasında 8–16 meşale (golün önemiyle artar), beyaz-sıcak çekirdek, turuncu alev titremesi, katkılı parıltı, yükselen kalın duman ve terası aydınlatan turuncu ışık; süre 2,6 + 6 × önem sn.
+
 ## V225 · 2026-11-20
 - 5v5 / Japon Kale taraftarı: yoğun ve ayakta (sıra aralığı 0,82 → 0,60 m; 2 takımda 770 kişi, eşit). Maç içinde bölümler birkaç saniyede bir tezahürata kalkar (atkı/kollar havada, alkış ritmi); skor yakın ve süre ilerledikçe daha sık ve dolu. Arka sıralarda az sayıda oturan.
 - Gol sevinci golün önemine göre: öne geçiren / eşitleyen / son dakika golü daha uzun (3,1 sn + 2,6 sn × önem), daha çok taraftar katılır, daha yüksek zıplar; farkı açan 3. gol veya geride kalınan teselli golü daha küçük. Yenen tarafta elleri başta kalanların oranı da önem ile artar.
