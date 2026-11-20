@@ -4,6 +4,13 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V226 → V227
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği: animasyon/görünüm/grafik/fizik/duruş/vücut — ne varsa geliştirmeye devam.
+- Yapılanlar: scene.js celebrate dalı (takım arkadaşı yedek poz) — grup: shoulder.x −1.2, z ±.55, elbow −.95; style 0 yumruk, 1 alkış, 2 V. press-photographers.js kep (player-hair malzemesi + siper kutusu + düğme).
+- Denenip geri alınan: FullBody press (fullbody-runtime rol listesi + scene attach döngüsü + ekipman işareti) — öndeki fotoğrafçı değişmedi, arkadaki diz çöken fotoğrafçıda havada saç kaldı.
+- Not: tarayıcıda sahne durumuna erişim yok (Sekme3D world dışa açık değil); yakın plan analizi kare kırpma ile yapıldı.
+
 ## [2026-11-20] Claude · V225 → V226
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği: 5v5 tribünü daha da yoğun, 11v11 gibi coşkulu; meşalelerle sevinç.

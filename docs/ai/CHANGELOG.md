@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V227 · 2026-11-20
+- Gol sevinci (11v11 ve ortak sahne): mocap sevinç klibi almayan takım arkadaşlarının kolları ±1,25–1,45 rad yana açık "uçak kanadı" pozundaydı. Yerine: grupta omuz kucaklama (kollar öne-yana, dirsek bükük), koşu/katılmada tek kol yumruk havada, alkış veya iki kol V şeklinde yukarıda.
+- Kenar fotoğrafçıları: kubbe saç yerine siperli kep (bazıları ters takar, vizöre değmez); üç kep rengi.
+- İncelenip bırakılanlar: fotoğrafçılara tam gövde (MPFB) denemesi diz çökme pozunda kopuk saç parçası bıraktı — geri alındı. 5v5 hız tavanı küçük saha ölçeği nedeniyle korundu. Sevinçte ayak-zemin kısıtı zaten var.
+
 ## V226 · 2026-11-20
 - 5v5 / Japon Kale tribünü 11v11 yoğunluğunda: 5 → 7 teras sırası (0,8 m derinlik, üst tribüne kadar), kişi aralığı 0,50 m; 2 takımda 770 → 1.288 taraftar (eşit). Arka duvar yükseltildi, koridorda beş görevli.
 - Meşaleler: gol atan tarafın terasında 8–16 meşale (golün önemiyle artar), beyaz-sıcak çekirdek, turuncu alev titremesi, katkılı parıltı, yükselen kalın duman ve terası aydınlatan turuncu ışık; süre 2,6 + 6 × önem sn.

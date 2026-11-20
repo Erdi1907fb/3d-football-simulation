@@ -570,7 +570,13 @@ ballGroup.traverse(o=>{if(o.isMesh&&o.material&&!o.material.isMeshPhysicalMateri
     const age=p.celebrationTime,style=a.index%3;
     if(p.celebrationStage==='run'||p.celebrationStage==='solo'&&!p.goalScorer){if(p.goalScorer){a.arms[1].shoulder.rotation.x=-1.35+Math.sin(age*5)*.16;a.arms[1].elbow.rotation.x=-1.0;a.arms[0].elbow.rotation.x=-.7;a.head.rotation.y=Math.sin(age*3)*.18;}a.head.rotation.y*=.35;}
     else{const group=p.celebrationStage==='group',beat=Math.max(0,Math.sin((state.celebration?.beat??age)*9));a.head.rotation.y=Math.sin(age*2+a.index)*.16;
-     a.arms.forEach((arm,k)=>{arm.shoulder.rotation.z=(k===0?-1:1)*(group&&!p.goalScorer?1.25:style===1?.35:1.45);arm.shoulder.rotation.x=group&&!p.goalScorer?-.12:style===1?-1.15:style===0&&k===1?-2.25+.22*Math.sin(age*11):-.2;arm.elbow.rotation.x=group&&!p.goalScorer?-.45:style===1?-.85-.24*Math.sin(age*13+k*.4):style===0&&k===1?-1.1:-.3;});
+     /* V227 real team-mate celebrations instead of stiff airplane arms (shoulders were held out at ±1.25–1.45 rad):
+        the huddle reaches round the team-mates' shoulders, otherwise a fist pump, clapping, or both arms up in a V. */
+     a.arms.forEach((arm,k)=>{const s=k===0?-1:1;
+      if(group&&!p.goalScorer){arm.shoulder.rotation.x=-1.2+.08*Math.sin(age*9+k);arm.shoulder.rotation.z=s*.55;arm.elbow.rotation.x=-.95;}
+      else if(style===0){arm.shoulder.rotation.x=k===1?-2.35+.22*Math.sin(age*11):-.35;arm.shoulder.rotation.z=k===1?.25:-.22;arm.elbow.rotation.x=k===1?-1.05:-.6;}
+      else if(style===1){arm.shoulder.rotation.x=-1.2;arm.shoulder.rotation.z=s*(.34-.14*Math.max(0,Math.sin(age*13)));arm.elbow.rotation.x=-1.35;}
+      else{arm.shoulder.rotation.x=-2.62+.06*Math.sin(age*6+k);arm.shoulder.rotation.z=s*.4;arm.elbow.rotation.x=-.18;}});
      a.body.position.y=group?beat*.15:Math.max(0,Math.sin(age*5+a.index*.37))*.055;a.waist.rotation.y=group?Math.sin(age*4)*.035:Math.sin(age*4+a.index)*.08;if(group)a.legs.forEach(l=>{l.hip.rotation.x=-.08;l.knee.rotation.x=.16*(1-beat);l.boot.rotation.x=-.08;});
     }
    }
