@@ -60,9 +60,25 @@ function portraitFit(view){const C=contest.court,cam=world.camera,key=view+'|'+C
  let d=30;for(let pass=0;pass<4;pass++){let lo=4,hi=60;for(let i=0;i<26;i++){const mid=(lo+hi)/2;if(fits(mid))hi=mid;else lo=mid;}d=hi;/* centre the play in the band under the scoreboard: pan the aim along the screen's up axis */const r=range(d),off=(r.lo+r.hi)/2-(TOP+BOT)/2,up=new T.Vector3(0,1,0).applyQuaternion(cam.quaternion);aim.addScaledVector(up,off*d*Math.tan(fov*Math.PI/360));}
  const pos=aim.clone().addScaledVector(dir,d);return fitCache={key,pos:[pos.x,pos.y,pos.z],aim:[aim.x,aim.y,aim.z],fov,distance:d};}
 
+/* V229 portrait follow camera. The frame is solved every video frame from the simulation itself: every player, the
+ * ball and the net, over the next 1.8 s and the last 1.0 s (so where the ball will land — in or out — and where the
+ * players will run is already inside before they get there), the full court width always, 1 m of air around it and
+ * a minimum span so it never over-zooms. Samples near the window edges fade in and out, so the framing glides
+ * instead of jumping. Pure function of time: preview, seeking and export give the same shot. */
+function followFit(t,mode='side'){const C=contest.court,cam=world.camera,D=contest.duration,now=contest.sample(t),end=mode==='end',cx=now.players.reduce((a,p)=>a+p.x,0)/now.players.length,cz=now.players.reduce((a,p)=>a+p.z,0)/now.players.length,pts=[];
+ /* the points that must stay in shot: every player (feet and head) and the ball over the window, pulled toward the
+  * present players' centre near the window edges so the frame glides; plus the net. The side view also keeps the
+  * full court width; the close end view keeps only the people and the ball, so it can sit as near as they allow. */
+ const add=(x,y,z,w)=>{const X=cx+(x-cx)*w,Z=cz+(z-cz)*w,dx=X-cx,dz=Z-cz,r=Math.hypot(dx,dz)||1,m=.7;pts.push(new T.Vector3(X+dx/r*m,y,Z+dz/r*m));};
+ for(let k=-5;k<=9;k++){const w=k<-2?(k+6)/4:k>5?(10-k)/5:1,s=contest.sample(Math.max(0,Math.min(D,t+k*.2)));for(const p of s.players){add(p.x,0,p.z,w);add(p.x,2.1+(p.jump||0),p.z,w);}if(s.ball)add(s.ball.x,Math.min(4.5,s.ball.y+.2),s.ball.z,w);}
+ for(const z of[-C.postZ,C.postZ])pts.push(new T.Vector3(0,1.2,z));if(!end)for(const z of[-(C.width/2+.6),C.width/2+.6])for(const x of[Math.min(0,cx-5),Math.max(0,cx+5)])pts.push(new T.Vector3(x,0,z));
+ const fov=end?56:62,dir=end?new T.Vector3(-.80,.54,.26).normalize()/* behind the near baseline, looking over the net (the old close portrait angle) */:new T.Vector3(0,Math.sin(.86),Math.cos(.86)),aim=new T.Vector3(),n=pts.length;for(const p of pts)aim.add(p);aim.multiplyScalar(1/n);aim.y=.6;
+ cam.fov=fov;cam.aspect=screen.width/screen.height;cam.updateProjectionMatrix();const v=new T.Vector3(),TOP=.62,BOT=-.84,SIDE=.92,range=d=>{cam.position.copy(aim).addScaledVector(dir,d);cam.lookAt(aim);cam.updateMatrixWorld(true);let xl=9,xr=-9,lo=9,hi=-9;for(const c of pts){v.copy(c).project(cam);if(v.z>1)return{bad:true};xl=Math.min(xl,v.x);xr=Math.max(xr,v.x);lo=Math.min(lo,v.y);hi=Math.max(hi,v.y);}return{xl,xr,lo,hi};},ok=r=>!r.bad&&r.xl>=-SIDE&&r.xr<=SIDE&&r.lo>=BOT&&r.hi<=TOP;
+ let d=20;for(let pass=0;pass<4;pass++){let lo=4,hi=80;for(let i=0;i<24;i++){const mid=(lo+hi)/2;if(ok(range(mid)))hi=mid;else lo=mid;}d=hi;const r=range(d);if(r.bad)break;/* centre the shot on the points: pan along the screen axes */const right=new T.Vector3(1,0,0).applyQuaternion(cam.quaternion),up=new T.Vector3(0,1,0).applyQuaternion(cam.quaternion),k=d*Math.tan(fov*Math.PI/360);aim.addScaledVector(up,((r.lo+r.hi)/2-(TOP+BOT)/2)*k).addScaledVector(right,((r.xl+r.xr)/2)*k*cam.aspect);}
+ const pos=aim.clone().addScaledVector(dir,d);return{pos:[pos.x,pos.y,pos.z],aim:[aim.x,aim.y,aim.z],fov,distance:d};}
 function camera(f){const cam=world.camera,C=contest.court,bx=f.ball?.x||0,L=landscape(),view=$('fvCamera').value;cam.clearViewOffset?.();let pos,aim,fov;
- if(!L){const fit=portraitFit(view);pos=fit.pos.slice();aim=fit.aim.slice();fov=fit.fov;}
- else if(view==='baseline'){pos=[-(C.half+8),4.8,1.4];aim=[bx*.25,.7,0];fov=44;}
+ if(!L){const fit=view==='broadcast'?followFit(f.t??0):view==='close'?followFit(f.t??0,'end'):portraitFit(view==='wide'?'broadcast':view);pos=fit.pos.slice();aim=fit.aim.slice();fov=fit.fov;}
+ else if(view==='baseline'||view==='close'){pos=[-(C.half+8),4.8,1.4];aim=[bx*.25,.7,0];fov=44;}/* 'wide' in landscape is the broadcast view */
  else{pos=[bx*.2-C.half*.55,4.6+C.length*.1,C.width/2+6.8+C.length*.18];aim=[bx*.3,.8,0];fov=40;}
  pos[0]+=OX;aim[0]+=OX;cam.fov=fov;cam.aspect=screen.width/screen.height;cam.position.set(...pos);cam.lookAt(...aim);cam.updateProjectionMatrix();const shot=view+'|'+L;cut=lastShot!==shot;lastShot=shot;}
 
@@ -123,6 +139,9 @@ window.Next90FootvolleyPose=function(a,p){const u=p.fvMovePhase||0,kick=p.kickFo
   arms((arm,sg)=>{set(arm.shoulder,.55*env,0,sg*.9*env);set(arm.elbow,-.5*env);});a.head.rotation.x=.35*env;}
  else if(p.fvMove==='thigh'){const c=.38,env=u<c?ss(u/c):1-ss((u-c-.1)/(.9-c));set(K.hip,-1.45*env);set(K.knee,1.5*env);set(K.boot,.3*env);set(S.knee,.15*env);
   arms((arm,sg)=>{set(arm.shoulder,-.1,0,sg*.45*env);set(arm.elbow,-.5);});a.head.rotation.x=.4*env;}};
-window.Next90FootvolleyStudio={prepare,draw,stateAt,exportVideo,project,get contest(){return contest;},get videoDuration(){return contest?.duration||0;},get busy(){return busy;}};
+/* framing audit (no render): worst NDC reach of every player (feet to head) and the ball under the shot at time t */
+function camPos(){return world.camera.position.toArray();}
+function frameCheck(t){const f=contest.sample(t);camera(f);world.camera.updateMatrixWorld(true);const v=new T.Vector3();let x=0,top=-9,bot=9;const pts=[];for(const p of f.players){pts.push([p.x,0,p.z],[p.x,1.9+(p.jump||0),p.z]);}if(f.ball)pts.push([f.ball.x,f.ball.y,f.ball.z]);for(const q of pts){v.set(q[0]+OX,q[1],q[2]).project(world.camera);x=Math.max(x,Math.abs(v.x));top=Math.max(top,v.y);bot=Math.min(bot,v.y);}return{x,top,bot,distance:world.camera.position.distanceTo(new T.Vector3(0,0,0))};}
+window.Next90FootvolleyStudio={prepare,draw,stateAt,exportVideo,project,frameCheck,camPos,get contest(){return contest;},get videoDuration(){return contest?.duration||0;},get busy(){return busy;}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();

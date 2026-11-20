@@ -4,6 +4,12 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V228 → V229
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği: dikeyde çok uzağız → aksiyonu izleyen kamera, hiçbir yer (oyuncu, top, topun düşeceği yer) dışarıda kalmasın; canlıdaki eski yakın dip çizgi açısı da seçenek olsun ama kadraj dışı kalan olmasın.
+- Yapılanlar: footvolley-ui.js followFit(t, 'side'|'end') — nokta kümesi (oyuncu ayak/baş + top, t−1,0…t+1,8 sn, kenar ağırlıklı, 0,7 m pay, file direkleri; yan açıda tam saha genişliği), ikili arama mesafe + ekran eksenlerinde ortalama (4 geçiş). camera(): portrait 'broadcast'→side follow, 'close'→end follow, 'wide'→portraitFit side, 'baseline'→portraitFit baseline. Studio.frameCheck/camPos (render'sız kadraj denetimi).
+- Ölçüm araçları scratchpad fvf/fve (frameCheck her 0,1 sn).
+
 ## [2026-11-20] Claude · V227 → V228
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği (ayak tenisi): başta yalnız isim; dikey yakın kamera sahayı/aksiyonu kesiyordu — hepsi görünsün, yatay gibi yandan seçeneği; smaçlar çok dışarı gidiyor; ama tekdüze olmasın (çizgi, hemen dışı, file); yıldız/ikon oyuncular hem oyuncu hem takım olarak, formalarıyla.

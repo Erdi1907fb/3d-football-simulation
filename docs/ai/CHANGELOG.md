@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V229 · 2026-11-20
+- Ayak tenisi dikey (9:16) akıllı takip kamerası: kadraj her karede simülasyondan çözülür — bütün oyuncular (ayak–baş), top ve file; önümüzdeki 1,8 sn ve son 1,0 sn boyunca (topun içeri/dışarı düşeceği yer, oyuncunun koşacağı yer oraya varmadan kadrajda), kenarlarda yumuşak geçiş; saf zaman fonksiyonu (önizleme/ileri-geri/MP4 aynı).
+- Kamera seçenekleri: "Yayın · yandan (aksiyonu izler)", yeni "Yakın · dip çizgi (aksiyonu izler)" (canlıdaki eski yakın açı, artık kimse kadraj dışında kalmaz), "Geniş · tüm saha sabit", "Dip çizgi arkası".
+- Ölçüm (5 maç, 7.240 kare, 1v1/2v2/3v3): kadraj dışı oyuncu/top 0. Yakın açı mesafesi 18–26 m (2v2), yan açı 19–41 m (önce sabit ~50 m).
+
 ## V228 · 2026-11-20
 - Ayak tenisi: oyuncunun üstünde yalnızca topa dokunan oyuncunun adı (vuruş rozeti — VOLE, MAKASLAMA, GÖĞÜS… — kaldırıldı).
 - Dikey (9:16) kamera çözülerek çerçevelenir: saha + dip çizgilerin 2,4 m, yan çizgilerin 1,8 m dışı ve 3,6 m yüksekliğe kadar oyun alanı skor tablosunun altında her zaman kadrajda; dikeyde ortalanır, sabit (titremez). "Yayın · yandan" yatay yayın gibi yandan, "Dip çizgi arkası" sahayı büyük gösterir. Yatay açılar aynı.
