@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V225 · 2026-11-20
+- 5v5 / Japon Kale taraftarı: yoğun ve ayakta (sıra aralığı 0,82 → 0,60 m; 2 takımda 770 kişi, eşit). Maç içinde bölümler birkaç saniyede bir tezahürata kalkar (atkı/kollar havada, alkış ritmi); skor yakın ve süre ilerledikçe daha sık ve dolu. Arka sıralarda az sayıda oturan.
+- Gol sevinci golün önemine göre: öne geçiren / eşitleyen / son dakika golü daha uzun (3,1 sn + 2,6 sn × önem), daha çok taraftar katılır, daha yüksek zıplar; farkı açan 3. gol veya geride kalınan teselli golü daha küçük. Yenen tarafta elleri başta kalanların oranı da önem ile artar.
+- İki takımın arası: 3,4 m boş güvenlik koridoru, her terasta iki yanda sarı-siyah bariyer bandı, koridorda dört görevli (önce iki).
+- Kontrol: şut hızları fizik motorunda 86–112 km/sa (örnek yerden şut 121 km/sa); 11v11 atak ailesi 40+ (gerçek fikstürde penaltı %16, serbest vuruş/korner değişken) — değişiklik gerekmedi.
+
 ## V224 · 2026-11-20
 - Koşu (tüm modlar, ortak oyuncu iskeleti): her mocap klibi kendi gerçek adım uzunluğuyla oynatılır (koşu 1,26 m, sprint/top sürme 1,68 m). Önce hepsi 1,68 m'ye göre ilerliyordu; maçın çoğunu oluşturan koşu klibi mesafeye göre üçte bir yavaş kalıyor, ayaklar kayıyor, gövde süzülüp salınıyordu. Adım fazı entegre edilir: hız değişince bacaklar döngüde sıçramaz.
 - Ayak tenisi: bacak döngüsü gerçek mesafenin 1,9 katıydı (V219 hatası) — düzeltildi.

@@ -4,6 +4,13 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-20] Claude · V224 → V225
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı isteği: önceki işlerin üstüne geliştirme (animasyon, karar, pas, atak çeşidi, vücut, saha, şut); 5v5'te 11v11 gibi yoğun taraftar, golün dakikası/öne geçirme etkisine bağlı sevinç, saha ikiye ayrılsın, güvenlik bandı ve görevliler.
+- Yapılanlar: japon-crowd.js — slots aralık .60, şerit marjı 1,7 m; importance() + reaction(intensity, tension); update(): ayakta varsayılan, tezahürat döngüsü (8−3×gerilim sn), önem ağırlıklı katılım/zıplama; koridorda sarı/siyah bant kutuları ('security-tape') ve 4 görevli. japon-ui.js Next90JaponStudio.contest getter (test/araç için).
+- İncelenip değiştirilmeyenler: atak çeşitleri (expandAttacks 40+ aile — 45' cutback denemesi etkisizdi, geri alındı), şut hızları (fizik 86–112 km/sa; ilk ölçüm penceremdeki hata), 11v11 gövde çakışması 0.
+- Kalan fikirler: 5v5 en yüksek koşu 5,8 m/sn; fotoğrafçı modeli; 11v11 kalabalık pozisyonlarda (korner) itişme animasyonu.
+
 ## [2026-11-20] Claude · V223 → V224
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği: koşu/top sürme/vuruş gerçek insan vücuduna uygun, salınmayan; her mod; kale yakınında geri pas/geri dönme yerine kaleye dönüp şut.

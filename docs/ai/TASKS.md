@@ -13,6 +13,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
 | T-367 | Eğlence Arenası: minyatür kale (kalecisiz), dev kale, ayak tenisi (futnet) | done (V219) | claude | files: fun.html, footvolley.html, footvolley-engine.js, footvolley-ui.js, japon-layout/engine/ui/camera, arena-presentation, device-profile, penalty-link; test footvolley.cjs. Gerçek cihazda tam video denenmedi. |
 | T-369 | Ayak tenisi v2: 3 dokunuş/oyuncu başı 1, tekli 2; sayı 1–10, set 1–3; isim etiketi; futbol çizgileri gizli, saha ortada | done | Claude | V220 |
+| T-374 | 5v5 yoğun ayakta taraftar, golün önemine bağlı sevinç, güvenlik koridoru + bant + görevliler | done | Claude | V225 |
 | T-373 | Gerçekçi koşu/vuruş ve kale önünde şut kararı (adım uzunluğu, faz entegrasyonu, mocap vuruş ağırlığı, forvet geri dönmez) | done | Claude | V224 |
 | T-372 | Premium saha: ışık/gölge alan çizgi boyası, yakın plan 3D çim yaprakları | done | Claude | V223 |
 | T-371 | Görünüm kalitesi (renk ayarsız): çim panolara kadar, aşınma dokusu, 5v5 önlük çimi | done | Claude | V222 · Sırada aday: kameraman/fotoğrafçı yüz ve gövde detayı (yakın planda kaba). |
