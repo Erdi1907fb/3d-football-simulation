@@ -27,7 +27,7 @@ A.equal(Faces.sourceId('studio-432-side0-193149'),'193149');A.equal(Faces.source
  A.equal(clear.weather,'clear');A.equal(snow.weather,'snow');A.equal(bad.weather,'clear');
  const m=snow.matches[0],e=C.buildMatch(m,snow);A.deepEqual(e.stats.map(s=>s.gf),m.score,'snow replay matches its recorded score');
  // 5. V189 arena action: real-roster 60 s 5v5 league games are no longer mostly goalless.
- let games=0,total=0,blank=0,shots=0;for(const seed of[101,202]){const lg=await C.prepare({format:'league',field:'five',seed,seconds:60,teams:['436','432','1895','997'].map(id=>C.entry(R,id))});for(const m of lg.matches){games++;total+=m.score[0]+m.score[1];if(!m.score[0]&&!m.score[1])blank++;shots+=C.buildMatch(m,lg).events.filter(e=>e.type==='shot').length;}}
+ let games=0,total=0,blank=0,shots=0;for(const seed of[101,202,1,2]){/* V221: 24 games instead of 12 — solid bodies reshuffled the two-seed sample (36-game rate 2.25→2.36 goals) */const lg=await C.prepare({format:'league',field:'five',seed,seconds:60,teams:['436','432','1895','997'].map(id=>C.entry(R,id))});for(const m of lg.matches){games++;total+=m.score[0]+m.score[1];if(!m.score[0]&&!m.score[1])blank++;shots+=C.buildMatch(m,lg).events.filter(e=>e.type==='shot').length;}}
  A(total/games>=1.2,'5v5 goals per game '+total/games);A(blank/games<.4,'goalless share '+blank/games);A(shots/games>=6,'shots per game '+shots/games);
  console.log(JSON.stringify({pass:true,wideShots:wide,goals,weather:[clear.weather,snow.weather],arena:{games,goalsPerGame:+(total/games).toFixed(2),goalless:blank,shotsPerGame:+(shots/games).toFixed(1)}}));})().catch(e=>{console.error(e);process.exit(1);});
 
