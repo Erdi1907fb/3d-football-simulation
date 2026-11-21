@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V230 · 2026-11-21
+- Ayak tenisi "Kapışma türü": Takım kapışması (bir takımın / yıldız-efsane listesinin oyuncuları) veya Oyuncu kapışması — her oyuncu kendi kaynağından seçilir (85 millî takım, kulüpler, ★ 100 yıldız/ikon, ★ 29 efsane): ör. Messi + Yamal vs Ronaldo + Mbappé. Varsayılan oyuncu kapışması: Messi·Yamal·Neymar vs Ronaldo·Mbappé·Haaland.
+- Her oyuncuya forma numarası (1–99; varsayılan oyuncunun kendi numarası).
+- Forma: her taraf için forma takımı (herhangi kulüp/millî takım ya da takımın kendisi / 1. yıldızın kulübü) ve forma türü (Otomatik / İç saha / Deplasman / Üçüncü). "Otomatik" renk çakışmasında deplasmana geçebilir (Arjantin'in lacivert deplasman forması buydu); "İç saha" seçilince açık mavi-beyaz çizgili forma kalır.
+
 ## V229 · 2026-11-20
 - Ayak tenisi dikey (9:16) akıllı takip kamerası: kadraj her karede simülasyondan çözülür — bütün oyuncular (ayak–baş), top ve file; önümüzdeki 1,8 sn ve son 1,0 sn boyunca (topun içeri/dışarı düşeceği yer, oyuncunun koşacağı yer oraya varmadan kadrajda), kenarlarda yumuşak geçiş; saf zaman fonksiyonu (önizleme/ileri-geri/MP4 aynı).
 - Kamera seçenekleri: "Yayın · yandan (aksiyonu izler)", yeni "Yakın · dip çizgi (aksiyonu izler)" (canlıdaki eski yakın açı, artık kimse kadraj dışında kalmaz), "Geniş · tüm saha sabit", "Dip çizgi arkası".

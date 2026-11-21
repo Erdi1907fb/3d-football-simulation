@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V229** · 2026-11-20 UTC · Claude (ayak tenisi dikey akıllı takip kamerası, yakın dip çizgi açısı)
+> Son güncelleme: **V230** · 2026-11-21 UTC · Claude (ayak tenisi takım/oyuncu kapışması, forma takımı + türü, numara)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,7 +8,7 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V229** (`VERSION`; normal11v11forma eşitliği; önceki mobil/kamera korunur) |
+| Kaynak sürümü | **V230** (`VERSION`; normal11v11forma eşitliği; önceki mobil/kamera korunur) |
 | Sonraki geliştirme hedefi | **V188** — T-328/T-325 fiziksel iPhone doğrulaması; T-325/T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
