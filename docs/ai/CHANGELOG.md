@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V231 · 2026-11-21
+- Ayak tenisi forma düzeltmesi: oyuncu kapışmasında (ve takım kapışmasında başka forma seçilince) seçilen kulüp formaları gelmiyor, iki taraf da varsayılan mavi formayı giyiyordu. Neden: forma/arma kimliği kulüplerde takım adıyla aranıyor; sanal takımın adı oyuncu soyadları ("Messi · L. Yamal") olduğu için kulüp bulunamıyordu (millî takımlarda ayrı catalogId olduğundan Arjantin/Portekiz çalışıyordu). Kimlik artık forma takımına sabit. Doğrulama: Barcelona–Real Madrid iç saha (bordo-mavi çizgili / beyaz) ve deplasman (2026-27) formaları, armalar skor tablosunda.
+
 ## V230 · 2026-11-21
 - Ayak tenisi "Kapışma türü": Takım kapışması (bir takımın / yıldız-efsane listesinin oyuncuları) veya Oyuncu kapışması — her oyuncu kendi kaynağından seçilir (85 millî takım, kulüpler, ★ 100 yıldız/ikon, ★ 29 efsane): ör. Messi + Yamal vs Ronaldo + Mbappé. Varsayılan oyuncu kapışması: Messi·Yamal·Neymar vs Ronaldo·Mbappé·Haaland.
 - Her oyuncuya forma numarası (1–99; varsayılan oyuncunun kendi numarası).

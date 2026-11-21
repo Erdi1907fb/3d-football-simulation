@@ -4,6 +4,12 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-21] Claude · V230 → V231
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı: oyuncu kapışmasında Barcelona / Real Madrid formaları giydirilemiyor, iki taraf mavi (canlı V230 ekran görüntüsü).
+- Kök neden: competition-engine entry() kimliği C.team(source.catalogId||source.name) ile buluyor; kulüp kayıtlarında catalogId yok, sanal kayıt adı soyadlara çevrildiği için bilinmeyen takım → varsayılan kit. Düzeltme: footvolley-ui.js sanal kayıtta catalogId = base.catalogId || SekmeCatalog.team(base.name).id.
+- Ders: sanal/özel takım adı verirken kimlik alanını sabitle; millî takımla yapılan test kulüp yolunu kapsamıyordu — iki türü de dene.
+
 ## [2026-11-21] Claude · V229 → V230
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı isteği: ayak tenisinde takım mı oyuncu mu kapışması seçimi; Messi/Yamal/Ronaldo/Mbappé gibi farklı kaynaklardan oyuncular; Ronaldo'ya Portekiz, Messi'ye Arjantin forması, 10/7 numara; Arjantin "saçma mavi" — iç saha/deplasman seçimi.
