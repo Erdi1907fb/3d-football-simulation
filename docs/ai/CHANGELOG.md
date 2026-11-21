@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V232 · 2026-11-21
+- Ayak tenisi skor tablosu: oyuncu kapışmasında arma yok, isimlerin yanında oyuncuların fotoğrafları (yuvarlak, 52 px, kaynak çözünürlüğünde, yüksek kaliteli yumuşatma). Yeni seçenek "Giydikleri formanın armasını da göster": açılırsa arma + fotoğraflar. Takım kapışmasında yalnız takım arması (fotoğraf yok).
+- Oyuncu fotoğrafı önce sitedeki yerel dosyadan (assets/faces/players, 5.013 oyuncu; yıldızlarda kendi portresi), sunucu portre aracı (portrait.php) yalnız yedek — Yamal/Mbappé gibi kulüp oyuncularında fotoğraf artık gelir. Fotoğrafı olmayan oyuncuda baş harfler.
+
 ## V231 · 2026-11-21
 - Ayak tenisi forma düzeltmesi: oyuncu kapışmasında (ve takım kapışmasında başka forma seçilince) seçilen kulüp formaları gelmiyor, iki taraf da varsayılan mavi formayı giyiyordu. Neden: forma/arma kimliği kulüplerde takım adıyla aranıyor; sanal takımın adı oyuncu soyadları ("Messi · L. Yamal") olduğu için kulüp bulunamıyordu (millî takımlarda ayrı catalogId olduğundan Arjantin/Portekiz çalışıyordu). Kimlik artık forma takımına sabit. Doğrulama: Barcelona–Real Madrid iç saha (bordo-mavi çizgili / beyaz) ve deplasman (2026-27) formaları, armalar skor tablosunda.
 

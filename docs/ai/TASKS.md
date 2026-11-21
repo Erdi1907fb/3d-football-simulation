@@ -13,6 +13,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
 | T-367 | Eğlence Arenası: minyatür kale (kalecisiz), dev kale, ayak tenisi (futnet) | done (V219) | claude | files: fun.html, footvolley.html, footvolley-engine.js, footvolley-ui.js, japon-layout/engine/ui/camera, arena-presentation, device-profile, penalty-link; test footvolley.cjs. Gerçek cihazda tam video denenmedi. |
 | T-369 | Ayak tenisi v2: 3 dokunuş/oyuncu başı 1, tekli 2; sayı 1–10, set 1–3; isim etiketi; futbol çizgileri gizli, saha ortada | done | Claude | V220 |
+| T-380 | Ayak tenisi skor tablosu: oyuncu kapışmasında fotoğraflar, isteğe bağlı arma; takımda arma; kaynak kalitesi | done | Claude | V232 |
 | T-379 | Ayak tenisi kapışma türü (takım/oyuncu), oyuncu başına kaynak + numara, forma takımı + iç saha/deplasman/üçüncü | done | Claude | V230 |
 | T-378 | Ayak tenisi dikey akıllı takip kamerası (yan + yakın dip çizgi), kadraj dışı 0 | done | Claude | V229 |
 | T-377 | Ayak tenisi: yalnız isim etiketi, dikey kamera çözümlü çerçeve, hücum isabeti + çizgi/file çeşitliliği, yıldız/ikon/efsane oyuncular ve formaları | done | Claude | V228 |

@@ -4,6 +4,11 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-21] Claude · V231 → V232
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı: oyuncu kapışmasında logo olmasın, oyuncu resimleri olsun; isterse (seçenek) forma arması + resimler; takım kapışmasında takım logosu, resim yok; logo/resimler HD, kalite düşmesin.
+- Yapılanlar: footvolley.html #fvCrest (yalnız oyuncu kapışmasında görünür); footvolley-ui.js portraitOf (player-portraits.json yolu > p.portrait), sceneSides.photos/players, hud() avatarlar (r=26) + koşullu arma (48 px), imageSmoothingQuality high. Kaynaklar: armalar 700×700, portreler 150×150 (en yüksek mevcut).
+
 ## [2026-11-21] Claude · V230 → V231
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı: oyuncu kapışmasında Barcelona / Real Madrid formaları giydirilemiyor, iki taraf mavi (canlı V230 ekran görüntüsü).
