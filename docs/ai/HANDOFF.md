@@ -3,6 +3,15 @@
 Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonla yeni kayıt ekle.
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
+## [2026-11-22] Codex · V233 tabanı / T-382 ilk paket
+- Dal: agent/codex/football-motion-passing. VERSION değişmedi; Hostinger yayını yok.
+- Kullanıcı: 11v11 ve tüm 5v5/Japon modlarında animasyon, koşu, pas/şut, fizik, savunma, kaleci ve çim/grafik kalitesi.
+- Bu ilk paket: football-clips reverseWeight içindeki çift dir/flank dönüşümü kaldırıldı (Match.sample hızları zaten sahne koordinatında); athlete-motion gerçek sıfır vx/vz değerlerini korur. Arena pas payı kuru çimde BallAero varış tahmini kullanır; 5cm/801 kayıt üst sınırı olan saf önbellek.
+- Kanıt: tests/movement-passing.cjs PASS (dört yön, ileri/geri mocap, sıfır hız, 240Hz varış kontrolü); contact-motion, arena-backpass, arena-action, graphics, football-intelligence, teamwork PASS. Geniş quick paket çalışıyor; tamamlandığında aşağıdaki kayıt güncellenecek.
+- A/B: 8 eşleştirilmiş sentetik60sn5v5; şut66→69, pas160→154, gol13→13, 0–0 üç→bir, loose3→2. Genel iyileşme garantisi yok. Ham veriler research/movement-passing-v233/comparison.json.
+- Kalan: geniş talep T-382 partial; savunma/kaleci/rig-boy/şut ve çim-grafik henüz geliştirilmedi. Görsel tarayıcı/gerçek cihaz/yeni MP4 kontrolü yapılmadı. Yağmur/kar/skid varış kalibrasyonu ve 11v11 tam animasyon denetimi sonraki somut işler. T-328/T-325/T-317 aynen açık.
+
+
 ```
 ## [2026-11-22] Claude · V232 → V233
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.

@@ -1,0 +1,119 @@
+{
+  "scope": "8 paired synthetic 60s 5v5 games; not tracking calibration or visual review",
+  "baseline": [
+    {
+      "seed": 1,
+      "goals": 0,
+      "shots": 9,
+      "passes": 13,
+      "loose": 0
+    },
+    {
+      "seed": 2,
+      "goals": 1,
+      "shots": 6,
+      "passes": 23,
+      "loose": 0
+    },
+    {
+      "seed": 3,
+      "goals": 1,
+      "shots": 5,
+      "passes": 25,
+      "loose": 0
+    },
+    {
+      "seed": 4,
+      "goals": 1,
+      "shots": 8,
+      "passes": 23,
+      "loose": 0
+    },
+    {
+      "seed": 5,
+      "goals": 0,
+      "shots": 9,
+      "passes": 12,
+      "loose": 1
+    },
+    {
+      "seed": 6,
+      "goals": 7,
+      "shots": 11,
+      "passes": 25,
+      "loose": 0
+    },
+    {
+      "seed": 7,
+      "goals": 3,
+      "shots": 9,
+      "passes": 20,
+      "loose": 0
+    },
+    {
+      "seed": 8,
+      "goals": 0,
+      "shots": 9,
+      "passes": 19,
+      "loose": 2
+    }
+  ],
+  "changed": [
+    {
+      "seed": 1,
+      "goals": 0,
+      "shots": 7,
+      "passes": 18,
+      "loose": 0
+    },
+    {
+      "seed": 2,
+      "goals": 4,
+      "shots": 9,
+      "passes": 20,
+      "loose": 0
+    },
+    {
+      "seed": 3,
+      "goals": 2,
+      "shots": 11,
+      "passes": 19,
+      "loose": 0
+    },
+    {
+      "seed": 4,
+      "goals": 1,
+      "shots": 7,
+      "passes": 22,
+      "loose": 0
+    },
+    {
+      "seed": 5,
+      "goals": 1,
+      "shots": 9,
+      "passes": 20,
+      "loose": 2
+    },
+    {
+      "seed": 6,
+      "goals": 1,
+      "shots": 7,
+      "passes": 21,
+      "loose": 0
+    },
+    {
+      "seed": 7,
+      "goals": 3,
+      "shots": 10,
+      "passes": 17,
+      "loose": 0
+    },
+    {
+      "seed": 8,
+      "goals": 1,
+      "shots": 9,
+      "passes": 17,
+      "loose": 0
+    }
+  ]
+}

@@ -795,3 +795,8 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - `japon-camera.js`: `fit(...,margin)`; `side-full` planı `margin:.985`; yeni mod `press-follow` (eksen (0,.5,1), FOV 42, izleme yolu/segment mantığı `broadcast` ile ortak). `japon-kale.html` kamera listesinde yeni seçenek; `japon-ui.js` iki basın modunda varsayılan yatay.
 - `japon-tactics.js` `carryTarget(p,g,skill,players)`: öndeki savunmacının açık omzuna yönelir (`p.dodgeSide/dodgeUntil`, `p.clock` motor tarafından verilir). `choose`: dolaşım pası kuralı.
 - `broadcast-remaster.js` bloom 0,10/0,4/0,92. `scene.js` meşale/duman/konfeti/aşınma tonları. `match.js`: fikstürlü maçlarda `rngOf(seed^0x5e7a11)` ile frikik/korner çeşitlemesi (fikstürsüz test yolunu etkilemez).
+
+## Codex çalışma dalı — T-382 (2026-11-22, V233 tabanı)
+- Ortak football-clips geri koşu yönü: Match.sample hızları zaten sahne koordinatında; dir/flank ikinci kez uygulanmaz. Athlete sıfır vx/vz bileşenlerini korur.
+- Arena passAim kuru zemin için ortak BallAero ile yavaşlayan topun varışından alıcı payı hesaplar; 5 cm çözünürlüklü en çok 801 kayıtlık saf önbellek. Şut/gol kotası yok.
+- Genel grafik, boy/rig, kaleci, savunma ve aksiyon talebinin bütünü tamamlanmış değildir. Bu dal dar ilk düzeltme paketidir; VERSION artırılmadı, yayın yapılmadı.
