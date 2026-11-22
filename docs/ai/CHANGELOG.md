@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V233 · 2026-11-22
+- Maç merkezi (haftanın maçları) 5v5 ve Penaltı sekmeleri: dil, maç yüklendiği anda bir kez okunuyordu; EN'e sonradan geçilince sekme adları ve açık 5v5/penaltı sayfası Türkçe kalıyordu. Artık dil tıklama anında okunur, dil düğmesi sekme adlarını günceller ve açık sekmeyi yeni dilde yeniden açar. (?lang=en ile açılan 5v5 ve penaltı sayfaları ayar, skor tablosu ve istatistiklerde zaten tam İngilizce — tarayıcıda doğrulandı.)
+- Ayak tenisi tam İngilizce: tüm sabit etiketler/seçenekler (kapışma türü, oyuncu sayısı, sayı/set, hava, video biçimi, kamera, düğmeler), millî takım adları dile göre.
+- Japon Kale / Mini / Dev kale sayfası: etiketler "Türkçe · English" yan yana yazılıydı; artık seçilen dilde tek dil (TR'de Türkçe, EN'de İngilizce).
+- Kazanan kartı (ayak tenisi ve 2 takımlı küçük saha / mini / dev kale): beyaz şerit yerine yayın tarzı kart — takım kazanırsa büyük arma, oyuncular kazanırsa oyuncu fotoğrafları (ayak tenisinde arma seçeneği açıksa arma da), isim, skor (setler), rakip; yumuşak giriş. Küçük sahada kart son 4,5 sn'de, bitiş sevinci önce görünür.
+
 ## V232 · 2026-11-21
 - Ayak tenisi skor tablosu: oyuncu kapışmasında arma yok, isimlerin yanında oyuncuların fotoğrafları (yuvarlak, 52 px, kaynak çözünürlüğünde, yüksek kaliteli yumuşatma). Yeni seçenek "Giydikleri formanın armasını da göster": açılırsa arma + fotoğraflar. Takım kapışmasında yalnız takım arması (fotoğraf yok).
 - Oyuncu fotoğrafı önce sitedeki yerel dosyadan (assets/faces/players, 5.013 oyuncu; yıldızlarda kendi portresi), sunucu portre aracı (portrait.php) yalnız yedek — Yamal/Mbappé gibi kulüp oyuncularında fotoğraf artık gelir. Fotoğrafı olmayan oyuncuda baş harfler.

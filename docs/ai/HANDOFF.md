@@ -4,6 +4,13 @@ Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonl
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
 ```
+## [2026-11-22] Claude · V232 → V233
+- Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
+- Kullanıcı: haftanın maçlarındaki 5v5 ve penaltı (ayarlar, skor tablosu, istatistik) İngilizce olmuyor; Eğlence Arenası İngilizcesini kontrol et; kazanan ekranı logo / oyuncu fotoğrafıyla düzgün olsun.
+- Tespit: competition.html?single=five ve penalty.html ?lang=en ile tam İngilizce (Playwright metin taraması + ekran görüntüsü). Sorun app.js matchExtras: `en` fikstür yüklenirken bir kez hesaplanıyordu; dil düğmesi sekmeleri/çerçeveyi güncellemiyordu.
+- Yapılanlar: app.js isEn() + window.__next90ExtrasLang (dil düğmesi → yeniden etiketle, açık sekmeyi yeniden aç). footvolley-ui.js applyLang() + millî adlar localName; footvolley.html id'ler (fvFunLink, lCrest). japon-ui.js D sözlüğü (iki dilli sabit metinler → tek dil). Kazanan kartları: footvolley-ui.js winnerCard(), japon-ui.js winnerCard() + sidePhotos() (önyükleme listesine eklendi).
+- Araç: scratchpad/lang.cjs (sayfa metinlerinde Türkçe kelime taraması).
+
 ## [2026-11-21] Claude · V231 → V232
 - Dal / commit / PR: claude/league-cup-arena-improvements-6buh8h → main (ff), PR yok.
 - Kullanıcı: oyuncu kapışmasında logo olmasın, oyuncu resimleri olsun; isterse (seçenek) forma arması + resimler; takım kapışmasında takım logosu, resim yok; logo/resimler HD, kalite düşmesin.
