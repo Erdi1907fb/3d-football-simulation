@@ -3,6 +3,11 @@
 Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonla yeni kayıt ekle.
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
+## [2026-11-23] Codex · V234 main aktarımı / T-383
+- Kullanıcı açıkça “maine push et” dedi. Güncel origin/main9fe280b; çalışma ağacı temizdi. Testli45ea09d paketi main’e --ff-only ile aktarıldı; force/yeniden yazma yok.
+- Kod değişmedi.63/63 test kanıtı yeniden okundu; release-v234 içindeki520dosya SHA256 ile tekrar doğrulandı: build234/filesMatch=true/mismatches=[].
+- Ortak görev/devir/durum notları main aktarımı için güncellendi. Bu aktarım GitHub içindir; Hostinger dağıtımı yapılmadı.
+
 ## [2026-11-23] Codex · V233 → V234 / T-382 tamamlandı
 - Dal: agent/codex/football-motion-passing; PR#1 aynı kapsamla güncellendi. Main'e birleştirilmedi, Hostinger yayını yok.
 - Kullanıcı kalan savunma/kaleci/dribbling-şut/grafik işlerini bitirmeyi istedi. Ortak motion/stateless stature evresi ve ayak teması; shared markaj; arena GK açıortayı/merkezlenme, curl/knuckle, açık koridor/tek vuruş; weather+skid pas varışı/deadline; arena ortak PBR/çokgen bounded yaprak/rüzgâr8oyuncu tepkisi uygulandı. Normal analiz/goalLedger ve bülten/PHP akışı değiştirilmedi.

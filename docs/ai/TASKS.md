@@ -10,6 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-383 | Kullanıcının isteğiyle testli V234 paketini main dalına aktar | done (V234) | codex | 45ea09d fast-forward ile main’e alındı; 63/63 kanıtı ve build234/filesMatch=true doğrulandı. files: docs/ai/HANDOFF, TASKS, PROJECT_STATE. Hostinger yayını yok. |
 | T-382 | Ortak 11v11/5v5/Japon hareket, pas, savunma/kaleci, şut ve çim geliştirmeleri | done (V234) | codex | files: athlete-motion/football-clips, football-intelligence, japon-engine/tactics/arena, arena-presentation, scene/pitch-detail, tests/docs. Stateless boy ölçekli evre, gerçek dribbling ayağı/IK, koşucu markajı, GK açıortayı, fiziksel curl/knuckle, yüzey+skid pas varışı, ortak PBR+bounded yaprak.63/63 +son hedefli +Chromium5v5/Japon/11v11. PR#1; Hostinger yayını ve fiziksel cihaz/T-317/325/328 kapsam dışı. |
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
 | T-367 | Eğlence Arenası: minyatür kale (kalecisiz), dev kale, ayak tenisi (futnet) | done (V219) | claude | files: fun.html, footvolley.html, footvolley-engine.js, footvolley-ui.js, japon-layout/engine/ui/camera, arena-presentation, device-profile, penalty-link; test footvolley.cjs. Gerçek cihazda tam video denenmedi. |

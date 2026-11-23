@@ -806,4 +806,4 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Arena: kaleci açıortayı/yan top merkezlenmesi, fiziksel curl/knuckle ve uygun teknik pozları, açık koridor/tek vuruş niyeti. Pas payı/kaleci yetişmesi/niyet süresi aynı clear/rain/snow+skid BallAero varışını kullanır.
 - Mevcut PBR haritaları arenaya paylaşıldı; çokgen sınırları içinde zamandan hesaplanan rüzgâr/8oyunculu eğilme. High38k/balanced18k, low/mobileExport0 ek yaprak.
 -63/63 kontrol,500penaltı+18normalmaç motor testi dahil; düzeltilen6kontrol wrapperPHP ile tekrar geçti. Final hedefli futsal18maç/9örüntü/kale tarafı örtü.987;24gerçek5v5son kontrolde7.5şut/2.04gol,2golsüz. Tüm örneklerde gol artışı yok; ham A/B raporda.
-- Chromium/SwiftShader:5v5ve12oyunculuJapon PBR/38k/geri sarma eşit, JS/GL hata0;22oyunculu11v11gerçek çizim. FizikselGPU/iPhone/tamuzunMP4/Hostinger yok. PR#1, rapor research/football-upgrade-v234.
+- Chromium/SwiftShader:5v5ve12oyunculuJapon PBR/38k/geri sarma eşit, JS/GL hata0;22oyunculu11v11gerçek çizim. FizikselGPU/iPhone/tamuzunMP4/Hostinger yok. main (PR#1), rapor research/football-upgrade-v234.
