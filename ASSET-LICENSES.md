@@ -176,3 +176,7 @@ Original Next90Sim OPFS worker and delivery/recovery code. No new third-party de
 - V184 cover layout, backpass receiving/planning and validation code are original project code. Existing club and competition image sources are reused at their original resolution; no new third-party imagery/data/animation was introduced. Screenshots are captures of the existing game renderer.
 
 - V185 ceremony guests reuse existing registered bench/coach actors and the project’s original generic technical-staff model; no names/likenesses of unknown assistants are asserted. Original procedural trophy/medals and crowd excitement are reused. New screenshots are actual renderer captures, with no generated imagery.
+
+# Football bowling room, sounds and close-view boot details — V236
+
+`assets/bowling-venue.js` generates original room, lane wood grain, pin meshes and tactics artwork in code. `assets/bowling-audio.js` generates original ambient/pin/chime PCM without external recordings. `assets/boot-detail.js` supplies original unbranded laces, side trims and studs. These are original project assets under the repository licence; no licensed boot model, sponsor or bowling venue is claimed. Existing football/athlete/kit/face assets retain their documented licences and provenance.

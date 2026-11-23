@@ -9,13 +9,13 @@
  * Execution error grows with incoming pace, awkward height, difficulty of the stroke and lower ability,
  * so points are won and lost physically (net, out, double bounce, not reached). Deterministic per seed.
  * Coordinates: x along the court (net at x = 0, side 0 at x < 0), y up, z across. */
-(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'));else r.Next90Footvolley=f(r.Next90BallAero);})(typeof globalThis!=='undefined'?globalThis:this,function(A){'use strict';
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./ball-aero.js'),require('./duel-analysis.js'));else r.Next90Footvolley=f(r.Next90BallAero,r.Next90DuelAnalysis);})(typeof globalThis!=='undefined'?globalThis:this,function(A,Analysis){'use strict';
 const DT=1/120,NET=1.10,R=A.R||.11,G=9.81,clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),hyp=Math.hypot;
 function random(seed){let s=(seed>>>0)||1;return()=>{s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;return s/4294967296;};}
 function gauss(rng){let u=0,v=0;while(!u)u=rng();while(!v)v=rng();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
 function court(perSide){const length=perSide>=3?18:12.8;return{length,width:9,half:length/2,netHeight:NET,netBottom:.08,netHalf:4.5,postZ:5.0};}
 function rules(n){return n===1?{touches:2,repeat:true,once:false}:{touches:n,repeat:false,once:true};}
-function ability(p){const r=Number(p?.rating);return clamp(Number.isFinite(r)?(r>10?r/10:r):6.8,5,9.5);}
+function ability(p){return Analysis.ability(p,'footvolley');}
 
 // Swept sphere against the finite net rectangle (including rounded tape/edge contact).
 // The ball meets the near face before its centre crosses x=0; no RNG or target-side snap.

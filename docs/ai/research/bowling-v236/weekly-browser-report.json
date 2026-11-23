@@ -1,0 +1,74 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "mode": "bowling",
+      "defaultPlayers": [
+        [
+          "266575",
+          "fm-1504343"
+        ],
+        [
+          "276221",
+          "fm-316544"
+        ]
+      ],
+      "changedSignature": 2681910799,
+      "changedSeed": 539817908
+    },
+    {
+      "mode": "footvolley",
+      "defaultPlayers": [
+        [
+          "228296",
+          "266575"
+        ],
+        [
+          "276221",
+          "fm-316544"
+        ]
+      ],
+      "changedSignature": 1758181878,
+      "changedSeed": 1061130903
+    }
+  ],
+  "framing": {
+    "check": {
+      "x": 0.1066701193603383,
+      "top": 0.4003215938636756,
+      "bot": -0.18925962533950424,
+      "distance": 5.596615790090964
+    },
+    "details": [
+      {
+        "identity": "228296",
+        "detail": true,
+        "colour": 1319728
+      },
+      {
+        "identity": "fm-1504343",
+        "detail": true,
+        "colour": 5297082
+      },
+      {
+        "identity": "276221",
+        "detail": true,
+        "colour": 5297082
+      },
+      {
+        "identity": "fm-316544",
+        "detail": true,
+        "colour": 15788508
+      }
+    ]
+  },
+  "export": {
+    "excerpt": true,
+    "seconds": "0.362667",
+    "video": "h264",
+    "audio": "aac",
+    "width": 1080,
+    "height": 1920
+  }
+}

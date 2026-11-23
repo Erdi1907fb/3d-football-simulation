@@ -338,3 +338,9 @@ dosyalardır.
 
 - V235 ayak tenisi: file temasında `netContact/netStep` süpürülmüş küre ve kayıtlı `lastNet`; görsel esneme stateless `footvolley-court`. RNG ile fileden karşıya taşıma veya yalnız merkez geçişinde çarpışmaya geri dönmeyin.
 - V235 11v11: açık açı hazırken finişör gereksiz sürmez. `quickRelease` yalnız hareketsiz kaynak aralığını video segmentlerinden çıkarır; bütün aktör/top geçişleri sürekli kalmalı. Skor/goalLedger'i değiştirmeyin; yakın boş kale nonGoal için anlamsız wide/high aramayın. Testler: normal-finishing/footvolley-net.
+
+## V236 — Futbol bowlingi ve hafta maçı ikilileri
+- `bowling.html` ve `footvolley.html` aynı `footvolley-ui` seçim/forma/numara/VideoCore yolunu paylaşır; yeni UI kopyası üretmeyin. Bowling modu body.dataset.sport ile seçilir; 1v1/2v2, ayak tenisi1v1/2v2/3v3 korunur.
+- Kısa bowling varsayılanı taraf başına4gerçek vuruş,2v2’de kişi başına2dir. Bu özel sınırın sonrasında yeni bonus yok; tam klasik bowling diye etiketlemeyin. İsteğe bağlı4frame klasik strike/spare/son-frame bonuslarıdır. Puan yalnız gerçek pinfall kayıtlarından, eşit skorda beraberlik.
+- Ortak DuelAnalysis rol öncülü+mevcut nitelik/reyting kullanır; kalibre edilmiş gerçek futnet/bowling tahmini iddiası yok. Yeni oyuncu seçimi profil/tohum/simülasyonu yeniler; forma/numara fizikten bağımsızdır. Haftalık currentXI/bench/out ithalinde null yeni alan bilinen eski niteliği silmez; 11v11/PHP tahminine geri yazma yok.
+- Pin fizik kaydını görselleştir; top ortak BallAero, hedeflenen strike sayısı üretme. Bowling salonu world.stadium'ı gizleyip ortak sporcu/forma/topu kullanır. Yeni boot-detail shared kaynaklarını başka world.dispose içinde silmeyin; ek ayrıntı yakın LOD içindir.

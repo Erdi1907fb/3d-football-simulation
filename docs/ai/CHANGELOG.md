@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## V236 · 2026-11-23
+- Futbol Bowling: özgün futbol temalı salon, ortak futbol topu/oyuncu/forma/yüz, fiziksel on kuka/oluk ve1v1/2v2/takım. Varsayılan taraf başına4vuruş, ikilide kişi başına2; kısa bonus sınırı açık. İsteğe bağlı klasik4frame/sonframebonusları ve beraberlik.
+- Ayak tenisi menüsü/serbest oyuncular/yıldızlar/efsaneler/forma türü/numara/iki oran/video hızı ve sesliVideoCore yolu yeni modla paylaşılır. Yakın kimlikten değişen krampon renkleri/bağcık/yan panel/dişler, yakınLOD.
+- Haftanın maçlarına bowling ve ayak tenisi2v2 sekmeleri; güncel kadrodan teknik varsayılanlar, oyuncu değişiminde veri profili/analiz/tohum/gerçek top yolları yenilenir. Yüzdeler eğlence modeli olarak etiketli; bilinmeyen nitelikler rol/reyting öncülü.11v11/PHPskoru değişmez.
+-68/68 tam regresyon +son hedefli, gerçek3Dsalon/ikihaftalıkstüdyo/sekmeler/dikeykadraj/EN/mobilkontrol. Kısa gerçek3D1080p60H264/AACindirme/decode. Tamuzunvideo/fizikselcihaz/Hostinger yayını yok; kanıt research/bowling-v236.
+
+## V236 · 2026-11-23
+- Futbol Bowling: özgün futbol temalı salon, ortak futbol topu/oyuncu/forma/yüz, fiziksel on kuka/oluk ve1v1/2v2/takım. Varsayılan taraf başına4vuruş, ikilide kişi başına2; kısa bonus sınırı açık. İsteğe bağlı klasik4frame/sonframebonusları ve beraberlik.
+- Ayak tenisi menüsü/serbest oyuncular/yıldızlar/efsaneler/forma türü/numara/iki oran/video hızı ve sesliVideoCore yolu yeni modla paylaşılır. Yakın kimlikten değişen krampon renkleri/bağcık/yan panel/dişler, yakınLOD.
+- Haftanın maçlarına bowling ve ayak tenisi2v2 sekmeleri; güncel kadrodan teknik varsayılanlar, oyuncu değişiminde veri profili/analiz/tohum/gerçek top yolları yenilenir. Yüzdeler eğlence modeli olarak etiketli; bilinmeyen nitelikler rol/reyting öncülü.11v11/PHPskoru değişmez.
+-68/68 tam regresyon +son hedefli, gerçek3Dsalon/ikihaftalıkstüdyo/sekmeler/dikeykadraj/EN/mobilkontrol. Kısa gerçek3D1080p60H264/AACindirme/decode. Tamuzunvideo/fizikselcihaz/Hostinger yayını yok; kanıt research/bowling-v236.
+
 ## V235 · 2026-11-23
 - Lig/kupa hafta/tur bölümleri ayrı MP4 indirilebilir; her bölümün video hızı1.0–3.0x ayrı hatırlanır. Açılış ilk, son tablo/istatistik/seremoni son parçadadır. Tam video ve iki oran korunur, hazır indirmeler ayrı kartlarda kalır.
 - Ayak tenisi iki saha boyutunda PBR zemin/okunur çizgiler/dokuma file. Top filenin ön yüzüne fiziksel temas eder; sönümlü geri dönüş/esneme/temas vurgusu, rastgele fileden karşıya geçiş kaldırıldı.

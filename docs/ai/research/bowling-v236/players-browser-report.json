@@ -1,0 +1,42 @@
+{
+  "pass": true,
+  "errors": [],
+  "players": {
+    "ids": [
+      [
+        {
+          "id": "bsd-9063",
+          "name": "Lionel Messi",
+          "number": 99,
+          "source": "fv:stars"
+        }
+      ],
+      [
+        {
+          "id": "bsd-7880",
+          "name": "Cristiano Ronaldo",
+          "number": 7,
+          "source": "fv:stars"
+        }
+      ]
+    ],
+    "perSide": 1,
+    "score": [
+      16,
+      18
+    ],
+    "kitFailed": [],
+    "actors": [
+      {
+        "id": "bsd-9063",
+        "number": 99,
+        "boots": 15064523
+      },
+      {
+        "id": "bsd-7880",
+        "number": 7,
+        "boots": 1910060
+      }
+    ]
+  }
+}

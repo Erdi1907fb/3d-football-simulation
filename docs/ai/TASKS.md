@@ -10,6 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-387 | Futbol bowlingi: salon/gerçek pin temasları, 1v1/2v2/takım, dört tur/vuruş ve bowling puanları; haftalık maçta bowling + ayak tenisi 2v2 seçim/veri analizi; yakın krampon ayrıntıları | done (V236) | codex | files: bowling-engine/venue, duel-analysis, footvolley UI/engine/HTML, app/index/fun, scene, tests/docs. Taraf başına4vuruş varsayılan; isteğe bağlı4frame+bonus.68/68+son hedefli, gerçek3Diki mod/currentXI/oyuncu değişimi/MP4alıntısı PASS. Hostinger/gerçekcihaz/tamuzunvideo yok. |
 | T-386 | Galatasaray/Jackson örneği: 11v11 boş kale önünde gereksiz sürme ve anlamsız aut vuruşunu teşhis/düzelt | done (V235) | codex | files: match/possession/football-intelligence, tests/docs; GS/Aston Villa seed1/2/3/7 ve 2.5m boş kale kontrolü; özgün kullanıcı replay seed’i yok. Erken vuruş, GK sınırı, yapay yakın wide/high reddi. |
 | T-385 | Ayak tenisi iki saha boyutu: görünüm ve fiziksel file temasını/esnemesini belirginleştir | done (V235) | codex | files: footvolley-engine/ui/court, HTML, tests/docs. |
 | T-384 | Lig/kupa videolarını hafta/tur bazında ayrı indir; ilk parça açılışı, son parça final/istatistik/seremoniyi içerir; bölüm bazında video hızı; main push | done (V235) | codex | files: competition-engine/ui/html/css, tests/docs, sürüm manifesti. Tam video ve iki oran korunur. |
