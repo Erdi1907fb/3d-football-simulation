@@ -1,8 +1,12 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V237** · 2026-11-23 UTC · Codex (T-388 bowling sunumu/sesleri ve ortak sonuç kartları)
+> Son güncelleme: **V238** · 2026-11-23 UTC · Codex (T-389 bowling fonunun kaldırılması ve mevcut oyun sesleri)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
+
+## V238 ses düzeltmesi
+
+Bowlingde sürekli fon, yeni sentetik düdük/kutlama, eklenen kapanış şarkısı ve bitiş düdüğü kaldırıldı. Ön düdük Penaltı Stüdyosu’ndaki mevcut whistleRestart, kapanış mevcut5v5taraftar goal kaydıdır. Labut ve ayak-top kayıtları birebir korunur. Bu düzeltmenin testleri research/bowling-sound-v238 içinde; önceki tam paket V23769/69 temelidir.
 
 ## V237 değişikliği
 
@@ -12,11 +16,11 @@ Bowlingde aktif oyuncu ismi gerçek baş konumundan takip edilir; alt panel vuru
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V237** (`VERSION`; bowling kamera/zemin/ses/oyuncu isimleri ve bowling–ayak tenisi–5v5 sonuç kartları) |
+| Kaynak sürümü | **V238** (`VERSION`; bowling kamera/zemin/ses/oyuncu isimleri ve bowling–ayak tenisi–5v5 sonuç kartları) |
 | Sonraki geliştirme hedefi | T-328/T-325 fiziksel iPhone doğrulaması; T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v237.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası237 |
+| Sürüm doğrulama | `build.php` → `assets/release-v238.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası238 |
 
 ## V236 — Futbol bowlingi ve haftalık ikililer
 - `bowling.html` (1v1/2v2, kısa4vuruş veya klasik4frame+bonus) ve ayak tenisi aynı footvolley-ui seçim/forma/numara/VideoCore hattındadır. Bowling fizik/venue/audio modülleri, isteğe bağlı yakın boot-detail; mevcut Scene oyuncuları/yüzleri/formaları/topu korunur.

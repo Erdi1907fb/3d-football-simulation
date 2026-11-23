@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V238 · 2026-11-23
+- Bowling fon uğultusu tamamen kaldırıldı. Yeni sentetik düdük/alkış, kapanış şarkısı ve bitiş düdüğü kaldırıldı; vuruş öncesi mevcut penaltı düdüğü, kapanışta mevcut5v5taraftar kutlaması kullanılır.
+- Kullanıcının beğendiği labut sesi ve ayak-top sesi byte-identical korundu. Gerçek AAC sessiz aralık RMS0, mevcut kayıtlarla tam PCM eşliği ve hedefli ses regresyonları PASS. Fizik/görüntü değişmedi.
+
 ## V237 · 2026-11-23
 - Bowling salonunda okunur geniş kamera, daha aydınlık ortam, kulvar/olukla uyumlu gerçek zemin ve kenar teması. Topu kapatan platform/halı kaldırıldı; mat/çizgiler ince boya katmanıdır.
 - Aktif vurucunun gerçek baş konumuna bağlı isim etiketi. Yenilenen alt panel: vuruş/frame sırası, oyuncu, canlı devrilen kuka/eldeki kuka sayısı, kesinleşen toplam puan ve bekleyen bonus açıkça ayrılır.

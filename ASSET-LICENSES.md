@@ -183,3 +183,6 @@ Original Next90Sim OPFS worker and delivery/recovery code. No new third-party de
 
 ## V237 — bowling presentation and sound
 Original procedural whistle, football kick, wooden pin impacts, quiet room ambience and applause PCM in `assets/bowling-audio.js`; no new third-party audio. Optional winner music reuses the existing `team-audio` catalog and its existing provenance/notices. Result cards reuse original-resolution registered team/player/competition images; no fabricated crests or new external artwork. Room spectators reuse the existing original Scene crowd meshes and selected kit colours.
+
+## V238 — existing game audio reuse
+Bowling now reuses `PULSE_AUDIO.whistleRestart` and `PULSE_AUDIO.goal` from the existing offline WoS game recordings documented in `docs/ASSETS.md`, unchanged. Generated room/whistle/applause and added winner music are removed from bowling. Existing impact PCM remains unchanged. No new external assets.

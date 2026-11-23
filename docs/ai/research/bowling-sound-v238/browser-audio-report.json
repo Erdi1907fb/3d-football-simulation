@@ -1,0 +1,38 @@
+{
+  "pass": true,
+  "errors": [],
+  "exports": [
+    {
+      "key": "quiet",
+      "rms": 0,
+      "audioHarness": true
+    },
+    {
+      "key": "whistleStart",
+      "rms": 0.13401854477071,
+      "audioHarness": true
+    },
+    {
+      "key": "pin",
+      "rms": 0.05825268112180427,
+      "audioHarness": true
+    },
+    {
+      "key": "cheer",
+      "rms": 0.02296578593991651,
+      "audioHarness": true
+    }
+  ],
+  "sources": {
+    "samePenaltyWhistle": true,
+    "same5v5Crowd": true,
+    "zeroBed": true,
+    "noAddedTracks": true,
+    "noEndWhistle": true,
+    "noMusicCue": true,
+    "noPreviewLoop": true,
+    "previewRunning": true,
+    "whistleSeconds": 0.42,
+    "cheerSeconds": 5
+  }
+}
