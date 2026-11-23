@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('node:assert/strict'),T=require('../assets/japon-tactics'),C=require('../assets/football-clips'),I=require('../assets/football-intelligence'),P=require('../assets/pitch-detail'),THREE=require('../assets/vendor/three.min');
+const actor=()=>({root:{userData:{physique:{heightScale:1}}}}),a=actor(),b=actor();
+for(const d of [0,1,2,3,8,12,15])C.stepPhase(a,d,[]);const forward=C.stepPhase(a,15,[]);C.stepPhase(a,2,[]);assert.equal(C.stepPhase(a,15,[]),forward);assert.equal(C.stepPhase(b,15,[]),forward);
+const tall=actor();tall.root.userData.physique.heightScale=1.1;assert(C.stepPhase(tall,15,[])<forward);
+const g={x:14,z:0,nx:1,nz:0,width:5,height:2.44};
+for(const lat of [-8,-3,0,3,8]){const ball={x:4,z:lat},side=T.keeperBisector(g,ball,1.3),keeper={x:12.7,z:side};const ray=Math.atan2(keeper.z-ball.z,keeper.x-ball.x),postA=Math.atan2(-2.5-ball.z,10),postB=Math.atan2(2.5-ball.z,10);assert(Math.abs(ray-(postA+postB)/2)<1e-9);assert(Math.abs(side-T.keeperBisector(g,{x:4,z:-lat},1.3)*-1)<1e-9);}
+const samples={};for(let seed=1;seed<=500;seed++){const q=T.finish({x:3,z:4,identity:{id:'p'}},g,{x:13,z:0},I.Emergent.stream(seed),{time:10,ability:.8});samples[q.pattern]=(samples[q.pattern]||0)+1;assert(Number.isFinite(q.target.x)&&Number.isFinite(q.target.y)&&Number.isFinite(q.flight));if(q.pattern==='curl')assert(q.spin.y<0);if(q.pattern==='knuckle')assert.equal(q.spin.y,0);}
+assert(samples.curl&&samples.knuckle&&samples.placed&&samples.driven&&samples.rising);
+const defender={x:9,z:0,role:'defender'},carrier={x:5,z:0},runner={active:true,x:8,z:2,vx:0,vz:4},still=T.defend(defender,carrier,g,false,0,[{...runner,vz:0}]),moving=T.defend(defender,carrier,g,false,0,[runner]);assert(moving.z>still.z,'cover follows runner direction');
+const grass=P.blades(new THREE.Group(),{count:100,boundaries:[{nx:1,nz:0,d:14}]});const shader={uniforms:{},vertexShader:THREE.ShaderLib.standard.vertexShader,fragmentShader:THREE.ShaderLib.standard.fragmentShader};grass.mesh.material.onBeforeCompile(shader);grass.update(5,[{x:1,z:2}]);const first=shader.uniforms.uContacts.value.map(v=>v.toArray());grass.update(1,[]);grass.update(5,[{x:1,z:2}]);assert.deepEqual(shader.uniforms.uContacts.value.map(v=>v.toArray()),first);assert.equal(shader.uniforms.uTime.value,5);assert(shader.vertexShader.includes('uEdges[e]'));grass.dispose();
+console.log(JSON.stringify({pass:true,samples,coverage:'stateless stature-scaled cadence, runner cover, keeper angular bisector, physical strike diversity, bounded seekable turf'}));

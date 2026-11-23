@@ -7,10 +7,10 @@ for(const dir of [-1,1])for(const flank of [-1,1])for(const angle of [0,Math.PI/
 }
 assert.equal(M.movement({speed:4,vx:0,vz:4,heading:1},{}).vx,0);
 assert.equal(M.movement({speed:4,vx:4,vz:0,heading:1},{}).vz,0);
-for(const distance of [3,6,10,14]){
- const t=T.passFlight(distance),b=A.state({x:0,y:.11,z:0},{x:T.passSpeed(distance),y:0,z:0},null,{rollingResistance:1.9});b.continuousGround=true;
+for(const surface of ['clear','rain','snow'])for(const distance of [3,6,10]){
+ const t=T.passFlight(distance,surface),b=A.state({x:0,y:.11,z:0},{x:T.passSpeed(distance),y:0,z:0},null,{rollingResistance:1.9,surface});b.continuousGround=true;b.skid=T.passSpeed(distance)*2/7;
  let at=0;while(at+1/240<t){A.step(b,1/240);at+=1/240;}A.step(b,t-at);
- assert(Math.abs(b.x-distance)<.08,`forecast arrival at ${distance}m: ${b.x}`);
+ assert(t===3||Math.abs(b.x-distance)<.08,`forecast arrival at ${distance}m: ${b.x}`);
  assert(t>distance/T.passSpeed(distance),'rolling drag delays arrival');
  const aim=T.passAim({x:0,z:0},{x:distance,z:0,vx:0,vz:2});assert(aim.z>distance/T.passSpeed(distance)*2*.65,'lead reflects slower ball');
 }

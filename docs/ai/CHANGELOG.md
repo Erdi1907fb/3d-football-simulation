@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V234 · 2026-11-23
+- 11v11/5v5/Japon ortak koşu yönü ve sıfır hız düzeltmeleri; geçmiş karelerden bağımsız, mevcut boy ölçeğine bağlı ortak adım evresi.
+- Gerçek dribbling ayağı/temas IK, koşucu öngören markaj/örtü, kaleci açıortayı ve güvenli merkezlenme. Arena fiziksel falso/knuckle, uygun animasyon ve açık koridor/tek vuruş tercihleri.
+- Paslarda zemin/hava/ilk kayma varışı ve alıcı payı; küçük saha/Japon'da ortak PBR doku ve sınırlandırılmış rüzgâr/temas tepkili çim yaprakları. MobileExport/low ek yaprak yükü yok.
+-63/63 regresyon +son hedefli kontroller; gerçek Chromium5v5/Japon/11v11 görüntüleri ve deterministik geri sarma. Gol artışı her örneklemde yok; ham ölçüm ve sınırlar research/football-upgrade-v234. Canlı dağıtım/gerçek cihaz veya yeni tam çokdakikalıMP4 testi yapılmadı.
+
 ## V233 · 2026-11-22
 - Maç merkezi (haftanın maçları) 5v5 ve Penaltı sekmeleri: dil, maç yüklendiği anda bir kez okunuyordu; EN'e sonradan geçilince sekme adları ve açık 5v5/penaltı sayfası Türkçe kalıyordu. Artık dil tıklama anında okunur, dil düğmesi sekme adlarını günceller ve açık sekmeyi yeni dilde yeniden açar. (?lang=en ile açılan 5v5 ve penaltı sayfaları ayar, skor tablosu ve istatistiklerde zaten tam İngilizce — tarayıcıda doğrulandı.)
 - Ayak tenisi tam İngilizce: tüm sabit etiketler/seçenekler (kapışma türü, oyuncu sayısı, sayı/set, hava, video biçimi, kamera, düğmeler), millî takım adları dile göre.

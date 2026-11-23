@@ -505,7 +505,7 @@ ballGroup.traverse(o=>{if(o.isMesh&&o.material&&!o.material.isMeshPhysicalMateri
  const enhancement=Enhance.create({scene,stadium,quality,actors,ball:ballGroup,lighting,canvasFactory:options.canvasFactory});
  const remaster=Remaster.create({scene,stadium,quality,lighting,actors,ball:ballGroup,canvasFactory:options.canvasFactory});
  function update(state,aspect=16/9,view='broadcast'){
-  weather?.update(state.time??state.t??0);
+  weather?.update(state.time??state.t??0);turfBlades?.update(state.time??state.t??0,state.players||[]);
   if(flashFx===undefined)flashFx=buildFlash();if(flashFx){flashFx.m.uniforms.uTime.value=state.time??state.t??0;const hot=state.goalCelebration||state.celebration||state.penaltyShootout?.active||state.pregame;flashFx.m.uniforms.uExcite.value=hot?1:.12;if(flashFx.torch){const cer=state.pregame?.ceremony,age=state.pregame?.ceremonyAge??0;flashFx.torch.set(cer?Math.min(1,Math.max(0,age/2.2)):0,state.time??state.t??0);}}
   state=TrackedRuns.apply(state);
   const exteriorOpening=!!state.pregame?.ceremony;stadiumShell.group.visible=exteriorOpening;scene.userData.exteriorOpening=exteriorOpening;

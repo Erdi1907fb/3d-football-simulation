@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V233** · 2026-11-22 UTC · Claude (İngilizce: maç merkezi ek sekmeleri, ayak tenisi, Japon Kale; kazanan kartları)
+> Son güncelleme: **V234** · 2026-11-23 UTC · Codex (T-382 ortak futbol, hareket/kaleci/savunma/şut/çim)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V233** (`VERSION`; normal11v11forma eşitliği; önceki mobil/kamera korunur) |
-| Sonraki geliştirme hedefi | **V188** — T-328/T-325 fiziksel iPhone doğrulaması; T-325/T-317 ve T-312 ayrı açık |
+| Kaynak sürümü | **V234** (`VERSION`; ortak futbol geliştirmesi) |
+| Sonraki geliştirme hedefi | T-328/T-325 fiziksel iPhone doğrulaması; T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v200.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası 200 |
+| Sürüm doğrulama | `build.php` → `assets/release-v234.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası234 |
 
 ## V190 — Turnuva Stüdyosu Japon Kale
 - competition field 'japon': planJapon/japonStandings/japonOrder/japonSides; lig points modu, kupa eleme modu (S1,S2,F1 dörtlü). Renderer ensureJapon (Japon sahnesi/kamerası), broadcast japonHud/japonCard/japonFixtures/japonBracket. Seremoni 3D yok; şampiyon kartı.
@@ -800,3 +800,10 @@ sağ. Kale ağzı |z|<3.66, y<2.44. Top yarıçapı 0.11 m. Yön (heading): `ata
 - Ortak football-clips geri koşu yönü: Match.sample hızları zaten sahne koordinatında; dir/flank ikinci kez uygulanmaz. Athlete sıfır vx/vz bileşenlerini korur.
 - Arena passAim kuru zemin için ortak BallAero ile yavaşlayan topun varışından alıcı payı hesaplar; 5 cm çözünürlüklü en çok 801 kayıtlık saf önbellek. Şut/gol kotası yok.
 - Genel grafik, boy/rig, kaleci, savunma ve aksiyon talebinin bütünü tamamlanmış değildir. Bu dal dar ilk düzeltme paketidir; VERSION artırılmadı, yayın yapılmadı.
+
+## V234 — T-382 kalan futbol geliştirmesi tamamlandı
+- Ortak hareket: history-free1.42m/stature adım evresi; prosedürel/mocap aynı evre, gerçek dribbling ayağı ve erişim sınırlı temas IK. Normal11v11 markajı ve arena örtüsü koşucu hızını öngörür.
+- Arena: kaleci açıortayı/yan top merkezlenmesi, fiziksel curl/knuckle ve uygun teknik pozları, açık koridor/tek vuruş niyeti. Pas payı/kaleci yetişmesi/niyet süresi aynı clear/rain/snow+skid BallAero varışını kullanır.
+- Mevcut PBR haritaları arenaya paylaşıldı; çokgen sınırları içinde zamandan hesaplanan rüzgâr/8oyunculu eğilme. High38k/balanced18k, low/mobileExport0 ek yaprak.
+-63/63 kontrol,500penaltı+18normalmaç motor testi dahil; düzeltilen6kontrol wrapperPHP ile tekrar geçti. Final hedefli futsal18maç/9örüntü/kale tarafı örtü.987;24gerçek5v5son kontrolde7.5şut/2.04gol,2golsüz. Tüm örneklerde gol artışı yok; ham A/B raporda.
+- Chromium/SwiftShader:5v5ve12oyunculuJapon PBR/38k/geri sarma eşit, JS/GL hata0;22oyunculu11v11gerçek çizim. FizikselGPU/iPhone/tamuzunMP4/Hostinger yok. PR#1, rapor research/football-upgrade-v234.

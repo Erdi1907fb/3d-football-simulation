@@ -1,0 +1,55 @@
+{
+  "scope": "Observed final-source targeted test outputs; not a full-suite replacement",
+  "v188-fixes": {
+    "pass": true,
+    "games": 24,
+    "goalsPerGame": 2.04,
+    "shotsPerGame": 7.5,
+    "goalless": 2
+  },
+  "futsal-five": {
+    "pass": true,
+    "games": 18,
+    "goalSideCover": 0.987,
+    "shots": 184,
+    "goals": 57,
+    "patterns": [
+      "driven",
+      "knuckle",
+      "curl",
+      "rising",
+      "chip",
+      "free_kick",
+      "placed",
+      "one_touch",
+      "header"
+    ]
+  },
+  "arena-elimination": {
+    "pass": true,
+    "stages": [
+      4,
+      3,
+      2
+    ]
+  },
+  "arena-football": {
+    "pass": true,
+    "games": 12,
+    "passes": 101,
+    "completed": 74
+  },
+  "competition-frames": {
+    "pass": true,
+    "parityFrames": 106
+  },
+  "php": {
+    "pass": true,
+    "tests": [
+      "forecast.php",
+      "national-competitions.php",
+      "forecast-lock.php",
+      "callup-filter.php"
+    ]
+  }
+}

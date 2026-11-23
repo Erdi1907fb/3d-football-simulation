@@ -10,7 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-382 | Ortak 11v11/5v5/Japon hareket, pas ve savunma geliştirmeleri; ölçüm ve regresyon | partial | codex | files: athlete-motion.js, football-clips.js, japon-tactics.js, tests, docs/ai. İlk paket: koşu yönü/sıfır hız ve fizik tabanlı pas payı. Genel grafik/kaleci/savunma geliştirmesi açık. |
+| T-382 | Ortak 11v11/5v5/Japon hareket, pas, savunma/kaleci, şut ve çim geliştirmeleri | done (V234) | codex | files: athlete-motion/football-clips, football-intelligence, japon-engine/tactics/arena, arena-presentation, scene/pitch-detail, tests/docs. Stateless boy ölçekli evre, gerçek dribbling ayağı/IK, koşucu markajı, GK açıortayı, fiziksel curl/knuckle, yüzey+skid pas varışı, ortak PBR+bounded yaprak.63/63 +son hedefli +Chromium5v5/Japon/11v11. PR#1; Hostinger yayını ve fiziksel cihaz/T-317/325/328 kapsam dışı. |
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |
 | T-367 | Eğlence Arenası: minyatür kale (kalecisiz), dev kale, ayak tenisi (futnet) | done (V219) | claude | files: fun.html, footvolley.html, footvolley-engine.js, footvolley-ui.js, japon-layout/engine/ui/camera, arena-presentation, device-profile, penalty-link; test footvolley.cjs. Gerçek cihazda tam video denenmedi. |
 | T-369 | Ayak tenisi v2: 3 dokunuş/oyuncu başı 1, tekli 2; sayı 1–10, set 1–3; isim etiketi; futbol çizgileri gizli, saha ortada | done | Claude | V220 |

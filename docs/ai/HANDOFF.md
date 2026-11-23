@@ -3,6 +3,14 @@
 Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonla yeni kayıt ekle.
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
+## [2026-11-23] Codex · V233 → V234 / T-382 tamamlandı
+- Dal: agent/codex/football-motion-passing; PR#1 aynı kapsamla güncellendi. Main'e birleştirilmedi, Hostinger yayını yok.
+- Kullanıcı kalan savunma/kaleci/dribbling-şut/grafik işlerini bitirmeyi istedi. Ortak motion/stateless stature evresi ve ayak teması; shared markaj; arena GK açıortayı/merkezlenme, curl/knuckle, açık koridor/tek vuruş; weather+skid pas varışı/deadline; arena ortak PBR/çokgen bounded yaprak/rüzgâr8oyuncu tepkisi uygulandı. Normal analiz/goalLedger ve bülten/PHP akışı değiştirilmedi.
+-63/63 PASS: tam run-all (500penaltı/18normalengine dahil), sonra competition-frames/arena-football/dörtPHP --failed tekrarPASS. Eski sunum parity beklentisi yeni ayak metadata/teknik farklarına açıkça uyarlandı; GK yan top geri merkezlenmesi gerçek sınır hatasıydı ve düzeltildi. PHP CLI8.4 resmi paketlerden yalnız/tmp altında; sistem kurulumu yok. Ham testler sürüm234paketlemesinden önce V233etiketiyle koştu, JSON elle yeşile çevrilmedi.
+- Son hedefli: v188-fixes24gerçek60sn5v5/7.5şut/2.04gol/2golsüz; futsal18oyun184şut57gol9örüntü/goal-side.987;4→3→2eleme/106kare parity PASS. A/B8gerçek5v5şut72→61/gol18→11/loose6→2;4çokkalelişut38→43/gol8→10. Her seed'de gol artışı iddiası yok.
+- ChromiumSwiftShader:5v5(10)/Japon(12),PBR38k,8→3→8poz eşitliği ve JS/GLhata0; normal22oyuncu gerçek çizim. Ekran görüntüleri/ham karşılaştırma/test JSON: research/football-upgrade-v234. MobileExport/low0yaprak; yeni dış varlık yok.
+- Sürüm234/HTMLcache/buildmanifest hazır; yerel build.php build234/filesMatch=true/mismatches=[] doğrulandı. FizikseliPhone/gerçekGPU60FPS/yeni tamçokdakikalıMP4 yok; T-325/T-328/T-317/T-312 ayrı kalır.
+
 ## [2026-11-22] Codex · V233 tabanı / T-382 ilk paket
 - Dal: agent/codex/football-motion-passing. VERSION değişmedi; Hostinger yayını yok.
 - Kullanıcı: 11v11 ve tüm 5v5/Japon modlarında animasyon, koşu, pas/şut, fizik, savunma, kaleci ve çim/grafik kalitesi.

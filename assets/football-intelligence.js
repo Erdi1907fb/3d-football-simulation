@@ -58,7 +58,7 @@
  function mark(defenders,attackers,ball,{goal={x:52.5,z:0},primary=null}={}){
   const available=defenders.filter(p=>live(p)&&!p.keeper&&key(p)!==primary),duties={};
   const threats=attackers.filter(p=>live(p)&&!p.keeper).map(p=>({p,value:gap(p,goal)+gap(p,ball)*.15})).sort((a,b)=>a.value-b.value||String(key(a.p)).localeCompare(String(key(b.p))));
-  for(const {p} of threats){const dx=goal.x-p.x,dz=goal.z-p.z,n=Math.hypot(dx,dz)||1,target={x:p.x+dx/n*1.4+(p.vx||0)*.18,z:p.z+dz/n*1.4+(p.vz||0)*.18};
+  for(const {p} of threats){const lead=clamp(gap(p,goal)/40,.15,.4),px=p.x+(p.vx||0)*lead,pz=p.z+(p.vz||0)*lead,dx=goal.x-px,dz=goal.z-pz,n=Math.hypot(dx,dz)||1,target={x:px+dx/n*1.4,z:pz+dz/n*1.4};
    let index=-1,cost=Infinity;for(let i=0;i<available.length;i++){const eta=arrival(available[i],target,{reaction:0});if(eta<cost){cost=eta;index=i;}}
    if(index<0)break;const defender=available.splice(index,1)[0];duties[key(defender)]={mark:key(p),target};
   }return duties;
@@ -149,7 +149,7 @@
   // shoots instead of dribbling on, forward passes beat sideways recycling and the carrier keeps driving
   // into space. Only intent changes; ball flight, keeper and result remain physical.
   if(context.layout){const shot=options.find(o=>o.kind==='shot'),open=1-clamp(blocked/1.2,0,1);
-   if(shot&&distance<15)shot.utility+=(.42+.66*clamp((13-distance)/7,0,1))*(.35+.65*open);else if(shot&&distance<18&&open>.7&&pressure<1)shot.utility+=.16;
+   if(shot&&distance<15)shot.utility+=(.48+.78*clamp((13-distance)/7,0,1))*(.35+.65*open);else if(shot&&distance<18&&open>.7&&pressure<1)shot.utility+=.16;
    for(const o of options){if(o.kind==='carry'&&shot&&distance<9&&open>.5)o.utility-=.30;
     if(o.kind==='carry'&&!shot&&distance>9&&pressure<.6)o.utility+=.12;
     if(o.kind==='pass'&&!o.through&&o.receiver){const gain=distance-gap(o.receiver,g);o.utility+=gain>1.5?.14+Math.min(.3,gain*.035):pressure<.8?-.16:0;}}}

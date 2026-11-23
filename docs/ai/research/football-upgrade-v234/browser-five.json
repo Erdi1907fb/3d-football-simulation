@@ -1,0 +1,7 @@
+{
+  "players": 10,
+  "blades": 38000,
+  "pbr": true,
+  "rewindPoseEqual": true,
+  "errors": []
+}

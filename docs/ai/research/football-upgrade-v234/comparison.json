@@ -1,0 +1,422 @@
+{
+  "scope": "V233 first package vs completed upgrade; same real selected roster sources and seeds; engineering sample, not tracking calibration",
+  "baseline": [
+    {
+      "sides": 2,
+      "seed": 1,
+      "goals": 3,
+      "shots": 10,
+      "passes": 24,
+      "saves": 1,
+      "loose": 0,
+      "skills": 5,
+      "patterns": [
+        "driven",
+        "rising",
+        "placed",
+        "free_kick"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 2,
+      "goals": 2,
+      "shots": 8,
+      "passes": 22,
+      "saves": 3,
+      "loose": 1,
+      "skills": 7,
+      "patterns": [
+        "placed",
+        "driven",
+        "rising",
+        "header"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 3,
+      "goals": 4,
+      "shots": 10,
+      "passes": 17,
+      "saves": 2,
+      "loose": 0,
+      "skills": 3,
+      "patterns": [
+        "one_touch",
+        "driven",
+        "rising",
+        "placed"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 4,
+      "goals": 0,
+      "shots": 7,
+      "passes": 19,
+      "saves": 0,
+      "loose": 1,
+      "skills": 7,
+      "patterns": [
+        "placed",
+        "driven",
+        "free_kick"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 5,
+      "goals": 4,
+      "shots": 11,
+      "passes": 20,
+      "saves": 3,
+      "loose": 1,
+      "skills": 7,
+      "patterns": [
+        "one_touch",
+        "rising",
+        "driven",
+        "placed"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 6,
+      "goals": 2,
+      "shots": 8,
+      "passes": 23,
+      "saves": 3,
+      "loose": 0,
+      "skills": 4,
+      "patterns": [
+        "free_kick",
+        "one_touch",
+        "rising",
+        "placed",
+        "driven"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 7,
+      "goals": 1,
+      "shots": 11,
+      "passes": 20,
+      "saves": 5,
+      "loose": 1,
+      "skills": 5,
+      "patterns": [
+        "rising",
+        "driven",
+        "placed",
+        "chip"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 8,
+      "goals": 2,
+      "shots": 7,
+      "passes": 25,
+      "saves": 1,
+      "loose": 2,
+      "skills": 3,
+      "patterns": [
+        "driven",
+        "free_kick",
+        "rising",
+        "placed",
+        "one_touch"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 1,
+      "goals": 0,
+      "shots": 7,
+      "passes": 15,
+      "saves": 5,
+      "loose": 2,
+      "skills": 5,
+      "patterns": [
+        "rising",
+        "driven"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 2,
+      "goals": 2,
+      "shots": 10,
+      "passes": 13,
+      "saves": 5,
+      "loose": 0,
+      "skills": 7,
+      "patterns": [
+        "placed",
+        "driven",
+        "one_touch",
+        "rising"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 3,
+      "goals": 2,
+      "shots": 10,
+      "passes": 14,
+      "saves": 3,
+      "loose": 0,
+      "skills": 6,
+      "patterns": [
+        "driven",
+        "rising",
+        "one_touch",
+        "chip"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 4,
+      "goals": 4,
+      "shots": 11,
+      "passes": 14,
+      "saves": 4,
+      "loose": 1,
+      "skills": 6,
+      "patterns": [
+        "driven",
+        "rising",
+        "placed",
+        "header"
+      ]
+    }
+  ],
+  "changed": [
+    {
+      "sides": 2,
+      "seed": 1,
+      "goals": 2,
+      "shots": 9,
+      "passes": 20,
+      "saves": 1,
+      "loose": 0,
+      "skills": 8,
+      "patterns": [
+        "driven",
+        "placed",
+        "penalty",
+        "rising",
+        "one_touch"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 2,
+      "goals": 2,
+      "shots": 7,
+      "passes": 22,
+      "saves": 3,
+      "loose": 0,
+      "skills": 4,
+      "patterns": [
+        "driven",
+        "placed",
+        "rising"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 3,
+      "goals": 1,
+      "shots": 9,
+      "passes": 17,
+      "saves": 6,
+      "loose": 0,
+      "skills": 3,
+      "patterns": [
+        "knuckle",
+        "placed",
+        "curl",
+        "rising",
+        "driven"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 4,
+      "goals": 0,
+      "shots": 8,
+      "passes": 18,
+      "saves": 3,
+      "loose": 0,
+      "skills": 4,
+      "patterns": [
+        "rising",
+        "curl",
+        "free_kick",
+        "driven",
+        "knuckle",
+        "placed"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 5,
+      "goals": 3,
+      "shots": 9,
+      "passes": 21,
+      "saves": 4,
+      "loose": 0,
+      "skills": 7,
+      "patterns": [
+        "free_kick",
+        "chip",
+        "driven",
+        "placed",
+        "rising",
+        "curl"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 6,
+      "goals": 0,
+      "shots": 5,
+      "passes": 26,
+      "saves": 1,
+      "loose": 2,
+      "skills": 3,
+      "patterns": [
+        "free_kick",
+        "driven",
+        "placed",
+        "rising"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 7,
+      "goals": 2,
+      "shots": 6,
+      "passes": 23,
+      "saves": 1,
+      "loose": 0,
+      "skills": 7,
+      "patterns": [
+        "rising",
+        "curl",
+        "placed",
+        "driven"
+      ]
+    },
+    {
+      "sides": 2,
+      "seed": 8,
+      "goals": 1,
+      "shots": 8,
+      "passes": 20,
+      "saves": 4,
+      "loose": 0,
+      "skills": 6,
+      "patterns": [
+        "driven",
+        "rising",
+        "placed"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 1,
+      "goals": 1,
+      "shots": 5,
+      "passes": 18,
+      "saves": 4,
+      "loose": 0,
+      "skills": 6,
+      "patterns": [
+        "rising",
+        "driven",
+        "header"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 2,
+      "goals": 3,
+      "shots": 14,
+      "passes": 6,
+      "saves": 7,
+      "loose": 0,
+      "skills": 8,
+      "patterns": [
+        "placed",
+        "driven",
+        "rising",
+        "curl",
+        "knuckle",
+        "chip"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 3,
+      "goals": 4,
+      "shots": 12,
+      "passes": 10,
+      "saves": 6,
+      "loose": 1,
+      "skills": 2,
+      "patterns": [
+        "placed",
+        "rising",
+        "driven",
+        "one_touch",
+        "curl"
+      ]
+    },
+    {
+      "sides": 4,
+      "seed": 4,
+      "goals": 2,
+      "shots": 12,
+      "passes": 11,
+      "saves": 3,
+      "loose": 0,
+      "skills": 7,
+      "patterns": [
+        "driven",
+        "placed",
+        "rising",
+        "knuckle",
+        "curl"
+      ]
+    }
+  ],
+  "baselineRef": "417b86c",
+  "teams": [
+    {
+      "catalogId": "436",
+      "name": "Fenerbahçe"
+    },
+    {
+      "catalogId": "432",
+      "name": "Galatasaray"
+    },
+    {
+      "catalogId": "83",
+      "name": "Barcelona"
+    },
+    {
+      "catalogId": "86",
+      "name": "Real Madrid"
+    }
+  ],
+  "setup": "Competition.entry(club-rosters-v75.json, id), Competition.arenaSides(first N teams); seconds60/mode points; 2 teams seeds1-8,4 teams seeds1-4",
+  "sourceSha256": {
+    "japon-engine": "7b3135db4df233cd0b733ad22cb0671ee9128063ab35be739044dea12264652b",
+    "japon-tactics": "bd4a23ffffc345afd756deea71ab089e455c16ca7197472cd51a148c27a09a0d",
+    "football-intelligence": "7e0e5d36abb464bb807c3332a0c48738d1e9c0bcb648c47169e8db996e5d2279"
+  }
+}

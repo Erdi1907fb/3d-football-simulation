@@ -275,3 +275,8 @@ Normal11v11 Scene.update kamerası yeniden arena fit yapılmadan korunur. Seremo
 
 ## D-051 · 2026-11-15 · V187 — simülasyon kimliği ve forma kaynağı ayrıdır
 Turnuva team.id=studio-providerId kalır. kitCatalogId yalnız manifest çözümlemesini kanonik kulübe bağlar; geçmiş takım tanımlarına kendiliğinden yeni sezon forması atanmaz. Ham/kayıtlı Conceptanalizleri görsel seçimde Catalog.pair'dan geçer, analiz ve fizik tekrar yazılmaz. Pembe keeper-glove parçaları bozuk doku veya oyuncunun elinde bir sevinç nesnesi değildir; normal11v11kaleci ekipmanı olarak korunur. Bilinen gerçek asset başarısızsa sessiz düzrenk turnuva videosu üretilmez.
+
+## V234 / T-382 — deterministik hareket ve ortak arena yüzeyi (2026-11-23)
+- Mocap'ın çizim anında hızla değişen adımını geçmiş karelerden entegre etmek yerine1.42m sabit referans ve mevcut doğrulanmış boy ölçeği kullanılır. Ön izleme/geri sarma/export aynı mesafede aynı poza gider; doğrulanmış yeni tracking verisi iddiası yoktur.
+- Arenanın PBR haritaları ortak pitch-detail kaynağından paylaşılır. Yapraklar low/mobileExport'ta kapalıdır; high38k/balanced18k,6kenar ve8oyuncuyla sınırlıdır. Yeni dış varlık yok.
+- Savunma/kaleci iyileşmesiyle bazı5v5örneklerinde gol/şut azaldı. Açık koridor ve beceriye bağlı tek vuruş tercihleri artırıldı; sonucun fiziksel kalması, her seed'de daha çok gol elde etmekten önceliklidir. Ham karşılaştırma research/football-upgrade-v234 içindedir.
