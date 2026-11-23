@@ -1,0 +1,118 @@
+{
+  "pass": true,
+  "excerptOnly": true,
+  "testRenderer": true,
+  "exports": [
+    {
+      "part": "round-1",
+      "orient": "landscape",
+      "speed": "1.1",
+      "file": "/tmp/competition-export-parts/Next90Sim-league-235-part-1-week-1-landscape-1.1x.mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1920,
+      "height": 1080,
+      "duration": 0.32
+    },
+    {
+      "part": "round-2",
+      "orient": "landscape",
+      "speed": "1.7",
+      "file": "/tmp/competition-export-parts/Next90Sim-league-235-part-2-week-2-landscape-1.7x.mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1920,
+      "height": 1080,
+      "duration": 0.32
+    },
+    {
+      "part": "round-3",
+      "orient": "landscape",
+      "speed": "2.4",
+      "file": "/tmp/competition-export-parts/Next90Sim-league-235-part-3-week-3-landscape-2.4x.mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1920,
+      "height": 1080,
+      "duration": 0.32
+    },
+    {
+      "part": "round-1",
+      "orient": "portrait",
+      "speed": "1.1",
+      "file": "/tmp/competition-export-parts/Next90Sim-league-235-part-1-week-1-portrait-1.1x.mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1080,
+      "height": 1920,
+      "duration": 0.32
+    },
+    {
+      "part": "round-2",
+      "orient": "portrait",
+      "speed": "1.7",
+      "file": "/tmp/competition-export-parts/Next90Sim-league-235-part-2-week-2-portrait-1.7x.mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1080,
+      "height": 1920,
+      "duration": 0.32
+    },
+    {
+      "part": "round-3",
+      "orient": "portrait",
+      "speed": "2.4",
+      "file": "/tmp/competition-export-parts/Next90Sim-league-235-part-3-week-3-portrait-2.4x.mp4",
+      "video": "h264",
+      "audio": "aac",
+      "width": 1080,
+      "height": 1920,
+      "duration": 0.32
+    }
+  ],
+  "errors": [],
+  "parts": [
+    {
+      "id": "full",
+      "index": 0,
+      "round": null,
+      "stage": null,
+      "start": 0,
+      "end": 82.20000000000002,
+      "duration": 82.20000000000002
+    },
+    {
+      "id": "round-1",
+      "index": 1,
+      "round": 1,
+      "stage": "league",
+      "start": 0,
+      "end": 14.4,
+      "duration": 14.4
+    },
+    {
+      "id": "round-2",
+      "index": 2,
+      "round": 2,
+      "stage": "league",
+      "start": 14.4,
+      "end": 28.800000000000004,
+      "duration": 14.400000000000004
+    },
+    {
+      "id": "round-3",
+      "index": 3,
+      "round": 3,
+      "stage": "league",
+      "start": 28.800000000000004,
+      "end": 82.20000000000002,
+      "duration": 53.40000000000001
+    }
+  ],
+  "playback": {
+    "width": 1080,
+    "height": 1920,
+    "ended": true
+  },
+  "englishPartLabels": "Full video · 1:43\nPart 1 · SEMI-FINAL · 0:44\nPart 2 · FINAL · 0:59"
+}

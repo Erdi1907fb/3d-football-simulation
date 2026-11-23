@@ -3,6 +3,15 @@
 Kurallar: **en yeni kayıt en üstte.** Her oturum sonunda aşağıdaki şablonla yeni kayıt ekle.
 Diğer ajan sohbetini göremez; burada yazmayan şey bilinmez.
 
+## [2026-11-23] Codex · V235 / T-384, T-385, T-386
+- Kullanıcı tam videoya ek hafta/tur indirmeleri, bölüm bazında video hızı, ayak tenisinde iki saha/file ve 11v11 gereksiz kale dibine sürme/boş kale aut düzeltmesi istedi. Önceden açık main push yetkisi var; dal agent/codex/competition-round-downloads, taban main147f2e0. Main aktarımı bu paketin teslim adımıdır; Hostinger dağıtımı yok.
+- Export: exportParts/exportSlice gerçek round-summary sınırlarını kullanır. İlk açılış, son istatistik/kutlama kapanışı dahil. 4takım lig3,8takım kupa3,4takım kupa2; tüm sahalar/penaltı. Hız1–3x bölüm bazında hafıza, yerel ses/kaynak eşleme; VideoCore speed1 ile çift çarpan yok. Bölüm×oran kartları, önceki dosyalar iptalde/yeni export'ta korunur, yeni turnuvada temizlenir.
+- Ayak tenisi: ortak PBR court/çizgi/AA dokuma file/bant/direk, 12.8/18m. Süpürülmüş küre file ön yüzünde gerçek temas/yansıma/sönüm; RNG karşıya taşıma yok. lastNet noktasına bağlı stateless esneme/temas halkası ve net nedeni. Fiziği tahmin ve gerçek maç aynı netStep kullanır.
+- 11v11: merkez16.5m açık açı, arkadan takip eden savunmacı tek başına şutu ertelemez; finişör açık açıda sürmeyi bırakır. Başlangıçta hazır fırsat iki sabit örnekle bitirişe bağlanır. SHOT kaynak sözleşmesi korunur, hareketsiz hazırlık aralığı videodan çıkarılır, tekrar son hazırlıktan başlar. Root/top sürekliliği testli. GK rush hücumcunun kale tarafında1.1m paylı; yakın boş kale nonGoal için yapay wide/high reddedilip mevcut skor koruyan recovery kullanılır. Yayımlanmış skor/goalLedger değiştirilmez.
+-66/66 son test durumu PASS: tam run-all'da football-fixes başlangıçta hazır fırsat regresyonunu yakaladı; üretim kodu düzeltildi, test gevşetilmedi. Ardından --failed tekrar PASS. Son possession değişikliği için competition-kits/frames/competition/free-football/teamwork yeniden PASS; normal-finishing son vaka+top geçişi kontrolleri ayrı PASS. engine-test500penaltı/18normal dahil. Ham summary/targeted ve loglar research/competition-parts-v235.
+- Gerçek Chromium: bölüm UI/planlayıcı/VideoCore ile iki oranda6kısaHD H264/AAC dosyası decode/oynatma; bunlar etiketli test renderer alıntılarıdır, tam maç MP4'ü değildir. Ayak tenisi iki gerçek saha/PBR/net olayı/esneme/geri sarma, JS/GL0. Gerçek GS/Aston Villa11v11 açık açı/ön hazırlık/şut3Düç kare,22oyuncu, JS/GL0. Öncesi/sonrası4seed32şut: en yakın4.998→7.763m, gol dakika/aktörleri aynı.
+- Özgün Jackson videosunun seed/replay'i yok; bire bir kayıt tekrarı iddiası yok. FizikseliPhone/gerçekGPU60FPS/yeni tam çokdakikalıMP4/T-317/T-325/T-328 açık kalır. Sürüm235/cache/build/release521dosya doğrulaması yapılır.
+
 ## [2026-11-23] Codex · V234 main aktarımı / T-383
 - Kullanıcı açıkça “maine push et” dedi. Güncel origin/main9fe280b; çalışma ağacı temizdi. Testli45ea09d paketi main’e --ff-only ile aktarıldı; force/yeniden yazma yok.
 - Kod değişmedi.63/63 test kanıtı yeniden okundu; release-v234 içindeki520dosya SHA256 ile tekrar doğrulandı: build234/filesMatch=true/mismatches=[].

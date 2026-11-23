@@ -121,7 +121,21 @@
   c.audioEvents=[];for(const chapter of c.chapters){const m=c.matches.find(m=>m.id===chapter.matchId);if(chapter.kind==='match')c.audioEvents.push(...m.events.map(e=>({...e,at:chapter.start+e.at,type:e.type==='drop'?'kickoff':e.type==='finish'?'fulltime':e.type==='keeper_catch'?'ball_secured':e.type,team:e.team,competitionMatchId:m.id})));if(chapter.kind==='shootout')c.audioEvents.push(...m.shootoutKicks.map(k=>({at:chapter.start+k.resolvedAt,type:k.outcome==='goal'?'goal':k.outcome==='save'?'save':k.outcome==='post'?'post':'wide',team:k.team,competitionMatchId:m.id})));if(chapter.kind==='champion-celebration')c.audioEvents.push({type:'ceremony_cheer',at:chapter.start+5,team:m.home===c.champion?0:1,ceremony:true});if(chapter.kind==='champion-celebration'&&field==='eleven')c.audioEvents.push({type:'ceremony_cheer',at:chapter.start+17,team:m.home===c.champion?0:1,ceremony:true});}
   return c;
  }
+ // Export ranges use the recorded chapter boundaries; no match is simulated again here.
+ function exportParts(c){
+  if(!c||!Number.isFinite(c.duration)||c.duration<=0)return[];
+  const full={id:'full',index:0,round:null,stage:null,start:0,end:c.duration,duration:c.duration};
+  if(!['league','cup'].includes(c.format))return[full];
+  const summaries=c.chapters.filter(ch=>ch.kind==='round-summary'),parts=[];let start=0;
+  for(let i=0;i<summaries.length;i++){const ch=summaries[i],end=i===summaries.length-1?c.duration:ch.end,m=c.matches.find(m=>m.round===ch.round);if(!(end>start&&end<=c.duration))throw Error('Invalid competition export boundary');parts.push({id:'round-'+ch.round,index:i+1,round:ch.round,stage:m?.stage|| (c.format==='league'?'league':null),start,end,duration:end-start});start=end;}
+  return[full,...parts];
+ }
+ function exportSlice(c,id='full',speed=1){
+  const part=exportParts(c).find(p=>p.id===id);if(!part)throw Error('Unknown competition export part');if(!Number.isFinite(speed)||speed<1||speed>3)throw Error('Invalid export speed');
+  const events=(c.audioEvents||[]).filter(e=>Number.isFinite(e.at)&&e.at>=part.start&&e.at<part.end).map(e=>{const at=(e.at-part.start)/speed,out={...e,at};for(const k of['elapsed','videoTime'])if(Number.isFinite(e[k]))out[k]=at;return out;});
+  return{part,speed,duration:part.duration/speed,events,sourceTime:t=>Math.min(part.end-1e-7,part.start+Math.max(0,Number(t)||0)*speed)};
+ }
  function locate(c,t){const time=clamp(Number(t)||0,0,Math.max(0,c.duration-1e-7)),chapter=c.chapters.find(p=>time<p.end)||c.chapters.at(-1);return{chapter,time,local:time-chapter.start,match:c.matches.find(m=>m.id===chapter.matchId),completed:chapter.completed};}
  function view(c,t){const at=locate(c,t),played=c.matches.slice(0,at.completed),final=at.completed===c.matches.length;return{...at,played,table:standings(c.teams,played,{seed:c.seed,final}),champion:['ceremony','champion-intro','champion-celebration','final-summary','season-summary'].includes(at.chapter.kind)?c.champion:null,fixtures:c.fixtures.map(f=>{const known=played.find(m=>m.id===f.id);if(c.field==='japon')return{...f,teams:known?.teams||f.teams||(f.teamsFrom?f.teamsFrom.map(([from,place])=>played.find(m=>m.id===from)?.order[place]||null):[]),goals:known?.goals||null,ranks:known?.ranks||null,order:known?.order||null,placementPoints:known?.placementPoints||null,score:known?.score||null,winner:known?.winner||null};return{...f,home:known?.home||(f.homeFrom?played.find(m=>m.id===f.homeFrom)?.winner:f.home)||null,away:known?.away||(f.awayFrom?played.find(m=>m.id===f.awayFrom)?.winner:f.away)||null,score:known?.score||null,penalties:known?.penalties||null,content:known?.content||null,winner:known?.winner||null};})};}
- return{displayName,smallStatistics,entry,conduct,standings,plan,planJapon,japonSides,japonStandings,prepare,seriesSettings,seriesRows,buildMatch,buildShootout,arenaSides,analysePair,locate,view,shuffle,matchSeed,RULES};
+ return{exportParts,exportSlice,displayName,smallStatistics,entry,conduct,standings,plan,planJapon,japonSides,japonStandings,prepare,seriesSettings,seriesRows,buildMatch,buildShootout,arenaSides,analysePair,locate,view,shuffle,matchSeed,RULES};
 });

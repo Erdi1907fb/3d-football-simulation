@@ -67,15 +67,15 @@ function simulate(c,initial,foot,attempt){
   action(selected.type==='shield'?'shield':'carry',t,{actor:p.id,x:p.x,z:p.z,target:{...carryAim}});
  }
  for(let tick=0;tick<=Math.ceil((free?freeSeconds:17)/DT);tick++){
-  const t=tick*DT;if(t>horizon)break;const old=players.map(p=>({...p}));
-  if(!free&&owner!=null){const carrier=players[owner],dir=direction(carrier.team),chance=Intelligence.finishingOpportunity(relative(carrier,dir),{x:52.5,z:0,width:7.32},players.filter(q=>q.team!==carrier.team).map(q=>relative(q,dir)));if(chance.clear){if(frames.length>1&&owner===c.team*11+(c.finisher??9)){finished=true;openFinish=true;break;}return null;}}if(owner!=null&&!restartPlan&&t>=nextDecision)decide(players[owner],t);
+  const t=tick*DT;if(t>horizon)break;const old=players.map(p=>({...p}));let readyFinish=false;
+  if(!free&&owner!=null){const carrier=players[owner],dir=direction(carrier.team),chance=Intelligence.finishingOpportunity(relative(carrier,dir),{x:52.5,z:0,width:7.32},players.filter(q=>q.team!==carrier.team).map(q=>relative(q,dir)));if(chance.clear){if(owner!==c.team*11+(c.finisher??9))return null;if(frames.length>1){finished=true;openFinish=true;break;}readyFinish=true;}}if(owner!=null&&!readyFinish&&!restartPlan&&t>=nextDecision)decide(players[owner],t);
   if(tick%12===0||!world){const side=owner!=null?players[owner].team:flight?.team??lastPossession,dir=direction(side),ps=players.map(p=>relative(p,dir)),b={...relative(ball,dir),vx:loose?.vx||0,vz:loose?.vz||0},att=ps.filter(p=>p.team===side),def=ps.filter(p=>p.team!==side),phase=OF.phase(false,-b.x,t-turnoverAt,.5,c.ai.tactics[1-side].press);
    world={oeOffsets:{},network:c.ai.openEngine?OE.supportNetwork(ps,side):null,side,dir,ps,b,attackers:att,defenders:def,plan:OF.defensivePlan(def,att,b,profiles,phase,previousPrimary,{press:c.ai.tactics[1-side].press})};world.collective=Collective.targets(players,ball,side,dir,profiles,c.ai.tactics,world.plan.primary,owner,{time:t,turnoverAt,flight,lastPass:giveAndGo});previousPrimary=world.plan.primary;
   }
   const goals=players.map(p=>{const profile=profiles[p.id],role=profile.role,dir=world.dir,canon=relative(p,dir),isAttack=p.team===world.side,home=relative(initial[p.id],dir),b=world.b;let q;
    if(restartPlan){return p.id===restartPlan.taker?restartPlan.spot:{x:initial[p.id].x,z:initial[p.id].z};}
    if(p.keeper){const ownDir=direction(p.team);q={x:-ownDir*49.6,z:clamp(ball.z*.12,-2.4,2.4)};return q;}
-   if(owner===p.id)q=carryAim||{x:p.x+direction(p.team)*2,z:p.z};
+   if(owner===p.id)q=readyFinish?{x:p.x,z:p.z}:carryAim||{x:p.x+direction(p.team)*2,z:p.z};
    else if(isAttack){if(flight?.type==='pass'&&flight.receiver===p.id)q={x:flight.to.x,z:flight.to.z};
     else{const roleDepth=role==='CB'?24:role==='DM'?14:['LB','RB'].includes(role)?11:['ST','LW','RW'].includes(role)?-6:3,
       anchor={x:clamp(b.x-roleDepth,-44,46),z:clamp(home.z*.75+b.z*.20,-29,29)},offer=OF.supportOffer(canon,b,world.defenders)||anchor;

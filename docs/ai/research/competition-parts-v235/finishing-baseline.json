@@ -1,0 +1,610 @@
+[
+  {
+    "seed": 1,
+    "minute": 8,
+    "actor": "Barış Alper Yılmaz",
+    "team": 0,
+    "result": "post",
+    "pattern": "oneTwo",
+    "open": false,
+    "origin": {
+      "x": 45.613746643066406,
+      "z": -1.9079599380493164
+    },
+    "keeper": {
+      "x": 50.37584686279297,
+      "z": -0.7095857858657837
+    },
+    "dist": 7.14568376162004,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 19,
+    "actor": "Nicolas Jackson",
+    "team": 1,
+    "result": "wide",
+    "pattern": "cross",
+    "open": false,
+    "origin": {
+      "x": 34.08599090576172,
+      "z": 2.7887566089630127
+    },
+    "keeper": {
+      "x": 50.199928283691406,
+      "z": 0.314113974571228
+    },
+    "dist": 18.623987069011967,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 31,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "save",
+    "pattern": "oneTwo",
+    "open": false,
+    "origin": {
+      "x": 36.208351135253906,
+      "z": 1.833067536354065
+    },
+    "keeper": {
+      "x": 50.19993591308594,
+      "z": 0.0873703584074974
+    },
+    "dist": 16.394449039995756,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 45,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "save",
+    "pattern": "turnover",
+    "open": false,
+    "origin": {
+      "x": 44.23704528808594,
+      "z": 1.9228469133377075
+    },
+    "keeper": {
+      "x": 50.19993209838867,
+      "z": 0.5732605457305908
+    },
+    "dist": 8.483735075028873,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 56,
+    "actor": "Yunus Akgün",
+    "team": 0,
+    "result": "wide",
+    "pattern": "corner",
+    "open": false,
+    "origin": {
+      "x": 43.31218338012695,
+      "z": 0.3121820092201233
+    },
+    "keeper": {
+      "x": 50.599998474121094,
+      "z": 1
+    },
+    "dist": 9.19311872257158,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 69,
+    "actor": "John McGinn",
+    "team": 1,
+    "result": "goal",
+    "pattern": "freeKick",
+    "open": false,
+    "origin": {
+      "x": 30.686504364013672,
+      "z": 4.942657947540283
+    },
+    "keeper": {
+      "x": 50.20000076293945,
+      "z": 0.5218338966369629
+    },
+    "dist": 22.366458357271895,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 81,
+    "actor": "Johan Manzambi",
+    "team": 1,
+    "result": "goal",
+    "pattern": "turnover",
+    "open": false,
+    "origin": {
+      "x": 36.47975158691406,
+      "z": 8.933012962341309
+    },
+    "keeper": {
+      "x": 48.219783782958984,
+      "z": 1.4174553155899048
+    },
+    "dist": 18.342493827240077,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 1,
+    "minute": 94,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "turnover",
+    "pattern": "dribble",
+    "open": false,
+    "origin": {
+      "x": 45.99654769897461,
+      "z": -4.2383832931518555
+    },
+    "keeper": {
+      "x": 45.69993209838867,
+      "z": -1.4708690643310547
+    },
+    "dist": 7.762653204374212,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 8,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "save",
+    "pattern": "longShot",
+    "open": false,
+    "origin": {
+      "x": 36.65188980102539,
+      "z": -0.4098771810531616
+    },
+    "keeper": {
+      "x": 50.19992446899414,
+      "z": -0.04049385339021683
+    },
+    "dist": 15.853409607475331,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 19,
+    "actor": "Yunus Akgün",
+    "team": 0,
+    "result": "goal",
+    "pattern": "turnover",
+    "open": false,
+    "origin": {
+      "x": 44.13521957397461,
+      "z": 3.131075382232666
+    },
+    "keeper": {
+      "x": 45.699981689453125,
+      "z": 0.41190218925476074
+    },
+    "dist": 8.9315835451974,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 31,
+    "actor": "Barış Alper Yılmaz",
+    "team": 0,
+    "result": "wide",
+    "pattern": "turnover",
+    "open": false,
+    "origin": {
+      "x": 39.218528747558594,
+      "z": 3.141361713409424
+    },
+    "keeper": {
+      "x": 50.19993209838867,
+      "z": 0.7054877877235413
+    },
+    "dist": 13.647916765715639,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 45,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "goal",
+    "pattern": "earlyCross",
+    "open": false,
+    "origin": {
+      "x": 38.97331237792969,
+      "z": -0.5790438055992126
+    },
+    "keeper": {
+      "x": 50.19993209838867,
+      "z": -0.15364298224449158
+    },
+    "dist": 13.539075660984873,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 56,
+    "actor": "Abdülkerim Bardakci",
+    "team": 0,
+    "result": "save",
+    "pattern": "corner",
+    "open": false,
+    "origin": {
+      "x": 43.31218338012695,
+      "z": 0.3121820092201233
+    },
+    "keeper": {
+      "x": 50.599998474121094,
+      "z": 1
+    },
+    "dist": 9.19311872257158,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 69,
+    "actor": "Alysson Edward",
+    "team": 1,
+    "result": "wide",
+    "pattern": "freeKick",
+    "open": false,
+    "origin": {
+      "x": 30.686504364013672,
+      "z": 4.942657947540283
+    },
+    "keeper": {
+      "x": 50.20000076293945,
+      "z": 0.5218338966369629
+    },
+    "dist": 22.366458357271895,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 81,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "goal",
+    "pattern": "turnover",
+    "open": false,
+    "origin": {
+      "x": 36.06531524658203,
+      "z": 5.653156280517578
+    },
+    "keeper": {
+      "x": 47.670570373535156,
+      "z": 0.4276083707809448
+    },
+    "dist": 17.379788228749636,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 2,
+    "minute": 94,
+    "actor": "John McGinn",
+    "team": 1,
+    "result": "goal",
+    "pattern": "thirdMan",
+    "open": false,
+    "origin": {
+      "x": 39.002872467041016,
+      "z": 1.7534953355789185
+    },
+    "keeper": {
+      "x": 50.199928283691406,
+      "z": 0.43294304609298706
+    },
+    "dist": 13.610554637223883,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 8,
+    "actor": "Aleksey Batrakov",
+    "team": 0,
+    "result": "post",
+    "pattern": "switch",
+    "open": false,
+    "origin": {
+      "x": 38.931732177734375,
+      "z": 5.118283271789551
+    },
+    "keeper": {
+      "x": 50.199928283691406,
+      "z": 0.8537284731864929
+    },
+    "dist": 14.501541826544152,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 19,
+    "actor": "John McGinn",
+    "team": 1,
+    "result": "goal",
+    "pattern": "cross",
+    "open": false,
+    "origin": {
+      "x": 37.95175552368164,
+      "z": -0.30456268787384033
+    },
+    "keeper": {
+      "x": 50.19992446899414,
+      "z": -1.2463535070419312
+    },
+    "dist": 14.551432086690733,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 31,
+    "actor": "Barış Alper Yılmaz",
+    "team": 0,
+    "result": "goal",
+    "pattern": "cutback",
+    "open": false,
+    "origin": {
+      "x": 43.5509033203125,
+      "z": 1.1500349044799805
+    },
+    "keeper": {
+      "x": 50.19993591308594,
+      "z": 0.3695436716079712
+    },
+    "dist": 9.022688715893734,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 45,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "goal",
+    "pattern": "earlyCross",
+    "open": false,
+    "origin": {
+      "x": 46.09231948852539,
+      "z": 0.7831367254257202
+    },
+    "keeper": {
+      "x": 50.19993591308594,
+      "z": 0.04323677718639374
+    },
+    "dist": 6.455359995216536,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 56,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "goal",
+    "pattern": "cutback",
+    "open": false,
+    "origin": {
+      "x": 47.63854217529297,
+      "z": 1.1591236591339111
+    },
+    "keeper": {
+      "x": 50.19993591308594,
+      "z": 0.5990158319473267
+    },
+    "dist": 4.997733470141161,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 69,
+    "actor": "Nicolas Jackson",
+    "team": 1,
+    "result": "save",
+    "pattern": "oneTwo",
+    "open": false,
+    "origin": {
+      "x": 39.932159423828125,
+      "z": 3.825071334838867
+    },
+    "keeper": {
+      "x": 50.19993209838867,
+      "z": 0.6757347583770752
+    },
+    "dist": 13.137038763156566,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 81,
+    "actor": "Nicolas Jackson",
+    "team": 1,
+    "result": "post",
+    "pattern": "dribble",
+    "open": false,
+    "origin": {
+      "x": 37.66518020629883,
+      "z": -8.0068941116333
+    },
+    "keeper": {
+      "x": 47.700130462646484,
+      "z": -1.1332056522369385
+    },
+    "dist": 16.85770540810629,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 3,
+    "minute": 94,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "save",
+    "pattern": "overlapCross",
+    "open": false,
+    "origin": {
+      "x": 33.820621490478516,
+      "z": -2.6513516902923584
+    },
+    "keeper": {
+      "x": 50.19993209838867,
+      "z": 0.05727165564894676
+    },
+    "dist": 18.86660667124826,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 8,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "save",
+    "pattern": "cutback",
+    "open": false,
+    "origin": {
+      "x": 39.766197204589844,
+      "z": 6.666629314422607
+    },
+    "keeper": {
+      "x": 50.19992446899414,
+      "z": 1.0743931531906128
+    },
+    "dist": 14.373367039365354,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 19,
+    "actor": "Aleksey Batrakov",
+    "team": 0,
+    "result": "goal",
+    "pattern": "tikiTaka",
+    "open": false,
+    "origin": {
+      "x": 40.03114318847656,
+      "z": 1.4163322448730469
+    },
+    "keeper": {
+      "x": 50.19993209838867,
+      "z": 0.4074750244617462
+    },
+    "dist": 12.54903929446958,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 31,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "wide",
+    "pattern": "turnover",
+    "open": false,
+    "origin": {
+      "x": 44.542022705078125,
+      "z": 1.3285229206085205
+    },
+    "keeper": {
+      "x": 45.69993209838867,
+      "z": 0.461635947227478
+    },
+    "dist": 8.068108562548861,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 45,
+    "actor": "Aleksey Batrakov",
+    "team": 0,
+    "result": "wide",
+    "pattern": "dribble",
+    "open": false,
+    "origin": {
+      "x": 46.886375427246094,
+      "z": 0.659859299659729
+    },
+    "keeper": {
+      "x": 50.520538330078125,
+      "z": 0.37999188899993896
+    },
+    "dist": 5.6522734487260875,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 56,
+    "actor": "Pau Torres",
+    "team": 1,
+    "result": "save",
+    "pattern": "corner",
+    "open": false,
+    "origin": {
+      "x": 43.31218338012695,
+      "z": 0.3121820092201233
+    },
+    "keeper": {
+      "x": 50.599998474121094,
+      "z": 1
+    },
+    "dist": 9.19311872257158,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 69,
+    "actor": "Johan Manzambi",
+    "team": 1,
+    "result": "goal",
+    "pattern": "through",
+    "open": false,
+    "origin": {
+      "x": 38.885231018066406,
+      "z": -2.387131452560425
+    },
+    "keeper": {
+      "x": 46.583194732666016,
+      "z": -0.1385544389486313
+    },
+    "dist": 13.822457487842904,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 81,
+    "actor": "Nicolas Jackson",
+    "team": 1,
+    "result": "save",
+    "pattern": "penalty",
+    "open": false,
+    "origin": {
+      "x": 40.68650436401367,
+      "z": -0.0573420524597168
+    },
+    "keeper": {
+      "x": 51.79973602294922,
+      "z": -0.01027048658579588
+    },
+    "dist": 11.8136348027374,
+    "shotTime": 3.8
+  },
+  {
+    "seed": 7,
+    "minute": 94,
+    "actor": "Victor Osimhen",
+    "team": 0,
+    "result": "post",
+    "pattern": "earlyCross",
+    "open": false,
+    "origin": {
+      "x": 42.83577346801758,
+      "z": 1.840043544769287
+    },
+    "keeper": {
+      "x": 50.199928283691406,
+      "z": 1.280532956123352
+    },
+    "dist": 9.837836891721683,
+    "shotTime": 3.8
+  }
+]

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V235 · 2026-11-23
+- Lig/kupa hafta/tur bölümleri ayrı MP4 indirilebilir; her bölümün video hızı1.0–3.0x ayrı hatırlanır. Açılış ilk, son tablo/istatistik/seremoni son parçadadır. Tam video ve iki oran korunur, hazır indirmeler ayrı kartlarda kalır.
+- Ayak tenisi iki saha boyutunda PBR zemin/okunur çizgiler/dokuma file. Top filenin ön yüzüne fiziksel temas eder; sönümlü geri dönüş/esneme/temas vurgusu, rastgele fileden karşıya geçiş kaldırıldı.
+- 11v11 açık açı varken erken bitiriş, gereksiz kale dibine sürmenin durması, kalecinin güvenli öne çıkış mesafesi ve yakın boş kalede yapay aut vuruşunun reddi. Başlangıçta hazır fırsat korunur, root/top geçişi sürekli; yayımlanmış skor/goalLedger aynı.
+-66/66 test durumu +son etkilenen kontroller PASS; gerçek iki ayak tenisi sahası ve11v11 çizimi, altı kısa HD sesli codec/UI testi. Özgün Jackson replay'i/fizikseliPhone/tamçokdakikalıMP4 doğrulaması yok. Kanıt research/competition-parts-v235.
+
 ## V234 · 2026-11-23
 - 11v11/5v5/Japon ortak koşu yönü ve sıfır hız düzeltmeleri; geçmiş karelerden bağımsız, mevcut boy ölçeğine bağlı ortak adım evresi.
 - Gerçek dribbling ayağı/temas IK, koşucu öngören markaj/örtü, kaleci açıortayı ve güvenli merkezlenme. Arena fiziksel falso/knuckle, uygun animasyon ve açık koridor/tek vuruş tercihleri.

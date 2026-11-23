@@ -31,16 +31,20 @@
   // Search different launch speeds with the ordinary gravity/collision kernel;
   // the allocated score never changes the wall or the ball's collision radius.
   if(ctx.c.pattern==='freeKick')for(const power of[20,18,17,22])for(const height of[2.12,1.65,.75])for(const z of[3.05,2.45,1.65])for(const sign of[side,-side])trials.push({z:z*sign,y:height,power,spin:0});
+  // A point-blank open net must not be realised as an artificial wide/high miss
+  // merely to preserve a published non-goal. Keep real saves/blocks; otherwise
+  // let the existing choreography recovery choose a valid earlier attack.
+  const closeOpen=wanted==='nonGoal'&&Math.hypot(52.5-ctx.start.x,ctx.start.z)<9&&(ctx.keeper.x<ctx.start.x+.8||Math.hypot(52.5-ctx.keeper.x,ctx.keeper.z)>4.2);
   let attempts=0;
   for(const trial of trials){const target={z:trial.z,y:trial.y},keeper=keeperFor(ctx,target,trial.power,errors[0]),args={start:ctx.start,target,power:trial.power,spin:trial.spin,keeper,defenders:ctx.defenders,reaction:ctx.gk.reaction,reach:.95+(ctx.gk.keeping||.76),finish:ctx.c.finish,oneOnOne:ctx.c.oneOnOne};attempts++;
-   if(!matches(Physics.shot({...args,probe:true}).result,wanted))continue;
+   const result=Physics.shot({...args,probe:true}).result;if(!matches(result,wanted)||closeOpen&&!['save','block','post'].includes(result))continue;
    return{physical:Physics.shot(args),keeper,attempts,args};
   }
   return{attempts};
  }
- function moveStrike(frames,id,dz){
+ function moveStrike(frames,id,dz,release){
   const slot=id*7;
-  for(let i=0;i<frames.length;i++){const t=i*DT,q=clamp((t-(SHOT-1.25))/1.25,0,1),blend=q*q*(3-2*q);frames[i][slot+1]+=dz*blend;}
+  for(let i=0;i<frames.length;i++){const source=i*DT,visible=t=>release?t-Math.max(0,Math.min(t,release.to)-release.from):t,t=visible(source),strike=visible(SHOT),q=clamp((t-(strike-1.25))/1.25,0,1),blend=q*q*(3-2*q);frames[i][slot+1]+=dz*blend;}
   for(let i=0;i<frames.length;i++){const prev=frames[Math.max(0,i-1)],next=frames[Math.min(frames.length-1,i+1)],den=i===0||i===frames.length-1?DT:DT*2;frames[i][slot+3]=(next[slot+1]-prev[slot+1])/den;frames[i][slot+6]=Math.hypot(frames[i][slot+2],frames[i][slot+3]);}
  }
  function applyKeeper(ctx,frames,chosen){
@@ -52,7 +56,7 @@
   // lateral setup touch over 1.25 s. The ball still leaves the rendered foot.
   if(!chosen.physical&&!['penalty','freeKick'].includes(c.pattern)){
    const base=frames.map(f=>f.slice());
-   for(const dz of[1.2,-1.2,2.3,-2.3]){frames.forEach((f,i)=>f.set(base[i]));moveStrike(frames,ctx.shooter.id,dz);ctx=context(c,frames,at,foot);if(ctx.players.some(p=>p.id!==ctx.shooter.id&&!c.dismissed?.includes(p.id)&&Math.hypot(p.x-ctx.shooter.x,p.z-ctx.shooter.z)<.68))continue;chosen=solve(ctx,wanted,seed,original);attempts+=chosen.attempts;if(chosen.physical)break;}
+   for(const dz of[1.2,-1.2,2.3,-2.3]){frames.forEach((f,i)=>f.set(base[i]));moveStrike(frames,ctx.shooter.id,dz,c.quickRelease);ctx=context(c,frames,at,foot);if(ctx.players.some(p=>p.id!==ctx.shooter.id&&!c.dismissed?.includes(p.id)&&Math.hypot(p.x-ctx.shooter.x,p.z-ctx.shooter.z)<.68))continue;chosen=solve(ctx,wanted,seed,original);attempts+=chosen.attempts;if(chosen.physical)break;}
    if(!chosen.physical)frames.forEach((f,i)=>f.set(base[i]));
   }
   if(!chosen.physical){const error=Error('No physical forecast shot: '+wanted+' / '+c.pattern+' / '+c.minute);error.code='forecast-physics';throw error;}

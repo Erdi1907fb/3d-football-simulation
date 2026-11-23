@@ -1,0 +1,78 @@
+{
+  "pass": true,
+  "courts": [
+    {
+      "seed": 2,
+      "perSide": 1,
+      "court": {
+        "length": 12.8,
+        "width": 9,
+        "netHeight": 1.1,
+        "netBottom": 0.08,
+        "meshSpacing": 0.12
+      },
+      "hit": {
+        "type": "net",
+        "at": 44.41100858052384,
+        "team": 0,
+        "point": {
+          "x": 0,
+          "y": 0.5545980066041756,
+          "z": 0.4855662652259536
+        },
+        "side": -1,
+        "kind": "mesh",
+        "speed": 0.6132114830567337
+      },
+      "netImpact": {
+        "age": 0.0799999999999983,
+        "point": {
+          "x": 0,
+          "y": 0.5545980066041756,
+          "z": 0.4855662652259536
+        },
+        "kind": "mesh"
+      },
+      "seekEqual": true,
+      "deformed": true,
+      "pbr": true
+    },
+    {
+      "seed": 1,
+      "perSide": 3,
+      "court": {
+        "length": 18,
+        "width": 9,
+        "netHeight": 1.1,
+        "netBottom": 0.08,
+        "meshSpacing": 0.12
+      },
+      "hit": {
+        "type": "net",
+        "at": 24.43492724100674,
+        "team": 1,
+        "point": {
+          "x": 0,
+          "y": 0.4848555641781104,
+          "z": 1.6424847772829585
+        },
+        "side": 1,
+        "kind": "mesh",
+        "speed": 2.009789780371599
+      },
+      "netImpact": {
+        "age": 0.0799999999999983,
+        "point": {
+          "x": 0,
+          "y": 0.4848555641781104,
+          "z": 1.6424847772829585
+        },
+        "kind": "mesh"
+      },
+      "seekEqual": true,
+      "deformed": true,
+      "pbr": true
+    }
+  ],
+  "errors": []
+}

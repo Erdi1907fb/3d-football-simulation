@@ -1,0 +1,24 @@
+/* Original futnet dressing. Shared turf PBR; deterministic impact response only.
+ * Authoritative ball contacts remain in footvolley-engine. */
+(function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min'));else r.Next90FootvolleyCourt=f(r.THREE);})(typeof globalThis!=='undefined'?globalThis:this,function(T){'use strict';
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function deflect(x,y,z,C,hit,time){const age=hit?time-hit.at:-1;if(age<0||age>1.1)return{x,y,z};const edge=clamp(1-Math.pow(z/C.postZ,8),0,1),v=clamp((y-(C.netBottom??.08))/(C.netHeight-(C.netBottom??.08)),0,1),d=(z-hit.point.z)**2/.42+(y-hit.point.y)**2/.28,amp=Math.min(.24,.035+hit.speed*.014),wave=Math.sin(age*22)*Math.exp(-age*5.5),bend=-(hit.side||1)*amp*wave*Math.exp(-d)*edge*(.3+.7*Math.sin(Math.PI*v));return{x:x+bend,y:y-Math.abs(bend)*.06,z};}
+function create(C,options={}){const root=new T.Group();root.name='footvolley-court';const geometries=new Set(),materials=new Set(),flex=[];
+function material(color,extra={}){const m=new T.MeshStandardMaterial({color,roughness:.92,...extra});materials.add(m);return m;}
+function add(g,m,name){geometries.add(g);materials.add(m);const o=new T.Mesh(g,m);o.name=name;o.userData.noBatch=true;root.add(o);return o;}
+const h=C.half,w=C.width/2,paint=material(0xf0f2e8,{polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}),surface=material(0xffffff),floor=add(new T.PlaneGeometry(C.length,C.width),surface,'futnet-playing-surface');floor.rotation.x=-Math.PI/2;floor.position.y=.009;floor.receiveShadow=true;
+const uv=floor.geometry.attributes.uv,p=floor.geometry.attributes.position;for(let i=0;i<p.count;i++)uv.setXY(i,p.getX(i)/3,p.getY(i)/3);uv.needsUpdate=true;options.applyPBR?.(surface);
+function line(x,z,l,d){const o=add(new T.PlaneGeometry(l,d),paint,'futnet-marking');o.rotation.x=-Math.PI/2;o.position.set(x,.018,z);o.receiveShadow=true;}
+line(0,-w,C.length,.07);line(0,w,C.length,.07);line(-h,0,.07,C.width);line(h,0,.07,C.width);line(0,0,.045,C.width);
+// Fine contrasting borders make both 12.8m and 18m courts readable on the shared turf.
+const border=material(0x173d33);for(const x of[-h-.075,h+.075]){const o=add(new T.PlaneGeometry(.035,C.width+.20),border,'futnet-edge');o.rotation.x=-Math.PI/2;o.position.set(x,.016,0);}
+function sheet(bottom,top,rows,mat,name){const span=C.postZ*2,g=new T.PlaneGeometry(span,top-bottom,80,rows),a=g.attributes.position;for(let i=0;i<a.count;i++){const z=a.getX(i),y=a.getY(i)+(top+bottom)/2;a.setXYZ(i,0,y,z);}g.computeVertexNormals();const mesh=add(g,mat,name),base=a.array.slice();flex.push({mesh,base});return mesh;}
+const netMat=material(0x23343b,{transparent:true,opacity:.96,side:T.DoubleSide,depthWrite:false,alphaTest:.05});netMat.extensions={derivatives:true};
+const cells={value:new T.Vector2(C.postZ*2/.12,(C.netHeight-(C.netBottom??.08))/.12)};
+netMat.onBeforeCompile=sh=>{sh.uniforms.fvNetCells=cells;sh.vertexShader='varying vec2 vFutnetUv;\n'+sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvFutnetUv=uv;');sh.fragmentShader='varying vec2 vFutnetUv;uniform vec2 fvNetCells;\n'+sh.fragmentShader.replace('#include <alphatest_fragment>','vec2 grid=abs(fract(vFutnetUv*fvNetCells-.5)-.5);vec2 aa=fwidth(vFutnetUv*fvNetCells);float cord=1.-smoothstep(.025,.025+max(aa.x,aa.y)*.65,min(grid.x,grid.y));diffuseColor.a*=cord;\n#include <alphatest_fragment>');};netMat.customProgramCacheKey=()=> 'futnet-woven-net-v235';
+sheet(C.netBottom??.08,C.netHeight-.035,10,netMat,'futnet-cloth');const tape=material(0xf8f4df,{side:T.DoubleSide,roughness:.7});sheet(C.netHeight-.06,C.netHeight,1,tape,'futnet-tape');sheet(C.netBottom??.08,(C.netBottom??.08)+.018,1,tape,'futnet-bottom-cord');
+const pole=material(0xd7dde1,{metalness:.6,roughness:.34}),cap=material(0xd2b46f);for(const z of[-C.postZ,C.postZ]){const o=add(new T.CylinderGeometry(.04,.05,C.netHeight+.10,12),pole,'futnet-post');o.position.set(0,(C.netHeight+.10)/2,z);o.castShadow=true;const top=add(new T.SphereGeometry(.055,10,8),cap,'futnet-post-cap');top.position.set(0,C.netHeight+.10,z);}
+root.userData.courtInfo={length:C.length,width:C.width,netHeight:C.netHeight,netBottom:C.netBottom??.08,meshSpacing:.12};
+return{root,update(time,hit){for(const {mesh,base}of flex){const p=mesh.geometry.attributes.position;for(let i=0;i<p.count;i++){const q=deflect(base[i*3],base[i*3+1],base[i*3+2],C,hit,time);p.setXYZ(i,q.x,q.y,q.z);}p.needsUpdate=true;mesh.geometry.computeVertexNormals();}root.userData.netImpact=hit&&time>=hit.at&&time-hit.at<1.1?{age:time-hit.at,point:hit.point,kind:hit.kind}:null;},dispose(){root.removeFromParent();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}};
+}
+return{create,deflect};});

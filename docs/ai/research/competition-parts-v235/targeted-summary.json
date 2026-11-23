@@ -1,0 +1,35 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "test": "competition-kits.cjs",
+      "pass": true,
+      "seconds": 89.691,
+      "output": ""
+    },
+    {
+      "test": "competition-frames.cjs",
+      "pass": true,
+      "seconds": 32.409,
+      "output": ""
+    },
+    {
+      "test": "competition.cjs",
+      "pass": true,
+      "seconds": 127.899,
+      "output": ""
+    },
+    {
+      "test": "free-football.cjs",
+      "pass": true,
+      "seconds": 20.964,
+      "output": ""
+    },
+    {
+      "test": "teamwork.cjs",
+      "pass": true,
+      "seconds": 12.308,
+      "output": ""
+    }
+  ]
+}

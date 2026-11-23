@@ -13,26 +13,44 @@
 const DT=1/120,NET=1.10,R=A.R||.11,G=9.81,clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),hyp=Math.hypot;
 function random(seed){let s=(seed>>>0)||1;return()=>{s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;return s/4294967296;};}
 function gauss(rng){let u=0,v=0;while(!u)u=rng();while(!v)v=rng();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
-function court(perSide){const length=perSide>=3?18:12.8;return{length,width:9,half:length/2,netHeight:NET,netHalf:4.5,postZ:5.0};}
+function court(perSide){const length=perSide>=3?18:12.8;return{length,width:9,half:length/2,netHeight:NET,netBottom:.08,netHalf:4.5,postZ:5.0};}
 function rules(n){return n===1?{touches:2,repeat:true,once:false}:{touches:n,repeat:false,once:true};}
 function ability(p){const r=Number(p?.rating);return clamp(Number.isFinite(r)?(r>10?r/10:r):6.8,5,9.5);}
 
+// Swept sphere against the finite net rectangle (including rounded tape/edge contact).
+// The ball meets the near face before its centre crosses x=0; no RNG or target-side snap.
+function netContact(previous,ball,C){
+ const radius=R+.008,bottom=C.netBottom??.08,top=C.netHeight,span=C.postZ,dx=ball.x-previous.x,dy=ball.y-previous.y,dz=ball.z-previous.z;
+ if(Math.min(previous.x,ball.x)>radius||Math.max(previous.x,ball.x)<-radius||Math.min(previous.y,ball.y)>top+radius||Math.max(previous.y,ball.y)<bottom-radius||Math.min(previous.z,ball.z)>span+radius||Math.max(previous.z,ball.z)<-span-radius)return null;
+ const point=u=>({x:previous.x+dx*u,y:previous.y+dy*u,z:previous.z+dz*u}),distance=q=>hyp(q.x,q.y-clamp(q.y,bottom,top),q.z-clamp(q.z,-span,span));
+ const side=Math.sign(previous.x)||-Math.sign(dx)||1;if(distance(previous)<=radius+.0001&&dx*side>=0&&previous.y<=top)return null;
+ const steps=Math.max(2,Math.min(128,Math.ceil(hyp(dx,dy,dz)/(R*.4))));let last=0;
+ for(let k=0;k<=steps;k++){let u=k/steps,q=point(u);if(distance(q)>radius){last=u;continue;}let lo=last,hi=u;for(let j=0;j<14;j++){const mid=(lo+hi)/2;if(distance(point(mid))<=radius)hi=mid;else lo=mid;}u=hi;q=point(u);const contact={x:0,y:clamp(q.y,bottom,top),z:clamp(q.z,-span,span)},nx=q.x-contact.x,ny=q.y-contact.y,nz=q.z-contact.z,n=hyp(nx,ny,nz)||1,normal={x:nx/n,y:ny/n,z:nz/n},closing=ball.vx*normal.x+ball.vy*normal.y+ball.vz*normal.z;if(closing>=-.001)return null;return{fraction:u,center:q,point:contact,normal,side,kind:q.y>top-.06?'tape':'mesh',speed:-closing};}
+ return null;
+}
+function netStep(ball,dt,C){const previous={...ball},ground=A.step(ball,dt),hit=netContact(previous,ball,C);if(!hit)return{ground};
+ for(const k of['vx','vy','vz','wx','wy','wz','t'])ball[k]=previous[k]+(ball[k]-previous[k])*hit.fraction;
+ ball.x=hit.center.x+hit.normal.x*.0005;ball.y=hit.center.y+hit.normal.y*.0005;ball.z=hit.center.z+hit.normal.z*.0005;
+ const normal=hit.normal,vn=ball.vx*normal.x+ball.vy*normal.y+ball.vz*normal.z,rest=hit.kind==='tape'?.35:.14,grip=hit.kind==='tape'?.84:.58;
+ for(const [v,k]of[['vx','x'],['vy','y'],['vz','z']])ball[v]=(ball[v]-vn*normal[k])*grip-vn*normal[k]*rest;
+ ball.wx*=.4;ball.wy*=.4;ball.wz*=.4;const remaining=dt*(1-hit.fraction),after=remaining>1e-9?A.step(ball,remaining):null;return{ground:after||ground,net:hit};
+}
 function create(options={}){
  const sides=options.sides||[],n=clamp(Math.round(options.perSide||2),1,3);if(sides.length!==2||sides.some(s=>(s.players||[]).length<n))throw Error('Choose '+n+' player(s) for both sides');
  const seed=options.seed>>>0,rng=random(seed),C=court(n),rule=rules(n),target=clamp(Math.round(Number(options.points)||5),1,10),setsToWin=clamp(Math.round(Number(options.setsToWin??options.sets)||1),1,3),surface=['clear','rain','snow'].includes(options.weather)?options.weather:'clear',maxTime=Number(options.maxSeconds)||1200;
  const homeX=(team,k)=>{const s=team?1:-1,h=C.half;if(n===1)return{x:s*h*.55,z:0};if(n===2)return{x:s*h*(k?.62:.42),z:k?1.9:-1.9};return[{x:s*h*.24,z:-1.4},{x:s*h*.55,z:2.6},{x:s*h*.74,z:-2.2}][k];};
  const players=[];for(let team=0;team<2;team++)for(let k=0;k<n;k++){const h=homeX(team,k),id=sides[team].players[k];players.push({team,slot:k,identity:id,skill:ability(id),x:h.x,z:h.z,vx:0,vz:0,heading:team?-Math.PI/2:Math.PI/2,speed:0,gait:k*1.7,kick:null,jumpAt:-9,jumpHeight:0,celebrate:null,sad:null});}
  const events=[],frames=[],emit=(type,t,extra={})=>{const e={type,at:t,...extra};events.push(e);return e;};
- const score=[0,0],setScore=[0,0],setLog=[];let t=0,b=null,phase='serve',serveTeam=rng()<.5?0:1,serverSlot=[0,0],pauseUntil=0,kickAt=0,possession=-1,touches=0,bounces=0,touchedBy=new Set(),lastToucher=null,lastTeam=-1,plan=null,ended=false,winner=null,lastPoint=null,rallyKicks=0,crossedAt=0,lastTouch=null,lastBounce=null;
+ const score=[0,0],setScore=[0,0],setLog=[];let t=0,b=null,phase='serve',serveTeam=rng()<.5?0:1,serverSlot=[0,0],pauseUntil=0,kickAt=0,possession=-1,touches=0,bounces=0,touchedBy=new Set(),lastToucher=null,lastTeam=-1,plan=null,ended=false,winner=null,lastPoint=null,rallyKicks=0,crossedAt=0,lastTouch=null,lastBounce=null,lastNet=null,netRestSince=null;
 
- function predict(state,limit=3){const q={...state},path=[];let tt=0,bounced=0;while(tt<limit){for(let i=0;i<2;i++){const ev=A.step(q,DT/2);if(ev?.type==='ground')bounced++;}tt+=DT;path.push({t:tt,x:q.x,y:q.y,z:q.z,vx:q.vx,vy:q.vy,vz:q.vz,bounced});if(bounced>=2||Math.abs(q.x)>C.half+6)break;}return path;}
+ function predict(state,limit=3){const q={...state},path=[];let tt=0,bounced=0;while(tt<limit){for(let i=0;i<2;i++){const ev=netStep(q,DT/2,C).ground;if(ev?.type==='ground')bounced++;}tt+=DT;path.push({t:tt,x:q.x,y:q.y,z:q.z,vx:q.vx,vy:q.vy,vz:q.vz,bounced});if(bounced>=2||Math.abs(q.x)>C.half+6)break;}return path;}
  /* a ball that touches the 5 cm line is in (contact patch included) */const LINE=.08,inCourt=(x,z,team)=>Math.abs(z)<=C.width/2+LINE&&(team===0?x<=0&&x>=-C.half-LINE:x>=0&&x<=C.half+LINE);
  const sideOf=x=>x<0?0:1;
  function launch(from,to,time,spin){const v=A.solve({x:from.x,y:from.y,z:from.z},{x:to.x,y:to.y??R,z:to.z},time,spin,{surface});b=A.state({x:from.x,y:from.y,z:from.z},v,spin,{surface});}
  function clears(from,to,time,spin,margin=.08){const v=A.solve({x:from.x,y:from.y,z:from.z},{x:to.x,y:to.y??R,z:to.z},time,spin,{surface}),q=A.state({x:from.x,y:from.y,z:from.z},v,spin,{surface});let px=q.x;for(let i=0;i<Math.ceil(time/(DT/2))+2;i++){A.step(q,DT/2);if(Math.sign(px)!==Math.sign(q.x)&&px!==0)return q.y>NET+R+margin;px=q.x;}return true;}
 
  function newPossession(team){possession=team;touches=0;bounces=0;touchedBy=new Set();}
- function setUpServe(){phase='serve';newPossession(-1);lastToucher=null;lastTeam=-1;plan=null;rallyKicks=0;const team=serveTeam,slot=serverSlot[team]%n,p=players[team*n+slot],s=team?1:-1;
+ function setUpServe(){lastNet=null;netRestSince=null;phase='serve';newPossession(-1);lastToucher=null;lastTeam=-1;plan=null;rallyKicks=0;const team=serveTeam,slot=serverSlot[team]%n,p=players[team*n+slot],s=team?1:-1;
   for(const q of players){const h=homeX(q.team,q.slot);q.tx=h.x;q.tz=h.z;q.sad=null;}p.tx=s*(C.half+.5);p.tz=(rng()-.5)*2.6;pauseUntil=t+1.35;kickAt=pauseUntil+.42;b=A.state({x:p.tx-s*.32,y:1.02,z:p.tz},{x:0,y:0,z:0},null,{surface});b.held=p;}
 
  function canTouch(p){if(possession!==p.team)return true;if(touches>=rule.touches)return false;if(rule.once&&touchedBy.has(p))return false;return true;}
@@ -84,7 +102,7 @@ function attackTarget(team,kind,sigma=.5){const opp=players.filter(q=>q.team!==t
   return{heading:h,kicking:!m&&!!k&&!k.header&&age>-.22&&age<.3,kickPhase:k?clamp((age+.22)/.52,0,1):0,kickFoot:k?.foot,strikePoint:k&&!k.header&&!m?k.point:null,headingBall:!m&&!!k&&k.header&&age>-.2&&age<.28,jump:j>=0&&j<.62?Math.sin(j/.62*Math.PI)*p.jumpHeight:0,move:inMove?k.move:null,movePhase:inMove?clamp((age+m[0])/m[1],0,1):0,celebrate:c,sad:sd};}
  /* frames are written as the rally runs, so the wind-up before a contact is drawn by re-posing the striker in the frames just before it */
  function patchBack(p){const i=players.indexOf(p),lead=p.kick.move?MOVES[p.kick.move][0]:.22,jumpLead=p.jumpAt>t-1?t-p.jumpAt:0;for(let f=frames.length-1;f>=0&&frames[f].t>=t-Math.max(lead,jumpLead)-.02;f--){const q=frames[f].players[i];Object.assign(q,pose(p,frames[f].t,q.heading),{celebrate:q.celebrate,sad:q.sad});}}
- function snap(){frames.push({t,ball:b?{x:b.x,y:b.y,z:b.z}:null,players:players.map(p=>({x:p.x,z:p.z,speed:p.speed,gait:p.gait,...pose(p,t,p.heading)})),score:score.slice(),sets:setScore.slice(),phase,serveTeam,possession,touches,lastPoint,lastTouch,lastBounce});}
+ function snap(){frames.push({t,ball:b?{x:b.x,y:b.y,z:b.z}:null,players:players.map(p=>({x:p.x,z:p.z,speed:p.speed,gait:p.gait,...pose(p,t,p.heading)})),score:score.slice(),sets:setScore.slice(),phase,serveTeam,possession,touches,lastPoint,lastTouch,lastBounce,lastNet});}
 
  setUpServe();snap();
  for(let step=0;step<maxTime/DT&&!(ended&&t>=pauseUntil);step++){t+=DT;
@@ -94,15 +112,17 @@ function attackTarget(team,kind,sigma=.5){const opp=players.filter(q=>q.team!==t
    const look=b?Math.atan2(b.x-p.x,b.z-p.z):p.heading;let dh=look-p.heading;while(dh>Math.PI)dh-=2*Math.PI;while(dh<-Math.PI)dh+=2*Math.PI;p.heading+=dh*Math.min(1,DT*7.5);}
   if(phase==='serve'){const p=b.held;if(p){const s=p.team?1:-1;b.x=p.x-s*.32;b.z=p.z;if(t<pauseUntil)b.y=1.02;else{const age=t-pauseUntil;b.y=Math.max(.42,1.02-.5*G*age*age);}}
    if(t>=kickAt&&p){/* dropped from the hands and struck on the way down, deep into the far court */const s=p.team?-1:1,tgt={x:s*(C.half*(.45+rng()*.45)),z:(rng()*2-1)*(C.width/2-1)},from={x:b.x,y:b.y,z:b.z};const serveSpin={x:0,y:0,z:s*6};let time=1.2+rng()*.35;for(let k=0;k<6&&!clears(from,tgt,time,serveSpin,.3);k++)time+=.15;const err=clamp(.85-(p.skill-5)/6,.3,.9),aim={x:tgt.x+gauss(rng)*.6*err,y:R,z:tgt.z+gauss(rng)*.6*err};p.kick={at:t,foot:'right',point:{...from}};launch(from,aim,time,serveSpin);b.held=null;phase='play';newPossession(p.team);touches=rule.touches;touchedBy=new Set(players.filter(q=>q.team===p.team));lastToucher=p;lastTeam=p.team;lastTouch={at:t,actor:players.indexOf(p),kind:'serve',team:p.team};emit('serve',t,{team:p.team,actor:p.identity?.name,actorIndex:players.indexOf(p)});}snap();continue;}
-  if(phase==='point'){if(b){A.step(b,DT/2);A.step(b,DT/2);}if(t>=pauseUntil&&!ended)setUpServe();if(Math.round(t/DT)%2===0)snap();continue;}
-  const px=b.x;let bounced=false;for(let i=0;i<2;i++){const ev=A.step(b,DT/2);if(ev?.type==='ground')bounced=true;}
-  if(Math.sign(px)!==Math.sign(b.x)&&px!==0&&Math.abs(b.z)<=C.netHalf+.5){if(b.y<NET+R*.9&&b.y>NET-R*.4&&Math.abs(b.z)<=C.postZ&&rng()<.5){/* V228 net cord: clipping the tape, the ball dies and trickles over */b.x=Math.sign(b.x)*R;b.vx*=.28;b.vz*=.6;b.vy=.8+rng()*1.4;newPossession(sideOf(b.x));crossedAt=t;emit('cross',t,{to:possession,netcord:true});plan=null;}else if(b.y<NET+R*.5&&Math.abs(b.z)<=C.postZ){/* net: the mesh absorbs most of the pace */b.x=Math.sign(px)*R;b.vx=-b.vx*.16;b.vz*=.55;b.vy=Math.min(b.vy,.3);emit('net',t,{team:lastTeam});}else{newPossession(sideOf(b.x));crossedAt=t;emit('cross',t,{to:possession});plan=null;}}
-  else if(Math.sign(px)!==Math.sign(b.x)&&px!==0){newPossession(sideOf(b.x));crossedAt=t;plan=null;}
+  if(phase==='point'){if(b){netStep(b,DT/2,C);netStep(b,DT/2,C);}if(t>=pauseUntil&&!ended)setUpServe();if(Math.round(t/DT)%2===0)snap();continue;}
+  const px=b.x;let bounced=false;for(let i=0;i<2;i++){const ev=netStep(b,DT/2,C);if(ev.ground?.type==='ground')bounced=true;if(ev.net){lastNet={...ev.net,at:t-DT+(i+ev.net.fraction)*DT/2};emit('net',lastNet.at,{team:lastTeam,point:{...lastNet.point},side:lastNet.side,kind:lastNet.kind,speed:lastNet.speed});plan=null;}}
+  if(Math.sign(px)!==Math.sign(b.x)&&px!==0){newPossession(sideOf(b.x));crossedAt=t;emit('cross',t,{to:possession,...(lastNet&&t-lastNet.at<.4&&lastNet.kind==='tape'?{netcord:true}:{})});plan=null;}
+  const netFault=lastNet&&lastNet.at>=(lastTouch?.at??-1)&&sideOf(b.x)===lastTeam;
+  if(lastNet&&Math.abs(b.x)<R+.02&&b.y>NET-.05&&hyp(b.vx,b.vy,b.vz)<.4){netRestSince??=t;}else netRestSince=null;
+  if(netRestSince!==null&&t-netRestSince>.35){point(lastTeam>=0?1-lastTeam:1-sideOf(b.x),'net');snap();continue;}
   if(bounced){const side=sideOf(b.x),inside=inCourt(b.x,b.z,side);lastBounce={at:t,x:b.x,z:b.z,inside};emit('bounce',t,{side,inside,x:b.x,z:b.z});
    if(!inside&&possession===side&&bounces>=1){point(1-side,'double-bounce');snap();continue;}/* bounced in once, then out: the receiver failed to play it */
    if(!inside){point(lastTeam===side?1-side:side,lastTeam===side?'own-error':'out');snap();continue;}
-   if(possession!==side)newPossession(side);bounces++;if(bounces>1){point(1-side,'double-bounce');snap();continue;}if(lastTeam===side&&touches>=rule.touches){point(1-side,'touches');snap();continue;}plan=null;}
-  if(b.y<=R+.003&&Math.abs(b.vy)<.05&&t-crossedAt>.3){const side=sideOf(b.x);point(inCourt(b.x,b.z,side)?1-side:(lastTeam===side?1-side:side),'dead-ball');snap();continue;}
+   if(possession!==side)newPossession(side);bounces++;if(bounces>1){point(1-side,'double-bounce');snap();continue;}if(lastTeam===side&&touches>=rule.touches){point(1-side,netFault?'net':'touches');snap();continue;}plan=null;}
+  if(b.y<=R+.003&&Math.abs(b.vy)<.05&&t-crossedAt>.3){const side=sideOf(b.x);point(inCourt(b.x,b.z,side)?1-side:(lastTeam===side?1-side:side),netFault?'net':'dead-ball');snap();continue;}
   if(Math.abs(b.x)>C.half+7||Math.abs(b.z)>C.width/2+7){point(lastTeam>=0?1-lastTeam:0,'out');snap();continue;}
   if(!plan||plan.at<t-.05)replan();
   if(plan&&t>=plan.at-DT){const p=plan.player,d=hyp(b.x-p.x,b.z-p.z);if(d<1.25&&b.y>.08&&b.y<2.4&&canTouch(p))touch(p);else if(t>plan.at+.12)plan=null;}
@@ -111,4 +131,4 @@ function attackTarget(team,kind,sigma=.5){const opp=players.filter(q=>q.team!==t
  function sample(time){time=clamp(time,0,frames.at(-1).t);let lo=0,hi=frames.length-1;while(lo<hi){const m=(lo+hi+1)>>1;if(frames[m].t<=time)lo=m;else hi=m-1;}const a=frames[lo],c=frames[Math.min(lo+1,frames.length-1)],u=c.t>a.t?clamp((time-a.t)/(c.t-a.t),0,1):0,mix=(x,y)=>x+(y-x)*u;
   return{...a,t:time,ball:a.ball&&c.ball?{x:mix(a.ball.x,c.ball.x),y:mix(a.ball.y,c.ball.y),z:mix(a.ball.z,c.ball.z)}:a.ball,players:a.players.map((p,i)=>{const q=c.players[i];let dh=q.heading-p.heading;while(dh>Math.PI)dh-=2*Math.PI;while(dh<-Math.PI)dh+=2*Math.PI;return{...p,x:mix(p.x,q.x),z:mix(p.z,q.z),heading:p.heading+dh*u,speed:mix(p.speed,q.speed),gait:mix(p.gait,q.gait)};})};}
  return{seed,perSide:n,court:C,rules:{touches:rule.touches,once:rule.once,bounces:1,target,setsToWin},sides,players:players.map(p=>({team:p.team,slot:p.slot,identity:p.identity})),events,frames,duration:frames.at(-1).t,finaleAt,winner,setLog,sets:setScore.slice(),score:score.slice(),sample,version:'footvolley-v2'};}
-return{create,court,rules,NET};});
+return{netContact,netStep,create,court,rules,NET};});

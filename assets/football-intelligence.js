@@ -128,9 +128,9 @@
  }
  function finishingOpportunity(p,g,enemies){
   const nx=g.nx??1,nz=g.nz??0,width=g.width||7.32,depth=(g.x-p.x)*nx+(g.z-p.z)*nz,lateral=-(p.x-g.x)*nz+(p.z-g.z)*nx,distance=gap(p,g);
-  if(depth<.35||depth>8||Math.abs(lateral)>width*.58||distance>9)return{clear:false};
-  const active=enemies.filter(q=>live(q)),keeper=active.find(q=>q.keeper),near=active.filter(q=>!q.keeper).some(q=>gap(p,q)<2.0),lanes=[-.27,0,.27].map(a=>{const target={x:g.x-nz*width*a,z:g.z+nx*width*a},dx=target.x-p.x,dz=target.z-p.z,dd=dx*dx+dz*dz;return{target,blocked:active.filter(q=>!q.keeper).some(q=>{const u=((q.x-p.x)*dx+(q.z-p.z)*dz)/dd;return u>.02&&u<1&&Math.hypot(q.x-p.x-u*dx,q.z-p.z-u*dz)<.7;})};}).filter(q=>!q.blocked),empty=!keeper||gap(keeper,g)>4.2||keeper.recoverUntil>0&&keeper.dive>.5;
-  return{clear:!near&&lanes.length>=2&&(empty||distance<4.5),target:lanes.sort((a,b)=>(keeper?gap(b.target,keeper)-gap(a.target,keeper):0))[0]?.target,distance,empty};
+  const normal=width>=7,range=normal?18:9;if(depth<.35||depth>range||Math.abs(lateral)>width*.58||distance>range)return{clear:false};
+  const active=enemies.filter(q=>live(q)),keeper=active.find(q=>q.keeper),near=active.filter(q=>!q.keeper).some(q=>gap(p,q)<2.0&&((q.x-p.x)*(g.x-p.x)+(q.z-p.z)*(g.z-p.z))/Math.max(.1,distance)>-.15),lanes=[-.27,0,.27].map(a=>{const target={x:g.x-nz*width*a,z:g.z+nx*width*a},dx=target.x-p.x,dz=target.z-p.z,dd=dx*dx+dz*dz;return{target,blocked:active.filter(q=>!q.keeper).some(q=>{const u=((q.x-p.x)*dx+(q.z-p.z)*dz)/dd;return u>.02&&u<1&&Math.hypot(q.x-p.x-u*dx,q.z-p.z-u*dz)<.7;})};}).filter(q=>!q.blocked),empty=!keeper||gap(keeper,g)>4.2||keeper.recoverUntil>0&&keeper.dive>.5;
+  return{clear:!near&&lanes.length>=2&&(empty||distance<4.5||normal&&distance<16.5),target:lanes.sort((a,b)=>(keeper?gap(b.target,keeper)-gap(a.target,keeper):0))[0]?.target,distance,empty};
  }
  function arenaDecision(p,g,players,lane,rng,context={}){
   // Arena entertainment changes intent, never the observed shot/save result.

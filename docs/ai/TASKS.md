@@ -10,6 +10,9 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-386 | Galatasaray/Jackson örneği: 11v11 boş kale önünde gereksiz sürme ve anlamsız aut vuruşunu teşhis/düzelt | done (V235) | codex | files: match/possession/football-intelligence, tests/docs; GS/Aston Villa seed1/2/3/7 ve 2.5m boş kale kontrolü; özgün kullanıcı replay seed’i yok. Erken vuruş, GK sınırı, yapay yakın wide/high reddi. |
+| T-385 | Ayak tenisi iki saha boyutu: görünüm ve fiziksel file temasını/esnemesini belirginleştir | done (V235) | codex | files: footvolley-engine/ui/court, HTML, tests/docs. |
+| T-384 | Lig/kupa videolarını hafta/tur bazında ayrı indir; ilk parça açılışı, son parça final/istatistik/seremoniyi içerir; bölüm bazında video hızı; main push | done (V235) | codex | files: competition-engine/ui/html/css, tests/docs, sürüm manifesti. Tam video ve iki oran korunur. |
 | T-383 | Kullanıcının isteğiyle testli V234 paketini main dalına aktar | done (V234) | codex | 45ea09d fast-forward ile main’e alındı; 63/63 kanıtı ve build234/filesMatch=true doğrulandı. files: docs/ai/HANDOFF, TASKS, PROJECT_STATE. Hostinger yayını yok. |
 | T-382 | Ortak 11v11/5v5/Japon hareket, pas, savunma/kaleci, şut ve çim geliştirmeleri | done (V234) | codex | files: athlete-motion/football-clips, football-intelligence, japon-engine/tactics/arena, arena-presentation, scene/pitch-detail, tests/docs. Stateless boy ölçekli evre, gerçek dribbling ayağı/IK, koşucu markajı, GK açıortayı, fiziksel curl/knuckle, yüzey+skid pas varışı, ortak PBR+bounded yaprak.63/63 +son hedefli +Chromium5v5/Japon/11v11. PR#1; Hostinger yayını ve fiziksel cihaz/T-317/325/328 kapsam dışı. |
 | T-350 | Turnuva skorbordunda hafta x/toplam ve kupa tur adı | done (V203) | claude | file: competition-broadcast. |

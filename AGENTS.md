@@ -330,3 +330,11 @@ dosyalardır.
 - V195: haftanın maçı penaltısı normal Penaltı Stüdyosu'dur (penalty.html?home&away&theme); stüdyo görünümünü değiştirme, şablon yalnız küçük dokunuş. Turnuva shootout görünümü V193 hâlindedir.
 - V196: kupa 4 veya 8 takım; 4'te yarı finalden (Japon: tek dörtlü eleme finali). Kupa kodunda 8 takım/çeyrek final varsayma.
 - V199: SekmeVideo.device() kullanıcı seçimini (localStorage next90.deviceProfile) önceler; yeni cihaz kontrolleri bu fonksiyondan geçmeli. Masaüstü kuyruğu 3, iOS 1.
+
+## V235 — Lig/kupa bölüm indirmesi
+- Turnuva export'unda tam video varsayılanı korunur. `Competition.exportParts` açılışı ilk haftaya/tura, son istatistik/seremonileri son haftaya/tura dahil eder; ara sınırlar `round-summary.end` olur. Eşit süreli üç kesit veya maç başına parça üretmeyin. Lig/kupa/5v5/11v11/Japon/penaltıda aynı bölümleme kullanılır.
+- `exportSlice` seçili bölümün yerel video/ses zamanını kaynak zamana taşır; ses aralığı `[start,end)`, son örnek `end` öncesindedir. Hız1.0–3.0x bölüm bazında hatırlanır; ortak VideoCore'a speed1 verilerek çift ölçekleme önlenir.
+- Hazır sonuçlar bölüm×oran anahtarıyla tutulur; başka bölüm hazırlamak/iptal etmek önceki indirmeleri silmez. Yeni turnuva bu sonuçları temizler. Test: competition-export-parts.cjs, opsiyonel browser-competition-export-parts.cjs (kısa test renderer videoları).
+
+- V235 ayak tenisi: file temasında `netContact/netStep` süpürülmüş küre ve kayıtlı `lastNet`; görsel esneme stateless `footvolley-court`. RNG ile fileden karşıya taşıma veya yalnız merkez geçişinde çarpışmaya geri dönmeyin.
+- V235 11v11: açık açı hazırken finişör gereksiz sürmez. `quickRelease` yalnız hareketsiz kaynak aralığını video segmentlerinden çıkarır; bütün aktör/top geçişleri sürekli kalmalı. Skor/goalLedger'i değiştirmeyin; yakın boş kale nonGoal için anlamsız wide/high aramayın. Testler: normal-finishing/footvolley-net.

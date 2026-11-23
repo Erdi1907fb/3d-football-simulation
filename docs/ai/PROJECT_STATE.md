@@ -1,6 +1,6 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V234** · 2026-11-23 UTC · Codex (T-382 ortak futbol, hareket/kaleci/savunma/şut/çim)
+> Son güncelleme: **V235** · 2026-11-23 UTC · Codex (T-384 bölüm indirmeleri; T-385 ayak tenisi; T-386 erken bitiriş)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 
@@ -8,11 +8,11 @@
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V234** (`VERSION`; ortak futbol geliştirmesi) |
+| Kaynak sürümü | **V235** (`VERSION`; hafta/tur videoları, file teması ve 11v11 bitiriş) |
 | Sonraki geliştirme hedefi | T-328/T-325 fiziksel iPhone doğrulaması; T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v234.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası234 |
+| Sürüm doğrulama | `build.php` → `assets/release-v235.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası235 |
 
 ## V190 — Turnuva Stüdyosu Japon Kale
 - competition field 'japon': planJapon/japonStandings/japonOrder/japonSides; lig points modu, kupa eleme modu (S1,S2,F1 dörtlü). Renderer ensureJapon (Japon sahnesi/kamerası), broadcast japonHud/japonCard/japonFixtures/japonBracket. Seremoni 3D yok; şampiyon kartı.

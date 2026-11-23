@@ -280,3 +280,15 @@ Turnuva team.id=studio-providerId kalır. kitCatalogId yalnız manifest çözüm
 - Mocap'ın çizim anında hızla değişen adımını geçmiş karelerden entegre etmek yerine1.42m sabit referans ve mevcut doğrulanmış boy ölçeği kullanılır. Ön izleme/geri sarma/export aynı mesafede aynı poza gider; doğrulanmış yeni tracking verisi iddiası yoktur.
 - Arenanın PBR haritaları ortak pitch-detail kaynağından paylaşılır. Yapraklar low/mobileExport'ta kapalıdır; high38k/balanced18k,6kenar ve8oyuncuyla sınırlıdır. Yeni dış varlık yok.
 - Savunma/kaleci iyileşmesiyle bazı5v5örneklerinde gol/şut azaldı. Açık koridor ve beceriye bağlı tek vuruş tercihleri artırıldı; sonucun fiziksel kalması, her seed'de daha çok gol elde etmekten önceliklidir. Ham karşılaştırma research/football-upgrade-v234 içindedir.
+
+## V235 / T-384 — hafta/tur bazında ayrı dosya ve bağımsız hız
+- Kullanıcı eşit uzunlukta parçalar değil, tam haftayı/turu ve onun sonuç ekranını içeren dosyalar istedi. Sınır gerçek round-summary bitişidir; ilk parça0'dan, son parça tam turnuva sonuna kadar gider.4takım lig/8takım kupa3parça;4takım kupa2parça; diğer ligler gerçek hafta sayısıyla ayrılır.
+- Bölüm üretimi mevcut fikstür/sonuçları değiştirmez; renderer aynı kaydı mutlak kaynak zamanında oynatır. Sesler seçilir ve bölüm başlangıcı çıkarılıp hıza bölünür. Son kare sonraki bölüme geçmez.
+- Hız her bölümün kendi seçimi,1.0–3.0x/0.1adım; dosyalar bölüm×oran bazında ayrı saklanır. Bir seferde yalnız seçili dosya hazırlanır; önce tüm uzun videoyu hazırlama şartı yoktur.
+
+## 2026-11-23 · T-385/T-386 · Fiziksel file ve erken bitiriş
+- Ayak tenisinde 12.8/18m saha aynı PBR/çizgi/file modülünü kullanır. Süpürülmüş top küresi file dikdörtgeninin ön yüzüne temas eder; hız/sürtünme ile geri döner. Rastgele file üstünden karşı tarafa taşıma kaldırıldı. Kaydedilmiş temas noktasına bağlı deterministik esneme, yeniden aramada aynı görünür.
+- 11v11 açık şut açısı merkezde 16.5m içinde değerlendirilir; arkada kalan savunmacı tek başına şutu ertelemez. Sahip finişör açık açıda durup vuruşa hazırlanır. Paylaşılan SHOT kaynak saati korunur: yalnız oyuncuların aynı konumda tuttuğu hazırlık aralığı video zamanından çıkarılır. Koşu hızlandırılmaz, kök/top ışınlanmaz; tekrar son hazırlıktan başlar.
+- Kaleci öne çıkışı hücumcunun kale tarafında 1.1m pay ile sınırlı, erken vuruşta ek yapay rush yok. Yakın/boş kalede gol olmayan yayımlanmış sonucu yapay wide/high ile gerçekleştirme; gerçek kurtarış/blok/direk mümkün değilse mevcut skor koruyan koreografi geri kazanımı geçerlidir. Gol ekleme/goalLedger değişimi yok.
+- Kullanıcının özgün Jackson videosu/seed'i elde değil; GS/Aston Villa genel senaryoları ve fiziksel sınırlar doğrulanır, bire bir replay tekrarı iddia edilmez.
+- Regresyonda başlangıçta zaten açık açı varken possession ilk iki örnekten önce run'ı reddediyordu. Sahip doğru finişörse iki sabit fiziksel örnek kaydedilip aynı fırsata bağlanır; başka oyuncuya/sahipliğe atlanmaz. football-fixes mevcut testi gevşetilmeden korunur.
