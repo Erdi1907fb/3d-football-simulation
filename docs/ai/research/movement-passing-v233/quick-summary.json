@@ -1,0 +1,377 @@
+{
+ "version": "V233",
+ "ranAt": "2026-11-22T23:48:48.397Z",
+ "results": [
+  {
+   "test": "movement-passing.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "v188-fixes.cjs",
+   "pass": true,
+   "seconds": 45.3,
+   "summary": ""
+  },
+  {
+   "test": "competition-japon.cjs",
+   "pass": true,
+   "seconds": 36.9,
+   "summary": ""
+  },
+  {
+   "test": "competition-kits.cjs",
+   "pass": true,
+   "seconds": 34.9,
+   "summary": ""
+  },
+  {
+   "test": "ios-encoder.cjs",
+   "pass": true,
+   "seconds": 0.6,
+   "summary": ""
+  },
+  {
+   "test": "competition-stadium.cjs",
+   "pass": true,
+   "seconds": 2.6,
+   "summary": ""
+  },
+  {
+   "test": "competition-cover.cjs",
+   "pass": true,
+   "seconds": 6.1,
+   "summary": ""
+  },
+  {
+   "test": "arena-backpass.cjs",
+   "pass": true,
+   "seconds": 11.9,
+   "summary": ""
+  },
+  {
+   "test": "ios-downloads.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "competition-seasons.cjs",
+   "pass": true,
+   "seconds": 1.2,
+   "summary": ""
+  },
+  {
+   "test": "competition-branding.cjs",
+   "pass": true,
+   "seconds": 18.9,
+   "summary": ""
+  },
+  {
+   "test": "studio-ground.cjs",
+   "pass": true,
+   "seconds": 1,
+   "summary": ""
+  },
+  {
+   "test": "competition-labels.cjs",
+   "pass": true,
+   "seconds": 3.1,
+   "summary": ""
+  },
+  {
+   "test": "competition-frames.cjs",
+   "pass": true,
+   "seconds": 10.8,
+   "summary": ""
+  },
+  {
+   "test": "competition.cjs",
+   "pass": true,
+   "seconds": 107.1,
+   "summary": ""
+  },
+  {
+   "test": "penalty-goal-evidence.cjs",
+   "pass": true,
+   "seconds": 2.5,
+   "summary": ""
+  },
+  {
+   "test": "arena-action.cjs",
+   "pass": true,
+   "seconds": 6.5,
+   "summary": ""
+  },
+  {
+   "test": "touchline-safe.cjs",
+   "pass": true,
+   "seconds": 0.2,
+   "summary": ""
+  },
+  {
+   "test": "football-fixes.cjs",
+   "pass": true,
+   "seconds": 65.7,
+   "summary": ""
+  },
+  {
+   "test": "natural-studios.cjs",
+   "pass": true,
+   "seconds": 4.2,
+   "summary": ""
+  },
+  {
+   "test": "free-football.cjs",
+   "pass": true,
+   "seconds": 29.1,
+   "summary": ""
+  },
+  {
+   "test": "emergent-football.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "highlight-intelligence.cjs",
+   "pass": true,
+   "seconds": 0,
+   "summary": ""
+  },
+  {
+   "test": "arena-clock.cjs",
+   "pass": true,
+   "seconds": 17.4,
+   "summary": ""
+  },
+  {
+   "test": "audio-export.cjs",
+   "pass": true,
+   "seconds": 0,
+   "summary": ""
+  },
+  {
+   "test": "football-intelligence.cjs",
+   "pass": true,
+   "seconds": 1.4,
+   "summary": ""
+  },
+  {
+   "test": "contact-motion.cjs",
+   "pass": true,
+   "seconds": 1.1,
+   "summary": ""
+  },
+  {
+   "test": "teamwork.cjs",
+   "pass": true,
+   "seconds": 10,
+   "summary": ""
+  },
+  {
+   "test": "arena-elimination.cjs",
+   "pass": true,
+   "seconds": 20.5,
+   "summary": ""
+  },
+  {
+   "test": "footvolley.cjs",
+   "pass": true,
+   "seconds": 6.6,
+   "summary": ""
+  },
+  {
+   "test": "futsal-five.cjs",
+   "pass": true,
+   "seconds": 40.6,
+   "summary": ""
+  },
+  {
+   "test": "arena-balance.cjs",
+   "pass": true,
+   "seconds": 7.1,
+   "summary": ""
+  },
+  {
+   "test": "arena-football.cjs",
+   "pass": true,
+   "seconds": 10.5,
+   "summary": ""
+  },
+  {
+   "test": "arena-broadcast-flow.cjs",
+   "pass": true,
+   "seconds": 7.2,
+   "summary": ""
+  },
+  {
+   "test": "arena-duels.cjs",
+   "pass": true,
+   "seconds": 65.1,
+   "summary": ""
+  },
+  {
+   "test": "national-coverage.cjs",
+   "pass": true,
+   "seconds": 0.5,
+   "summary": ""
+  },
+  {
+   "test": "arena-rush.cjs",
+   "pass": true,
+   "seconds": 60.4,
+   "summary": ""
+  },
+  {
+   "test": "small-sided.cjs",
+   "pass": true,
+   "seconds": 19.4,
+   "summary": ""
+  },
+  {
+   "test": "japon-net.cjs",
+   "pass": true,
+   "seconds": 0.2,
+   "summary": ""
+  },
+  {
+   "test": "japon-camera.cjs",
+   "pass": true,
+   "seconds": 26,
+   "summary": ""
+  },
+  {
+   "test": "japon-kale.cjs",
+   "pass": true,
+   "seconds": 33.1,
+   "summary": ""
+  },
+  {
+   "test": "commentary.cjs",
+   "pass": true,
+   "seconds": 7,
+   "summary": ""
+  },
+  {
+   "test": "freekick.cjs",
+   "pass": true,
+   "seconds": 29.2,
+   "summary": ""
+  },
+  {
+   "test": "penalty.cjs",
+   "pass": true,
+   "seconds": 9.3,
+   "summary": ""
+  },
+  {
+   "test": "duo.cjs",
+   "pass": true,
+   "seconds": 5.3,
+   "summary": ""
+  },
+  {
+   "test": "celebrations.cjs",
+   "pass": true,
+   "seconds": 0.3,
+   "summary": ""
+  },
+  {
+   "test": "weather.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "graphics.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "kickoff-referee.cjs",
+   "pass": true,
+   "seconds": 31.5,
+   "summary": ""
+  },
+  {
+   "test": "forecast.cjs",
+   "pass": true,
+   "seconds": 2.5,
+   "summary": ""
+  },
+  {
+   "test": "forecast.php",
+   "pass": false,
+   "seconds": 0,
+   "summary": "",
+   "error": "spawnSync php ENOENT"
+  },
+  {
+   "test": "national-competitions.php",
+   "pass": false,
+   "seconds": 0,
+   "summary": "",
+   "error": "spawnSync php ENOENT"
+  },
+  {
+   "test": "forecast-lock.php",
+   "pass": false,
+   "seconds": 0,
+   "summary": "",
+   "error": "spawnSync php ENOENT"
+  },
+  {
+   "test": "callup-filter.php",
+   "pass": false,
+   "seconds": 0,
+   "summary": "",
+   "error": "spawnSync php ENOENT"
+  },
+  {
+   "test": "presentation.cjs",
+   "pass": true,
+   "seconds": 3.7,
+   "summary": ""
+  },
+  {
+   "test": "variation.cjs",
+   "pass": true,
+   "seconds": 5.9,
+   "summary": ""
+  },
+  {
+   "test": "recovery.cjs",
+   "pass": true,
+   "seconds": 1,
+   "summary": ""
+  },
+  {
+   "test": "intent.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "remaster.cjs",
+   "pass": true,
+   "seconds": 0.9,
+   "summary": ""
+  },
+  {
+   "test": "crests.cjs",
+   "pass": true,
+   "seconds": 0.1,
+   "summary": ""
+  },
+  {
+   "test": "search-test.cjs",
+   "pass": true,
+   "seconds": 0,
+   "summary": ""
+  }
+ ],
+ "pass": false
+}

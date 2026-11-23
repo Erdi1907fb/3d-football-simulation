@@ -9,3 +9,5 @@ Arena pas alıcısına pay: mesafe / ilk hız yerine BallAero ile kuru çimde 1.
 Yeni test movement-passing.cjs: dört dir/flank birleşiminde ileri/geri mocap seçimi, sıfır hız bileşenleri, 3/6/10/14m için 240Hz fizik ile varış doğrulaması (<8cm), hareketli alıcı payı. Ortak quick pakete eklendi.
 
 Geniş kullanıcı talebi T-382 kısmi: savunma/kaleci/şut çeşitleri/boy ve rig/çim-grafik iyileştirmeleri bu dar pakette uygulanmadı. V233 sürüm numarası korunur; Hostinger dağıtımı yok.
+
+Son doğrulama 2026-11-23 UTC: `node tests/run-all.cjs --quick` → 57 Node PASS; 4 PHP testi `spawnSync php ENOENT` nedeniyle çalıştırılamadı. Paket çıkış kodu1; tam yeşil değildir. engine-test quick kapsamı dışındadır. Kalıcı quick-summary.json ham sonuçları içerir.
