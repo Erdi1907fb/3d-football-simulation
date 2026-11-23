@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V237 · 2026-11-23
+- Bowling salonunda okunur geniş kamera, daha aydınlık ortam, kulvar/olukla uyumlu gerçek zemin ve kenar teması. Topu kapatan platform/halı kaldırıldı; mat/çizgiler ince boya katmanıdır.
+- Aktif vurucunun gerçek baş konumuna bağlı isim etiketi. Yenilenen alt panel: vuruş/frame sırası, oyuncu, canlı devrilen kuka/eldeki kuka sayısı, kesinleşen toplam puan ve bekleyen bonus açıkça ayrılır.
+- Bowling, ayak tenisi ve5v5 için ortak sonuç kartı: kazanan/rakip logoları veya seçilmiş oyuncu fotoğrafları, doğru sıralanmış skorlar ve gerçek lig/turnuva logosu. Şablonsuzda Next90Sim; bowling/ayak tenisinde lig kimliği seçimi.5v5 golcü bilgisi korunur.
+- Bowlingde iki taraf için12’şer seyirci, kazanan1/2oyuncunun sürekli yürüyüşü ve kısa ortak sevinci. Ön izleme ve MP4’te düdük, topa vuruş, ahşap kuka darbesi, sakin salon ve sevinç; kayıt varsa mevcut kazanan takım şarkısı, yoksa genel alkış.
+-69/69 son Node/PHP testi; gerçek tarayıcıda kadraj/zemin/isim/sevinç ve üç modun logolu kartları. Dört ayrı gerçek1080p60H264/AACörneğinde düdük/vuruş/kuka/sevinç sesi ffmpeg ile doğrulandı. Kanıt research/bowling-v237. GitHub main aktarımı Hostinger dağıtımı değildir.
+
 ## V236 · 2026-11-23
 - Futbol Bowling: özgün futbol temalı salon, ortak futbol topu/oyuncu/forma/yüz, fiziksel on kuka/oluk ve1v1/2v2/takım. Varsayılan taraf başına4vuruş, ikilide kişi başına2; kısa bonus sınırı açık. İsteğe bağlı klasik4frame/sonframebonusları ve beraberlik.
 - Ayak tenisi menüsü/serbest oyuncular/yıldızlar/efsaneler/forma türü/numara/iki oran/video hızı ve sesliVideoCore yolu yeni modla paylaşılır. Yakın kimlikten değişen krampon renkleri/bağcık/yan panel/dişler, yakınLOD.

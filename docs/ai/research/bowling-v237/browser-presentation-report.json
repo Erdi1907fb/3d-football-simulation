@@ -1,0 +1,135 @@
+{
+  "pass": true,
+  "errors": [],
+  "exports": [
+    {
+      "key": "whistle",
+      "sourceEvents": [
+        {
+          "key": "whistleStart",
+          "elapsed": 0.03000000000000025
+        }
+      ],
+      "excerpt": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": "60/1",
+      "audio": "aac",
+      "rms": 0.07451484042764928
+    },
+    {
+      "key": "kick",
+      "sourceEvents": [
+        {
+          "key": "kick",
+          "elapsed": 0.029999999999999805
+        }
+      ],
+      "excerpt": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": "60/1",
+      "audio": "aac",
+      "rms": 0.05399682457082384
+    },
+    {
+      "key": "pin",
+      "sourceEvents": [
+        {
+          "key": "pin",
+          "elapsed": 0.03000000000000025
+        },
+        {
+          "key": "pin",
+          "elapsed": 0.06333333333333346
+        },
+        {
+          "key": "pin",
+          "elapsed": 0.10916666666666774
+        },
+        {
+          "key": "pin",
+          "elapsed": 0.1966666666666672
+        }
+      ],
+      "excerpt": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": "60/1",
+      "audio": "aac",
+      "rms": 0.0667462142945921
+    },
+    {
+      "key": "finish",
+      "sourceEvents": [
+        {
+          "key": "cheer",
+          "elapsed": 0.04999999999999716
+        }
+      ],
+      "excerpt": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": "60/1",
+      "audio": "aac",
+      "rms": 0.0116768390185908
+    }
+  ],
+  "scene": {
+    "winnerArms": [
+      [
+        -1.2,
+        -1.4410684586029365
+      ],
+      [
+        -2.6722945463448164,
+        -1.4410684586029365
+      ]
+    ],
+    "score": [
+      15,
+      16
+    ],
+    "winner": 1,
+    "perSide": 2,
+    "namePosition": {
+      "x": 537.5877366146108,
+      "y": 616.3126921750564,
+      "z": 0.976840996910215
+    },
+    "competition": {
+      "key": "ucl",
+      "name": "UEFA Champions League",
+      "logo": "assets/competitions/broadcast/ucl-light.png?v=126",
+      "accent": "#36a9ff"
+    },
+    "fans": 24,
+    "fanTeams": [
+      12,
+      12
+    ],
+    "rewind": true,
+    "laneTop": 7.450580430390374e-11,
+    "gutterTop": -0.11999999962747096,
+    "clearance": -3.7252903539730653e-10,
+    "resultLogoLoaded": 702
+  },
+  "previewAudio": "running",
+  "teamAudio": {
+    "galatasaraySong": 15.509342403628118,
+    "fallbackCheer": 7
+  },
+  "futnet": {
+    "competition": {
+      "key": "tr.1",
+      "name": "Trendyol Süper Lig",
+      "logo": "assets/competitions/broadcast/tr.1-light.png?v=126",
+      "accent": "#e92b35"
+    },
+    "score": [
+      0,
+      2
+    ],
+    "winner": 1
+  }
+}

@@ -180,3 +180,6 @@ Original Next90Sim OPFS worker and delivery/recovery code. No new third-party de
 # Football bowling room, sounds and close-view boot details — V236
 
 `assets/bowling-venue.js` generates original room, lane wood grain, pin meshes and tactics artwork in code. `assets/bowling-audio.js` generates original ambient/pin/chime PCM without external recordings. `assets/boot-detail.js` supplies original unbranded laces, side trims and studs. These are original project assets under the repository licence; no licensed boot model, sponsor or bowling venue is claimed. Existing football/athlete/kit/face assets retain their documented licences and provenance.
+
+## V237 — bowling presentation and sound
+Original procedural whistle, football kick, wooden pin impacts, quiet room ambience and applause PCM in `assets/bowling-audio.js`; no new third-party audio. Optional winner music reuses the existing `team-audio` catalog and its existing provenance/notices. Result cards reuse original-resolution registered team/player/competition images; no fabricated crests or new external artwork. Room spectators reuse the existing original Scene crowd meshes and selected kit colours.

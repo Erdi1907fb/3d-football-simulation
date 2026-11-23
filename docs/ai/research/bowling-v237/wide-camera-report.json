@@ -1,0 +1,158 @@
+{
+  "pass": true,
+  "errors": [],
+  "studio": {
+    "score": [
+      19,
+      20
+    ],
+    "perSide": 2,
+    "rolls": 8,
+    "duration": 71.43333333333331,
+    "analysis": {
+      "mode": "bowling",
+      "players": [
+        [
+          {
+            "id": "266575",
+            "name": "Yunus Akgün",
+            "skill": 7.6735999999999995,
+            "technique": 0.8337999999999999,
+            "control": 0.87,
+            "passing": 0.85,
+            "finishing": 0.72,
+            "rating": 7.47,
+            "role": "AM",
+            "fields": [],
+            "basis": "role-and-roster-rating",
+            "verified": false
+          },
+          {
+            "id": "fm-1504343",
+            "name": "Aleksey Batrakov",
+            "skill": 7.5786,
+            "technique": 0.8337999999999999,
+            "control": 0.87,
+            "passing": 0.85,
+            "finishing": 0.72,
+            "rating": 7.22,
+            "role": "AM",
+            "fields": [],
+            "basis": "role-and-roster-rating",
+            "verified": false
+          }
+        ],
+        [
+          {
+            "id": "276221",
+            "name": "Mason Greenwood",
+            "skill": 7.4155999999999995,
+            "technique": 0.786,
+            "control": 0.86,
+            "passing": 0.75,
+            "finishing": 0.73,
+            "rating": 7.42,
+            "role": "RW",
+            "fields": [],
+            "basis": "role-and-roster-rating",
+            "verified": false
+          },
+          {
+            "id": "fm-316544",
+            "name": "İrfan Kahveci",
+            "skill": 7.400399999999999,
+            "technique": 0.786,
+            "control": 0.86,
+            "passing": 0.75,
+            "finishing": 0.73,
+            "rating": 7.38,
+            "role": "RW",
+            "fields": [],
+            "basis": "role-and-roster-rating",
+            "verified": false
+          }
+        ]
+      ],
+      "strength": [
+        7.626099999999999,
+        7.4079999999999995
+      ],
+      "winShare": [
+        0.55161423305969,
+        0.44838576694030996
+      ],
+      "basis": "entertainment-model-not-calibrated",
+      "signature": 865059275,
+      "label": "role priors + available player attributes / roster rating"
+    },
+    "room": true
+  },
+  "classic": {
+    "perSide": 1,
+    "frames": [
+      4,
+      4
+    ],
+    "score": [
+      23,
+      67
+    ],
+    "rolls": 14
+  },
+  "portrait": {
+    "check": {
+      "x": 0.1066701193603383,
+      "top": 0.4003215938636756,
+      "bot": -0.18925962533950424,
+      "distance": 5.596615790090964
+    }
+  },
+  "wide": {
+    "points": [
+      [
+        -0.16085690752739382,
+        -0.223656606332727,
+        0.9932539721340392
+      ],
+      [
+        -0.1654413145687773,
+        -0.025344246678789924,
+        0.9930173432633168
+      ],
+      [
+        0.2499216628215343,
+        -0.3099999947541382,
+        0.9920184892385733
+      ],
+      [
+        0.2581391441481821,
+        -0.08404681874689154,
+        0.9917048685089309
+      ],
+      [
+        -0.21854967987628,
+        -0.14081926410622933,
+        0.9939283476882846
+      ],
+      [
+        -0.018828169196250657,
+        -0.14503131422752072,
+        0.9938637511126217
+      ],
+      [
+        0.07688132384677629,
+        0.11454213838407228,
+        0.9978446050172186
+      ],
+      [
+        0.1748617652783318,
+        0.11354903537736775,
+        0.9978293746539356
+      ]
+    ],
+    "playerPixels": 135.44600342588313,
+    "distance": 18.971164167053857,
+    "fogNear": 60
+  },
+  "wideFits": true
+}

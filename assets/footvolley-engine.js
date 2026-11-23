@@ -93,7 +93,7 @@ function attackTarget(team,kind,sigma=.5){const opp=players.filter(q=>q.team!==t
   for(const q of players)if(q.team===team&&q!==p&&!touchedBy.has(q)&&!attack){/* moves on replan */}}
 
  function point(win,reason){score[win]++;lastPoint={team:win,reason,at:t,by:lastTouch};emit('point',t,{team:win,reason,score:score.slice()});phase='point';pauseUntil=t+2.3;for(const p of players){if(p.team===win)p.celebrate={at:t};else p.sad={at:t};}if(serveTeam!==win){serveTeam=win;serverSlot[win]++;}
-  if(score[win]>=target){setScore[win]++;setLog.push(score.slice());emit('set',t,{team:win,score:score.slice(),sets:setScore.slice()});if(setScore[win]>=setsToWin){ended=true;winner=win;pauseUntil=t+3.4;emit('finish',t+1.4,{winner:win,sets:setScore.slice()});}else{score[0]=score[1]=0;pauseUntil=t+3.0;}}}
+  if(score[win]>=target){setScore[win]++;setLog.push(score.slice());emit('set',t,{team:win,score:score.slice(),sets:setScore.slice()});if(setScore[win]>=setsToWin){ended=true;winner=win;pauseUntil=t+5.2;emit('finish',t+1.4,{winner:win,sets:setScore.slice()});}else{score[0]=score[1]=0;pauseUntil=t+3.0;}}}
 
  /* Move timing (lead before contact, total length). Contact happens at lead/total of the move phase. */
  const MOVES={bicycle:[.4,1.0],shark:[.3,.72],chest:[.24,.62],thigh:[.2,.52]};

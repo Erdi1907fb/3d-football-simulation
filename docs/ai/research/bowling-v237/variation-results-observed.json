@@ -1,0 +1,20 @@
+{
+  "PASS": true,
+  "penaltyAnalyses": 100,
+  "conceptAnalyses": 100,
+  "winners": [
+    1,
+    0
+  ],
+  "scores": 20,
+  "conceptResultSigns": [
+    0,
+    1,
+    -1
+  ],
+  "series": 300,
+  "longest": 12,
+  "longSeed": 235,
+  "physicsSamples": 594015,
+  "maxStep": 0.2767231701721532
+}

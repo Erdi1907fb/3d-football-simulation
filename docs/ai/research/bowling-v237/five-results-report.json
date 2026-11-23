@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "errors": [],
+  "standalone": {
+    "score": [
+      1,
+      0
+    ]
+  },
+  "competition": {
+    "score": [
+      0,
+      0
+    ],
+    "winner": null,
+    "theme": "tr.1"
+  }
+}
