@@ -24,7 +24,7 @@ function createStage(world,contest,sides,extra={}){
  for(let i=0;i<uv.count;i++)uv.setXY(i,pos.getX(i)/8,pos.getY(i)/8);
  const turfMap=world.pitchDetail.grass.clone();turfMap.wrapS=turfMap.wrapT=T.RepeatWrapping;turfMap.repeat.set(1,1);turfMap.needsUpdate=true;owned.push(turfMap);
  const turf=material(0x2f7d44);turf.envMapIntensity=.25;turf.map=turfMap;turf.normalMap=world.pitchDetail.grassNormal;turf.normalScale=new T.Vector2(.10,.10);world.pitchDetail.applyPBR?.(turf,0);
- const surface=mesh(geometry,turf,0,.005,0);surface.rotation.x=-Math.PI/2;surface.name='japon-playing-surface';const bladeCount=world.pitchDetail.info?.quality==='high'?38000:world.pitchDetail.info?.quality==='balanced'?18000:0,blades=world.pitchDetail.blades?.(root,{count:bladeCount,boundaries:l.boundaries,shadows:false});
+ const surface=mesh(geometry,turf,0,.005,0);surface.rotation.x=-Math.PI/2;surface.name='japon-playing-surface';const bladeCount=world.pitchDetail.info?.quality==='high'?38000:world.pitchDetail.info?.quality==='balanced'?18000:0,blades=world.pitchDetail.blades?.(root,{count:bladeCount,boundaries:l.boundaries,stripeWidth:4,stripeOffset:l.width/2+4,shadows:false});
  // Subtle mowing bands, clipped to the actual shape, share the original grass map.
  for(let band=0;band<Math.ceil(l.width/4);band++){if(band%2)continue;const x0=-l.width/2+band*4,x1=x0+4;
  let polygon=l.vertices.map(p=>({...p}));for(const [cut,sign]of[[x0,-1],[x1,1]]){const out=[];for(let i=0;i<polygon.length;i++){const a=polygon[i],b=polygon[(i+1)%polygon.length],aIn=(a.x-cut)*sign<=0,bIn=(b.x-cut)*sign<=0;if(aIn)out.push(a);if(aIn!==bIn){const u=(cut-a.x)/(b.x-a.x);out.push({x:cut,z:a.z+(b.z-a.z)*u});}}polygon=out;}
@@ -37,7 +37,7 @@ function createStage(world,contest,sides,extra={}){
  if(l.count===2)for(const g of l.goals){const depth=5.4*l.scale,half=4.9*l.scale,point=(d,t)=>({x:g.x-g.nx*d-g.nz*t,z:g.z-g.nz*d+g.nx*t});stroke([point(0,-half),point(depth,-half),point(depth,half),point(0,half)],0xcdd5c6,.09);const p=point(5*l.scale,0),spot=mesh(new T.CylinderGeometry(.10,.10,.02,16),new T.MeshBasicMaterial({color:0xcfd3c4}),p.x,.035,p.z);spot.name='penalty-spot-'+g.team;}
  const crowd=world.farBatches?Crowd.create(world,contest,sides):null;
  // V168: night sky, floodlights, LED boards and surround turf (visual only).
- const venue=Venue?Venue.create(root,l,l.goals.map(g=>sides[g.team]),{turfMap,brand:(()=>{const b=typeof globalThis!=='undefined'?globalThis.SekmeBrand:null;return extra?.competitionLabel?{...(b||{}),competition:extra.competitionLabel,competitionImage:extra.competitionImage||null}:b;})()}):null;
+ const venue=Venue?Venue.create(root,l,l.goals.map(g=>sides[g.team]),{turfMap,applyPBR:m=>world.pitchDetail.applyPBR?.(m,0),brand:(()=>{const b=typeof globalThis!=='undefined'?globalThis.SekmeBrand:null;return extra?.competitionLabel?{...(b||{}),competition:extra.competitionLabel,competitionImage:extra.competitionImage||null}:b;})()}):null;
  const boardMat=material(0x132f35),postMat=new T.MeshPhysicalMaterial({color:0xe2e2dc,roughness:.34,clearcoat:.6});owned.push(postMat);
  for(const edge of l.boundaries){const gap=l.goals.find(g=>Math.abs(g.nx-edge.nx)<1e-6&&Math.abs(g.nz-edge.nz)<1e-6),length=Math.hypot(edge.b.x-edge.a.x,edge.b.z-edge.a.z),tx=(edge.b.x-edge.a.x)/length,tz=(edge.b.z-edge.a.z)/length;
  const pieces=gap?[[0,(length-gap.width)/2-.14],[(length+gap.width)/2+.14,length]]:[[0,length]];

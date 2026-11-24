@@ -1,0 +1,87 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "mode": "five",
+      "seed": 239,
+      "quality": "high",
+      "pbr": false,
+      "materials": [
+        {
+          "color": [
+            0.0069954101845983935,
+            0.10461648408208657,
+            0.024157632443547246
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.010329823026364548,
+            0.171441100722554,
+            0.038204371589236
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.0069954101845983935,
+            0.10461648408208657,
+            0.024157632443547246
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.010329823026364548,
+            0.171441100722554,
+            0.038204371589236
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.010329823026364548,
+            0.171441100722554,
+            0.038204371589236
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.010329823026364548,
+            0.171441100722554,
+            0.038204371589236
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.010329823026364548,
+            0.171441100722554,
+            0.038204371589236
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.0069954101845983935,
+            0.10461648408208657,
+            0.024157632443547246
+          ],
+          "profile": "emerald-v239-fallback",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    }
+  ]
+}

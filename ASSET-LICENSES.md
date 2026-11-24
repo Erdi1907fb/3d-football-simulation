@@ -186,3 +186,6 @@ Original procedural whistle, football kick, wooden pin impacts, quiet room ambie
 
 ## V238 — existing game audio reuse
 Bowling now reuses `PULSE_AUDIO.whistleRestart` and `PULSE_AUDIO.goal` from the existing offline WoS game recordings documented in `docs/ASSETS.md`, unchanged. Generated room/whistle/applause and added winner music are removed from bowling. Existing impact PCM remains unchanged. No new external assets.
+
+## V239 — shared emerald turf grading
+Surface colour, close blade shading and mowing alignment changes are original code. Existing TextureCan Ground0040 CC0 albedo/normal/roughness/detail maps remain unchanged at their existing resolutions and retain the notices above. No new texture or external artwork was introduced. Validation images are actual renderer captures.

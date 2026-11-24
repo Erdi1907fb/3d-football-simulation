@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V239 · 2026-11-24
+- Kullanıcının ilk referansındaki koyu/canlı yeşile yakın ortak çim paleti; soluk/sarımsı ton azaltıldı. Mevcut PBR doku/normal/roughness/yakın çim kalitesi korunur, forma/logo/HUD renklerine filtre uygulanmaz.
+- Japon/5v5 çevre çimi aynı PBR yolunda; yakın çim ve biçim şeritlerinin fazı eşleşir. Ayak tenisinin iki sahasında ortak şeritler, hafif açık iç saha ve belirgin beyaz çizgi/koyu kenar. Geç eklenen zeminin aşırı HDR yansıması ana sahayla eşitlendi.
+- Gerçek10mod görüntüsü, dikey/yatay, mobil kalite/hava dönüşü, eksik doku fallback ve kısa H264 renk çıktısı; hedefli grafik/hava/file/zemin testleri. Kanıt research/pitch-v239. Fizik/sonuç/ses değişmez.
+
 ## V238 · 2026-11-23
 - Bowling fon uğultusu tamamen kaldırıldı. Yeni sentetik düdük/alkış, kapanış şarkısı ve bitiş düdüğü kaldırıldı; vuruş öncesi mevcut penaltı düdüğü, kapanışta mevcut5v5taraftar kutlaması kullanılır.
 - Kullanıcının beğendiği labut sesi ve ayak-top sesi byte-identical korundu. Gerçek AAC sessiz aralık RMS0, mevcut kayıtlarla tam PCM eşliği ve hedefli ses regresyonları PASS. Fizik/görüntü değişmedi.

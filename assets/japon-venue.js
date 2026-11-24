@@ -131,6 +131,7 @@
     layout.vertices.forEach((p, i) => i ? hole.lineTo(p.x, -p.z) : hole.moveTo(p.x, -p.z)); hole.closePath(); shape.holes.push(hole);
     const apronGeo = new T.ShapeGeometry(shape), apronMat = std(0x2b7642, { roughness: 1, envMapIntensity: .25 }); /* V222: the apron is the same grass as the pitch (a shade deeper, unmown) instead of a dark teal band */
     if (opt.turfMap) { apronMat.map = opt.turfMap; const uv = apronGeo.attributes.uv, pos = apronGeo.attributes.position; for (let i = 0; i < uv.count; i++) uv.setXY(i, pos.getX(i) / 8, pos.getY(i) / 8); }
+    opt.applyPBR?.(apronMat);
     const apron = mesh(apronGeo, apronMat, 0, .004, 0); apron.rotation.x = -Math.PI / 2; apron.receiveShadow = true; apron.name = 'arena-apron';
 
     // LED faces on the inner side of every perimeter board piece.

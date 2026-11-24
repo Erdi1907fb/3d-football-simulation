@@ -1,0 +1,2 @@
+Scripts "build/three.js" and "build/three.min.js" are deprecated with r150+, and will be removed with r160. Please use ES Modules or alternatives: https://threejs.org/docs/index.html#manual/en/introduction/Installation
+{"pass":true,"contacts":17,"coverage":"swept sphere/mesh, high-speed no tunnelling, clear over-net/outside-post balls, both court lengths, damped reflection, physical contact records and deterministic net deformation"}

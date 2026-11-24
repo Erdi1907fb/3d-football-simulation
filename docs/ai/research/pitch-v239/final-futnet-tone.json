@@ -1,0 +1,96 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "mode": "futnet1",
+      "seed": 239,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.0504,
+            0.6272000000000001,
+            0.31360000000000005
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06720000000000001,
+            0.8736000000000002,
+            0.392
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "mode": "futnet3",
+      "seed": 239,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.0504,
+            0.6272000000000001,
+            0.31360000000000005
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06720000000000001,
+            0.8736000000000002,
+            0.392
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    }
+  ]
+}
