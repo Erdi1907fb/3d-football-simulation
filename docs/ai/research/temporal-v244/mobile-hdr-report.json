@@ -1,0 +1,115 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "qualityAudit": [
+        {
+          "at": 4.943999999999999,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 22,
+          "minJersey": 512,
+          "detailedBodies": 22,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 20.599999999999998,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 22,
+          "minJersey": 512,
+          "detailedBodies": 22,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 33.78399999999999,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 22,
+          "minJersey": 512,
+          "detailedBodies": 22,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 4.943999999999999,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 22,
+          "minJersey": 512,
+          "detailedBodies": 22,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        }
+      ],
+      "headAudit": {
+        "lite": true,
+        "maxTexture": 512,
+        "available": 332,
+        "loaded": 19,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "penalty",
+      "seed": 3766193740,
+      "quality": "mobileExport",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    }
+  ]
+}

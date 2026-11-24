@@ -10,7 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-399 | Genel kareler arası kalite dalgalanması:11v11→bowling, son kamera/tribün/çim/postFX/MP4 hattını düzelt ve hareketli karşılaştır | in-progress | codex | files: scene/renderers, pitch/crowd/postFX/video, tests/docs; sosyal medya açıklamasına indirgeme. Öncelik1. |
+| T-399 | Genel kareler arası kalite dalgalanması:11v11→bowling, son kamera/tribün/çim/postFX/MP4 hattını düzelt ve hareketli karşılaştır | done (V244) | codex |77/77;8ana mod+3varyant/mobil; hareketli çim ve kısa1080p60MP4. research/temporal-v244; fiziksel cihaz/tam maç ayrı. |
 | T-400 | Eksik gerçek kafaları ücretsiz FM27 Real3DFaces/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | todo | codex | Öncelik2; CSV karşılaştırma, kaynak model/format pilotu, tüm takımların eksik listesi. Batrakov mevcutCSV'de yok; ayrıPESara. |
 | T-401 | Aylık / Headers and Volleys modu | paused (user) | — | T-399/T-400 bittikten sonra kullanıcıyla ele alınır; şu an ekleme. |
 | T-398 | Bütün modlarda sahne ilerledikçe ayrıntı/çözünürlük kaybını incele, kararlı oyuncu/forma kalitesi ve zaman boyunca doğrula | done (V243) | codex | files: scene, browser quality audit; 8mod×4zaman +36kare gerçek1080p60 hareketli MP4/yazılım kodlayıcı PASS. |

@@ -31,3 +31,5 @@ Virgil van Dijk: FMUID37024025, source PES44840 (in META.source), sample SHA2569
 - Follow existing pack-glb.py quantisation/WebP/gzip pipeline, source credits, exact identity guards and head-fit.js. Prefer original PES ID under existing assets/heads/pes to avoid duplicate models/parallel runtime; do not overwrite an existing good real head merely to grow counts.
 
 Potential Batrakov source listing: https://pes-files.com/pes-2021-aleksey-batrakov-face/ (Valerchi7). Page fetch403 in web tool; earlier separate Sharemods source hit CAPTCHA. No model acquired/converted; no bypass. Seek another ordinary public free source or retain his own verified photograph.
+
+Pilot refinement: canonical PES origin is [0,1.640058,.05433055], including Z; flip RFH UV.v before Three texture.flipY=false. Set extras.hasEyes=true when baking portable eyes; otherwise runtime adds a second unshifted pair. Corrected VanDijk369KB pilot is /tmp/fm27-pilot-flip, browser /tmp/fm27-pilot-fixed-ui; no runtime model installed yet.

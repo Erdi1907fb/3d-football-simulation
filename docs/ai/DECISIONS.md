@@ -1,6 +1,6 @@
 # DECISIONS — teknik karar kaydı
 
-## D-053 · 2026-11-24 · target V244 — temporal stability before further faces
+## D-053 · 2026-11-24 · V244 — temporal stability before further faces
 **Decision:** Correct final-camera ownership, screen-frequency filtering and post-process allocation/disposal before increasing texture resolution or blaming media uploads. Multi-sample only the desktop scene target; post ping-pong stays single-sample. Mobile keeps allocation bounds, using an edge filter in its existing pass. Tile view offsets must not change per-seat LOD or label projection. Include camera mode in the deterministic smoothing cache. Preserve physics/seed/rosters and emerald palette.24/20Mbps and1s/cut keyframes trade~33%desktop/~25%mobile larger video output for motion headroom; no frame/resolution reduction. Dispose all owned post passes on close/fallback, not only Composer. Findings/evidence/limits in research/temporal-v244.
 **Order:** User confirms full-image fluctuations are present in downloaded11v11 as well as other modes. T-399 first, T-400 missing real heads next; Aylık waits. RFH archive research is a queued source investigation; no incomplete conversion is counted as a real head.
 

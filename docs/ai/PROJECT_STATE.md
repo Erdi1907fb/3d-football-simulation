@@ -1,9 +1,8 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-## Development: target V244 (not yet released)
-T-399 is highest priority: full-image temporal stability across11v11→bowling, not only body/shirt LOD. Implemented final-camera view refresh (including tiled export safeguards), screen-frequency turf/crowd filtering, scene-only desktop MSAA/restrained sharpen, existing-pass mobile AA, proper disposal of all owned post passes,24/20Mbps1080p60 and1s+cut keyframes, camera-mode cache invalidation. Controlled surface fixture~89.4%lower reprojection residual; this is not a universal full-match improvement percentage. Full77-suite/production8mode checks in progress; stable main remains V243 until final checks. See research/temporal-v244 and newest HANDOFF.
-T-400 then expands missing heads using FM27/PES. RFH byte-range retrieval/format confirmed on one sample, no new head integrated yet. See research/fm27-next for source/format/identity/eye caveats. Aylık explicitly paused (T-401).
-
+## V244 · genel kamera hareketinde kararlı görüntü
+T-399 tamamlandı: sonkamera senkronizasyonu/tile koruması, ekran frekansına göre çim/tribün filtreleme, sabit çim ışığı, sahneye özel desktop MSAA, kontrollü DOF/sharpen, mobil mevcut-pass AA, post tamponlarının tam temizliği, kamera modu önbelleği ve24/20Mbps1080p60/1sn-kesim keyframe.77/77 paket;8ana mod ve3varyant/mobil profil, kontrollü yüzey karşılaştırması ve kısa1080p60MP4 PASS. Kanıtların kapsamı/sınırları research/temporal-v244 ve enüstHANDOFF'ta; fiziksel cihaz/tam maç export iddiası yok.
+T-400 eksik FM27/PES kafaları sırada: seçici RFH alımı ve tek pilot doğrulandı, runtime'a yeni kafa eklenmedi. Aylık T-401 duraklatıldı.
 
 ## V243 gerçek oyuncu kafaları ve sabit sahne ayrıntısı
 - Son doğrulama:8mod×4zaman kararlı oyuncu/forma ve gerçek WebGL bufferı PASS;36kare başlangıç/orta/son hareketli11v11 MP4 yazılım kodlayıcı +ffmpeg decode PASS. Başsız ortamın ilk yerel kodlayıcı timeout'u ve gizli kontrol otomasyon düzeltmesi research/heads-v243 içinde kayıtlıdır.

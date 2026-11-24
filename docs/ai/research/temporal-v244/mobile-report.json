@@ -1,0 +1,405 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "qualityAudit": [
+        {
+          "at": 5.216,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 10,
+          "minJersey": 512,
+          "detailedBodies": 10,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 21.733333333333334,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 10,
+          "minJersey": 512,
+          "detailedBodies": 10,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 35.64266666666666,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 10,
+          "minJersey": 512,
+          "detailedBodies": 10,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 5.216,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 10,
+          "minJersey": 512,
+          "detailedBodies": 10,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        }
+      ],
+      "headAudit": {
+        "lite": true,
+        "maxTexture": 512,
+        "available": 332,
+        "loaded": 10,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "five",
+      "seed": 239,
+      "quality": "mobileExport",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "qualityAudit": [
+        {
+          "at": 4.367999999999829,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 18.19999999999929,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 29.84799999999883,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        },
+        {
+          "at": 4.367999999999829,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "HDR / edge AA / restrained bloom / ACES"
+        }
+      ],
+      "headAudit": {
+        "lite": true,
+        "maxTexture": 512,
+        "available": 332,
+        "loaded": 2,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "futnet1",
+      "seed": 3766193740,
+      "quality": "mobileExport",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.0504,
+            0.6272000000000001,
+            0.31360000000000005
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06720000000000001,
+            0.8736000000000002,
+            0.392
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "qualityAudit": [
+        {
+          "at": 5.5555,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        },
+        {
+          "at": 23.14791666666667,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        },
+        {
+          "at": 37.962583333333335,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        },
+        {
+          "at": 5.5555,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "finalCamera": true,
+          "sourceBuffer": [
+            [
+              540,
+              960
+            ]
+          ],
+          "active": 2,
+          "minJersey": 512,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        }
+      ],
+      "headAudit": {
+        "lite": true,
+        "maxTexture": 512,
+        "available": 332,
+        "loaded": 2,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "bowling",
+      "seed": 3766193740,
+      "quality": "mobileExport",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    }
+  ]
+}
