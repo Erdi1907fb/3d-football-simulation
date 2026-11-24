@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V240 · 2026-11-24
+- 5v5 sonuçları11v11 lig yayın şablonundan kompakt çizilir; doğru lig logosu/arka planı, sabit ev/deplasman sırası, gerçek golcü ve üçistatistik. Bowling/ayak tenisi ortak kartındaki kazananı sola taşıma hatası giderildi.
+- Ayak tenisi/bowling/penaltıda düzenlenebilir simülasyon kodu: boş kod yeni akış, dolu kod aynı tekrar. Oyuncu verili temel analiz korunur; skor zorla değiştirilmez.
+- Ücretsiz gerçek futbolcu kafa/yüz ve hareket kaynakları araştırıldı; hiçbir paket uygulanmadı.
+- Doğrulama: genel71/71 + yeni senaryo kontrolü,36sonuç kombinasyonu+penaltıskoru, Chromium18kart/3mod/haftalık2mod PASS. Build240/filesMatch=true.
+
 ## V239 · 2026-11-24
 - Kullanıcının ilk referansındaki koyu/canlı yeşile yakın ortak çim paleti; soluk/sarımsı ton azaltıldı. Mevcut PBR doku/normal/roughness/yakın çim kalitesi korunur, forma/logo/HUD renklerine filtre uygulanmaz.
 - Japon/5v5 çevre çimi aynı PBR yolunda; yakın çim ve biçim şeritlerinin fazı eşleşir. Ayak tenisinin iki sahasında ortak şeritler, hafif açık iç saha ve belirgin beyaz çizgi/koyu kenar. Geç eklenen zeminin aşırı HDR yansıması ana sahayla eşitlendi.

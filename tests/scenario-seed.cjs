@@ -1,0 +1,7 @@
+// New draws change the random stream, never the player-based analysis or score by fiat.
+'use strict';
+const A=require('assert/strict'),S=require('../assets/scenario'),D=require('../assets/duel-analysis'),B=require('../assets/bowling-engine'),F=require('../assets/footvolley-engine'),R=require('../assets/club-rosters-v75.json');
+A.equal(S.resolve('240'),240);A.equal(S.resolve('NEXT90-6O'),240);A.equal(S.resolve('0'),0);A.equal(S.resolve('my replay'),S.resolve('my replay'));
+const seeds=Array.from({length:12},()=>S.resolve(''));A.equal(new Set(seeds).size,seeds.length);
+const results={};for(const mode of ['footvolley','bowling']){const sides=['432','436'].map(id=>({players:D.best(R.teams[id].team.players,2,mode)})),before=JSON.stringify(sides),baseline=D.analyse(sides,mode),create=mode==='bowling'?B.create:F.create,config={sides,perSide:2,points:3,setsToWin:1,weather:'clear',scoring:'four-rolls'},scores=new Set();for(const seed of seeds){const c=create({...config,seed}),replay=create({...config,seed:S.resolve(String(c.seed))});A.deepEqual(c.score||c.setLog,replay.score||replay.setLog);A.deepEqual(c.sample(8),replay.sample(8));A.deepEqual(D.analyse(sides,mode),baseline);scores.add(JSON.stringify(c.score||c.setLog));}A(scores.size>1,mode+' supports multiple naturally sampled scores');A.equal(JSON.stringify(sides),before);results[mode]=scores.size;}
+console.log(JSON.stringify({pass:true,uniqueSeeds:seeds.length,scoreVariety:results,analysisUnchanged:true,replayExact:true}));

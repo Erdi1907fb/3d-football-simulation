@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "modes": [
+    {
+      "mode": "footvolley",
+      "code": "240",
+      "first": 240,
+      "newSeed": 335962191,
+      "replayExact": true,
+      "analysisUnchanged": true
+    },
+    {
+      "mode": "bowling",
+      "code": "240",
+      "first": 240,
+      "newSeed": 1244916509,
+      "replayExact": true,
+      "analysisUnchanged": true
+    },
+    {
+      "mode": "penalty",
+      "code": "NEXT90-6O",
+      "first": 240,
+      "newSeed": 1767320882,
+      "replayExact": true,
+      "analysisUnchanged": true
+    }
+  ]
+}

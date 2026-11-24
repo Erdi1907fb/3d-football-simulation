@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "weekly": true,
+  "modes": [
+    {
+      "mode": "footvolley",
+      "code": "240",
+      "first": 240,
+      "newSeed": 1575156797,
+      "replayExact": true,
+      "analysisUnchanged": true
+    },
+    {
+      "mode": "bowling",
+      "code": "240",
+      "first": 240,
+      "newSeed": 3150909747,
+      "replayExact": true,
+      "analysisUnchanged": true
+    }
+  ]
+}

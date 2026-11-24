@@ -1,8 +1,15 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V239** · 2026-11-24 UTC · Codex (T-390 ortak koyu yeşil saha paleti)
+> Son güncelleme: **V240** · 2026-11-24 UTC · Codex (T-391/392/393 sonuçlar ve bağımsız senaryo kodu)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
+
+## V240 sonuçlar ve senaryo kodu
+- Turnuva/haftalık5v5 sonucu normal11v11 ortak yayın şablonunun kompakt opt-in sürümüdür; lig arka planı/arma, gerçek gol olayları, şut/pas/kurtarış. Normal11v11 düzeni korunur. ResultCard dahil sonuçlarda ev sahibi solda, deplasman sağda; kazanma taraf sırasını değiştirmez.
+- Ayak tenisi/bowling/penaltı: boş simülasyon kodu yeni rastgele akış; dolu kod aynı seed ile tekrar. Oyuncu verili DuelAnalysis/haftalık ana analiz ayrı korunur. Başka skor mümkün, zorunlu değil. Oluşan contest ön izleme ve MP4 için sabittir.
+- Ücretsiz yüz ve hareket kaynakları araştırıldı; hiçbir paket/model indirilmedi veya uygulanmadı. Kaynak ve kapsama sınırları HANDOFF V240'ta.
+
+- V240 doğrulama: genel71/71 + yeni senaryo birim testi PASS (runner artık72); Chromium18sonuçUIkartı,3modda kod tekrar/yeniakış/temelanaliz ve haftalıkXIile2mod PASS. Build240/filesMatch=true; fiziksel cihaz/Hostinger dağıtımı yok.
 
 ## V239 saha görünümü
 
