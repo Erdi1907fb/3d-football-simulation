@@ -1,0 +1,162 @@
+{
+  "sourceCommit": "bcd93cb",
+  "description": "Unchanged seeded physical samples and scoring before shorter presentation waits.",
+  "rows": [
+    {
+      "n": 1,
+      "scoring": "four-rolls",
+      "seed": 7,
+      "score": [
+        15,
+        14
+      ],
+      "winner": 0,
+      "duration": 69.96666666666664,
+      "rollCount": 8,
+      "physicalSHA256": "e35ada637dc1d65a24a011d66d5b8c5fb4c52305b627c4b866b55b876575b96e"
+    },
+    {
+      "n": 1,
+      "scoring": "four-rolls",
+      "seed": 15,
+      "score": [
+        15,
+        16
+      ],
+      "winner": 1,
+      "duration": 69.19999999999999,
+      "rollCount": 8,
+      "physicalSHA256": "6f2cc8254c4eb76cbfde1a6b59575b6ae505f573c7f4fc1af361ed74fe9b3aa2"
+    },
+    {
+      "n": 1,
+      "scoring": "four-rolls",
+      "seed": 240,
+      "score": [
+        28,
+        30
+      ],
+      "winner": 1,
+      "duration": 80.39999999999998,
+      "rollCount": 8,
+      "physicalSHA256": "3a5b6f6e068734835804bd8cd7ab1ce24176d90d19ebb20c7e5db6d9f629a56b"
+    },
+    {
+      "n": 1,
+      "scoring": "four-frames",
+      "seed": 7,
+      "score": [
+        29,
+        37
+      ],
+      "winner": 1,
+      "duration": 125.8166666666666,
+      "rollCount": 15,
+      "physicalSHA256": "ca83417ed1a76d93ac6c55ee4430dde8e10abdb28bd54a2ec17f512e69adc9bd"
+    },
+    {
+      "n": 1,
+      "scoring": "four-frames",
+      "seed": 15,
+      "score": [
+        30,
+        61
+      ],
+      "winner": 1,
+      "duration": 143.03333333333327,
+      "rollCount": 16,
+      "physicalSHA256": "22521367a1d5cb8846c8825efd303250ecd4ed968eb69d91ca25c764290172d3"
+    },
+    {
+      "n": 1,
+      "scoring": "four-frames",
+      "seed": 240,
+      "score": [
+        45,
+        31
+      ],
+      "winner": 0,
+      "duration": 143.68333333333328,
+      "rollCount": 17,
+      "physicalSHA256": "118447c8e217f6316693a4f2346649cb52a64db30c5a323b925c79c0ff784840"
+    },
+    {
+      "n": 2,
+      "scoring": "four-rolls",
+      "seed": 7,
+      "score": [
+        18,
+        15
+      ],
+      "winner": 0,
+      "duration": 71.33333333333331,
+      "rollCount": 8,
+      "physicalSHA256": "844784e31c2631ec70e126bb6b76750aaaa24dcc62c75cec194450be33163d25"
+    },
+    {
+      "n": 2,
+      "scoring": "four-rolls",
+      "seed": 15,
+      "score": [
+        14,
+        16
+      ],
+      "winner": 1,
+      "duration": 69.19999999999999,
+      "rollCount": 8,
+      "physicalSHA256": "7ba56618258b0dbd708f27ab06767213c4a0b58b6637eb6739e0d2492be6b6ad"
+    },
+    {
+      "n": 2,
+      "scoring": "four-rolls",
+      "seed": 240,
+      "score": [
+        25,
+        29
+      ],
+      "winner": 1,
+      "duration": 75.7333333333333,
+      "rollCount": 8,
+      "physicalSHA256": "3dfe096864b15dceac3a1c4c8d4da5d6bf22378da38cdb9f2f7cf7d13e0dd5b8"
+    },
+    {
+      "n": 2,
+      "scoring": "four-frames",
+      "seed": 7,
+      "score": [
+        28,
+        38
+      ],
+      "winner": 1,
+      "duration": 126.28333333333327,
+      "rollCount": 15,
+      "physicalSHA256": "6c3e4980f1de5f4c63b1215055f8f99f85e52ef69ca3b09db663670b6aacab1c"
+    },
+    {
+      "n": 2,
+      "scoring": "four-frames",
+      "seed": 15,
+      "score": [
+        41,
+        35
+      ],
+      "winner": 0,
+      "duration": 134.19999999999993,
+      "rollCount": 16,
+      "physicalSHA256": "986cfb8b8015601203edd29240af6d19317841ed448f5eb1ab55f95728d0e8a6"
+    },
+    {
+      "n": 2,
+      "scoring": "four-frames",
+      "seed": 240,
+      "score": [
+        43,
+        32
+      ],
+      "winner": 0,
+      "duration": 146.04999999999998,
+      "rollCount": 17,
+      "physicalSHA256": "1ec7d2e937a63fda8ebd6b4a73db8c264fa64d505aba77bfdfc55dd7dfb7ad2a"
+    }
+  ]
+}

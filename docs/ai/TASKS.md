@@ -10,7 +10,7 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-396 | Bowlingde labutları kadrajda tutan kamera, kısa geçişler, vuruş sonrası anlaşılır labut/puan özeti | in-progress | codex | files: bowling-engine/venue, footvolley-ui, tests/docs; T-394 kafa dönüşümüyle birlikte sürer. Fiziksel devrilme ve puan kuralları korunur. |
+| T-396 | Bowlingde labutları kadrajda tutan kamera, kısa geçişler, vuruş sonrası anlaşılır labut/puan özeti | done (V242) | codex | files: bowling-engine/venue, footvolley-ui, tests/docs. Fizik/puan aynı; 12senaryo ortalama40sn daha kısa; Chromium1216örnek/9936labut kadrajı, gerçek1080p60AAC MP4 alıntısı PASS. T-394 ayrı sürer. |
 | T-395 | 5v5 sonuçlarında ev/deplasman/kazanan/kaybeden yazılarını kaldır; takım/skor/istatistik sırasını koru; main push | done (V241) | codex | files: broadcast, competition-broadcast, result-card, japon-ui, tests/docs. Yüz pilotuna ek küçük istek. |
 | T-394 | Ücretsiz PES/FootballLife gerçek kafa dönüşümü:8–12pilot→TRdörtbüyük→Avrupabüyükleri; hareket uyarlaması; sohbet içinde görünür gerçek görüntüler | in-progress | codex | files: tools/head-import, player-faces/scene, assets heads/animations, tests/docs. Kullanıcı araştırma sınırını kaldırıp uygulamayı onayladı; kalite pilotu önce. |
 | T-393 | Ayak tenisi/bowling/penaltıda boş kodla yeni senaryo, dolu kodla tekrar üretim; temel veri analizini koru | done (V240) | codex | files: scenario, footvolley/penalty-ui, üç HTML, tests/docs; olasılıkları koru, farklı skoru zorlamama. |

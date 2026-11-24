@@ -328,3 +328,7 @@ Turnuva team.id=studio-providerId kalır. kitCatalogId yalnız manifest çözüm
 
 ## 2026-11-24 · T-395 · 5v5 sonucunda gereksiz rol yazısı yok
 - Kullanıcı skorun sonucu yeterince anlattığını belirtti. Ortak Broadcast kompakt sonucundaki rol/galip satırı kaldırılır; bağımsız5v5 ResultCard showOutcome:false kullanır. Takım sırası veya fiziksel sonuç değişmez. T-394 kaynak edinimi bu küçük teslim sırasında sürer; tamamlanmış yüz paketi olarak raporlanmaz.
+
+## 2026-11-24 · T-396 · Hızlı sunum, aynı fizik
+- Fizik motoru tekrar ayarlanmaz. Her roll tüm fizik karelerini ve temaslarını korur; sunum son temastan en az.70sn sonra boş kuyruğu keser. Puanların byte/sonuç eşitliği önceki V241 referansından doğrulanır. Kullanıcının beğendiği final kartı/seslere dokunulmaz.
+- Labut kamerası topun yeni konumunu izlemek yerine sabit pin alanını güvenli HUD izdüşümüne sığdırır. Salonu gösteren açı da devrilmede labutlara keser; rastgele/süreye bağlı smoothing yoktur.

@@ -1,8 +1,11 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V241** · 2026-11-24 UTC · Codex (T-395 sade5v5 sonuç; T-394 yüz pilotu devam)
+> Son güncelleme: **V242** · 2026-11-24 UTC · Codex (T-396 bowling akışı; T-394 yüz pilotu devam)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
+
+## V242 bowling maç içi yayın
+Labutlara yaklaşırken sabit pin alanı kadrajı; fizik sonuçlarını değiştirmeden kısa yaklaşım/boş kuyruk/özet. Vuruş paneli canlı devrilme ve kesin puan artışı/toplam/strike/spare ayrımını gösterir. Sonuç kartı ve sesler aynı. 12fizik/hash senaryosu ve Chromium1216örnek/9936labut kontrolü, kısa gerçek1080p60AAC MP4 PASS. Genel tam paket73/73 PASS, build242/filesMatch=true. T-394 gerçek kafa pilotu ayrı dalda devam eder, V242'de yayınlanmış değildir.
 
 ## V241 küçük sonuç düzeltmesi
 5v5 sonuç kartlarında ev/deplasman/galip/mağlup yazıları yok; skor, golcü ve istatistikler ile sabit taraf sırası korunur. T-394 gerçek kafa dönüşümü kullanıcı tarafından onaylandı, kaynak arşiv edinildi; henüz oyuna eklenmiş pilot yok. V241 hedefliUItestleri ve18Chromiumkartı PASS; tam motor temeli V240'tır.

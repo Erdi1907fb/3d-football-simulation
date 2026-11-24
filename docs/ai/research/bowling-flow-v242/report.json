@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "errors": [],
+  "audit": {
+    "samples": 384,
+    "checked": 3408,
+    "maxX": 0.3158007418679167,
+    "minY": -0.15405577928945827,
+    "maxY": 0.18602559771309504,
+    "first": [
+      13.592690218762122,
+      3.8000260166138276,
+      3.709117714086974
+    ],
+    "replay": [
+      13.592690218762122,
+      3.8000260166138276,
+      3.709117714086974
+    ],
+    "duration": 45.51666666666667,
+    "score": [
+      25,
+      29
+    ],
+    "realHeads": 0
+  },
+  "video": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "avg_frame_rate": "60/1"
+      },
+      {
+        "codec_name": "aac",
+        "avg_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "0.661333"
+    }
+  }
+}

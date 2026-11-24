@@ -1,0 +1,52 @@
+{
+  "pass": true,
+  "actualSharedActor": true,
+  "errors": [],
+  "players": [
+    {
+      "name": "Victor Osimhen",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 15920,
+      "box": [
+        0.19006705875439112,
+        0.4281918057079972,
+        0.2322952110465773
+      ]
+    },
+    {
+      "name": "Ederson",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 10794,
+      "box": [
+        0.20066565645584378,
+        0.4377098716289396,
+        0.24381216493839186
+      ]
+    },
+    {
+      "name": "Dušan Vlahović",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 37402,
+      "box": [
+        0.19977364164134243,
+        0.39468326818980404,
+        0.2613744279800598
+      ]
+    },
+    {
+      "name": "Stefan Savić",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 8674,
+      "box": [
+        0.20485449381601256,
+        0.45337066350187505,
+        0.2604625434828597
+      ]
+    }
+  ],
+  "height": 1208
+}

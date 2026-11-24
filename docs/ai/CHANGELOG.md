@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V242 · 2026-11-24
+- Bowlingde labutları kadrajda tutan sabit devrilme kamerası; kısa yaklaşım ve boş beklemeler. 12senaryoda fizik/skor aynı, ortalama40sn kısa.
+- Vuruş panelinde devrilen labut, puan artışı ve toplam net ayrılır; strike/spare/oluk/sıradaki oyuncu ve doğru bonus bekleme etiketi. Sonuç ekranı/sesler korunur.
+- Genel73/73 PASS; build242/filesMatch=true. Chromium1216örnek/9936labut kadrajı, geri sarma, kısa gerçek1080p60AAC MP4 PASS. Kafa/motion pilotu ayrı devam eder.
+
 ## V241 · 2026-11-24
 - Kullanıcının isteğiyle5v5 sonucundaki ev/deplasman/galip/mağlup yazıları kaldırıldı. Sabit takım sırası, skor/golcü/istatistikler korunur. Diğer modların ortak kartı değişmez. HedefliUI/18Chromiumkartı PASS; build241/filesMatch=true.
 
