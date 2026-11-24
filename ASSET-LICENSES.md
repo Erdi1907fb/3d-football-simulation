@@ -189,3 +189,12 @@ Bowling now reuses `PULSE_AUDIO.whistleRestart` and `PULSE_AUDIO.goal` from the 
 
 ## V239 — shared emerald turf grading
 Surface colour, close blade shading and mowing alignment changes are original code. Existing TextureCan Ground0040 CC0 albedo/normal/roughness/detail maps remain unchanged at their existing resolutions and retain the notices above. No new texture or external artwork was introduced. Validation images are actual renderer captures.
+
+## V243 — shared imported footballer heads
+`assets/heads/pes/*/head.glb.gz` are conversions of freely downloadable community PES facepacks, not original Next90Sim likenesses or CC0 models. Source pages, maker/pack credits, seasons, archive SHA256 and player identity evidence are retained in `tools/head-import/sources.json`, `verified-mega-ids.json` and `assets/heads/manifest.json`. Community pages commonly credit All Makers; no extra redistribution licence is asserted. No paid game installation or paid model pack was extracted. The offline converter uses the externally installed `the4chancup/pes-fmdl-blender` FmdlFile reader at the recorded commit; that source is not shipped in the browser.
+
+Output is standard glTF 2 in gzip, with embedded WebP/JPEG images (`EXT_texture_webp`) and bounded geometry quantisation (`KHR_mesh_quantization`). Source positions are quantised below 0.016 mm error, source UVs to 16 bits where within [0,1], and normals to signed 8 bits. Invalid optional source triangles are discarded with counts recorded. `head-fit.js` supplies original project collar fitting, pose-stable lower-neck binding and a skin-colour transition beneath the collar. Portable eyes use supplied iris textures where available. These are imported models with adaptations, not claimed scans.
+
+Existing club/keeper kits, jersey printing, boots, animation and unrepresented players' verified portraits retain their existing sources/notices. New screenshots are actual shared game renderer captures; no generated art. The offline Quaternius Standard sampler remains a development tool under the existing CC0 notice; unused sampled locomotion output is not shipped, and no Mixamo import is claimed.
+
+Historic unreferenced validation media were archived through immutable Git commit links (research/ARCHIVED-MEDIA.md), with hashes in research/heads-v243/cleanup.json. Existing preferred-foot records and attribution are preserved once inside the shared JS module; the redundant Node JSON copy is removed.

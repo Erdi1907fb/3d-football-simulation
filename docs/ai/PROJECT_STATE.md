@@ -1,6 +1,16 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
-> Son güncelleme: **V242** · 2026-11-24 UTC · Codex (T-396 bowling akışı; T-394 yüz pilotu devam)
+## V243 gerçek oyuncu kafaları ve sabit sahne ayrıntısı
+- Son doğrulama:8mod×4zaman kararlı oyuncu/forma ve gerçek WebGL bufferı PASS;36kare başlangıç/orta/son hareketli11v11 MP4 yazılım kodlayıcı +ffmpeg decode PASS. Başsız ortamın ilk yerel kodlayıcı timeout'u ve gizli kontrol otomasyon düzeltmesi research/heads-v243 içinde kayıtlıdır.
+- 332 kimliği doğrulanmış gerçek 3D kafa ortak Scene/oyuncu sistemine bağlandı. Kaynak ID + ad/alias + doğum tarihi eşleşir; kadro/transfer/analiz değiştirilmez. Eksikte başka futbolcu takılmaz: kendi doğrulanmış fotoğrafı, o da yoksa mevcut genel model korunur. 265 takımın ilk11+yedek kapsaması face-coverage.html sayfasında ayrı gerçek/fotoğraf/genel sayılır; bütün oyuncuların gerçek modeli olduğu iddiası yok.
+- Başın yüz/çene/saç geometrisi korunur; yalnız alt boyun gerçek gövde yakasının içine uyar ve neck_01 kemiğini izler. Gövde teni kaynak boyun örneğine uyar. Gerçek takım/kaleci formaları, kramponlar, mevcut futbol hareketleri ve sevinçler aynı sistemdedir. Geç yüklenen gövde/geri sarma/LOD geçişi, altı taraf ve mobil doku sınırı doğrulandı. Kalecinin yüzen dirsek bantları gerçek kol merkezine hizalandı.
+- Sahne ilerledikçe kamera mesafesinin aktif oyuncuyu eski basit gövdeye düşürmesi kaldırıldı; yedek değişim oyuncusu da aynı ayrıntıyı korur. Forma yazıları en yakın3oyuncuya göre512↔1024/1536 tekrar boyutlandırılmaz; sahnenin kalite profilinde sabittir. Saha dışı/tribün LOD ve telefonun512doku/güvenli GPU profili korunur. Otomatik video çözünürlük/FPS düşürme eklenmedi.
+- Modeller WebP + nicemlenmiş glTF + deterministik gzip ile188,805,730byte; tek model12MB üstünde değil. Gereksiz ham GLB/indirilen arşiv/deneysel bağlı olmayan locomotion JSON'u sürümde yok. 39kullanılmayan tarihî test medyası59,966,567byte + birebir yinelenen tercihli ayak JSON'u8,407,697byte çalışma kopyası/ZIP'ten çıkarıldı. Arşiv görüntülerinin eski commit bağlantıları ve SHA kanıtı tutulur. Git geçmişi silinmez; yeni model varlıkları nedeniyle toplam son kopya yine büyür.
+- Öncelik kapsamı (gerçek/kendi fotoğrafı/mevcut genel): GS18/11/0; FB17/8/0; BJK23/4/0; TS7/20/2; Arsenal17/4/0, Liverpool14/9/0, United17/8/0, Chelsea16/5/0. Diğer büyük kulüpler ve mevcut konsept/konuk/efsaneler de manifestte; kullanıcı arayüzü bütün takımları listeler. TS'nin iki eksik genç oyuncusu için genel model kalır.
+- Yeni Mixamo/Quaternius locomotion paketi çalışma zamanına eklenmedi; mevcut ortak futbol animasyon otoritesi korunur. Kaynak modellerin kredileri/hashleri ASSET-LICENSES ve head-import içinde; topluluk yüz paketleri CC0 olarak etiketlenmez.
+- Doğrulama/örnekler: docs/ai/research/heads-v243/README.md. Kaynak converter ve compressed manifest tarayıcıda tek ortak runtime kullanır; henüz model bulunmayan kimlikler için mevcut oyuncu fotoğrafı geçerlidir. Yeni dış hareket klipleri entegre edilmiş sayılmaz.
+
+> Son güncelleme: **V243** · 2026-11-24 UTC · Codex (T-397 gerçek kafa/forma/ten; T-398 kararlı sahne ayrıntısı)
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 

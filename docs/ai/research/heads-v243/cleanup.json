@@ -1,0 +1,305 @@
+{
+  "reason": "User-requested size reduction; no JS/PHP/HTML/test/tool filename or containing-directory reference found for archived media",
+  "archivedMedia": [
+    {
+      "path": "docs/ai/research/competition-parts-v235/footvolley-1.png",
+      "bytes": 3858463,
+      "sha256": "49d906c5fc9369e42888004656ce573713dbdfcf299d89240f4d611971b8d5b4",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/competition-parts-v235/footvolley-1.png"
+    },
+    {
+      "path": "docs/ai/research/competition-parts-v235/normal-finish-2.png",
+      "bytes": 2409999,
+      "sha256": "2779db3b3bd3abc44fbde843b35232430fa4949678fe0eacf95354e26fefbf46",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/competition-parts-v235/normal-finish-2.png"
+    },
+    {
+      "path": "docs/ai/research/competition-parts-v235/normal-finish-0.png",
+      "bytes": 2272901,
+      "sha256": "f1af4aa6ddc3a75efcb7b233a8b646bbaec58af7b0de7e5f2206e51cb68fa4db",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/competition-parts-v235/normal-finish-0.png"
+    },
+    {
+      "path": "docs/ai/research/competition-parts-v235/normal-finish-1.png",
+      "bytes": 2406829,
+      "sha256": "9a4d272185b67f5c32d3d916127208cc98572344bc3b8ce3b254d4b4d21a8912",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/competition-parts-v235/normal-finish-1.png"
+    },
+    {
+      "path": "docs/ai/research/competition-parts-v235/footvolley-3.png",
+      "bytes": 3889398,
+      "sha256": "a7768e520e98b6d478144853b64ee135b844cfb7d5792dcece0193b44f90b481",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/competition-parts-v235/footvolley-3.png"
+    },
+    {
+      "path": "docs/ai/research/v175-examples/goal-4-en-landscape.png",
+      "bytes": 1051503,
+      "sha256": "229cccb06cbfcec2a2ecb25e4c60d708a1ba6bd1731e6ca5ba845c9dc927916f",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/goal-4-en-landscape.png"
+    },
+    {
+      "path": "docs/ai/research/v175-examples/v175-first-pass.png",
+      "bytes": 963678,
+      "sha256": "53db2d79e747e122d70fef5ab27773784701a9768efa41db9481782d24dfe955",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/v175-first-pass.png"
+    },
+    {
+      "path": "docs/ai/research/v175-examples/goal-2-tr.png",
+      "bytes": 1162203,
+      "sha256": "a8699c829e8e44bd6b26b04b16f30a591b202c9d7c48cf376e74e3aaee589dbe",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/goal-2-tr.png"
+    },
+    {
+      "path": "docs/ai/research/v175-examples/v174-first-pass.png",
+      "bytes": 990593,
+      "sha256": "27a463ec18bceb1b630d798cbf50c4c2c8f190ff92f78bc3fa2c98b839c6e7f4",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/v174-first-pass.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/whistle.mp4",
+      "bytes": 220178,
+      "sha256": "f899de44d5e21e0aefb0a1c7b801600dea5c4a9b51b2c23b18de5c09a958ed53",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/whistle.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/five-standalone.png",
+      "bytes": 2096783,
+      "sha256": "b3b3be0bbf71cc45a615bd9eb3646ac6fc45a2ee434453302e270a3649b3dbe5",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/five-standalone.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/five-competition.png",
+      "bytes": 196717,
+      "sha256": "e1dabbd5768691104a6592e5e01e6db605c227e0816d810f1b3aa1137f2a94e0",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/five-competition.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/pin.mp4",
+      "bytes": 284053,
+      "sha256": "0a7563e548485222d8ea40afb6d6c72c40455f7e2671210bef5a6121901d3da0",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/pin.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/finish.mp4",
+      "bytes": 790165,
+      "sha256": "a378914a2cb35fd939ef02496b8f719686aafe69ce0cb9dd85dfd43ed72c089b",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/finish.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/celebration.png",
+      "bytes": 922993,
+      "sha256": "6bead5a442da06ab2c22ad68a6a458cee2f9cce45b8a1f073d2bbbf00262c121",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/celebration.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-v237/kick.mp4",
+      "bytes": 302079,
+      "sha256": "22a820e88b1eee6b1a2eaf30058a0c8114bd901694b214b9efc6d320bfdc8c9c",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v237/kick.mp4"
+    },
+    {
+      "path": "docs/ai/research/football-upgrade-v234/eleven-landscape.png",
+      "bytes": 1550486,
+      "sha256": "e03735ce191c7ae761fad438207f91ad8f18d1e92d1621b10c3aab785652e03e",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/football-upgrade-v234/eleven-landscape.png"
+    },
+    {
+      "path": "docs/ai/research/football-upgrade-v234/japon-portrait.png",
+      "bytes": 3186547,
+      "sha256": "7103b198ab073cef1342d31ed8a2c2a4c461731c72509b6a41ea906d8aaaf5fa",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/football-upgrade-v234/japon-portrait.png"
+    },
+    {
+      "path": "docs/ai/research/football-upgrade-v234/five-portrait.png",
+      "bytes": 3273995,
+      "sha256": "bed4b69ec0aa303d6063cd3952d77fa025c5e1a0a288596609b952988e5f828a",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/football-upgrade-v234/five-portrait.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-v236/bowling-portrait-excerpt.mp4",
+      "bytes": 778544,
+      "sha256": "e3729a174b69bad5ff47c0787023c1563240e8247f714435f2f15dffb618fb51",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v236/bowling-portrait-excerpt.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-v236/finished.png",
+      "bytes": 1056741,
+      "sha256": "845f038370f2c21253335236b3f556eeb0f8a1ef905ad3503ebe48ed86c21169",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v236/finished.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-v236/pins.png",
+      "bytes": 1000861,
+      "sha256": "493d2dde326069f355bb1bae7f8665fda0546de87ff090b3620bb78232f14179",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-v236/pins.png"
+    },
+    {
+      "path": "docs/ai/research/pitch-v239/after-japon.png",
+      "bytes": 3350405,
+      "sha256": "ff8bb6e6e8b57d7f0c78551f9eeaac725e98d2fcc15037c90fb84933146540c6",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/pitch-v239/after-japon.png"
+    },
+    {
+      "path": "docs/ai/research/pitch-v239/before-japon.png",
+      "bytes": 3139595,
+      "sha256": "6b8c1f49e29b8833563850ce19a4417757972ef7ff9dd929259b8f48c98d1c43",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/pitch-v239/before-japon.png"
+    },
+    {
+      "path": "docs/ai/research/pitch-v239/futnet-interior.png",
+      "bytes": 3935805,
+      "sha256": "53b4df2652c37474a8fb3a7a3e2ed488b59c19850a5f6ac9ec6cd879b946171b",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/pitch-v239/futnet-interior.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-flow-v242/roll-result.png",
+      "bytes": 1096700,
+      "sha256": "39e6c0028bf4cf56858c238c17c8737b448c51c6076fdd120b9f888fec119bf1",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-flow-v242/roll-result.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-flow-v242/pins.png",
+      "bytes": 1114447,
+      "sha256": "87c41f1a326d920502cdb594905b37d2d423b1d141f31ce5d14ff15ed11938ec",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-flow-v242/pins.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-flow-v242/landscape-result.png",
+      "bytes": 1102328,
+      "sha256": "b8338d8adf91eeb53ca880cfd21a6dfd9ac51d7dd43f73d652b2f87581680d8b",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-flow-v242/landscape-result.png"
+    },
+    {
+      "path": "docs/ai/research/bowling-sound-v238/cheer.mp4",
+      "bytes": 74537,
+      "sha256": "145bd741cb00201a73804d625727b669f5064ba390e90f1b4a3f60d58892e0b0",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-sound-v238/cheer.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-sound-v238/whistleStart.mp4",
+      "bytes": 51239,
+      "sha256": "a877cfc19aac5c644026dba0fddf97b5cdf33e1216b68c98e1c1aabe822d98b6",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-sound-v238/whistleStart.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-sound-v238/pin.mp4",
+      "bytes": 51106,
+      "sha256": "a07f052c2611b86bb85378ac2e8d5d695ca9fcb6e7b762a62004521504b52d3e",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-sound-v238/pin.mp4"
+    },
+    {
+      "path": "docs/ai/research/bowling-sound-v238/quiet.mp4",
+      "bytes": 40378,
+      "sha256": "17d1cfbf634bcbfe03637e97348a57b96e93d9551404af350a7a5b327f102197",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/bowling-sound-v238/quiet.mp4"
+    },
+    {
+      "path": "docs/ai/research/v176-examples/arena-feet-control.png",
+      "bytes": 1212387,
+      "sha256": "fd7c7abbce6354b8bed60a2b687e35beb3c6ab5373219d71974b8366df676af6",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v176-examples/arena-feet-control.png"
+    },
+    {
+      "path": "docs/ai/research/v176-examples/torreira-goal-contact.png",
+      "bytes": 2762214,
+      "sha256": "2a3db1ec35a98926fca9a7a4c6789e25569402c8f68a415ea59c1ef4219b5b53",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v176-examples/torreira-goal-contact.png"
+    },
+    {
+      "path": "docs/ai/research/v176-examples/torreira-goal-tail.png",
+      "bytes": 2766043,
+      "sha256": "f16dfce3d5275b4169fbf0f6c88246fdcbc4f1128f814f0199936c81b2c74c24",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v176-examples/torreira-goal-tail.png"
+    },
+    {
+      "path": "docs/ai/research/v177-touchline/touchline-4-portrait.png",
+      "bytes": 1065241,
+      "sha256": "2927f32c4287be526d1f5bfe7c2bf1eaf49bba33c7a78af28083689aa705f22e",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v177-touchline/touchline-4-portrait.png"
+    },
+    {
+      "path": "docs/ai/research/v177-touchline/touchline-2-portrait.png",
+      "bytes": 1223655,
+      "sha256": "05e8d884d0f554ce13b0da57970f0bfb213b3a25582bbcceda7a721bac41b60e",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v177-touchline/touchline-2-portrait.png"
+    },
+    {
+      "path": "docs/ai/research/results-v240/tr-home-win-ui-fixture.png",
+      "bytes": 1365742,
+      "sha256": "1c22fded7a33ddb82b6dd80847be008440c1f431b6f0a9b7f5cb56652a310123",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/results-v240/tr-home-win-ui-fixture.png"
+    },
+    {
+      "path": "docs/ai/research/results-v240/ucl-away-win-ui-fixture.png",
+      "bytes": 949036,
+      "sha256": "a6d1c6540b6af1a19b26712ec9253bf8bd216dae9ff5ab66b83079e8c5191e41",
+      "archiveURL": "https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/results-v240/ucl-away-win-ui-fixture.png"
+    }
+  ],
+  "keptBecauseReferencedByCode": [
+    [
+      "docs/ai/research/competition-parts-v235/mobile-parts.png",
+      [
+        "tests/browser-competition-export-parts.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-v237/approach.png",
+      [
+        "tests/browser-duel-weekly.cjs",
+        "tests/browser-bowling.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-v237/wide.png",
+      [
+        "tests/browser-bowling.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-v237/futnet-result.png",
+      [
+        "tests/browser-bowling-presentation.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-v237/result.png",
+      [
+        "tests/browser-bowling-presentation.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-v236/approach.png",
+      [
+        "tests/browser-duel-weekly.cjs",
+        "tests/browser-bowling.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-v236/portrait-approach.png",
+      [
+        "tests/browser-duel-weekly.cjs",
+        "tests/browser-bowling.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/pitch-v239/eleven-colour-excerpt.mp4",
+      [
+        "tests/browser-pitch-colour.cjs"
+      ]
+    ],
+    [
+      "docs/ai/research/bowling-flow-v242/pin-action.mp4",
+      [
+        "tests/browser-bowling-flow.cjs"
+      ]
+    ]
+  ],
+  "removedMediaBytes": 59966567,
+  "duplicatePreferredFootData": {
+    "path": "assets/preferred-foot-data.json",
+    "bytes": 8407697,
+    "sha256": "a277ba9a628f75c916136753daae355087606314f71c608da443d65451edb524",
+    "validation": "63031 player records deeply equal; Node schema and source metadata retained separately, browser metadata behaviour unchanged"
+  }
+}

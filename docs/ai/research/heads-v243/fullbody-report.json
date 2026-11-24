@@ -1,0 +1,136 @@
+{
+  "pass": true,
+  "actualSharedActor": true,
+  "errors": [],
+  "players": [
+    {
+      "name": "Victor Osimhen",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 15920,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/galatasaray-home.webp",
+      "box": [
+        0.1866620126561171,
+        0.34133160595422996,
+        0.22836970680126611
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.0038160880789093227,
+            -0.9020838356131698,
+            0.10703015736743851
+          ],
+          "material": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Ederson",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 10794,
+      "keeper": true,
+      "kit": "assets/kits/2026-27/fenerbahce-gk_away.webp",
+      "box": [
+        0.19610509699387246,
+        0.34962547890444906,
+        0.2438100247866783
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.0038440422286901282,
+            -0.899321859553619,
+            0.11114306388127347
+          ],
+          "material": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Dušan Vlahović",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 37402,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/besiktas-home.webp",
+      "box": [
+        0.19978039222811322,
+        0.34455504875665177,
+        0.26136618928378663
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.00393211283268738,
+            -0.8971356078366992,
+            0.11224938055514845
+          ],
+          "material": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Stefan Savić",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 8674,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/trabzonspor-away.webp",
+      "box": [
+        0.2048665252907416,
+        0.36527267350672177,
+        0.26044795826140466
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.0038965368069844024,
+            -0.8995725029286311,
+            0.11081740700682186
+          ],
+          "material": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "height": 1568
+}

@@ -10,7 +10,7 @@ Japon Kale ve iki takımlı5v5küçük sahada golden yeniden başlatmaya kadar *
 
 [Gerçek tarayıcı kaydı](v175-clock-browser.json): gerçek katalog/Fenerbahçe–Galatasaray,seed 5,60 snoyun;70.191667 sn canlı+4.5 sn sonuç=74.691667 sn video. Guendouzi golü28.758333 sn; santra33.641667 sn; sayaç arada0:32 sabit. Dört taraflı seed 5'te Yamal golü ve Barcelona arması, EN arayüz;60 sngerçek oyun,71.586679 sn toplam video. Fotoğraflar mevcut doğrulanmış portre manifestinden; olmayan fotoğraf uydurulmaz.
 
-[TRdikey gol kartı](v175-examples/goal-2-tr.png) · [ENyatay çok kale kartı](v175-examples/goal-4-en-landscape.png).
+[TRdikey gol kartı](https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/goal-2-tr.png) · [ENyatay çok kale kartı](https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/goal-4-en-landscape.png).
 
 ## Kod ve tarayıcı regresyonu
 
@@ -39,7 +39,7 @@ Yeniden üretim: `NEXT90_TEST_NODE_MODULES=<Electron/Playwright node_modules> NE
 
 [Ham maçlar/mesafe dağılımları/şut tipleri](v175-comparison.json). Yakın çift oranında eksi daha az kalabalıklaşmadır. CPUtestler/tarayıcıyla paylaşıldı; oranlar donanımFPSölçümü değildir. Daha çok pasın yanında alım proxy'si geriliyor; iki modda yakınlaşma azalırken ikisinde artıyor. Bu sürüme tüm alanlarda üstün denmez. T-304kalibrasyon açık; gole/hata sayısına kota ekleyerek “düzeltmeyin”.
 
-Her iki motor da mod başına25/25 ayrı olay ve konum hash'i üretiyor; bu yeni motorun görsel tekrarları tüm maçlarda azalttığını kanıtlamaz. [Aynı başlangıç/seed görsel kaydı](v175-visual-comparison.json), [eski ilk pas](v175-examples/v174-first-pass.png), [yeni ilk pas](v175-examples/v175-first-pass.png): aksiyon türlerine ait zamanlar farklı, görüntüler tek bir koreografi değildir. Altı gerçek görüntü incelendi; tekil kareler geniş video incelemesinin yerine geçmez.
+Her iki motor da mod başına25/25 ayrı olay ve konum hash'i üretiyor; bu yeni motorun görsel tekrarları tüm maçlarda azalttığını kanıtlamaz. [Aynı başlangıç/seed görsel kaydı](v175-visual-comparison.json), [eski ilk pas](https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/v174-first-pass.png), [yeni ilk pas](https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v175-examples/v175-first-pass.png): aksiyon türlerine ait zamanlar farklı, görüntüler tek bir koreografi değildir. Altı gerçek görüntü incelendi; tekil kareler geniş video incelemesinin yerine geçmez.
 
 `node tools/measure-intelligence.cjs --baseline <V174checkout> --out report.json`: [Normal analiz/P/FK/arena karşılaştırması](v175-intelligence-metrics.json). Aynı normal maçların yayınlanmış gol defterleri değişmedi; programatik eski P/FKAPI yolu uyumluluk için korunur, yeni doğal UIyolu ayrıca test edilmiştir.
 

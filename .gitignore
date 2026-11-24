@@ -14,3 +14,6 @@ data/private/*
 /tests/browser-full-video-output/
 
 /tests/browser-aac-output/
+
+**/__pycache__/
+/tests/face-results.json

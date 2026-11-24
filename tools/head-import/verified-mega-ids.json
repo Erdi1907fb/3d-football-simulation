@@ -1,0 +1,474 @@
+{
+  "sourceNames": "info-Faces.txt in mega6 pack",
+  "method": "exact normalized public PES identity name = published source name; no folder-order matching",
+  "players": [
+    {
+      "sourceId": "100150",
+      "name": "Matty James",
+      "publishedName": "Matty  James",
+      "identityURL": "https://www.pesmaster.com/m-james/pes-2021/player/100150/"
+    },
+    {
+      "sourceId": "100316",
+      "name": "Diego Rico",
+      "publishedName": "Diego Rico",
+      "identityURL": "https://www.pesmaster.com/diego-rico/pes-2021/player/100316/"
+    },
+    {
+      "sourceId": "101520",
+      "name": "David Raya",
+      "publishedName": "David Raya",
+      "identityURL": "https://www.pesmaster.com/david-raya/pes-2021/player/101520/"
+    },
+    {
+      "sourceId": "102531",
+      "name": "Ulisses Garcia",
+      "publishedName": "Ulisses García",
+      "identityURL": "https://www.pesmaster.com/u-garcia/pes-2021/player/102531/"
+    },
+    {
+      "sourceId": "104388",
+      "name": "Abdoulaye Touré",
+      "publishedName": "Abdoulaye Touré",
+      "identityURL": "https://www.pesmaster.com/a-toure/pes-2021/player/104388/"
+    },
+    {
+      "sourceId": "108397",
+      "name": "Assane Diousse",
+      "publishedName": "Assane Dioussé",
+      "identityURL": "https://www.pesmaster.com/a-diousse/pes-2021/player/108397/"
+    },
+    {
+      "sourceId": "109124",
+      "name": "Manuel Akanji",
+      "publishedName": "Manuel Akanji",
+      "identityURL": "https://www.pesmaster.com/m-akanji/pes-2021/player/109124/"
+    },
+    {
+      "sourceId": "109534",
+      "name": "Vaclav Cerny",
+      "publishedName": "Vaclav Cerny",
+      "identityURL": "https://www.pesmaster.com/v-cerny/pes-2021/player/109534/"
+    },
+    {
+      "sourceId": "111096",
+      "name": "Nahuel Molina",
+      "publishedName": "Nahuel Molina",
+      "identityURL": "https://www.pesmaster.com/n-molina/pes-2021/player/111096/"
+    },
+    {
+      "sourceId": "114566",
+      "name": "Brahim Díaz",
+      "publishedName": "Brahim Diaz",
+      "identityURL": "https://www.pesmaster.com/brahim-diaz/pes-2021/player/114566/"
+    },
+    {
+      "sourceId": "116751",
+      "name": "Ferran Torres",
+      "publishedName": "Ferran Torres",
+      "identityURL": "https://www.pesmaster.com/ferran-torres/pes-2021/player/116751/"
+    },
+    {
+      "sourceId": "118472",
+      "name": "Juan Miranda",
+      "publishedName": "Juan Miranda",
+      "identityURL": "https://www.pesmaster.com/juan-miranda/pes-2021/player/118472/"
+    },
+    {
+      "sourceId": "119611",
+      "name": "Cedric Zesiger",
+      "publishedName": "Cédric Zesiger",
+      "identityURL": "https://www.pesmaster.com/c-zesiger/pes-2021/player/119611/"
+    },
+    {
+      "sourceId": "119835",
+      "name": "Anthony Gordon",
+      "publishedName": "Anthony Gordon",
+      "identityURL": "https://www.pesmaster.com/a-gordon/pes-2021/player/119835/"
+    },
+    {
+      "sourceId": "119907",
+      "name": "Luis Diaz",
+      "publishedName": "Luis Díaz",
+      "identityURL": "https://www.pesmaster.com/l-diaz/pes-2021/player/119907/"
+    },
+    {
+      "sourceId": "121864",
+      "name": "Takefusa Kubo",
+      "publishedName": "Takefusa Kubo",
+      "identityURL": "https://www.pesmaster.com/t-kubo/pes-2021/player/121864/"
+    },
+    {
+      "sourceId": "122012",
+      "name": "Cody Gakpo",
+      "publishedName": "Cody Gakpo",
+      "identityURL": "https://www.pesmaster.com/c-gakpo/pes-2021/player/122012/"
+    },
+    {
+      "sourceId": "126042",
+      "name": "Gianluca Gaetano",
+      "publishedName": "Gianluca Gaetano",
+      "identityURL": "https://www.pesmaster.com/g-gaetano/pes-2021/player/126042/"
+    },
+    {
+      "sourceId": "126300",
+      "name": "Mason Greenwood",
+      "publishedName": "Mason Greenwood",
+      "identityURL": "https://www.pesmaster.com/m-greenwood/pes-2021/player/126300/"
+    },
+    {
+      "sourceId": "126624",
+      "name": "Julian Alvarez",
+      "publishedName": "Julián Alvarez",
+      "identityURL": "https://www.pesmaster.com/j-alvarez/pes-2021/player/126624/"
+    },
+    {
+      "sourceId": "126689",
+      "name": "William Saliba",
+      "publishedName": "William Saliba",
+      "identityURL": "https://www.pesmaster.com/w-saliba/pes-2021/player/126689/"
+    },
+    {
+      "sourceId": "126918",
+      "name": "Viktor Gyokeres",
+      "publishedName": "Viktor Gyökeres",
+      "identityURL": "https://www.pesmaster.com/v-gyokeres/pes-2021/player/126918/"
+    },
+    {
+      "sourceId": "128281",
+      "name": "Enzo Fernández",
+      "publishedName": "Enzo Fernández",
+      "identityURL": "https://www.pesmaster.com/e-fernandez/pes-2021/player/128281/"
+    },
+    {
+      "sourceId": "128720",
+      "name": "Khvicha Kvaratskhelia",
+      "publishedName": "Khvicha Kvaratskhelia",
+      "identityURL": "https://www.pesmaster.com/k-kvaratskhelia/pes-2021/player/128720/"
+    },
+    {
+      "sourceId": "129369",
+      "name": "Michael Olise",
+      "publishedName": "Michael Olise",
+      "identityURL": "https://www.pesmaster.com/m-olise/pes-2021/player/129369/"
+    },
+    {
+      "sourceId": "129505",
+      "name": "Luis Vázquez",
+      "publishedName": "Luis Vázquez",
+      "identityURL": "https://www.pesmaster.com/l-vazquez/pes-2021/player/129505/"
+    },
+    {
+      "sourceId": "130678",
+      "name": "Jordan Zemura",
+      "publishedName": "Jordan Zemura",
+      "identityURL": "https://www.pesmaster.com/j-zemura/pes-2021/player/130678/"
+    },
+    {
+      "sourceId": "131728",
+      "name": "Conor Gallagher",
+      "publishedName": "Conor Gallagher",
+      "identityURL": "https://www.pesmaster.com/c-gallagher/pes-2021/player/131728/"
+    },
+    {
+      "sourceId": "133264",
+      "name": "Jerome Opoku",
+      "publishedName": "Jerome Opoku",
+      "identityURL": "https://www.pesmaster.com/j-opoku/pes-2021/player/133264/"
+    },
+    {
+      "sourceId": "133594",
+      "name": "Jeremie Frimpong",
+      "publishedName": "Jeremie Frimpong",
+      "identityURL": "https://www.pesmaster.com/j-frimpong/pes-2021/player/133594/"
+    },
+    {
+      "sourceId": "133653",
+      "name": "Rayan Cherki",
+      "publishedName": "Rayan Cherki",
+      "identityURL": "https://www.pesmaster.com/r-cherki/pes-2021/player/133653/"
+    },
+    {
+      "sourceId": "136146",
+      "name": "James Hill",
+      "publishedName": "James Hill",
+      "identityURL": "https://www.pesmaster.com/james-hill/efootball-2022/player/136146/"
+    },
+    {
+      "sourceId": "138319",
+      "name": "Julen Agirrezabala",
+      "publishedName": "Julen Agirrezabala",
+      "identityURL": "https://www.pesmaster.com/julen-agirrezabala/efootball-2022/player/138319/"
+    },
+    {
+      "sourceId": "139679",
+      "name": "Hugo Ekitike",
+      "publishedName": "Hugo Ekitiké",
+      "identityURL": "https://www.pesmaster.com/h-ekitike/pes-2021/player/139679/"
+    },
+    {
+      "sourceId": "140403",
+      "name": "Gustavo Garcia",
+      "publishedName": "Gustavo García",
+      "identityURL": "https://www.pesmaster.com/gustavo-garcia/efootball-2022/player/140403/"
+    },
+    {
+      "sourceId": "140737",
+      "name": "Fabiano Parisi",
+      "publishedName": "Fabiano Parisi",
+      "identityURL": "https://www.pesmaster.com/f-parisi/pes-2021/player/140737/"
+    },
+    {
+      "sourceId": "140806",
+      "name": "Joel Monteiro",
+      "publishedName": "Joël Monteiro",
+      "identityURL": "https://www.pesmaster.com/joel-monteiro/pes-2021/player/140806/"
+    },
+    {
+      "sourceId": "140816",
+      "name": "Elliot Anderson",
+      "publishedName": "Elliot Anderson",
+      "identityURL": "https://www.pesmaster.com/e-anderson/pes-2021/player/140816/"
+    },
+    {
+      "sourceId": "141038",
+      "name": "Joan García",
+      "publishedName": "Joan Garcia",
+      "identityURL": "https://www.pesmaster.com/joan-garcia/pes-2021/player/141038/"
+    },
+    {
+      "sourceId": "141503",
+      "name": "Hugo Siquet",
+      "publishedName": "Hugo Siquet",
+      "identityURL": "https://www.pesmaster.com/h-siquet/pes-2021/player/141503/"
+    },
+    {
+      "sourceId": "142828",
+      "name": "Morten Hjulmand",
+      "publishedName": "Morten Hjulmand",
+      "identityURL": "https://www.pesmaster.com/m-hjulmand/pes-2021/player/142828/"
+    },
+    {
+      "sourceId": "143196",
+      "name": "Moisés Caicedo",
+      "publishedName": "Moisés Caicedo",
+      "identityURL": "https://www.pesmaster.com/m-caicedo/pes-2021/player/143196/"
+    },
+    {
+      "sourceId": "143567",
+      "name": "Andrey Santos",
+      "publishedName": "Andrey Santos",
+      "identityURL": "https://www.pesmaster.com/andrey-santos/efootball-2022/player/143567/"
+    },
+    {
+      "sourceId": "144311",
+      "name": "Alisson Santos",
+      "publishedName": "Alisson Santos",
+      "identityURL": "https://www.pesmaster.com/alisson-santos/efootball-2022/player/144311/"
+    },
+    {
+      "sourceId": "144438",
+      "name": "Karim Adeyemi",
+      "publishedName": "Karim Adeyemi",
+      "identityURL": "https://www.pesmaster.com/karim-adeyemi/efootball-2022/player/144438/"
+    },
+    {
+      "sourceId": "144871",
+      "name": "Patrick Berg",
+      "publishedName": "Patrick Berg",
+      "identityURL": "https://www.pesmaster.com/patrick-berg/efootball-2022/player/144871/"
+    },
+    {
+      "sourceId": "145870",
+      "name": "Kiko Bondoso",
+      "publishedName": "Kiko Bondoso",
+      "identityURL": "https://www.pesmaster.com/kiko-bondoso/efootball-2022/player/145870/"
+    },
+    {
+      "sourceId": "146022",
+      "name": "Anton Stach",
+      "publishedName": "Anton Stach",
+      "identityURL": "https://www.pesmaster.com/anton-stach/efootball-2022/player/146022/"
+    },
+    {
+      "sourceId": "146398",
+      "name": "Aron Dønnum",
+      "publishedName": "Aron Dønnum",
+      "identityURL": "https://www.pesmaster.com/aron-donnum/efootball-2022/player/146398/"
+    },
+    {
+      "sourceId": "146909",
+      "name": "Antoni Milambo",
+      "publishedName": "Antoni Milambo",
+      "identityURL": "https://www.pesmaster.com/antoni-milambo/efootball-2022/player/146909/"
+    },
+    {
+      "sourceId": "146953",
+      "name": "Romaine Mundle",
+      "publishedName": "Romaine Mundle",
+      "identityURL": "https://www.pesmaster.com/romaine-mundle/efootball-2022/player/146953/"
+    },
+    {
+      "sourceId": "147919",
+      "name": "Rodrigo Huescas",
+      "publishedName": "Rodrigo Huescas",
+      "identityURL": "https://www.pesmaster.com/rodrigo-huescas/efootball-2022/player/147919/"
+    },
+    {
+      "sourceId": "148970",
+      "name": "Abde Ezzalzouli",
+      "publishedName": "Abde Ezzalzouli",
+      "identityURL": "https://www.pesmaster.com/abde-ezzalzouli/efootball-2022/player/148970/"
+    },
+    {
+      "sourceId": "153488",
+      "name": "Gianluca Prestianni",
+      "publishedName": "Gianluca Prestianni",
+      "identityURL": "https://www.pesmaster.com/gianluca-prestianni/efootball-2022/player/153488/"
+    },
+    {
+      "sourceId": "155214",
+      "name": "Nico Paz",
+      "publishedName": "Nico Paz",
+      "identityURL": "https://www.pesmaster.com/nico-paz/efootball-2022/player/155214/"
+    },
+    {
+      "sourceId": "155219",
+      "name": "Álvaro Rodríguez",
+      "publishedName": "Álvaro Rodríguez",
+      "identityURL": "https://www.pesmaster.com/alvaro-rodriguez/efootball-2022/player/155219/"
+    },
+    {
+      "sourceId": "155457",
+      "name": "Moussa N'Diaye",
+      "publishedName": "Moussa Ndiaye",
+      "identityURL": "https://www.pesmaster.com/moussa-ndiaye/efootball-2022/player/155457/"
+    },
+    {
+      "sourceId": "158740",
+      "name": "Kobbie Mainoo",
+      "publishedName": "Kobbie Mainoo",
+      "identityURL": "https://www.pesmaster.com/kobbie-mainoo/efootball-2022/player/158740/"
+    },
+    {
+      "sourceId": "159502",
+      "name": "Andrés García",
+      "publishedName": "Andrés García",
+      "identityURL": "https://www.pesmaster.com/andres-garcia/efootball-2022/player/159502/"
+    },
+    {
+      "sourceId": "161548",
+      "name": "Fermín López",
+      "publishedName": "Fermin Lopez",
+      "identityURL": "https://www.pesmaster.com/fermin-lopez/efootball-2022/player/161548/"
+    },
+    {
+      "sourceId": "163006",
+      "name": "Nico O'Reilly",
+      "publishedName": "Nico O'Reilly",
+      "identityURL": "https://www.pesmaster.com/nico-oreilly/efootball-2022/player/163006/"
+    },
+    {
+      "sourceId": "164971",
+      "name": "Jon Martín",
+      "publishedName": "Jon Martín",
+      "identityURL": "https://www.pesmaster.com/jon-martin/efootball-2022/player/164971/"
+    },
+    {
+      "sourceId": "166254",
+      "name": "Ayyoub Bouaddi",
+      "publishedName": "Ayyoub Bouaddi",
+      "identityURL": "https://www.pesmaster.com/ayyoub-bouaddi/efootball-2022/player/166254/"
+    },
+    {
+      "sourceId": "166468",
+      "name": "Martim Fernandes",
+      "publishedName": "Martim Fernandes",
+      "identityURL": "https://www.pesmaster.com/martim-fernandes/efootball-2022/player/166468/"
+    },
+    {
+      "sourceId": "167715",
+      "name": "Tamble Monteiro",
+      "publishedName": "Tamble Monteiro",
+      "identityURL": "https://www.pesmaster.com/tamble-monteiro/efootball-2022/player/167715/"
+    },
+    {
+      "sourceId": "168293",
+      "name": "Josh King",
+      "publishedName": "Josh King",
+      "identityURL": "https://www.pesmaster.com/josh-king/efootball-2022/player/168293/"
+    },
+    {
+      "sourceId": "168465",
+      "name": "Carlos Espí",
+      "publishedName": "Carlos Espi",
+      "identityURL": "https://www.pesmaster.com/carlos-espi/efootball-2022/player/168465/"
+    },
+    {
+      "sourceId": "168758",
+      "name": "Leon Chiwome",
+      "publishedName": "Leon Chiwome",
+      "identityURL": "https://www.pesmaster.com/leon-chiwome/efootball-2022/player/168758/"
+    },
+    {
+      "sourceId": "173989",
+      "name": "Víctor Muñoz",
+      "publishedName": "Víctor Muñoz",
+      "identityURL": "https://www.pesmaster.com/victor-munoz/efootball-2022/player/173989/"
+    },
+    {
+      "sourceId": "174521",
+      "name": "Nacho Mirás",
+      "publishedName": "Nacho Miras",
+      "identityURL": "https://www.pesmaster.com/nacho-miras/efootball-2022/player/174521/"
+    },
+    {
+      "sourceId": "176104",
+      "name": "Yan Diomande",
+      "publishedName": "Yan Diomande",
+      "identityURL": "https://www.pesmaster.com/yan-diomande/efootball-2022/player/176104/"
+    },
+    {
+      "sourceId": "177256",
+      "name": "Matija Mitrović",
+      "publishedName": "Matija Mitrovic",
+      "identityURL": "https://www.pesmaster.com/matija-mitrovic/efootball-2022/player/177256/"
+    },
+    {
+      "sourceId": "177976",
+      "name": "Mateja Stjepanović",
+      "publishedName": "Mateja Stjepanović",
+      "identityURL": "https://www.pesmaster.com/mateja-stjepanovic/efootball-2022/player/177976/"
+    },
+    {
+      "sourceId": "179090",
+      "name": "Strahinja Stojković",
+      "publishedName": "Strahinja Stojkovic",
+      "identityURL": "https://www.pesmaster.com/strahinja-stojkovic/efootball-2022/player/179090/"
+    },
+    {
+      "sourceId": "182062",
+      "name": "Anísio Cabral",
+      "publishedName": "Anisio Cabral",
+      "identityURL": "https://www.pesmaster.com/anisio-cabral/efootball-2022/player/182062/"
+    },
+    {
+      "sourceId": "4522",
+      "name": "Cristiano Ronaldo",
+      "publishedName": "Cristiano Ronaldo",
+      "identityURL": "https://www.pesmaster.com/cristiano-ronaldo/pes-2021/player/4522/"
+    },
+    {
+      "sourceId": "46788",
+      "name": "Íñigo Ruiz de Galarreta",
+      "publishedName": "Iñigo Ruiz de Galarreta",
+      "identityURL": "https://www.pesmaster.com/r-de-galarreta/pes-2021/player/46788/"
+    },
+    {
+      "sourceId": "47287",
+      "name": "Harry Kane",
+      "publishedName": "Harry kane",
+      "identityURL": "https://www.pesmaster.com/h-kane/pes-2021/player/47287/"
+    }
+  ]
+}

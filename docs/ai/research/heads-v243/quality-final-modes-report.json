@@ -1,0 +1,187 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "qualityAudit": [
+        {
+          "at": 5.5555,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 2,
+          "minJersey": 1536,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        },
+        {
+          "at": 23.14791666666667,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 2,
+          "minJersey": 1536,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        },
+        {
+          "at": 37.962583333333335,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 2,
+          "minJersey": 1536,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        },
+        {
+          "at": 5.5555,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              810,
+              1440
+            ]
+          ],
+          "active": 2,
+          "minJersey": 1536,
+          "detailedBodies": 2,
+          "post": "pending-capability-check"
+        }
+      ],
+      "headAudit": {
+        "lite": false,
+        "maxTexture": 1024,
+        "available": 332,
+        "loaded": 2,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "bowling",
+      "seed": 3766193740,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "mode": "competition",
+      "qualityAudit": [
+        {
+          "at": 5.439,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 10,
+          "minJersey": 1536,
+          "detailedBodies": 10,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        },
+        {
+          "at": 22.6625,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 10,
+          "minJersey": 1536,
+          "detailedBodies": 10,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        },
+        {
+          "at": 37.1665,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 10,
+          "minJersey": 1536,
+          "detailedBodies": 10,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        },
+        {
+          "at": 5.439,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 10,
+          "minJersey": 1536,
+          "detailedBodies": 10,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        }
+      ],
+      "pbr": true,
+      "heads": 5,
+      "headFailed": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "pass": true,
+    "identity": true,
+    "geometry": true,
+    "neckRewind": true,
+    "disposePending": true
+  },
+  {
+    "pass": true,
+    "models": 332,
+    "poses": 36,
+    "neckAttached": true,
+    "kitPreserved": true,
+    "skinMatched": true,
+    "rewindExact": true,
+    "lateBodyReady": true
+  },
+  {
+    "pass": true,
+    "teams": 265,
+    "models": 332,
+    "prioritySquadCoverage": true,
+    "allSixSides": true
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "models": 332,
+  "bytes": 188805730,
+  "initial140RawBytes": 186423032,
+  "retainedInitialModelBytes": 71831440,
+  "orphanCopiesExcluded": [
+    "assets/heads/pes/57353/head.glb.gz",
+    "assets/heads/pes/173989/head.glb.gz",
+    "assets/heads/pes/128435/head.glb.gz",
+    "assets/heads/pes/111096/head.glb.gz",
+    "assets/heads/pes/110815/head.glb.gz",
+    "assets/heads/pes/61214/head.glb.gz",
+    "assets/heads/pes/135287/head.glb.gz",
+    "assets/heads/pes/147234/head.glb.gz",
+    "assets/heads/pes/151794/head.glb.gz",
+    "assets/heads/pes/114593/head.glb.gz"
+  ],
+  "largestCompressedModelBytes": 1446686,
+  "shippedRawGLBs": 0,
+  "comparisonNote": "retainedInitialModelBytes counts only retained matching models; not a same-140-model compression ratio"
+}

@@ -1,0 +1,2391 @@
+{
+  "models": 332,
+  "bytes": 188805730,
+  "rows": [
+    {
+      "id": "83",
+      "name": "FC Barcelona",
+      "national": false,
+      "total": 22,
+      "real": 16,
+      "photo": 6,
+      "generic": 0
+    },
+    {
+      "id": "85",
+      "name": "RC Celta",
+      "national": false,
+      "total": 20,
+      "real": 1,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "86",
+      "name": "Real Madrid CF",
+      "national": false,
+      "total": 23,
+      "real": 19,
+      "photo": 4,
+      "generic": 0
+    },
+    {
+      "id": "87",
+      "name": "R. Racing Club",
+      "national": false,
+      "total": 24,
+      "real": 1,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "88",
+      "name": "RCD Espanyol",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "89",
+      "name": "Real Sociedad",
+      "national": false,
+      "total": 24,
+      "real": 3,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "90",
+      "name": "Deportivo",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "93",
+      "name": "Athletic Club",
+      "national": false,
+      "total": 24,
+      "real": 1,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "94",
+      "name": "Valencia CF",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "96",
+      "name": "Deportivo Alavés",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "97",
+      "name": "Osasuna",
+      "national": false,
+      "total": 22,
+      "real": 1,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "99",
+      "name": "Málaga CF",
+      "national": false,
+      "total": 21,
+      "real": 0,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "101",
+      "name": "Rayo Vallecano",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "102",
+      "name": "Villarreal CF",
+      "national": false,
+      "total": 21,
+      "real": 0,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "103",
+      "name": "AC Milan",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 23,
+      "generic": 2
+    },
+    {
+      "id": "104",
+      "name": "Roma",
+      "national": false,
+      "total": 21,
+      "real": 0,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "105",
+      "name": "Atalanta",
+      "national": false,
+      "total": 19,
+      "real": 1,
+      "photo": 18,
+      "generic": 0
+    },
+    {
+      "id": "107",
+      "name": "Bologna",
+      "national": false,
+      "total": 26,
+      "real": 1,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "109",
+      "name": "Fiorentina",
+      "national": false,
+      "total": 27,
+      "real": 1,
+      "photo": 23,
+      "generic": 3
+    },
+    {
+      "id": "110",
+      "name": "Inter",
+      "national": false,
+      "total": 20,
+      "real": 1,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "111",
+      "name": "Juventus",
+      "national": false,
+      "total": 22,
+      "real": 0,
+      "photo": 22,
+      "generic": 0
+    },
+    {
+      "id": "112",
+      "name": "Lazio",
+      "national": false,
+      "total": 31,
+      "real": 0,
+      "photo": 31,
+      "generic": 0
+    },
+    {
+      "id": "113",
+      "name": "Lecce",
+      "national": false,
+      "total": 28,
+      "real": 1,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "114",
+      "name": "Napoli",
+      "national": false,
+      "total": 20,
+      "real": 1,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "115",
+      "name": "Parma",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "118",
+      "name": "Udinese",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "122",
+      "name": "1. FC Köln",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "124",
+      "name": "Borussia Dortmund",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "125",
+      "name": "Eintracht Frankfurt",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "126",
+      "name": "SC Freiburg",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "127",
+      "name": "Hamburger SV",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "131",
+      "name": "Bayer Leverkusen",
+      "national": false,
+      "total": 22,
+      "real": 0,
+      "photo": 21,
+      "generic": 1
+    },
+    {
+      "id": "132",
+      "name": "Bayern München",
+      "national": false,
+      "total": 22,
+      "real": 2,
+      "photo": 19,
+      "generic": 1
+    },
+    {
+      "id": "133",
+      "name": "Schalke 04",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "134",
+      "name": "VfB Stuttgart",
+      "national": false,
+      "total": 22,
+      "real": 0,
+      "photo": 22,
+      "generic": 0
+    },
+    {
+      "id": "137",
+      "name": "Werder Bremen",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "139",
+      "name": "Ajax Amsterdam",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "140",
+      "name": "AZ Alkmaar",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "142",
+      "name": "Feyenoord Rotterdam",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 26,
+      "generic": 1
+    },
+    {
+      "id": "147",
+      "name": "NEC Nijmegen",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 28,
+      "generic": 1
+    },
+    {
+      "id": "148",
+      "name": "PSV Eindhoven",
+      "national": false,
+      "total": 18,
+      "real": 0,
+      "photo": 17,
+      "generic": 1
+    },
+    {
+      "id": "152",
+      "name": "FC Twente",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "160",
+      "name": "Paris Saint-Germain",
+      "national": false,
+      "total": 20,
+      "real": 1,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "162",
+      "name": "İtalya",
+      "national": true,
+      "total": 31,
+      "real": 2,
+      "photo": 25,
+      "generic": 4
+    },
+    {
+      "id": "164",
+      "name": "İspanya",
+      "national": true,
+      "total": 28,
+      "real": 10,
+      "photo": 16,
+      "generic": 2
+    },
+    {
+      "id": "166",
+      "name": "Lille OSC",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "167",
+      "name": "Olympique Lyonnais",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 22,
+      "generic": 1
+    },
+    {
+      "id": "169",
+      "name": "Stade Rennais",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 23,
+      "generic": 1
+    },
+    {
+      "id": "170",
+      "name": "ESTAC Troyes",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 24,
+      "generic": 1
+    },
+    {
+      "id": "172",
+      "name": "AJ Auxerre",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 24,
+      "generic": 1
+    },
+    {
+      "id": "174",
+      "name": "AS Monaco",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "175",
+      "name": "RC Lens",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "176",
+      "name": "Olympique Marseille",
+      "national": false,
+      "total": 25,
+      "real": 1,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "179",
+      "name": "Toulouse FC",
+      "national": false,
+      "total": 24,
+      "real": 1,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "180",
+      "name": "RC Strasbourg",
+      "national": false,
+      "total": 24,
+      "real": 1,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "202",
+      "name": "Arjantin",
+      "national": true,
+      "total": 28,
+      "real": 8,
+      "photo": 11,
+      "generic": 9
+    },
+    {
+      "id": "203",
+      "name": "Meksika",
+      "national": true,
+      "total": 28,
+      "real": 1,
+      "photo": 7,
+      "generic": 20
+    },
+    {
+      "id": "205",
+      "name": "Brezilya",
+      "national": true,
+      "total": 25,
+      "real": 8,
+      "photo": 9,
+      "generic": 8
+    },
+    {
+      "id": "206",
+      "name": "Kanada",
+      "national": true,
+      "total": 23,
+      "real": 0,
+      "photo": 8,
+      "generic": 15
+    },
+    {
+      "id": "207",
+      "name": "Şili",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 4,
+      "generic": 22
+    },
+    {
+      "id": "208",
+      "name": "Kolombiya",
+      "national": true,
+      "total": 26,
+      "real": 1,
+      "photo": 9,
+      "generic": 16
+    },
+    {
+      "id": "209",
+      "name": "Ekvador",
+      "national": true,
+      "total": 29,
+      "real": 2,
+      "photo": 6,
+      "generic": 21
+    },
+    {
+      "id": "210",
+      "name": "Paraguay",
+      "national": true,
+      "total": 28,
+      "real": 0,
+      "photo": 4,
+      "generic": 24
+    },
+    {
+      "id": "211",
+      "name": "Peru",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 3,
+      "generic": 23
+    },
+    {
+      "id": "212",
+      "name": "Uruguay",
+      "national": true,
+      "total": 28,
+      "real": 3,
+      "photo": 9,
+      "generic": 16
+    },
+    {
+      "id": "213",
+      "name": "Venezuela",
+      "national": true,
+      "total": 28,
+      "real": 0,
+      "photo": 7,
+      "generic": 21
+    },
+    {
+      "id": "214",
+      "name": "Kosta Rika",
+      "national": true,
+      "total": 23,
+      "real": 0,
+      "photo": 3,
+      "generic": 20
+    },
+    {
+      "id": "239",
+      "name": "Torino",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "243",
+      "name": "Sevilla FC",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "244",
+      "name": "Real Betis",
+      "national": false,
+      "total": 25,
+      "real": 2,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "256",
+      "name": "Celtic",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "262",
+      "name": "Heart of Midlothian",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "268",
+      "name": "Borussia Mönchengladbach",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "273",
+      "name": "FC Lorient",
+      "national": false,
+      "total": 22,
+      "real": 0,
+      "photo": 22,
+      "generic": 0
+    },
+    {
+      "id": "306",
+      "name": "Hull City",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "331",
+      "name": "Brighton",
+      "national": false,
+      "total": 21,
+      "real": 0,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "337",
+      "name": "Brentford",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "349",
+      "name": "Bournemouth",
+      "national": false,
+      "total": 27,
+      "real": 3,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "357",
+      "name": "Leeds United",
+      "national": false,
+      "total": 22,
+      "real": 1,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "359",
+      "name": "Arsenal",
+      "national": false,
+      "total": 21,
+      "real": 17,
+      "photo": 4,
+      "generic": 0
+    },
+    {
+      "id": "360",
+      "name": "Manchester United",
+      "national": false,
+      "total": 25,
+      "real": 17,
+      "photo": 8,
+      "generic": 0
+    },
+    {
+      "id": "361",
+      "name": "Newcastle United",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "362",
+      "name": "Aston Villa",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "363",
+      "name": "Chelsea",
+      "national": false,
+      "total": 21,
+      "real": 16,
+      "photo": 5,
+      "generic": 0
+    },
+    {
+      "id": "364",
+      "name": "Liverpool",
+      "national": false,
+      "total": 23,
+      "real": 14,
+      "photo": 9,
+      "generic": 0
+    },
+    {
+      "id": "366",
+      "name": "Sunderland",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "367",
+      "name": "Tottenham Hotspur",
+      "national": false,
+      "total": 22,
+      "real": 3,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "368",
+      "name": "Everton",
+      "national": false,
+      "total": 21,
+      "real": 2,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "370",
+      "name": "Fulham",
+      "national": false,
+      "total": 25,
+      "real": 3,
+      "photo": 22,
+      "generic": 0
+    },
+    {
+      "id": "373",
+      "name": "Ipswich Town",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "382",
+      "name": "Manchester City FC",
+      "national": false,
+      "total": 23,
+      "real": 14,
+      "photo": 9,
+      "generic": 0
+    },
+    {
+      "id": "384",
+      "name": "Crystal Palace",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "388",
+      "name": "Coventry City",
+      "national": false,
+      "total": 25,
+      "real": 1,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "393",
+      "name": "Nottingham Forest",
+      "national": false,
+      "total": 22,
+      "real": 2,
+      "photo": 20,
+      "generic": 0
+    },
+    {
+      "id": "432",
+      "name": "Galatasaray",
+      "national": false,
+      "total": 29,
+      "real": 18,
+      "photo": 11,
+      "generic": 0
+    },
+    {
+      "id": "433",
+      "name": "Sparta Prague",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "435",
+      "name": "Olympiacos",
+      "national": false,
+      "total": 30,
+      "real": 1,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "436",
+      "name": "Fenerbahçe",
+      "national": false,
+      "total": 25,
+      "real": 17,
+      "photo": 8,
+      "generic": 0
+    },
+    {
+      "id": "437",
+      "name": "FC Porto",
+      "national": false,
+      "total": 28,
+      "real": 1,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "441",
+      "name": "Anderlecht",
+      "national": false,
+      "total": 33,
+      "real": 0,
+      "photo": 33,
+      "generic": 0
+    },
+    {
+      "id": "443",
+      "name": "Panathinaikos",
+      "national": false,
+      "total": 30,
+      "real": 0,
+      "photo": 29,
+      "generic": 1
+    },
+    {
+      "id": "444",
+      "name": "Estonya",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 4,
+      "generic": 21
+    },
+    {
+      "id": "445",
+      "name": "Güney Kıbrıs",
+      "national": true,
+      "total": 27,
+      "real": 0,
+      "photo": 4,
+      "generic": 23
+    },
+    {
+      "id": "447",
+      "name": "Faroe Adaları",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 2,
+      "generic": 22
+    },
+    {
+      "id": "448",
+      "name": "İngiltere",
+      "national": true,
+      "total": 26,
+      "real": 13,
+      "photo": 12,
+      "generic": 1
+    },
+    {
+      "id": "449",
+      "name": "Hollanda",
+      "national": true,
+      "total": 25,
+      "real": 3,
+      "photo": 19,
+      "generic": 3
+    },
+    {
+      "id": "450",
+      "name": "Çekya",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 16,
+      "generic": 8
+    },
+    {
+      "id": "451",
+      "name": "Güney Kore",
+      "national": true,
+      "total": 26,
+      "real": 1,
+      "photo": 0,
+      "generic": 25
+    },
+    {
+      "id": "452",
+      "name": "Bosna-Hersek",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 17,
+      "generic": 9
+    },
+    {
+      "id": "453",
+      "name": "Malta",
+      "national": true,
+      "total": 28,
+      "real": 0,
+      "photo": 0,
+      "generic": 28
+    },
+    {
+      "id": "455",
+      "name": "Yunanistan",
+      "national": true,
+      "total": 27,
+      "real": 0,
+      "photo": 13,
+      "generic": 14
+    },
+    {
+      "id": "456",
+      "name": "Letonya",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 4,
+      "generic": 20
+    },
+    {
+      "id": "457",
+      "name": "Ukrayna",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 9,
+      "generic": 17
+    },
+    {
+      "id": "458",
+      "name": "Finlandiya",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 8,
+      "generic": 17
+    },
+    {
+      "id": "459",
+      "name": "Belçika",
+      "national": true,
+      "total": 26,
+      "real": 5,
+      "photo": 17,
+      "generic": 4
+    },
+    {
+      "id": "460",
+      "name": "Litvanya",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 9,
+      "generic": 15
+    },
+    {
+      "id": "461",
+      "name": "İsrail",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 6,
+      "generic": 19
+    },
+    {
+      "id": "462",
+      "name": "Bulgaristan",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 5,
+      "generic": 19
+    },
+    {
+      "id": "463",
+      "name": "Kuzey Makedonya",
+      "national": true,
+      "total": 26,
+      "real": 1,
+      "photo": 9,
+      "generic": 16
+    },
+    {
+      "id": "464",
+      "name": "Norveç",
+      "national": true,
+      "total": 23,
+      "real": 4,
+      "photo": 16,
+      "generic": 3
+    },
+    {
+      "id": "465",
+      "name": "Türkiye",
+      "national": true,
+      "total": 26,
+      "real": 12,
+      "photo": 10,
+      "generic": 4
+    },
+    {
+      "id": "466",
+      "name": "İsveç",
+      "national": true,
+      "total": 35,
+      "real": 2,
+      "photo": 20,
+      "generic": 13
+    },
+    {
+      "id": "468",
+      "name": "Slovakya",
+      "national": true,
+      "total": 31,
+      "real": 1,
+      "photo": 13,
+      "generic": 17
+    },
+    {
+      "id": "469",
+      "name": "İran",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 0,
+      "generic": 25
+    },
+    {
+      "id": "470",
+      "name": "İzlanda",
+      "national": true,
+      "total": 23,
+      "real": 0,
+      "photo": 6,
+      "generic": 17
+    },
+    {
+      "id": "471",
+      "name": "Polonya",
+      "national": true,
+      "total": 25,
+      "real": 1,
+      "photo": 12,
+      "generic": 12
+    },
+    {
+      "id": "472",
+      "name": "Slovenya",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 9,
+      "generic": 17
+    },
+    {
+      "id": "473",
+      "name": "Romanya",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 11,
+      "generic": 14
+    },
+    {
+      "id": "474",
+      "name": "Avusturya",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 23,
+      "generic": 2
+    },
+    {
+      "id": "475",
+      "name": "İsviçre",
+      "national": true,
+      "total": 28,
+      "real": 1,
+      "photo": 18,
+      "generic": 9
+    },
+    {
+      "id": "476",
+      "name": "İrlanda",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 9,
+      "generic": 15
+    },
+    {
+      "id": "477",
+      "name": "Hırvatistan",
+      "national": true,
+      "total": 32,
+      "real": 2,
+      "photo": 22,
+      "generic": 8
+    },
+    {
+      "id": "478",
+      "name": "Fransa",
+      "national": true,
+      "total": 23,
+      "real": 9,
+      "photo": 12,
+      "generic": 2
+    },
+    {
+      "id": "479",
+      "name": "Danimarka",
+      "national": true,
+      "total": 24,
+      "real": 2,
+      "photo": 14,
+      "generic": 8
+    },
+    {
+      "id": "480",
+      "name": "Macaristan",
+      "national": true,
+      "total": 27,
+      "real": 3,
+      "photo": 8,
+      "generic": 16
+    },
+    {
+      "id": "481",
+      "name": "Almanya",
+      "national": true,
+      "total": 24,
+      "real": 2,
+      "photo": 21,
+      "generic": 1
+    },
+    {
+      "id": "482",
+      "name": "Portekiz",
+      "national": true,
+      "total": 28,
+      "real": 7,
+      "photo": 18,
+      "generic": 3
+    },
+    {
+      "id": "483",
+      "name": "Moldova",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 1,
+      "generic": 25
+    },
+    {
+      "id": "489",
+      "name": "Hajduk Split",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 24,
+      "generic": 1
+    },
+    {
+      "id": "490",
+      "name": "Levski Sofia",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "493",
+      "name": "Shakhtar Donetsk",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 10,
+      "generic": 13
+    },
+    {
+      "id": "494",
+      "name": "Slavia Prague",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "510",
+      "name": "Viking FK",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "521",
+      "name": "Slovan Bratislava",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "570",
+      "name": "Club Brugge",
+      "national": false,
+      "total": 30,
+      "real": 1,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "572",
+      "name": "FC Midtjylland",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "578",
+      "name": "Galler",
+      "national": true,
+      "total": 34,
+      "real": 0,
+      "photo": 12,
+      "generic": 22
+    },
+    {
+      "id": "579",
+      "name": "Ermenistan",
+      "national": true,
+      "total": 28,
+      "real": 0,
+      "photo": 4,
+      "generic": 24
+    },
+    {
+      "id": "580",
+      "name": "İskoçya",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 13,
+      "generic": 13
+    },
+    {
+      "id": "581",
+      "name": "Azerbaycan",
+      "national": true,
+      "total": 27,
+      "real": 0,
+      "photo": 1,
+      "generic": 26
+    },
+    {
+      "id": "582",
+      "name": "Lüksemburg",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 1,
+      "generic": 24
+    },
+    {
+      "id": "583",
+      "name": "Belarus",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 2,
+      "generic": 23
+    },
+    {
+      "id": "584",
+      "name": "Gürcistan",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 11,
+      "generic": 15
+    },
+    {
+      "id": "585",
+      "name": "Arnavutluk",
+      "national": true,
+      "total": 27,
+      "real": 0,
+      "photo": 9,
+      "generic": 18
+    },
+    {
+      "id": "586",
+      "name": "Kuzey İrlanda",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 4,
+      "generic": 21
+    },
+    {
+      "id": "587",
+      "name": "Andorra",
+      "national": true,
+      "total": 28,
+      "real": 0,
+      "photo": 0,
+      "generic": 28
+    },
+    {
+      "id": "588",
+      "name": "San Marino",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 0,
+      "generic": 26
+    },
+    {
+      "id": "589",
+      "name": "Lihtenştayn",
+      "national": true,
+      "total": 23,
+      "real": 0,
+      "photo": 0,
+      "generic": 23
+    },
+    {
+      "id": "597",
+      "name": "Dinamo Zagreb",
+      "national": false,
+      "total": 29,
+      "real": 1,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "598",
+      "name": "Union Berlin",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 25,
+      "generic": 1
+    },
+    {
+      "id": "617",
+      "name": "Omonia Nicosia",
+      "national": false,
+      "total": 31,
+      "real": 0,
+      "photo": 30,
+      "generic": 1
+    },
+    {
+      "id": "620",
+      "name": "SK Brann",
+      "national": false,
+      "total": 19,
+      "real": 0,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "622",
+      "name": "Ferencvaros",
+      "national": false,
+      "total": 37,
+      "real": 0,
+      "photo": 37,
+      "generic": 0
+    },
+    {
+      "id": "624",
+      "name": "Cezayir",
+      "national": true,
+      "total": 22,
+      "real": 0,
+      "photo": 12,
+      "generic": 10
+    },
+    {
+      "id": "627",
+      "name": "Japonya",
+      "national": true,
+      "total": 28,
+      "real": 1,
+      "photo": 17,
+      "generic": 10
+    },
+    {
+      "id": "628",
+      "name": "Avustralya",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 7,
+      "generic": 17
+    },
+    {
+      "id": "654",
+      "name": "Senegal",
+      "national": true,
+      "total": 25,
+      "real": 1,
+      "photo": 12,
+      "generic": 12
+    },
+    {
+      "id": "655",
+      "name": "Suudi Arabistan",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 1,
+      "generic": 25
+    },
+    {
+      "id": "656",
+      "name": "Kamerun",
+      "national": true,
+      "total": 28,
+      "real": 1,
+      "photo": 9,
+      "generic": 18
+    },
+    {
+      "id": "657",
+      "name": "Nijerya",
+      "national": true,
+      "total": 26,
+      "real": 1,
+      "photo": 5,
+      "generic": 20
+    },
+    {
+      "id": "658",
+      "name": "Çin",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 0,
+      "generic": 26
+    },
+    {
+      "id": "659",
+      "name": "Tunus",
+      "national": true,
+      "total": 27,
+      "real": 0,
+      "photo": 3,
+      "generic": 24
+    },
+    {
+      "id": "660",
+      "name": "ABD",
+      "national": true,
+      "total": 25,
+      "real": 0,
+      "photo": 14,
+      "generic": 11
+    },
+    {
+      "id": "789",
+      "name": "Göztepe",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "887",
+      "name": "AEK Athens",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 28,
+      "generic": 1
+    },
+    {
+      "id": "909",
+      "name": "F.C. København",
+      "national": false,
+      "total": 22,
+      "real": 1,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "936",
+      "name": "Sint-Truidense",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "987",
+      "name": "Lillestrom",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 24,
+      "generic": 2
+    },
+    {
+      "id": "995",
+      "name": "Kocaelispor",
+      "national": false,
+      "total": 28,
+      "real": 1,
+      "photo": 26,
+      "generic": 1
+    },
+    {
+      "id": "996",
+      "name": "Gençlerbirliği",
+      "national": false,
+      "total": 30,
+      "real": 1,
+      "photo": 25,
+      "generic": 4
+    },
+    {
+      "id": "997",
+      "name": "Trabzonspor",
+      "national": false,
+      "total": 29,
+      "real": 7,
+      "photo": 20,
+      "generic": 2
+    },
+    {
+      "id": "1010",
+      "name": "OFI Crete",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 27,
+      "generic": 1
+    },
+    {
+      "id": "1068",
+      "name": "Atlético de Madrid",
+      "national": false,
+      "total": 22,
+      "real": 2,
+      "photo": 20,
+      "generic": 0
+    },
+    {
+      "id": "1538",
+      "name": "Levante UD",
+      "national": false,
+      "total": 22,
+      "real": 0,
+      "photo": 21,
+      "generic": 1
+    },
+    {
+      "id": "1895",
+      "name": "Beşiktaş",
+      "national": false,
+      "total": 27,
+      "real": 23,
+      "photo": 4,
+      "generic": 0
+    },
+    {
+      "id": "1929",
+      "name": "Benfica",
+      "national": false,
+      "total": 24,
+      "real": 3,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "2250",
+      "name": "Sporting CP",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "2290",
+      "name": "Red Star Belgrade",
+      "national": false,
+      "total": 26,
+      "real": 1,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "2502",
+      "name": "OGC Nice",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "2528",
+      "name": "Kairat Almaty",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 21,
+      "generic": 3
+    },
+    {
+      "id": "2572",
+      "name": "Como",
+      "national": false,
+      "total": 24,
+      "real": 2,
+      "photo": 21,
+      "generic": 1
+    },
+    {
+      "id": "2619",
+      "name": "Kazakistan",
+      "national": true,
+      "total": 27,
+      "real": 0,
+      "photo": 5,
+      "generic": 22
+    },
+    {
+      "id": "2620",
+      "name": "Mısır",
+      "national": true,
+      "total": 26,
+      "real": 2,
+      "photo": 3,
+      "generic": 21
+    },
+    {
+      "id": "2659",
+      "name": "Panama",
+      "national": true,
+      "total": 25,
+      "real": 1,
+      "photo": 3,
+      "generic": 21
+    },
+    {
+      "id": "2697",
+      "name": "Le Mans FC",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 21,
+      "generic": 2
+    },
+    {
+      "id": "2790",
+      "name": "RB Salzburg",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "2849",
+      "name": "Mali",
+      "national": true,
+      "total": 26,
+      "real": 1,
+      "photo": 11,
+      "generic": 14
+    },
+    {
+      "id": "2869",
+      "name": "Fas",
+      "national": true,
+      "total": 26,
+      "real": 4,
+      "photo": 16,
+      "generic": 6
+    },
+    {
+      "id": "2922",
+      "name": "Getafe CF",
+      "national": false,
+      "total": 22,
+      "real": 1,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "2925",
+      "name": "Cagliari",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "2950",
+      "name": "Mainz 05",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "2980",
+      "name": "Bodo/Glimt",
+      "national": false,
+      "total": 23,
+      "real": 1,
+      "photo": 22,
+      "generic": 0
+    },
+    {
+      "id": "2990",
+      "name": "Lech Poznan",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "2994",
+      "name": "Braga",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "3024",
+      "name": "FC Thun",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 26,
+      "generic": 1
+    },
+    {
+      "id": "3101",
+      "name": "FC Nordsjælland",
+      "national": false,
+      "total": 27,
+      "real": 1,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "3236",
+      "name": "Havre AC",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "3263",
+      "name": "Genoa",
+      "national": false,
+      "total": 30,
+      "real": 0,
+      "photo": 30,
+      "generic": 0
+    },
+    {
+      "id": "3307",
+      "name": "SC Paderborn",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "3362",
+      "name": "NK Celje",
+      "national": false,
+      "total": 32,
+      "real": 0,
+      "photo": 32,
+      "generic": 0
+    },
+    {
+      "id": "3611",
+      "name": "KAA Gent",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "3746",
+      "name": "SK Sturm Graz",
+      "national": false,
+      "total": 19,
+      "real": 0,
+      "photo": 19,
+      "generic": 0
+    },
+    {
+      "id": "3751",
+      "name": "Elche CF",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "3841",
+      "name": "FC Augsburg",
+      "national": false,
+      "total": 21,
+      "real": 0,
+      "photo": 21,
+      "generic": 0
+    },
+    {
+      "id": "3997",
+      "name": "Sassuolo",
+      "national": false,
+      "total": 32,
+      "real": 0,
+      "photo": 32,
+      "generic": 0
+    },
+    {
+      "id": "4007",
+      "name": "Monza",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "4057",
+      "name": "Frosinone",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "4398",
+      "name": "Katar",
+      "national": true,
+      "total": 26,
+      "real": 0,
+      "photo": 0,
+      "generic": 26
+    },
+    {
+      "id": "4411",
+      "name": "LASK Linz",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "4469",
+      "name": "Gana",
+      "national": true,
+      "total": 26,
+      "real": 1,
+      "photo": 10,
+      "generic": 15
+    },
+    {
+      "id": "4789",
+      "name": "Fildişi Sahili",
+      "national": true,
+      "total": 25,
+      "real": 4,
+      "photo": 12,
+      "generic": 9
+    },
+    {
+      "id": "5807",
+      "name": "Union St.-Gilloise",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "6757",
+      "name": "Sırbistan",
+      "national": true,
+      "total": 29,
+      "real": 1,
+      "photo": 16,
+      "generic": 12
+    },
+    {
+      "id": "6775",
+      "name": "Karadağ",
+      "national": true,
+      "total": 27,
+      "real": 1,
+      "photo": 6,
+      "generic": 20
+    },
+    {
+      "id": "6851",
+      "name": "Paris FC",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 23,
+      "generic": 1
+    },
+    {
+      "id": "6870",
+      "name": "Kasımpaşa",
+      "national": false,
+      "total": 32,
+      "real": 1,
+      "photo": 31,
+      "generic": 0
+    },
+    {
+      "id": "6997",
+      "name": "Brest",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 23,
+      "generic": 1
+    },
+    {
+      "id": "7648",
+      "name": "Konyaspor",
+      "national": false,
+      "total": 25,
+      "real": 2,
+      "photo": 23,
+      "generic": 0
+    },
+    {
+      "id": "7656",
+      "name": "Çaykur Rizespor",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 25,
+      "generic": 1
+    },
+    {
+      "id": "7672",
+      "name": "FC Lugano",
+      "national": false,
+      "total": 30,
+      "real": 0,
+      "photo": 29,
+      "generic": 1
+    },
+    {
+      "id": "7853",
+      "name": "AGF",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "7868",
+      "name": "Angers SCO",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 22,
+      "generic": 1
+    },
+    {
+      "id": "7911",
+      "name": "TSG Hoffenheim",
+      "national": false,
+      "total": 18,
+      "real": 0,
+      "photo": 18,
+      "generic": 0
+    },
+    {
+      "id": "7914",
+      "name": "Başakşehir",
+      "national": false,
+      "total": 28,
+      "real": 4,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "7922",
+      "name": "Jablonec",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "8089",
+      "name": "CSU Craiova",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "8169",
+      "name": "KuPS Kuopio",
+      "national": false,
+      "total": 32,
+      "real": 0,
+      "photo": 31,
+      "generic": 1
+    },
+    {
+      "id": "9078",
+      "name": "Alanyaspor",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "10388",
+      "name": "SV Elversberg",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "10834",
+      "name": "CSKA Sofia",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "11420",
+      "name": "RB Leipzig",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "11429",
+      "name": "Samsunspor",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "11505",
+      "name": "Jagiellonia Bialystok",
+      "national": false,
+      "total": 35,
+      "real": 0,
+      "photo": 35,
+      "generic": 0
+    },
+    {
+      "id": "11706",
+      "name": "Viktoria Plzen",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 26,
+      "generic": 0
+    },
+    {
+      "id": "13083",
+      "name": "Hapoel Be'er",
+      "national": false,
+      "total": 26,
+      "real": 0,
+      "photo": 22,
+      "generic": 4
+    },
+    {
+      "id": "16721",
+      "name": "Cebelitarık",
+      "national": true,
+      "total": 24,
+      "real": 0,
+      "photo": 6,
+      "generic": 18
+    },
+    {
+      "id": "17530",
+      "name": "Venezia",
+      "national": false,
+      "total": 32,
+      "real": 0,
+      "photo": 32,
+      "generic": 0
+    },
+    {
+      "id": "17856",
+      "name": "Lincoln Red Imps",
+      "national": false,
+      "total": 31,
+      "real": 0,
+      "photo": 30,
+      "generic": 1
+    },
+    {
+      "id": "18272",
+      "name": "Kosova",
+      "national": true,
+      "total": 25,
+      "real": 1,
+      "photo": 10,
+      "generic": 14
+    },
+    {
+      "id": "19246",
+      "name": "Riga FC",
+      "national": false,
+      "total": 33,
+      "real": 0,
+      "photo": 33,
+      "generic": 0
+    },
+    {
+      "id": "19267",
+      "name": "Erzurumspor FK",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 24,
+      "generic": 0
+    },
+    {
+      "id": "20024",
+      "name": "Ararat-Armenia",
+      "national": false,
+      "total": 28,
+      "real": 0,
+      "photo": 28,
+      "generic": 0
+    },
+    {
+      "id": "20025",
+      "name": "Iberia 1999",
+      "national": false,
+      "total": 30,
+      "real": 0,
+      "photo": 29,
+      "generic": 1
+    },
+    {
+      "id": "20028",
+      "name": "Kauno Zalgiris",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 29,
+      "generic": 0
+    },
+    {
+      "id": "20070",
+      "name": "Gaziantep FK",
+      "national": false,
+      "total": 32,
+      "real": 0,
+      "photo": 30,
+      "generic": 2
+    },
+    {
+      "id": "20301",
+      "name": "Mjällby AIF",
+      "national": false,
+      "total": 29,
+      "real": 0,
+      "photo": 25,
+      "generic": 4
+    },
+    {
+      "id": "20703",
+      "name": "Inter D'Escaldes",
+      "national": false,
+      "total": 32,
+      "real": 0,
+      "photo": 25,
+      "generic": 7
+    },
+    {
+      "id": "20710",
+      "name": "Borac Banja Luka",
+      "national": false,
+      "total": 34,
+      "real": 0,
+      "photo": 31,
+      "generic": 3
+    },
+    {
+      "id": "20729",
+      "name": "Eyüpspor",
+      "national": false,
+      "total": 27,
+      "real": 0,
+      "photo": 27,
+      "generic": 0
+    },
+    {
+      "id": "21615",
+      "name": "Torreense",
+      "national": false,
+      "total": 38,
+      "real": 0,
+      "photo": 36,
+      "generic": 2
+    },
+    {
+      "id": "21922",
+      "name": "Sabah FK",
+      "national": false,
+      "total": 23,
+      "real": 0,
+      "photo": 11,
+      "generic": 12
+    },
+    {
+      "id": "21943",
+      "name": "Egnatia",
+      "national": false,
+      "total": 25,
+      "real": 0,
+      "photo": 25,
+      "generic": 0
+    },
+    {
+      "id": "22281",
+      "name": "Pafos",
+      "national": false,
+      "total": 31,
+      "real": 0,
+      "photo": 31,
+      "generic": 0
+    },
+    {
+      "id": "132334",
+      "name": "Çorum FK",
+      "national": false,
+      "total": 22,
+      "real": 0,
+      "photo": 22,
+      "generic": 0
+    },
+    {
+      "id": "132335",
+      "name": "Amed SK",
+      "national": false,
+      "total": 24,
+      "real": 0,
+      "photo": 23,
+      "generic": 1
+    }
+  ]
+}

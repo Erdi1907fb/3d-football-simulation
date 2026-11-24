@@ -1,0 +1,96 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "mode": "eleven",
+      "qualityAudit": [
+        {
+          "at": 21.29932667328158,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 22,
+          "minJersey": 1024,
+          "detailedBodies": 22,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        },
+        {
+          "at": 88.74719447200658,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 22,
+          "minJersey": 1024,
+          "detailedBodies": 22,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        },
+        {
+          "at": 145.5453989340908,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 22,
+          "minJersey": 1024,
+          "detailedBodies": 22,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        },
+        {
+          "at": 21.29932667328158,
+          "buffer": [
+            1080,
+            1920
+          ],
+          "sourceBuffer": [
+            [
+              1080,
+              1920
+            ]
+          ],
+          "active": 22,
+          "minJersey": 1024,
+          "detailedBodies": 22,
+          "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)"
+        }
+      ],
+      "pbr": true,
+      "heads": 10,
+      "headFailed": []
+    }
+  ],
+  "export": {
+    "actualMovingScene": true,
+    "sourceFractions": [
+      0.12,
+      0.5,
+      0.82
+    ],
+    "seconds": 0.6,
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "decoded": true,
+    "softwareWorker": true
+  }
+}

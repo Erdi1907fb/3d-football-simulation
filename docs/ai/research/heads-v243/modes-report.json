@@ -1,0 +1,309 @@
+{
+  "pass": true,
+  "errors": [],
+  "modes": [
+    {
+      "headAudit": {
+        "available": 254,
+        "loaded": 10,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "five",
+      "seed": 239,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "headAudit": {
+        "available": 254,
+        "loaded": 11,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "japon",
+      "seed": 239,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "headAudit": {
+        "available": 254,
+        "loaded": 19,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "penalty",
+      "seed": 3766193740,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "headAudit": {
+        "available": 254,
+        "loaded": 5,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "freekick",
+      "seed": 239,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "headAudit": {
+        "available": 254,
+        "loaded": 2,
+        "failed": [],
+        "kitFailed": []
+      },
+      "mode": "futnet1",
+      "seed": 3766193740,
+      "quality": "high",
+      "pbr": true,
+      "materials": [
+        {
+          "color": [
+            0.045,
+            0.56,
+            0.28
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06,
+            0.78,
+            0.35
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.0504,
+            0.6272000000000001,
+            0.31360000000000005
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        },
+        {
+          "color": [
+            0.06720000000000001,
+            0.8736000000000002,
+            0.392
+          ],
+          "profile": "emerald-v239",
+          "pbr": true
+        }
+      ],
+      "rewindPhysics": true
+    },
+    {
+      "mode": "eleven",
+      "pbr": true,
+      "heads": 10,
+      "headFailed": []
+    },
+    {
+      "mode": "competition",
+      "pbr": true,
+      "heads": 6,
+      "headFailed": []
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 # DECISIONS — teknik karar kaydı
 
+## D-052 · 2026-11-24 · V243 — kimlikli kafa, yaka uyumu ve kararlı aktif oyuncu kalitesi
+**Karar:** Fotoğrafı model saymadan gerçek ID/ad/DOB eşleşen kafaları ortak oyuncu gövdesinde kullan; eksikte kendi portresini koru. Yüz/çene/saç sabit, yalnız alt boyun gerçek yaka ve neck_01 hareketine uyarlanır. Gerçek forma/ten/animasyon aynı aktörde kalır. Başka futbolcunun yüzü vekil olmaz.
+**Kalite:** Aktif oyuncu/yedek değişim gövdesinin mesafe LOD'u sabit; forma yazıları kalite profiline göre bir kez boyutlanır. Kamera hareketinde basit modele/512yazıya ani düşüş engellenir; performans için saha dışı/seyirci LOD ve mobil güvenli profil kalır. Motor RNG/fizik/analiz yetkisi değişmez.
+**Boyut:** 332gzipGLB toplam188,805,730byte; tek varlık12MB üstü yok. Kaynak arşiv/ham GLB ve bağlı olmayan deneysel hareket verisi yayımlanmaz. 39kanıtlı kullanılmayan tarihî medya immutable commit URL/hash ile arşivlenir; tercihli ayak JSON'u aynı63,031kaydı taşıyan JS literaline tekilleşir, Node metadata API'si korunur. Bu HEAD/ZIP temizliğidir, geçmiş Git objeleri silinmez. Ham varlıkları içeren yerel WIP geçmişi yerine temiz origin/main tabanlı optimize görünüm yayımlanır.
+**Sınır:** 332model bütün takımların bütün oyuncuları değildir; coverage sayfası gerçek/kendi fotoğrafı/genel ayrımını gösterir. Yeni Mixamo/Quaternius locomotion entegrasyonu yok; fiziksel telefon/Safari teyidi yok.
+
 Biçim: `D-NNN · tarih · ajan · durum (kabul/değişti/iptal)` — karar, gerekçe, sonuç.
 Bir kararı değiştiren yeni kayıt eskisini anar; eski kayıt silinmez.
 

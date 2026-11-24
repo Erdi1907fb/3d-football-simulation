@@ -1,0 +1,388 @@
+{
+  "pass": true,
+  "actualSharedActor": true,
+  "errors": [],
+  "players": [
+    {
+      "name": "Victor Osimhen",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 15920,
+      "box": [
+        0.1866620126561171,
+        0.34133160595422996,
+        0.22836970680126611
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-126895",
+          "local": [
+            0.01516185997201844,
+            -0.0678630726757885,
+            0.12767828836415404
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-126895",
+          "local": [
+            0.013253543779795944,
+            -0.09604444560230307,
+            0.11160832428783307
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-126895",
+          "local": [
+            0.013260795168670972,
+            -0.11408249695161055,
+            0.11166938836054797
+          ],
+          "material": 0
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-126895",
+          "local": [
+            0.007737215403737564,
+            -0.13905716180628036,
+            0.06515522642189941
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-126895",
+          "local": [
+            0.008299806033765067,
+            -0.15735905724383858,
+            0.06989281197038655
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01191619871872569,
+            -0.17051756229305903,
+            0.10034651810674211
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012787997690829516,
+            -0.18731538923389457,
+            0.10768795251922643
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Ederson",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 10794,
+      "box": [
+        0.19610509699387246,
+        0.34962547890444906,
+        0.2438100247866783
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-46815",
+          "local": [
+            0.013419164218399173,
+            -0.06751574299672015,
+            0.11649210129541367
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-46815",
+          "local": [
+            0.012711587597194903,
+            -0.09457159100510551,
+            0.11034961089213115
+          ],
+          "material": 0
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-46815",
+          "local": [
+            0.012604617695092264,
+            -0.11245603233891924,
+            0.10942100248787447
+          ],
+          "material": 0
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-46815",
+          "local": [
+            0.007432419657070853,
+            -0.13699897429565236,
+            0.06452102153831574
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-46815",
+          "local": [
+            0.007994611496708439,
+            -0.15498387601558375,
+            0.06940142300480312
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-46815",
+          "local": [
+            0.008473032297586712,
+            -0.17291350720157997,
+            0.07355460598182706
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01249137403950818,
+            -0.18401202692963506,
+            0.10843793147222346
+          ],
+          "material": 13
+        }
+      ]
+    },
+    {
+      "name": "Dušan Vlahović",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 37402,
+      "box": [
+        0.19978039222811322,
+        0.34455504875665177,
+        0.26136618928378663
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-111486",
+          "local": [
+            0.013636825350989135,
+            -0.06673086213926661,
+            0.11688211367003422
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-111486",
+          "local": [
+            0.013563633421867342,
+            -0.09290263768013475,
+            0.1162547809031218
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-111486",
+          "local": [
+            0.012576474736031063,
+            -0.11139574920266318,
+            0.10779377984469651
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-111486",
+          "local": [
+            0.00765259703676577,
+            -0.13519291001488679,
+            0.06559090504575184
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-111486",
+          "local": [
+            0.008190977491725206,
+            -0.15299793303092304,
+            0.0702053988091208
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-111486",
+          "local": [
+            0.008682441664475503,
+            -0.17069962169873534,
+            0.07441777007777384
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012534085041215618,
+            -0.18216865218155423,
+            0.10743045502382799
+          ],
+          "material": 12
+        }
+      ]
+    },
+    {
+      "name": "Stefan Savić",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 8674,
+      "box": [
+        0.2048665252907416,
+        0.36527267350672177,
+        0.26044795826140466
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-43288",
+          "local": [
+            0.01233334528924507,
+            -0.06860018383658661,
+            0.10531418908104605
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-43288",
+          "local": [
+            0.012035483947413413,
+            -0.0957658036782858,
+            0.10277075703256999
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-43288",
+          "local": [
+            0.007326796901559533,
+            -0.11873453457760252,
+            0.06256337239841447
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-43288",
+          "local": [
+            0.007599618036159162,
+            -0.13729686560510745,
+            0.06489298661748488
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-43288",
+          "local": [
+            0.008131033684076985,
+            -0.15541343765429771,
+            0.06943073422066302
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-43288",
+          "local": [
+            0.00861070032559659,
+            -0.1734387666801842,
+            0.0735265980918316
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01270808645536896,
+            -0.18485065844736948,
+            0.10851409641357135
+          ],
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "height": 1208
+}

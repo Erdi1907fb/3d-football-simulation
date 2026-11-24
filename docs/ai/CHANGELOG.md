@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V243 · 2026-11-24
+- 332 gerçek oyuncu kafası: animasyonlu alt boyun/gövde-yaka birleşimi, ten eşleme, mevcut gerçek formalar; tüm modlarda ortak runtime. Eksikte kendi doğrulanmış fotoğrafı/mevcut genel yüz. Takım ilk11+yedek kapsaması görünür sayfada.
+- Aktif oyuncu gövdesi ve forma yazı ayrıntısı kamera mesafesiyle düşmez; tribün/saha dışı ve telefon bellek profilleri korunur.
+- WebP/nicemlenmiş/gzip modeller188.8MB; kullanılmayan tarihî test medyası + tekilleştirilmiş veri68.4MB çalışma kopyası/ZIP'ten çıkarıldı. Ham kaynak/ham GLB ve test MP4 eklenmedi; geçmiş kayıtları korunur.
+- Son tam paket76/76 PASS. Gerçek browser modları,332model/36poz,360portre pozu, mobil profil ve hareketli1080p60AAC MP4 kesiti PASS. Ayrıntılı son kontroller research/heads-v243 içinde; fiziksel telefon testi yok.
+
 ## V242 · 2026-11-24
 - Bowlingde labutları kadrajda tutan sabit devrilme kamerası; kısa yaklaşım ve boş beklemeler. 12senaryoda fizik/skor aynı, ortalama40sn kısa.
 - Vuruş panelinde devrilen labut, puan artışı ve toplam net ayrılır; strike/spare/oluk/sıradaki oyuncu ve doğru bonus bekleme etiketi. Sonuç ekranı/sesler korunur.

@@ -1,0 +1,533 @@
+{
+  "schema": 1,
+  "parser": {
+    "repository": "https://github.com/the4chancup/pes-fmdl-blender",
+    "commit": "231093d3a056176b8d6e33e79d13f5563b27b985",
+    "module": "pes-fmdl/FmdlFile.py"
+  },
+  "sources": [
+    {
+      "key": "gsnew-2026",
+      "directory": "gsnew-head-source",
+      "archive": "gsnew-facepack.rar",
+      "ids": "info-PLAYER ID!.txt",
+      "page": "https://pes-files.ru/pes_2021_galatasaray_2025_26_squad_facepack",
+      "download": "https://modsfire.com/kVXE5cv2V5SxE7e",
+      "credit": "All Makers (see source page and included credits)",
+      "season": "2025-26/2026",
+      "clubId": "432",
+      "archiveSHA256": "497f240ee04a72e255d8df122cfa8d822f0cda509266b25330e2778955f4641c"
+    },
+    {
+      "key": "fener-2026",
+      "directory": "fener-head-source",
+      "archive": "fener-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.com/pes-2021-fenerbahce-s-k-facepack-season-2026/",
+      "download": "https://modsfire.com/GESMA2r1ojf4060",
+      "credit": "All Makers (source page)",
+      "season": "2026",
+      "clubId": "436",
+      "archiveSHA256": "19e7874a5b4d27f390e7471d5576580a2c8ff425c539b9159dec3fba8beeeb02"
+    },
+    {
+      "key": "besiktas-2026",
+      "directory": "bjk-head-source",
+      "archive": "bjk-facepack.rar",
+      "ids": "ID.txt",
+      "page": "https://pes-files.com/pes-2021-besiktas-jk-facepack-season-2026/",
+      "download": "https://modsfire.com/L7qhMtQ10GMTImC",
+      "credit": "All Makers (source page)",
+      "season": "2026",
+      "clubId": "1895",
+      "archiveSHA256": "c75cbe74dd53980d9e92a2d21d531d6f606441161880c415797ae9f480c30350"
+    },
+    {
+      "key": "galatasaray-2024",
+      "directory": "gs-head-source",
+      "archive": "gs-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.com/pes-2021-galatasaray-sk-facepack-season-2024-25/",
+      "download": "https://modsfire.com/6N7muWVZ6Wnl4Ta",
+      "credit": "All Makers (source page)",
+      "season": "2024-25",
+      "clubId": "432",
+      "archiveSHA256": "966d0773a1a77ca9a2cc945a23e79e02a1c3dbc2d7f590177b005c29ad405ea6"
+    },
+    {
+      "key": "trabzonspor-2024",
+      "directory": "ts-head-source",
+      "archive": "ts-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.com/pes-2021-trabzonspor-facepack-season-2024-25/",
+      "download": "https://modsfire.com/7EHoRYXPkV3SdQL",
+      "credit": "All Makers (source page)",
+      "season": "2024-25",
+      "clubId": "997",
+      "archiveSHA256": "d986e3d896b7755454336b26e2ddd53258898d88469d1f117b43f2d6eb865b8d"
+    },
+    {
+      "key": "liverpool-2026",
+      "directory": "liverpool-head-source",
+      "archive": "liverpool-facepack.rar",
+      "ids": "info-PLAYER ID!.txt",
+      "page": "https://pes-files.com/pes-2021-liverpool-facepack-2026-fl-2027/",
+      "download": "https://modsfire.com/HEOB477Q6Ka83N3",
+      "credit": "All Makers (see source page and included credits)",
+      "season": "2025-26/2026",
+      "clubId": "364",
+      "archiveSHA256": "1ddac899f9e6c077c8f9975d292f1a3a87e81006e102721fec835b3a1a01af25"
+    },
+    {
+      "key": "united-2026",
+      "directory": "united-head-source",
+      "archive": "united-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.com/pes-2021-manchester-united-fc-facepack-season-2025-26/",
+      "download": "https://modsfire.com/696ok8KOuQwsXvg",
+      "credit": "All Makers (see source page and included credits)",
+      "season": "2025-26/2026",
+      "clubId": "360",
+      "archiveSHA256": "4cc352e535bdab5cba6e003cd23f523552ab5203a43eda6ccdc8253e50d6464b"
+    },
+    {
+      "key": "mega6-2026",
+      "directory": "mega6-head-source",
+      "archive": "mega6-facepack.rar",
+      "ids": "info-Faces.txt",
+      "page": "https://pes-files.com/pes-2021-mega-facepack-fl-2026-update-v6/",
+      "download": "https://modsfire.com/6kUR64ALwMFEo98",
+      "credit": "All Makers (see source page and included credits)",
+      "season": "2025-26/2026",
+      "clubId": null,
+      "archiveSHA256": "a602ed5817bf5bc0b7e385b468941d2e4b0708fc11b2eff4fe0d1784920355e0",
+      "verifiedIds": "tools/head-import/verified-mega.tsv"
+    },
+    {
+      "key": "real-2026",
+      "directory": "real-head-source",
+      "archive": "real-facepack.rar",
+      "ids": "info-Real Madrid ID Players.txt",
+      "page": "https://pes-files.com/pes-2021-real-madrid-4k-facepack-season-2026/",
+      "download": "https://modsfire.com/34MrwyqVCk36bXe",
+      "credit": "All Makers (see source page and included credits)",
+      "season": "2025-26/2026",
+      "clubId": "86",
+      "archiveSHA256": "35d0ab2c4b1d19acff145b9190927dc1e1aee8336d3082364b324913d61e32e5"
+    },
+    {
+      "key": "barca-2026",
+      "directory": "barca-head-source",
+      "archive": "barca-facepack.rar",
+      "ids": "info-Barcelona ID Player.txt",
+      "page": "https://pes-files.com/pes-2021-barcelona-facepack-update-2026/",
+      "download": "https://modsfire.com/4lXy86w6O31G17n",
+      "credit": "All Makers (see source page and included credits)",
+      "season": "2025-26/2026",
+      "clubId": "83",
+      "archiveSHA256": "6fa05c497d2d9c7bb60cd15844ea0c4f58f922164a89405e713274af2e56b7ec"
+    },
+    {
+      "key": "onana-2026",
+      "directory": "onana-head-source",
+      "archive": "onana-facepack.rar",
+      "ids": "verified-ID.txt",
+      "page": "https://pes-files.com/pes-2021-andre-onana-face-2/",
+      "download": "https://modsfire.com/Z4N5c5Av9iw4r73",
+      "credit": "Sea",
+      "clubId": "997",
+      "season": "2025-26",
+      "archiveSHA256": "b1983c096e7405087be38fadc9e15d7e4ef70c4950ec476bfcbe9246fc1db0d8"
+    },
+    {
+      "key": "salah-2026",
+      "directory": "salah-head-source",
+      "archive": "salah-facepack.rar",
+      "ids": "verified-ID.txt",
+      "page": "https://pes-files.com/pes-2021-mohamed-salah-2026/",
+      "download": "https://modsfire.com/3WFTqyBi1E5J33n",
+      "credit": "Luka",
+      "clubId": "997",
+      "season": "2025-26",
+      "archiveSHA256": "8c4d8440c0e51bde1b18ca7b93259a09e72517405f92e36513c1723aae73f30b"
+    },
+    {
+      "key": "chelsea-2026",
+      "directory": "chelsea-head-source",
+      "archive": "chelsea-facepack.rar",
+      "ids": "info-PLAYER LIST ID.txt",
+      "page": "https://modsfire.com/GWez5w6uqj49m6h",
+      "download": "https://modsfire.com/GWez5w6uqj49m6h",
+      "credit": "All Makers (included credits)",
+      "clubId": "363",
+      "season": "2026-27",
+      "archiveSHA256": "646b44af0d1a3ebaaa40861545c1fb8f609f7bc7ab02dbb7343fe80915565fe3"
+    },
+    {
+      "key": "city-2025",
+      "directory": "city-head-source",
+      "archive": "city-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.com/pes-2021-manchester-city-fc-transfer-season-2025/",
+      "download": "https://modsfire.com/KxcjFNOBEjqI073",
+      "credit": "All Makers (included credits)",
+      "clubId": "382",
+      "season": "2025",
+      "archiveSHA256": "afa28a97c58af077af8663b84410c0e53c891c32bcec603caefee584587db39f"
+    },
+    {
+      "key": "arsenal-2026",
+      "directory": "arsenal-head-source",
+      "archive": "arsenal-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.com/pes-2021-arsenal-fc-transfer-facepack-season-2026/",
+      "download": "https://modsfire.com/ms8OJS6tnngRd2H",
+      "credit": "All Makers (included credits)",
+      "clubId": "359",
+      "season": "2026",
+      "archiveSHA256": "63b37fbbcf8e5d3b19c8a0e47aa2180a89ea5261c10206217f1ba9454bcdfb6c"
+    },
+    {
+      "key": "brazil-2026",
+      "directory": "brazil-head-source",
+      "archive": "brazil-facepack.rar",
+      "ids": "info-Brazil ID Player.txt",
+      "page": "https://pes-files.com/pes-2021-fifa-wc-2026-update-brazil-facepack/",
+      "download": "https://modsfire.com/2v8USFm1zWS4DLB",
+      "credit": "All Makers (included credits)",
+      "clubId": null,
+      "season": "2026",
+      "archiveSHA256": "adec86a4e28620f04df0713d4cfaceb57469ec51dd6e669fb134379a3debf418",
+      "excludeSourceIds": {
+        "140624": "Different Fabinho: Fábio Silva de Freitas, born 2002; not our 1993-born Fabinho. Public identity https://www.pesmaster.com/fabinho/efootball-2022/player/140624/"
+      }
+    },
+    {
+      "key": "ittihad-2024",
+      "directory": "ittihad-head-source",
+      "archive": "ittihad-facepack.rar",
+      "ids": "info-ID.txt",
+      "page": "https://pes-files.ru/pes_2021_al_ittihad_facepack_2024",
+      "download": "https://modsfire.com/xe37RhiWrjJ1aMR",
+      "credit": "All Makers (included credits)",
+      "clubId": null,
+      "season": "2024",
+      "archiveSHA256": "b0463c03d98d0cef84bda9c1b2b72dd519ce60de7b5efb776027901fd97da37e",
+      "birthDates": {
+        "63607": "1993-10-23"
+      }
+    },
+    {
+      "key": "messi-2026",
+      "directory": "messi-head-source",
+      "archive": "messi-facepack.rar",
+      "ids": "verified-ID.txt",
+      "page": "https://pes-files.com/pes-2021-lionel-messi-season-2026/",
+      "download": "https://modsfire.com/0E090Voefv1e6ku",
+      "credit": "JP Patumin; thanks Beerzä Facemaker",
+      "clubId": null,
+      "birthDates": {
+        "7511": "1987-06-24"
+      },
+      "season": "2026",
+      "archiveSHA256": "fab0400c8c9364f3b177c761c03a89c5b82d5b66485965646a9b67117618a40d"
+    }
+  ],
+  "aliases": {
+    "Ederson Moraes": [
+      "Ederson"
+    ],
+    "Néné Dorgeles": [
+      "Dorgeles Nene"
+    ],
+    "Oh Hyeon-gyu": [
+      "Hyeon-Gyu Oh"
+    ],
+    "Fabio Miretti": [
+      "Fabio Miretti"
+    ],
+    "Talisca": [
+      "Anderson Talisca"
+    ],
+    "I. GUNDOGAN": [
+      "Ilkay Gündogan"
+    ],
+    "M. ICARDI": [
+      "Mauro Icardi"
+    ],
+    "M. LEMINA": [
+      "Mario Lemina"
+    ],
+    "K. AYHAN": [
+      "Kaan Ayhan"
+    ],
+    "L. SANE": [
+      "Leroy Sané"
+    ],
+    "D. SANCHEZ": [
+      "Davinson Sánchez"
+    ],
+    "L. TORREIRA": [
+      "Lucas Torreira"
+    ],
+    "G. SARA": [
+      "Gabriel Sara"
+    ],
+    "Y. AKGUN": [
+      "Yunus Akgün"
+    ],
+    "V. OSIMHEN": [
+      "Victor Osimhen"
+    ],
+    "A. KUTUCU": [
+      "Ahmed Kutucu"
+    ],
+    "W. SINGO": [
+      "Wilfried Singo"
+    ],
+    "E. ELMALI": [
+      "Eren Elmalı"
+    ],
+    "B. KUTLU": [
+      "Berkan Kutlu"
+    ],
+    "B. YILMAZ": [
+      "Barış Alper Yılmaz"
+    ],
+    "M. BALTACI": [
+      "Metehan Baltacı"
+    ],
+    "A. UNYAY": [
+      "Arda Ünyay"
+    ],
+    "W. ENDO": [
+      "Wataru Endo"
+    ],
+    "K. TSIMIKAS": [
+      "Konstantinos Tsimikas"
+    ],
+    "F. CHIESA": [
+      "Federico Chiesa"
+    ],
+    "A. ISAK": [
+      "Alexander Isak"
+    ],
+    "A. MAC-ALLISTER": [
+      "Alexis Mac Allister"
+    ],
+    "C. GAKPO": [
+      "Cody Gakpo"
+    ],
+    "R. GRAVENBERCH": [
+      "Ryan Gravenberch"
+    ],
+    "D. SZOBOSZLAI": [
+      "Dominik Szoboszlai"
+    ],
+    "R. ARAUJO": [
+      "Ronald Araujo"
+    ],
+    "K. GORDON": [
+      "Kaide Gordon"
+    ],
+    "J. GOMEZ": [
+      "Joseph Gomez"
+    ],
+    "C. BRADLEY": [
+      "Conor Bradley"
+    ],
+    "M. KERKEZ": [
+      "Miloš Kerkez"
+    ],
+    "B. BARCOLA": [
+      "Bradley Barcola"
+    ],
+    "J. JACQUET": [
+      "Jérémy Jacquet"
+    ],
+    "G. LEONI": [
+      "Giovanni Leoni"
+    ],
+    "R. NGUMOHA": [
+      "Rio Ngumoha"
+    ],
+    "Courtois": [
+      "Thibaut Courtois"
+    ],
+    "Lunin": [
+      "Andriy Lunin"
+    ],
+    "Militao": [
+      "Éder Militao"
+    ],
+    "Rudiger": [
+      "Antonio Rüdiger"
+    ],
+    "Asencio": [
+      "Raúl Asencio"
+    ],
+    "Huijsen": [
+      "Dean Huijsen"
+    ],
+    "Alaba": [
+      "David Alaba"
+    ],
+    "Carvajal": [
+      "Dani Carvajal"
+    ],
+    "Trent": [
+      "Trent Alexander-Arnold"
+    ],
+    "Carreras": [
+      "Alvaro Carreras"
+    ],
+    "Fran Garcia": [
+      "Fran García"
+    ],
+    "Mendy": [
+      "Ferland Mendy"
+    ],
+    "Tchouameni": [
+      "Aurélien Tchouaméni"
+    ],
+    "Camavinga": [
+      "Eduardo Camavinga"
+    ],
+    "Ceballos": [
+      "Dani Ceballos"
+    ],
+    "Valverde": [
+      "Federico Valverde"
+    ],
+    "Bellingham": [
+      "Jude Bellingham"
+    ],
+    "Arda Guler": [
+      "Arda Güler"
+    ],
+    "Brahim Diaz": [
+      "Brahim Díaz"
+    ],
+    "Mastantuono": [
+      "Franco Mastantuono"
+    ],
+    "Rodrygo": [
+      "Rodrygo"
+    ],
+    "Vinicius": [
+      "Vinícius Júnior"
+    ],
+    "Mbappe": [
+      "Kylian Mbappé"
+    ],
+    "Gonzalo": [
+      "Gonzalo García"
+    ],
+    "J.Garcia": [
+      "Joan García"
+    ],
+    "W.Szczesny": [
+      "Wojciech Szczęsny"
+    ],
+    "P.Cubarsi": [
+      "Pau Cubarsí"
+    ],
+    "R.Araujo": [
+      "Ronald Araujo"
+    ],
+    "A.Christensen": [
+      "Andreas Christensen"
+    ],
+    "E.Garcia": [
+      "Eric García"
+    ],
+    "J.Kounde": [
+      "Jules Koundé"
+    ],
+    "J.Cancelo": [
+      "João Cancelo"
+    ],
+    "A.Balde": [
+      "Alejandro Balde"
+    ],
+    "M.Bernal": [
+      "Marc Bernal"
+    ],
+    "M.Casado": [
+      "Marc Casadó"
+    ],
+    "Fermin": [
+      "Fermín López"
+    ],
+    "F.De Jong": [
+      "Frenkie de Jong"
+    ],
+    "D.Olmo": [
+      "Dani Olmo"
+    ],
+    "L.Yamal": [
+      "Lamine Yamal"
+    ],
+    "Rashford": [
+      "Marcus Rashford"
+    ],
+    "F.Torres": [
+      "Ferran Torres"
+    ],
+    "R.Lewandowski": [
+      "Robert Lewandowski"
+    ],
+    "Bardghji": [
+      "Roony Bardghji"
+    ],
+    "Emanuel Emegha": [
+      "Emmanuel Emegha"
+    ],
+    "İlkay Gündoğan": [
+      "Ilkay Gündogan"
+    ],
+    "Lenny Yoro": [
+      "Leny Yoro"
+    ],
+    "Becker": [
+      "Alisson Becker"
+    ],
+    "Leo Pereira": [
+      "Léo Pereira"
+    ],
+    "Gabriel": [
+      "Gabriel Magalhães"
+    ],
+    "Bremer": [
+      "Gleison Bremer"
+    ],
+    "Ibanez": [
+      "Roger Ibanez"
+    ],
+    "Sandro": [
+      "Alex Sandro"
+    ],
+    "Wesley": [
+      "Wesley França",
+      "Wesley Franca"
+    ],
+    "Guimaraes": [
+      "Bruno Guimarães"
+    ],
+    "Paqueta": [
+      "Lucas Paquetá"
+    ],
+    "Martinelli": [
+      "Gabriel Martinelli"
+    ],
+    "Cunha": [
+      "Matheus Cunha"
+    ],
+    "Henrique": [
+      "Luiz Henrique"
+    ],
+    "Thiago": [
+      "Igor Thiago"
+    ]
+  }
+}

@@ -10,7 +10,7 @@ Dikey aksiyon:x64–884/y295–1220; skor/kimlik:x30–909/y1296–1518. Yatay a
 
 - `node tests/touchline-safe.cjs`:PASS;2–6takım×dikey/yatay,1210kare,38720kale köşesi. Aynı eğik eksen, kesintisiz takipte sıçrama yok, tekrar aramada aynı matris ve mevcut güvenli HUD bandı.
 - `tests/browser-touchline.cjs /workspace/artifacts/v177-touchline-release`:PASS; gerçek Chromium/ElectronWebGL,2ve4takım,1080×1920ve1920×1080;4tam görüntü, kale izdüşümleri ve sıfır sayfa hatası. Ortam:`DISPLAY=:112`,Mesa/llvmpipe,ANGLEgl,2CPU. Bu fiziksel telefon/GPU testi değildir.
-- Kanıt:[rapor](v177-touchline/report.json),[5v5dikey](v177-touchline/touchline-2-portrait.png),[Japon Kale dikey](v177-touchline/touchline-4-portrait.png). İki yatay kare yerelartifact klasöründe; harness yeniden üretir.
+- Kanıt:[rapor](v177-touchline/report.json),[5v5dikey](https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v177-touchline/touchline-2-portrait.png),[Japon Kale dikey](https://raw.githubusercontent.com/Erdi1907fb/3d-football-simulation/2bde2cbd20e7904e6c2ed34057ab283abed0f40e/docs/ai/research/v177-touchline/touchline-4-portrait.png). İki yatay kare yerelartifact klasöründe; harness yeniden üretir.
 - `PATH=/workspace/deps/web-tools:$PATH php build.php`:build177/filesMatch=true,501dosya.
 - `PATH=/workspace/deps/web-tools:$PATH node tests/run-all.cjs`:**44/44PASS**, `tests/summary.json`. Kamera önizleme ve MP4 aynı draw yolundadır; yeni tam MP4 kodlama/gerçek cihaz testi bu kamera değişikliğinde tekrarlanmadı.
 
