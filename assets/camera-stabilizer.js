@@ -6,7 +6,7 @@ function create(sample,positionCamera,camera){
  const capture=()=>{const position=camera.position.clone();return{position,aim:camera.userData.framingAim?.clone()||position.clone().addScaledVector(camera.getWorldDirection(new T.Vector3()),40),fov:camera.fov};};
  return function(state,aspect,view,critical,fit){
   if(!sample||state.outOfPlay||view==='wide'||!['playing','goal'].includes(state.phase)||state.preReview||(state.resolution&&['clearance','out','hold'].includes(state.resolution.stage))||state.replay||state.celebration)return;
-  if(!track||track.chance!==state.chance||track.aspect!==aspect||track.phase!==state.phase)track={chance:state.chance,aspect,phase:state.phase,entries:new Map()};
+  if(!track||track.chance!==state.chance||track.aspect!==aspect||track.view!==view||track.phase!==state.phase)track={chance:state.chance,aspect,view,phase:state.phase,entries:new Map()};
   const fallback=capture(),at=index=>{
    if(track.entries.has(index))return track.entries.get(index);
    const other=sample(Math.max(0,index/30));let value=null;

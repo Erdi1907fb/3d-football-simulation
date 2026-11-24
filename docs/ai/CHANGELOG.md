@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V244 · work in progress, not a stable release
+- General camera-motion quality: final-view synchronization, screen-frequency turf/crowd filtering, scene-only desktop AA, bounded mobile AA, camera-mode cache fix and complete post-pass disposal. Controlled fixture improves; full-suite/production-mode checks still pending.
+-1080p60 bitrate24/20Mbps and1s/cut keyframes; physics/results unchanged. Face expansion queued, Aylık paused. See newest HANDOFF for exact validation state.
+
+
 ## V243 · 2026-11-24
 - 332 gerçek oyuncu kafası: animasyonlu alt boyun/gövde-yaka birleşimi, ten eşleme, mevcut gerçek formalar; tüm modlarda ortak runtime. Eksikte kendi doğrulanmış fotoğrafı/mevcut genel yüz. Takım ilk11+yedek kapsaması görünür sayfada.
 - Aktif oyuncu gövdesi ve forma yazı ayrıntısı kamera mesafesiyle düşmez; tribün/saha dışı ve telefon bellek profilleri korunur.

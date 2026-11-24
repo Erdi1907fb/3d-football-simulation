@@ -1,5 +1,10 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
+## Development: target V244 (not yet released)
+T-399 is highest priority: full-image temporal stability across11v11→bowling, not only body/shirt LOD. Implemented final-camera view refresh (including tiled export safeguards), screen-frequency turf/crowd filtering, scene-only desktop MSAA/restrained sharpen, existing-pass mobile AA, proper disposal of all owned post passes,24/20Mbps1080p60 and1s+cut keyframes, camera-mode cache invalidation. Controlled surface fixture~89.4%lower reprojection residual; this is not a universal full-match improvement percentage. Full77-suite/production8mode checks in progress; stable main remains V243 until final checks. See research/temporal-v244 and newest HANDOFF.
+T-400 then expands missing heads using FM27/PES. RFH byte-range retrieval/format confirmed on one sample, no new head integrated yet. See research/fm27-next for source/format/identity/eye caveats. Aylık explicitly paused (T-401).
+
+
 ## V243 gerçek oyuncu kafaları ve sabit sahne ayrıntısı
 - Son doğrulama:8mod×4zaman kararlı oyuncu/forma ve gerçek WebGL bufferı PASS;36kare başlangıç/orta/son hareketli11v11 MP4 yazılım kodlayıcı +ffmpeg decode PASS. Başsız ortamın ilk yerel kodlayıcı timeout'u ve gizli kontrol otomasyon düzeltmesi research/heads-v243 içinde kayıtlıdır.
 - 332 kimliği doğrulanmış gerçek 3D kafa ortak Scene/oyuncu sistemine bağlandı. Kaynak ID + ad/alias + doğum tarihi eşleşir; kadro/transfer/analiz değiştirilmez. Eksikte başka futbolcu takılmaz: kendi doğrulanmış fotoğrafı, o da yoksa mevcut genel model korunur. 265 takımın ilk11+yedek kapsaması face-coverage.html sayfasında ayrı gerçek/fotoğraf/genel sayılır; bütün oyuncuların gerçek modeli olduğu iddiası yok.

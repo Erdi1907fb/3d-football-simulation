@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "baseline": "f0231ac",
+  "errors": [],
+  "variants": [
+    {
+      "variant": "baseline",
+      "pbr": true,
+      "mean": 44.276733180388895,
+      "reprojectedError": 3.9537616608049326,
+      "frames": 8,
+      "msaa": 0,
+      "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)",
+      "failure": null
+    },
+    {
+      "variant": "candidate",
+      "pbr": true,
+      "mean": 44.9914709187271,
+      "reprojectedError": 0.4196592612875503,
+      "frames": 8,
+      "msaa": 4,
+      "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)",
+      "failure": null
+    }
+  ],
+  "errorRatio": 0.10614177011421405
+}
