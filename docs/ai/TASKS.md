@@ -10,6 +10,8 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-395 | 5v5 sonuçlarında ev/deplasman/kazanan/kaybeden yazılarını kaldır; takım/skor/istatistik sırasını koru; main push | done (V241) | codex | files: broadcast, competition-broadcast, result-card, japon-ui, tests/docs. Yüz pilotuna ek küçük istek. |
+| T-394 | Ücretsiz PES/FootballLife gerçek kafa dönüşümü:8–12pilot→TRdörtbüyük→Avrupabüyükleri; hareket uyarlaması; sohbet içinde görünür gerçek görüntüler | in-progress | codex | files: tools/head-import, player-faces/scene, assets heads/animations, tests/docs. Kullanıcı araştırma sınırını kaldırıp uygulamayı onayladı; kalite pilotu önce. |
 | T-393 | Ayak tenisi/bowling/penaltıda boş kodla yeni senaryo, dolu kodla tekrar üretim; temel veri analizini koru | done (V240) | codex | files: scenario, footvolley/penalty-ui, üç HTML, tests/docs; olasılıkları koru, farklı skoru zorlamama. |
 | T-391 | Sonuçta ev sahibi-sol/deplasman-sağ sabit; 11v11 lig yayın şablonunu kompakt5v5 sonucu/golcü/üçistatistik ile kullan | done (V240) | codex | files: result-card, competition-broadcast, tests/docs. Kazananı sola taşıma hatası; kullanıcı yeni kartı beğenmedi. |
 | T-392 | Ücretsiz gerçek futbolcu yüz/kafa ve hareket paketlerini araştır; büyük TR/Avrupa takımlarına öncelik, uygulamadan seçenek sun | done (V240) | codex | Salt araştırma; yeni paket/animasyon/model indirilmez veya eklenmez. |

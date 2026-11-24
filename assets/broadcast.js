@@ -75,7 +75,6 @@ function result(c,w,h,state,images,t,helpers,lang){const L=resultLayout(w,h,stat
  image(c,images[0],x+ww*.22,y+108*u,93*u);image(c,images[1],x+ww*.78,y+108*u,93*u);icon(c,images,center,y+84*u,74*u,light);
  text(c,state.score.join(' : '),center,y+162*u,65*u,ink,'center',true,ww*.25);
  const n=sharedNames(c,state.teams,ww*.37,28*u,17*u);named(c,n,0,x+ww*.22,y+184*u,ink,'center');named(c,n,1,x+ww*.78,y+184*u,ink,'center');
- if(compact)for(let side=0;side<2;side++){const role=side?tx('DEPLASMAN','AWAY'):tx('EV SAHİBİ','HOME'),outcome=compact.winner==null?'':side===compact.winner?tx(' · KAZANAN',' · WINNER'):tx(' · KAYBEDEN',' · LOSER');text(c,role+outcome,x+ww*(side?.78:.22),y+211*u,14*u,side===compact.winner?t.accent:ink,'center',true,ww*.45);}
  rect(c,x+18*u,y+L.competitionTop,ww-36*u,54*u,light?'#eef1f3':'#ffffff09');text(c,M.competitionName(state.fixture,lang),center,y+255*u,23*u,ink,'center',true,ww*.90);
  const goalNames=state.events.filter(e=>e.type==='goal');if(goalNames.length){
   const yy=y+320*u;for(let team=0;team<2;team++){const goals=goalNames.filter(e=>e.team===team),xx=x+ww*team*.5+24*u,cw=ww*.5-48*u;goals.forEach((e,i)=>{const at=yy+i*34*u,minute=e.timeLabel||(e.minute>90?'90+'+(e.minute-90)+'′':e.minute+'′'),name=e.playerName||(lang==='en'?'Goal':'Gol');text(c,name,xx,at,22*u,ink,'left',true,cw-76*u);text(c,minute,xx+cw,at,22*u,light?'#535b61':t.accent,'right',true,70*u);});}

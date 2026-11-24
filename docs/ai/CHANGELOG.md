@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## V241 · 2026-11-24
+- Kullanıcının isteğiyle5v5 sonucundaki ev/deplasman/galip/mağlup yazıları kaldırıldı. Sabit takım sırası, skor/golcü/istatistikler korunur. Diğer modların ortak kartı değişmez. HedefliUI/18Chromiumkartı PASS; build241/filesMatch=true.
+
 ## V240 · 2026-11-24
 - 5v5 sonuçları11v11 lig yayın şablonundan kompakt çizilir; doğru lig logosu/arka planı, sabit ev/deplasman sırası, gerçek golcü ve üçistatistik. Bowling/ayak tenisi ortak kartındaki kazananı sola taşıma hatası giderildi.
 - Ayak tenisi/bowling/penaltıda düzenlenebilir simülasyon kodu: boş kod yeni akış, dolu kod aynı tekrar. Oyuncu verili temel analiz korunur; skor zorla değiştirilmez.
