@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "models": 886,
+  "poses": 162,
+  "neckAttached": true,
+  "kitPreserved": true,
+  "skinMatched": true,
+  "rewindExact": true,
+  "lateBodyReady": true
+}

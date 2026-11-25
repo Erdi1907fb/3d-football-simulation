@@ -1,6 +1,6 @@
 {
-  "models": 879,
-  "bytes": 343901365,
+  "models": 886,
+  "bytes": 347488540,
   "rows": [
     {
       "id": "83",
@@ -4889,8 +4889,8 @@
       "name": "Bayern München",
       "national": false,
       "total": 22,
-      "real": 16,
-      "photo": 5,
+      "real": 18,
+      "photo": 3,
       "generic": 1,
       "players": [
         {
@@ -4950,8 +4950,8 @@
         {
           "id": "402841",
           "name": "Lennart Karl",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "176197"
         },
         {
           "id": "142200",
@@ -4992,8 +4992,8 @@
         {
           "id": "287225",
           "name": "Sacha Boey",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "130207"
         },
         {
           "id": "190161",
@@ -12909,8 +12909,8 @@
       "name": "Aston Villa",
       "national": false,
       "total": 24,
-      "real": 19,
-      "photo": 5,
+      "real": 20,
+      "photo": 4,
       "generic": 0,
       "players": [
         {
@@ -13042,8 +13042,8 @@
         {
           "id": "fm-749661",
           "name": "Tammy Abraham",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "113066"
         },
         {
           "id": "388522",
@@ -14745,8 +14745,8 @@
       "name": "Galatasaray",
       "national": false,
       "total": 29,
-      "real": 23,
-      "photo": 6,
+      "real": 24,
+      "photo": 5,
       "generic": 0,
       "players": [
         {
@@ -14914,8 +14914,8 @@
         {
           "id": "258917",
           "name": "Rafael Leão",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "83111483"
         },
         {
           "id": "fm-1682656",
@@ -15443,8 +15443,8 @@
       "name": "FC Porto",
       "national": false,
       "total": 28,
-      "real": 16,
-      "photo": 12,
+      "real": 17,
+      "photo": 11,
       "generic": 0,
       "players": [
         {
@@ -15468,8 +15468,8 @@
         {
           "id": "fm-1021834",
           "name": "Jakub Kiwior",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "147706"
         },
         {
           "id": "fm-1079056",
@@ -20012,8 +20012,8 @@
       "name": "Polonya",
       "national": true,
       "total": 25,
-      "real": 5,
-      "photo": 8,
+      "real": 6,
+      "photo": 7,
       "generic": 12,
       "players": [
         {
@@ -20097,8 +20097,8 @@
         {
           "id": "fm-1021834",
           "name": "Jakub Kiwior",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "147706"
         },
         {
           "id": "espn-316280",
@@ -21676,8 +21676,8 @@
       "name": "Almanya",
       "national": true,
       "total": 24,
-      "real": 16,
-      "photo": 7,
+      "real": 17,
+      "photo": 6,
       "generic": 1,
       "players": [
         {
@@ -21803,8 +21803,8 @@
         {
           "id": "402841",
           "name": "Lennart Karl",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "176197"
         },
         {
           "id": "408539",
@@ -21831,8 +21831,8 @@
       "name": "Portekiz",
       "national": true,
       "total": 28,
-      "real": 18,
-      "photo": 7,
+      "real": 19,
+      "photo": 6,
       "generic": 3,
       "players": [
         {
@@ -21898,8 +21898,8 @@
         {
           "id": "258917",
           "name": "Rafael Leão",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "83111483"
         },
         {
           "id": "fm-795630",
@@ -29341,8 +29341,8 @@
       "name": "Trabzonspor",
       "national": false,
       "total": 29,
-      "real": 19,
-      "photo": 8,
+      "real": 20,
+      "photo": 7,
       "generic": 2,
       "players": [
         {
@@ -29354,8 +29354,8 @@
         {
           "id": "365810",
           "name": "Wagner Pina",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "164675"
         },
         {
           "id": "391744",
@@ -39325,8 +39325,8 @@
       "name": "RB Leipzig",
       "national": false,
       "total": 26,
-      "real": 19,
-      "photo": 7,
+      "real": 20,
+      "photo": 6,
       "generic": 0,
       "players": [
         {
@@ -39434,8 +39434,8 @@
         {
           "id": "319100",
           "name": "Castello Lukeba",
-          "kind": "photo",
-          "sourceId": null
+          "kind": "real",
+          "sourceId": "144571"
         },
         {
           "id": "fm-1667986",

@@ -20,9 +20,13 @@ class RemoteZip(io.RawIOBase):
   if self.position>=self.total-len(self.tail):
    out=self.tail[self.position-(self.total-len(self.tail)):self.position-(self.total-len(self.tail))+n];self.position+=len(out);return out
   key=(self.position,n)
-  if key not in self.cache:
+  if key in self.cache:
+   self.cache.move_to_end(key);data=self.cache[key]
+  else:
    with urllib.request.urlopen(urllib.request.Request(self.url,headers={'Range':f'bytes={self.position}-{self.position+n-1}'}),timeout=60) as r:
-    assert r.status==206,'Server ignored range';assert r.headers.get('Content-Range','').startswith(f'bytes {self.position}-{self.position+n-1}/');data=r.read(n+1);assert len(data)==n;self.cache[key]=data;self.cacheBytes+=len(data);self.downloaded+=len(data)
-   while self.cacheBytes>8_000_000 and len(self.cache)>1:
-    _,old=self.cache.popitem(last=False);self.cacheBytes-=len(old)
-  self.cache.move_to_end(key);self.position+=n;return self.cache[key]
+    assert r.status==206,'Server ignored range';assert r.headers.get('Content-Range','').startswith(f'bytes {self.position}-{self.position+n-1}/');data=r.read(n+1);assert len(data)==n;self.downloaded+=len(data)
+   if n<=8_000_000:
+    while self.cacheBytes+n>8_000_000 and self.cache:
+     _,old=self.cache.popitem(last=False);self.cacheBytes-=len(old)
+    self.cache[key]=data;self.cacheBytes+=n
+  self.position+=n;return data

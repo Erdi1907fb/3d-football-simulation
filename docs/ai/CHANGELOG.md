@@ -1,8 +1,8 @@
 # CHANGELOG
 
 ## V245 · work in progress
--547selected missing FM27/PES realheads,879total; current kits/body/neck/skin shared.155.1MBadditional compressed assets, raw source archives excluded.
--Unique source-name/club identity plan and existing ID/DOB; one existing head identity joined,8dense models rejected. Batrakov keeps own portrait. Final regression/browser checks pending; main V244 remains stable.
+-554selected missing FM27/PES realheads,886total; current kits/body/neck/skin shared.158.7MBadditional compressed assets, raw source archives excluded.
+-Unique source-name/club identity plan and existing ID/DOB; one existing head identity joined,7dense hair models simplified without changing face;1dense source rejected. Batrakov keeps own portrait. Final regression/browser checks pending; main V244 remains stable.
 
 ## V244 · 2026-11-25
 - Bütün modların ortak görüntü hattında sonkamera/LOD/etiket eşleşmesi; ekran ölçeğinde çim ve seyirci filtreleme; sabit çim tonu; kamera modu değişiminde doğru yörünge önbelleği.

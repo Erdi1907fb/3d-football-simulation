@@ -31,7 +31,7 @@ Keep Batrakov's own portrait; do not assign a different player.
 
 closeups.png is actual current shared actor/head/skin/kit renderer output for11
 players, not generated artwork; pilot-report gives source IDs and actual kit paths.
-RFH format tests5/5 PASS; expanded head-body/coverage checks PASS at suite start.
+RFH format/range tests6/6 PASS; expanded head-body/coverage checks PASS at suite start.
 Full77-suite and8production-mode browser checks are running. Do not label stable
 until final reports are copied here. Physical Safari/mobile device not tested.
 Coverage.json is current runtime coverage (real3D vs own photograph vs generic),

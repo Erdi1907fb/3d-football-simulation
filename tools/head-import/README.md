@@ -1,4 +1,4 @@
-# Real-head conversion pilot (V243)
+# Real-head import tools (V243 / V245)
 
 This is an offline importer for freely downloadable community PES facepacks, not a new roster database. No paid game installation is required. Source pages, credits, archive checksums and exact parser commit are recorded in `sources.json`; source archives and the external parser are not bundled here.
 
@@ -15,7 +15,7 @@ Free Standard Quaternius locomotion data is separately sampled by `tools/motion-
 
 ## V245 · selective FM27 RFH source
 
-The library now contains879 heads (332 existing +547 selected missing identities).
+The library now contains886 heads (332 existing +554 selected missing identities).
 Use `fm27-sources.json` for public source URLs, CSV and oldest→newest patch order;
 `fm27-plan.json` records the reviewed game ID/DOB/name/club plan. Author CSV has
 unique name/club evidence; DOB is bound from the existing game identity, not
@@ -48,3 +48,13 @@ triangle winding, flip RFH UV.v for Three flipY=false. Bake portable eyes and se
 hasEyes=true to prevent duplicates. Face1024/hair512 WebP, 16-bit positions/normals/
 UV and deterministic gzip use the V243 packing path. No source archives/executable,
 experimental simplifier or extra locomotion pack is shipped.
+
+For the seven dense hair sources only, install the offline MIT build dependency:
+`npm install --prefix /tmp/head-tools meshoptimizer@1.3.0 --ignore-scripts`
+(or set NEXT90_MESHOPT_DIR to its package directory). Face vertices remain unchanged
+except the existing <0.016mm quantisation; only hair indices simplify, with locked
+card borders and normal/UV weights, <=1% relative appearance error. Inspect a close-up
+before accepting a new dense source. Fábio Silva failed this bound and remains a
+portrait. The website never loads meshoptimizer. Reproduction commands above apply
+to the pre-import baseline; current installed IDs are intentionally skipped. For a
+single raw RFH, convert-rfh.py accepts an --identity JSON row from fm27-plan.json.

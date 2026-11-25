@@ -201,7 +201,7 @@ Historic unreferenced validation media were archived through immutable Git commi
 
 # FM27 Real 3D Faces selected missing heads — V245
 
-547 selected RFH player heads from the free public RealFaces v2.0 catalogue,
+554 selected RFH player heads from the free public RealFaces v2.0 catalogue,
 converted by our offline RFH1 reader to the existing PES head-relative glTF schema.
 Source: https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match
 Credits: melrosehlf (RFH conversion/catalogue), SmokePatch / SP Football Life and
@@ -214,9 +214,13 @@ binary is installed, executed or redistributed. No paid source was used.
 Public archive URLs/patch precedence: tools/head-import/fm27-sources.json.
 Exact source member, RFH SHA256, output SHA256, CSV/club identity evidence and game
 ID/DOB are in assets/heads/manifest.json and fm27-plan.json. Compressed runtime
-assets total155,095,635 additional bytes; raw RFHs, ZIPs, DLLs and full8.9GB pack
+assets total158,682,810 additional bytes; raw RFHs, ZIPs, DLLs and full8.9GB pack
 are excluded. Portable generic eyes replace the external FM eye dependency;
 source face/hair remains, existing neck/body/skin/kit/animation fit is shared.
-Eight over-budget dense sources were rejected and retain their prior appearance.
+Seven dense hair sources were simplified with offline meshoptimizer1.3.0 (MIT,
+https://github.com/zeux/meshoptimizer), locked card borders and <=1% error; face
+vertices stay within the original quantisation error. The dependency is not
+redistributed/loaded by the website. Fábio Silva still exceeds the guard and retains
+his prior appearance.
 One Slonina identity was joined to his existing head using the same source ID,
 canonical name and DOB, without duplicating the model. This is incomplete coverage.

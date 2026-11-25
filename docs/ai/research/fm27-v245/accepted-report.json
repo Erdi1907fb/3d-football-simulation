@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "planned": 556,
+  "acceptedNew": 554,
+  "existingIdentityExtended": 1,
+  "rejected": [
+    {
+      "name": "Fábio Silva",
+      "reason": "Hair could not meet locked-border 1% error /35k total-triangle budget; retain own photograph"
+    }
+  ],
+  "newBytes": 158682810,
+  "totalModels": 886,
+  "totalModelBytes": 347488540,
+  "largestNewBytes": 575375,
+  "largestNewTriangles": 33815,
+  "hairOnlySimplified": 7
+}

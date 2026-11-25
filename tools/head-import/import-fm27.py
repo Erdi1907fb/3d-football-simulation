@@ -54,14 +54,14 @@ if __name__=='__main__':
   if uid not in members:unavailable.append({'name':p['name'],'fmUID':uid,'reason':'not in indexed public player archives'});continue
   idx,row=members[uid];groups.setdefault(idx['order'],(idx,[]))[1].append((p,row))
  with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:results=[e for batch in pool.map(lambda job:convert_archive(job,a.stage,existing_paths),groups.values()) for e in batch]
- good=[e for e in results if not e.get('failed')];failed=[e for e in results if e.get('failed')];budget=sum(e['bytes'] for e in good if not e.get('reuseExisting'));paths=[e['path'] for e in good];assert len(paths)==len(set(paths)),'source ID collision in staged entries';assert budget<=plan['budgetBytes'],'new head budget exceeded; reduce plan, do not silently lower runtime quality'
+ good=[e for e in results if not e.get('failed')];failed=[e for e in results if e.get('failed')];budget=sum(e['bytes'] for e in good if not e.get('reuseExisting'));paths=[e['path'] for e in good];assert len(paths)==len(set(paths)),'source ID collision in staged entries';assert budget+sum(e['bytes'] for e in manifest['players'] if e.get('source')==SOURCE['key'])<=plan['budgetBytes'],'new head budget exceeded; reduce plan, do not silently lower runtime quality'
  report={'pass':not failed,'csvSHA256':hashlib.sha256(a.csv.read_bytes()).hexdigest(),'converted':sum(not e.get('reuseExisting') for e in good),'identityExtensions':sum(bool(e.get('reuseExisting')) for e in good),'bytes':budget,'failed':failed,'unavailable':unavailable,'installed':False}
  if a.install:
   for e in good:
    if e.get('reuseExisting'):
     prior=next(p for p in manifest['players'] if p['path']==e['path']);prior.update({k:v for k,v in e.items() if k!='reuseExisting'});continue
    dest=ROOT/e['path'];assert not dest.exists();dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(a.stage/'converted'/e['fmUID']/'head.glb.gz',dest)
-  manifest['players'].extend(e for e in good if not e.get('reuseExisting'));manifest['version']=245;
+  manifest['players'].extend(e for e in good if not e.get('reuseExisting'));manifest['version']=int((ROOT/'VERSION').read_text().strip().lstrip('vV'));
   if good and not any(s.get('key')==SOURCE['key'] for s in manifest['sources']):manifest['sources'].append({**SOURCE,'csvSHA256':report['csvSHA256'],'note':'Selected missing identities only; no FM plugin or source archives shipped.'})
   manifest['source']='PES community and FM27 RealFaces heads; identity matched to game data';(ROOT/'assets/heads/manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');report['installed']=True
  (a.stage/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print('REPORT',json.dumps(report,ensure_ascii=False),flush=True)

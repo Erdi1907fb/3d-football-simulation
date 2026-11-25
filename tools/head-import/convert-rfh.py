@@ -2,7 +2,7 @@
 """Convert a selected RFH1 source to the shared head schema; no FM plugin execution.
 Requires numpy/Pillow. Does not mutate runtime manifests or game identities.
 """
-import sys,json,struct,zlib,io,math,pathlib,hashlib,gzip,importlib.util
+import sys,json,struct,zlib,io,math,pathlib,hashlib,gzip,importlib.util,subprocess
 import numpy as np
 from PIL import Image
 ROOT=pathlib.Path(__file__).resolve().parents[2]
@@ -46,6 +46,14 @@ def convert(file,out,identity):
      if px[0]>25 and px.max()<250:pix.append(px)
    if not pix:pix=arr[int(arr.shape[0]*.68):int(arr.shape[0]*.84),int(arr.shape[1]*.35):int(arr.shape[1]*.65)].reshape(-1,3)
    g['extras']['skinRGB']=np.median(np.array(pix),axis=0).astype(int).tolist()
+  if mat and len(face[3])+len(ids)+832>=35_000:
+   # Source face stays byte-for-byte geometrically identical. Simplify hair indices
+   # with locked card borders and normal/UV error weights; never move vertices.
+   target=min(20_000,34_000-len(face[3])-832);assert target>0,'Face alone exceeds geometry budget'
+   job={'positions':p.reshape(-1).tolist(),'indices':ids.reshape(-1).tolist(),'attributes':np.concatenate([n,uv],axis=1).reshape(-1).tolist(),'target':target}
+   result=json.loads(subprocess.run(['node',str(ROOT/'tools/head-import/simplify-hair.cjs')],input=json.dumps(job),text=True,capture_output=True,check=True).stdout);ids=np.array(result['indices'],dtype=np.uint32).reshape(-1,3)
+   assert result['error']<=.01001 and len(face[3])+len(ids)+832<35_000,'Hair exceeds appearance/triangle budget'
+   g['extras']['hairSimplification']={'sourceTriangles':len(data[3]),'triangles':len(ids),'relativeError':result['error'],'method':'meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched'}
   used=np.unique(ids);remap=np.full(len(p),-1,dtype=np.int32);remap[used]=np.arange(len(used));prim(p[used],n[used],uv[used],remap[ids[:,[0,2,1]]],mat)
  # Portable eyes from source eyelash Y/Z and the FM-transferred eyelid aperture X.
  fp,uv,n,ids,bi,bw=face

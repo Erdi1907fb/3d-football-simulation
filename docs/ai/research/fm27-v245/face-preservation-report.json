@@ -1,0 +1,84 @@
+{
+  "pass": true,
+  "models": 7,
+  "faceUnchangedExceptQuantisation": true,
+  "rows": [
+    {
+      "name": "Rafael Le\u00e3o",
+      "faceVertices": 4792,
+      "facePositionMaxErrorMetres": 1.5259313844384614e-05,
+      "hair": {
+        "sourceTriangles": 49343,
+        "triangles": 19999,
+        "relativeError": 0.009757471270859241,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    },
+    {
+      "name": "Wagner Pina",
+      "faceVertices": 4310,
+      "facePositionMaxErrorMetres": 1.52587890625e-05,
+      "hair": {
+        "sourceTriangles": 67842,
+        "triangles": 20000,
+        "relativeError": 0.00543571263551712,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    },
+    {
+      "name": "Lennart Karl",
+      "faceVertices": 6598,
+      "facePositionMaxErrorMetres": 1.52587890625e-05,
+      "hair": {
+        "sourceTriangles": 23763,
+        "triangles": 19999,
+        "relativeError": 0.0012672848533838987,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    },
+    {
+      "name": "Jakub Kiwior",
+      "faceVertices": 15310,
+      "facePositionMaxErrorMetres": 1.5261451911913193e-05,
+      "hair": {
+        "sourceTriangles": 5917,
+        "triangles": 3698,
+        "relativeError": 0.0027610284741967916,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    },
+    {
+      "name": "Sacha Boey",
+      "faceVertices": 3521,
+      "facePositionMaxErrorMetres": 1.5251338481903076e-05,
+      "hair": {
+        "sourceTriangles": 67623,
+        "triangles": 19998,
+        "relativeError": 0.0058578914031386375,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    },
+    {
+      "name": "Tammy Abraham",
+      "faceVertices": 14671,
+      "facePositionMaxErrorMetres": 1.52587890625e-05,
+      "hair": {
+        "sourceTriangles": 51516,
+        "triangles": 19984,
+        "relativeError": 0.007306875195354223,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    },
+    {
+      "name": "Castello Lukeba",
+      "faceVertices": 3444,
+      "facePositionMaxErrorMetres": 1.52587890625e-05,
+      "hair": {
+        "sourceTriangles": 67623,
+        "triangles": 20000,
+        "relativeError": 0.006019525695592165,
+        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
+      }
+    }
+  ]
+}

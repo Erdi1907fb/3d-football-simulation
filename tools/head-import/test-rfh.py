@@ -22,4 +22,27 @@ class Format(unittest.TestCase):
  def test_nonfinite_position(self):
   b=bytearray(triangle());struct.pack_into('<f',b,8,float('nan'))
   with self.assertRaises(AssertionError):C.mesh(zlib.compress(b))
+class RangeReader(unittest.TestCase):
+ def test_bounded_cache_and_full_download_refusal(self):
+  import io,unittest.mock
+  spec=importlib.util.spec_from_file_location('range_zip',Path(__file__).with_name('range-zip.py'));R=importlib.util.module_from_spec(spec);spec.loader.exec_module(R)
+  payload=b'a'*20_000_000
+  class Response(io.BytesIO):
+   status=206
+   def __init__(self,start,end):
+    super().__init__(payload[start:end+1]);self.headers={'Content-Range':f'bytes {start}-{end}/{len(payload)}'}
+  def fetch(request,**_):
+   value=request.get_header('Range').split('=')[1]
+   if value.startswith('-'):start,end=len(payload)-int(value[1:]),len(payload)-1
+   else:start,end=map(int,value.split('-'))
+   return Response(start,end)
+  with unittest.mock.patch.object(R.urllib.request,'urlopen',fetch):
+   r=R.RemoteZip('https://example.invalid/archive.zip');self.assertEqual(r.total,len(payload))
+   r.seek(0);self.assertEqual(len(r.read(9_000_000)),9_000_000);self.assertEqual(r.cacheBytes,0)
+   for at in [0,4_000_000,8_000_000]:r.seek(at);self.assertEqual(len(r.read(4_000_000)),4_000_000);self.assertLessEqual(r.cacheBytes,8_000_000)
+   r.seek(0)
+   with self.assertRaises(AssertionError):r.read(32_000_001)
+  bad=Response(0,10);bad.status=200
+  with unittest.mock.patch.object(R.urllib.request,'urlopen',return_value=bad):
+   with self.assertRaises(AssertionError):R.RemoteZip('https://example.invalid/archive.zip')
 if __name__=='__main__':unittest.main()

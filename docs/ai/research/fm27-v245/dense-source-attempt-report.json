@@ -1,0 +1,17 @@
+{
+  "pass": false,
+  "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+  "converted": 7,
+  "identityExtensions": 0,
+  "bytes": 3587175,
+  "failed": [
+    {
+      "failed": true,
+      "fmUID": "83228802",
+      "name": "Fábio Silva",
+      "error": "AssertionError('Hair exceeds appearance/triangle budget')"
+    }
+  ],
+  "unavailable": [],
+  "installed": true
+}
