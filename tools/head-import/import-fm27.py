@@ -49,7 +49,9 @@ if __name__=='__main__':
  with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:indexes=list(pool.map(lambda item:archive_index(item,a.stage),enumerate(SOURCE['archivesInOverrideOrder'])))
  members={row['uid']:(idx,row) for idx in sorted(indexes,key=lambda i:i['order']) for row in idx['files']};groups={};unavailable=[]
  for p in plan['players']:
-  uid=p['fmUID'];assert uid in allow and allow[uid]['Name']==p['sourceName'] and allow[uid]['Club']==p['sourceClub'],'CSV identity changed; re-review plan'
+  uid=p['fmUID']
+  if p.get('importDisabledReason'):unavailable.append({'name':p['name'],'fmUID':uid,'reason':p['importDisabledReason']});continue
+  assert uid in allow and allow[uid]['Name']==p['sourceName'] and allow[uid]['Club']==p['sourceClub'],'CSV identity changed; re-review plan'
   if any(i in existing_ids for i in p['ids']):continue
   if uid not in members:unavailable.append({'name':p['name'],'fmUID':uid,'reason':'not in indexed public player archives'});continue
   idx,row=members[uid];groups.setdefault(idx['order'],(idx,[]))[1].append((p,row))

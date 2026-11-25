@@ -15,7 +15,7 @@ Free Standard Quaternius locomotion data is separately sampled by `tools/motion-
 
 ## V245 · selective FM27 RFH source
 
-The library now contains886 heads (332 existing +554 selected missing identities).
+The library now contains885 heads (332 existing +553 selected missing identities).
 Use `fm27-sources.json` for public source URLs, CSV and oldest→newest patch order;
 `fm27-plan.json` records the reviewed game ID/DOB/name/club plan. Author CSV has
 unique name/club evidence; DOB is bound from the existing game identity, not
@@ -49,12 +49,13 @@ hasEyes=true to prevent duplicates. Face1024/hair512 WebP, 16-bit positions/norm
 UV and deterministic gzip use the V243 packing path. No source archives/executable,
 experimental simplifier or extra locomotion pack is shipped.
 
-For the seven dense hair sources only, install the offline MIT build dependency:
+For the six accepted dense hair sources only, install the offline MIT build dependency:
 `npm install --prefix /tmp/head-tools meshoptimizer@1.3.0 --ignore-scripts`
 (or set NEXT90_MESHOPT_DIR to its package directory). Face vertices remain unchanged
 except the existing <0.016mm quantisation; only hair indices simplify, with locked
 card borders and normal/UV weights, <=1% relative appearance error. Inspect a close-up
 before accepting a new dense source. Fábio Silva failed this bound and remains a
-portrait. The website never loads meshoptimizer. Reproduction commands above apply
+portrait. Castello Lukeba failed the close-up hair check and is explicitly disabled
+in the import plan; retain his portrait. The website never loads meshoptimizer. Reproduction commands above apply
 to the pre-import baseline; current installed IDs are intentionally skipped. For a
 single raw RFH, convert-rfh.py accepts an --identity JSON row from fm27-plan.json.

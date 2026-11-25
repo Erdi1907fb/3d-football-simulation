@@ -1,18 +1,22 @@
 {
   "pass": true,
   "planned": 556,
-  "acceptedNew": 554,
+  "acceptedNew": 553,
   "existingIdentityExtended": 1,
   "rejected": [
     {
       "name": "Fábio Silva",
       "reason": "Hair could not meet locked-border 1% error /35k total-triangle budget; retain own photograph"
+    },
+    {
+      "name": "Castello Lukeba",
+      "reason": "Visible polygonal hair cards in close-up; threshold/UV trials failed. Entry disabled in import plan, own portrait retained."
     }
   ],
-  "newBytes": 158682810,
-  "totalModels": 886,
-  "totalModelBytes": 347488540,
+  "newBytes": 158229912,
+  "totalModels": 885,
+  "totalModelBytes": 347035642,
   "largestNewBytes": 575375,
   "largestNewTriangles": 33815,
-  "hairOnlySimplified": 7
+  "hairOnlySimplified": 6
 }

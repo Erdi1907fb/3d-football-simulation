@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## V245 · work in progress
--554selected missing FM27/PES realheads,886total; current kits/body/neck/skin shared.158.7MBadditional compressed assets, raw source archives excluded.
--Unique source-name/club identity plan and existing ID/DOB; one existing head identity joined,7dense hair models simplified without changing face;1dense source rejected. Batrakov keeps own portrait. Final regression/browser checks pending; main V244 remains stable.
+## V245 · 2026-11-25
+- 553 eksik oyuncuya ücretsiz FM27/PES gerçek kafa: toplam885; mevcut332model ve gerçek forma/gövde/boyun/ten sistemi korundu. Ek158.2MB sıkıştırılmış varlık; kaynak8.9GB arşiv/oyun/plugin yok, yalnız seçilen kafalar yüklenir.
+- Altı yoğun saç modeli kenar/UV/normal ve %1 hata sınırıyla hafifletildi; yüz koordinatları nicemleme dışında aynı. Fábio bütçe sınırında, Lukeba yakınplan saç kontrolünde reddedildi. Batrakov kaynakta yok/ayrı indirme engelli; kendi portreleri korunur.
+- Katalog isteği yeni sürümle yeniden doğrulanır; eski tarayıcı listesi kalmaz. Kimlikli kaynak planı, seçici arşiv okuyucu ve yeniden üretim araçları/notları eklendi.
+-77/77 paket,8mod denetimi ve son885geometri/153boyun pozu, masaüstü/mobil profil ve yakınplan kontrolleri geçti. Fiziksel cihaz/tam maç MP4 iddiası yok; kanıt research/fm27-v245. Aylık bekliyor.
 
 ## V244 · 2026-11-25
 - Bütün modların ortak görüntü hattında sonkamera/LOD/etiket eşleşmesi; ekran ölçeğinde çim ve seyirci filtreleme; sabit çim tonu; kamera modu değişiminde doğru yörünge önbelleği.

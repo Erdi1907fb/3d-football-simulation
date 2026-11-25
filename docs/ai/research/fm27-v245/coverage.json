@@ -1,6 +1,6 @@
 {
-  "models": 886,
-  "bytes": 347488540,
+  "models": 885,
+  "bytes": 347035642,
   "rows": [
     {
       "id": "83",
@@ -39325,8 +39325,8 @@
       "name": "RB Leipzig",
       "national": false,
       "total": 26,
-      "real": 20,
-      "photo": 6,
+      "real": 19,
+      "photo": 7,
       "generic": 0,
       "players": [
         {
@@ -39434,8 +39434,8 @@
         {
           "id": "319100",
           "name": "Castello Lukeba",
-          "kind": "real",
-          "sourceId": "144571"
+          "kind": "photo",
+          "sourceId": null
         },
         {
           "id": "fm-1667986",

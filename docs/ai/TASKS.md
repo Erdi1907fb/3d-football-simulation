@@ -1,4 +1,4 @@
-> **2026-11-15: Kaynak V187. Kamera/stadyum, tam kadro kutlaması ve isteğe bağlı sezon kapağı doğrulandı. Son canlı kontrol183/filesMatch=true; main push Hostinger dağıtımı değildir. T-328 hazırlama belleği azaltıldı; cihazdaki resetin bitişi doğrulanmadı; fiziksel cihaz testi açık.**
+> **2026-11-25: Kaynak sürüm V245. T-399 görüntü kararlılığı tamamlandı; T-400 gerçek kafalar 885 modele çıktı, kaynak eksikleri açık. Main push Hostinger dağıtımı değildir; fiziksel cihaz ve tam uzun video ayrıca doğrulanır.**
 
 # TASKS — görev panosu
 
@@ -6,12 +6,12 @@ Durumlar: `todo` · `in-progress` · `partial` · `blocked` · `done`
 Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken sahibini ve
 `files:` listesini yaz; bitirince `done` + sürüm. Kullanıcının yeni istekleri en üste eklenir.
 
-## Aktif hedef: V200 arka plan render, kaleci düzeltmesi, maç sayfası 3 mod
+## Güncel öncelik: görüntü kararlılığı ve gerçek oyuncu kafaları
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
 | T-399 | Genel kareler arası kalite dalgalanması:11v11→bowling, son kamera/tribün/çim/postFX/MP4 hattını düzelt ve hareketli karşılaştır | done (V244) | codex |77/77;8ana mod+3varyant/mobil; hareketli çim ve kısa1080p60MP4. research/temporal-v244; fiziksel cihaz/tam maç ayrı. |
-| T-400 | Eksik gerçek kafaları ücretsiz FM27 Real3DFaces/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | in-progress (V245) | codex |886toplam/554yeni,158.7MB;11oyuncu pilot ve kimlik/ten/boyun PASS; tam paket/8mod son kontrol. Batrakov kaynak erişimi+Fábio yoğunmodel bekliyor; research/fm27-v245. |
+| T-400 | Eksik gerçek kafaları ücretsiz FM27 Real3DFaces/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | partial (V245 kaynak eksikleri) | codex |885toplam/553yeni,158.2MB.77/77;8mod; son885geometri/153poz,6saçlıpilot/mobil PASS. Batrakov erişimi, Fábio bütçesi, Lukeba saç artefaktı açık; kendi portreleri. research/fm27-v245. |
 | T-401 | Aylık / Headers and Volleys modu | paused (user) | — | T-399/T-400 bittikten sonra kullanıcıyla ele alınır; şu an ekleme. |
 | T-398 | Bütün modlarda sahne ilerledikçe ayrıntı/çözünürlük kaybını incele, kararlı oyuncu/forma kalitesi ve zaman boyunca doğrula | done (V243) | codex | files: scene, browser quality audit; 8mod×4zaman +36kare gerçek1080p60 hareketli MP4/yazılım kodlayıcı PASS. |
 | T-397 | Gerçek kafalar: boyun/gövde ve ten uyumu, gerçek forma kimliği, tüm modlar/öncelikli büyük takım tam kadro kapsamı, boyut optimizasyonu ve kanıtlı güvenli temizlik | done (V243) | codex | files: player-heads/faces/fullbody, head-import/heads, face-coverage, tests/docs; gerçek model yoksa mevcut doğrulanmış görsel korunur. |

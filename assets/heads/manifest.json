@@ -43932,63 +43932,6 @@
         "gameClub": "Aston Villa",
         "identityEvidence": "unique full-name/alias in current author CSV plus reviewed same-club alias; bind existing game ID and DOB; no roster edits"
       }
-    },
-    {
-      "fmUID": "49056273",
-      "names": [
-        "Castello Lukeba",
-        "C. Lukeba"
-      ],
-      "sourceId": "144571",
-      "name": "Castello Lukeba",
-      "ids": [
-        "319100"
-      ],
-      "clubs": [
-        "11420"
-      ],
-      "dateOfBirth": "2002-12-17",
-      "source": "fm27-realfaces-v2",
-      "path": "assets/heads/pes/144571/head.glb.gz",
-      "bytes": 452898,
-      "rawBytes": 594500,
-      "sha256": "f976301907193aca4454ebfafcaac581c10020fc40fb6a0315a36f60b2b698cd",
-      "skinRGB": [
-        74,
-        54,
-        41
-      ],
-      "triangles": 26928,
-      "eyes": [
-        [
-          -0.027187500149011612,
-          0.052258359374999896,
-          0.08960969791666665
-        ],
-        [
-          0.02599399909377098,
-          0.052258359374999896,
-          0.08960969791666665
-        ]
-      ],
-      "hairSimplification": {
-        "sourceTriangles": 67623,
-        "triangles": 20000,
-        "relativeError": 0.006019525695592165,
-        "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      },
-      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
-      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
-      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
-      "rfhSHA256": "a9233c8959a025fc53176a3c8406c71c9da19972902f3d72732efa9cad66662d",
-      "sourceArchive": "https://www.mediafire.com/file/1hzlg25gbxbt8hs/RealFaces-v1.0-Faces-Part2of4.zip/file",
-      "sourceMember": "BepInEx/plugins/RealFaces/faces/49056273.rfh",
-      "identityEvidence": {
-        "sourceName": "Castello Lukeba",
-        "sourceClub": "RB Leipzig",
-        "gameClub": "RB Leipzig",
-        "identityEvidence": "unique full-name/alias in current author CSV plus reviewed same-club alias; bind existing game ID and DOB; no roster edits"
-      }
     }
   ],
   "unmatched": [

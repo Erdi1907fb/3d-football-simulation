@@ -12,7 +12,8 @@
         "triangles": 19999,
         "relativeError": 0.009757471270859241,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": true
     },
     {
       "name": "Wagner Pina",
@@ -23,7 +24,8 @@
         "triangles": 20000,
         "relativeError": 0.00543571263551712,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": true
     },
     {
       "name": "Lennart Karl",
@@ -34,7 +36,8 @@
         "triangles": 19999,
         "relativeError": 0.0012672848533838987,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": true
     },
     {
       "name": "Jakub Kiwior",
@@ -45,7 +48,8 @@
         "triangles": 3698,
         "relativeError": 0.0027610284741967916,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": true
     },
     {
       "name": "Sacha Boey",
@@ -56,7 +60,8 @@
         "triangles": 19998,
         "relativeError": 0.0058578914031386375,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": true
     },
     {
       "name": "Tammy Abraham",
@@ -67,7 +72,8 @@
         "triangles": 19984,
         "relativeError": 0.007306875195354223,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": true
     },
     {
       "name": "Castello Lukeba",
@@ -78,7 +84,8 @@
         "triangles": 20000,
         "relativeError": 0.006019525695592165,
         "method": "meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched"
-      }
+      },
+      "accepted": false
     }
   ]
 }

@@ -7232,7 +7232,8 @@
       "sourceName": "Castello Lukeba",
       "sourceClub": "RB Leipzig",
       "gameClub": "RB Leipzig",
-      "identityEvidence": "unique full-name/alias in current author CSV plus reviewed same-club alias; bind existing game ID and DOB; no roster edits"
+      "identityEvidence": "unique full-name/alias in current author CSV plus reviewed same-club alias; bind existing game ID and DOB; no roster edits",
+      "importDisabledReason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
     },
     {
       "name": "Nicolas Seiwald",

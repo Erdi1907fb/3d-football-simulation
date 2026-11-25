@@ -1,3 +1,5 @@
+> Archived V244 preparation. Current accepted runtime and source gaps: [V245 report](../fm27-v245/README.md). The historical “not integrated” state below is superseded.
+
 # T-400 — FM27 Real 3D Faces preparation (not integrated)
 
 User order: T-399 general temporal image quality across every mode FIRST; then add missing heads. Aylık / Headers and Volleys explicitly paused (T-401). Do not describe the following investigation as shipped faces.
