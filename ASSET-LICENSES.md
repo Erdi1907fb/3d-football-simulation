@@ -198,3 +198,25 @@ Output is standard glTF 2 in gzip, with embedded WebP/JPEG images (`EXT_texture_
 Existing club/keeper kits, jersey printing, boots, animation and unrepresented players' verified portraits retain their existing sources/notices. New screenshots are actual shared game renderer captures; no generated art. The offline Quaternius Standard sampler remains a development tool under the existing CC0 notice; unused sampled locomotion output is not shipped, and no Mixamo import is claimed.
 
 Historic unreferenced validation media were archived through immutable Git commit links (research/ARCHIVED-MEDIA.md), with hashes in research/heads-v243/cleanup.json. Existing preferred-foot records and attribution are preserved once inside the shared JS module; the redundant Node JSON copy is removed.
+
+# FM27 Real 3D Faces selected missing heads — V245
+
+547 selected RFH player heads from the free public RealFaces v2.0 catalogue,
+converted by our offline RFH1 reader to the existing PES head-relative glTF schema.
+Source: https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match
+Credits: melrosehlf (RFH conversion/catalogue), SmokePatch / SP Football Life and
+all contributing PES facemakers. Original credits:
+https://www.pessmokepatch.com/2025/10/faces2627.html
+The author states permission from SmokePatch for their pack; this is provenance,
+not a claim that the community head assets are CC0 or MIT. No FM/PES game or plugin
+binary is installed, executed or redistributed. No paid source was used.
+
+Public archive URLs/patch precedence: tools/head-import/fm27-sources.json.
+Exact source member, RFH SHA256, output SHA256, CSV/club identity evidence and game
+ID/DOB are in assets/heads/manifest.json and fm27-plan.json. Compressed runtime
+assets total155,095,635 additional bytes; raw RFHs, ZIPs, DLLs and full8.9GB pack
+are excluded. Portable generic eyes replace the external FM eye dependency;
+source face/hair remains, existing neck/body/skin/kit/animation fit is shared.
+Eight over-budget dense sources were rejected and retain their prior appearance.
+One Slonina identity was joined to his existing head using the same source ID,
+canonical name and DOB, without duplicating the model. This is incomplete coverage.

@@ -32,6 +32,7 @@ if __name__=='__main__':
     by_name={}
     for tid,p in pool:
         for n in {norm(p['name']),*[norm(n) for n in p.get('aliases',[]) if n]}:by_name.setdefault(n,[]).append((tid,p))
+    if not a.reuse and any(p.get('source')=='fm27-realfaces-v2' for p in json.loads((ROOT/'assets/heads/manifest.json').read_text()).get('players',[])):raise ValueError('Use --reuse to preserve the installed RFH source family')
     previous={p['source']+'|'+p['sourceId']:p for p in json.loads((ROOT/'assets/heads/manifest.json').read_text()).get('players',[])} if a.reuse else {};entries=[];unmatched=[];seen=set();source_records=[]
     for src in config['sources']:
         folder=a.input_root/src['directory'];idfile=ROOT/src['verifiedIds'] if src.get('verifiedIds') else folder/src['ids']
@@ -67,12 +68,25 @@ if __name__=='__main__':
             if not source.is_dir() and name=='Fabio Miretti':source=folder/'MIRETTI'
             if not source.is_dir():unmatched.append({'source':src['key'],'id':sid,'name':name,'reason':'source-folder-missing'});continue
             seen.update(ids);entry={'sourceId':sid,'name':(primary[0][1] if primary else matches[0][1])['name'],'names':list(dict.fromkeys([*names,*[p['name'] for tid,p in matches],*[p.get('shortName') for tid,p in matches if p.get('shortName')]])),'ids':ids,'clubs':sorted({tid for tid,p in matches}),'path':f'assets/heads/pes/{sid}/head.glb.gz','source':src['key'],'sourcePage':src['page'],'sourceCredit':src['credit'],'sourceSeason':src['season'],'dateOfBirth':expected_dob};entries.append((entry,str(source),str(a.reader),previous.get(src['key']+'|'+sid)))
-    manifest={'schema':1,'version':243,'source':'PES community real heads; identity matched to current game data','sources':source_records,'players':[],'unmatched':unmatched,'failed':[]}
+    manifest={'schema':1,'version':int((ROOT/'VERSION').read_text().strip().lstrip('vV')),'source':'PES community real heads; identity matched to current game data','sources':source_records,'players':[],'unmatched':unmatched,'failed':[]}
     with concurrent.futures.ProcessPoolExecutor(max_workers=a.workers) as ex:
         for entry,error in ex.map(convert_job,entries):
             if entry:manifest['players'].append(entry);print('OK',entry['name'],entry['bytes'],flush=True)
             else:manifest['failed'].append(error);print('FAILED',error,flush=True)
+    # Selected RFH heads are a separate reproducible source family. A PES rebuild
+    # must never silently drop them or overwrite their numeric source path.
+    retained=[p for p in previous.values() if p.get('source')=='fm27-realfaces-v2']
+    active_ids={i for p in manifest['players'] for i in p['ids']};active_paths={p['path'] for p in manifest['players']}
+    for p in retained:
+        if any(i in active_ids for i in p['ids']) or p['path'] in active_paths:raise ValueError('PES rebuild collides with retained RFH identity; review source precedence')
+        asset=ROOT/p['path']
+        if not asset.exists() or hashlib.sha256(asset.read_bytes()).hexdigest()!=p['sha256']:raise ValueError('retained RFH asset missing or changed')
+        manifest['players'].append(p)
+    if retained:
+        old=json.loads((ROOT/'assets/heads/manifest.json').read_text())
+        manifest['sources'].extend(s for s in old.get('sources',[]) if s.get('key')=='fm27-realfaces-v2')
     for tid in ['432','436','1895','997']:
+
         if tid not in registry:continue
         known={i for p in manifest['players'] for i in p['ids']};team=registry[tid];players=[*team['team']['players'],*team['team'].get('bench',[])];print('COVERAGE',team['name'],sum(str(p['id']) in known for p in players),'/',len(players),flush=True)
     path=ROOT/'assets/heads/manifest.json';path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print('TOTAL',len(manifest['players']),'FAILED',len(manifest['failed']),flush=True)

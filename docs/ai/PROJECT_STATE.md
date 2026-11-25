@@ -1,5 +1,8 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
+## Development V245 (not released)
+T-400:879kafa(332+547),155.1MBekvarlık.11oyuncu gerçekgövde/forma yakınplan ve format/kimlik/boyun/ten kontrolleri geçti. Tam77paket ve8mod yeni varlıklarla yeniden çalışıyor; son HANDOFF ve research/fm27-v245 gerçekdurumdur. Batrakov kaynakerişimi ve8yoğunmodel eksik; kendiportreleri korunur. Main hâlâ V244b0a7c9d, Aylık bekler.
+
 ## V244 · genel kamera hareketinde kararlı görüntü
 T-399 tamamlandı: sonkamera senkronizasyonu/tile koruması, ekran frekansına göre çim/tribün filtreleme, sabit çim ışığı, sahneye özel desktop MSAA, kontrollü DOF/sharpen, mobil mevcut-pass AA, post tamponlarının tam temizliği, kamera modu önbelleği ve24/20Mbps1080p60/1sn-kesim keyframe.77/77 paket;8ana mod ve3varyant/mobil profil, kontrollü yüzey karşılaştırması ve kısa1080p60MP4 PASS. Kanıtların kapsamı/sınırları research/temporal-v244 ve enüstHANDOFF'ta; fiziksel cihaz/tam maç export iddiası yok.
 T-400 eksik FM27/PES kafaları sırada: seçici RFH alımı ve tek pilot doğrulandı, runtime'a yeni kafa eklenmedi. Aylık T-401 duraklatıldı.

@@ -1,0 +1,59 @@
+{
+  "pass": false,
+  "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+  "converted": 547,
+  "identityExtensions": 1,
+  "bytes": 155095635,
+  "failed": [
+    {
+      "failed": true,
+      "fmUID": "83111483",
+      "name": "Rafael Leão",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "83228802",
+      "name": "Fábio Silva",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "2000122654",
+      "name": "Wagner Pina",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "2000375662",
+      "name": "Lennart Karl",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "96102946",
+      "name": "Jakub Kiwior",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "49038965",
+      "name": "Sacha Boey",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "28097985",
+      "name": "Tammy Abraham",
+      "error": "AssertionError()"
+    },
+    {
+      "failed": true,
+      "fmUID": "49056273",
+      "name": "Castello Lukeba",
+      "error": "AssertionError()"
+    }
+  ],
+  "unavailable": [],
+  "installed": true
+}
