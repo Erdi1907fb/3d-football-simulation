@@ -19302,6 +19302,329 @@
         "assets/player-profiles/sporting.json"
       ],
       "identityEvidence": "reviewed explicit transliteration/full-name/club alias; unique CSV UID and profile name/full DOB; recorded in reviewed-profile-aliases.json"
+    },
+    {
+      "name": "Andri Fannar Baldursson",
+      "names": [
+        "Andri Fannar Baldursson",
+        "A. Baldursson"
+      ],
+      "ids": [
+        "298404"
+      ],
+      "clubs": [
+        "6870"
+      ],
+      "dateOfBirth": "2002-01-10",
+      "fmUID": "39056706",
+      "sourceName": "Andri Fannar Baldursson",
+      "sourceClub": "Kasımpaşa SK",
+      "gameClub": "Kasımpaşa",
+      "profileSources": [
+        "assets/player-profiles/kasimpasa.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Mateo Pellegrino",
+      "names": [
+        "Mateo Pellegrino",
+        "M. Pellegrino"
+      ],
+      "ids": [
+        "312757"
+      ],
+      "clubs": [
+        "109"
+      ],
+      "dateOfBirth": "2001-10-22",
+      "fmUID": "14217538",
+      "sourceName": "Mateo Pellegrino",
+      "sourceClub": "Fiorentina",
+      "gameClub": "Fiorentina",
+      "profileSources": [
+        "assets/player-profiles/fiorentina.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Gjivai Zechiël",
+      "names": [
+        "Gjivai Zechiël"
+      ],
+      "ids": [
+        "fm-1523822"
+      ],
+      "clubs": [
+        "142"
+      ],
+      "dateOfBirth": "2004-06-01",
+      "fmUID": "2000054498",
+      "sourceName": "Gjivai Zechiël",
+      "sourceClub": "Feyenoord",
+      "gameClub": "Feyenoord",
+      "profileSources": [
+        "assets/player-profiles/feyenoord.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Dave Kwakman",
+      "names": [
+        "Dave Kwakman"
+      ],
+      "ids": [
+        "fm-1389199"
+      ],
+      "clubs": [
+        "140"
+      ],
+      "dateOfBirth": "2004-08-07",
+      "fmUID": "2000014557",
+      "sourceName": "Dave Kwakman",
+      "sourceClub": "AZ Alkmaar",
+      "gameClub": "AZ Alkmaar",
+      "profileSources": [
+        "assets/player-profiles/az-alkmaar.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Kyriani Sabbe",
+      "names": [
+        "Kyriani Sabbe"
+      ],
+      "ids": [
+        "fm-1227590"
+      ],
+      "clubs": [
+        "570"
+      ],
+      "dateOfBirth": "2005-01-26",
+      "fmUID": "2000091515",
+      "sourceName": "Kyriani Sabbe",
+      "sourceClub": "Club Brugge",
+      "gameClub": "Club Brugge",
+      "profileSources": [
+        "assets/player-profiles/club-brugge.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Ömer Ali Sahiner",
+      "names": [
+        "Ömer Ali Sahiner"
+      ],
+      "ids": [
+        "fm-303187"
+      ],
+      "clubs": [
+        "7914"
+      ],
+      "dateOfBirth": "1992-01-02",
+      "fmUID": "29040332",
+      "sourceName": "Ömer Ali Şahiner",
+      "sourceClub": "İstanbul Başakşehir FK",
+      "gameClub": "Başakşehir",
+      "profileSources": [
+        "assets/player-profiles/basaksehir.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Arda Okan Kurtulan",
+      "names": [
+        "Arda Okan Kurtulan",
+        "A. Kurtulan"
+      ],
+      "ids": [
+        "325022"
+      ],
+      "clubs": [
+        "789"
+      ],
+      "dateOfBirth": "2002-11-19",
+      "fmUID": "2000096497",
+      "sourceName": "Arda Okan Kurtulan",
+      "sourceClub": "Göztepe SK",
+      "gameClub": "Göztepe",
+      "profileSources": [
+        "assets/player-profiles/goztepe.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Kamil Ahmet Corekci",
+      "names": [
+        "Kamil Ahmet Corekci",
+        "K. Corekci"
+      ],
+      "ids": [
+        "154362"
+      ],
+      "clubs": [
+        "6870"
+      ],
+      "dateOfBirth": "1992-02-01",
+      "fmUID": "28020212",
+      "sourceName": "Kamil Ahmet Çörekçi",
+      "sourceClub": "Kasımpaşa SK",
+      "gameClub": "Kasımpaşa",
+      "profileSources": [
+        "assets/player-profiles/kasimpasa.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Ege Albayrak",
+      "names": [
+        "Ege Albayrak"
+      ],
+      "ids": [
+        "fm-1676719"
+      ],
+      "clubs": [
+        "6870"
+      ],
+      "dateOfBirth": "2007-08-20",
+      "fmUID": "2000495296",
+      "sourceName": "Ege Albayrak",
+      "sourceClub": "Kasımpaşa SK",
+      "gameClub": "Kasımpaşa",
+      "profileSources": [
+        "assets/player-profiles/kasimpasa.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Irfan Can Egribayat",
+      "names": [
+        "Irfan Can Egribayat",
+        "I. Egribayat"
+      ],
+      "ids": [
+        "241797"
+      ],
+      "clubs": [
+        "996"
+      ],
+      "dateOfBirth": "1998-06-30",
+      "fmUID": "70093833",
+      "sourceName": "İrfan Can Eğribayat",
+      "sourceClub": "Gençlerbirliği SK",
+      "gameClub": "Gençlerbirliği",
+      "profileSources": [
+        "assets/player-profiles/genclerbirligi.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Ayoube Amaimouni-Echghouyab",
+      "names": [
+        "Ayoube Amaimouni-Echghouyab"
+      ],
+      "ids": [
+        "fm-1680173"
+      ],
+      "clubs": [
+        "125"
+      ],
+      "dateOfBirth": "2004-11-30",
+      "fmUID": "2000102803",
+      "sourceName": "Ayoube Amaimouni-Echghouyab",
+      "sourceClub": "Eintracht Frankfurt",
+      "gameClub": "Eintracht Frankfurt",
+      "profileSources": [
+        "assets/player-profiles/eintracht-frankfurt.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Isak Jansson",
+      "names": [
+        "Isak Jansson",
+        "I. Jansson"
+      ],
+      "ids": [
+        "282597"
+      ],
+      "clubs": [
+        "2502"
+      ],
+      "dateOfBirth": "2002-01-31",
+      "fmUID": "93122415",
+      "sourceName": "Isak Jansson",
+      "sourceClub": "Nice",
+      "gameClub": "OGC Nice",
+      "profileSources": [
+        "assets/player-profiles/ogc-nice.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Gonçalo Borges",
+      "names": [
+        "Gonçalo Borges",
+        "G. Borges"
+      ],
+      "ids": [
+        "332362"
+      ],
+      "clubs": [
+        "142"
+      ],
+      "dateOfBirth": "2001-03-29",
+      "fmUID": "83228804",
+      "sourceName": "Gonçalo Borges",
+      "sourceClub": "Feyenoord",
+      "gameClub": "Feyenoord",
+      "profileSources": [
+        "assets/player-profiles/feyenoord.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Rome-Jayden Owusu-Oduro",
+      "names": [
+        "Rome-Jayden Owusu-Oduro",
+        "R. Owusu-Oduro"
+      ],
+      "ids": [
+        "332466"
+      ],
+      "clubs": [
+        "140"
+      ],
+      "dateOfBirth": "2004-07-02",
+      "fmUID": "2000014080",
+      "sourceName": "Rome-Jayden Owusu-Oduro",
+      "sourceClub": "AZ Alkmaar",
+      "gameClub": "AZ Alkmaar",
+      "profileSources": [
+        "assets/player-profiles/az-alkmaar.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+    },
+    {
+      "name": "Newertton",
+      "names": [
+        "Newertton"
+      ],
+      "ids": [
+        "361629"
+      ],
+      "clubs": [
+        "493"
+      ],
+      "dateOfBirth": "2005-06-03",
+      "fmUID": "2000135788",
+      "sourceName": "Newertton",
+      "sourceClub": "FC Shakhtar Donetsk",
+      "gameClub": "Shakhtar Donetsk",
+      "profileSources": [
+        "assets/player-profiles/shakhtar-donetsk.json"
+      ],
+      "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
     }
   ],
   "deferred": [

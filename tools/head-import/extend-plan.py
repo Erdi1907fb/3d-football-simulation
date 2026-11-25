@@ -15,7 +15,7 @@ tools/head-import/fm27-plan.json. It never edits squads and never matches on a n
 * national squads are only reached through a player's club identity; DOB is bound from the game data,
   never invented. The new-head budget is respected in priority order (first-team players first).
 
-Usage: python3 tools/head-import/extend-plan.py --csv RealFaces-players.csv [--write] [--budget-mb 260]
+Usage: python3 tools/head-import/extend-plan.py --csv RealFaces-players.csv [--write] [--budget-mb 260] [--available-index stage/index-4.json ...]
 """
 import argparse, csv, json, pathlib, unicodedata, collections, re
 
@@ -45,7 +45,7 @@ def full_names(p):
     return out
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument('--csv', required=True); ap.add_argument('--write', action='store_true'); ap.add_argument('--budget-mb', type=float)
+    ap = argparse.ArgumentParser(); ap.add_argument('--csv', required=True); ap.add_argument('--write', action='store_true'); ap.add_argument('--budget-mb', type=float); ap.add_argument('--available-index', action='append', default=[], help='stage index-N.json; keep only candidates whose FM UID is in these archives')
     a = ap.parse_args()
     rows = [r for r in csv.DictReader(open(a.csv, encoding='utf-8-sig'), delimiter=';') if r['Club'] not in ('Manager', '', '-')]
     by_name = collections.defaultdict(list)
@@ -91,6 +91,9 @@ def main():
                 'clubs': [reg_id] if reg_id in reg else [], 'dateOfBirth': p['dateOfBirth'], 'fmUID': r['UID'], 'sourceName': r['Name'],
                 'sourceClub': r['Club'], 'gameClub': prof.get('name') or slug, 'profileSources': [f'assets/player-profiles/{slug}.json'],
                 'identityEvidence': 'V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits'}))
+    if a.available_index:
+        avail = {f['uid'] for x in a.available_index for f in json.loads(pathlib.Path(x).read_text())['files']}
+        cands = [(p, c) for p, c in cands if c['fmUID'] in avail]
     seen, chosen = set(), []
     for prio, c in sorted(cands, key=lambda x: x[0]):
         if c['fmUID'] in seen: continue

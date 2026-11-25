@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": 246,
+  "version": 249,
   "source": "PES community and FM27 RealFaces heads; identity matched to game data",
   "sources": [
     {
@@ -55272,6 +55272,824 @@
         "sourceClub": "Sporting CP",
         "gameClub": "Sporting CP",
         "identityEvidence": "reviewed explicit transliteration/full-name/club alias; unique CSV UID and profile name/full DOB; recorded in reviewed-profile-aliases.json"
+      }
+    },
+    {
+      "originalSourceId": "133681",
+      "fmUID": "39056706",
+      "names": [
+        "Andri Fannar Baldursson",
+        "A. Baldursson"
+      ],
+      "sourceId": "133681",
+      "name": "Andri Fannar Baldursson",
+      "ids": [
+        "298404"
+      ],
+      "clubs": [
+        "6870"
+      ],
+      "dateOfBirth": "2002-01-10",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/133681/head.glb.gz",
+      "bytes": 234808,
+      "rawBytes": 296892,
+      "sha256": "3b7c2fe172687aea149dd3dbb4c2df68376aa30a8b7f612b5487abdf9411cf50",
+      "skinRGB": [
+        152,
+        110,
+        88
+      ],
+      "triangles": 9601,
+      "eyes": [
+        [
+          -0.02814900130033493,
+          0.06715361290322575,
+          0.0872279634408602
+        ],
+        [
+          0.03051299974322319,
+          0.06715361290322575,
+          0.0872279634408602
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "f1f665f0f8a5b922fb52b7c4a048d9a1bad32809b653eb5f95174235612d179d",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/39056706.rfh",
+      "identityEvidence": {
+        "sourceName": "Andri Fannar Baldursson",
+        "sourceClub": "Kasımpaşa SK",
+        "gameClub": "Kasımpaşa",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "141649",
+      "fmUID": "14217538",
+      "names": [
+        "Mateo Pellegrino",
+        "M. Pellegrino"
+      ],
+      "sourceId": "141649",
+      "name": "Mateo Pellegrino",
+      "ids": [
+        "312757"
+      ],
+      "clubs": [
+        "109"
+      ],
+      "dateOfBirth": "2001-10-22",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/141649/head.glb.gz",
+      "bytes": 269654,
+      "rawBytes": 304112,
+      "sha256": "ccf948933e94ae65f9f79ffd70ff1b2bd603332277c6c175c8c887f442dcb6a1",
+      "skinRGB": [
+        156,
+        121,
+        100
+      ],
+      "triangles": 6314,
+      "eyes": [
+        [
+          -0.033339500427246094,
+          0.06415216666666668,
+          0.09135938279569891
+        ],
+        [
+          0.03143949806690216,
+          0.06415216666666668,
+          0.09135938279569891
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "a06002f14624efea73982072725deafd9a3f97442c390c8d34c3cb40bde89215",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/14217538.rfh",
+      "identityEvidence": {
+        "sourceName": "Mateo Pellegrino",
+        "sourceClub": "Fiorentina",
+        "gameClub": "Fiorentina",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "121034",
+      "fmUID": "29040332",
+      "names": [
+        "Ömer Ali Sahiner"
+      ],
+      "sourceId": "121034",
+      "name": "Ömer Ali Sahiner",
+      "ids": [
+        "fm-303187"
+      ],
+      "clubs": [
+        "7914"
+      ],
+      "dateOfBirth": "1992-01-02",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/121034/head.glb.gz",
+      "bytes": 244660,
+      "rawBytes": 292932,
+      "sha256": "4086a9d5e16be71eec86c7ecda85eb35a06558cf40c6d3647d1db42fb1ac9416",
+      "skinRGB": [
+        154,
+        118,
+        102
+      ],
+      "triangles": 8782,
+      "eyes": [
+        [
+          -0.03562900051474571,
+          0.05422801344086037,
+          0.08618046075268818
+        ],
+        [
+          0.02716200053691864,
+          0.05422801344086037,
+          0.08618046075268818
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "73ab7a13f948cd06d190b702f6853ff5fe06beadc8511b2dde33bf78836ce100",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/29040332.rfh",
+      "identityEvidence": {
+        "sourceName": "Ömer Ali Şahiner",
+        "sourceClub": "İstanbul Başakşehir FK",
+        "gameClub": "Başakşehir",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "147546",
+      "fmUID": "2000096497",
+      "names": [
+        "Arda Okan Kurtulan",
+        "A. Kurtulan"
+      ],
+      "sourceId": "147546",
+      "name": "Arda Okan Kurtulan",
+      "ids": [
+        "325022"
+      ],
+      "clubs": [
+        "789"
+      ],
+      "dateOfBirth": "2002-11-19",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/147546/head.glb.gz",
+      "bytes": 438508,
+      "rawBytes": 516624,
+      "sha256": "f6ae5d5c8581d638f430e0d8256dcc65b96955d9b444bb1c6a2f839d1ba604c9",
+      "skinRGB": [
+        157,
+        115,
+        96
+      ],
+      "triangles": 13114,
+      "eyes": [
+        [
+          -0.02756749838590622,
+          0.059520244623656016,
+          0.09556424032258062
+        ],
+        [
+          0.02538199909031391,
+          0.059520244623656016,
+          0.09556424032258062
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "f06ad3cc34e2ad3547f3e16b4ad9a2afe51accd6d074adc6a4130778b73251ed",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000096497.rfh",
+      "identityEvidence": {
+        "sourceName": "Arda Okan Kurtulan",
+        "sourceClub": "Göztepe SK",
+        "gameClub": "Göztepe",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "121092",
+      "fmUID": "28020212",
+      "names": [
+        "Kamil Ahmet Corekci",
+        "K. Corekci"
+      ],
+      "sourceId": "121092",
+      "name": "Kamil Ahmet Corekci",
+      "ids": [
+        "154362"
+      ],
+      "clubs": [
+        "6870"
+      ],
+      "dateOfBirth": "1992-02-01",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/121092/head.glb.gz",
+      "bytes": 233057,
+      "rawBytes": 279708,
+      "sha256": "8fff2c3921daf5774e141442a621acde9b3cb3f40d4cd15f63eacd4db514c481",
+      "skinRGB": [
+        166,
+        113,
+        87
+      ],
+      "triangles": 8654,
+      "eyes": [
+        [
+          -0.03172000125050545,
+          0.05628899999999981,
+          0.08814144999999998
+        ],
+        [
+          0.029968999326229095,
+          0.05628899999999981,
+          0.08814144999999998
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "2472250486c80f9ec0419ebe996896ecfb749a0b7e67a9596140dd70254d5dc8",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/28020212.rfh",
+      "identityEvidence": {
+        "sourceName": "Kamil Ahmet Çörekçi",
+        "sourceClub": "Kasımpaşa SK",
+        "gameClub": "Kasımpaşa",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "172267",
+      "fmUID": "2000495296",
+      "names": [
+        "Ege Albayrak"
+      ],
+      "sourceId": "172267",
+      "name": "Ege Albayrak",
+      "ids": [
+        "fm-1676719"
+      ],
+      "clubs": [
+        "6870"
+      ],
+      "dateOfBirth": "2007-08-20",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/172267/head.glb.gz",
+      "bytes": 167746,
+      "rawBytes": 210956,
+      "sha256": "4cbceb3f2241311242d04b864ad37fa25fba4b04814ef2b00bca808f0036de25",
+      "skinRGB": [
+        158,
+        110,
+        85
+      ],
+      "triangles": 8325,
+      "eyes": [
+        [
+          -0.03203950077295303,
+          0.06115091129032235,
+          0.08672453064516128
+        ],
+        [
+          0.030429000034928322,
+          0.06115091129032235,
+          0.08672453064516128
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "a193f1273b7de5fb5eb4330e42a24e41389073c1b831cd79e0451f74452f9146",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000495296.rfh",
+      "identityEvidence": {
+        "sourceName": "Ege Albayrak",
+        "sourceClub": "Kasımpaşa SK",
+        "gameClub": "Kasımpaşa",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "70093833",
+      "fmUID": "70093833",
+      "names": [
+        "Irfan Can Egribayat",
+        "I. Egribayat"
+      ],
+      "sourceId": "70093833",
+      "name": "Irfan Can Egribayat",
+      "ids": [
+        "241797"
+      ],
+      "clubs": [
+        "996"
+      ],
+      "dateOfBirth": "1998-06-30",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/70093833/head.glb.gz",
+      "bytes": 275217,
+      "rawBytes": 348760,
+      "sha256": "3792efdb6393c2fe77ae54efca8a7db5239c7dbcdd1c83866e41831e843c70c3",
+      "skinRGB": [
+        164,
+        118,
+        91
+      ],
+      "triangles": 13561,
+      "eyes": [
+        [
+          -0.030842501670122147,
+          0.05755023655913982,
+          0.08939128333333332
+        ],
+        [
+          0.035449497401714325,
+          0.05755023655913982,
+          0.08939128333333332
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "4caa58a731bb7cf8aed5b1ac403ba3895048826b2c4794c3e65a277797ade775",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/70093833.rfh",
+      "identityEvidence": {
+        "sourceName": "İrfan Can Eğribayat",
+        "sourceClub": "Gençlerbirliği SK",
+        "gameClub": "Gençlerbirliği",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "181562",
+      "fmUID": "2000102803",
+      "names": [
+        "Ayoube Amaimouni-Echghouyab"
+      ],
+      "sourceId": "181562",
+      "name": "Ayoube Amaimouni-Echghouyab",
+      "ids": [
+        "fm-1680173"
+      ],
+      "clubs": [
+        "125"
+      ],
+      "dateOfBirth": "2004-11-30",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/181562/head.glb.gz",
+      "bytes": 228834,
+      "rawBytes": 270656,
+      "sha256": "874522e936550ee9cdccb347066195adcae4db187cab4474b57945e3b597731b",
+      "skinRGB": [
+        146,
+        101,
+        74
+      ],
+      "triangles": 8427,
+      "eyes": [
+        [
+          -0.03609199821949005,
+          0.0601843844086023,
+          0.08661242580645159
+        ],
+        [
+          0.03033199906349182,
+          0.0601843844086023,
+          0.08661242580645159
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "731bd93957b9937f0279abde3ef691fa12a2c2e01f664a8af19ad7ca9de89bc2",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000102803.rfh",
+      "identityEvidence": {
+        "sourceName": "Ayoube Amaimouni-Echghouyab",
+        "sourceClub": "Eintracht Frankfurt",
+        "gameClub": "Eintracht Frankfurt",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "157670",
+      "fmUID": "93122415",
+      "names": [
+        "Isak Jansson",
+        "I. Jansson"
+      ],
+      "sourceId": "157670",
+      "name": "Isak Jansson",
+      "ids": [
+        "282597"
+      ],
+      "clubs": [
+        "2502"
+      ],
+      "dateOfBirth": "2002-01-31",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/157670/head.glb.gz",
+      "bytes": 270110,
+      "rawBytes": 305980,
+      "sha256": "38043059261d6fbe02e7da7e1f10acd4b3f60b625a6ec48ec88088282b64c332",
+      "skinRGB": [
+        161,
+        119,
+        104
+      ],
+      "triangles": 6643,
+      "eyes": [
+        [
+          -0.033303000032901764,
+          0.05383565860215045,
+          0.08285899032258062
+        ],
+        [
+          0.03096500039100647,
+          0.05383565860215045,
+          0.08285899032258062
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "b601e20125239eb8c6838ec8d21dfd7cb9cd20f912d8d32caf1c8567c3a3a767",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/93122415.rfh",
+      "identityEvidence": {
+        "sourceName": "Isak Jansson",
+        "sourceClub": "Nice",
+        "gameClub": "OGC Nice",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "159684",
+      "fmUID": "2000014080",
+      "names": [
+        "Rome-Jayden Owusu-Oduro",
+        "R. Owusu-Oduro"
+      ],
+      "sourceId": "159684",
+      "name": "Rome-Jayden Owusu-Oduro",
+      "ids": [
+        "332466"
+      ],
+      "clubs": [
+        "140"
+      ],
+      "dateOfBirth": "2004-07-02",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/159684/head.glb.gz",
+      "bytes": 199893,
+      "rawBytes": 246252,
+      "sha256": "8fd386d9a7975dfdac5c1b05ab55ced3d52996996dd4367e55aa6a2e5c9fd1b3",
+      "skinRGB": [
+        123,
+        88,
+        70
+      ],
+      "triangles": 7619,
+      "eyes": [
+        [
+          -0.034230999648571014,
+          0.04624753225806444,
+          0.08816526720430107
+        ],
+        [
+          0.029935000464320183,
+          0.04624753225806444,
+          0.08816526720430107
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "17b4d5ad36d043e961280bedac65dd265ce109416e04a1024790149ccddc6dbd",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000014080.rfh",
+      "identityEvidence": {
+        "sourceName": "Rome-Jayden Owusu-Oduro",
+        "sourceClub": "AZ Alkmaar",
+        "gameClub": "AZ Alkmaar",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "91163",
+      "fmUID": "2000135788",
+      "names": [
+        "Newertton"
+      ],
+      "sourceId": "91163",
+      "name": "Newertton",
+      "ids": [
+        "361629"
+      ],
+      "clubs": [
+        "493"
+      ],
+      "dateOfBirth": "2005-06-03",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/91163/head.glb.gz",
+      "bytes": 269902,
+      "rawBytes": 335928,
+      "sha256": "5e1eae8312a3c7f4fe50744012529f43250fd37f3cb353ada3286a90b94b6cdc",
+      "skinRGB": [
+        106,
+        73,
+        56
+      ],
+      "triangles": 10538,
+      "eyes": [
+        [
+          -0.026110000908374786,
+          0.05691299999999977,
+          0.08915494999999998
+        ],
+        [
+          0.025473499670624733,
+          0.05691299999999977,
+          0.08915494999999998
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "796f2037e25d9f95df05a751c907017369554d4870f2816d05f9bb1123e96117",
+      "sourceArchive": "https://www.mediafire.com/file/jhxwxyqaam60ju2/RealFaces-v1.1.1-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000135788.rfh",
+      "identityEvidence": {
+        "sourceName": "Newertton",
+        "sourceClub": "FC Shakhtar Donetsk",
+        "gameClub": "Shakhtar Donetsk",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "164471",
+      "fmUID": "2000054498",
+      "names": [
+        "Gjivai Zechiël"
+      ],
+      "sourceId": "164471",
+      "name": "Gjivai Zechiël",
+      "ids": [
+        "fm-1523822"
+      ],
+      "clubs": [
+        "142"
+      ],
+      "dateOfBirth": "2004-06-01",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/164471/head.glb.gz",
+      "bytes": 347767,
+      "rawBytes": 430276,
+      "sha256": "b2ce39d97614767add6f52fb5be04089238b1eac630b399b63e0f9b77d64f9ff",
+      "skinRGB": [
+        132,
+        92,
+        70
+      ],
+      "triangles": 14709,
+      "eyes": [
+        [
+          -0.026669498533010483,
+          0.061001032258064525,
+          0.08632245537634409
+        ],
+        [
+          0.026086000725626945,
+          0.061001032258064525,
+          0.08632245537634409
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "cfc115e1474eeb375d92463e0fd4f8df80c97eba20dde4cf5568a3f52be1cbda",
+      "sourceArchive": "https://www.mediafire.com/file/kzs2796x4j7arrn/RealFaces-v1.0.2-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000054498.rfh",
+      "identityEvidence": {
+        "sourceName": "Gjivai Zechiël",
+        "sourceClub": "Feyenoord",
+        "gameClub": "Feyenoord",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "165249",
+      "fmUID": "2000014557",
+      "names": [
+        "Dave Kwakman"
+      ],
+      "sourceId": "165249",
+      "name": "Dave Kwakman",
+      "ids": [
+        "fm-1389199"
+      ],
+      "clubs": [
+        "140"
+      ],
+      "dateOfBirth": "2004-08-07",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/165249/head.glb.gz",
+      "bytes": 285852,
+      "rawBytes": 337460,
+      "sha256": "da22a94489d1c07302bf6a8d72ed8c00887fa14deeaeb1abb95384091085eea7",
+      "skinRGB": [
+        157,
+        118,
+        101
+      ],
+      "triangles": 8755,
+      "eyes": [
+        [
+          -0.03212700039148331,
+          0.06284269892473127,
+          0.09145658440860213
+        ],
+        [
+          0.0334865003824234,
+          0.06284269892473127,
+          0.09145658440860213
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "2461877e899410d6a4a0caf40b3613df24168330a892691dc34ef59f8d586864",
+      "sourceArchive": "https://www.mediafire.com/file/kzs2796x4j7arrn/RealFaces-v1.0.2-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000014557.rfh",
+      "identityEvidence": {
+        "sourceName": "Dave Kwakman",
+        "sourceClub": "AZ Alkmaar",
+        "gameClub": "AZ Alkmaar",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "158713",
+      "fmUID": "2000091515",
+      "names": [
+        "Kyriani Sabbe"
+      ],
+      "sourceId": "158713",
+      "name": "Kyriani Sabbe",
+      "ids": [
+        "fm-1227590"
+      ],
+      "clubs": [
+        "570"
+      ],
+      "dateOfBirth": "2005-01-26",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/158713/head.glb.gz",
+      "bytes": 292909,
+      "rawBytes": 358292,
+      "sha256": "034356bfa6d0804c8856f68ac1504b6a5d29d46113395c7840f942c47f63440c",
+      "skinRGB": [
+        147,
+        107,
+        84
+      ],
+      "triangles": 11966,
+      "eyes": [
+        [
+          -0.03359999880194664,
+          0.053311887096774146,
+          0.08609658172043011
+        ],
+        [
+          0.03096099942922592,
+          0.053311887096774146,
+          0.08609658172043011
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "8e8e97412952082fd88a95883cc7fd3d5939dc0b9c0186ed0faba190f50679ff",
+      "sourceArchive": "https://www.mediafire.com/file/kzs2796x4j7arrn/RealFaces-v1.0.2-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/2000091515.rfh",
+      "identityEvidence": {
+        "sourceName": "Kyriani Sabbe",
+        "sourceClub": "Club Brugge",
+        "gameClub": "Club Brugge",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
+      }
+    },
+    {
+      "originalSourceId": "151805",
+      "fmUID": "83228804",
+      "names": [
+        "Gonçalo Borges",
+        "G. Borges"
+      ],
+      "sourceId": "151805",
+      "name": "Gonçalo Borges",
+      "ids": [
+        "332362"
+      ],
+      "clubs": [
+        "142"
+      ],
+      "dateOfBirth": "2001-03-29",
+      "source": "fm27-realfaces-v2",
+      "path": "assets/heads/pes/151805/head.glb.gz",
+      "bytes": 357414,
+      "rawBytes": 500620,
+      "sha256": "e09ef02c2113215df0f6e874d22cd320238e13c26b649db28ef7931df798f0f6",
+      "skinRGB": [
+        145,
+        91,
+        67
+      ],
+      "triangles": 21895,
+      "eyes": [
+        [
+          -0.03504899889230728,
+          0.05701398958333326,
+          0.0839197347222222
+        ],
+        [
+          0.034228499978780746,
+          0.05701398958333326,
+          0.0839197347222222
+        ]
+      ],
+      "hairSimplification": null,
+      "faceSimplification": null,
+      "geometryBudget": null,
+      "sourcePage": "https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match",
+      "sourceCredit": "melrosehlf conversion; SmokePatch / SP Football Life and contributing PES facemakers",
+      "sourceSeason": "FM27 v2 / SP Football Life 2026-27",
+      "rfhSHA256": "077b3f5da1b505bbc6a72b1f195755e9c24d77f7726fd78497a3504eb5c15d11",
+      "sourceArchive": "https://www.mediafire.com/file/kzs2796x4j7arrn/RealFaces-v1.0.2-Faces-Patch.zip/file",
+      "sourceMember": "BepInEx/plugins/RealFaces/faces/83228804.rfh",
+      "identityEvidence": {
+        "sourceName": "Gonçalo Borges",
+        "sourceClub": "Feyenoord",
+        "gameClub": "Feyenoord",
+        "identityEvidence": "V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits"
       }
     }
   ],

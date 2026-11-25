@@ -81,10 +81,10 @@ def convert_archive(job,stage,existing_paths):
  return results
 
 if __name__=='__main__':
- ap=argparse.ArgumentParser();ap.add_argument('--stage',type=pathlib.Path,required=True);ap.add_argument('--csv',type=pathlib.Path,required=True);ap.add_argument('--install',action='store_true');ap.add_argument('--workers',type=int,default=4);a=ap.parse_args();a.stage.mkdir(parents=True,exist_ok=True)
+ ap=argparse.ArgumentParser();ap.add_argument('--stage',type=pathlib.Path,required=True);ap.add_argument('--csv',type=pathlib.Path,required=True);ap.add_argument('--install',action='store_true');ap.add_argument('--workers',type=int,default=4);ap.add_argument('--only-archives',help='comma-separated archive orders to index (e.g. 4,5 when the main parts are unreachable); override order is kept');a=ap.parse_args();a.stage.mkdir(parents=True,exist_ok=True)
  SOURCE=json.loads((ROOT/'tools/head-import/fm27-sources.json').read_text());plan=json.loads((ROOT/'tools/head-import/fm27-plan.json').read_text());allow={r['UID']:r for r in csv.DictReader(a.csv.open(encoding='utf-8-sig'),delimiter=';') if r['Club']!='Manager'}
  manifest=json.loads((ROOT/'assets/heads/manifest.json').read_text());profile_links=link_profile_identities(manifest,plan);existing_paths={e['path']:e for e in manifest['players']};existing_ids={i for e in manifest['players'] for i in e['ids']}
- with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:indexes=list(pool.map(lambda item:archive_index(item,a.stage),enumerate(SOURCE['archivesInOverrideOrder'])))
+ with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:indexes=list(pool.map(lambda item:archive_index(item,a.stage),[(o,u) for o,u in enumerate(SOURCE['archivesInOverrideOrder']) if not a.only_archives or str(o) in a.only_archives.split(',')]))
  members={row['uid']:(idx,row) for idx in sorted(indexes,key=lambda i:i['order']) for row in idx['files']};groups={};unavailable=[]
  for p in plan['players']:
   uid=p['fmUID']

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V250 · 2026-11-25
+- 15 yeni gerçek FM27 kafa (kaynak: RealFaces v1.0.2 ve v1.1.1 yama arşivleri — bu ortamdan erişilebilen tek parçalar; 4 ana parça MediaFire Cloudflare kontrolünde, bypass yok): Kasımpaşa (Baldursson, Çörekçi, Albayrak), Başakşehir (Şahiner), Göztepe (Kurtulan), Gençlerbirliği (Eğribayat), Fiorentina (Pellegrino), Frankfurt (Amaimouni-Echghouyab), Nice (Jansson), AZ (Owusu-Oduro, Kwakman), Feyenoord (Zechiël, Borges), Club Brugge (Sabbe), Shakhtar (Newertton). +4,1 MB; toplam FM27 749, model 1.081. Bütçe 260 MB değişmedi.
+- Kimlik koruması aynı: tekil aynı-kulüp tam ad/alias CSV satırı, takım CSV kulübü mevcut kafaların oyuyla, oyun ID+DOB'si. Kerem Aktürkoğlu, Vinícius, Koundé, Trent vb. yamalarda vardı ama zaten PES gerçek kafaları olduğu için atlandı.
+- Araçlar: import-fm27.py `--only-archives 4,5`; extend-plan.py `--available-index stage/index-N.json`. Tarayıcı pilotunda 15/15 yüklü, gövde/forma/boyun PASS, görsel kontrol yapıldı.
+
 ## V249 · 2026-11-25
 - Taç çizgisi hâlâ titriyordu (kullanıcı, canlı build 248). Gerçek kusur: V248'in ekran-uzayı minimum genişliği vertex başına hesaplanıyordu ve taç çizgisi tek bir 105 m'lik dörtgendi; değer yalnız köşe bayraklarında biliniyor, ortaya doğrusal dağılıyordu. Maç boyunca 33 yayın karesinde uzak taç çizgisi ~0,3 px genişlikteyken gereken genişletme ~2,7 iken uygulanan ~1,0 (oran 0,35–1,67 arası). Ceza sahası/santra yayı kısa parçalı olduğu için doğru çalışıyordu — kullanıcının gördüğü fark buydu.
 - Düzeltme (scene.js pitchStroke): uzun çizgiler ≤1 m parçalara bölünür; oran her karede 1,00. Örnek kare (t=1,2 s): eski uzak taç çizgisi %4 görünür → yeni %100. Boya y=.064 (çim yaprağı kökü 1,2 cm + en uzun yaprak 4,6 cm = 5,8 cm üstü).
