@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V248 · 2026-11-25
+- Taç çizgisi titremesi (kullanıcı V247 sonrası: "beyazlıklar git gel yapıyor") kök nedeni bulundu ve ölçüldü: 12 cm çizgi yayın açısında ekranda 1 pikselden ince; kamera kayarken bazı karelerde hiç piksel yakalamıyor. Aynı yayın çekiminde 8 ardışık karede uzak taç çizgisinin görünen kısmı (önce): %100,100,100,9,100,100,2,2 → (sonra): 8 karede %100.
+- Düzeltme (scene.js pitchStroke): ekran-uzayında en az 1,7 px genişlik — ince kaldığında şerit ekran uzayında genişletilir, opaklık kapsamayı koruyacak şekilde azalır (uzak çizgiler en az %50); kenarlar piksel kapsamasıyla yumuşatılır (fwidth). Yakın planda görünüm aynı. Penaltı/serbest vuruş aynı saha kodunu kullanır.
+- tests/shader-precision.cjs ekran-uzayı minimum genişliği de denetler.
+
 ## V247 · 2026-11-25
 - Saha çizgisi / çim kararlılığı (kullanıcı: taç çizgileri yerinden oynuyor; V246'da Windows GPU'da görülen beyaz izler SwiftShader'da tekrarlanmamıştı). Çizgi boyası ve çim dokusu shader'ları fract(sin(büyük sayı)) hash kullanıyordu: taç çizgisi boyunca sin() argümanı ~3,4 milyon, çimde ~2,9 milyon. Bu büyüklükte sinüs GPU'ya göre farklı hassasiyetle hesaplanır; desen kare kare kayıp titreyebilir. Sinüssüz, küçük sayılı (mod 4096) hash ile değiştirildi — görünüm aynı, her kartta deterministik.
 - Çizgi boyası 4,3 → 5,2 cm yükseklikte: V223 yakın plan çim yaprakları (en çok 4,6 cm) kamera hareketinde çizgiyi kesip kıpırdatamaz.
