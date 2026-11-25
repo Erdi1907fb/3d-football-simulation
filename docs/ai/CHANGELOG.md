@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V249 · 2026-11-25
+- Taç çizgisi hâlâ titriyordu (kullanıcı, canlı build 248). Gerçek kusur: V248'in ekran-uzayı minimum genişliği vertex başına hesaplanıyordu ve taç çizgisi tek bir 105 m'lik dörtgendi; değer yalnız köşe bayraklarında biliniyor, ortaya doğrusal dağılıyordu. Maç boyunca 33 yayın karesinde uzak taç çizgisi ~0,3 px genişlikteyken gereken genişletme ~2,7 iken uygulanan ~1,0 (oran 0,35–1,67 arası). Ceza sahası/santra yayı kısa parçalı olduğu için doğru çalışıyordu — kullanıcının gördüğü fark buydu.
+- Düzeltme (scene.js pitchStroke): uzun çizgiler ≤1 m parçalara bölünür; oran her karede 1,00. Örnek kare (t=1,2 s): eski uzak taç çizgisi %4 görünür → yeni %100. Boya y=.064 (çim yaprağı kökü 1,2 cm + en uzun yaprak 4,6 cm = 5,8 cm üstü).
+- tests/shader-precision.cjs: boya yüksekliği pitch-detail yaprak ucundan hesaplanır; ≤1 m parça kuralı denetlenir.
+
 ## V248 · 2026-11-25
 - Taç çizgisi titremesi (kullanıcı V247 sonrası: "beyazlıklar git gel yapıyor") kök nedeni bulundu ve ölçüldü: 12 cm çizgi yayın açısında ekranda 1 pikselden ince; kamera kayarken bazı karelerde hiç piksel yakalamıyor. Aynı yayın çekiminde 8 ardışık karede uzak taç çizgisinin görünen kısmı (önce): %100,100,100,9,100,100,2,2 → (sonra): 8 karede %100.
 - Düzeltme (scene.js pitchStroke): ekran-uzayında en az 1,7 px genişlik — ince kaldığında şerit ekran uzayında genişletilir, opaklık kapsamayı koruyacak şekilde azalır (uzak çizgiler en az %50); kenarlar piksel kapsamasıyla yumuşatılır (fwidth). Yakın planda görünüm aynı. Penaltı/serbest vuruş aynı saha kodunu kullanır.
