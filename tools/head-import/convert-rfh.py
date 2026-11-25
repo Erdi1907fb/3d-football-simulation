@@ -2,7 +2,7 @@
 """Convert a selected RFH1 source to the shared head schema; no FM plugin execution.
 Requires numpy/Pillow. Does not mutate runtime manifests or game identities.
 """
-import sys,json,struct,zlib,io,math,pathlib,hashlib,gzip,importlib.util,subprocess
+import sys,json,struct,zlib,io,math,pathlib,hashlib,gzip,importlib.util,subprocess,re
 import numpy as np
 from PIL import Image
 ROOT=pathlib.Path(__file__).resolve().parents[2]
@@ -13,12 +13,15 @@ def sections(b):
   tag=b[o:o+4].decode();size=struct.unpack_from('<I',b,o+4)[0];o+=8;assert tag not in out and o+size<=len(b);out[tag]=b[o:o+size];o+=size
  assert o==len(b);return out
 def mesh(b):
- dec=zlib.decompressobj();r=dec.decompress(b,8_000_001);assert dec.eof and len(r)<=8_000_000,'Mesh exceeds decompression budget';v,n=struct.unpack_from('<II',r);assert v<100000 and n<240000 and n%3==0 and len(r)==8+v*34+n*4
+ dec=zlib.decompressobj();r=dec.decompress(b,16_000_001);assert dec.eof and len(r)<=16_000_000,'Mesh exceeds decompression budget';v,n=struct.unpack_from('<II',r);assert v<250000 and n<1_000_000 and n%3==0 and len(r)==8+v*34+n*4
  p=np.frombuffer(r,'<f4',v*3,8).reshape(v,3).copy();uv=np.frombuffer(r,'<f4',v*2,8+v*12).reshape(v,2).copy();normal=np.frombuffer(r,'<i2',v*3,8+v*20).reshape(v,3).astype(float)/32767;j=8+v*26;bi=np.frombuffer(r,'u1',v*4,j).reshape(v,4);bw=np.frombuffer(r,'u1',v*4,j+v*4).reshape(v,4);indices=np.frombuffer(r,'<u4',n,8+v*34).reshape(-1,3).copy();assert np.isfinite(p).all() and np.isfinite(uv).all() and indices.max()<v
  return p,uv,normal,indices,bi,bw
 def convert(file,out,identity):
  flip=True
- sec=sections(file.read_bytes());meta=json.loads(sec['META']);sid=meta['source'].replace('\\','/').split('/')[-1].split('_')[0];assert sid.isascii() and sid.isdigit() and len(sid)<=12;assert identity['ids'] and identity['dateOfBirth'] and str(identity['fmUID']).isdigit();name=identity['name'];origin=np.array([0,1.640058,.05433055]);shift=np.array(meta['shift']);face=mesh(sec['FMSH']);hair=mesh(sec['HMSH']) if 'HMSH' in sec else None
+ sec=sections(file.read_bytes());meta=json.loads(sec['META']);sid=meta['source'].replace('\\','/').split('/')[-1].split('_')[0];assert sid.isascii() and sid.isdigit() and len(sid)<=12;assert identity['ids'] and identity['dateOfBirth'] and str(identity['fmUID']).isdigit();original_sid=sid
+ if identity.get('assetKey'):
+  assert re.fullmatch(r'fm27-[0-9]{1,12}',identity['assetKey']);sid=identity['assetKey']
+ name=identity['name'];origin=np.array([0,1.640058,.05433055]);shift=np.array(meta['shift']);face=mesh(sec['FMSH']);hair=mesh(sec['HMSH']) if 'HMSH' in sec else None
  if hair is not None and len(hair[3])<=1 and np.ptp(hair[0],axis=0).max()<.0001:hair=None
  blob=bytearray();g={'asset':{'version':'2.0','generator':'next90 RFH pilot'},'scene':0,'scenes':[{'nodes':[0]}],'nodes':[{'mesh':0,'name':name}],'meshes':[{'primitives':[]}],'accessors':[],'bufferViews':[],'buffers':[],'materials':[],'images':[],'textures':[],'extensionsUsed':['EXT_texture_webp'],'extensionsRequired':['EXT_texture_webp'],'extras':{'schema':'next90-real-head-v1','sourceId':sid,'name':name,'source':'FM27 Real 3D Faces / SP Football Life','headRelative':True,'sourceHeadOrigin':origin.tolist(),'eyes':[],'hasEyes':True}}
  def buf(data,target=None):
@@ -46,14 +49,21 @@ def convert(file,out,identity):
      if px[0]>25 and px.max()<250:pix.append(px)
    if not pix:pix=arr[int(arr.shape[0]*.68):int(arr.shape[0]*.84),int(arr.shape[1]*.35):int(arr.shape[1]*.65)].reshape(-1,3)
    g['extras']['skinRGB']=np.median(np.array(pix),axis=0).astype(int).tolist()
-  if mat and len(face[3])+len(ids)+832>=35_000:
+  if not mat and len(ids)>30_000:
+   job={'positions':p.reshape(-1).tolist(),'indices':ids.reshape(-1).tolist(),'attributes':np.concatenate([n,uv],axis=1).reshape(-1).tolist()}
+   result=json.loads(subprocess.run(['node',str(ROOT/'tools/head-import/simplify-face.cjs')],input=json.dumps(job),text=True,capture_output=True,check=True).stdout);ids=np.array(result['indices'],dtype=np.uint32).reshape(-1,3)
+   assert result['error']<=.00201 and len(ids)<=30_000,'Face cannot meet submillimetre appearance/triangle budget'
+   g['extras']['faceSimplification']={'sourceTriangles':len(data[3]),'triangles':len(ids),'relativeError':result['error'],'method':'meshoptimizer1.3.0 normal/UV-aware; locked borders; original vertex values'}
+  if not mat:face_triangles=len(ids)
+  if mat and face_triangles+len(ids)+832>=35_000:
    # Source face stays byte-for-byte geometrically identical. Simplify hair indices
    # with locked card borders and normal/UV error weights; never move vertices.
-   target=min(20_000,34_000-len(face[3])-832);assert target>0,'Face alone exceeds geometry budget'
+   target=min(20_000,34_000-face_triangles-832);assert target>0,'Face alone exceeds geometry budget'
    job={'positions':p.reshape(-1).tolist(),'indices':ids.reshape(-1).tolist(),'attributes':np.concatenate([n,uv],axis=1).reshape(-1).tolist(),'target':target}
    result=json.loads(subprocess.run(['node',str(ROOT/'tools/head-import/simplify-hair.cjs')],input=json.dumps(job),text=True,capture_output=True,check=True).stdout);ids=np.array(result['indices'],dtype=np.uint32).reshape(-1,3)
-   assert result['error']<=.01001 and len(face[3])+len(ids)+832<35_000,'Hair exceeds appearance/triangle budget'
-   g['extras']['hairSimplification']={'sourceTriangles':len(data[3]),'triangles':len(ids),'relativeError':result['error'],'method':'meshoptimizer1.3.0 attribute-aware; locked card borders; face untouched'}
+   assert result['error']<=.01001 and face_triangles+len(ids)+832<80_000,'Hair exceeds appearance/triangle budget'
+   if face_triangles+len(ids)+832>=35_000:g['extras']['geometryBudget']='dense-source-under80k'
+   g['extras']['hairSimplification']={'sourceTriangles':len(data[3]),'triangles':len(ids),'relativeError':result['error'],'method':'meshoptimizer1.3.0 attribute-aware; locked card borders; bounded tiny-island pruning; face untouched'}
   used=np.unique(ids);remap=np.full(len(p),-1,dtype=np.int32);remap[used]=np.arange(len(used));prim(p[used],n[used],uv[used],remap[ids[:,[0,2,1]]],mat)
  # Portable eyes from source eyelash Y/Z and the FM-transferred eyelid aperture X.
  fp,uv,n,ids,bi,bw=face
@@ -77,7 +87,7 @@ def convert(file,out,identity):
     a=i*math.pi*2/32;pos.append((eye+np.array([math.cos(a)*radius,math.sin(a)*radius,depth])).tolist());uv.append([.5+math.cos(a)*.5,.5-math.sin(a)*.5])
    prim(pos,[[0,0,1]]*len(pos),uv,[[0,i+1,i+2] for i in range(32)],mat)
  g['extras']['triangles']=sum(g['accessors'][p['indices']]['count']//3 for p in g['meshes'][0]['primitives']);g['buffers']=[{'byteLength':len(blob)}];text=json.dumps(g,separators=(',',':')).encode();text+=b' '*((-len(text))%4);blob+=b'\0'*((-len(blob))%4);raw=struct.pack('<III',0x46546c67,2,28+len(text)+len(blob))+struct.pack('<II',len(text),0x4e4f534a)+text+struct.pack('<II',len(blob),0x004e4942)+blob
- spec=importlib.util.spec_from_file_location('pack',ROOT/'tools/head-import/pack-glb.py');pack=importlib.util.module_from_spec(spec);spec.loader.exec_module(pack);raw=pack.pack(raw);b=gzip.compress(raw,compresslevel=9,mtime=0);out.mkdir(parents=True,exist_ok=True);(out/'head.glb.gz').write_bytes(b);entry={'fmUID':str(identity['fmUID']),'names':identity.get('names',[name]),'sourceId':sid,'name':name,'ids':identity['ids'],'clubs':identity['clubs'],'dateOfBirth':identity['dateOfBirth'],'source':'fm27-realfaces-v2','path':f'assets/heads/pes/{sid}/head.glb.gz','bytes':len(b),'rawBytes':len(raw),'sha256':hashlib.sha256(b).hexdigest(),'skinRGB':g['extras']['skinRGB'],'triangles':g['extras']['triangles'],'eyes':g['extras']['eyes'],'hairSimplification':g['extras'].get('hairSimplification')};return entry
+ spec=importlib.util.spec_from_file_location('pack',ROOT/'tools/head-import/pack-glb.py');pack=importlib.util.module_from_spec(spec);spec.loader.exec_module(pack);raw=pack.pack(raw);b=gzip.compress(raw,compresslevel=9,mtime=0);out.mkdir(parents=True,exist_ok=True);(out/'head.glb.gz').write_bytes(b);entry={'originalSourceId':original_sid,'fmUID':str(identity['fmUID']),'names':identity.get('names',[name]),'sourceId':sid,'name':name,'ids':identity['ids'],'clubs':identity['clubs'],'dateOfBirth':identity['dateOfBirth'],'source':'fm27-realfaces-v2','path':f'assets/heads/pes/{sid}/head.glb.gz','bytes':len(b),'rawBytes':len(raw),'sha256':hashlib.sha256(b).hexdigest(),'skinRGB':g['extras']['skinRGB'],'triangles':g['extras']['triangles'],'eyes':g['extras']['eyes'],'hairSimplification':g['extras'].get('hairSimplification'),'faceSimplification':g['extras'].get('faceSimplification'),'geometryBudget':g['extras'].get('geometryBudget')};return entry
 if __name__=='__main__':
  import argparse
  ap=argparse.ArgumentParser();ap.add_argument('rfh',type=pathlib.Path);ap.add_argument('out',type=pathlib.Path);ap.add_argument('--identity',type=pathlib.Path,required=True);a=ap.parse_args();entry=convert(a.rfh,a.out,json.loads(a.identity.read_text()));print(json.dumps(entry,ensure_ascii=False))

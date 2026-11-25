@@ -1,0 +1,588 @@
+{
+  "pass": true,
+  "actualSharedActor": true,
+  "errors": [],
+  "players": [
+    {
+      "name": "Ousmane Dembélé",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 28350,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/psg-home.webp",
+      "box": [
+        0.1645437150349297,
+        0.31438403062000786,
+        0.2099728922324066
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-110626",
+          "local": [
+            0.014281260248302969,
+            -0.07177872810689112,
+            0.12094554477040398
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-110626",
+          "local": [
+            0.012752407249906507,
+            -0.10121168391796354,
+            0.10799795082211261
+          ],
+          "material": 0
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-110626",
+          "local": [
+            0.007347411441529451,
+            -0.12594896637051822,
+            0.0622239679130343
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-110626",
+          "local": [
+            0.007873675001410773,
+            -0.14535126375018392,
+            0.06668080378297958
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-110626",
+          "local": [
+            0.008708312579911408,
+            -0.16414417047373808,
+            0.07374920635127535
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012466945135698045,
+            -0.17795909727533865,
+            0.10558042111437116
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013390852686546747,
+            -0.195483793781132,
+            0.11340483577470627
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Paulo Dybala",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 24579,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/roma-home.webp",
+      "box": [
+        0.1969948442091301,
+        0.3328393207417262,
+        0.25341769052202434
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-47179",
+          "local": [
+            0.013704308625680523,
+            -0.07171870009714022,
+            0.11692784646394694
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-47179",
+          "local": [
+            0.0075128953302848476,
+            -0.10545007738360826,
+            0.06410149506069218
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-47179",
+          "local": [
+            0.006667210754408474,
+            -0.1263183974336364,
+            0.056885948552953494
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-47179",
+          "local": [
+            0.007591559078178297,
+            -0.1452358446600759,
+            0.06477266957136563
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-47179",
+          "local": [
+            0.008482190177339062,
+            -0.16386945599424488,
+            0.07237170862274367
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012337415169059925,
+            -0.1771878249866157,
+            0.10526524365822766
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013234837573997672,
+            -0.19459204516868095,
+            0.11292222746120674
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Vitinha",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 33999,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/psg-home.webp",
+      "box": [
+        0.23772110255680395,
+        0.3742888130504509,
+        0.26541670241416837
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-135067",
+          "local": [
+            0.013389832039559069,
+            -0.07452480344062229,
+            0.11322229188374135
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-135067",
+          "local": [
+            0.012616318183870991,
+            -0.10443168504483968,
+            0.10668158164286114
+          ],
+          "material": 0
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-135067",
+          "local": [
+            0.007259248124199731,
+            -0.12984004024793316,
+            0.06138304853611343
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-135067",
+          "local": [
+            0.007910177188427321,
+            -0.14969437594943424,
+            0.06688720126094562
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-135067",
+          "local": [
+            0.007848883201031874,
+            -0.17035976819903964,
+            0.06636890904405279
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012741325966107957,
+            -0.18296418585089258,
+            0.10773862758386699
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013753856302890667,
+            -0.20083246016972578,
+            0.11630042320562363
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Marquinhos",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 13601,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/psg-home.webp",
+      "box": [
+        0.21478655864573337,
+        0.35329315716414356,
+        0.25816216479449805
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-45993",
+          "local": [
+            0.013451455831354068,
+            -0.06982517529120602,
+            0.11487077089992026
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-45993",
+          "local": [
+            0.013349332826588914,
+            -0.0972567352675946,
+            0.11399867583221579
+          ],
+          "material": 0
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-45993",
+          "local": [
+            0.006818571037792569,
+            -0.12259082089752327,
+            0.05822823353598839
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-45993",
+          "local": [
+            0.007365123178005389,
+            -0.1414179624998606,
+            0.0628955993936605
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-45993",
+          "local": [
+            0.008109917687300502,
+            -0.1597715854674031,
+            0.06925588637801317
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01204809820079869,
+            -0.1726063289689066,
+            0.10288658309963661
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012931193212012871,
+            -0.1895832474446828,
+            0.11042790843927697
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Kiliann Sildillia",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 8195,
+      "keeper": false,
+      "kit": "assets/kits/fm26-extra/psv-home.webp",
+      "box": [
+        0.2955381685834638,
+        0.3545157737025646,
+        0.3235979823674743
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-134930",
+          "local": [
+            0.013096272050058783,
+            -0.06893118187455372,
+            0.11218675131456246
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-134930",
+          "local": [
+            0.01272542960810212,
+            -0.09625847954030942,
+            0.10900999928515785
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-134930",
+          "local": [
+            0.006923081098329439,
+            -0.12067038974558586,
+            0.05930527210645121
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-134930",
+          "local": [
+            0.007392184628653931,
+            -0.139281723637819,
+            0.06332375926799892
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-134930",
+          "local": [
+            0.007886811927167392,
+            -0.15769868831441736,
+            0.06756089098911888
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-134930",
+          "local": [
+            0.008101598378548736,
+            -0.17641307474842693,
+            0.06940081872693238
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012762234648739393,
+            -0.1868450626927225,
+            0.10932528274332864
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Wellity Lucky",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 9290,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/liverpool-home.webp",
+      "box": [
+        0.16988514202023686,
+        0.32611896409852625,
+        0.223884133590932
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-180303",
+          "local": [
+            0.01499401584740312,
+            -0.07248880418514769,
+            0.126719786427841
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-180303",
+          "local": [
+            0.013607616632470565,
+            -0.10205543517634075,
+            0.11500283119663782
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-180303",
+          "local": [
+            0.007175230264637123,
+            -0.12802851175320207,
+            0.060640435221554045
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-180303",
+          "local": [
+            0.0078121320379174325,
+            -0.14762832941567683,
+            0.06602311972095522
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-180303",
+          "local": [
+            0.00832108316383219,
+            -0.1671984996502356,
+            0.07032444757297918
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012627750735945633,
+            -0.180501362163072,
+            0.10672163432454843
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013593959088395504,
+            -0.1982224176043017,
+            0.11488740641078023
+          ],
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "height": 1208
+}

@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "baseline": "f0231ac",
+  "errors": [],
+  "variants": [
+    {
+      "variant": "baseline",
+      "pbr": true,
+      "mean": 44.276733180388895,
+      "reprojectedError": 3.9537616608049326,
+      "frames": 8,
+      "msaa": 0,
+      "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)",
+      "failure": null
+    },
+    {
+      "variant": "candidate",
+      "pbr": true,
+      "mean": 44.991486676632434,
+      "reprojectedError": 0.443754480648939,
+      "frames": 8,
+      "msaa": 0,
+      "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)",
+      "failure": null
+    }
+  ],
+  "video": {
+    "method": "software-worker",
+    "decoded": true,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "avg_frame_rate": "60/1",
+        "nb_frames": "12"
+      }
+    ],
+    "format": {
+      "duration": "0.200000"
+    }
+  },
+  "errorRatio": 0.11223602197573958
+}

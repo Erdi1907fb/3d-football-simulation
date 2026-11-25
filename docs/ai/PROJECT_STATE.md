@@ -1,5 +1,10 @@
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
+## V246 · yıldız kimlikleri ve render uyumluluğu
+77/77tam paket,8ana mod×4zaman, son1.066geometri/288boyunpozu ve6RFHparser testi PASS. Kontrollü0.2sn1080p60H.264decode ve build246filesMatch=true. Kaynaklar/raporlar research/pitch-heads-v246.
+1.066gerçek kafa (885korundu+181yeni), ek55,589,176byte; toplam402,624,818byte.32kulüp profili:809/984kayıt gerçek kafa; kalan kaynak eksikleri/kimlik çelişkileri research/pitch-heads-v246/profile-coverage.json'da. Dembélé/Dybala ekli; canlı PSG–Roma22ilk11oyuncusu model yükleme kontrolünden geçti. Forma/animasyon/gövde/boyun/ten ortak sistemde; kadro/analiz/fizik değişmedi.
+V244desktop özel floating-point MSAA resolve yerine doğrudan single-sample HDR+mevcutSMAA; ters GLSL smoothstep sınırları düzeltildi. Kullanıcı Windows GPU'su fiziksel olarak test edilmedi; SwiftShader'da orijinal beyaz iz önce/sonra üretilemedi. Son test kapsamı ve devam bilgisi en üst HANDOFF/research raporunda. Aylık hâlâ bekliyor, Hostinger'a manuel yükleme yapılmadı.
+
 ## V245 · seçici FM27/PES gerçek kafa genişlemesi
 885gerçek kafa (332korundu+553yeni), ek158,229,912byte; toplam347,035,642byte. Yalnız seçilen modeller yüklenir. Altı yoğun saç modelinde yüz geometrisi korunarak saç indexleri hafifletildi. Katalog isteği güncel sürüm/no-cache ile doğrulanır; forma/gövde/boyun/ten ve mevcut futbol hareketleri ortaktır.
 77/77 tam paket;8mod kamera denetimi; son885geometri/153boyunpozu/kimlik/hash/önbellek kontrolleri ve gerçek yakınplan/mobil profil PASS. Gerçek test kapsamı ve aşamalar research/fm27-v245/README'de; fiziksel Safari/telefon veya tam uzun maç MP4 iddiası yok.

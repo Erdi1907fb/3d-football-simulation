@@ -1,4 +1,4 @@
-> **2026-11-25: Kaynak sürüm V245. T-399 görüntü kararlılığı tamamlandı; T-400 gerçek kafalar 885 modele çıktı, kaynak eksikleri açık. Main push Hostinger dağıtımı değildir; fiziksel cihaz ve tam uzun video ayrıca doğrulanır.**
+> **2026-11-25: V246 — 1.066 gerçek kafa; Dembélé/Dybala ve32kulüp profili,181yeni model. T-402 render uyumluluk düzeltmesi yapıldı; özgün Windows GPU izi burada üretilemedi, fiziksel doğrulama açık. Kaynak eksikleri T-400, Aylık T-401 bekliyor. Main push Hostinger dağıtımı değildir.**
 
 # TASKS — görev panosu
 
@@ -10,8 +10,10 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-402 | PSG–Roma beyaz saha izleri: ortak render/GLSL uyumluluğu | partial (physical GPU verification) | codex | Özel half-float MSAA resolve kaldırıldı; boya/flaş/hava/stüdyo ters smoothstep düzeltildi. Actual PSG–Roma22model + yağmur/kar shader derleme PASS. Özgün kullanıcı WindowsGPUizi SwiftShader öncesi/sonrası üretilemedi; kesin donanım fix iddiası yok. research/pitch-heads-v246. |
+| T-403 | Dembélé/Dybala ve haftalık canlı kadroların gerçek kafa aktarım/kimlik düzeltmesi | done (V246) | codex |181yeni/1.066toplam;32profil809/984kayıt.17incelenmiş kaynak aliası; DOB+ad/IDkoruması. Actual PSG–Roma22ilk11modeli yüklü,12gerçek yakınplan ve1.066geometri/288boyunpozu PASS. Kadro/analiz/fizik aynı; kalan kaynaklar T-400. |
 | T-399 | Genel kareler arası kalite dalgalanması:11v11→bowling, son kamera/tribün/çim/postFX/MP4 hattını düzelt ve hareketli karşılaştır | done (V244) | codex |77/77;8ana mod+3varyant/mobil; hareketli çim ve kısa1080p60MP4. research/temporal-v244; fiziksel cihaz/tam maç ayrı. |
-| T-400 | Eksik gerçek kafaları ücretsiz FM27 Real3DFaces/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | partial (V245 kaynak eksikleri) | codex |885toplam/553yeni,158.2MB.77/77;8mod; son885geometri/153poz,6saçlıpilot/mobil PASS. Batrakov erişimi, Fábio bütçesi, Lukeba saç artefaktı açık; kendi portreleri. research/fm27-v245. |
+| T-400 | Eksik gerçek kafaları ücretsiz FM27/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | partial (V246 source gaps) | codex |1.066toplam,181V246ek;55.6MB. Fábio artık mevcut. Batrakov kaynakta yok; Lukeba saç görseli reddedildi; bazı eski profillerde DOB/IDçelişkisi var.32profilde175eksik, çoğu genç; kendi portre/genel görünümü korunur. research/pitch-heads-v246/profile-coverage.json. |
 | T-401 | Aylık / Headers and Volleys modu | paused (user) | — | T-399/T-400 bittikten sonra kullanıcıyla ele alınır; şu an ekleme. |
 | T-398 | Bütün modlarda sahne ilerledikçe ayrıntı/çözünürlük kaybını incele, kararlı oyuncu/forma kalitesi ve zaman boyunca doğrula | done (V243) | codex | files: scene, browser quality audit; 8mod×4zaman +36kare gerçek1080p60 hareketli MP4/yazılım kodlayıcı PASS. |
 | T-397 | Gerçek kafalar: boyun/gövde ve ten uyumu, gerçek forma kimliği, tüm modlar/öncelikli büyük takım tam kadro kapsamı, boyut optimizasyonu ve kanıtlı güvenli temizlik | done (V243) | codex | files: player-heads/faces/fullbody, head-import/heads, face-coverage, tests/docs; gerçek model yoksa mevcut doğrulanmış görsel korunur. |

@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Fabián Ruiz",
+    "id": "214596",
+    "dateOfBirth": "1996-04-03",
+    "sourceName": "Fabián",
+    "fmUID": "67216396",
+    "club": "Paris Saint-Germain"
+  },
+  {
+    "name": "Lucas Beraldo",
+    "id": "316128",
+    "dateOfBirth": "2003-11-24",
+    "sourceName": "Beraldo",
+    "fmUID": "2000094252",
+    "club": "Paris Saint-Germain"
+  },
+  {
+    "name": "Dro Fernández",
+    "id": "403578",
+    "dateOfBirth": "2008-01-12",
+    "sourceName": "Dro",
+    "fmUID": "2000402688",
+    "club": "Paris Saint-Germain"
+  },
+  {
+    "name": "Vanderson",
+    "id": "310640",
+    "dateOfBirth": "2001-06-21",
+    "sourceName": "Vanderson",
+    "fmUID": "19409448",
+    "club": "AS Monaco",
+    "sourceClub": "Monaco"
+  },
+  {
+    "name": "Aleksandr Golovin",
+    "id": "195501",
+    "dateOfBirth": "1996-05-30",
+    "sourceName": "Alexandr Golovin",
+    "fmUID": "58104594",
+    "club": "AS Monaco",
+    "sourceClub": "Monaco"
+  },
+  {
+    "name": "Ben Davies",
+    "id": "6327",
+    "dateOfBirth": "1993-04-24",
+    "sourceName": "Ben Davies",
+    "fmUID": "28049754",
+    "club": "Tottenham Hotspur",
+    "sourceClub": "Tottenham"
+  },
+  {
+    "name": "Frank Anguissa",
+    "id": "215721",
+    "dateOfBirth": "1995-11-16",
+    "sourceName": "André-Franck Zambo Anguissa",
+    "fmUID": "48030711",
+    "club": "Napoli",
+    "sourceClub": "SSC Napoli"
+  },
+  {
+    "name": "Giovane",
+    "id": "339953",
+    "dateOfBirth": "2003-11-24",
+    "sourceName": "Giovane",
+    "fmUID": "2000123485",
+    "club": "Napoli",
+    "sourceClub": "SSC Napoli"
+  },
+  {
+    "name": "Anatoliy Trubin",
+    "id": "286109",
+    "dateOfBirth": "2001-08-01",
+    "sourceName": "Anatolii Trubin",
+    "fmUID": "71101334",
+    "club": "Benfica",
+    "sourceClub": "Benfica"
+  },
+  {
+    "name": "Rafa Silva",
+    "id": "192421",
+    "dateOfBirth": "1993-05-17",
+    "sourceName": "Rafa",
+    "fmUID": "55063493",
+    "club": "Benfica",
+    "sourceClub": "Benfica"
+  },
+  {
+    "name": "Georgiy Sudakov",
+    "id": "308603",
+    "dateOfBirth": "2002-09-01",
+    "sourceName": "Heorhii Sudakov",
+    "fmUID": "71108249",
+    "club": "Benfica",
+    "sourceClub": "Benfica"
+  },
+  {
+    "name": "Juan Cabal",
+    "id": "24412",
+    "dateOfBirth": "2001-01-08",
+    "sourceName": "Juan David Cabal",
+    "fmUID": "76064373",
+    "club": "Juventus",
+    "sourceClub": "Juventus FC"
+  },
+  {
+    "name": "Georgios Vagiannidis",
+    "id": "300514",
+    "dateOfBirth": "2001-09-12",
+    "sourceName": "Giorgos Vagiannidis",
+    "fmUID": "36141838",
+    "club": "Sporting CP",
+    "sourceClub": "Sporting CP"
+  },
+  {
+    "name": "Maxi Araújo",
+    "id": "287025",
+    "dateOfBirth": "2000-02-15",
+    "sourceName": "Maximiliano Araújo",
+    "fmUID": "78093159",
+    "club": "Sporting CP",
+    "sourceClub": "Sporting CP"
+  },
+  {
+    "name": "Geny Catamo",
+    "id": "296969",
+    "dateOfBirth": "2001-01-26",
+    "sourceName": "Geny",
+    "fmUID": "95059117",
+    "club": "Sporting CP",
+    "sourceClub": "Sporting CP"
+  },
+  {
+    "name": "Franculino Djú",
+    "id": "364585",
+    "dateOfBirth": "2004-06-28",
+    "sourceName": "Franculino",
+    "fmUID": "2000030160",
+    "club": "Trabzonspor",
+    "sourceClub": "Trabzonspor"
+  },
+  {
+    "name": "Moura",
+    "id": "274289",
+    "dateOfBirth": "1999-08-16",
+    "sourceName": "Francisco Moura",
+    "fmUID": "83206395",
+    "club": "Porto",
+    "sourceClub": "FC Porto"
+  }
+]

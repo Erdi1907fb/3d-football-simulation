@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V246 · 2026-11-25
+-77/77paket,8mod×4zaman, son1.066geometri/288boyunpozu,12yakınplan, gerçekPSG–Roma22model ve yağmur/kar shader derleme PASS. Kontrollü kısa1080p60H.264çıktı çözümlendi; build246filesMatch=true. Ayrıntılı kapsam/sınırlar research/pitch-heads-v246.
+- Dembélé/Dybala'nın statik kadro dışı profil/haftalık kadro kimlikleri düzeltildi;32öncelikli kulüp profili tarandı.181yeni gerçek kafa, toplam1.066; önceki885binary hash'i aynı.17incelenmiş kaynak alias'ı ve DOB/ad korumalı sağlayıcı ID eşleşmesi. PSG–Roma canlı ilk11'lerinde22/22model yüklendi. Kadro/analiz/fizik değişmez.
+- V244özel half-float MSAA resolve kaldırıldı; HDR doğrudan tek örnekli tamponlara gider, SMAA ve sabit çözünürlük korunur. Boya/flaş/hava/stüdyo shader'larındaki ters smoothstep sınırları GLSL'ye uygun düzeltildi. Kullanıcının Windows GPU beyaz izi SwiftShader'da önce/sonra üretilemedi; donanım düzeltmesi kesinleşmiş sayılmaz.
+- Ek55,589,176sıkıştırılmış byte; model başına<2MB, kaynaktan yalnız seçilen modeller. Profil/kaynak eksikleri açık listede; Batrakov/Lukeba ve çelişkili eski profillerde kendi portresi/genel görünüm korunur. Bütün oyunculara gerçek kafa iddiası yok.
+
+
 ## V245 · 2026-11-25
 - 553 eksik oyuncuya ücretsiz FM27/PES gerçek kafa: toplam885; mevcut332model ve gerçek forma/gövde/boyun/ten sistemi korundu. Ek158.2MB sıkıştırılmış varlık; kaynak8.9GB arşiv/oyun/plugin yok, yalnız seçilen kafalar yüklenir.
 - Altı yoğun saç modeli kenar/UV/normal ve %1 hata sınırıyla hafifletildi; yüz koordinatları nicemleme dışında aynı. Fábio bütçe sınırında, Lukeba yakınplan saç kontrolünde reddedildi. Batrakov kaynakta yok/ayrı indirme engelli; kendi portreleri korunur.

@@ -1,0 +1,2974 @@
+{
+  "fixture": {
+    "id": "a208e997b05bddcbaf696f34",
+    "date": "2026-11-25",
+    "kickoff": "2026-11-25T20:00:00+00:00",
+    "competition": "Şampiyonlar Ligi",
+    "competitionId": "ucl",
+    "home": {
+      "id": "47694a61db4fbb83",
+      "name": "Paris Saint-Germain",
+      "espnId": "160",
+      "attack": 81.52089128711626,
+      "defense": 77.92783197578105,
+      "strength": 79.72436163144866
+    },
+    "away": {
+      "id": "7e325f21b5b5f026",
+      "name": "Roma",
+      "espnId": "104",
+      "attack": 82.24434370707027,
+      "defense": 77.34292363445475,
+      "strength": 79.79363367076252
+    },
+    "neutral": false,
+    "timeConfirmed": true,
+    "predictionAvailable": true,
+    "forecastStatus": "ready",
+    "result": null,
+    "comparison": null,
+    "source": {
+      "name": "ESPN",
+      "fetchedAt": "2026-11-25T14:36:38+03:00",
+      "cached": false
+    }
+  },
+  "seed": 4002331474,
+  "targetScore": [
+    0,
+    1
+  ],
+  "expectedGoals": {
+    "home": 2.103389795501058,
+    "away": 1.5782421804135538
+  },
+  "home": {
+    "id": "47694a61db4fbb83",
+    "name": "Paris Saint-Germain",
+    "espnId": "160",
+    "attack": 81.52089128711626,
+    "defense": 77.92783197578105,
+    "strength": 79.72436163144866
+  },
+  "away": {
+    "id": "7e325f21b5b5f026",
+    "name": "Roma",
+    "espnId": "104",
+    "attack": 82.24434370707027,
+    "defense": 77.34292363445475,
+    "strength": 79.79363367076252
+  },
+  "goalProbabilities": {
+    "over25": 0.7114452915962088,
+    "over35": 0.5020063579664347,
+    "over45": 0.3092370892032255,
+    "over55": 0.16729598843276497,
+    "btts": 0.6968023326754902
+  },
+  "scoreSelection": {
+    "policy": "seeded-predictive-scenario",
+    "probability": 0.039743609503849295,
+    "forcedHighScores": false,
+    "note": "One reproducible model-weighted scenario, not the modal exact-score estimate."
+  },
+  "outlook": {
+    "totalGoalsInterval": {
+      "low": 1,
+      "high": 6,
+      "mass": 0.8946179823310871
+    },
+    "favorite": "home",
+    "underdogWinProbability": 0.2908254337361819,
+    "note": "Model-weighted uncertainty, not guaranteed outcomes or a forced surprise."
+  },
+  "quality": {
+    "status": "limited",
+    "completedMatches": 27,
+    "homeMatches": 3,
+    "awayMatches": 8,
+    "inputs": {
+      "weightedResults": true,
+      "goalTailAudit": true,
+      "marketOdds": true,
+      "squads": false,
+      "context": true,
+      "marketWeight": 0.3846
+    },
+    "modelVersion": "pp-poisson-3.1-reliability"
+  },
+  "analysis": {
+    "version": "context-2.0-reliability",
+    "asOf": "2026-11-25T14:02:05+03:00",
+    "teams": {
+      "home": {
+        "goalForm": {
+          "matches": 3,
+          "weightedGoalsFor": 3.151,
+          "weightedGoalsAgainst": 0.802,
+          "fourPlusMatches": 2
+        },
+        "venueGoalForm": {
+          "matches": 1,
+          "weightedGoalsFor": 1,
+          "weightedGoalsAgainst": 0,
+          "fourPlusMatches": 0
+        },
+        "recent": [
+          {
+            "date": "2026-11-21",
+            "venue": "away",
+            "opponent": "OGC Nice",
+            "goalsFor": 3,
+            "goalsAgainst": 2,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-11-07",
+            "venue": "home",
+            "opponent": "ESTAC Troyes",
+            "goalsFor": 1,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-11-03",
+            "venue": "away",
+            "opponent": "Villarreal CF",
+            "goalsFor": 6,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          }
+        ],
+        "venueRecent": [
+          {
+            "date": "2026-11-07",
+            "venue": "home",
+            "opponent": "ESTAC Troyes",
+            "goalsFor": 1,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          }
+        ],
+        "restDays": 4.2,
+        "opponentAdjustedForm": 0.6191,
+        "standings": {
+          "played": 1,
+          "points": 3,
+          "goalsFor": 6,
+          "goalsAgainst": 0,
+          "rank": 9
+        },
+        "standingsSource": "derived-partial-history",
+        "sampleMatches": 3
+      },
+      "away": {
+        "goalForm": {
+          "matches": 8,
+          "weightedGoalsFor": 2.977,
+          "weightedGoalsAgainst": 1.33,
+          "fourPlusMatches": 5
+        },
+        "venueGoalForm": {
+          "matches": 5,
+          "weightedGoalsFor": 3.117,
+          "weightedGoalsAgainst": 1.567,
+          "fourPlusMatches": 4
+        },
+        "recent": [
+          {
+            "date": "2026-11-21",
+            "venue": "away",
+            "opponent": "Parma",
+            "goalsFor": 5,
+            "goalsAgainst": 1,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-11-07",
+            "venue": "home",
+            "opponent": "Sassuolo",
+            "goalsFor": 3,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-11-03",
+            "venue": "away",
+            "opponent": "Manchester United",
+            "goalsFor": 2,
+            "goalsAgainst": 3,
+            "outcome": "L"
+          },
+          {
+            "date": "2026-11-03",
+            "venue": "away",
+            "opponent": "Man. United",
+            "goalsFor": 2,
+            "goalsAgainst": 3,
+            "outcome": "L"
+          },
+          {
+            "date": "2026-09-19",
+            "venue": "home",
+            "opponent": "Inter",
+            "goalsFor": 2,
+            "goalsAgainst": 2,
+            "outcome": "D"
+          },
+          {
+            "date": "2026-09-14",
+            "venue": "away",
+            "opponent": "Torino",
+            "goalsFor": 2,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-09-05",
+            "venue": "home",
+            "opponent": "Atalanta",
+            "goalsFor": 2,
+            "goalsAgainst": 1,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-08-31",
+            "venue": "away",
+            "opponent": "Lecce",
+            "goalsFor": 4,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          }
+        ],
+        "venueRecent": [
+          {
+            "date": "2026-11-21",
+            "venue": "away",
+            "opponent": "Parma",
+            "goalsFor": 5,
+            "goalsAgainst": 1,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-11-03",
+            "venue": "away",
+            "opponent": "Manchester United",
+            "goalsFor": 2,
+            "goalsAgainst": 3,
+            "outcome": "L"
+          },
+          {
+            "date": "2026-11-03",
+            "venue": "away",
+            "opponent": "Man. United",
+            "goalsFor": 2,
+            "goalsAgainst": 3,
+            "outcome": "L"
+          },
+          {
+            "date": "2026-09-14",
+            "venue": "away",
+            "opponent": "Torino",
+            "goalsFor": 2,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          },
+          {
+            "date": "2026-08-31",
+            "venue": "away",
+            "opponent": "Lecce",
+            "goalsFor": 4,
+            "goalsAgainst": 0,
+            "outcome": "W"
+          }
+        ],
+        "restDays": 4.1,
+        "opponentAdjustedForm": 0.6811,
+        "standings": {
+          "played": 1,
+          "points": 0,
+          "goalsFor": 2,
+          "goalsAgainst": 3,
+          "rank": 23
+        },
+        "standingsSource": "derived-partial-history",
+        "sampleMatches": 8
+      }
+    },
+    "h2h": {
+      "matches": 0,
+      "homeWins": 0,
+      "draws": 0,
+      "awayWins": 0
+    },
+    "contextFactors": {
+      "home": 1.03279,
+      "away": 1.05449
+    },
+    "unavailable": [
+      "morale",
+      "injuries",
+      "confirmedLineups",
+      "subjectiveMotivation",
+      "xG",
+      "xGA",
+      "verifiedPlayerPerformance",
+      "verifiedInjuries",
+      "verifiedSuspensions",
+      "verifiedTacticalStyle"
+    ],
+    "coverage": {
+      "goalForm": true,
+      "recentForm": true,
+      "opponentStrength": true,
+      "homeAway": false,
+      "restDays": true,
+      "h2h": false,
+      "standings": true,
+      "marketOdds": true,
+      "morale": false,
+      "injuries": false,
+      "confirmedLineups": false,
+      "externalVerifiedHistory": true,
+      "congestion": true,
+      "reliabilityWeighting": true
+    },
+    "sources": [
+      {
+        "name": "Verified completed fixture history",
+        "asOf": "2026-11-25T14:02:05+03:00"
+      },
+      {
+        "name": "Mackolik verified completed results",
+        "url": "https://www.mackolik.com/mac/psg-vs-roma/karsilastirma/5zjt8v6rqntr92obbf3j4a1hw",
+        "asOf": "2026-11-25T14:02:05+03:00"
+      },
+      {
+        "name": "ESPN scoreboard market",
+        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard",
+        "asOf": "2026-11-25T11:01:47+00:00"
+      }
+    ],
+    "externalHistory": {
+      "addedUniqueMatches": 1,
+      "conflictsIgnored": 0,
+      "corroborated": {
+        "Mackolik": 5
+      },
+      "providers": {
+        "Misli": {
+          "status": "fixture-not-matched",
+          "observedMatches": 0,
+          "usedInModel": false
+        },
+        "Mackolik": {
+          "status": "verified-completed-history",
+          "observedMatches": 6,
+          "usedInModel": true,
+          "newUniqueMatches": 1
+        },
+        "Nesine": {
+          "status": "fixture-not-matched",
+          "observedMatches": 0,
+          "usedInModel": false
+        }
+      },
+      "modelUse": "bounded-goal-form-venue-rest-and-H2H-context; base league calibration unchanged"
+    },
+    "providerStatus": "budget-deferred",
+    "market": {
+      "provider": "DraftKings",
+      "overround": 0.04466,
+      "capturedAt": "2026-11-25T11:01:47+00:00"
+    },
+    "weighting": {
+      "home": {
+        "recentSample": 3,
+        "recentReliability": 0.2826,
+        "venueSample": 1,
+        "venueReliability": 0.1,
+        "latestMatchAgeDays": 3.6,
+        "matchesLastNineDays": 1,
+        "formSource": "verified-completed-results",
+        "modelCorrection": 1.0128
+      },
+      "away": {
+        "recentSample": 8,
+        "recentReliability": 0.5024,
+        "venueSample": 5,
+        "venueReliability": 0.3571,
+        "latestMatchAgeDays": 3.6,
+        "matchesLastNineDays": 1,
+        "formSource": "verified-completed-results",
+        "modelCorrection": 1.02498
+      }
+    },
+    "modelNote": "Reliability-weighted goal/venue history; opposition adjustment, rest and margin-normalized market use the existing validated pipeline. Unavailable signals excluded.",
+    "uncertainty": {
+      "scorePolicy": "seeded-predictive-scenario",
+      "exactScoreIsCertainty": false,
+      "forcedVariety": false,
+      "missingSignalsRemainUnavailable": true,
+      "note": "A reproducible model-weighted scenario; the modal exact score and broader outcome probabilities are separate statistics."
+    }
+  },
+  "publishedAt": "2026-11-25T14:02:05+03:00",
+  "mode": "official",
+  "animationProfile": "expanded-v2",
+  "lineups": {
+    "teams": [
+      {
+        "teamId": "160",
+        "formation": "4-3-3",
+        "players": [
+          {
+            "id": "fm-800880",
+            "name": "Matvey Safonov",
+            "shortName": "M. Safonov",
+            "number": 39,
+            "dateOfBirth": "1999-02-25",
+            "positionIdsDesc": "GK",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "GK"
+            ],
+            "roles": [
+              "GK"
+            ],
+            "position": "GK",
+            "providerIds": {
+              "fotmob": "800880",
+              "espn": null
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=fm-800880",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c98680",
+                "hairColor": "#613e37",
+                "hairStyle": "long",
+                "beardPreset": 1,
+                "beardColor": "#573731",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 18,
+                "sides": 0.21,
+                "temples": 0.3,
+                "crownWidthRatio": 0.43,
+                "hairTexture": 24.3,
+                "beardDark": 0.33,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "240233",
+            "name": "Achraf Hakimi",
+            "aliases": [
+              "Achraf Hakimi",
+              "A. Hakimi"
+            ],
+            "heightCm": 180.3,
+            "weightKg": 78,
+            "dateOfBirth": "1998-11-04",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.7096993549596229,
+                "noseLength": 0.41737393178698773,
+                "jawWidth": 0.6754905964326967,
+                "eyeSpacing": 0.6732145805357274,
+                "faceHeight": 0.48885995244344804,
+                "mouthWidth": 1,
+                "cheekWidth": 0.6969498252065336,
+                "chinLength": 0.4713235435250751,
+                "skinTone": "#c97e62",
+                "hairStyle": "coils",
+                "hairColor": "#181417",
+                "beardPreset": 1,
+                "beardColor": "#151214",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/398073.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/240233.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 42,
+                "sides": 0.04,
+                "temples": 0,
+                "crownWidthRatio": 0.6,
+                "hairTexture": 20.9,
+                "beardDark": 0.35,
+                "reviewed": true
+              }
+            },
+            "shortName": "A. Hakimi",
+            "number": 2,
+            "positionIdsDesc": "RB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "RB"
+            ],
+            "roles": [
+              "RB"
+            ],
+            "position": "RB",
+            "providerIds": {
+              "fotmob": "770881",
+              "espn": "240233"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=240233"
+          },
+          {
+            "id": "159047",
+            "name": "Marquinhos",
+            "number": 5,
+            "dateOfBirth": "1994-05-14",
+            "shortName": "Marquinhos",
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "CB"
+            ],
+            "position": "CB",
+            "providerIds": {
+              "fotmob": "267365",
+              "espn": "159047"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=159047",
+            "appearance": null
+          },
+          {
+            "id": "287005",
+            "name": "Willian Pacho",
+            "aliases": [
+              "Willian Pacho",
+              "W. Pacho"
+            ],
+            "heightCm": 188,
+            "weightKg": 81.2,
+            "dateOfBirth": "2001-10-16",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.7293365819144276,
+                "noseLength": 0.42708816056917315,
+                "jawWidth": 0.568530260764964,
+                "eyeSpacing": 0.6705781706905549,
+                "faceHeight": 0.4617733800133349,
+                "mouthWidth": 0.8785758711935407,
+                "cheekWidth": 0.6735111946552448,
+                "chinLength": 0.3747111660797351,
+                "skinTone": "#986448",
+                "hairStyle": "cropped",
+                "hairColor": "#101012",
+                "beardPreset": 0,
+                "beardColor": "#0e0e10",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/661171.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/287005.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 33,
+                "sides": 0.12,
+                "temples": 0.12,
+                "crownWidthRatio": 0.63,
+                "hairTexture": 8.3,
+                "beardDark": 0.17,
+                "reviewed": true
+              }
+            },
+            "shortName": "W. Pacho",
+            "number": 51,
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "CB"
+            ],
+            "position": "CB",
+            "providerIds": {
+              "fotmob": "1137670",
+              "espn": "287005"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=287005"
+          },
+          {
+            "id": "290591",
+            "name": "Nuno Mendes",
+            "number": 25,
+            "dateOfBirth": "2002-06-19",
+            "shortName": "N. Mendes",
+            "positionIdsDesc": "LB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "LB"
+            ],
+            "roles": [
+              "LB"
+            ],
+            "position": "LB",
+            "providerIds": {
+              "fotmob": "1158945",
+              "espn": "290591"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=290591",
+            "appearance": null
+          },
+          {
+            "id": "345581",
+            "name": "Warren Zaïre-Emery",
+            "aliases": [
+              "Warren Zaïre-Emery",
+              "W. Zaïre-Emery"
+            ],
+            "heightCm": 177.8,
+            "weightKg": 68,
+            "dateOfBirth": "2006-03-08",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.7003983649196486,
+                "noseLength": 0.39384430283988253,
+                "jawWidth": 0.5450515731555833,
+                "eyeSpacing": 0.6533294269083155,
+                "faceHeight": 0.4560570135011732,
+                "mouthWidth": 0.813098226958489,
+                "cheekWidth": 0.6633507783715442,
+                "chinLength": 0.46657417484451325,
+                "skinTone": "#d08c7e",
+                "hairStyle": "coils",
+                "hairColor": "#1e181c",
+                "beardPreset": 1,
+                "beardColor": "#1b1519",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/810092.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/345581.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 39,
+                "sides": 0.03,
+                "temples": 0,
+                "crownWidthRatio": 0.59,
+                "hairTexture": 15.9,
+                "beardDark": 0.48,
+                "reviewed": true
+              }
+            },
+            "shortName": "W. Zaïre-Emery",
+            "number": 33,
+            "positionIdsDesc": "CM,RB,LB,CDM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM",
+              "RB",
+              "LB",
+              "DM"
+            ],
+            "roles": [
+              "CM"
+            ],
+            "position": "CM",
+            "providerIds": {
+              "fotmob": "1367615",
+              "espn": "345581"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=345581"
+          },
+          {
+            "id": "288897",
+            "name": "Vítinha",
+            "aliases": [
+              "Vitinha"
+            ],
+            "heightCm": 172.7,
+            "weightKg": 63,
+            "dateOfBirth": "2000-02-13",
+            "shortName": "Vítinha",
+            "number": 17,
+            "positionIdsDesc": "CM,CDM,CAM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM",
+              "DM",
+              "AM"
+            ],
+            "roles": [
+              "DM"
+            ],
+            "position": "DM",
+            "providerIds": {
+              "fotmob": "1061249",
+              "espn": "288897"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=288897",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c48882",
+                "hairColor": "#352627",
+                "hairStyle": "coils",
+                "beardPreset": 2,
+                "beardColor": "#2f2223",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 41,
+                "sides": 0.12,
+                "temples": 0,
+                "crownWidthRatio": 0.74,
+                "hairTexture": 20.9,
+                "beardDark": 0.58,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "214596",
+            "name": "Fabián Ruiz",
+            "aliases": [
+              "Fabián Ruiz",
+              "F. Ruiz"
+            ],
+            "heightCm": 188,
+            "weightKg": 68.9,
+            "dateOfBirth": "1996-04-03",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.5106375294394832,
+                "noseLength": 0.43243247956641234,
+                "jawWidth": 0.7244380035392702,
+                "eyeSpacing": 0.5976742728478309,
+                "faceHeight": 0.36795669366341077,
+                "mouthWidth": 0.5666387266904155,
+                "cheekWidth": 0.6962506489517002,
+                "chinLength": 0.5481843407401455,
+                "skinTone": "#cd8c88",
+                "hairStyle": "short",
+                "hairColor": "#352421",
+                "beardPreset": 1,
+                "beardColor": "#2f201d",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/350219.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/214596.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 38,
+                "sides": 0.06,
+                "temples": 0.06,
+                "crownWidthRatio": 0.67,
+                "hairTexture": 19.3,
+                "beardDark": 0.35,
+                "reviewed": true
+              }
+            },
+            "shortName": "F. Ruiz",
+            "number": 8,
+            "positionIdsDesc": "CM,CDM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM",
+              "DM"
+            ],
+            "roles": [
+              "CM"
+            ],
+            "position": "CM",
+            "providerIds": {
+              "fotmob": "605654",
+              "espn": "214596"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=214596",
+            "scoringWeight": 1.342,
+            "scoringEvidence": {
+              "source": "ESPN pre-match goals leader",
+              "goals": 4
+            }
+          },
+          {
+            "id": "329690",
+            "name": "Maghnes Akliouche",
+            "aliases": [
+              "Maghnes Akliouche",
+              "M. Akliouche"
+            ],
+            "heightCm": 182.9,
+            "weightKg": 68.9,
+            "dateOfBirth": "2002-02-25",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.513922070912934,
+                "noseLength": 0.43047727209394365,
+                "jawWidth": 0.541164477884621,
+                "eyeSpacing": 0.6224447473507249,
+                "faceHeight": 0.42978504300620907,
+                "mouthWidth": 0.43097771614152913,
+                "cheekWidth": 0.6672158880979269,
+                "chinLength": 0.41201680670449303,
+                "skinTone": "#de9c7c",
+                "hairStyle": "coils",
+                "hairColor": "#412e27",
+                "beardPreset": 0,
+                "beardColor": "#3a2923",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/745200.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/329690.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 64,
+                "sides": 0.32,
+                "temples": 0,
+                "crownWidthRatio": 0.46,
+                "hairTexture": 15.1,
+                "beardDark": 0.15,
+                "reviewed": true
+              }
+            },
+            "shortName": "M. Akliouche",
+            "number": 11,
+            "positionIdsDesc": "RW,CAM,ST,CM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "RW",
+              "AM",
+              "ST",
+              "CM"
+            ],
+            "roles": [
+              "RW"
+            ],
+            "position": "RW",
+            "providerIds": {
+              "fotmob": "1305618",
+              "espn": "329690"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=329690"
+          },
+          {
+            "id": "229744",
+            "name": "Ousmane Dembélé",
+            "number": 10,
+            "dateOfBirth": "1997-05-15",
+            "shortName": "O. Dembélé",
+            "positionIdsDesc": "ST,RW,CAM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "ST",
+              "RW",
+              "AM"
+            ],
+            "roles": [
+              "ST"
+            ],
+            "position": "ST",
+            "providerIds": {
+              "fotmob": "692984",
+              "espn": "229744"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=229744",
+            "appearance": null
+          },
+          {
+            "id": "379088",
+            "name": "Senny Mayulu",
+            "number": 24,
+            "dateOfBirth": "2006-05-17",
+            "shortName": "S. Mayulu",
+            "positionIdsDesc": "CM,ST,RB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM",
+              "ST",
+              "RB"
+            ],
+            "roles": [
+              "LW"
+            ],
+            "position": "LW",
+            "providerIds": {
+              "fotmob": "1574189",
+              "espn": "379088"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=379088",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.5522746145056745,
+                "noseLength": 0.4670091965616382,
+                "jawWidth": 0.5215713379566853,
+                "eyeSpacing": 0.5828513090396501,
+                "faceHeight": 0.39296397244422293,
+                "mouthWidth": 0.6932252542720967,
+                "cheekWidth": 0.6609378787598279,
+                "chinLength": 0.47937096031871745,
+                "skinTone": "#c87b5e",
+                "hairStyle": "coils",
+                "hairColor": "#201920",
+                "beardPreset": 0,
+                "beardColor": "#1c161c",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/903693.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/379088.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 40,
+                "sides": 0.08,
+                "temples": 0,
+                "crownWidthRatio": 0.58,
+                "hairTexture": 13.9,
+                "beardDark": 0.38,
+                "reviewed": true
+              }
+            }
+          }
+        ],
+        "bench": [
+          {
+            "id": "288925",
+            "name": "Lucas Chevalier",
+            "number": 30,
+            "dateOfBirth": "2001-11-06",
+            "shortName": "L. Chevalier",
+            "positionIdsDesc": "GK",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "GK"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1177131",
+              "espn": "288925"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=288925",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.5460243467911404,
+                "noseLength": 0.38885227967892505,
+                "jawWidth": 0.5795598517769236,
+                "eyeSpacing": 0.5897893180755825,
+                "faceHeight": 0.45955912643061625,
+                "mouthWidth": 0.5203440519652993,
+                "cheekWidth": 0.6645489954345212,
+                "chinLength": 0.563505267906612,
+                "skinTone": "#c9a190",
+                "hairStyle": "cropped",
+                "hairColor": "#1c1619",
+                "beardPreset": 1,
+                "beardColor": "#191316",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/463600.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/288925.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 29,
+                "sides": 0.04,
+                "temples": 0.31,
+                "crownWidthRatio": 0.56,
+                "hairTexture": 22.3,
+                "beardDark": 0.17,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "316128",
+            "name": "Beraldo",
+            "number": 4,
+            "dateOfBirth": "2003-11-24",
+            "shortName": "Beraldo",
+            "positionIdsDesc": "CM,CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM",
+              "CB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1255209",
+              "espn": "316128"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=316128",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.4989818409560974,
+                "noseLength": 0.40907951384162516,
+                "jawWidth": 0.6063339247974895,
+                "eyeSpacing": 0.6372157658022736,
+                "faceHeight": 0.33674418597851713,
+                "mouthWidth": 0.561044460260701,
+                "cheekWidth": 0.6887421783828365,
+                "chinLength": 0.4982034575439923,
+                "skinTone": "#b57d6b",
+                "hairStyle": "short",
+                "hairColor": "#352118",
+                "beardPreset": 2,
+                "beardColor": "#2f1d15",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/872171.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/316128.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 84,
+                "sides": 0.06,
+                "temples": 0.01,
+                "crownWidthRatio": 0.7,
+                "hairTexture": 21.6,
+                "beardDark": 0.19,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "304503",
+            "name": "Ilya Zabarnyi",
+            "number": 6,
+            "dateOfBirth": "2002-09-01",
+            "shortName": "I. Zabarnyi",
+            "positionIdsDesc": "CB,RB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CB",
+              "RB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1140003",
+              "espn": "304503"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=304503",
+            "appearance": null
+          },
+          {
+            "id": "160115",
+            "name": "Lucas Digne",
+            "number": 12,
+            "dateOfBirth": "1993-07-20",
+            "shortName": "L. Digne",
+            "positionIdsDesc": "LB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "LB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "210111",
+              "espn": "160115"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=160115",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.453116039474423,
+                "noseLength": 0.4985654638187245,
+                "jawWidth": 0.5947920169952308,
+                "eyeSpacing": 0.6329495739100196,
+                "faceHeight": 0.4023561577832184,
+                "mouthWidth": 0.4406837292153699,
+                "cheekWidth": 0.6740351622243856,
+                "chinLength": 0.5102241781922279,
+                "skinTone": "#de997a",
+                "hairStyle": "short",
+                "hairColor": "#322521",
+                "beardPreset": 1,
+                "beardColor": "#2d211d",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/126664.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/160115.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 27,
+                "sides": 0,
+                "temples": 0.41,
+                "crownWidthRatio": 0.59,
+                "hairTexture": 14.6,
+                "beardDark": 0.05,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "403578",
+            "name": "Dro Fernández",
+            "number": 27,
+            "dateOfBirth": "2008-01-12",
+            "shortName": "D. Fernández",
+            "positionIdsDesc": "CM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1682313",
+              "espn": "403578"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=403578",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.4761156152157472,
+                "noseLength": 0.3998087550271778,
+                "jawWidth": 0.6401839381598187,
+                "eyeSpacing": 0.61402992002867,
+                "faceHeight": 0.34117237622244084,
+                "mouthWidth": 0.3605507584392313,
+                "cheekWidth": 0.6839367822870304,
+                "chinLength": 0.4168479200277476,
+                "skinTone": "#a77656",
+                "hairStyle": "short",
+                "hairColor": "#0a0909",
+                "beardPreset": 0,
+                "beardColor": "#090808",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/1071596.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/403578.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 73,
+                "sides": 0.03,
+                "temples": 0,
+                "crownWidthRatio": 0.56,
+                "hairTexture": 11.3,
+                "beardDark": 0.21,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "355061",
+            "name": "João Neves",
+            "number": 87,
+            "dateOfBirth": "2004-09-27",
+            "shortName": "J. Neves",
+            "positionIdsDesc": "CM,CDM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM",
+              "DM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1342757",
+              "espn": "355061"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=355061",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.47519459672525644,
+                "noseLength": 0.43408731069642587,
+                "jawWidth": 0.6250395100470176,
+                "eyeSpacing": 0.554462722165096,
+                "faceHeight": 0.3136959644265519,
+                "mouthWidth": 0.45260372138519556,
+                "cheekWidth": 0.6774666032504089,
+                "chinLength": 0.5071643251181633,
+                "skinTone": "#d39882",
+                "hairStyle": "coils",
+                "hairColor": "#201d19",
+                "beardPreset": 0,
+                "beardColor": "#1c1a16",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/670681.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/355061.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 65,
+                "sides": 0.15,
+                "temples": 0,
+                "crownWidthRatio": 0.54,
+                "hairTexture": 14.8,
+                "beardDark": 0.14,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "265869",
+            "name": "Ferrán Torres",
+            "number": 9,
+            "dateOfBirth": "2000-02-29",
+            "shortName": "F. Torres",
+            "positionIdsDesc": "ST,RW,LW",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "ST",
+              "RW",
+              "LW"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "881771",
+              "espn": "265869"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=265869",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.4746996820569534,
+                "noseLength": 0.39477995924941606,
+                "jawWidth": 0.5853206363158541,
+                "eyeSpacing": 0.6239556720566775,
+                "faceHeight": 0.41705863623393624,
+                "mouthWidth": 0.39745422663560814,
+                "cheekWidth": 0.663124324164716,
+                "chinLength": 0.4782683128501719,
+                "skinTone": "#c98d7c",
+                "hairStyle": "long",
+                "hairColor": "#180f10",
+                "beardPreset": 2,
+                "beardColor": "#150d0e",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/398184.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/265869.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0.01,
+                "thickness": 0,
+                "sides": 0.05,
+                "temples": 0,
+                "crownWidthRatio": 0.62,
+                "hairTexture": 32.4,
+                "beardDark": 0.34,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "353363",
+            "name": "Mika Godts",
+            "number": 22,
+            "dateOfBirth": "2005-06-07",
+            "shortName": "M. Godts",
+            "positionIdsDesc": "LW,LM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "LW",
+              "LM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1396372",
+              "espn": "353363"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=353363",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.48158399108997485,
+                "noseLength": 0.49012861028115745,
+                "jawWidth": 0.5687100390475844,
+                "eyeSpacing": 0.5873787851719519,
+                "faceHeight": 0.43114248956401696,
+                "mouthWidth": 0.41871497973706906,
+                "cheekWidth": 0.6566639107918519,
+                "chinLength": 0.4772306131988817,
+                "skinTone": "#e6bdab",
+                "hairStyle": "long",
+                "hairColor": "#644a35",
+                "beardPreset": 0,
+                "beardColor": "#5a422f",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/748804.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/353363.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 39,
+                "sides": 0.1,
+                "temples": 0.01,
+                "crownWidthRatio": 0.58,
+                "hairTexture": 28.4,
+                "beardDark": 0.46,
+                "reviewed": true
+              }
+            }
+          },
+          {
+            "id": "196200",
+            "name": "Lucas Hernández",
+            "number": 21,
+            "dateOfBirth": "1996-02-14",
+            "shortName": "L. Hernández",
+            "positionIdsDesc": "LB,CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "LB",
+              "CB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "504606",
+              "espn": "196200"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=196200",
+            "appearance": {
+              "profile": {
+                "skinTone": "#cd9487",
+                "hairColor": "#271a18",
+                "hairStyle": "short",
+                "beardPreset": 2,
+                "beardColor": "#231715",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 31,
+                "sides": 0.06,
+                "temples": 0.03,
+                "crownWidthRatio": 0.6,
+                "hairTexture": 13.7,
+                "beardDark": 0.3,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "403419",
+            "name": "Quentin Ndjantou",
+            "number": 47,
+            "dateOfBirth": "2007-07-23",
+            "shortName": "Q. Ndjantou",
+            "positionIdsDesc": "ST,CM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "ST",
+              "CM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1699549",
+              "espn": "403419"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=403419",
+            "appearance": {
+              "profile": {
+                "noseWidth": 0.5750213902087782,
+                "noseLength": 0.42508870525385173,
+                "jawWidth": 0.6376601466256241,
+                "eyeSpacing": 0.693736735622047,
+                "faceHeight": 0.31147682314873854,
+                "mouthWidth": 0.5759651782992885,
+                "cheekWidth": 0.6780530047337623,
+                "chinLength": 0.3986823467834185,
+                "skinTone": "#79503a",
+                "hairStyle": "coils",
+                "hairColor": "#13120f",
+                "beardPreset": 0,
+                "beardColor": "#11100d",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "source": "photo-landmark-estimate",
+              "verified": false,
+              "reviewed": true,
+              "referenceImage": "https://worldofsimulation.com/futbol-atlasi/assets/players/1053208.webp",
+              "asOf": "2026-10-27",
+              "landmarkFit": true,
+              "localReference": "assets/face-reference/403419.webp",
+              "note": "Monocular landmark ratios mapped to bounded stylised morphs; not a face scan. Hair and beard retain reviewed profiles where present.",
+              "hairEstimate": "coarse photo colour/coverage estimate; not manually verified",
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 55,
+                "sides": 0.24,
+                "temples": 0,
+                "crownWidthRatio": 0.49,
+                "hairTexture": 6.9,
+                "beardDark": 0.25,
+                "reviewed": true
+              }
+            }
+          }
+        ],
+        "coach": {
+          "id": "fm-11532",
+          "name": "Luis Enrique",
+          "source": "FotMob current club",
+          "asOf": "2026-11-25T14:37:06+03:00",
+          "url": "https://www.fotmob.com/teams/9847/squad/paris-saint-germain",
+          "stale": false,
+          "basis": "current-club"
+        },
+        "source": {
+          "selectionVersion": 11,
+          "selectionBasis": "exact-match-probable",
+          "name": "FotMob",
+          "status": "provider-predicted",
+          "asOf": "2026-11-25T14:37:06+03:00",
+          "url": "https://www.fotmob.com/matches/roma-vs-paris-saint-germain/2u9b4m",
+          "stale": false,
+          "benchStatus": "expected-from-current-squad",
+          "recentBenchIds": [
+            881771,
+            1137670,
+            692984,
+            1396372,
+            267365,
+            1177131,
+            1255209,
+            1061249,
+            1682313
+          ],
+          "benchAsOf": "2026-11-25T14:37:06+03:00",
+          "providerTeamId": "9847",
+          "coachBasis": {
+            "id": "fm-11532",
+            "name": "Luis Enrique",
+            "source": "FotMob current club",
+            "asOf": "2026-11-25T14:37:06+03:00",
+            "url": "https://www.fotmob.com/teams/9847/squad/paris-saint-germain",
+            "stale": false,
+            "basis": "current-club"
+          },
+          "attempts": [
+            {
+              "provider": "SofaScore",
+              "status": "unavailable",
+              "detail": "SofaScore cooldown: Source HTTP 403"
+            },
+            {
+              "provider": "FotMob",
+              "status": "matched",
+              "detail": null
+            },
+            {
+              "provider": "Misli",
+              "status": "no-exact-lineup",
+              "detail": null
+            },
+            {
+              "provider": "Nesine",
+              "status": "no-exact-lineup",
+              "detail": null
+            }
+          ]
+        },
+        "benchLimit": 12,
+        "captainId": null
+      },
+      {
+        "teamId": "104",
+        "formation": "3-4-2-1",
+        "players": [
+          {
+            "id": "234300",
+            "name": "Devis Vásquez",
+            "number": 32,
+            "dateOfBirth": "1998-05-12",
+            "shortName": "D. Vásquez",
+            "positionIdsDesc": "GK",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.02,
+            "naturalRoles": [
+              "GK"
+            ],
+            "roles": [
+              "GK"
+            ],
+            "position": "GK",
+            "providerIds": {
+              "fotmob": "1186685",
+              "espn": "234300"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=234300",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c98366",
+                "hairColor": "#211716",
+                "hairStyle": "cropped",
+                "beardPreset": 1,
+                "beardColor": "#1d1413",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 30,
+                "sides": 0,
+                "temples": 0.21,
+                "crownWidthRatio": 0.58,
+                "hairTexture": 17.4,
+                "beardDark": 0.12,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "212597",
+            "name": "Gianluca Mancini",
+            "aliases": [
+              "Gianluca Mancini",
+              "G. Mancini"
+            ],
+            "heightCm": 190.5,
+            "weightKg": 77.1,
+            "dateOfBirth": "1996-04-17",
+            "shortName": "G. Mancini",
+            "number": 23,
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.14,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "CB"
+            ],
+            "position": "CB",
+            "providerIds": {
+              "fotmob": "588687",
+              "espn": "212597"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=212597",
+            "appearance": {
+              "profile": {
+                "skinTone": "#cf9487",
+                "hairColor": "#0d0909",
+                "hairStyle": "cropped",
+                "beardPreset": 1,
+                "beardColor": "#0b0808",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 56,
+                "sides": 0,
+                "temples": 0,
+                "crownWidthRatio": 0.64,
+                "hairTexture": 5.3,
+                "beardDark": 0.23,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "242593",
+            "name": "Evan N'Dicka",
+            "aliases": [
+              "Evan Ndicka",
+              "E. Ndicka"
+            ],
+            "heightCm": 193,
+            "weightKg": 83.9,
+            "dateOfBirth": "1999-08-20",
+            "shortName": "E. N'Dicka",
+            "number": 5,
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.14,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "CB"
+            ],
+            "position": "CB",
+            "providerIds": {
+              "fotmob": "787242",
+              "espn": "242593"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=242593",
+            "appearance": {
+              "profile": {
+                "skinTone": "#754833",
+                "hairColor": "#40271c",
+                "hairStyle": "bald",
+                "beardPreset": 1,
+                "beardColor": "#2a201d",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 41,
+                "sides": 0.04,
+                "temples": 0.64,
+                "crownWidthRatio": 0.5,
+                "hairTexture": 8.9,
+                "beardDark": 0.08,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "222529",
+            "name": "Mario Hermoso",
+            "number": 22,
+            "dateOfBirth": "1995-06-18",
+            "shortName": "M. Hermoso",
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.49,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "CB"
+            ],
+            "position": "CB",
+            "providerIds": {
+              "fotmob": "671203",
+              "espn": "222529"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=222529",
+            "appearance": {
+              "profile": {
+                "skinTone": "#a57456",
+                "hairColor": "#171313",
+                "hairStyle": "receding",
+                "beardPreset": 3,
+                "beardColor": "#141111",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 23,
+                "sides": 0.29,
+                "temples": 0.45,
+                "crownWidthRatio": 0.59,
+                "hairTexture": 8.5,
+                "beardDark": 0.35,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            },
+            "scoringWeight": 1.095,
+            "scoringEvidence": {
+              "source": "ESPN pre-match goals leader",
+              "goals": 1
+            }
+          },
+          {
+            "id": "164826",
+            "name": "Nahuel Molina",
+            "aliases": [
+              "Nahuel Molina",
+              "N. Molina"
+            ],
+            "heightCm": 175.3,
+            "weightKg": 68.9,
+            "dateOfBirth": "1998-04-06",
+            "shortName": "N. Molina",
+            "number": 20,
+            "positionIdsDesc": "RB,RWB,LWB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.34,
+            "naturalRoles": [
+              "RB",
+              "RWB",
+              "LWB"
+            ],
+            "roles": [
+              "RWB"
+            ],
+            "position": "RWB",
+            "providerIds": {
+              "fotmob": "726345",
+              "espn": "164826"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=164826",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c48c7d",
+                "hairColor": "#100b0a",
+                "hairStyle": "short",
+                "beardPreset": 1,
+                "beardColor": "#0e0909",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 28,
+                "sides": 0.03,
+                "temples": 0.09,
+                "crownWidthRatio": 0.54,
+                "hairTexture": 18.3,
+                "beardDark": 0.28,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "169213",
+            "name": "Bryan Cristante",
+            "aliases": [
+              "Bryan Cristante",
+              "B. Cristante"
+            ],
+            "heightCm": 185.4,
+            "weightKg": 78.9,
+            "dateOfBirth": "1995-03-03",
+            "shortName": "B. Cristante",
+            "number": 4,
+            "positionIdsDesc": "CDM,CM,CAM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.69,
+            "naturalRoles": [
+              "DM",
+              "CM",
+              "AM"
+            ],
+            "roles": [
+              "CM"
+            ],
+            "position": "CM",
+            "providerIds": {
+              "fotmob": "299799",
+              "espn": "169213"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=169213",
+            "appearance": {
+              "profile": {
+                "skinTone": "#d1897a",
+                "hairColor": "#1e1614",
+                "hairStyle": "short",
+                "beardPreset": 3,
+                "beardColor": "#1b1312",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 30,
+                "sides": 0.04,
+                "temples": 0.26,
+                "crownWidthRatio": 0.68,
+                "hairTexture": 19.2,
+                "beardDark": 0.61,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "285226",
+            "name": "Manu Koné",
+            "number": 17,
+            "dateOfBirth": "2001-05-17",
+            "shortName": "M. Koné",
+            "positionIdsDesc": "CDM,CM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.55,
+            "naturalRoles": [
+              "DM",
+              "CM"
+            ],
+            "roles": [
+              "CM"
+            ],
+            "position": "CM",
+            "providerIds": {
+              "fotmob": "1016132",
+              "espn": "285226"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=285226",
+            "appearance": null
+          },
+          {
+            "id": "332354",
+            "name": "Wesley",
+            "number": 43,
+            "dateOfBirth": "2003-09-06",
+            "shortName": "Wesley",
+            "positionIdsDesc": "LWB,LM,RWB,RB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.48,
+            "naturalRoles": [
+              "LWB",
+              "LM",
+              "RWB",
+              "RB"
+            ],
+            "roles": [
+              "LWB"
+            ],
+            "position": "LWB",
+            "providerIds": {
+              "fotmob": "1320176",
+              "espn": "332354"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=332354",
+            "appearance": {
+              "profile": {
+                "skinTone": "#97574c",
+                "hairColor": "#775d58",
+                "hairStyle": "cropped",
+                "beardPreset": 1,
+                "beardColor": "#6b544f",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0.48,
+                "thickness": 7,
+                "sides": 0.12,
+                "temples": 0.16,
+                "crownWidthRatio": 0.62,
+                "hairTexture": 39.4,
+                "beardDark": 0.05,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "fm-1280082",
+            "name": "Matías Soulé",
+            "shortName": "M. Soulé",
+            "number": 18,
+            "dateOfBirth": "2003-04-15",
+            "positionIdsDesc": "CAM,ST,RW",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.75,
+            "naturalRoles": [
+              "AM",
+              "ST",
+              "RW"
+            ],
+            "roles": [
+              "AM"
+            ],
+            "position": "AM",
+            "providerIds": {
+              "fotmob": "1280082",
+              "espn": null
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=fm-1280082",
+            "appearance": {
+              "profile": {
+                "skinTone": "#d79f85",
+                "hairColor": "#2d2620",
+                "hairStyle": "coils",
+                "beardPreset": 0,
+                "beardColor": "#28221c",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 72,
+                "sides": 0.01,
+                "temples": 0,
+                "crownWidthRatio": 0.57,
+                "hairTexture": 26.3,
+                "beardDark": 0.15,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "387204",
+            "name": "Rodrigo Mora",
+            "number": 86,
+            "dateOfBirth": "2007-05-05",
+            "shortName": "R. Mora",
+            "positionIdsDesc": "CM,CAM,ST",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.48,
+            "naturalRoles": [
+              "CM",
+              "AM",
+              "ST"
+            ],
+            "roles": [
+              "AM"
+            ],
+            "position": "AM",
+            "providerIds": {
+              "fotmob": "1525065",
+              "espn": "387204"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=387204",
+            "appearance": {
+              "profile": {
+                "skinTone": "#bd7e66",
+                "hairColor": "#684336",
+                "hairStyle": "long",
+                "beardPreset": 0,
+                "beardColor": "#5d3c30",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0.14,
+                "thickness": 83,
+                "sides": 0.33,
+                "temples": 0.06,
+                "crownWidthRatio": 0.48,
+                "hairTexture": 26.6,
+                "beardDark": 0.23,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "259481",
+            "name": "Donyell Malen",
+            "number": 14,
+            "dateOfBirth": "1999-01-19",
+            "shortName": "D. Malen",
+            "positionIdsDesc": "ST,RW",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.97,
+            "naturalRoles": [
+              "ST",
+              "RW"
+            ],
+            "roles": [
+              "ST"
+            ],
+            "position": "ST",
+            "providerIds": {
+              "fotmob": "660301",
+              "espn": "259481"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=259481",
+            "appearance": {
+              "profile": {
+                "skinTone": "#bd8565",
+                "hairColor": "#674937",
+                "hairStyle": "bald",
+                "beardPreset": 2,
+                "beardColor": "#50342b",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 18,
+                "sides": 0,
+                "temples": 0.37,
+                "crownWidthRatio": 0.53,
+                "hairTexture": 20.7,
+                "beardDark": 0.38,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            },
+            "scoringWeight": 1.342,
+            "scoringEvidence": {
+              "source": "ESPN pre-match goals leader",
+              "goals": 4
+            }
+          }
+        ],
+        "bench": [
+          {
+            "id": "206587",
+            "name": "Pierluigi Gollini",
+            "number": 95,
+            "dateOfBirth": "1995-03-18",
+            "shortName": "P. Gollini",
+            "positionIdsDesc": "GK",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.68,
+            "naturalRoles": [
+              "GK"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "553849",
+              "espn": "206587"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=206587",
+            "appearance": {
+              "profile": {
+                "skinTone": "#d99b85",
+                "hairColor": "#13100d",
+                "hairStyle": "cropped",
+                "beardPreset": 1,
+                "beardColor": "#110e0b",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 28,
+                "sides": 0,
+                "temples": 0.26,
+                "crownWidthRatio": 0.63,
+                "hairTexture": 0.9,
+                "beardDark": 0.18,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "238798",
+            "name": "Mile Svilar",
+            "number": 99,
+            "dateOfBirth": "1999-08-27",
+            "shortName": "M. Svilar",
+            "positionIdsDesc": "GK",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.3,
+            "naturalRoles": [
+              "GK"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "768474",
+              "espn": "238798"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=238798",
+            "appearance": null
+          },
+          {
+            "id": "340705",
+            "name": "Daniele Ghilardi",
+            "number": 87,
+            "dateOfBirth": "2003-01-06",
+            "shortName": "D. Ghilardi",
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.22,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1386006",
+              "espn": "340705"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=340705",
+            "appearance": {
+              "profile": {
+                "skinTone": "#e2a288",
+                "hairColor": "#0e0802",
+                "hairStyle": "long",
+                "beardPreset": 1,
+                "beardColor": "#0c0701",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 44,
+                "sides": 0.21,
+                "temples": 0,
+                "crownWidthRatio": 0.46,
+                "hairTexture": 17.7,
+                "beardDark": 0.28,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "336104",
+            "name": "Konstantinos Koulierakis",
+            "number": 3,
+            "dateOfBirth": "2003-11-28",
+            "shortName": "K. Koulierakis",
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 6.88,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1337884",
+              "espn": "336104"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=336104",
+            "appearance": {
+              "profile": {
+                "skinTone": "#d38362",
+                "hairColor": "#130d0a",
+                "hairStyle": "short",
+                "beardPreset": 2,
+                "beardColor": "#110b09",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 53,
+                "sides": 0.01,
+                "temples": 0,
+                "crownWidthRatio": 0.65,
+                "hairTexture": 16.4,
+                "beardDark": 0.18,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "409371",
+            "name": "Emanuele Lulli",
+            "number": 77,
+            "dateOfBirth": "2007-08-17",
+            "shortName": "E. Lulli",
+            "positionIdsDesc": "RWB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.88,
+            "naturalRoles": [
+              "RWB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1800491",
+              "espn": "409371"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=409371",
+            "appearance": {
+              "profile": {
+                "skinTone": "#cb8e6d",
+                "hairColor": "#1b120e",
+                "hairStyle": "short",
+                "beardPreset": 1,
+                "beardColor": "#18100c",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 41,
+                "sides": 0.02,
+                "temples": 0,
+                "crownWidthRatio": 0.7,
+                "hairTexture": 14.3,
+                "beardDark": 0.09,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "360235",
+            "name": "Niccolò Pisilli",
+            "number": 61,
+            "dateOfBirth": "2004-09-23",
+            "shortName": "N. Pisilli",
+            "positionIdsDesc": "CDM,CM,CAM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.09,
+            "naturalRoles": [
+              "DM",
+              "CM",
+              "AM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1451196",
+              "espn": "360235"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=360235",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c4866a",
+                "hairColor": "#241913",
+                "hairStyle": "coils",
+                "beardPreset": 0,
+                "beardColor": "#201611",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0.01,
+                "thickness": 44,
+                "sides": 0.01,
+                "temples": 0.01,
+                "crownWidthRatio": 0.59,
+                "hairTexture": 23.5,
+                "beardDark": 0.18,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "146335",
+            "name": "Marten de Roon",
+            "number": 15,
+            "dateOfBirth": "1991-03-29",
+            "shortName": "M. Roon",
+            "positionIdsDesc": "CDM,CM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.08,
+            "naturalRoles": [
+              "DM",
+              "CM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "198559",
+              "espn": "146335"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=146335",
+            "appearance": {
+              "profile": {
+                "skinTone": "#d27a70",
+                "hairColor": "#472827",
+                "hairStyle": "short",
+                "beardPreset": 1,
+                "beardColor": "#3f2423",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 33,
+                "sides": 0.09,
+                "temples": 0.16,
+                "crownWidthRatio": 0.59,
+                "hairTexture": 17.6,
+                "beardDark": 0.17,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "3098218",
+            "name": "Alessandro Di Nunzio",
+            "number": 63,
+            "dateOfBirth": "2007-04-21",
+            "shortName": "A. Nunzio",
+            "positionIdsDesc": "CM",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "CM"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "2026491",
+              "espn": "3098218"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=3098218",
+            "appearance": {
+              "profile": {
+                "skinTone": "#da9e84",
+                "hairColor": "#1a1109",
+                "hairStyle": "short",
+                "beardPreset": 0,
+                "beardColor": "#170f08",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 97,
+                "sides": 0,
+                "temples": 0,
+                "crownWidthRatio": 0.73,
+                "hairTexture": 7.4,
+                "beardDark": 0.2,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "250284",
+            "name": "Santiago Castro",
+            "number": 9,
+            "dateOfBirth": "2004-09-18",
+            "shortName": "S. Castro",
+            "positionIdsDesc": "ST",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 6.74,
+            "naturalRoles": [
+              "ST"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1282008",
+              "espn": "250284"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=250284",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c68777",
+                "hairColor": "#4b3b34",
+                "hairStyle": "short",
+                "beardPreset": 1,
+                "beardColor": "#43352e",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 86,
+                "sides": 0,
+                "temples": 0,
+                "crownWidthRatio": 0.61,
+                "hairTexture": 17.6,
+                "beardDark": 0.08,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "164839",
+            "name": "Paulo Dybala",
+            "number": 21,
+            "dateOfBirth": "1993-11-15",
+            "shortName": "P. Dybala",
+            "positionIdsDesc": "CAM,ST",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.92,
+            "naturalRoles": [
+              "AM",
+              "ST"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "325916",
+              "espn": "164839"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=164839",
+            "appearance": null
+          },
+          {
+            "id": "271555",
+            "name": "Leonardo Balerdi",
+            "number": 26,
+            "dateOfBirth": "1999-01-26",
+            "shortName": "L. Balerdi",
+            "positionIdsDesc": "CB",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": 7.44,
+            "naturalRoles": [
+              "CB"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "958464",
+              "espn": "271555"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=271555",
+            "appearance": {
+              "profile": {
+                "skinTone": "#d79976",
+                "hairColor": "#170a05",
+                "hairStyle": "short",
+                "beardPreset": 1,
+                "beardColor": "#140904",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 54,
+                "sides": 0.08,
+                "temples": 0,
+                "crownWidthRatio": 0.57,
+                "hairTexture": 13.1,
+                "beardDark": 0.14,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          },
+          {
+            "id": "404546",
+            "name": "Antonio Arena",
+            "number": 68,
+            "dateOfBirth": "2009-02-10",
+            "shortName": "A. Arena",
+            "positionIdsDesc": "ST",
+            "availability": "not-flagged",
+            "availabilityEvidence": null,
+            "seasonMinutes": null,
+            "seasonStarts": null,
+            "appearances": null,
+            "rating": null,
+            "naturalRoles": [
+              "ST"
+            ],
+            "roles": [
+              "MID"
+            ],
+            "position": "MID",
+            "providerIds": {
+              "fotmob": "1726757",
+              "espn": "404546"
+            },
+            "captain": false,
+            "portrait": "portrait.php?id=404546",
+            "appearance": {
+              "profile": {
+                "skinTone": "#c99a8c",
+                "hairColor": "#110e0b",
+                "hairStyle": "coils",
+                "beardPreset": 0,
+                "beardColor": "#0f0c09",
+                "bodyType": "athletic",
+                "shoulderWidth": 1
+              },
+              "appearanceSource": "fotmob-headshot-v126-reviewed",
+              "appearanceEvidence": {
+                "crownSkin": 0,
+                "thickness": 60,
+                "sides": 0.03,
+                "temples": 0,
+                "crownWidthRatio": 0.73,
+                "hairTexture": 6.3,
+                "beardDark": 0.29,
+                "reviewed": true
+              },
+              "source": "photo-colour-estimate",
+              "reviewed": false
+            }
+          }
+        ],
+        "coach": {
+          "id": "fm-96945",
+          "name": "Gian Piero Gasperini",
+          "source": "FotMob current club",
+          "asOf": "2026-11-25T14:37:06+03:00",
+          "url": "https://www.fotmob.com/teams/8686/squad/roma",
+          "stale": false,
+          "basis": "current-club"
+        },
+        "source": {
+          "selectionVersion": 11,
+          "selectionBasis": "exact-match-probable",
+          "name": "FotMob",
+          "status": "provider-predicted",
+          "asOf": "2026-11-25T14:37:06+03:00",
+          "url": "https://www.fotmob.com/matches/roma-vs-paris-saint-germain/2u9b4m",
+          "stale": false,
+          "benchStatus": "expected-from-current-squad",
+          "recentBenchIds": [
+            787242,
+            1320176,
+            1280082,
+            1337884,
+            1451196,
+            1667016,
+            553849,
+            1386006,
+            198559,
+            1282008
+          ],
+          "benchAsOf": "2026-11-25T14:37:06+03:00",
+          "providerTeamId": "8686",
+          "coachBasis": {
+            "id": "fm-96945",
+            "name": "Gian Piero Gasperini",
+            "source": "FotMob current club",
+            "asOf": "2026-11-25T14:37:06+03:00",
+            "url": "https://www.fotmob.com/teams/8686/squad/roma",
+            "stale": false,
+            "basis": "current-club"
+          },
+          "attempts": [
+            {
+              "provider": "SofaScore",
+              "status": "unavailable",
+              "detail": "SofaScore cooldown: Source HTTP 403"
+            },
+            {
+              "provider": "FotMob",
+              "status": "matched",
+              "detail": null
+            },
+            {
+              "provider": "Misli",
+              "status": "no-exact-lineup",
+              "detail": null
+            },
+            {
+              "provider": "Nesine",
+              "status": "no-exact-lineup",
+              "detail": null
+            }
+          ]
+        },
+        "benchLimit": 12,
+        "captainId": null
+      }
+    ]
+  }
+}

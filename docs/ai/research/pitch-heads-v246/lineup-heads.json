@@ -1,0 +1,125 @@
+{
+  "pass": true,
+  "teams": [
+    {
+      "teamId": "160",
+      "players": [
+        {
+          "name": "Matvey Safonov",
+          "id": "fm-800880",
+          "sourceId": "122128"
+        },
+        {
+          "name": "Achraf Hakimi",
+          "id": "240233",
+          "sourceId": "113960"
+        },
+        {
+          "name": "Marquinhos",
+          "id": "159047",
+          "sourceId": "45993"
+        },
+        {
+          "name": "Willian Pacho",
+          "id": "287005",
+          "sourceId": "152458"
+        },
+        {
+          "name": "Nuno Mendes",
+          "id": "290591",
+          "sourceId": "132756"
+        },
+        {
+          "name": "Warren Zaïre-Emery",
+          "id": "345581",
+          "sourceId": "157339"
+        },
+        {
+          "name": "Vítinha",
+          "id": "288897",
+          "sourceId": "135067"
+        },
+        {
+          "name": "Fabián Ruiz",
+          "id": "214596",
+          "sourceId": "108239"
+        },
+        {
+          "name": "Maghnes Akliouche",
+          "id": "329690",
+          "sourceId": "148172"
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "id": "229744",
+          "sourceId": "110626"
+        },
+        {
+          "name": "Senny Mayulu",
+          "id": "379088",
+          "sourceId": "167737"
+        }
+      ]
+    },
+    {
+      "teamId": "104",
+      "players": [
+        {
+          "name": "Devis Vásquez",
+          "id": "234300",
+          "sourceId": "120137"
+        },
+        {
+          "name": "Gianluca Mancini",
+          "id": "212597",
+          "sourceId": "106671"
+        },
+        {
+          "name": "Evan N'Dicka",
+          "id": "242593",
+          "sourceId": "114390"
+        },
+        {
+          "name": "Mario Hermoso",
+          "id": "222529",
+          "sourceId": "109997"
+        },
+        {
+          "name": "Nahuel Molina",
+          "id": "164826",
+          "sourceId": "111096"
+        },
+        {
+          "name": "Bryan Cristante",
+          "id": "169213",
+          "sourceId": "63520"
+        },
+        {
+          "name": "Manu Koné",
+          "id": "285226",
+          "sourceId": "128338"
+        },
+        {
+          "name": "Wesley",
+          "id": "332354",
+          "sourceId": "151794"
+        },
+        {
+          "name": "Matías Soulé",
+          "id": "fm-1280082",
+          "sourceId": "147949"
+        },
+        {
+          "name": "Rodrigo Mora",
+          "id": "387204",
+          "sourceId": "170711"
+        },
+        {
+          "name": "Donyell Malen",
+          "id": "259481",
+          "sourceId": "117932"
+        }
+      ]
+    }
+  ]
+}

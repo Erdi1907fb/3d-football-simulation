@@ -225,3 +225,7 @@ his prior appearance. Castello Lukeba was also rejected after close-up inspectio
 showed polygonal hair cards; his own portrait remains.
 One Slonina identity was joined to his existing head using the same source ID,
 canonical name and DOB, without duplicating the model. This is incomplete coverage.
+
+# V246 — additional selective FM27 / PES community heads
+
+181 additional models,55,589,176 compressed bytes;1,066 total models402,624,818bytes. Same public source/credits as V245: https://sortitoutsi.net/content/78621/fm27-real-3d-faces-v10-11164-3d-player-heads-in-match — melrosehlf conversion, SmokePatch / SP Football Life and contributing PES facemakers. These community assets are not labelled CC0. Source archive/member/hash and identity evidence remain in each manifest entry; per-release inventory in docs/ai/research/pitch-heads-v246/inventory.json. Only selected compressed geometry/textures ship, never the source game/plugin/archive. Meshoptimizer1.3.0 (MIT) is an offline build tool, not a runtime dependency.

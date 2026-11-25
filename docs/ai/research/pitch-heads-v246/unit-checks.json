@@ -1,0 +1,83 @@
+{
+  "head": [
+    {
+      "pass": true,
+      "identity": true,
+      "geometry": true,
+      "neckRewind": true,
+      "disposePending": true,
+      "manifestRevalidated": true
+    }
+  ],
+  "fit": [
+    {
+      "pass": true,
+      "models": 1066,
+      "poses": 288,
+      "neckAttached": true,
+      "kitPreserved": true,
+      "skinMatched": true,
+      "rewindExact": true,
+      "lateBodyReady": true
+    }
+  ],
+  "coverage": [
+    {
+      "pass": true,
+      "teams": 265,
+      "models": 1066,
+      "prioritySquadCoverage": true,
+      "allSixSides": true
+    },
+    {
+      "pass": true,
+      "rfh": 734,
+      "sourceHashes": true,
+      "portableEyes": true,
+      "identityPlan": true
+    }
+  ],
+  "temporal": [
+    {
+      "pass": true,
+      "finalCamera": true,
+      "tilesKeepWholeView": true,
+      "physicsUnchanged": true,
+      "unchangedViewCached": true,
+      "desktopMsaa": 0,
+      "mobileMsaa": 0,
+      "buffersStable": true
+    }
+  ],
+  "weather": [
+    {
+      "PASS": true,
+      "particles": {
+        "high": 19600,
+        "balanced": 11900,
+        "low": 5600
+      },
+      "restoresClear": true,
+      "adoptsLateKits": true,
+      "types": [
+        "clear",
+        "rain",
+        "snow"
+      ]
+    }
+  ],
+  "ground": [
+    {
+      "pass": true,
+      "seededSeekTrace": true,
+      "contacts": 3,
+      "lowGatherCrouches": true,
+      "airborneFeetExcluded": true,
+      "visualOnly": true
+    }
+  ],
+  "rfh": {
+    "pass": true,
+    "tests": 6
+  }
+}

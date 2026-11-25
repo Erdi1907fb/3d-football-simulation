@@ -1,0 +1,401 @@
+[
+  {
+    "slug": "psg",
+    "total": 25,
+    "real": 23,
+    "missing": [
+      "Alessandro Longoni",
+      "Adam Mouak"
+    ]
+  },
+  {
+    "slug": "roma",
+    "total": 28,
+    "real": 24,
+    "missing": [
+      "Konstantinos Koulierakis",
+      "Alessandro Di Nunzio",
+      "Mandjou Camara",
+      "Lorenzo Paratici"
+    ]
+  },
+  {
+    "slug": "galatasaray",
+    "total": 34,
+    "real": 26,
+    "missing": [
+      "Enes Büyük",
+      "Arda Yilmaz",
+      "Alexey Batrakov",
+      "Furkan Koçak",
+      "Eyüp Karasu",
+      "Berat Lus",
+      "Can Güner",
+      "Ada Yüzgec"
+    ]
+  },
+  {
+    "slug": "fenerbahce",
+    "total": 30,
+    "real": 26,
+    "missing": [
+      "Kuzey Sapaz",
+      "Kojo Peprah Oppong",
+      "Abdou Aziz Fall",
+      "Amara Diouf"
+    ]
+  },
+  {
+    "slug": "besiktas",
+    "total": 30,
+    "real": 27,
+    "missing": [
+      "Emir Yasar",
+      "Mustafa Yortaç",
+      "Ozan Sevim"
+    ]
+  },
+  {
+    "slug": "trabzonspor",
+    "total": 34,
+    "real": 25,
+    "missing": [
+      "Ahmet Yildirim",
+      "Onuralp Çevikkan",
+      "Erol Çolak",
+      "Mustafa Kuzey Akçay",
+      "Melih Kabasakal",
+      "Yigithan Çubukcu",
+      "Oguzhan Ertem",
+      "Ali Habesoglu",
+      "Hakan Yılmaz"
+    ]
+  },
+  {
+    "slug": "barcelona",
+    "total": 31,
+    "real": 27,
+    "missing": [
+      "Iker Rodríguez",
+      "Eder Aller",
+      "Álex Campos",
+      "Jordi Pesquer"
+    ]
+  },
+  {
+    "slug": "real-madrid",
+    "total": 35,
+    "real": 29,
+    "missing": [
+      "Javier Navarro",
+      "Sergio Mestre",
+      "Mario Rivas",
+      "Sergio Martínez",
+      "Alexis Ciria",
+      "Daniel Yañez"
+    ]
+  },
+  {
+    "slug": "bayern",
+    "total": 27,
+    "real": 23,
+    "missing": [
+      "David Podar-Stiube",
+      "David Daiber",
+      "Maycon Cardozo",
+      "Tim Binder"
+    ]
+  },
+  {
+    "slug": "man-city",
+    "total": 27,
+    "real": 24,
+    "missing": [
+      "Max-Edgar Chabot",
+      "Floyd Samba",
+      "Allan Elias"
+    ]
+  },
+  {
+    "slug": "liverpool",
+    "total": 34,
+    "real": 31,
+    "missing": [
+      "Luke Chambers",
+      "Michael Laffey",
+      "Joshua Lambie"
+    ]
+  },
+  {
+    "slug": "arsenal",
+    "total": 29,
+    "real": 25,
+    "missing": [
+      "Theo Julienne",
+      "Maalik Hashi",
+      "Ife Ibrahim",
+      "Ceadach O’Neill"
+    ]
+  },
+  {
+    "slug": "man-utd",
+    "total": 33,
+    "real": 31,
+    "missing": [
+      "Daniel Armer",
+      "Jaydan Kamason"
+    ]
+  },
+  {
+    "slug": "chelsea",
+    "total": 30,
+    "real": 26,
+    "missing": [
+      "Teddy Sharman-Lowe",
+      "Olutayo Subuloye",
+      "Mahdi Nicoll-Jazuli",
+      "Reggie Watson"
+    ]
+  },
+  {
+    "slug": "inter",
+    "total": 29,
+    "real": 24,
+    "missing": [
+      "Francesco Stante",
+      "Leonardo Bovio",
+      "Mattia Marello",
+      "Mattia Mosconi",
+      "Jamal Iddrissou"
+    ]
+  },
+  {
+    "slug": "milan",
+    "total": 28,
+    "real": 27,
+    "missing": [
+      "Léo-Paul Bouyer"
+    ]
+  },
+  {
+    "slug": "juventus",
+    "total": 38,
+    "real": 28,
+    "missing": [
+      "Neto",
+      "Stefano Mangiapoco",
+      "Riccardo Radu",
+      "Niccolò Rizzo",
+      "Filippo Pagnucco",
+      "Augusto Owusu",
+      "Grady Makiobo Makiobo",
+      "Nico González",
+      "Destiny Elimoghale",
+      "Antonio Stefano Merola"
+    ]
+  },
+  {
+    "slug": "dortmund",
+    "total": 32,
+    "real": 26,
+    "missing": [
+      "Kouakou Gadou",
+      "Miguel Adje",
+      "Jan-Luca Riedl",
+      "Enzo De Pina Duarte Dos Santos",
+      "Mussa Kaba",
+      "Mathis Albert"
+    ]
+  },
+  {
+    "slug": "napoli",
+    "total": 28,
+    "real": 26,
+    "missing": [
+      "Claudio Pugliese",
+      "Milton Agustín Pereyra"
+    ]
+  },
+  {
+    "slug": "leverkusen",
+    "total": 29,
+    "real": 25,
+    "missing": [
+      "Ben Hawighorst",
+      "Jonas Hofmann",
+      "Ezequiel Fernández",
+      "Gabriel Minutillo"
+    ]
+  },
+  {
+    "slug": "tottenham",
+    "total": 30,
+    "real": 29,
+    "missing": [
+      "Sávio"
+    ]
+  },
+  {
+    "slug": "aston-villa",
+    "total": 29,
+    "real": 25,
+    "missing": [
+      "James Wright",
+      "Owen Asemota",
+      "Modou Cissé",
+      "George Hemmings"
+    ]
+  },
+  {
+    "slug": "newcastle",
+    "total": 31,
+    "real": 24,
+    "missing": [
+      "Aidan Harris",
+      "Lewis Hall",
+      "Joe Willock",
+      "Mason Miley",
+      "Vakho Salia",
+      "Kyran Thompson",
+      "Michael Mills"
+    ]
+  },
+  {
+    "slug": "benfica",
+    "total": 31,
+    "real": 23,
+    "missing": [
+      "Diogo Ferreira",
+      "Gabriel Índio",
+      "José Neto",
+      "Rui Silva",
+      "Manu Silva",
+      "Tiago Dias Freitas",
+      "Gonçalo Moreira",
+      "Miguel Figueiredo"
+    ]
+  },
+  {
+    "slug": "sporting",
+    "total": 31,
+    "real": 25,
+    "missing": [
+      "Kaique",
+      "Francisco Silva",
+      "Moncef Zekri",
+      "Rodrigo Dias",
+      "Silas Andersen",
+      "Samuel Justo"
+    ]
+  },
+  {
+    "slug": "porto",
+    "total": 34,
+    "real": 25,
+    "missing": [
+      "João Afonso",
+      "Luís Gomes",
+      "Souza",
+      "Tiago Silva",
+      "João Teixeira",
+      "Oskar Pietuszewski",
+      "Gabriel Mec",
+      "Duarte Cunha",
+      "Eduardo Ferreira"
+    ]
+  },
+  {
+    "slug": "ajax",
+    "total": 33,
+    "real": 27,
+    "missing": [
+      "Aymean El Hani",
+      "Jinairo Johnson",
+      "Abdellah Ouazane",
+      "Mohamed Abdalla",
+      "Tolu Arokodare",
+      "Diego Pugno"
+    ]
+  },
+  {
+    "slug": "psv",
+    "total": 31,
+    "real": 24,
+    "missing": [
+      "Tijn Smolenaars",
+      "Khadim Ngom",
+      "Fabian Merién",
+      "Ayoni Santos",
+      "Shuryjano Cornecion",
+      "Mikkel Hansen",
+      "Amir Bouhamdi"
+    ]
+  },
+  {
+    "slug": "marseille",
+    "total": 32,
+    "real": 18,
+    "missing": [
+      "Ibrahim Gomis",
+      "Alexi Koum",
+      "Mathis Clement",
+      "Rayan Bang Na",
+      "Anis Doubal",
+      "Hilan Slimani",
+      "Kelyann Bezahaf",
+      "Tochukwu Nnadi",
+      "Nouhoum Kamissoko",
+      "Faris Moumbagna",
+      "Keyliane Abdallah",
+      "Tadjidine Mmadi",
+      "Ugo El Kadmiri",
+      "Antoine Dominique Henri Valero"
+    ]
+  },
+  {
+    "slug": "olympique-lyonnais",
+    "total": 32,
+    "real": 22,
+    "missing": [
+      "Angel Daniel Garcia",
+      "Lassine Diarra",
+      "Yvann Konan",
+      "Matthias Da Silva",
+      "Abner",
+      "Felix Bacher",
+      "Mohamed Ouédraogo",
+      "Noah Nartey",
+      "Tiago Manuel Gonçalves Silva",
+      "Adil Hamdani"
+    ]
+  },
+  {
+    "slug": "monaco",
+    "total": 30,
+    "real": 22,
+    "missing": [
+      "Názinho",
+      "Mamadou Coulibaly",
+      "Ilane Touré",
+      "Pape Cabral",
+      "Aymen Assab",
+      "Safouane Benzahra",
+      "Anis Soubeir",
+      "Oumar Konaté"
+    ]
+  },
+  {
+    "slug": "atletico",
+    "total": 29,
+    "real": 22,
+    "missing": [
+      "Salvi Esquivel",
+      "Jorge Domínguez",
+      "Javier Gil",
+      "Jorge Castillo",
+      "Lee Kang-In",
+      "Arnau Ortiz",
+      "Miguel Cubo"
+    ]
+  }
+]

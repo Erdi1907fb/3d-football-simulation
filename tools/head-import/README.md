@@ -38,7 +38,7 @@ rebuild must use `--reuse` to preserve the RFH source family and fails on collis
 Range reader refuses full-download fallback and bounds its cache to8MB/read32MB;
 ZipFile verifies member CRC. Only selected members are staged, never the full8.9GB.
 RFH decompression is bounded, meshes/counts/indices/finiteness validated. Runtime
-budget: model<2MB, triangles<35k, total new assets<=180MB. Over-budget sources are
+budget: model<2MB, normally triangles<35k; three reviewed dense sources remain below the existing 80k runtime cap. RFH family budget260MB (V246). Over-budget sources are
 reported/rejected; no silent resolution reduction. Dummy three-vertex hair shells
 are omitted. No new face animation or FM skeleton is imported; existing football
 animation and shared head/neck fit remain authoritative.
@@ -47,15 +47,14 @@ Source transform: undo META.shift, subtract PES origin[0,1.640058,.05433055], re
 triangle winding, flip RFH UV.v for Three flipY=false. Bake portable eyes and set
 hasEyes=true to prevent duplicates. Face1024/hair512 WebP, 16-bit positions/normals/
 UV and deterministic gzip use the V243 packing path. No source archives/executable,
-experimental simplifier or extra locomotion pack is shipped.
+offline simplifier dependency or extra locomotion pack is shipped.
 
-For the six accepted dense hair sources only, install the offline MIT build dependency:
+For dense hair/face sources, install the offline MIT build dependency:
 `npm install --prefix /tmp/head-tools meshoptimizer@1.3.0 --ignore-scripts`
-(or set NEXT90_MESHOPT_DIR to its package directory). Face vertices remain unchanged
-except the existing <0.016mm quantisation; only hair indices simplify, with locked
-card borders and normal/UV weights, <=1% relative appearance error. Inspect a close-up
-before accepting a new dense source. Fábio Silva failed this bound and remains a
-portrait. Castello Lukeba failed the close-up hair check and is explicitly disabled
+(or set NEXT90_MESHOPT_DIR to its package directory). The optional face index simplifier retains original vertex attributes, locks borders and limits normal/UV-weighted relative error to0.2%; hair uses a1% bound and prunes tiny isolated islands. Packing still quantises coordinates. Inspect a close-up
+before accepting a new dense source. V246 accepts Fábio Silva, Xavi Simons and Jerdy Schouten under the existing80k decoder cap, each<2MB; this is explicit metadata, not a general budget relaxation. Castello Lukeba failed the close-up hair check and is explicitly disabled
 in the import plan; retain his portrait. The website never loads meshoptimizer. Reproduction commands above apply
 to the pre-import baseline; current installed IDs are intentionally skipped. For a
 single raw RFH, convert-rfh.py accepts an --identity JSON row from fm27-plan.json.
+
+V246 includes verified ESPN profiles for32 priority clubs, not just static roster rows. Offline aliases require unique full DOB plus explicit name/alias and club evidence. Runtime alternate provider IDs additionally require DOB; no global name-only fallback. `reviewed-profile-aliases.json` records17 reviewed source aliases. Recycled PES source IDs use a separate `fm27-<UID>` asset key so the original player is never overwritten. All885 previous binary hashes are retained. Source gaps (including Batrakov and rejected Lukeba hair) retain their own portrait/general appearance.

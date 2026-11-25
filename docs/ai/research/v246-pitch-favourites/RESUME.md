@@ -1,3 +1,5 @@
+> Superseded by ../pitch-heads-v246/README.md: execution recovered and V246 implementation/testing resumed. The environment blocker below is historical.
+
 # V246 hazırlığı — beyaz saha izi ve eksik yıldız kafaları
 
 Tarih: 2026-11-25. Taban/main: 7d53f900edae618bd0af319e79820ac9eec5835d (V245).

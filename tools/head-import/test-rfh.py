@@ -18,7 +18,7 @@ class Format(unittest.TestCase):
   for bad in [raw[:-1],raw[:-4]+struct.pack('<I',99),struct.pack('<II',999999,3)+raw[8:]]:
    with self.assertRaises((AssertionError,ValueError)):C.mesh(zlib.compress(bad))
  def test_inflate_budget(self):
-  with self.assertRaises(AssertionError):C.mesh(zlib.compress(b'0'*8_000_002))
+  with self.assertRaises(AssertionError):C.mesh(zlib.compress(b'0'*16_000_002))
  def test_nonfinite_position(self):
   b=bytearray(triangle());struct.pack_into('<f',b,8,float('nan'))
   with self.assertRaises(AssertionError):C.mesh(zlib.compress(b))
