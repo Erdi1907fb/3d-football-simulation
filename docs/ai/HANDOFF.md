@@ -1,3 +1,11 @@
+## [2026-11-25] Claude · V248 — taç çizgisi titremesi (gerçek neden) + eksik gerçek kafalar (BEKLİYOR)
+- Dal: claude/league-cup-arena-improvements-6buh8h → main (ff 7f7431f). Canlı build 247; V248 ZIP (14 dosya, V247'ye göre) kullanıcıya verildi.
+- Kullanıcı: V247 sonrası "taç çizgileri hâlâ git-gel yapıyor". Gerçek neden alt-piksel aliasing: 12 cm çizgi yayın açısında <1 px; uzak taç çizgisi 8 ardışık karede sütun varlığı eski 100/100/100/9/100/100/2/2 %, yeni hepsi 100 %. Düzeltme scene.js pitchStroke: vertex shader merkez+yanal ofseti projekte edip ekran genişliğini px olarak ölçer, k=max(1,0.85/px) (≤12) ile genişletir, vCover=0.5+0.5/k ile kapsama; fragment fwidth(vAcross) piksel-kapsama AA. PAINT_RES onBeforeRender'da render target/drawing buffer boyutundan. Yakın plan görünüm değişmedi. 5v5/Japon/ayak tenisi kendi çizgi kodlarında — dokunulmadı (kullanıcı görürse aynı yöntem).
+- tests/shader-precision.cjs ekleri: ekran-uzayı min genişlik işaretleri. tests/temporal-quality.cjs @napi-rs/canvas require'ı taşınabilir (Codex yolu → CODEX_PRIMARY_RUNTIME_NODE_MODULES → düz modül). 77/77.
+- Kafalar (kullanıcı: "her ligin büyük takımları eksiksiz olsun, PES ve FM27'den"): tools/head-import/extend-plan.py (commit'li, repo planını DEĞİŞTİRMEDİ). Süper Lig 16 + ~51 büyük kulüp; takımın CSV kulübü mevcut kafaların fmUID oylarıyla (≥3, çoğunluk), tekil aynı-kulüp tam ad/alias satırı, ID+DOB oyun verisinden. Kuru çalıştırma: 480 aday (210 ilk takım), 918 tekil aynı-kulüp satırı yok diye dışarıda; ~360 MB bütçe gerekir (şimdi 260) — uygulanırsa DECISIONS'a gerekçe yazılmalı.
+- ENGEL: MediaFire arşiv sayfaları (6 RealFaces zip) Cloudflare "Just a moment" (?action=check 403); yalnız CSV sayfası 200. 15 dk sonra tek bağlantı tekrarı da 403. PES indirmeleri (modsfire) da aynı challenge. Bypass yapılmadı. Kullanıcıya: arşivleri tarayıcıdan indirmesi veya Remote Control ile kendi bilgisayarında çalıştırma seçeneği önerildi. Plan hazır: `extend-plan.py --csv … --write --budget-mb 360` → `import-fm27.py --stage … --csv … --install` → head-coverage/head-body-fit/test-rfh + yakın plan görsel kabul.
+- Gözlem: yerel hızlı render'da bazı yeni gerçek kafalar kare anında yüklenmemiş olabilir (araç beklemesi olası).
+
 ## [2026-11-25] Codex · V245 / T-400 gerçek kafalar; T-399 V244 tamamlandı
 
 ## [2026-11-25] Claude · V246 → V247 — taç çizgisi oynaması
