@@ -1,5 +1,5 @@
 'use strict';
-const A=require('node:assert/strict'),fs=require('fs'),T=require('../assets/vendor/three.min'),Scene=require('../assets/scene'),Match=require('../assets/match'),Remaster=require('../assets/broadcast-remaster'),{createCanvas}=require('/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/@napi-rs/canvas');
+const A=require('node:assert/strict'),fs=require('fs'),T=require('../assets/vendor/three.min'),Scene=require('../assets/scene'),Match=require('../assets/match'),Remaster=require('../assets/broadcast-remaster'),{createCanvas}=(()=>{/* portable: Codex runtime path, an explicit module dir, or a normal install */for(const p of['/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules/@napi-rs/canvas',process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES&&process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/@napi-rs/canvas','@napi-rs/canvas'].filter(Boolean)){try{return require(p);}catch{}}throw Error('@napi-rs/canvas not installed (set CODEX_PRIMARY_RUNTIME_NODE_MODULES)');})();
 (async()=>{
  for(const file of fs.readdirSync('assets').filter(f=>f.endsWith('.js'))){const shader=fs.readFileSync('assets/'+file,'utf8');for(const m of shader.matchAll(/smoothstep\((-?\d*\.?\d+),\s*(-?\d*\.?\d+),/g))A(Number(m[1])<Number(m[2]),file+' uses undefined GLSL smoothstep edges');}
 

@@ -1,5 +1,13 @@
 ## [2026-11-25] Codex · V245 / T-400 gerçek kafalar; T-399 V244 tamamlandı
 
+## [2026-11-25] Claude · V246 → V247 — taç çizgisi oynaması
+- Dal: claude/league-cup-arena-improvements-6buh8h (origin/main V246 28f501f'den yeniden başlatıldı) → main (ff). PR yok.
+- Kullanıcı: 11v11 HD işi Codex ile çözüldü; son kalan "taç çizgileri yerinden oynuyor" hâlâ var mı?
+- Bulgu: SwiftShader'da taç çizgisi ardışık karelerde stabil (Codex'in V246 sonucu ile aynı; tekrarlanamadı). Kod incelemesinde iki GPU-hassas nokta: scene.js pitchStroke boya grain/fibre ve pitch-detail.js wosH — fract(sin(dot(p,(127.1,311.7)))*43758) ile sin argümanları milyonlar (taç çizgisi x*260*127 ≈ 3,4e6). Ayrıca V223 bıçakları (≤4,6 cm) çizginin (4,3 cm) üstüne çıkabiliyordu.
+- Yapılanlar: iki shader'da sinüssüz hash (mod 4096 + fract(p*.1031) karışımı), çizgi y=.052. tests/shader-precision.cjs + run-all. Görsel: 11v11 yakın plan/yayın karesi aynı görünüm, shader hatası yok.
+- Açık/gözlem: yerel hızlı render'da (scratchpad mcv) bazı yeni gerçek kafalar kare anında yüklenmemişti (kafasız) — değişiklikten önce de aynı; büyük olasılıkla araç beklemiyor, Codex testleri bekliyor. Canlı site bu anda 403/404 (build.php) döndürdü — kullanıcıya soruldu.
+- Kesin doğrulama kullanıcının Windows GPU'sunda gerekir; kısa ekran kaydı istendi.
+
 ## [2026-11-25] Codex · V246 / T-402, T-403
 - Son doğrulama:77/77tamNode/PHPpaketi;8mod×4zaman tarayıcı kalite/kimlik/kit/geri-sarma kontrolleri, sıfır shader/tarayıcı hatası PASS. Son1.066geometri/288boyunpozu/734RFHhash ve6parser testi PASS; tam paket ilk1.054kafada başlamıştı, son12ek sonrası etkilenen testler tekrarlandı. SonGLSLediti sonrası temporal/weather/studio-ground testleri tekrarPASS. Kontrollü hareketli yüzey +0.2sn1080p60/12kareH.264yazılımexport/ffmpegdecode PASS; tammaçdeğil. build246filesMatch=true(531dosya). KanıtJSONleri research/pitch-heads-v246 içinde.
 - Çalışma ortamı geri geldi; kullanıcının yeniden kurmasına gerek yok. Main7d53f90'dan agent/codex/pitch-artifacts-favourite-heads-v246; araştırma ara notu64a6da6artık tarihsel.

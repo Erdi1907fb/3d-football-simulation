@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V247 · 2026-11-25
+- Saha çizgisi / çim kararlılığı (kullanıcı: taç çizgileri yerinden oynuyor; V246'da Windows GPU'da görülen beyaz izler SwiftShader'da tekrarlanmamıştı). Çizgi boyası ve çim dokusu shader'ları fract(sin(büyük sayı)) hash kullanıyordu: taç çizgisi boyunca sin() argümanı ~3,4 milyon, çimde ~2,9 milyon. Bu büyüklükte sinüs GPU'ya göre farklı hassasiyetle hesaplanır; desen kare kare kayıp titreyebilir. Sinüssüz, küçük sayılı (mod 4096) hash ile değiştirildi — görünüm aynı, her kartta deterministik.
+- Çizgi boyası 4,3 → 5,2 cm yükseklikte: V223 yakın plan çim yaprakları (en çok 4,6 cm) kamera hareketinde çizgiyi kesip kıpırdatamaz.
+- Yeni koruma testi tests/shader-precision.cjs (run-all). Fiziksel Windows GPU'da yeniden test edilmedi; kesin kanıt değildir.
+
 ## V246 · 2026-11-25
 -77/77paket,8mod×4zaman, son1.066geometri/288boyunpozu,12yakınplan, gerçekPSG–Roma22model ve yağmur/kar shader derleme PASS. Kontrollü kısa1080p60H.264çıktı çözümlendi; build246filesMatch=true. Ayrıntılı kapsam/sınırlar research/pitch-heads-v246.
 - Dembélé/Dybala'nın statik kadro dışı profil/haftalık kadro kimlikleri düzeltildi;32öncelikli kulüp profili tarandı.181yeni gerçek kafa, toplam1.066; önceki885binary hash'i aynı.17incelenmiş kaynak alias'ı ve DOB/ad korumalı sağlayıcı ID eşleşmesi. PSG–Roma canlı ilk11'lerinde22/22model yüklendi. Kadro/analiz/fizik değişmez.
