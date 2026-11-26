@@ -1,3 +1,11 @@
+## [2026-11-26] Claude · V255 — bölgesel vücut + diz/dirsek eklem düzeltmesi
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253+V254+V255).
+- Kullanıcı: yapay, kalın eklemli, tek düze gövde/hareket yerine daha gerçekçi; boy/kilo/tip/FC26 verisi tüm vücuda yayılsın; kafa/yüz uyumu ve tüm modlar sorunsuz, optimize.
+- Veri: fc26-builds.py şema 2 → {id:[m,u,l,dob]} (m vücut tipi+BMI−çeviklik, u güç, l sprint/hızlanma/sıçrama; 0,1 adım, ham puan yok). character-system tableBuild→{bodyType(kategori),muscle,build}; eşleşmeyene roleBuild (mevki). Salah reviewedBuild build:null (Codex V252 onaylı siluet ve studio-fixes testi korunur). Bölgesel profilde tüm-gövde ölçeği yalnız 1+m*.025 / derinlik 1+m*.02.
+- fullbody-runtime: bodyShapes() yükleme anında 9 bölge + 4 eklem morph'u üretir (toplam 21 = 8 yüz + 13), extras (print/hair/beard) aynı morph setini paylaşır; shapeValues(build) apply'da, jointCorrectives(r) sync'te (büküm açısı smoothstep, .15–1.9 rad). Boyun/kafa vertex'leri sıfır (test). Ölçüm scratch body/jointmeasure.cjs (diz/dirsek düz–bükük–düzeltmeli: düz kalınlığa ±%1). Maç karesi (kale kamerası) bozulmasız.
+- Testler 80/80 + yeni body-shapes.cjs (81). studio-fixes Salah ölçek testi korunarak geçti.
+- Sonraki: hareket kayıtları (CMU ticari ürün içinde serbest/ham satış yok; 100STYLE CC BY 4.0) → 53 kemik retarget, ayak kilidi; DQS denenmedi (kemik ölçeği riski).
+
 ## [2026-11-26] Claude · V254 — otomatik oyuncu vücut yapısı (EA FC 26 vücut tipi)
 - Dal → main (ff). Canlı build 252; V254 ZIP V252'ye göre (V253+V254 birlikte).
 - Kullanıcı: vücut şekli kaynağı; önce PES erişilebilirliği, sonra düzgün sırayla. PES sürgüleri erişilemez (pesmaster yalnız boy/kilo; sürgüler oyun dosyasında). sofifa/fifacm/futbin Cloudflare 403. Açık kaynak: github.com/ismailoksuz/EAFC26-DataHub data/players.csv (Kaggle FC26_20250921 ile aynı; 18.405 oyuncu, body_type).
