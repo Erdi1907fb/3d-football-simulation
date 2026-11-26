@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V253 · 2026-11-26
+- Bozuk gerçek kafalar: 3.073 kafa tarandı (opak yüz derisi, üçgen sayısı, render tabanlı delik ölçümü, yakın plan görsel). Ronaldo (mega6 4522): kaynakta yüz dokusu yok, tüm deri alfa-testli kafa kabuğu → yanak/şakak delikleri. Deri opak yapıldı, yüz bölgesindeki bloklar yumuşatıldı (tools/head-import/repair-shell-skin.py), geometri aynı. Kurtarılamayan 3 kafa `disabledReason` ile kapatıldı (standart kafa): Miretti (dosyada yalnız göz), Stojković (beyaz iris), Ollie Harrison (çizgili doku). player-heads.js kapatılmış girdileri sunmaz. Yeni tests/head-integrity.cjs.
+- Video kalitesi (tüm modlar: 11v11/özet, lig/kupa/sezon, penaltı, serbest vuruş, Japon kale, ayak tenisi/bowling): dışa aktarma sahnesi 1,5× çözünürlükte çizilip yüksek kaliteli küçültmeyle çıktı tuvaline kopyalanır (SekmeGraphics.exportScale; telefon 1×). 2× referansa karşı PSNR 1× ~32 dB → 1,5× ~37 dB; çim kumlanması, çizgi/oyuncu kenar tırtığı ve kareler arası titreme azalır. Bit hızı 1080p60 masaüstü 24→40 Mbps, telefon 20→24, 30 fps 18→28 (Instagram/YouTube yeniden sıkıştırmasına temiz ana kopya).
+
 ## V252 · 2026-11-26
 - Ayak tenisinde içerideki ilk sekmeden sonra kaçan top sayı sayılır; gerçek aut korunur, yanlış taraf puan hatası düzelir.
 - Haftalık penaltıda üstte belirgin senaryo kodu, yeni senaryo ve analiz düğmeleri; korunan analiz değişmeden boş/yeni kod ve deterministik tekrar.
