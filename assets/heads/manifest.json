@@ -3363,7 +3363,8 @@
       "skinRGB": [],
       "discardedInvalidTriangles": 0,
       "rawBytes": 18324,
-      "sha256": "345ec1f01d64d10e14e043b66fc457d0c3cb9bd118b663545e244a14f4d22510"
+      "sha256": "345ec1f01d64d10e14e043b66fc457d0c3cb9bd118b663545e244a14f4d22510",
+      "disabledReason": "V253: source file contains only the portable eyes (no head/face geometry)"
     },
     {
       "sourceId": "152613",
@@ -11175,7 +11176,8 @@
       ],
       "discardedInvalidTriangles": 0,
       "rawBytes": 446380,
-      "sha256": "36dfc13cfd1a847fe18c45a605fc946738c81031e3580ca2273cddc4f86679ca"
+      "sha256": "36dfc13cfd1a847fe18c45a605fc946738c81031e3580ca2273cddc4f86679ca",
+      "disabledReason": "V253: source shipped only the alpha-tested head shell as skin; opaque repair leaves white irises — standard head until a clean source"
     },
     {
       "sourceId": "182062",
@@ -11248,8 +11250,8 @@
       "sourceCredit": "All Makers (see source page and included credits)",
       "sourceSeason": "2025-26/2026",
       "dateOfBirth": "1985-02-05",
-      "bytes": 582525,
-      "rawBytes": 680564,
+      "bytes": 608777,
+      "rawBytes": 706764,
       "triangles": 16493,
       "meshes": 12,
       "eyes": [
@@ -11269,7 +11271,8 @@
         108,
         78
       ],
-      "sha256": "39f3e58dbe02decf70ba709394ef075e7da11c2b31cff2eee57a323f19fba870"
+      "sha256": "9a998a171f30f7dbb27ee9c7a4aa141eb2f29cbdcc8684bdd9f0503bf32f68dc",
+      "repair": "V253: source shipped only the alpha-tested head shell as skin (holes in the face); skin made opaque, face blocks softened. Geometry unchanged."
     },
     {
       "sourceId": "46788",
@@ -14577,7 +14580,8 @@
       ],
       "discardedInvalidTriangles": 0,
       "rawBytes": 307596,
-      "sha256": "92ed154d2493e684a9e7c9de5b8775fb3c8920849018aac25c2f34b4a1e9c1c6"
+      "sha256": "92ed154d2493e684a9e7c9de5b8775fb3c8920849018aac25c2f34b4a1e9c1c6",
+      "disabledReason": "V253: source shipped only the alpha-tested head shell as skin; opaque repair shows striped garbage texture — standard head until a clean source"
     },
     {
       "sourceId": "140940",
