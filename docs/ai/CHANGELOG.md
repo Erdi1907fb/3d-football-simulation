@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V254 · 2026-11-26
+- Otomatik oyuncu vücut yapısı. Erişilebilirlik: PES vücut sürgüleri (boyun/göğüs/kol/bel/bacak) yalnız oyun dosyalarında, pesmaster yalnız boy/kilo; sofifa/fifacm/futbin Cloudflare 403. Açık kaynak: GitHub EAFC26-DataHub `data/players.csv` (EA FC 26, 2025-09-21 kesiti, 18.405 oyuncu; boy, kilo, DOB, body_type).
+- tools/body-import/fc26-builds.py: birebir DOB + soyadı + tekil satır koruması; 6.084 eşleşme (3.507 atletik, 2.251 ince, 326 kaslı), 25 belirsiz ve 3.578 eşleşmeyen dışarıda. Lean→ince, Normal→atletik, Stocky→kaslı, Unique→FC boy/kilodan BMI. Yalnız ince/kaslı saklanır (assets/player-builds.json, 76 KB; atletik varsayılan). CSV commit edilmez.
+- character-system.js: tablo vücut tipi otomatik uygulanır; incelenmiş (Salah) ve kullanıcının kendi ayarı önceliklidir; kimlik DOB'u tutmazsa uygulanmaz. Boy/kilo ölçüleri değişmez. Görsel: Yamal/Isak ince, Kane/Ederson kaslı, doğal oranlar. tests/player-builds.cjs.
+
 ## V253 · 2026-11-26
 - Bozuk gerçek kafalar: 3.073 kafa tarandı (opak yüz derisi, üçgen sayısı, render tabanlı delik ölçümü, yakın plan görsel). Ronaldo (mega6 4522): kaynakta yüz dokusu yok, tüm deri alfa-testli kafa kabuğu → yanak/şakak delikleri. Deri opak yapıldı, yüz bölgesindeki bloklar yumuşatıldı (tools/head-import/repair-shell-skin.py), geometri aynı. Kurtarılamayan 3 kafa `disabledReason` ile kapatıldı (standart kafa): Miretti (dosyada yalnız göz), Stojković (beyaz iris), Ollie Harrison (çizgili doku). player-heads.js kapatılmış girdileri sunmaz. Yeni tests/head-integrity.cjs.
 - Video kalitesi (tüm modlar: 11v11/özet, lig/kupa/sezon, penaltı, serbest vuruş, Japon kale, ayak tenisi/bowling): dışa aktarma sahnesi 1,5× çözünürlükte çizilip yüksek kaliteli küçültmeyle çıktı tuvaline kopyalanır (SekmeGraphics.exportScale; telefon 1×). 2× referansa karşı PSNR 1× ~32 dB → 1,5× ~37 dB; çim kumlanması, çizgi/oyuncu kenar tırtığı ve kareler arası titreme azalır. Bit hızı 1080p60 masaüstü 24→40 Mbps, telefon 20→24, 30 fps 18→28 (Instagram/YouTube yeniden sıkıştırmasına temiz ana kopya).
