@@ -6,6 +6,7 @@
 - athlete-motion.js: veri varsa formül ayak eğrisi/sinüs kollar yerine kayıt eğrileri; hız/yön harmanı (yürüme→hafif koşu→sprint, geri, yan). Motor kök hareketi, evre (1,42 m adım) ve temas pozları aynı; ayak hâlâ IK ile basar, salınım genliği her kayıtta motor adımına normalize (kayma eskisinden kötü değil).
 - Çömelme düzeltmesi: kalça yüksekliği .868/.818 → .915/.885 (basma ortası diz bükümü ~57–71° yerine gerçekçi ~18–40°).
 - Görsel: aynı evrelerde eski/yeni sprint, hafif koşu, geri koşu, yan adım; yeni yan adımda dizler çaprazlanmıyor. Test: tests/mocap-gait.cjs. ASSET-LICENSES kredileri.
+- Video hızlandırma (1–3×): aynı süper örneklemeli çizim yolu zaten kullanılıyordu; artık bit hızı hızla ölçeklenir (×(1+0,3·(hız−1)), masaüstü tavan 48, telefon 32 Mbps): 1× 40, 1,5× 46, 2–3× 48 Mbps. Güçlü masaüstü (deviceMemory ≥ 8 veya ≥ 8 çekirdek) 2× süper örnekleme (ölçüm referans kalitesi), diğer masaüstü 1,5×, telefon 1×.
 
 ## V255 · 2026-11-26
 - Bölgesel vücut: üç kaba tip yerine oyuncu başına sürekli profil (kütle m, üst gövde u, alt gövde l; -1..1). FC 26 verisinden türetilir: m = vücut tipi + BMI (+ çok çevik oyuncu hafifler), u = güç, l = sprint/hızlanma/sıçrama. Ham EA puanı saklanmaz; assets/player-builds.json şema 2 (6.084 oyuncu). Eşleşmeyenlere mevki varsayılanı (kaleci/stoper/kanat/forvet/orta saha, küçük değerler).
