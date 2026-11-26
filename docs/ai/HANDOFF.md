@@ -1,3 +1,13 @@
+## [2026-11-26] Claude · V256 — gerçek hareket kaydı (koşu/yürüme) + hızlandırılmış video kalitesi
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V256 birlikte).
+- Kullanıcı: yapay/tek düze koşu ve hareketler gerçekçi olsun (sıradaki adım); ayrıca hızlandırmada video kalitesi korunuyor mu, daha da artır.
+- Kaynak: 100STYLE Neutral (Zenodo 8127870, CC BY 4.0; RemoteZip aralık okuma 12,2 MB) + CMU subject 9 (09_01–09_11, 09_10/09_12 hariç) ve 35 (35_17–35_26) ASF/AMC http://mocap.cs.cmu.edu. 100STYLE FR yalnız ~1,4 m/s hafif koşu → sprint CMU'dan (~3,5 m/s, 13 döngü). Ham dosyalar repoda yok (scratch mocap/).
+- tools/mocap/extract-gaits.py --dir <100STYLE Neutral + Frame_Cuts.csv> --cmu <cmu/09 klasörü; kardeş cmu35/> --write → assets/mocap-gaits.js (UMD, Next90MocapGaits). 8 sayfada athlete-motion.js'den önce script etiketi.
+- athlete-motion.js: G varsa mocap yolu (yoksa eski formül). u=phase+.5 (sağ ayak teması motor evresi 0). gaitPose hız/yön harmanı; ayak z her kaydın kendi genliğiyle (AMP) motor yarım adımına normalize (eski kayma düzeyi korunur), x/yükseklik kalça yüksekliği .87; sola yanal harekette sol/sağ eğri aynalanır. Kalça .915/.885 (eski .868/.818 → 57–71° diz bükümü çömelme). Kollar: omuz −swing*.95, açılma, dirsek −elbow. athleteMotion.source='mocap', build 256.
+- Video: withSpeed zaten aynı çizimi kullanıyordu; settings() appliedSpeed ile bit hızını ×(1+.3·(hız−1)) ölçekler (masaüstü 48, telefon 32 Mbps tavan). exportScale: deviceMemory≥8 veya ≥8 çekirdek → 2×, diğer masaüstü 1,5×, telefon/lite 1×.
+- Doğrulama: run-old/run-new sprint/hafif koşu/geri/yan şeritleri (scratch body/runshot.cjs), maç kale kamerası karesi; tests/mocap-gait.cjs. 82/82.
+- Açık: hıza bağlı adım uzunluğu (motorun geçmişten bağımsız 1,42 m evre kararını değiştirir; ayrı karar), dönüş/ani duruş klipleri, fiziksel GPU'da 2× dışa aktarma süresi ölçülmedi.
+
 ## [2026-11-26] Claude · V255 — bölgesel vücut + diz/dirsek eklem düzeltmesi
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253+V254+V255).
 - Kullanıcı: yapay, kalın eklemli, tek düze gövde/hareket yerine daha gerçekçi; boy/kilo/tip/FC26 verisi tüm vücuda yayılsın; kafa/yüz uyumu ve tüm modlar sorunsuz, optimize.
