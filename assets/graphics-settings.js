@@ -5,5 +5,10 @@ function normalize(v){return presets[v]?v:'balanced';}function read(){try{return
 let current=read();const mobileGPU=typeof navigator!=='undefined'&&/Android|iPhone|iPad|iPod/.test(navigator.userAgent||'');
 // Video exports always render with the high preset; phones keep a 2048 shadow map to stay within GPU memory.
 function get(v){const p={...presets[normalize(v||current)]};if(p.id==='high'&&mobileGPU)p.shadowSize=2048;/* V136: 4096 shadow depth = 64 MB of GPU memory on a phone; 2048 is visually identical at 1080 px *//* V129: phones render exactly the desktop presets (V128 removed the real overload). Emergency lite mode only via SEKME_LITE_RENDER. */if(typeof globalThis!=='undefined'&&globalThis.SEKME_LITE_RENDER){p.lite=true;p.shadows=false;p.shadowSize=512;p.tufts=0;}return p;}function video(){return get('high');}function set(v){current=normalize(v);try{localStorage.setItem(KEY,current);}catch{}return get();}
+/* V253 export supersampling: video frames are rendered at 1.5x and downscaled into the 1080p output canvas. One
+   rendered pixel per output pixel made grass, lines and kits shimmer frame to frame (sub-pixel detail lands on different
+   pixels every frame) and the encoder then spent its bits on that noise. Phones keep 1x (GPU memory). Override with
+   globalThis.SEKME_EXPORT_SS (1..2). */
+function exportScale(env=globalThis){const o=Number(env?.SEKME_EXPORT_SS);if(Number.isFinite(o)&&o>0)return Math.max(1,Math.min(2,o));if(env?.SEKME_LITE_RENDER||mobileGPU||env?.SEKME_PHONE)return 1;return 1.5;}
 function configureRenderer(renderer,T,preset){const p=preset?get(preset):get();renderer.shadowMap.enabled=p.shadows;renderer.shadowMap.type=T.PCFSoftShadowMap;return p;}
-return{get,set,video,presets,configureRenderer,mobile:mobileGPU};});
+return{get,set,video,presets,configureRenderer,exportScale,mobile:mobileGPU};});
