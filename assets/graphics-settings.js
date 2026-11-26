@@ -9,6 +9,6 @@ function get(v){const p={...presets[normalize(v||current)]};if(p.id==='high'&&mo
    rendered pixel per output pixel made grass, lines and kits shimmer frame to frame (sub-pixel detail lands on different
    pixels every frame) and the encoder then spent its bits on that noise. Phones keep 1x (GPU memory). Override with
    globalThis.SEKME_EXPORT_SS (1..2). */
-function exportScale(env=globalThis){const o=Number(env?.SEKME_EXPORT_SS);if(Number.isFinite(o)&&o>0)return Math.max(1,Math.min(2,o));if(env?.SEKME_LITE_RENDER||mobileGPU||env?.SEKME_PHONE)return 1;return 1.5;}
+function exportScale(env=globalThis){const o=Number(env?.SEKME_EXPORT_SS);if(Number.isFinite(o)&&o>0)return Math.max(1,Math.min(2,o));if(env?.SEKME_LITE_RENDER||mobileGPU||env?.SEKME_PHONE)return 1;const n=env?.navigator||{},strong=Number(n.deviceMemory)>=8||(!n.deviceMemory&&Number(n.hardwareConcurrency)>=8);return strong?2:1.5;/* V256: strong desktops render the measured 2x reference quality; others 1.5x */}
 function configureRenderer(renderer,T,preset){const p=preset?get(preset):get();renderer.shadowMap.enabled=p.shadows;renderer.shadowMap.type=T.PCFSoftShadowMap;return p;}
 return{get,set,video,presets,configureRenderer,exportScale,mobile:mobileGPU};});
