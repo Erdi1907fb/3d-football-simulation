@@ -5,6 +5,10 @@ python3 tools/head-import/build-library.py --input-root /tmp --reader /tmp/pes-f
 import argparse, concurrent.futures, gzip, hashlib, struct, importlib.util, json, pathlib, re, unicodedata
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 def norm(s):return ''.join(c for c in unicodedata.normalize('NFD',s).lower().replace('ı','i') if c.isalnum())
+def retained_heads(previous,rebuilt):
+    rebuilt_keys={p['source']+'|'+p['sourceId'] for p in rebuilt}
+    return [p for key,p in previous.items() if key not in rebuilt_keys]
+
 def convert_job(job):
     spec=importlib.util.spec_from_file_location('pes_convert',ROOT/'tools/head-import/convert-pes.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
     entry,source,reader,prior=job;out=ROOT/pathlib.Path(entry['path']).parent
@@ -32,7 +36,8 @@ if __name__=='__main__':
     by_name={}
     for tid,p in pool:
         for n in {norm(p['name']),*[norm(n) for n in p.get('aliases',[]) if n]}:by_name.setdefault(n,[]).append((tid,p))
-    if not a.reuse and any(p.get('source')=='fm27-realfaces-v2' for p in json.loads((ROOT/'assets/heads/manifest.json').read_text()).get('players',[])):raise ValueError('Use --reuse to preserve the installed RFH source family')
+    configured_sources={src['key'] for src in config['sources']}
+    if not a.reuse and any(p.get('source') not in configured_sources for p in json.loads((ROOT/'assets/heads/manifest.json').read_text()).get('players',[])):raise ValueError('Use --reuse to preserve installed independent source families')
     previous={p['source']+'|'+p['sourceId']:p for p in json.loads((ROOT/'assets/heads/manifest.json').read_text()).get('players',[])} if a.reuse else {};entries=[];unmatched=[];seen=set();source_records=[]
     for src in config['sources']:
         folder=a.input_root/src['directory'];idfile=ROOT/src['verifiedIds'] if src.get('verifiedIds') else folder/src['ids']
@@ -73,18 +78,20 @@ if __name__=='__main__':
         for entry,error in ex.map(convert_job,entries):
             if entry:manifest['players'].append(entry);print('OK',entry['name'],entry['bytes'],flush=True)
             else:manifest['failed'].append(error);print('FAILED',error,flush=True)
-    # Selected RFH heads are a separate reproducible source family. A PES rebuild
-    # must never silently drop them or overwrite their numeric source path.
-    retained=[p for p in previous.values() if p.get('source')=='fm27-realfaces-v2']
+    # --reuse also preserves configured packs when their temporary raw inputs are
+    # absent or a replacement conversion failed; never silently discard a valid head.
+    retained=retained_heads(previous,manifest['players'])
     active_ids={i for p in manifest['players'] for i in p['ids']};active_paths={p['path'] for p in manifest['players']}
     for p in retained:
-        if any(i in active_ids for i in p['ids']) or p['path'] in active_paths:raise ValueError('PES rebuild collides with retained RFH identity; review source precedence')
+        if any(i in active_ids for i in p['ids']) or p['path'] in active_paths:raise ValueError('PES rebuild collides with retained independent identity; review source precedence')
         asset=ROOT/p['path']
-        if not asset.exists() or hashlib.sha256(asset.read_bytes()).hexdigest()!=p['sha256']:raise ValueError('retained RFH asset missing or changed')
+        if not asset.exists() or hashlib.sha256(asset.read_bytes()).hexdigest()!=p['sha256']:raise ValueError('retained independent asset missing or changed')
         manifest['players'].append(p)
     if retained:
         old=json.loads((ROOT/'assets/heads/manifest.json').read_text())
-        manifest['sources'].extend(s for s in old.get('sources',[]) if s.get('key')=='fm27-realfaces-v2')
+        retained_sources={p['source'] for p in retained}
+        source_keys={(s.get('key'),s.get('page')) for s in manifest['sources']}
+        manifest['sources'].extend(s for s in old.get('sources',[]) if s.get('key') in retained_sources and (s.get('key'),s.get('page')) not in source_keys)
     for tid in ['432','436','1895','997']:
 
         if tid not in registry:continue

@@ -36,6 +36,10 @@ def unpack_fpk(path):
         name=pathlib.PurePosixPath(s[no:no+nl].decode()).name
         target=path.parent/'face_fpk'/name;target.parent.mkdir(exist_ok=True);target.write_bytes(s[off:off+size])
 
+def is_hair_material(base,technique,alpha_flags):
+    # Some makers set bit128 on opaque skin; face alpha is not a hair mask.
+    return base!='face_bsm_alp' and (bool(alpha_flags&128) or 'Hair' in technique or bool(base and any(k in base for k in ['hair_parts','beard_parts','cap_parts'])))
+
 def convert(source,out,reader,source_id,name):
     spec=importlib.util.spec_from_file_location('FmdlFile',reader/'FmdlFile.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
     for f in source.rglob('face.fpk'):unpack_fpk(f)
@@ -74,7 +78,7 @@ def convert(source,out,reader,source_id,name):
                 if lids:
                     eye=np.mean([[getattr(b.globalPosition,k) for k in ['x','y','z']] for b in lids],axis=0)-origin;eye[2]-=.009;g['extras']['eyes'].append(eye.tolist())
         for mesh in f.meshes:
-            mat=mesh.materialInstance;texmap={role:pathlib.Path(t.filename).stem.lower() for role,t in mat.textures};base=texmap.get('Base_Tex_SRGB');hair=bool(mesh.alphaFlags&128) or 'Hair' in mat.technique or bool(base and ('hair_parts' in base or 'beard_parts' in base or 'cap_parts' in base));skin=base=='face_bsm_alp';eyeocc='occlusion' in mat.name.lower();lashes='eyelash' in mat.name.lower()
+            mat=mesh.materialInstance;texmap={role:pathlib.Path(t.filename).stem.lower() for role,t in mat.textures};base=texmap.get('Base_Tex_SRGB');hair=is_hair_material(base,mat.technique,mesh.alphaFlags);skin=base=='face_bsm_alp';eyeocc='occlusion' in mat.name.lower();lashes='eyelash' in mat.name.lower()
             # Wet waterline and unsupported common lash geometry are optional cosmetic layers.
             if not base or (base not in textures and (eyeocc or lashes)):continue
             if base not in textures:continue

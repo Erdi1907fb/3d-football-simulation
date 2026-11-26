@@ -1,0 +1,1187 @@
+{
+  "pass": true,
+  "actualSharedActor": true,
+  "errors": [],
+  "players": [
+    {
+      "name": "Ezequiel Fernández",
+      "sourceId": "140305",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 9486,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/leverkusen-home.webp",
+      "box": [
+        0.18206787109375,
+        0.3417883366346359,
+        0.224456787109375
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-140305",
+          "local": [
+            0.013977125907651183,
+            -0.06638001090399825,
+            0.11944089411992875
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-140305",
+          "local": [
+            0.01291376022058903,
+            -0.09325952866004972,
+            0.11035395097594358
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-140305",
+          "local": [
+            0.0067198318558312625,
+            -0.1172172007082104,
+            0.057424017677104255
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-140305",
+          "local": [
+            0.007376489224826005,
+            -0.13508332028615944,
+            0.06303545337578653
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-140305",
+          "local": [
+            0.008059180459990295,
+            -0.152696033005437,
+            0.068869360294463
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-140305",
+          "local": [
+            0.008567833598584623,
+            -0.17035713107310357,
+            0.07321603256972353
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012550549827504268,
+            -0.18173198683227443,
+            0.10725015307140018
+          ],
+          "material": 12
+        }
+      ]
+    },
+    {
+      "name": "Unai Simón",
+      "sourceId": "106957",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 33186,
+      "keeper": true,
+      "kit": "assets/kits/2026-27/athletic-gk_away.webp",
+      "box": [
+        0.1867024987219088,
+        0.3493237790876422,
+        0.22793093737041942
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106957",
+          "local": [
+            0.013556628268254173,
+            -0.0667791340422328,
+            0.11619473927760994
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106957",
+          "local": [
+            0.013360473955106537,
+            -0.09308124478297854,
+            0.11451348794996698
+          ],
+          "material": 0
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106957",
+          "local": [
+            0.013008845467684318,
+            -0.1109356100269481,
+            0.11149965740079694
+          ],
+          "material": 0
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106957",
+          "local": [
+            0.007589470318971477,
+            -0.1352717871515501,
+            0.06504984185729391
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106957",
+          "local": [
+            0.007998020286867734,
+            -0.15327482488093883,
+            0.06855155010378655
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106957",
+          "local": [
+            0.008452519771009666,
+            -0.17107225211215019,
+            0.07244709463128118
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01254706856917236,
+            -0.18214519639973006,
+            0.1075417376832022
+          ],
+          "material": 13
+        }
+      ]
+    },
+    {
+      "name": "Christ Inao Oulaï",
+      "sourceId": "170500",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 32726,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/fiorentina-home.webp",
+      "box": [
+        0.16000031379000018,
+        0.3059720574267979,
+        0.21410274167299415
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-170500",
+          "local": [
+            0.014640049338577849,
+            -0.07341858139042179,
+            0.12453540850327205
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-170500",
+          "local": [
+            0.012502972011375915,
+            -0.10410027002917799,
+            0.10635638520962477
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-170500",
+          "local": [
+            0.00737394878980177,
+            -0.1294083378411539,
+            0.06272640915221095
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-170500",
+          "local": [
+            0.007743127810352232,
+            -0.14952486546995658,
+            0.06586682617348007
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-170500",
+          "local": [
+            0.0026919624287592564,
+            -0.17768025645284702,
+            0.02289914692142492
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012636055358771407,
+            -0.18233153882717246,
+            0.10748845714801648
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013625329920057092,
+            -0.20009942435685657,
+            0.11590370963538078
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Mahamadou Susoho",
+      "sourceId": "167260",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 30359,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/kocaelispor-home.webp",
+      "box": [
+        0.20545879136031608,
+        0.32354751533693404,
+        0.2353184419886329
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-167260",
+          "local": [
+            0.013829518819645142,
+            -0.07276377681199708,
+            0.11778712169005512
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-167260",
+          "local": [
+            0.006948984357836613,
+            -0.10755118625292837,
+            0.059185057474025145
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-167260",
+          "local": [
+            0.006712134832523073,
+            -0.1281567516523594,
+            0.057167791058312156
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-167260",
+          "local": [
+            0.007716288720806874,
+            -0.14726062528051553,
+            0.06572025031429239
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-167260",
+          "local": [
+            0.008372416030003632,
+            -0.16651931324240365,
+            0.07130853926493486
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012491827131532213,
+            -0.1796983478657983,
+            0.10639389422449086
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013429945993988252,
+            -0.1972921018948599,
+            0.11438392786578278
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Anrie Chase",
+      "sourceId": "90104",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 26099,
+      "keeper": false,
+      "kit": "assets/kits/fm26-extra/salzburg-home.webp",
+      "box": [
+        0.32702126535960974,
+        0.37579406298066376,
+        0.32377470485069026
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-90104",
+          "local": [
+            0.013362840357411712,
+            -0.06798787710272824,
+            0.11410502690518864
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-90104",
+          "local": [
+            0.012894024716012366,
+            -0.0950199880142002,
+            0.11010181950731168
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-90104",
+          "local": [
+            0.006444113566792365,
+            -0.11966274569441993,
+            0.055026157033381325
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-90104",
+          "local": [
+            0.007441620252051266,
+            -0.13749193890901723,
+            0.06354384669480428
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-90104",
+          "local": [
+            0.008198219762604458,
+            -0.15531817177447071,
+            0.0700044348032477
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-90104",
+          "local": [
+            0.008218033089782167,
+            -0.17406759421789952,
+            0.07017362040827058
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01270808645536896,
+            -0.18485065844736948,
+            0.10851409641357135
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Taylan Antalyalı",
+      "sourceId": "124824",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 22662,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/caykur-rizespor-home.webp",
+      "box": [
+        0.1902798157043652,
+        0.33999159518734423,
+        0.26808825677963244
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-124824",
+          "local": [
+            0.0134374756671711,
+            -0.07097523347573122,
+            0.11446883194028357
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-124824",
+          "local": [
+            0.012255955525999368,
+            -0.09982926107651283,
+            0.10440390353976114
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-124824",
+          "local": [
+            0.006999107248900488,
+            -0.12428441298298967,
+            0.05962277821003004
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-124824",
+          "local": [
+            0.007562601531482166,
+            -0.14336001214137786,
+            0.06442297535492503
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-124824",
+          "local": [
+            0.008315105363560338,
+            -0.16197041385592884,
+            0.07083327419542927
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012232565970566059,
+            -0.17511680899170126,
+            0.10420465666063163
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01311466045551471,
+            -0.19236935749374512,
+            0.11171888982867519
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Eldor Shomurodov",
+      "sourceId": "106127",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 21946,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/basaksehir-home.webp",
+      "box": [
+        0.22394445952148473,
+        0.39297132995154804,
+        0.2436578649892951
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106127",
+          "local": [
+            0.012822128404564493,
+            -0.06763553161655622,
+            0.10898770117996526
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106127",
+          "local": [
+            0.012762028176738854,
+            -0.09420963543541339,
+            0.10847685107268068
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106127",
+          "local": [
+            0.007678812206631788,
+            -0.11704662560038281,
+            0.06526967004132857
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106127",
+          "local": [
+            0.007515126568420655,
+            -0.13586874105042956,
+            0.0638783470985278
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106127",
+          "local": [
+            0.008037345853926459,
+            -0.15383750718604117,
+            0.0683171951308762
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-106127",
+          "local": [
+            0.00793894304008877,
+            -0.1725952653277234,
+            0.06748077420827847
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012683674550004756,
+            -0.18312842395005258,
+            0.10781084763023885
+          ],
+          "material": 12
+        }
+      ]
+    },
+    {
+      "name": "Davide Frattesi",
+      "sourceId": "114835",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 21935,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/lazio-home.webp",
+      "box": [
+        0.1794306093840325,
+        0.32816171264635985,
+        0.23091731444544977
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-114835",
+          "local": [
+            0.013785951013578195,
+            -0.07172030265043493,
+            0.1175151544789644
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-114835",
+          "local": [
+            0.012623994198202575,
+            -0.10085044669506235,
+            0.1076103220504829
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-114835",
+          "local": [
+            0.006771052197029724,
+            -0.12624928578629577,
+            0.05771827015309826
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-114835",
+          "local": [
+            0.007686960104086911,
+            -0.14517292668988865,
+            0.06552571550672802
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-114835",
+          "local": [
+            0.008408381923358172,
+            -0.16405613072018307,
+            0.07167530913669627
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012353688200327142,
+            -0.17728751292015563,
+            0.10530616101976095
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013254457080562675,
+            -0.19470721460513069,
+            0.11298455723678377
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Ángel Ortiz",
+      "sourceId": "173330",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 20992,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/real-betis-home.webp",
+      "box": [
+        0.15772867354294923,
+        0.3129166443457547,
+        0.22020406470398135
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-173330",
+          "local": [
+            0.012654607225810785,
+            -0.07733436502061242,
+            0.10682929666469423
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-173330",
+          "local": [
+            0.007078566325122312,
+            -0.11274153828037514,
+            0.059756754865125127
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-173330",
+          "local": [
+            0.007016727618838232,
+            -0.1341393098896615,
+            0.05923471689262207
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-173330",
+          "local": [
+            0.007685104310835078,
+            -0.15464467741114074,
+            0.0648771055214419
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-173330",
+          "local": [
+            0.0009128778953742117,
+            -0.18591375286427092,
+            0.0077064504463381115
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013017739642767576,
+            -0.18829090502705603,
+            0.10989483477325881
+          ],
+          "material": 1
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.014193136560397904,
+            -0.2063918169329686,
+            0.11981745218616283
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Tijjani Noslin",
+      "sourceId": "147501",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 9714,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/lazio-home.webp",
+      "box": [
+        0.17381041915188244,
+        0.3629610473786402,
+        0.3150434307106138
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-147501",
+          "local": [
+            0.014167865836873739,
+            -0.07052934360808007,
+            0.1206907527576574
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-147501",
+          "local": [
+            0.013295188800878002,
+            -0.0989026200158725,
+            0.11325674331676339
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-147501",
+          "local": [
+            0.007165470476120844,
+            -0.1241048457485974,
+            0.061039964351937266
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-147501",
+          "local": [
+            0.007696498517508213,
+            -0.14319032631656373,
+            0.06556359372480024
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-147501",
+          "local": [
+            0.008278258299285454,
+            -0.16202404152249586,
+            0.07051938782923638
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012232565970566059,
+            -0.17511680899170126,
+            0.10420465666063163
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.01311466045551471,
+            -0.19236935749374512,
+            0.11171888982867519
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Romano Floriani",
+      "sourceId": "148223",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 10203,
+      "keeper": false,
+      "kit": "assets/kits/2026-27/lazio-home.webp",
+      "box": [
+        0.20034200485363002,
+        0.3467778093887097,
+        0.2545907765996437
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-148223",
+          "local": [
+            0.013745642291705329,
+            -0.06823191411814467,
+            0.11630097563908634
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-148223",
+          "local": [
+            0.012663299777444403,
+            -0.09585514515096061,
+            0.1071433467911319
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-148223",
+          "local": [
+            0.0073557739440779785,
+            -0.11915037544112339,
+            0.06223671969065347
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-148223",
+          "local": [
+            0.007621494688907271,
+            -0.13781280041366029,
+            0.06448496544122416
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-148223",
+          "local": [
+            0.008086378452798706,
+            -0.1561383340413962,
+            0.0684183164008929
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-148223",
+          "local": [
+            0.008719977533258164,
+            -0.174069500216818,
+            0.07377915656082688
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012873467698361715,
+            -0.18588139422095984,
+            0.10892156375124172
+          ],
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Mykola Matviyenko",
+      "sourceId": "116375",
+      "loaded": true,
+      "meshes": 1,
+      "triangles": 9966,
+      "keeper": false,
+      "kit": "assets/kits/fm26-extra/shakhtar-donetsk-home.webp",
+      "box": [
+        0.17404847311520438,
+        0.34028676945556535,
+        0.23851370855789233
+      ],
+      "rays": [
+        {
+          "y": 270,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-116375",
+          "local": [
+            0.015379431746150595,
+            -0.06895239609757552,
+            0.13067233223218497
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 300,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-116375",
+          "local": [
+            0.01443471823837186,
+            -0.09670723452633243,
+            0.12264551307590699
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 320,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-116375",
+          "local": [
+            0.013334591525099204,
+            -0.11601382174318339,
+            0.11329821561088527
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 340,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-116375",
+          "local": [
+            0.007740382550702208,
+            -0.14126170494377496,
+            0.06576665880537147
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 360,
+          "mesh": "real-head-surface",
+          "parent": "real-player-head-116375",
+          "local": [
+            0.008255917790391405,
+            -0.15995094173964827,
+            0.07014693716870724
+          ],
+          "material": 0,
+          "real": true
+        },
+        {
+          "y": 380,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.012137889240016502,
+            -0.17310977723209683,
+            0.10313035758072842
+          ],
+          "material": 12
+        },
+        {
+          "y": 400,
+          "mesh": "fullbody-clothed-athlete",
+          "parent": "",
+          "local": [
+            0.013024661986300683,
+            -0.19019073411193638,
+            0.11066487932571378
+          ],
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "height": 2306
+}

@@ -1,0 +1,154 @@
+{
+  "stages": [
+    {
+      "log": "v251-head-import-retry.log",
+      "pass": true,
+      "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+      "converted": 465,
+      "identityExtensions": 0,
+      "bytes": 125950667,
+      "failed": [],
+      "unavailable": [
+        {
+          "name": "Castello Lukeba",
+          "fmUID": "49056273",
+          "reason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
+        }
+      ],
+      "installed": true,
+      "profileIdentityLinksCount": 0
+    },
+    {
+      "log": "v251-final-rfh-import.log",
+      "pass": true,
+      "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+      "converted": 98,
+      "identityExtensions": 0,
+      "bytes": 27911227,
+      "failed": [],
+      "unavailable": [
+        {
+          "name": "Castello Lukeba",
+          "fmUID": "49056273",
+          "reason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
+        }
+      ],
+      "installed": true,
+      "profileIdentityLinksCount": 0
+    },
+    {
+      "log": "v251-final-three-import.log",
+      "pass": true,
+      "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+      "converted": 3,
+      "identityExtensions": 0,
+      "bytes": 804341,
+      "failed": [],
+      "unavailable": [
+        {
+          "name": "Castello Lukeba",
+          "fmUID": "49056273",
+          "reason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
+        }
+      ],
+      "installed": true,
+      "profileIdentityLinksCount": 40
+    },
+    {
+      "log": "v251-nico-import.log",
+      "pass": true,
+      "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+      "converted": 1,
+      "identityExtensions": 0,
+      "bytes": 408287,
+      "failed": [],
+      "unavailable": [
+        {
+          "name": "Castello Lukeba",
+          "fmUID": "49056273",
+          "reason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
+        }
+      ],
+      "installed": true,
+      "profileIdentityLinksCount": 3
+    },
+    {
+      "log": "v251-all-clubs-import.log",
+      "pass": true,
+      "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+      "converted": 1208,
+      "identityExtensions": 0,
+      "bytes": 329071298,
+      "failed": [],
+      "unavailable": [
+        {
+          "name": "Castello Lukeba",
+          "fmUID": "49056273",
+          "reason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
+        }
+      ],
+      "installed": true,
+      "profileIdentityLinksCount": 87
+    },
+    {
+      "log": "v251-club-prefix-import.log",
+      "pass": true,
+      "csvSHA256": "aec39104895990d07ceb7e2e072a6f83ee4d104e1e9e74bf36aecb4a8b0d2c9d",
+      "converted": 213,
+      "identityExtensions": 0,
+      "bytes": 58686346,
+      "failed": [],
+      "unavailable": [
+        {
+          "name": "Castello Lukeba",
+          "fmUID": "49056273",
+          "reason": "Visible polygonal hair-card artifact in close-up; threshold/UV trials did not improve it. Retain own verified portrait until a better source is available."
+        }
+      ],
+      "installed": true,
+      "profileIdentityLinksCount": 947
+    }
+  ],
+  "publicSources": [
+    {
+      "name": "Ezequiel Fernández",
+      "sourceId": "140305",
+      "sourcePage": "https://www.patreon.com/TobiasFacemaker/posts/ezequiel-pes-102667685?l=es",
+      "sourceDownload": "https://www.patreon.com/file?h=102667685&m=298756996",
+      "sourceCredit": "Tobías Facemaker — EZEQUIEL FERNÁNDEZ, PES 2021 (free face), 19 April 2024",
+      "sourceArchiveSHA256": "82236908bae7359bff502a7f3cb05741ceb63417b51be91605bcf5621b688b91",
+      "bytes": 319269,
+      "sha256": "6388b62cc966dd129f7bb6abf83cbc261adcda0e5078c49165dc85a716fd2d16"
+    },
+    {
+      "name": "Konstantinos Koulierakis",
+      "sourceId": "152910",
+      "sourcePage": "https://pes-files.ru/pes_2021_konstantinos_koulierakis_face",
+      "sourceDownload": "https://modsfire.com/0S0h2x2I7vX345u",
+      "sourceCredit": "Luka — PES2021KonstantinosKoulierakis face, public free download",
+      "sourceArchiveSHA256": "95e7a22b0473fe7a77459bd2905e41e7b99a9ccddff661c993b0816e12c996de",
+      "bytes": 710812,
+      "sha256": "6a91ad21744f7b99d8204e8a92390ac39a04ed962651c1c57919ef5d20406b9a"
+    },
+    {
+      "name": "Joseph Willock",
+      "sourceId": "117917",
+      "sourcePage": "https://pes-files.ru/pes_2021_facepack_newcastle_united_2026_27",
+      "sourceDownload": "https://modsfire.com/LumH911ndaM8f6S",
+      "sourceCredit": "All Makers Newcastle United mini-patch 2026/27; creator credits listed on source page (Jacobson, TradTrad1000, Jonathan, HS, HD, Valentinlgs10 and others)",
+      "sourceArchiveSHA256": "f102518e0515cebc248b0f9669ee11b80a64fa3e65b861ca645a9171451eba59",
+      "bytes": 401031,
+      "sha256": "5262466cd240436be60118bef13d5441d048273d45ddd02c6947919470b5622c"
+    },
+    {
+      "name": "Aleksey Batrakov",
+      "sourceId": "95182",
+      "sourcePage": "https://pes-files.ru/aleksei_bartakov_face",
+      "sourceDownload": "https://modsfire.com/Wzbdv46yewcHIfp",
+      "sourceCredit": "Obsessed Artist — Aleksey Batrakov face, public free release2026-02-23",
+      "sourceArchiveSHA256": "de1d16f8577f661950701bc2380ee03bf938454a98a326d1fe9d48794d1d1889",
+      "bytes": 338411,
+      "sha256": "3400032d4a909a3cf5d5c19e9607bc662840d4680d081cc2c270e51039282438"
+    }
+  ]
+}

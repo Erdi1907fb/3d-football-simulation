@@ -1,0 +1,139 @@
+{
+  "heads": [
+    {
+      "name": "Matvey Safonov",
+      "id": "fm-800880"
+    },
+    {
+      "name": "Nuno Mendes",
+      "id": "290591"
+    },
+    {
+      "name": "Marquinhos",
+      "id": "159047"
+    },
+    {
+      "name": "Willian Pacho",
+      "id": "287005"
+    },
+    {
+      "name": "Achraf Hakimi",
+      "id": "240233"
+    },
+    {
+      "name": "Vítinha",
+      "id": "288897"
+    },
+    {
+      "name": "Warren Zaïre-Emery",
+      "id": "345581"
+    },
+    {
+      "name": "Fabián Ruiz",
+      "id": "214596"
+    },
+    {
+      "name": "Senny Mayulu",
+      "id": "379088"
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "id": "229744"
+    },
+    {
+      "name": "Maghnes Akliouche",
+      "id": "329690"
+    },
+    {
+      "name": "Devis Vásquez",
+      "id": "234300"
+    },
+    {
+      "name": "Gianluca Mancini",
+      "id": "212597"
+    },
+    {
+      "name": "Evan N'Dicka",
+      "id": "242593"
+    },
+    {
+      "name": "Mario Hermoso",
+      "id": "222529"
+    },
+    {
+      "name": "Wesley",
+      "id": "332354"
+    },
+    {
+      "name": "Bryan Cristante",
+      "id": "169213"
+    },
+    {
+      "name": "Manu Koné",
+      "id": "285226"
+    },
+    {
+      "name": "Nahuel Molina",
+      "id": "164826"
+    },
+    {
+      "name": "Matías Soulé",
+      "id": "fm-1280082"
+    },
+    {
+      "name": "Rodrigo Mora",
+      "id": "387204"
+    },
+    {
+      "name": "Donyell Malen",
+      "id": "259481"
+    }
+  ],
+  "headFailures": [],
+  "buffer": [
+    1280,
+    720
+  ],
+  "ball": {
+    "x": -36.609448916760286,
+    "z": -9.930501290307484,
+    "y": 0.11
+  },
+  "lighting": {
+    "mode": "night",
+    "temperatureK": 5600,
+    "towers": 4,
+    "panels": 96,
+    "realTimeLights": 4,
+    "shadowMaps": 0,
+    "steady": true
+  },
+  "phase": "playing",
+  "time": 41.15347800440372,
+  "physicsTime": 1.6199999999999974,
+  "camera": [
+    -34.45834409764301,
+    14.419762894305041,
+    17.189300337850312
+  ],
+  "transition": 0,
+  "post": {
+    "build": 106,
+    "lighting": "directional-key / sky-fill / stadium-rim",
+    "post": "HDR / DOF / UnrealBloom / ACES / broadcast grade / SMAA / sharpen (three.js r160)",
+    "grassInstances": 0,
+    "extraFieldDraws": 0,
+    "clothMaterials": 66,
+    "skinMaterials": 22,
+    "shadowMaps": 1,
+    "drawCalls": 1,
+    "triangles": 1,
+    "surface": "continuous-PBR-turf",
+    "msaaSamples": 0,
+    "hdrResolve": "direct-single-sample"
+  },
+  "minute": 11.959999999999994,
+  "replay": false,
+  "ballTrace": [],
+  "shaderErrors": []
+}

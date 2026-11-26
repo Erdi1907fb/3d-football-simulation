@@ -1,3 +1,8 @@
+## V251 · all-club real heads and verified line stability
+3,073real models; +1,992, old1,081binary hashes unchanged. All180installed club rosters/profiles audited; 3857/8140identity records real, first11 1336/1980. Priority66clubs: 1924/2732, first11 661/726. Remaining source/DOB gaps remain explicit and retain own fallback. Birth-day/name/ID guards preserved; Batrakov and three other public free sources supplement RFH. No roster/forecast/physics edits.
+Cloud's ≤1m segments/paint height/min-width are preserved; V251 edge/paint filtering passes48subpixel phases. Original white streak is not physically verified on Windows. Full suite and final checks PASS; exact stages and limits in research/heads-v251/README.md. Runtime model bytes 951,342,838; RFH cap800MB and on-demand loading, no raw packs. Aylık remains paused; main push is not deployment.
+
+<!-- END V251 -->
 # PROJECT_STATE — next90sim (3D Football Simulation)
 
 ## V246 · yıldız kimlikleri ve render uyumluluğu
@@ -24,7 +29,7 @@ T-400 eksik FM27/PES kafaları sırada: seçici RFH alımı ve tek pilot doğrul
 - Yeni Mixamo/Quaternius locomotion paketi çalışma zamanına eklenmedi; mevcut ortak futbol animasyon otoritesi korunur. Kaynak modellerin kredileri/hashleri ASSET-LICENSES ve head-import içinde; topluluk yüz paketleri CC0 olarak etiketlenmez.
 - Doğrulama/örnekler: docs/ai/research/heads-v243/README.md. Kaynak converter ve compressed manifest tarayıcıda tek ortak runtime kullanır; henüz model bulunmayan kimlikler için mevcut oyuncu fotoğrafı geçerlidir. Yeni dış hareket klipleri entegre edilmiş sayılmaz.
 
-> Son güncelleme: **V245** · 2026-11-25 · Codex (T-399 genel görüntü kararlılığı; T-400 seçici gerçek kafa genişlemesi)
+> Son güncelleme: **V251** · 2026-11-26 · Codex — gerçek kafalar ve çizgi doğrulaması
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 

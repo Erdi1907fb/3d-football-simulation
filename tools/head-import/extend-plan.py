@@ -17,7 +17,7 @@ tools/head-import/fm27-plan.json. It never edits squads and never matches on a n
 
 Usage: python3 tools/head-import/extend-plan.py --csv RealFaces-players.csv [--write] [--budget-mb 260] [--available-index stage/index-4.json ...]
 """
-import argparse, csv, json, pathlib, unicodedata, collections, re
+import argparse, csv, json, pathlib, unicodedata, collections, re, importlib.util
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 AVG_BYTES = 300_000
@@ -36,6 +36,11 @@ def norm(s):
     s = ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
     return re.sub(r'[^a-z0-9]+', ' ', s.lower()).strip()
 
+def club_key(s):
+    # Legal club prefixes vary inside the same source CSV; never collapse city/united/real.
+    legal={'fc','cf','sc','sk','fk','ac','afc','rsc','ssc','as','sv','tsv','ks','kv','pfk','pfc','us','club','calcio'}
+    return ' '.join(w for w in norm(s).split() if w not in legal)
+
 def full_names(p):
     out = []
     for n in [p.get('name')] + list(p.get('aliases') or []) + list(p.get('names') or []):
@@ -46,6 +51,7 @@ def full_names(p):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--csv', required=True); ap.add_argument('--write', action='store_true'); ap.add_argument('--budget-mb', type=float); ap.add_argument('--available-index', action='append', default=[], help='stage index-N.json; keep only candidates whose FM UID is in these archives')
+    ap.add_argument('--all-clubs',action='store_true',help='After priority clubs, inspect every installed club profile in the registry; no national-club guessing')
     a = ap.parse_args()
     rows = [r for r in csv.DictReader(open(a.csv, encoding='utf-8-sig'), delimiter=';') if r['Club'] not in ('Manager', '', '-')]
     by_name = collections.defaultdict(list)
@@ -53,15 +59,20 @@ def main():
     uid_club = {r['UID']: r['Club'] for r in rows}
     plan_path = ROOT / 'tools/head-import/fm27-plan.json'; plan = json.loads(plan_path.read_text())
     manifest = json.loads((ROOT / 'assets/heads/manifest.json').read_text())
-    have_ids = {i for e in manifest['players'] for i in e['ids']}
     head_uid = {i: e.get('fmUID') for e in manifest['players'] for i in e['ids'] if e.get('fmUID')}
-    planned_uids = {p['fmUID'] for p in plan['players']}; planned_ids = {i for p in plan['players'] for i in p['ids']}
+    planned_uids = {p['fmUID'] for p in plan['players']}
     reg = json.loads((ROOT / 'assets/club-rosters-v75.json').read_text())['teams']
     budget = (a.budget_mb * 1e6 if a.budget_mb else plan['budgetBytes'])
     used = sum(e['bytes'] for e in manifest['players'] if e.get('source') == 'fm27-realfaces-v2')
     room = max(0, int((budget - used) // AVG_BYTES))
     TOP = set(TR_SUPER_LIG + ['real-madrid', 'barcelona', 'atletico', 'man-city', 'liverpool', 'arsenal', 'man-utd', 'chelsea', 'tottenham', 'bayern', 'dortmund', 'leverkusen', 'inter', 'milan', 'juventus', 'napoli', 'roma', 'psg'])
-    teams = [(s, 0 if s in TOP else 1) for s in TR_SUPER_LIG + BIG_CLUBS]
+    slugs=list(dict.fromkeys(TR_SUPER_LIG+BIG_CLUBS))
+    if a.all_clubs:
+        for f in sorted((ROOT/'assets/player-profiles').glob('*.json')):
+            prof=json.loads(f.read_text());tid=str(prof.get('providerTeamId') or '')
+            if tid in reg and reg[tid].get('competitionId')!='fifa.friendly' and f.stem not in slugs:slugs.append(f.stem)
+    teams = [(s, 0 if s in TOP else 1) for s in slugs]
+    spec=importlib.util.spec_from_file_location('guarded_import',ROOT/'tools/head-import/import-fm27.py');guard=importlib.util.module_from_spec(spec);spec.loader.exec_module(guard)
     cands, skipped, team_clubs = [], collections.Counter(), {}
     for slug, tier in teams:
         f = ROOT / f'assets/player-profiles/{slug}.json'
@@ -71,26 +82,27 @@ def main():
         first = {str(p['id']) for p in (roster.get('players') or [])}
         people = {str(p['id']): p for p in prof['players']}
         for p in (roster.get('players') or []) + (roster.get('bench') or []): people.setdefault(str(p['id']), p)
-        votes = collections.Counter(uid_club[head_uid[i]] for i in people if i in head_uid and head_uid[i] in uid_club)
+        votes = collections.Counter(club_key(uid_club[head_uid[i]]) for i in people if i in head_uid and head_uid[i] in uid_club)
         if sum(votes.values()) < 3:
             for i, p in people.items():
                 for k in full_names(p)[:1]:
-                    if len(by_name.get(k, [])) == 1: votes[by_name[k][0]['Club']] += 1
+                    if len(by_name.get(k, [])) == 1: votes[club_key(by_name[k][0]['Club'])] += 1
         if not votes: skipped['no-club-vote:' + slug] += 1; continue
         club, n = votes.most_common(1)[0]
         if n < 3 or n < .5 * sum(votes.values()): skipped['weak-club-vote:' + slug] += 1; continue
         team_clubs[slug] = club
         for i, p in people.items():
-            if i in have_ids or i in planned_ids or not p.get('dateOfBirth'): continue
-            hits = {r['UID']: r for k in full_names(p) for r in by_name.get(k, []) if r['Club'] == club}
+            identity={'ids':[i],'names':[p['name'],*p.get('aliases',[])],'dateOfBirth':p.get('dateOfBirth','')[:10]}
+            if not identity['dateOfBirth'] or guard.has_identity(manifest,identity) or guard.has_identity({'players':plan['players']},identity):continue
+            hits = {r['UID']: r for k in full_names(p) for r in by_name.get(k, []) if club_key(r['Club']) == club}
             if len(hits) != 1: skipped['no-unique-same-club-row'] += 1; continue
             r = next(iter(hits.values()))
             if r['UID'] in planned_uids: skipped['uid-already-planned'] += 1; continue
             prio = (0 if i in first else 1, tier)  # every first-team player before any reserve; then Turkish league and biggest clubs
             cands.append((prio, {'name': p['name'], 'names': list(dict.fromkeys([p['name']] + list(p.get('aliases') or []))), 'ids': [i],
-                'clubs': [reg_id] if reg_id in reg else [], 'dateOfBirth': p['dateOfBirth'], 'fmUID': r['UID'], 'sourceName': r['Name'],
+                'clubs': [reg_id] if reg_id in reg else [], 'dateOfBirth': p['dateOfBirth'][:10], 'fmUID': r['UID'], 'sourceName': r['Name'],
                 'sourceClub': r['Club'], 'gameClub': prof.get('name') or slug, 'profileSources': [f'assets/player-profiles/{slug}.json'],
-                'identityEvidence': 'V248 extension: exactly one author-CSV row with this full name/alias at the team club found by vote of existing heads; bind existing game ID and full DOB; no roster edits'}))
+                'identityEvidence': 'V251 extension: exactly one author-CSV full name/alias at the club found by majority vote; only legal FC/FK/RSC/etc prefixes normalised, no city/united/real guessing; bind existing game ID and full DOB; no roster edits'}))
     if a.available_index:
         avail = {f['uid'] for x in a.available_index for f in json.loads(pathlib.Path(x).read_text())['files']}
         cands = [(p, c) for p, c in cands if c['fmUID'] in avail]
@@ -103,6 +115,10 @@ def main():
               'deferredByBudget': [c['name'] for c in chosen[room:]], 'byTeam': collections.Counter(c['gameClub'] for c in chosen).most_common(), 'firstTeamCandidates': sum(1 for p, c in sorted(cands, key=lambda x: x[0]) if p[0] == 0), 'added_names': [c['name'] + ' (' + c['gameClub'] + ')' for c in kept]}
     if a.write:
         plan['players'].extend(kept)
+        if a.all_clubs:
+            plan['scope']='all-installed-clubs'
+            plan['focusProfileSlugs']=list(dict.fromkeys(TR_SUPER_LIG+BIG_CLUBS))
+            plan['priorityProfileSlugs']=list(dict.fromkeys(plan.get('priorityProfileSlugs',[])+slugs))
         if a.budget_mb: plan['budgetBytes'] = int(a.budget_mb * 1e6)
         plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps(report, ensure_ascii=False, indent=1))

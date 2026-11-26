@@ -1,3 +1,7 @@
+## V251 · selective all-club extension (2026-11-26)
+1,988additional FM27 RealFaces v2 heads (1,992total new heads including four public PES assets) extend the existing credited family. Exact source archive/member/SHA, RFH SHA, model SHA and identity evidence remain in assets/heads/manifest.json and tools/head-import/fm27-sources.json. Sources are free community releases; no CC0 assertion or blanket proprietary rights claim. Only compressed portable reviewed models ship, not full game/plugin/source archives.
+Public source credits: Tobias/TobiasFacemaker — Equi/Ezequiel Fernández, https://www.patreon.com/TobiasFacemaker/posts/ezequiel-pes-102667685?l=es ; Luka — Konstantinos Koulierakis, https://pes-files.ru/pes_2021_konstantinos_koulierakis_face ; Newcastle2026/27All Makers (full maker list on page) — Joseph Willock, https://pes-files.ru/pes_2021_facepack_newcastle_united_2026_27 ; Obsessed Artist — Aleksey Batrakov, https://pes-files.ru/aleksei_bartakov_face . Exact archive SHA256 values are on their manifest entries. Batrakov maker replacement95182is explicitly identity-bound, not treated as a universal PES player ID. Existing kits/body/animation sources remain unchanged.
+
 # Goal celebration animations — v73
 
 KayKit Cheer and Quaternius Dance_Loop (free Standard) are CC0; converted

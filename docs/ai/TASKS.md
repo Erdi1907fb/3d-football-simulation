@@ -1,4 +1,4 @@
-> **2026-11-25: V246 — 1.066 gerçek kafa; Dembélé/Dybala ve32kulüp profili,181yeni model. T-402 render uyumluluk düzeltmesi yapıldı; özgün Windows GPU izi burada üretilemedi, fiziksel doğrulama açık. Kaynak eksikleri T-400, Aylık T-401 bekliyor. Main push Hostinger dağıtımı değildir.**
+> **2026-11-26: V251 — 3,073 gerçek kafa; tüm180kulüp kapsam raporu. Çizgi regresyonu PASS; gerçek kaynak/kimlik eksikleri T-400 içinde açık.**
 
 # TASKS — görev panosu
 
@@ -10,10 +10,15 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
+| T-409 | Turnuva adını ayak tenisi/bowling sonuçlarında TR ve EN diline göre göster | todo (after V251) | codex | User order: face release first; shared competition/title metadata and result overlays. |
+| T-408 | Mohamed Salah gövdesindeki gereksiz kilolu görünümü doğrula/düzelt | todo (after V251) | codex | Existing body source/height/weight/physique mapping; no arbitrary squad/stat edits. |
+| T-407 | Haftalık penaltıda düzenlenebilir/boş bırakılabilir senaryo seed alanı | todo (after V251) | codex | Empty generates new seed/scenario, explicit seed replays; protected real forecast unchanged. |
+| T-406 | Ayak tenisinde ilk sekme içerideyse ikinci dış sekmeye aut yazma | todo (after V251) | codex | Determine point from legal first bounce/receiver failure; first bounce outside stays out. Engine + TR/EN explanation. |
+| T-405 | Cloud çizgi düzeltmesini doğrula, bütün kurulu lig/kupa kulüplerinin gerçek kafalarını genişlet | partial (V251 sources) | codex | 1,992yeni/3,073toplam;180kulüp, first11 1336/1980. Çizgi48faz PASS. Dosyalar: shared paint, head runtime/import/manifest, research/heads-v251. Kalan kaynaklar remaining-identities.json. |
 | T-402 | PSG–Roma beyaz saha izleri: ortak render/GLSL uyumluluğu | partial (physical GPU verification) | codex | Özel half-float MSAA resolve kaldırıldı; boya/flaş/hava/stüdyo ters smoothstep düzeltildi. Actual PSG–Roma22model + yağmur/kar shader derleme PASS. Özgün kullanıcı WindowsGPUizi SwiftShader öncesi/sonrası üretilemedi; kesin donanım fix iddiası yok. research/pitch-heads-v246. |
 | T-403 | Dembélé/Dybala ve haftalık canlı kadroların gerçek kafa aktarım/kimlik düzeltmesi | done (V246) | codex |181yeni/1.066toplam;32profil809/984kayıt.17incelenmiş kaynak aliası; DOB+ad/IDkoruması. Actual PSG–Roma22ilk11modeli yüklü,12gerçek yakınplan ve1.066geometri/288boyunpozu PASS. Kadro/analiz/fizik aynı; kalan kaynaklar T-400. |
 | T-399 | Genel kareler arası kalite dalgalanması:11v11→bowling, son kamera/tribün/çim/postFX/MP4 hattını düzelt ve hareketli karşılaştır | done (V244) | codex |77/77;8ana mod+3varyant/mobil; hareketli çim ve kısa1080p60MP4. research/temporal-v244; fiziksel cihaz/tam maç ayrı. |
-| T-400 | Eksik gerçek kafaları ücretsiz FM27/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | partial (V246 source gaps) | codex |1.066toplam,181V246ek;55.6MB. Fábio artık mevcut. Batrakov kaynakta yok; Lukeba saç görseli reddedildi; bazı eski profillerde DOB/IDçelişkisi var.32profilde175eksik, çoğu genç; kendi portre/genel görünümü korunur. research/pitch-heads-v246/profile-coverage.json. |
+| T-400 | Eksik gerçek kafaları ücretsiz FM27/PES kaynaklarından kimlikli, sıkıştırılmış biçimde tamamla | partial (V251 source/identity gaps) | codex | 3,073toplam; Batrakov artık gerçek model.180kulüp kapsamı ve her eksik research/heads-v251/remaining-identities.json; yanlış DOB/ad bağlanmaz, kendi fallback korunur. |
 | T-401 | Aylık / Headers and Volleys modu | paused (user) | — | T-399/T-400 bittikten sonra kullanıcıyla ele alınır; şu an ekleme. |
 | T-398 | Bütün modlarda sahne ilerledikçe ayrıntı/çözünürlük kaybını incele, kararlı oyuncu/forma kalitesi ve zaman boyunca doğrula | done (V243) | codex | files: scene, browser quality audit; 8mod×4zaman +36kare gerçek1080p60 hareketli MP4/yazılım kodlayıcı PASS. |
 | T-397 | Gerçek kafalar: boyun/gövde ve ten uyumu, gerçek forma kimliği, tüm modlar/öncelikli büyük takım tam kadro kapsamı, boyut optimizasyonu ve kanıtlı güvenli temizlik | done (V243) | codex | files: player-heads/faces/fullbody, head-import/heads, face-coverage, tests/docs; gerçek model yoksa mevcut doğrulanmış görsel korunur. |

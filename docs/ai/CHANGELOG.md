@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V251 · 2026-11-26
+- Cloud V250 çizgi kaybolması düzeltmesi doğrulandı; kalan ince kenar titreşimi azaltıldı.48fazlık üretim boya testi PASS. Fiziksel Windows GPU'sundaki özgün beyaz eğri izi burada üretilmedi; kesin cihaz teyidi iddiası yok.
+- 1,992yeni gerçek kafa, toplam3,073; eski1.081dosya SHA'ları aynı. Büyük kulüpler öncelikli olmak üzere180kurulu kulüp tarandı. Batrakov/Equi/Koulierakis/Willock ücretsiz alternatiflerden, diğerleri seçici RFH. Doğum tarihi biçimi ve ID çakışması eşleştirme hataları düzeltildi; forma/gövde/analiz/fizik korunur.
+- 78/78tam paket ve final geometri/hash/temsilî boyun/ten/forma kontrolleri PASS. Kaynakta bulunmayan veya kimliği çelişen oyuncular tamamlanmış sayılmaz. Ayrıntılı kapsam ve kalan kuyruk research/heads-v251 içinde.
+
 ## V250 · 2026-11-25
 - 15 yeni gerçek FM27 kafa (kaynak: RealFaces v1.0.2 ve v1.1.1 yama arşivleri — bu ortamdan erişilebilen tek parçalar; 4 ana parça MediaFire Cloudflare kontrolünde, bypass yok): Kasımpaşa (Baldursson, Çörekçi, Albayrak), Başakşehir (Şahiner), Göztepe (Kurtulan), Gençlerbirliği (Eğribayat), Fiorentina (Pellegrino), Frankfurt (Amaimouni-Echghouyab), Nice (Jansson), AZ (Owusu-Oduro, Kwakman), Feyenoord (Zechiël, Borges), Club Brugge (Sabbe), Shakhtar (Newertton). +4,1 MB; toplam FM27 749, model 1.081. Bütçe 260 MB değişmedi.
 - Kimlik koruması aynı: tekil aynı-kulüp tam ad/alias CSV satırı, takım CSV kulübü mevcut kafaların oyuyla, oyun ID+DOB'si. Kerem Aktürkoğlu, Vinícius, Koundé, Trent vb. yamalarda vardı ama zaten PES gerçek kafaları olduğu için atlandı.
