@@ -65,11 +65,11 @@ Bowlingde aktif oyuncu ismi gerçek baş konumundan takip edilir; alt panel vuru
 
 | Alan | Değer |
 |---|---|
-| Kaynak sürümü | **V250** (`VERSION`; V249 taç çizgisi ≤1 m parça + V250 15 yeni FM27 kafa, toplam 1.081 model) |
+| Kaynak sürümü | **V253** (`VERSION`; bozuk kafa onarımı/kapatma + 1,5× süper örneklemeli video, 40 Mbps) |
 | Sonraki geliştirme hedefi | T-328/T-325 fiziksel iPhone doğrulaması; T-317 ve T-312 ayrı açık |
 | Devralınan başlangıç | V107 (6 Kasım 2026, ChatGPT/Codex geçmişi — `docs/archive/SURUM-v107.txt`) |
 | Yayın | Hostinger statik `public_html` + PHP. Canlı site (https://darkgreen-penguin-901774.hostingersite.com) son salt-okuma kontrolde **build183 / filesMatch=true** (2026-11-15); V187 bu oturumda Hostinger'a dağıtılmadı. PHP8.3.36/cron bilgisi önceki2026-11-09 `durum.php` kaydıdır; cron yeni kontrolde doğrulanmadı. |
-| Sürüm doğrulama | `build.php` → `assets/release-v250.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası250 |
+| Sürüm doğrulama | `build.php` → `assets/release-v253.json` (sha256 listesi, `tools/make-release.cjs`); `build.php` ve `index.php` build numarası253 |
 
 ## V236 — Futbol bowlingi ve haftalık ikililer
 - `bowling.html` (1v1/2v2, kısa4vuruş veya klasik4frame+bonus) ve ayak tenisi aynı footvolley-ui seçim/forma/numara/VideoCore hattındadır. Bowling fizik/venue/audio modülleri, isteğe bağlı yakın boot-detail; mevcut Scene oyuncuları/yüzleri/formaları/topu korunur.
