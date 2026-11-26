@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V256 · 2026-11-26
+- Gerçek hareket kaydından yürüme/koşu. Kaynaklar (lisans uygun): 100STYLE Neutral (Ian Mason, CC BY 4.0; Zenodo zip'inden aralıkla yalnız 12,2 MB) yürüme, hafif koşu, geri yürüme/koşu, yan yürüme/koşu; CMU Motion Capture subject 9 + 35 koşu denemeleri (~3,5 m/s, ticari ürün içinde serbest, ham veri satılmaz). 100STYLE "koşu" ~1,4 m/s hafif koşu olduğu için sprint CMU'dan.
+- tools/mocap/extract-gaits.py: BVH ve ASF/AMC FK, kalça yönlü yerel çerçeve, sol ayak temasından döngüler (her kaydın kendi içinde), 64 örneğe normalize, örnek başına ortanca; ayak yolu/yuvarlanma, kalça inip kalkma/salınım/dönüş, gövde eğimi, omuz salınımı/açılma, dirsek, baş. Döngü sayıları: yürüme 100, hafif koşu 81, geri 114/124, yan 95/63, sprint 13. Yan kayıtlar "sağa" normalize, sola harekette sol/sağ aynalanır. Çıktı assets/mocap-gaits.js (73 KB); ham kayıt yayınlanmaz.
+- athlete-motion.js: veri varsa formül ayak eğrisi/sinüs kollar yerine kayıt eğrileri; hız/yön harmanı (yürüme→hafif koşu→sprint, geri, yan). Motor kök hareketi, evre (1,42 m adım) ve temas pozları aynı; ayak hâlâ IK ile basar, salınım genliği her kayıtta motor adımına normalize (kayma eskisinden kötü değil).
+- Çömelme düzeltmesi: kalça yüksekliği .868/.818 → .915/.885 (basma ortası diz bükümü ~57–71° yerine gerçekçi ~18–40°).
+- Görsel: aynı evrelerde eski/yeni sprint, hafif koşu, geri koşu, yan adım; yeni yan adımda dizler çaprazlanmıyor. Test: tests/mocap-gait.cjs. ASSET-LICENSES kredileri.
+
 ## V255 · 2026-11-26
 - Bölgesel vücut: üç kaba tip yerine oyuncu başına sürekli profil (kütle m, üst gövde u, alt gövde l; -1..1). FC 26 verisinden türetilir: m = vücut tipi + BMI (+ çok çevik oyuncu hafifler), u = güç, l = sprint/hızlanma/sıçrama. Ham EA puanı saklanmaz; assets/player-builds.json şema 2 (6.084 oyuncu). Eşleşmeyenlere mevki varsayılanı (kaleci/stoper/kanat/forvet/orta saha, küçük değerler).
 - fullbody-runtime.js: paylaşılan gövdeye 9 bölgesel göreli morph (omuz, göğüs, sırt/lat, bel, kalça, uyluk, baldır, üst kol, ön kol) yükleme anında deri ağırlıkları ve kemik eksenlerinden üretilir; kalınlık kemiğe dik büyür, kemik boyu/eklem yeri/boyun-kafa oturuşu değişmez. Forma numarası/saç/sakal aynı morph setini paylaşır. Bölgesel profil varken tüm-gövde genişlik ölçeği yalnız hafif dürtülür (çift sayım yok); kullanıcı seçimi ve incelenmiş Salah eski davranışı korur.
