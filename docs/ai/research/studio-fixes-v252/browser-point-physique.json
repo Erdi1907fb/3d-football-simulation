@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "softwareWebGL": true,
+  "controlledWeeklyHost": true,
+  "errors": [],
+  "penalty": {},
+  "results": [],
+  "salah": {
+    "scales": {
+      "athletic": [
+        1.027688419961494,
+        0.9158829676071056,
+        1.02353515696727
+      ],
+      "slim": [
+        0.9660271147638043,
+        0.9158829676071056,
+        0.975275474316263
+      ]
+    },
+    "sourceUnchanged": true,
+    "source": {
+      "heightCm": 175.3,
+      "weightKg": 78
+    },
+    "realHead": "real-player-head-57123"
+  },
+  "point": {
+    "event": {
+      "type": "point",
+      "at": 25.84166666666584,
+      "team": 0,
+      "reason": "not-returned",
+      "score": [
+        2,
+        0
+      ]
+    },
+    "labels": [
+      "W. Pina",
+      "Trabzonspor",
+      "2",
+      "Galatasaray",
+      "0",
+      "AYAK TENİSİ · 2v2 · 5 SAYI",
+      "SAYI · Trabzonspor",
+      "Top içeride sekti · sayı"
+    ]
+  }
+}

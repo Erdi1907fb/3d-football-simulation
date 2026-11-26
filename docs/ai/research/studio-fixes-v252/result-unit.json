@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "cases": 36,
+  "homeAwayFixed": true,
+  "statisticsFixed": true,
+  "sharedCompactTemplate": true,
+  "drawsAndAwayWinners": true,
+  "penaltyScorePreserved": true
+}

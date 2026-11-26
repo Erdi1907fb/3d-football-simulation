@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V252 · 2026-11-26
+- Ayak tenisinde içerideki ilk sekmeden sonra kaçan top sayı sayılır; gerçek aut korunur, yanlış taraf puan hatası düzelir.
+- Haftalık penaltıda üstte belirgin senaryo kodu, yeni senaryo ve analiz düğmeleri; korunan analiz değişmeden boş/yeni kod ve deterministik tekrar.
+- Salah daha ince render gövdesi; kaynak ölçümler, gerçek kafa, takım forması ve kullanıcı özelleştirmesi korunur.
+- Ayak tenisi/bowling sonuçlarında TR/EN turnuva adı; özel turnuva adı ve sabit ev/deplasman sırası aynı. 79/79tam paket PASS, build252/filesMatch=true. Araştırma/test/görseller studio-fixes-v252 içinde.
+
 ## V251 · 2026-11-26
 - Cloud V250 çizgi kaybolması düzeltmesi doğrulandı; kalan ince kenar titreşimi azaltıldı.48fazlık üretim boya testi PASS. Fiziksel Windows GPU'sundaki özgün beyaz eğri izi burada üretilmedi; kesin cihaz teyidi iddiası yok.
 - 1,992yeni gerçek kafa, toplam3,073; eski1.081dosya SHA'ları aynı. Büyük kulüpler öncelikli olmak üzere180kurulu kulüp tarandı. Batrakov/Equi/Koulierakis/Willock ücretsiz alternatiflerden, diğerleri seçici RFH. Doğum tarihi biçimi ve ID çakışması eşleştirme hataları düzeltildi; forma/gövde/analiz/fizik korunur.

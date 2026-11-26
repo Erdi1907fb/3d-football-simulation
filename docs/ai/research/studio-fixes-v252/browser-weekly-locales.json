@@ -1,0 +1,154 @@
+{
+  "pass": true,
+  "softwareWebGL": true,
+  "controlledWeeklyHost": true,
+  "errors": [],
+  "penalty": {
+    "visible": true,
+    "inputRect": {
+      "x": 76,
+      "y": 215,
+      "width": 306,
+      "height": 44
+    },
+    "initial": "NEXT90-1MLI9AS",
+    "fresh": "NEXT90-38CQ66",
+    "explicitSeed": 240,
+    "replayExact": true,
+    "protectedFixtureUnchanged": true
+  },
+  "results": [
+    {
+      "sport": "footvolley",
+      "lang": "tr",
+      "competition": {
+        "key": "uecl",
+        "name": "UEFA Konferans Ligi",
+        "logo": "assets/competitions/broadcast/uecl-light.png?v=126",
+        "accent": "#0be53a"
+      },
+      "selected": "UEFA Konferans Ligi",
+      "labels": [
+        "Trabzonspor",
+        "2",
+        "Galatasaray",
+        "5",
+        "AYAK TENİSİ · 2v2 · 5 SAYI",
+        "UEFA Konferans Ligi",
+        "SONUÇ",
+        "Trabzonspor",
+        "2",
+        "RAKİP",
+        "Galatasaray",
+        "5",
+        "KAZANAN",
+        "–",
+        "AYAK TENİSİ · 2v2"
+      ]
+    },
+    {
+      "sport": "footvolley",
+      "lang": "en",
+      "competition": {
+        "key": "uecl",
+        "name": "UEFA Conference League",
+        "logo": "assets/competitions/broadcast/uecl-light.png?v=126",
+        "accent": "#0be53a"
+      },
+      "selected": "UEFA Conference League",
+      "labels": [
+        "Trabzonspor",
+        "2",
+        "Galatasaray",
+        "5",
+        "FOOT TENNIS · 2v2 · 5 PTS",
+        "UEFA Conference League",
+        "RESULT",
+        "Trabzonspor",
+        "2",
+        "OPPONENT",
+        "Galatasaray",
+        "5",
+        "WINNER",
+        "–",
+        "FOOT TENNIS · 2v2"
+      ]
+    },
+    {
+      "sport": "bowling",
+      "lang": "tr",
+      "competition": {
+        "key": "uecl",
+        "name": "UEFA Konferans Ligi",
+        "logo": "assets/competitions/broadcast/uecl-light.png?v=126",
+        "accent": "#0be53a"
+      },
+      "selected": "UEFA Konferans Ligi",
+      "labels": [
+        "FUTBOL BOWLING · 2v2",
+        "Trabzonspor",
+        "16",
+        "Galatasaray",
+        "14",
+        "UEFA Konferans Ligi",
+        "SONUÇ",
+        "Trabzonspor",
+        "16",
+        "KAZANAN",
+        "Galatasaray",
+        "14",
+        "RAKİP",
+        "–",
+        "FUTBOL BOWLING · 2v2"
+      ]
+    },
+    {
+      "sport": "bowling",
+      "lang": "en",
+      "competition": {
+        "key": "uecl",
+        "name": "UEFA Conference League",
+        "logo": "assets/competitions/broadcast/uecl-light.png?v=126",
+        "accent": "#0be53a"
+      },
+      "selected": "UEFA Conference League",
+      "labels": [
+        "FOOTBALL BOWLING · 2v2",
+        "Trabzonspor",
+        "15",
+        "Galatasaray",
+        "17",
+        "UEFA Conference League",
+        "RESULT",
+        "Trabzonspor",
+        "15",
+        "OPPONENT",
+        "Galatasaray",
+        "17",
+        "WINNER",
+        "–",
+        "FOOTBALL BOWLING · 2v2"
+      ]
+    }
+  ],
+  "salah": {
+    "scales": {
+      "athletic": [
+        1.027688419961494,
+        0.9158829676071056,
+        1.02353515696727
+      ],
+      "slim": [
+        0.9660271147638043,
+        0.9158829676071056,
+        0.975275474316263
+      ]
+    },
+    "sourceUnchanged": true,
+    "source": {
+      "heightCm": 175.3,
+      "weightKg": 78
+    },
+    "realHead": "real-player-head-57123"
+  }
+}

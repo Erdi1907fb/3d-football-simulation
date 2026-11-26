@@ -1,3 +1,6 @@
+## V252 · futnet sayı, görünür penaltı kodu ve yerelleştirme
+İlk geçerli alıcı sekmesinden sonra kaçan top artık yanlış aut veya yanlış tarafa puan üretmez. Gerçek ilk aut korunur. Haftalık penaltı üstte düzenlenebilir senaryo kodu/yeni senaryo/analiz düğmelerini gösterir; korunan gerçek maç analizi aynı kalır. Salah ortak render gövdesinde daha ince görünür, kaynak boy/kilo ve3.073kafa hash'i değişmez. Ayak tenisi/bowling sonuçlarında bilinen turnuva adı TR/EN sözlükten gelir, özel ad ve sabit taraf sırası korunur. 79/79tam Node/PHPpaketi PASS, build252filesMatch=true. Tarayıcı/ünite kanıtı ve sınırlamalar research/studio-fixes-v252 içindedir.
+
 ## V251 · all-club real heads and verified line stability
 3,073real models; +1,992, old1,081binary hashes unchanged. All180installed club rosters/profiles audited; 3857/8140identity records real, first11 1336/1980. Priority66clubs: 1924/2732, first11 661/726. Remaining source/DOB gaps remain explicit and retain own fallback. Birth-day/name/ID guards preserved; Batrakov and three other public free sources supplement RFH. No roster/forecast/physics edits.
 Cloud's ≤1m segments/paint height/min-width are preserved; V251 edge/paint filtering passes48subpixel phases. Original white streak is not physically verified on Windows. Full suite and final checks PASS; exact stages and limits in research/heads-v251/README.md. Runtime model bytes 951,342,838; RFH cap800MB and on-demand loading, no raw packs. Aylık remains paused; main push is not deployment.
@@ -29,7 +32,7 @@ T-400 eksik FM27/PES kafaları sırada: seçici RFH alımı ve tek pilot doğrul
 - Yeni Mixamo/Quaternius locomotion paketi çalışma zamanına eklenmedi; mevcut ortak futbol animasyon otoritesi korunur. Kaynak modellerin kredileri/hashleri ASSET-LICENSES ve head-import içinde; topluluk yüz paketleri CC0 olarak etiketlenmez.
 - Doğrulama/örnekler: docs/ai/research/heads-v243/README.md. Kaynak converter ve compressed manifest tarayıcıda tek ortak runtime kullanır; henüz model bulunmayan kimlikler için mevcut oyuncu fotoğrafı geçerlidir. Yeni dış hareket klipleri entegre edilmiş sayılmaz.
 
-> Son güncelleme: **V251** · 2026-11-26 · Codex — gerçek kafalar ve çizgi doğrulaması
+> Son güncelleme: **V252** · 2026-11-26 · Codex — sayı, senaryo kodu, Salah ve dil
 > Bu dosya projenin “şu anki gerçeği”dir. Mimari ya da durum değiştiğinde güncelle.
 > Tarih kuralı: belgelerdeki tarihler o sürümün `main` commit zamanının **UTC** tarihidir (`git log --date=short`).
 

@@ -12,3 +12,8 @@ for(const n of[1,2,3])for(const seed of[1,2,3]){const points=[3,5,7][seed-1],set
  const again=F.create({sides:[{players:pl('436')},{players:pl('432')}],perSide:n,points,setsToWin,seed});A.deepEqual(again.setLog,c.setLog,'deterministic');
  out['n'+n+'s'+seed]=c.setLog.map(x=>x.join('-')).join(',')+' '+Math.round(c.duration)+'s';}
 console.log(JSON.stringify({pass:true,sets:out,kinds:[...kinds]}));
+
+// The first legal receiving bounce decides the rally when no return follows:
+// seed56 used to award the receiver an OUT at the far safety boundary.
+const regressionSides=['997','432'].map(id=>({players:pl(id)})),regression=F.create({sides:regressionSides,perSide:2,points:5,seed:56}),fixed=regression.events.find(e=>e.type==='point'&&e.at>25&&e.at<26);A(fixed);A.equal(fixed.team,0);A.equal(fixed.reason,'not-returned');
+let checked=0,firstOut=0;for(const n of [1,2,3])for(const seed of [12,32,56,71]){const c=F.create({sides:regressionSides,perSide:n,points:5,seed});let touch=null,landed=null;for(const e of c.events){if(e.type==='serve'||e.type==='touch'){touch=e;landed=null;}if(e.type==='bounce'&&e.inside&&touch&&e.side!==touch.team)landed=e;if(e.type==='point'){if(landed){A.equal(e.team,touch.team,'untouched legal landing wins for striker');A.notEqual(e.reason,'out','later out never changes an in-court landing');checked++;}else if(e.reason==='out')firstOut++;landed=null;}}}A(checked>0);A(firstOut>0,'genuine out serves/strikes remain out');console.log(JSON.stringify({pass:true,firstInNotOut:checked,genuineOutPreserved:firstOut,regressionSeed:56}));

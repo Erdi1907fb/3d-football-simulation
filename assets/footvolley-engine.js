@@ -92,6 +92,7 @@ function attackTarget(team,kind,sigma=.5){const opp=players.filter(q=>q.team!==t
   // teammates reposition: after a set the attacker attacks the ball, the others cover
   for(const q of players)if(q.team===team&&q!==p&&!touchedBy.has(q)&&!attack){/* moves on replan */}}
 
+ function receivedBounce(){return lastBounce?.inside&&lastBounce.at>(lastTouch?.at??-1)&&sideOf(lastBounce.x)!==lastTeam?lastBounce:null;}
  function point(win,reason){score[win]++;lastPoint={team:win,reason,at:t,by:lastTouch};emit('point',t,{team:win,reason,score:score.slice()});phase='point';pauseUntil=t+2.3;for(const p of players){if(p.team===win)p.celebrate={at:t};else p.sad={at:t};}if(serveTeam!==win){serveTeam=win;serverSlot[win]++;}
   if(score[win]>=target){setScore[win]++;setLog.push(score.slice());emit('set',t,{team:win,score:score.slice(),sets:setScore.slice()});if(setScore[win]>=setsToWin){ended=true;winner=win;pauseUntil=t+5.2;emit('finish',t+1.4,{winner:win,sets:setScore.slice()});}else{score[0]=score[1]=0;pauseUntil=t+3.0;}}}
 
@@ -117,13 +118,14 @@ function attackTarget(team,kind,sigma=.5){const opp=players.filter(q=>q.team!==t
   if(Math.sign(px)!==Math.sign(b.x)&&px!==0){newPossession(sideOf(b.x));crossedAt=t;emit('cross',t,{to:possession,...(lastNet&&t-lastNet.at<.4&&lastNet.kind==='tape'?{netcord:true}:{})});plan=null;}
   const netFault=lastNet&&lastNet.at>=(lastTouch?.at??-1)&&sideOf(b.x)===lastTeam;
   if(lastNet&&Math.abs(b.x)<R+.02&&b.y>NET-.05&&hyp(b.vx,b.vy,b.vz)<.4){netRestSince??=t;}else netRestSince=null;
-  if(netRestSince!==null&&t-netRestSince>.35){point(lastTeam>=0?1-lastTeam:1-sideOf(b.x),'net');snap();continue;}
-  if(bounced){const side=sideOf(b.x),inside=inCourt(b.x,b.z,side);lastBounce={at:t,x:b.x,z:b.z,inside};emit('bounce',t,{side,inside,x:b.x,z:b.z});
+  if(netRestSince!==null&&t-netRestSince>.35){const landed=receivedBounce();point(landed?lastTeam:lastTeam>=0?1-lastTeam:1-sideOf(b.x),landed?'not-returned':'net');snap();continue;}
+  if(bounced){const landed=receivedBounce(),side=sideOf(b.x),inside=inCourt(b.x,b.z,side);lastBounce={at:t,x:b.x,z:b.z,inside};emit('bounce',t,{side,inside,x:b.x,z:b.z});
+   if(landed){point(lastTeam,'double-bounce');snap();continue;}/* a legal receiving bounce cannot become out on the next untouched bounce */
    if(!inside&&possession===side&&bounces>=1){point(1-side,'double-bounce');snap();continue;}/* bounced in once, then out: the receiver failed to play it */
    if(!inside){point(lastTeam===side?1-side:side,lastTeam===side?'own-error':'out');snap();continue;}
    if(possession!==side)newPossession(side);bounces++;if(bounces>1){point(1-side,'double-bounce');snap();continue;}if(lastTeam===side&&touches>=rule.touches){point(1-side,netFault?'net':'touches');snap();continue;}plan=null;}
-  if(b.y<=R+.003&&Math.abs(b.vy)<.05&&t-crossedAt>.3){const side=sideOf(b.x);point(inCourt(b.x,b.z,side)?1-side:(lastTeam===side?1-side:side),netFault?'net':'dead-ball');snap();continue;}
-  if(Math.abs(b.x)>C.half+7||Math.abs(b.z)>C.width/2+7){point(lastTeam>=0?1-lastTeam:0,'out');snap();continue;}
+  if(b.y<=R+.003&&Math.abs(b.vy)<.05&&t-crossedAt>.3){const landed=receivedBounce(),side=sideOf(b.x);point(landed?lastTeam:inCourt(b.x,b.z,side)?1-side:(lastTeam===side?1-side:side),landed?'not-returned':netFault?'net':'dead-ball');snap();continue;}
+  if(Math.abs(b.x)>C.half+7||Math.abs(b.z)>C.width/2+7){const landed=receivedBounce();point(landed?lastTeam:lastTeam>=0?1-lastTeam:0,landed?'not-returned':'out');snap();continue;}
   if(!plan||plan.at<t-.05)replan();
   if(plan&&t>=plan.at-DT){const p=plan.player,d=hyp(b.x-p.x,b.z-p.z);if(d<1.25&&b.y>.08&&b.y<2.4&&canTouch(p))touch(p);else if(t>plan.at+.12)plan=null;}
   if(Math.round(t/DT)%2===0)snap();}

@@ -10,10 +10,10 @@ Sahip: `claude` · `codex` · `—` (boş, ilk alan alır). Bir görevi alırken
 
 | ID | Görev | Durum | Sahip | Notlar / files |
 |---|---|---|---|---|
-| T-409 | Turnuva adını ayak tenisi/bowling sonuçlarında TR ve EN diline göre göster | todo (after V251) | codex | User order: face release first; shared competition/title metadata and result overlays. |
-| T-408 | Mohamed Salah gövdesindeki gereksiz kilolu görünümü doğrula/düzelt | todo (after V251) | codex | Existing body source/height/weight/physique mapping; no arbitrary squad/stat edits. |
-| T-407 | Haftalık penaltıda düzenlenebilir/boş bırakılabilir senaryo seed alanı | todo (after V251) | codex | Empty generates new seed/scenario, explicit seed replays; protected real forecast unchanged. |
-| T-406 | Ayak tenisinde ilk sekme içerideyse ikinci dış sekmeye aut yazma | todo (after V251) | codex | Determine point from legal first bounce/receiver failure; first bounce outside stays out. Engine + TR/EN explanation. |
+| T-409 | Turnuva adını ayak tenisi/bowling sonuçlarında TR ve EN diline göre göster | done (V252) | codex | V252 shared dictionary + TR/EN results/dropdowns;44unit cases and4real result canvases PASS. |
+| T-408 | Mohamed Salah gövdesindeki gereksiz kilolu görünümü doğrula/düzelt | done (V252) | codex | V252 identity-reviewed slim render; source175.3cm/78kg/head/kit unchanged, user overrides win; front/side browser evidence. |
+| T-407 | Haftalık penaltıda düzenlenebilir/boş bırakılabilir senaryo seed alanı | done (V252) | codex | V252 visible upper input + apply/Enter/new buttons; browser explicit replay and protected fixture unchanged PASS. |
+| T-406 | Ayak tenisinde ilk sekme içerideyse ikinci dış sekmeye aut yazma | done (V252) | codex | V252 seed56 wrong-side/out corrected;26first-in and16genuine-out event cases + real UI caption PASS. |
 | T-405 | Cloud çizgi düzeltmesini doğrula, bütün kurulu lig/kupa kulüplerinin gerçek kafalarını genişlet | partial (V251 sources) | codex | 1,992yeni/3,073toplam;180kulüp, first11 1336/1980. Çizgi48faz PASS. Dosyalar: shared paint, head runtime/import/manifest, research/heads-v251. Kalan kaynaklar remaining-identities.json. |
 | T-402 | PSG–Roma beyaz saha izleri: ortak render/GLSL uyumluluğu | partial (physical GPU verification) | codex | Özel half-float MSAA resolve kaldırıldı; boya/flaş/hava/stüdyo ters smoothstep düzeltildi. Actual PSG–Roma22model + yağmur/kar shader derleme PASS. Özgün kullanıcı WindowsGPUizi SwiftShader öncesi/sonrası üretilemedi; kesin donanım fix iddiası yok. research/pitch-heads-v246. |
 | T-403 | Dembélé/Dybala ve haftalık canlı kadroların gerçek kafa aktarım/kimlik düzeltmesi | done (V246) | codex |181yeni/1.066toplam;32profil809/984kayıt.17incelenmiş kaynak aliası; DOB+ad/IDkoruması. Actual PSG–Roma22ilk11modeli yüklü,12gerçek yakınplan ve1.066geometri/288boyunpozu PASS. Kadro/analiz/fizik aynı; kalan kaynaklar T-400. |

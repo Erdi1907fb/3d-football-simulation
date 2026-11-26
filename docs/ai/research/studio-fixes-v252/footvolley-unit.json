@@ -1,0 +1,39 @@
+[
+  {
+    "pass": true,
+    "sets": {
+      "n1s1": "3-2 65s",
+      "n1s2": "2-5 112s",
+      "n1s3": "6-7,5-7 274s",
+      "n2s1": "3-0 47s",
+      "n2s2": "5-3 113s",
+      "n2s3": "7-2,3-7,4-7 426s",
+      "n3s1": "3-1 42s",
+      "n3s2": "5-1 75s",
+      "n3s3": "7-0,2-7,6-7 421s"
+    },
+    "kinds": [
+      "chest",
+      "header",
+      "thigh",
+      "juggle",
+      "volley",
+      "drop",
+      "smash",
+      "lob",
+      "shark",
+      "bicycle",
+      "header-control",
+      "pass",
+      "scoop",
+      "header-pass",
+      "set"
+    ]
+  },
+  {
+    "pass": true,
+    "firstInNotOut": 26,
+    "genuineOutPreserved": 16,
+    "regressionSeed": 56
+  }
+]

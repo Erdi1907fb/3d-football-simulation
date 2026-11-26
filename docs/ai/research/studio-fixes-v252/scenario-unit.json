@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "uniqueSeeds": 12,
+  "scoreVariety": {
+    "footvolley": 6,
+    "bowling": 11
+  },
+  "analysisUnchanged": true,
+  "replayExact": true
+}

@@ -622,7 +622,7 @@ function clock(minute){const whole=Math.floor(minute),second=Math.floor((minute-
 function label(key,lang='tr'){return labels[key]?.[lang==='en'?1:0]||key;}
 const competitionNames={
  'tr.1':['Trendyol Süper Lig','Trendyol Super Lig','Süper Lig','Turkish Super Lig','Super Lig'],
- 'en.1':['Premier League','Premier League','English Premier League'],
+ 'en.1':['Premier Lig','Premier League','English Premier League'],
  'es.1':['LALIGA EA SPORTS','LALIGA EA SPORTS','La Liga','LaLiga'],
  'de.1':['Bundesliga','Bundesliga'],
  'fr.1':["Ligue 1 McDonald’s","Ligue 1 McDonald’s",'Ligue 1'],
