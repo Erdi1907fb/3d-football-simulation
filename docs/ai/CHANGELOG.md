@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V255 · 2026-11-26
+- Bölgesel vücut: üç kaba tip yerine oyuncu başına sürekli profil (kütle m, üst gövde u, alt gövde l; -1..1). FC 26 verisinden türetilir: m = vücut tipi + BMI (+ çok çevik oyuncu hafifler), u = güç, l = sprint/hızlanma/sıçrama. Ham EA puanı saklanmaz; assets/player-builds.json şema 2 (6.084 oyuncu). Eşleşmeyenlere mevki varsayılanı (kaleci/stoper/kanat/forvet/orta saha, küçük değerler).
+- fullbody-runtime.js: paylaşılan gövdeye 9 bölgesel göreli morph (omuz, göğüs, sırt/lat, bel, kalça, uyluk, baldır, üst kol, ön kol) yükleme anında deri ağırlıkları ve kemik eksenlerinden üretilir; kalınlık kemiğe dik büyür, kemik boyu/eklem yeri/boyun-kafa oturuşu değişmez. Forma numarası/saç/sakal aynı morph setini paylaşır. Bölgesel profil varken tüm-gövde genişlik ölçeği yalnız hafif dürtülür (çift sayım yok); kullanıcı seçimi ve incelenmiş Salah eski davranışı korur.
+- Eklem: diz ve dirsek için açıya bağlı hacim düzeltmesi (4 morph; diz kapağı / dirsek ucu + iç hacim), sync her karede büküm açısından sürer. Ölçüm (eklem çevresi deri–eklem merkezi ortalama mesafe): Kane diz düz 7,46 → bükük 6,33 → düzeltmeli 7,39 cm; dirsek 7,50 → 6,84 → 7,46; Yamal diz 6,90 → 5,84 → 6,84, dirsek 5,79 → 5,23 → 5,80.
+- Testler: tests/body-shapes.cjs (morph sayısı/paylaşım, profil yönü, boyun-kafa dokunulmazlığı, düz eklemde düzeltme kapalı), player-builds şema 2.
+
 ## V254 · 2026-11-26
 - Otomatik oyuncu vücut yapısı. Erişilebilirlik: PES vücut sürgüleri (boyun/göğüs/kol/bel/bacak) yalnız oyun dosyalarında, pesmaster yalnız boy/kilo; sofifa/fifacm/futbin Cloudflare 403. Açık kaynak: GitHub EAFC26-DataHub `data/players.csv` (EA FC 26, 2025-09-21 kesiti, 18.405 oyuncu; boy, kilo, DOB, body_type).
 - tools/body-import/fc26-builds.py: birebir DOB + soyadı + tekil satır koruması; 6.084 eşleşme (3.507 atletik, 2.251 ince, 326 kaslı), 25 belirsiz ve 3.578 eşleşmeyen dışarıda. Lean→ince, Normal→atletik, Stocky→kaslı, Unique→FC boy/kilodan BMI. Yalnız ince/kaslı saklanır (assets/player-builds.json, 76 KB; atletik varsayılan). CSV commit edilmez.
