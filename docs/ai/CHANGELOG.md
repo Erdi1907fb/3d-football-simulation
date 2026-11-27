@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V258 · 2026-11-27
+- Kafa/yüz görünmeme KÖK NEDENİ (tüm modlar): stüdyolar matrixWorldAutoUpdate kapalı çiziyor; çizim sırasında kafa düğümüne eklenen gerçek kafa grubu ilk karesinde birim dünya matrisiyle kalıyor → başlangıç noktasında çiziliyor/görüş dışı sayılıyor; kafasız gövdenin açık yakası beyaz görünüyordu. Kanıt: gerçek kafalar katmanla gizlenince beyaz şekil iki karede de var; V256 app.js (hazırlık çizimi yok) + düzeltilmiş player-heads ile ilk kare düzgün. player-heads: kurulumda ve her updateLOD sonunda grup dünya matrisi güncellenir; player-faces: fotoğraflı yüz ve eski yüz grubu için aynı. V257 ön yükleme/hazırlık çizimi ek güvence olarak kalır.
+- Kalça eklem düzeltmesi: uyluk bükülünce (~69°) kasık/kalça hacmi %10 kayboluyordu; düzeltme kazancı 2,6 (ölçüm: Kane 7,93 → bükük 7,11 → düzeltmeli 7,91 cm; Yamal 7,36 → 6,60 → 7,36). Eklem açısı artık duruş açısına göre (diz/dirsek davranışı aynı). Omuz kaybı ~%5,6 ve çok eksenli: bilerek eklenmedi.
+- Oyuncuya özgü koşu tarzı: vücut profilinden (m,u,l) + kimlikten ±%8 kalıcı fark: kol salınımı, diz/topuk kaldırma, gövde eğimi, zıplama, dirsek. Örn. Kane kol +%20 zıplama −%18; Yamal kol −%18 kaldırma +%15; Isak kaldırma +%36.
+- Dönüş/fren: match.js groundMotion aynı karelerden t±0,2 s ile dönüş hızı ve ileri ivme (geçmişten bağımsız, geri sarma aynı); athlete-motion merkezcil yatma atan(v·ω/g)·0,8 (en çok 18°), frende geriye yaslanma, hızlanmada öne eğilme.
+- Testler: mocap-gait (yatma/fren/tarz), body-shapes (6 eklem düzeltmesi).
+
 ## V257 · 2026-11-27
 - Kullanıcı ekran görüntüsü (kale kamerası karesi): bazı oyuncular kafasız/beyaz kafalı. Teşhis: hareket kaydı değil; 11v11 dışa aktarmanın İLK karesinde gerçek kafalar kurulumunu tamamlamadan dokusuz beyaz çiziliyordu (aynı an hemen ikinci kez çizilince düzgün). Test düzeneğimin kaydettiği kare ilk kareydi; gerçek videolarda açılış karesi (çoğu platformun kapak karesi) etkilenirdi.
 - app.js prepareExport: diğer stüdyolar gibi sahadaki/yedek tüm oyuncuların gerçek kafaları ön yüklenir (warmFaces 20 s + whenFacesReady 15 s sınırlı) ve kayda alınmayan bir hazırlık çizimi yapılır (penaltı/serbest vuruştaki gibi). Doğrulama: ilk çizimde kafalar düzgün.
