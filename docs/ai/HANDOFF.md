@@ -1,3 +1,11 @@
+## [2026-11-27] Claude · V258 — kafa görünmeme kök nedeni (tüm modlar) + kalça/koşu tarzı/dönüş
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V258).
+- Kök neden: matrixWorldAutoUpdate kapalı çizimde yeni eklenen gerçek kafa grubu ilk karede birim dünya matrisi → çizilmiyor; kafasız gövdenin yakası beyaz. player-heads install/updateLOD sonunda group.updateMatrixWorld(true); player-faces photoFace/mpfb-face için de. V256 app.js ile (hazırlık yok) doğrulandı; ekran görüntüsündeki tüm oyuncular ilk karede kafalı. NOT: yeni bir obje çizim sırasında sahneye ekleniyorsa aynı kural (dünya matrisini hemen güncelle).
+- Kalça düzeltmesi JOINT_SHAPES'e (pelvis→thigh, dış taraf arka), HIP_GAIN 2,6 ölçümle; eklem açısı asset.jointRest'e göre. Omuz bilerek yok.
+- athlete-motion runStyle(a): build(m,u,l)+id karması → arm/lift/lean/bob/elbow; a.root.userData.runStyle. Dönüş/fren: match.js groundMotion turnRate/accel (t±0,2, ±4 rad/s, ±9 m/s²) → p.turnRate/p.accel; yatma atan(vω/g)·.8 ≤.32 rad. Diğer modlarda (match.js dışı) alanlar yok → yatma yok (zararsız).
+- 82/82.
+- Kalan fizik: hıza bağlı adım uzunluğu (motor evre kararı), şut/pas/kafa ve kaleci kayıtları, omuz, Anny gövdesi.
+
 ## [2026-11-27] Claude · V257 — ilk karede beyaz kafa düzeltmesi
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V257).
 - Kullanıcı ekran görüntüsünde (benim kale kamerası test karem) bazı oyuncular kafasız/beyaz. Teşhis adımları (scratch tl/camtime*.cjs, app.js'e geçici __dbgWorld kancası sunucuda enjekte edildi, repo değişmedi): gerçek kafa atanmış/görünür/boyuna oturmuş; yakın planda normal; aynı an hemen ikinci kez çizilince düzgün → yalnız İLK çizim. Doku/gölgelendirici ısınması ve forma baskısı gizleme sonuç vermedi (geri alındı). Çözüm: app.js prepareExport'ta warmFaces+whenFacesReady (sınırlı) + kayda alınmayan hazırlık çizimi (penaltı/FK ile aynı desen). player-heads updateLOD yeniden kurulumdan sonra aynı karede devam eder.
