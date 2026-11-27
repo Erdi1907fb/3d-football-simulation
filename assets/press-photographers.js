@@ -1,3 +1,4 @@
+var Next90BP=typeof Next90Proportions!=='undefined'?Next90Proportions:typeof require==='function'?require('./body-proportions.js'):null;/* V260 realistic proportions */
 (function(r,f){if(typeof module==='object'&&module.exports)module.exports=f(require('./vendor/three.min.js'),require('./stadium-layout.js'));else r.SekmePress=f(r.THREE,r.SekmeStadiumLayout);})(typeof globalThis!=='undefined'?globalThis:this,function(T,Layout){'use strict';
  function create({scene,makeActor,box,cylinder,sphere,mesh,geo,mat,armTarget,canvasFactory}){
   const makeCanvas=(w,h)=>canvasFactory?canvasFactory(w,h):typeof document!=='undefined'?document.createElement('canvas'):null,canvas=makeCanvas(64,64);let glow=null;
@@ -18,7 +19,7 @@
   function update(state,showTime,poseActor){const celebration=state.celebration,scorer=celebration?state.players.find(p=>p.id===celebration.scorer):null,shooting=!!scorer&&!!state.goalCelebration&&!state.replay&&['solo','join','group'].includes(celebration.stage),group=celebration?.stage==='group';
    let subject=scorer?{x:scorer.x,z:scorer.z}:state.ball;if(group){const nearby=state.players.filter(p=>p.team===celebration.team&&!p.keeper&&!p.dismissed&&Math.hypot(p.x-scorer.x,p.z-scorer.z)<7);if(nearby.length)subject={x:nearby.reduce((a,p)=>a+p.x,0)/nearby.length,z:nearby.reduce((a,p)=>a+p.z,0)/nearby.length};}
    for(const p of items){const {actor:a,base}=p,near=shooting&&Math.hypot(subject.x-base.x,subject.z-base.z)<16,aim=near?subject:state.ball,heading=Math.atan2(aim.x-base.x,aim.z-base.z);poseActor(a,{x:base.x,z:base.z,heading,speed:0,gait:0,lookAngle:0});a.body.rotation.x=.035;a.head.rotation.x=base.stance==='kneel'?-.06:.025;a.camera=p.camera;
-    if(base.stance==='kneel'){a.waist.position.y=.65;a.legs[0].hip.rotation.x=-1.10;a.legs[0].knee.rotation.x=1.70;a.legs[0].boot.rotation.x=-.60;a.legs[1].hip.rotation.x=.20;a.legs[1].knee.rotation.x=1.40;a.legs[1].boot.rotation.x=-1.60;}
+    if(base.stance==='kneel'){a.waist.position.y=Next90BP.waist(.65);a.legs[0].hip.rotation.x=-1.10;a.legs[0].knee.rotation.x=1.70;a.legs[0].boot.rotation.x=-.60;a.legs[1].hip.rotation.x=.20;a.legs[1].knee.rotation.x=1.40;a.legs[1].boot.rotation.x=-1.60;}
     armTarget(a,0,[-.07,.64,.39]);armTarget(a,1,[.13,.69,.28]);p.camera.rotation.x=base.stance==='kneel'?-.05:.015;
     const cycle=((showTime*(state.matchPresentation?.big?2.4:1.65)+p.index*.317)%1+1)%1;p.flashPulse=near&&cycle<.11?Math.sin(Math.PI*cycle/.11):0;p.subject=near?{...subject}:null;p.flash.visible=p.flashPulse>.02;p.flash.material.opacity=p.flashPulse*.92;p.flash.scale.setScalar(.60+p.flashPulse*.65);
     a.root.updateMatrixWorld(true);p.source.getWorldPosition(p.flash.position);

@@ -1,3 +1,13 @@
+## [2026-11-27] Claude · V260 — gerçekçi vücut oranı + lig 8 takım
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V260).
+- Kullanıcı onaylı önizlemedeki "tam gerçek oran" (seçenek 1) uygulandı. assets/body-proportions.js (Next90Proportions; sayfalarda ilk script; Node'da require): LEG 1,33, ARM 1,2, uyluk=kaval=0,4788 (eski 0,37/0,35), LIFT 0,2376, SCALE 0,8896 (body.scale'e çarpılır: scene.js başlangıç, player-physique, character-system). Dosyalar başta `var Next90BP=...` tanımlar.
+- Eski birimde yazılmış pozlar: mutlak bel → Next90BP.waist(y) (pivot 0,20: y'=0,2+1,33(y−0,2)), çömelme/düşme → drop(d). scene.js 565–568 basit bacak IK sabitleri THIGH/SHIN. El ofseti −0,26 → −HAND (5 yer). athlete-motion hipH .87×LEG, plantStep ve half /SCALE (metre korunur).
+- fullbody-runtime parse sonunda reproportion(): geom/print/shortPrint/saç/sakal varyantları, morph'lar (y türevi), extras.bones matrisleri. Sıra önemli: bodyShapes, baskı UV ve saç eşikleri eski uzayda. elbowPads eski uzayda (≤1,5 cm). character-system install() anatomiyi aynı boneShift ile uzatır ve uzatılmış veriyi döndürür.
+- Doğrulama: tools/checks/heads-all-modes.cjs (oran değişikliğinden sonra; uyluk=kaval ince ayarından önce, kafayı etkilemez) penaltı 47/0, serbest vuruş 47/0, Japon 12/0, ayak tenisi 4/0, lig/kupa 16/0; poz ölçümü (scratch poses.cjs) diz çökme diz 0,05 m, ayakta ayak bileği 0,048 m, baş eklemi 1,754 (Kane). Koşu diz açıları eski haliyle benzer.
+- Lig 2–8 takım: competition-engine plan sınırı, UI seçenekleri, Japon'da 7–8 devre dışı (japon-layout 6 kale). competition-broadcast standingsHeight >6 satırda 54 px, liveTable 34/36 px. Tarayıcıda 8 takımlı final/puan durumu/canlı tablo (yatay+dikey) render edildi; sığıyor.
+- Bilinen/ileri: 11v11 dışı yürüyüş formülleri (ayak tenisi/bowling/tören) eski stride'ı yerel birimde kullanır (dünyada ~%11 kısa adım); crowd-lod ve scene.js:251 basit figürler ayrı rig (değişmedi). Sırada: ayak tenisi/bowling yürüyüşü, sprint kayma yeniden ölçümü.
+- 83/83.
+
 ## [2026-11-27] Claude · V259 — tüm modlarda kafa doğrulaması + hıza bağlı adım
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V259).
 - Kafa: tools/checks/heads-all-modes.cjs (yavaş tarayıcı aracı; varsayılan prepare + snapshot + gerçek kafa dünya matrisi/görünürlük): penaltı 47/0, serbest vuruş 47/0, Japon 12/0, ayak tenisi 4/0, lig/kupa 16/0 (güncel olmayan matris yok); 11v11 ilk kare görsel. tests/player-heads.cjs regresyonu V257 kodunda başarısız/şimdi geçer.

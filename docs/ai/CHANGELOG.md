@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V260 · 2026-11-27
+- Gerçekçi vücut oranı (tüm modlar, tüm oyuncu/hakem/teknik ekip): bacaklar uzun (kalça boyun %46,8'i, diz %24,6'sı; önce %40/%21), kollar uzun (el bileği kalça hizasında), omuz %77,5; toplam boy aynı (gerçek cm), kafa ve genişlikler orantılı küçüldü. Tek modül assets/body-proportions.js; actor iskeleti (scene.js), tam gövde (fullbody-runtime bağlama pozu yüklemede uzatılır), orta LOD anatomi (character-system), kol IK (football-animation L1/L2), el ofsetleri, tüm mutlak bel yükseklikleri (scene/celebration-pack/athlete-motion/football-animation/press-photographers) eski birimden waist()/drop() ile çevrilir. Diz çökmede diz yerde (0,05 m), oturma/foto muhabiri/meditasyon kontrol edildi; koşu adımı metre olarak korunur (plantStep/SCALE).
+- Lig 2–8 takım (önce 2–6): competition-engine/ui; 7–8 takımda puan tablosu satır yüksekliği 54 px (yatay ve dikey kadraja sığar), canlı tablo 34–36 px; fikstür zaten sayfalı. Japon Kale arenası en çok 6 kale olduğu için Japon ligde 7–8 seçilemez.
+- Test: body-proportions.cjs (yeni); competition-branding 2–8 takım; mocap-gait/celebrations bel sınırları yeni birimde. 83/83.
 ## V259 · 2026-11-27
 - Kafa doğrulaması tüm modlar (tools/checks/heads-all-modes.cjs; varsayılan seçimlerle prepare + ilk anlık görüntü + gerçek kafa dünya matrisi/görünürlük denetimi): penaltı 47 gerçek kafa / 0 güncel olmayan, serbest vuruş 47/0, Japon kale 12/0, ayak tenisi 4/0, lig/kupa 16/0; 11v11 ilk kare ayrıca görsel doğrulandı. tests/player-heads.cjs regresyon denetimi (V257 kodunda başarısız, şimdi geçer).
 - Hıza bağlı adım uzunluğu: match.js kare başına önbellekli birikimli adım (adım = 0,42+0,20·v m, 0,6–2,1), groundMotion → p.gaitSteps; football-clips ve athlete-motion bunu kullanır (diğer modlarda eski 1,42 m formülü). Adım ritmi (adım/s): 1,5 m/s 1,06→2,08; 3 m/s 2,11→2,94; 5 m/s 3,52; 7 m/s 4,93→3,85. Geri sarma/dışa aktarma aynı (geçmişten bağımsız önbellek).

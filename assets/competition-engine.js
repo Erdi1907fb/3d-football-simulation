@@ -56,7 +56,7 @@
  function japonSides(entries){return entries.map(e=>({name:e.name,label:e.name,isTeam:true,logo:e.identity.logo,team:copy(e.identity),keeper:copy(e.five[0]),defender:copy(e.five[1]),player:copy(e.five[4])}));}
  function plan(format,teams,seed,draw=true){
   if(format==='single'){if(teams.length!==2||teams[0].id===teams[1].id)throw Error('Choose two different teams');return[{id:'M1',stage:'single',round:1,index:0,home:teams[0].id,away:teams[1].id}];}
-  const count=format==='cup'?([4,8].includes(teams.length)?teams.length:8):format==='league'?teams.length:0;if(format==='league'&&(count<2||count>6)||format==='cup'&&teams.length!==count||!count)throw Error(format==='league'?'Select between 2 and 6 teams':'Select 4 or 8 different teams');if(new Set(teams.map(t=>t.id)).size!==count)throw Error('A team cannot enter twice');
+  const count=format==='cup'?([4,8].includes(teams.length)?teams.length:8):format==='league'?teams.length:0;if(format==='league'&&(count<2||count>8)||format==='cup'&&teams.length!==count||!count)throw Error(format==='league'?'Select between 2 and 8 teams':'Select 4 or 8 different teams');if(new Set(teams.map(t=>t.id)).size!==count)throw Error('A team cannot enter twice');
   const ids=draw?shuffle(teams.map(t=>t.id),Concept.hash(seed+'|fixtures')):teams.map(t=>t.id);
   if(format==='league')return Season.schedule(ids,false).flat().map((m,i)=>({...m,id:'L'+(i+1),stage:'league',index:i}));
   // V196: a 4-team cup starts at the semi-finals (same single-leg rules, same final).

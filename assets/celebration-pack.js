@@ -1,3 +1,4 @@
+var Next90BP=typeof Next90Proportions!=='undefined'?Next90Proportions:typeof require==='function'?require('./body-proportions.js'):null;/* V260 realistic proportions */
 /* V109 Next90 celebration pack: 100 named goal celebrations + 14 team routines.
  * Original procedural animation (no FIFA/EA or Mixamo assets). Each celebration is an
  * arrival move (knee slide, belly slide, jump-turn…) followed by a looping signature
@@ -12,7 +13,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),smooth=v=>{v=clamp(v,0,1);return 
 const arm=(a,k,x,z=0,e=0)=>{const m=a.arms[k];if(!m)return;m.shoulder.rotation.x=x;m.shoulder.rotation.z=(k?1:-1)*z;m.elbow.rotation.x=e;};
 const both=(a,x,z=0,e=0)=>{arm(a,0,x,z,e);arm(a,1,x,z,e);};
 const legs=(a,hip,knee,boot)=>a.legs.forEach(l=>{l.hip.rotation.x=hip;l.knee.rotation.x=knee;if(boot!=null)l.boot.rotation.x=boot;});
-const kneel=(a,u,one=false)=>{if(u<=0)return;a.waist.position.y=.923+(.52-.923)*u;a.legs.forEach((l,k)=>{if(one&&k===1){l.hip.rotation.x=-1.2*u;l.knee.rotation.x=1.35*u;l.boot.rotation.x=-.15*u;return;}l.hip.rotation.x=-.55*u;l.knee.rotation.x=(PI/2+.55)*u;l.boot.rotation.x=-(l.hip.rotation.x+l.knee.rotation.x);});};
+const kneel=(a,u,one=false)=>{if(u<=0)return;a.waist.position.y=Next90BP.waist(.923+(.52-.923)*u);a.legs.forEach((l,k)=>{if(one&&k===1){l.hip.rotation.x=-1.2*u;l.knee.rotation.x=1.35*u;l.boot.rotation.x=-.15*u;return;}l.hip.rotation.x=-.55*u;l.knee.rotation.x=(PI/2+.55)*u;l.boot.rotation.x=-(l.hip.rotation.x+l.knee.rotation.x);});};
 // GameplayFootball hand-keyed celebration clips (Unlicense), already shipped in clips.glb.
 const clip=(a,key,t,v)=>{const C=globalThis.SekmeFootballClips;if(!C?.apply)return MOVES.doublePump(a,t,v);const d=key==='celebrateExtreme'?3.05:2.6;return C.apply(a,key,t%d,1,{mirror:v%2===1,preserveRoot:false});};
 // ---- Signature movements (t = seconds into the routine, v = variant 0..5) ----
@@ -35,8 +36,8 @@ const MOVES={
  dab:(a,t,v)=>{const k=v%2;arm(a,k,-1.9,.95,-.05);arm(a,1-k,-1.6,-.65,-2.2);a.head.rotation.x=.42;a.head.rotation.y=(k?-1:1)*.4;},
  archer:(a,t,v)=>{const k=v%2,draw=smooth(t/.8);arm(a,k,-1.57,.0,-.02);arm(a,1-k,-1.57,-.35*draw,-2.4*draw);a.waist.rotation.y=(k?1:-1)*.55;a.head.rotation.y=(k?1:-1)*.6;},
  calma:(a,t)=>{both(a,-.9+S(t*4)*.12,.35,-.2);a.body.rotation.x=-.05;},
- meditate:(a,t)=>{a.waist.position.y=.42;a.legs.forEach((l,k)=>{l.hip.rotation.x=-1.45;l.hip.rotation.z=(k?1:-1)*.75;l.knee.rotation.x=2.3;});both(a,-.55,.25,-.9);a.head.rotation.x=.05;a.body.rotation.x=-.05;},
- flex:(a,t)=>{both(a,-.15,1.45,-1.8-S(t*5)*.25);a.waist.position.y-=.05;a.head.rotation.x=-.12;},
+ meditate:(a,t)=>{a.waist.position.y=Next90BP.waist(.42)+.06;/* V260: crossed shins stay above the grass with the longer legs */a.legs.forEach((l,k)=>{l.hip.rotation.x=-1.45;l.hip.rotation.z=(k?1:-1)*.75;l.knee.rotation.x=2.3;});both(a,-.55,.25,-.9);a.head.rotation.x=.05;a.body.rotation.x=-.05;},
+ flex:(a,t)=>{both(a,-.15,1.45,-1.8-S(t*5)*.25);a.waist.position.y-=Next90BP.drop(.05);a.head.rotation.x=-.12;},
  coolArms:(a,t)=>{both(a,-.75,-.75,-1.95);a.head.rotation.x=-.18;a.head.rotation.y=.18;},
  binoculars:(a,t)=>{both(a,-1.2,-.5,-2.45);a.head.rotation.y=S(t*1.5)*.45;},
  phone:(a,t,v)=>{const k=v%2;arm(a,k,-.6,.55,-2.6);arm(a,1-k,-1.3,.7+S(t*6)*.3,-.4);a.head.rotation.z=(k?1:-1)*.22;},
@@ -48,7 +49,7 @@ const MOVES={
  micDrop:(a,t,v)=>{const k=v%2,drop=t%2>1.2;arm(a,k,drop?-.2:-1.4,.6,drop?-.1:-1.2);arm(a,1-k,drop?-.6:-.3,drop?.9:.3,-.5);a.head.rotation.x=drop?.25:-.1;},
  disbelief:(a,t)=>{both(a,-2.5,-.35,-1.9);a.head.rotation.x=-.25;a.body.rotation.x=-.08;},
  wave:(a,t,v)=>{arm(a,0,-2.5,.45+S(t*8)*.35,-.2);arm(a,1,-2.5,.45+S(t*8+PI)*.35,-.2);a.body.position.y=Math.abs(S(t*4))*.06;},
- siuLand:(a,t)=>{both(a,.15,.85,-.08);legs(a,-.25,.45,-.2);a.waist.position.y-=.12;a.body.rotation.x=-.12;a.head.rotation.x=-.3;},
+ siuLand:(a,t)=>{both(a,.15,.85,-.08);legs(a,-.25,.45,-.2);a.waist.position.y-=Next90BP.drop(.12);a.body.rotation.x=-.12;a.head.rotation.x=-.3;},
  goggles:(a,t)=>{both(a,-1.25,-.45,-2.5);a.head.rotation.y=S(t*2)*.3;},
  chefKiss:(a,t,v)=>{const k=v%2,out=(t*1.5)%1>.5;arm(a,k,out?-1.2:-.9,out?.6:-.1,out?-.4:-2.4);arm(a,1-k,-.6,.5,-.9);},
  fingerGuns:(a,t)=>{both(a,-1.4+S(t*7)*.12,.25,-.08);a.waist.rotation.y=S(t*3)*.2;},
@@ -66,10 +67,10 @@ const MOVES={
 // Arrivals happen at the end of the run (celebrationSlideEnd) or at routine start.
 const ARRIVALS={none:null,
  kneeSlide:(a,t)=>{const u=smooth(t/.4)*(1-smooth((t-1.7)/.7));kneel(a,u);a.body.rotation.x=-.25*u;both(a,-.2*u,1.12*u,0);return u;},
- bellySlide:(a,t)=>{const u=smooth(t/.35)*(1-smooth((t-1.6)/.8));a.waist.position.y=.923-.62*u;a.body.rotation.x=1.35*u;both(a,-2.4*u,.55*u,-.1);legs(a,.15*u,.2*u);a.head.rotation.x=-.9*u;return u;},
+ bellySlide:(a,t)=>{const u=smooth(t/.35)*(1-smooth((t-1.6)/.8));a.waist.position.y=Next90BP.waist(.923-.62*u);a.body.rotation.x=1.35*u;both(a,-2.4*u,.55*u,-.1);legs(a,.15*u,.2*u);a.head.rotation.x=-.9*u;return u;},
  jumpTurn:(a,t)=>{const j=clamp(t/.9,0,1);a.body.position.y=S(j*PI)*.62;a.waist.rotation.y=smooth(j)*PI;both(a,-1.3*(1-j)+.15*j,.85*j,-.1);legs(a,-.3*S(j*PI),.6*S(j*PI));return t<1.1?1:0;},
  leap:(a,t)=>{const j=clamp(t/.7,0,1);a.body.position.y=S(j*PI)*.5;arm(a,1,-2.6,.1,-.2);legs(a,-.4*S(j*PI),.9*S(j*PI));return t<.9?1:0;},
- sideSlide:(a,t)=>{const u=smooth(t/.35)*(1-smooth((t-1.4)/.7));a.waist.position.y=.923-.55*u;a.body.rotation.z=.7*u;a.body.rotation.x=-.2*u;both(a,-1.6*u,.4*u,-.4);legs(a,-.6*u,.4*u);return u;},
+ sideSlide:(a,t)=>{const u=smooth(t/.35)*(1-smooth((t-1.4)/.7));a.waist.position.y=Next90BP.waist(.923-.55*u);a.body.rotation.z=.7*u;a.body.rotation.x=-.2*u;both(a,-1.6*u,.4*u,-.4);legs(a,-.6*u,.4*u);return u;},
  kneelDown:(a,t)=>{const u=smooth(t/.5);kneel(a,u);return 0;},
  oneKnee:(a,t)=>{const u=smooth(t/.5);kneel(a,u,true);return 0;}
 };
@@ -100,7 +101,7 @@ function pick(seed,index=0,exclude=null,mode='goal'){const n=hash(seed,index);le
 function get(style){return typeof style==='string'&&style.startsWith('pack:')?BY_ID.get(style.slice(5))||null:null;}
 // Scorer: called by scene.js after the legacy style block.
 function apply(a,p,state){const c=get(p.celebrationStyle);if(!c||!a?.arms||!a.legs)return false;const stage=p.celebrationStage,age=p.celebrationTime||0,v=p.celebrationVariant||0;
- if(stage==='run'){const arr=ARRIVALS[c.arrival],slide=(p.celebrationSlideEnd||0)-1.8;if(arr&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)&&age>slide&&age<slide+2.6){arr(a,age-slide);slideMark(a,p,age-slide,c);return true;}if(age>.35){const run=[(x,y)=>both(x,-2.6+S(y*7)*.25,.35,-.3),(x,y)=>both(x,-.15,1.4,-.1),(x,y)=>{arm(x,0,-1.6+S(y*9)*.6,.2,-1.3);arm(x,1,-1.6+S(y*9+PI)*.6,.2,-1.3);},(x,y)=>both(x,-1.9,.9+S(y*6)*.2,-.6),(x,y)=>{arm(x,0,-2.7,.25,-.1);arm(x,1,-.6+S(y*8)*.5,.6,-1.0);},(x,y)=>{arm(x,1,-2.7,.25,-.1);arm(x,0,-.6+S(y*8)*.5,.6,-1.0);}][(v+c.index)%6];run(a,age);a.head.rotation.x=-.12;}if(c.arrival==='none'&&age>.6){const m=MOVES[c.move];if(m&&!['meditate','robot','boxing','samba','shimmy','disco','jumpSpin'].includes(c.move)){m(a,age,v);a.waist.position.y=Math.min(a.waist.position.y,.923);return true;}}return false;}
+ if(stage==='run'){const arr=ARRIVALS[c.arrival],slide=(p.celebrationSlideEnd||0)-1.8;if(arr&&['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)&&age>slide&&age<slide+2.6){arr(a,age-slide);slideMark(a,p,age-slide,c);return true;}if(age>.35){const run=[(x,y)=>both(x,-2.6+S(y*7)*.25,.35,-.3),(x,y)=>both(x,-.15,1.4,-.1),(x,y)=>{arm(x,0,-1.6+S(y*9)*.6,.2,-1.3);arm(x,1,-1.6+S(y*9+PI)*.6,.2,-1.3);},(x,y)=>both(x,-1.9,.9+S(y*6)*.2,-.6),(x,y)=>{arm(x,0,-2.7,.25,-.1);arm(x,1,-.6+S(y*8)*.5,.6,-1.0);},(x,y)=>{arm(x,1,-2.7,.25,-.1);arm(x,0,-.6+S(y*8)*.5,.6,-1.0);}][(v+c.index)%6];run(a,age);a.head.rotation.x=-.12;}if(c.arrival==='none'&&age>.6){const m=MOVES[c.move];if(m&&!['meditate','robot','boxing','samba','shimmy','disco','jumpSpin'].includes(c.move)){m(a,age,v);a.waist.position.y=Math.min(a.waist.position.y,Next90BP.waist(.923));return true;}}return false;}
  if(stage!=='solo'&&stage!=='group')return false;
  const t=stage==='solo'?Math.max(0,age-(p.celebrationSoloStart||0)):(state?.celebration?.groupAge||age),arr=ARRIVALS[c.arrival];let busy=0;
  if(arr&&stage==='solo'&&['jumpTurn','leap'].includes(c.arrival))busy=arr(a,t);
@@ -119,7 +120,7 @@ function team(a,p,state,routine){if(!a?.arms||!a.legs)return false;const t=(stat
   case'clapCircle':both(a,-1.3,.15+Math.max(0,S(t*12))*.18,-1.2);break;
   case'armsLinked':both(a,-.25,1.25,-.25);a.body.position.y=Math.max(0,beat)*.12;a.waist.rotation.y=S(t*4)*.08;break;
   case'fistBump':arm(a,i%2,-1.5,.1,-1.0-Math.max(0,beat)*.4);break;
-  case'liftScorer':both(a,-2.5,.25,-.6);a.waist.position.y-=.08;break;
+  case'liftScorer':both(a,-2.5,.25,-.6);a.waist.position.y-=Next90BP.drop(.08);break;
   case'skyTogether':both(a,-2.9,.12,-.05);a.head.rotation.x=-.35;break;
   case'waveCrowd':arm(a,i%2,-2.5,.45+S(t*8)*.35,-.2);break;
   case'danceLine':a.waist.rotation.y=S(t*6+i)*.3;a.body.position.y=Math.abs(S(t*6))*.08;both(a,-.6+S(t*6)*.3,.45,-1.2);break;
@@ -142,11 +143,11 @@ function gesture(a,p){if(!a?.arms||!a.legs)return false;const t=p.gestureTime||0
  case'organizeWall':{const k=p.gestureSide>0?1:0;arm(a,k,-1.5+S(t*6)*.2,1.25,-.15);arm(a,1-k,-.4,.3,-.7);a.head.rotation.y=(k?1:-1)*.5;break;}
  case'placeBall':{const u=smooth(t/.35)*(1-smooth((t-.55)/.25));a.body.rotation.x=.75*u;kneel(a,.55*u);both(a,-1.0*u,.1,-.3*u);a.head.rotation.x=.4*u;break;}
  case'focus':{both(a,-.15,.25,-.35);a.body.position.y=S(t*1.6)*.015;a.head.rotation.x=.08;break;}
- case'lieDown':{a.waist.position.y=.16;a.body.rotation.z=PI/2;a.body.rotation.x=0;both(a,-.3,.2,-.4);legs(a,-.05,.1,0);break;}
+ case'lieDown':{a.waist.position.y=Next90BP.waist(.16);a.body.rotation.z=PI/2;a.body.rotation.x=0;both(a,-.3,.2,-.4);legs(a,-.05,.1,0);break;}
  case'wallCover':{both(a,-.35,-.25,-1.45);break;}
  // Disciplined free-kick wall: upright, square to the ball, shoulder to shoulder, hands
  // covering, legs together; the jump is a straight tuck, landing back into the same stance.
- case'wall':{const j=Math.max(0,p.wallJump||0),tuck=Math.min(1,j/.3);a.body.rotation.set(0,0,0);a.body.position.y=j;a.waist.rotation.set(0,0,0);a.waist.position.y=.923-.03*tuck;a.head.rotation.set(-.04-.08*tuck,0,0);a.legs.forEach((l,k)=>{l.hip.rotation.set(-.05*tuck,0,(k?1:-1)*.025);l.knee.rotation.set(.08+.32*tuck,0,0);l.boot.rotation.set(-.03-.2*tuck,0,0);});a.arms.forEach((m,k)=>{m.shoulder.rotation.set(-.38-.12*tuck,0,(k?1:-1)*-.2);m.elbow.rotation.set(-1.42,0,0);});break;}
+ case'wall':{const j=Math.max(0,p.wallJump||0),tuck=Math.min(1,j/.3);a.body.rotation.set(0,0,0);a.body.position.y=j;a.waist.rotation.set(0,0,0);a.waist.position.y=Next90BP.waist(.923-.03*tuck);a.head.rotation.set(-.04-.08*tuck,0,0);a.legs.forEach((l,k)=>{l.hip.rotation.set(-.05*tuck,0,(k?1:-1)*.025);l.knee.rotation.set(.08+.32*tuck,0,0);l.boot.rotation.set(-.03-.2*tuck,0,0);});a.arms.forEach((m,k)=>{m.shoulder.rotation.set(-.38-.12*tuck,0,(k?1:-1)*-.2);m.elbow.rotation.set(-1.42,0,0);});break;}
  case'sad':{const C=globalThis.SekmeFootballClips;if(C?.apply)C.apply(a,'sad',Math.min(t,2.4),1,{});else{a.body.rotation.x=.25;both(a,-2.4,-.3,-1.9);}break;}
  default:return false;}return true;}
 return{list:LIST,small:SMALL,useTrails,gesture,teamRoutines:TEAM,moves:Object.keys(MOVES),arrivals:Object.keys(ARRIVALS),pick,get,apply,team,version:'celebration-pack-v109'};
