@@ -1,3 +1,12 @@
+## [2026-11-27] Claude · V259 — tüm modlarda kafa doğrulaması + hıza bağlı adım
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V259).
+- Kafa: tools/checks/heads-all-modes.cjs (yavaş tarayıcı aracı; varsayılan prepare + snapshot + gerçek kafa dünya matrisi/görünürlük): penaltı 47/0, serbest vuruş 47/0, Japon 12/0, ayak tenisi 4/0, lig/kupa 16/0 (güncel olmayan matris yok); 11v11 ilk kare görsel. tests/player-heads.cjs regresyonu V257 kodunda başarısız/şimdi geçer.
+- Adım: match.js visualSteps (adım 0,42+0,20v, 0,6–2,1 m) → p.gaitSteps; football-clips stepPhase ve athlete-motion kullanır; ayak yolu adımla ölçekli, topuk kalkışı (pitch), erişim sınırı. arena-presentation: contest başına 30 Hz önbellekli hareket tablosu → gaitSteps/turnRate/accel (lig/kupa/Japon). competition-frames testi bu üç alanı bilinçli üst veri olarak çıkarıp sonlu olduklarını denetler.
+- Ölçüm (scratch slide.cjs): ritim 1,5 m/s 1,06→2,08 adım/s, 3 m/s 2,11→2,94, 7 m/s 4,93→3,85; basma kayması 1,5 m/s 1,16→0,60, 3 m/s 2,19→1,58, 5 m/s 2,08→1,47, 7 m/s 2,72→3,09 (bacak oranı sınırı).
+- Denendi/geri alındı: duruş oranı zaman bükmesi (hafif koşuda kötüleşti), sprintte kalça indirme (çömelme). Değerlendirildi/yapılmadı: CMU vuruş (6 düz vuruş; SoccerViewer futbol klipleri daha zengin).
+- Sonraki: omuz düzeltmesi (çok eksenli, dikkatli), Anny taban gövde (bacak oranı → sprint kayması), ayak tenisi/bowling yürüyüşleri.
+- 82/82.
+
 ## [2026-11-27] Claude · V258 — kafa görünmeme kök nedeni (tüm modlar) + kalça/koşu tarzı/dönüş
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V258).
 - Kök neden: matrixWorldAutoUpdate kapalı çizimde yeni eklenen gerçek kafa grubu ilk karede birim dünya matrisi → çizilmiyor; kafasız gövdenin yakası beyaz. player-heads install/updateLOD sonunda group.updateMatrixWorld(true); player-faces photoFace/mpfb-face için de. V256 app.js ile (hazırlık yok) doğrulandı; ekran görüntüsündeki tüm oyuncular ilk karede kafalı. NOT: yeni bir obje çizim sırasında sahneye ekleniyorsa aynı kural (dünya matrisini hemen güncelle).
