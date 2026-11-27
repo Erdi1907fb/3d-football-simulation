@@ -1,3 +1,12 @@
+## [2026-11-27] Claude · V261 — her modda yüz (geç yüklenen kafa) + şablon sızıntısı + ayak tenisi/bowling adımı
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V261).
+- Kullanıcı: penaltı düz modunda Ronaldo/Messi yüzleri yok, "image tarzında"; tüm modlarda yüz istiyor. Teşhis (scratch duel-heads4.cjs, düello Messi vs Ronaldo): eşleşme doğru (find), ama Ronaldo'nun kafası ancak görünür olunca kuruluyordu (~12 sn, 46 kafa aynı anda yükleniyor; prepare warmFaces 15 sn sınırı). Düzeltme: player-heads ready_ (çözülmüş veri) → apply'da senkron install; dışa aktarma kare öncesi bekleme (penalty/freekick prepareFrame warmFaces+whenFacesReady 60 sn; competition-renderer prepareFrame whenFacesReady 30 sn; footvolley/japon SekmeVideo.create öncesi). Sonuç: Ronaldo ilk karede gerçek kafa.
+- ÖNEMLİ açık: penalty-guests.json 100 konuk oyuncudan yalnız 3'ü kafa kütüphanesinde (Messi 7511, Ronaldo 4522, Neymar 40352). Kalan 97 efsane/yıldız (Zidane, Pelé, Maradona, Beckham, Son, Kroos…) için 3D kafa kaynağı yok → fotoğraf yüz. Kaynak (PES klasik oyuncu yüz paketleri / FM) gerekir; MediaFire/MEGA engelli. Codex veya kullanıcının bilgisayarı (Remote Control) ile içe aktarılabilir; araçlar tools/head-import.
+- Şablon sızıntısı: Match sample'ı klonlayan 6 şablon (penalty, freekick, japon, footvolley/bowling, competition-renderer, free-football) gaitSteps/turnRate/accel siler (V259'dan beri adım evresi donuktu/sabit eğim).
+- Ayak tenisi/bowling: footvolley-engine p.steps, vx/vz karelerde ve sample mix; bowling-engine steps; footvolley-ui gaitSteps/vx/vz. Ölçüm stance işaretiyle (slide2.cjs): ayak tenisi 7,36→3,45 m/s; düz koşu V259→V261 0,67/1,73/1,84/3,31 → 0,40/1,09/1,23/2,50 (1,5/3/5/7 m/s).
+- Düzeltme: V260 kaydındaki "ayak tenisi/bowling ~%11 kısa adım" yanlıştı (mocap yolunda half/SCALE ile metre korunuyor); asıl sorun yukarıdaki sızıntı ve yön.
+- 83/83.
+
 ## [2026-11-27] Claude · V260 — gerçekçi vücut oranı + lig 8 takım
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V260).
 - Kullanıcı onaylı önizlemedeki "tam gerçek oran" (seçenek 1) uygulandı. assets/body-proportions.js (Next90Proportions; sayfalarda ilk script; Node'da require): LEG 1,33, ARM 1,2, uyluk=kaval=0,4788 (eski 0,37/0,35), LIFT 0,2376, SCALE 0,8896 (body.scale'e çarpılır: scene.js başlangıç, player-physique, character-system). Dosyalar başta `var Next90BP=...` tanımlar.
