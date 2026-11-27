@@ -14,5 +14,12 @@ A.ok(Math.min(...waist)>.84&&Math.max(...waist)<.95,'pelvis height '+Math.min(..
 A.ok(Math.max(...swing)>.2&&Math.min(...swing)<-.2,'arms alternate');
 // every gait yields finite joints and a stance foot on the ground
 for(const [s,vx,vz,mode] of [[1.2,0,1.2,'jog'],[2.6,0,2.6,'jog'],[2.2,0,-2.2,'backpedal'],[1.8,1.8,0,'shuffle'],[1.8,-1.8,0,'shuffle']]){let stance=0;for(let k=0;k<8;k++){const r=run(s,vx,vz,k/8);A.equal(r.mode,mode);stance+=r.feet.some(f=>f.stance)?1:0;for(const o of [a.waist,a.body,...a.legs.flatMap(l=>[l.hip,l.knee,l.boot]),...a.arms.flatMap(l=>[l.shoulder,l.elbow])])A.ok([o.position.x,o.position.y,o.position.z,o.rotation.x,o.rotation.y,o.rotation.z].every(Number.isFinite));}A.ok(stance>=4,mode+' keeps a planted foot');}
+// banking: a left turn (positive turn rate) leans the body left (negative body z), braking leans back
+AM.apply(a,{speed:6,heading:0,vx:0,vz:6,gait:1,turnRate:0},{time:1});const straightZ=a.body.rotation.z,straightX=a.body.rotation.x;
+AM.apply(a,{speed:6,heading:0,vx:0,vz:6,gait:1,turnRate:1.5},{time:1});A.ok(a.body.rotation.z<straightZ-.1&&a.body.rotation.z>straightZ-.4,'bank into turn');
+AM.apply(a,{speed:6,heading:0,vx:0,vz:6,gait:1,accel:-6},{time:1});A.ok(a.body.rotation.x<straightX-.1,'brake leans back');
+// personal style differs between builds
+const b=S.createPlayer(0,6,false,Cat.pair('Fenerbahçe','Liverpool'),{id:'u',name:'U'});b.root.userData.playerId='strong';b.characterRig={...(b.characterRig||{}),profile:{build:{m:.8,u:1,l:0}}};const c=S.createPlayer(0,7,false,Cat.pair('Fenerbahçe','Liverpool'),{id:'v',name:'V'});c.root.userData.playerId='light';c.characterRig={...(c.characterRig||{}),profile:{build:{m:-.8,u:-1,l:.5}}};
+for(const x of [b,c])AM.apply(x,{speed:6,heading:0,vx:0,vz:6,gait:1},{time:1});A.ok(b.root.userData.runStyle.arm>c.root.userData.runStyle.arm&&c.root.userData.runStyle.lift>b.root.userData.runStyle.lift,'running style follows build');
 A.ok(a.root.position.equals(rootPos),'root motion untouched');
 console.log(JSON.stringify({pass:true,gaits:Object.keys(G.gaits).length,waist:[+Math.min(...waist).toFixed(3),+Math.max(...waist).toFixed(3)]}));
