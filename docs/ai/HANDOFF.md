@@ -1,3 +1,10 @@
+## [2026-11-27] Claude · V257 — ilk karede beyaz kafa düzeltmesi
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V257).
+- Kullanıcı ekran görüntüsünde (benim kale kamerası test karem) bazı oyuncular kafasız/beyaz. Teşhis adımları (scratch tl/camtime*.cjs, app.js'e geçici __dbgWorld kancası sunucuda enjekte edildi, repo değişmedi): gerçek kafa atanmış/görünür/boyuna oturmuş; yakın planda normal; aynı an hemen ikinci kez çizilince düzgün → yalnız İLK çizim. Doku/gölgelendirici ısınması ve forma baskısı gizleme sonuç vermedi (geri alındı). Çözüm: app.js prepareExport'ta warmFaces+whenFacesReady (sınırlı) + kayda alınmayan hazırlık çizimi (penaltı/FK ile aynı desen). player-heads updateLOD yeniden kurulumdan sonra aynı karede devam eder.
+- athlete-motion: kafa gövde eğimini dengeler (dünya eğimi ≤1,4°), eğim hıza bağlı (lean×mix(.45,.7,run)), kol ortalama geride duruş ×.35, açılma ×.45.
+- Açık: lig/kupa (competition-renderer) ve ayak tenisinde ilk 3D karede aynı tek karelik beyaz kafa olabilir (warmFaces var, hazırlık çizimi yok) — kontrol edilmedi. Kalan fizik listesi kullanıcıya verildi: hıza bağlı adım uzunluğu, dönüş/durma klipleri, oyuncuya özgü stil, omuz/kalça düzeltmesi, şut/pas/kafa ve kaleci kayıtları, Anny gövdesi.
+- 82/82.
+
 ## [2026-11-26] Claude · V256 — gerçek hareket kaydı (koşu/yürüme) + hızlandırılmış video kalitesi
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V256 birlikte).
 - Kullanıcı: yapay/tek düze koşu ve hareketler gerçekçi olsun (sıradaki adım); ayrıca hızlandırmada video kalitesi korunuyor mu, daha da artır.
