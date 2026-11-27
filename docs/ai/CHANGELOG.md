@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## V257 · 2026-11-27
+- Kullanıcı ekran görüntüsü (kale kamerası karesi): bazı oyuncular kafasız/beyaz kafalı. Teşhis: hareket kaydı değil; 11v11 dışa aktarmanın İLK karesinde gerçek kafalar kurulumunu tamamlamadan dokusuz beyaz çiziliyordu (aynı an hemen ikinci kez çizilince düzgün). Test düzeneğimin kaydettiği kare ilk kareydi; gerçek videolarda açılış karesi (çoğu platformun kapak karesi) etkilenirdi.
+- app.js prepareExport: diğer stüdyolar gibi sahadaki/yedek tüm oyuncuların gerçek kafaları ön yüklenir (warmFaces 20 s + whenFacesReady 15 s sınırlı) ve kayda alınmayan bir hazırlık çizimi yapılır (penaltı/serbest vuruştaki gibi). Doğrulama: ilk çizimde kafalar düzgün.
+- player-heads.js updateLOD: tam gövdeye yeniden kurulan kafa aynı karede ten rengi/eski kafa gizleme/boyun oturtmasını tamamlar (önceden o kareyi atlıyordu).
+- athlete-motion: koşuda kafa bakışı sabit (gövde eğimini dengeler, kayıttan yalnız baş sallanması); gövde eğimi hıza bağlı (~1°→10°); kol salınımı korunur, ortalama geride duruş/açılma azaltıldı (omuz derisi çeneye kadar toplanıyordu).
+
 ## V256 · 2026-11-26
 - Gerçek hareket kaydından yürüme/koşu. Kaynaklar (lisans uygun): 100STYLE Neutral (Ian Mason, CC BY 4.0; Zenodo zip'inden aralıkla yalnız 12,2 MB) yürüme, hafif koşu, geri yürüme/koşu, yan yürüme/koşu; CMU Motion Capture subject 9 + 35 koşu denemeleri (~3,5 m/s, ticari ürün içinde serbest, ham veri satılmaz). 100STYLE "koşu" ~1,4 m/s hafif koşu olduğu için sprint CMU'dan.
 - tools/mocap/extract-gaits.py: BVH ve ASF/AMC FK, kalça yönlü yerel çerçeve, sol ayak temasından döngüler (her kaydın kendi içinde), 64 örneğe normalize, örnek başına ortanca; ayak yolu/yuvarlanma, kalça inip kalkma/salınım/dönüş, gövde eğimi, omuz salınımı/açılma, dirsek, baş. Döngü sayıları: yürüme 100, hafif koşu 81, geri 114/124, yan 95/63, sprint 13. Yan kayıtlar "sağa" normalize, sola harekette sol/sağ aynalanır. Çıktı assets/mocap-gaits.js (73 KB); ham kayıt yayınlanmaz.
