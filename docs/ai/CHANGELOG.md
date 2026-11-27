@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V262 · 2026-11-27
+- Yerinde dönüş adımları (athlete-motion turnStep): neredeyse dururken dönen oyuncu ayakları üstünde dönmek yerine her 90°'de iki adım atar; evre doğrudan bakış açısından (basan ayak dünya açısını tam korur), dönüş hızı yalnız adımları açıp kapatmak için oyuncu başına kısa bir sunum notu. Basan ayak kayması 2 ve 4 rad/s'de ~0,22/0,44 → 0,000 m/s (1 rad/s'de kısmi, 0,085).
+- Duruş: hazır duruş dizleri ~20° (önce 41°, çömelmiş); duruş IK'sı hâlâ eski .37/.35 bacak boyunu kullanıyordu (V260'ta kaçmış) → THIGH/SHIN. Kollar gevşek (dirsek −0,26, omuz 0,05 rad; önce 0,13 rad ile eller 20 cm dışarıda). Ağırlık bir bacaktan diğerine yavaşça kayar, yükü alınan diz yumuşar (sunum duruşu ayrı kalır).
+- Kalkış/duruş: adım uzunluğu ivmeye bağlı (tam ivme/frende %18'e kadar kısa ve sık adım) — match.js visualSteps, arena hareket tablosu, ayak tenisi motoru ve athlete-motion plantStep aynı formül/pencere. 0→7 m/s 2 sn kalkışta adım 5,6→6,6, kayma 1,35→1,24 m/s.
+- Koşu yüksekliği ölçülüp bilerek değiştirilmedi: basma ortası diz 41/56/65° (yürüme/koşu/sprint) gerçekten fazla ama kalçayı +3 cm kaldırmak bile ayağı erişim dışına itiyor (3 m/s kayma 1,09→1,50, +5 cm'de 2,50).
 ## V261 · 2026-11-27
 - Yüzler tüm modlarda: hazır (çözülmüş) 3D kafa, oyuncu kimliği değiştiği karede takılır (player-heads ready_ önbelleği; önce bir sonraki mikro görevde → penaltıda sıradaki atıcı bir kare kafasız). Dışa aktarmada her kare öncesi kafa bekleme: penaltı/serbest vuruş prepareFrame (warmFaces+whenFacesReady, 60 sn sınır), lig/kupa prepareFrame, ayak tenisi/bowling ve Japon video başlamadan whenFacesReady (30 sn). Messi–Ronaldo düellosunda Ronaldo'nun kafası artık ilk karede (önce ~12 sn sonra).
 - 11v11 şablon sızıntısı düzeltildi: penaltı, serbest vuruş, Japon, ayak tenisi/bowling, lig/kupa ve serbest futbol şablonu bir 11v11 karesinden klonluyordu; V258/V259 sunum alanları (gaitSteps/turnRate/accel) sabit değerle kalıp adım evresini donduruyor ve sabit eğim veriyordu. Şablonlardan siliniyor.

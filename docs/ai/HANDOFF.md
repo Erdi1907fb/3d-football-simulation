@@ -1,3 +1,13 @@
+## [2026-11-27] Claude · V262 — yerinde dönüş, hazır duruş, ivmeli adım, kol duruşu
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V262).
+- Kullanıcı kalan 5 fizik/duruş işini sırayla istedi: (1) yerinde dönüş (2) ayakta duruş (3) koşuda çömelme (4) kalkış/duruş geçişi (5) omuz/kol.
+- (1) athlete-motion turnStep: speed<.18'de; u=heading/(π/2), φ=frac(u+k/2); basma δ=(π/2)(.25−φ), salınım δ=(π/2)(φ−.75), kaldırma .055; ağırlık |dönüş hızı| (ud.turnMemo, t/h EMA; sunum geçmişi — geri sarmada ilk kare 0) ve hız. scratch turn.cjs: 2/4 rad/s kayma 0.
+- (2) scene.js poseActor: bel (1−güç)·(.215+(THIGH+SHIN)·.985)+güç·waist(.885); alpha .37/.35 → THIGH/SHIN (V260 hatası); kol 0,05+0,08·güç, dirsek −0,26−0,37·güç; sunum dışı, hareketsiz oyuncuda ağırlık kaydırma (athleteMotion yoksa; tekme/sevinç/baraj/kaleci hariç).
+- (3) Ölçüldü, değişmedi (gerekçe athlete-motion yorumunda ve CHANGELOG'da). Gerçek çözüm: basma süresini kısaltan (koşu ~%35, sprint ~%25) kayıt yeniden zamanlaması — V259'da denenmiş, hafif koşuda kötüleşmişti.
+- (4) stepLength(v,acc)=taban·(1−.18·min(1,|acc|/4)·min(1,v/1.5)); match.js merkezî ±12 kare (p.accel ile aynı), arena ±6 (MDT), ayak tenisi EMA ivme (karelere accel, UI'ya p.accel).
+- (5) Dinlenme kol açısı 0,13→0,05 rad (el-kalça 0,20→~0,16 m); render scratch body/stance.png.
+- Doğrulama (V262 sonrası): heads-all-modes penaltı 47/0, serbest vuruş 47/0, Japon 12/0, ayak tenisi 4/0, lig/kupa 15/0 (eksik 0); 83/83.
+
 ## [2026-11-27] Claude · V261 — her modda yüz (geç yüklenen kafa) + şablon sızıntısı + ayak tenisi/bowling adımı
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V261).
 - Kullanıcı: penaltı düz modunda Ronaldo/Messi yüzleri yok, "image tarzında"; tüm modlarda yüz istiyor. Teşhis (scratch duel-heads4.cjs, düello Messi vs Ronaldo): eşleşme doğru (find), ama Ronaldo'nun kafası ancak görünür olunca kuruluyordu (~12 sn, 46 kafa aynı anda yükleniyor; prepare warmFaces 15 sn sınırı). Düzeltme: player-heads ready_ (çözülmüş veri) → apply'da senkron install; dışa aktarma kare öncesi bekleme (penalty/freekick prepareFrame warmFaces+whenFacesReady 60 sn; competition-renderer prepareFrame whenFacesReady 30 sn; footvolley/japon SekmeVideo.create öncesi). Sonuç: Ronaldo ilk karede gerçek kafa.
