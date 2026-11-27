@@ -12,12 +12,21 @@ var Next90BP=typeof Next90Proportions!=='undefined'?Next90Proportions:typeof req
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),smooth=v=>{v=clamp(v,0,1);return v*v*(3-2*v);},S=Math.sin,PI=Math.PI;
 const arm=(a,k,x,z=0,e=0)=>{const m=a.arms[k];if(!m)return;m.shoulder.rotation.x=x;m.shoulder.rotation.z=(k?1:-1)*z;m.elbow.rotation.x=e;};
 const both=(a,x,z=0,e=0)=>{arm(a,0,x,z,e);arm(a,1,x,z,e);};
+/* V264: bend forward at the hips (legs stay upright). Tilting a.body pivots the whole straight figure at the feet
+   and read as a crooked plank in huddles/bows. */
+const bend=(a,x)=>{a.waist.rotation.x+=x;a.legs.forEach(l=>l.hip.rotation.x-=x);a.head.rotation.x-=x*.35;};
 const legs=(a,hip,knee,boot)=>a.legs.forEach(l=>{l.hip.rotation.x=hip;l.knee.rotation.x=knee;if(boot!=null)l.boot.rotation.x=boot;});
 const kneel=(a,u,one=false)=>{if(u<=0)return;a.waist.position.y=Next90BP.waist(.923+(.52-.923)*u);a.legs.forEach((l,k)=>{if(one&&k===1){l.hip.rotation.x=-1.2*u;l.knee.rotation.x=1.35*u;l.boot.rotation.x=-.15*u;return;}l.hip.rotation.x=-.55*u;l.knee.rotation.x=(PI/2+.55)*u;l.boot.rotation.x=-(l.hip.rotation.x+l.knee.rotation.x);});};
 // GameplayFootball hand-keyed celebration clips (Unlicense), already shipped in clips.glb.
 const clip=(a,key,t,v)=>{const C=globalThis.SekmeFootballClips;if(!C?.apply)return MOVES.doublePump(a,t,v);const d=key==='celebrateExtreme'?3.05:2.6;return C.apply(a,key,t%d,1,{mirror:v%2===1,preserveRoot:false});};
 // ---- Signature movements (t = seconds into the routine, v = variant 0..5) ----
+function capture(a,key,t){const C=globalThis.SekmeFootballClips;if(!C?.mocapPose)return false;const clip=C.mocapClip?.(key);if(!clip)return false;const tt=Math.min(clip.duration,t*clip.duration/3.0);if(!C.mocapPose(a,key,tt,1,{}))return false;const h=C.mocapHips?.(key,tt)||0;a.body.position.y+=h*.90*(a.body.scale.y/(globalThis.Next90BP?.SCALE||1));a.root.updateMatrixWorld(true);let lift=0;for(const l of a.legs){const k=l.knee.matrixWorld.elements[13],b=l.boot.matrixWorld.elements[13];lift=Math.max(lift,.05-k,.045-b);}if(lift>0)a.body.position.y+=lift;/* never below the grass */return true;}
 const MOVES={
+ /* V264 captured celebrations: played once over the solo time; pelvis height from the capture (knees really touch
+    down). Without the capture (tests, failed load) a procedural fallback keeps the pose moving. */
+ mocapKneesSky:(a,t,v)=>capture(a,'mCeleb1',t)||MOVES.skyPoint(a,t,v),
+ mocapArmsSky:(a,t,v)=>capture(a,'mCeleb2',t)||MOVES.armsWide(a,t,v),
+ mocapSpinLeap:(a,t,v)=>capture(a,'mCeleb3',t)||MOVES.fistPump(a,t,v),
  armsWide:(a,t)=>{both(a,-.2,1.35+S(t*3)*.05,-.15);a.head.rotation.x=-.2;},
  fistPump:(a,t,v)=>{const k=Math.floor(t*1.25+v)%2,p=S(t*12);arm(a,k,-1.8+p*.42,.1,-1.25);arm(a,1-k,-.5-Math.max(0,-p)*.5,.35+S(t*6)*.15,-1.1);a.body.rotation.z=S(t*6)*.05;a.body.position.y=Math.max(0,p)*.05;},
  doublePump:(a,t)=>{const p=S(t*9);both(a,-1.25+p*.26,.15,-1.7);a.body.position.y=Math.max(0,p)*.06;},
@@ -87,14 +96,15 @@ const NAMES=[
 ['kneel-pray','Diz çök · dua','Kneel · prayer','kneelDown','pray'],['kneel-fist','Diz çök · yumruk','Kneel · fist','kneelDown','kneeFist'],['kneel-point','Diz çök · gökyüzü','Kneel · sky point','kneelDown','kneePoint'],['one-knee-point','Tek diz · gökyüzü','One knee · sky point','oneKnee','kneePoint'],['one-knee-fist','Tek diz · yumruk','One knee · fist','oneKnee','kneeFist'],['one-knee-arrow','Tek diz · okçu','One knee · archer','oneKnee','archer'],['one-knee-badge','Tek diz · arma','One knee · badge','oneKnee','badgeKiss'],['one-knee-heart','Tek diz · kalp','One knee · heart','oneKnee','heart'],['one-knee-shush','Tek diz · sus','One knee · shush','oneKnee','shush'],['one-knee-flex','Tek diz · güç','One knee · flex','oneKnee','flex'],
 ['leap-heart','Sıçra · kalp','Leap · heart','leap','heart'],['leap-salute','Sıçra · selam','Leap · salute','leap','salute'],['leap-ear','Sıçra · duymuyorum','Leap · ear cup','leap','earCup'],['leap-dab','Sıçra · dab','Leap · dab','leap','dab'],['leap-robot','Sıçra · robot','Leap · robot','leap','robot'],['jump-turn-archer','Zıplayıp dön · okçu','Jump-turn · archer','jumpTurn','archer'],['jump-turn-guns','Zıplayıp dön · tabancalar','Jump-turn · finger guns','jumpTurn','fingerGuns'],['jump-turn-wave','Zıplayıp dön · el salla','Jump-turn · wave','jumpTurn','wave'],['knee-slide-robot','Diz üstü kayış · robot','Knee slide · robot','kneeSlide','robot'],['knee-slide-boxing','Diz üstü kayış · boks','Knee slide · boxing','kneeSlide','boxing'],
 ['belly-sky','Göğüs üstü kayış · gökyüzü','Belly slide · sky point','bellySlide','skyPoint'],['belly-meditate','Göğüs üstü kayış · meditasyon','Belly slide · meditation','bellySlide','meditate'],['side-slide-dab','Yan kayış · dab','Side slide · dab','sideSlide','dab'],['side-slide-samba','Yan kayış · samba','Side slide · samba','sideSlide','samba'],['side-slide-phone','Yan kayış · telefon','Side slide · phone','sideSlide','phone'],['leap-disco','Sıçra · disko','Leap · disco','leap','disco'],['jump-spin-sky','Dönerek zıpla · gökyüzü','Spin jump · sky','jumpTurn','crossArmsSky'],['knee-slide-calma','Diz üstü kayış · sakin ol','Knee slide · calm down','kneeSlide','calma'],['knee-slide-binoculars','Diz üstü kayış · dürbün','Knee slide · binoculars','kneeSlide','binoculars'],['knee-slide-me','Diz üstü kayış · “bu benim”','Knee slide · “it’s me”','kneeSlide','meChest'],
-['wild-joy','Çılgın sevinç (GameplayFootball klibi)','Wild joy (GameplayFootball clip)','none','clipExtreme'],['joy','Coşkulu sevinç (GameplayFootball klibi)','Joy (GameplayFootball clip)','none','clipNormal'],['knee-slide-wild','Diz üstü kayış · çılgın sevinç','Knee slide · wild joy','kneeSlide','clipExtreme'],['jump-turn-joy','Zıplayıp dön · coşku','Jump-turn · joy','jumpTurn','clipNormal'],['belly-joy','Göğüs üstü kayış · coşku','Belly slide · joy','bellySlide','clipNormal'],['side-slide-wild','Yan kayış · çılgın sevinç','Side slide · wild joy','sideSlide','clipExtreme']];
+['wild-joy','Çılgın sevinç (GameplayFootball klibi)','Wild joy (GameplayFootball clip)','none','clipExtreme'],['joy','Coşkulu sevinç (GameplayFootball klibi)','Joy (GameplayFootball clip)','none','clipNormal'],['knee-slide-wild','Diz üstü kayış · çılgın sevinç','Knee slide · wild joy','kneeSlide','clipExtreme'],['jump-turn-joy','Zıplayıp dön · coşku','Jump-turn · joy','jumpTurn','clipNormal'],['belly-joy','Göğüs üstü kayış · coşku','Belly slide · joy','bellySlide','clipNormal'],['side-slide-wild','Yan kayış · çılgın sevinç','Side slide · wild joy','sideSlide','clipExtreme'],
+/* V264 real captured celebrations (Anderson Rohr soccer pack) */['mocap-knees-sky','Dizlerin üstünde · kollar göğe','On the knees · arms to the sky','none','mocapKneesSky'],['mocap-arms-sky','Ayakta · kollar göğe','Standing · arms to the sky','none','mocapArmsSky'],['mocap-spin-leap','Dönerek sıçrama','Spinning leap','none','mocapSpinLeap']];
 const LIST=NAMES.map(([id,tr,en,arrival,move],i)=>({id,index:i,tr,en,arrival,move,style:'pack:'+id}));
 const BY_ID=new Map(LIST.map(c=>[c.id,c]));
 // Team routines for non-scorers during the group stage.
 const TEAM=['huddle','pileOn','jumpTogether','pointAtScorer','bowToScorer','clapCircle','armsLinked','fistBump','liftScorer','skyTogether','waveCrowd','danceLine','highFive','slideTogether'];
 const JUMPS=LIST.filter(c=>['jumpTurn','leap'].includes(c.arrival)),SLIDES=LIST.filter(c=>['kneeSlide','bellySlide','sideSlide'].includes(c.arrival)),KNEE=LIST.filter(c=>c.arrival==='kneeSlide'),OTHERS=LIST.filter(c=>!SLIDES.includes(c));
 // Small, on-the-spot reactions for a single penalty/free-kick goal (no runs, no slides).
-const SMALL=LIST.filter(c=>c.arrival==='none'&&['fistPump','doublePump','armsWide','skyPoint','skyPointOne','earCup','shush','heart','badgeKiss','clap','calma','coolArms','flex','meChest','crossArmsSky','clipNormal','wave','disbelief','fingerGuns'].includes(c.move));
+const SMALL=LIST.filter(c=>c.arrival==='none'&&['fistPump','doublePump','armsWide','skyPoint','skyPointOne','earCup','shush','heart','badgeKiss','clap','calma','coolArms','flex','meChest','crossArmsSky','clipNormal','wave','disbelief','fingerGuns','mocapArmsSky'].includes(c.move));
 const hash=(seed,index)=>(Math.imul((seed>>>0)^0x9e3779b9,2654435761)+Math.imul(index+1,40503))>>>0;
 function choose(n,mode){const r=n%100,m=n>>>7;if(mode==='small')return SMALL[m%SMALL.length];if(mode==='big')return r<55?KNEE[m%KNEE.length]:r<80?SLIDES[m%SLIDES.length]:JUMPS[m%JUMPS.length];return r<28?KNEE[m%KNEE.length]:r<40?SLIDES[m%SLIDES.length]:OTHERS[m%OTHERS.length];}
 function pick(seed,index=0,exclude=null,mode='goal'){const n=hash(seed,index);let c=choose(n,mode);if(exclude&&c.id===exclude)c=choose(n+977,mode);return{style:c.style,id:c.id,variant:(n>>>8)%6,team:TEAM[(n>>>4)%TEAM.length],soloSeconds:c.arrival==='none'?3.0:3.6,name:c};}
@@ -112,11 +122,11 @@ function apply(a,p,state){const c=get(p.celebrationStyle);if(!c||!a?.arms||!a.le
 // Team-mates: one routine shared by the group, with per-player phase offsets.
 function team(a,p,state,routine){if(!a?.arms||!a.legs)return false;const t=(state?.celebration?.groupAge??p.celebrationTime??0)+(a.index||0)*.07,i=a.index||0,beat=S(t*8+i*.3);
  switch(routine){
-  case'huddle':both(a,-.9,-.35,-.9);a.body.rotation.x=.35;a.body.position.y=Math.max(0,beat)*.05;break;
-  case'pileOn':a.body.rotation.x=.55+S(t*3+i)*.08;both(a,-1.3,-.2,-.5);kneel(a,i%3===0?.6:0);break;
+  case'huddle':both(a,-.9,-.35,-.9);bend(a,.42);a.legs.forEach(l=>l.knee.rotation.x+=.12);a.body.position.y=Math.max(0,beat)*.05;break;
+  case'pileOn':both(a,-1.3,-.2,-.5);kneel(a,i%3===0?.6:0);bend(a,.62+S(t*3+i)*.08);a.legs.forEach(l=>l.knee.rotation.x+=.18);break;
   case'jumpTogether':a.body.position.y=Math.max(0,S(t*7))*.32;both(a,-2.6,.25,-.2);break;
   case'pointAtScorer':arm(a,i%2,-1.5,-.15,-.05);arm(a,1-i%2,-.2,.3,-.3);break;
-  case'bowToScorer':{const b=Math.max(0,S(t*2.4+i*.2));a.body.rotation.x=.75*b;both(a,-2.4*b,.1,-.1);kneel(a,.85);break;}
+  case'bowToScorer':{const b=Math.max(0,S(t*2.4+i*.2));both(a,-2.4*b,.1,-.1);kneel(a,.85);bend(a,.80*b);break;}
   case'clapCircle':both(a,-1.3,.15+Math.max(0,S(t*12))*.18,-1.2);break;
   case'armsLinked':both(a,-.25,1.25,-.25);a.body.position.y=Math.max(0,beat)*.12;a.waist.rotation.y=S(t*4)*.08;break;
   case'fistBump':arm(a,i%2,-1.5,.1,-1.0-Math.max(0,beat)*.4);break;

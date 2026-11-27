@@ -1,0 +1,35 @@
+// V264 full review (browser, slow): every studio, several moments per contest. Checks real heads (installed, visible,
+// current world matrix), missing faces, full body on, body scale (realistic proportions), joint quaternions finite,
+// feet against the grass, and which captured/clip motion drives each actor. Saves a contact sheet per mode.
+// Usage: node tools/checks/full-review.cjs <out-dir> [ONLY=penalty,duel,...]
+const fs=require('fs'),path=require('path'),http=require('http'),{chromium}=(()=>{try{return require('playwright')}catch{return require(process.env.PLAYWRIGHT_MODULE)}})();
+const root=process.env.ROOT||path.resolve(__dirname,'../..'),out=process.argv[2];fs.mkdirSync(out,{recursive:true});
+const types={'.js':'text/javascript','.json':'application/json','.html':'text/html','.css':'text/css','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2','.mp3':'audio/mpeg','.glb':'model/gltf-binary','.gz':'application/gzip'};
+const server=http.createServer((q,r)=>{const u=new URL(q.url,'http://x');if(u.pathname.endsWith('.php')){r.setHeader('Content-Type','application/json');return r.end('{"matches":[],"scheduled":[]}');}const f=path.resolve(root,'.'+decodeURIComponent(u.pathname==='/'?'/index.html':u.pathname));if(!f.startsWith(root)||!fs.existsSync(f)||fs.statSync(f).isDirectory())return r.writeHead(404).end();r.setHeader('Content-Type',types[path.extname(f)]||'application/octet-stream');fs.createReadStream(f).pipe(r);});
+const MODES=[
+ ['penalty','penalty.html?home=432&away=436','Next90PenaltyStudio',null],
+ ['duel','penalty.html?home=432&away=436','Next90PenaltyStudio',async p=>{await p.selectOption('#penaltyMode','duel');await p.waitForTimeout(600);await p.selectOption('#penaltyShooter0','guest:bsd-9063');await p.selectOption('#penaltyShooter1','guest:bsd-7880');await p.waitForTimeout(600);}],
+ ['freekick','freekick.html?home=432&away=436','Next90FreeKickStudio',null],
+ ['japon','japon-kale.html','Next90JaponStudio',null],
+ ['footvolley','footvolley.html','Next90FootvolleyStudio',null],
+ ['bowling','bowling.html','Next90BowlingStudio',null],
+ ['league5','competition.html','Next90CompetitionStudio',async p=>{await p.selectOption('#competitionFormat','league');await p.selectOption('#competitionTeamCount','2');await p.selectOption('#competitionSeconds','30').catch(()=>{});}],
+ ['league11','competition.html','Next90CompetitionStudio',async p=>{await p.selectOption('#competitionFormat','league');await p.selectOption('#competitionTeamCount','2');await p.selectOption('#competitionField','eleven').catch(()=>{});await p.waitForTimeout(500);}],
+];
+(async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port+'/';const b=await chromium.launch({args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required']});const results=[];
+for(const [name,url,api,setup] of MODES){if(process.env.ONLY&&!process.env.ONLY.split(',').includes(name))continue;const p=await b.newPage({viewport:{width:1280,height:900}});p.setDefaultTimeout(1500000);const errs=[];p.on('pageerror',e=>errs.push(e.message));
+ try{await p.goto(base+url);await p.waitForFunction(a=>!!window[a],api,{timeout:180000});await p.waitForTimeout(1500);if(setup)await setup(p);
+  const r=await p.evaluate(async(api)=>{const S=window[api];await S.prepare();for(let i=0;i<900&&!(S.world||S.renderer?.world);i++)await new Promise(r=>setTimeout(r,500));await (S.world?.whenFacesReady?.()||S.renderer?.world?.whenFacesReady?.()||Promise.resolve());
+   const T=THREE,dur=Number(S.contest?.duration||S.competition?.duration||S.renderer?.c?.duration||30),ch=(S.competition?.chapters||[]).find(c=>c.kind==='match'),times=ch?[.2,.45,.7,.92].map(f=>ch.start+f*((ch.end??(ch.start+(ch.duration||20)))-ch.start)):[.18,.42,.66,.9].map(f=>f*dur),moments=[],imgs=[];
+   for(const t of times){let img=null;if(typeof S.snapshot==='function'){for(let k=0;k<20;k++){try{img=await S.snapshot(t);break;}catch(e){/* scene parts (e.g. the Japon arena) finish building just after prepare */await new Promise(r=>setTimeout(r,1500));}}}else{if(S.renderer?.prepareFrame)await S.renderer.prepareFrame(t);S.draw?.(t);await new Promise(r=>setTimeout(r,50));S.draw?.(t);const cv=[...document.querySelectorAll('canvas')].sort((a,b)=>b.width*b.height-a.width*a.height)[0];img=cv.toDataURL('image/jpeg',.7);}imgs.push(img);
+    const world=S.world||S.renderer?.world;if(!world){moments.push({t,error:'no world (board chapter)'});continue;}const actors=[...(world.actors||[]),...((world.sidelines||[]).map(x=>x.actor))].filter(a=>a?.root?.visible&&a.root.scale.lengthSq()>1e-8);let real=0,stale=0,missingFace=0,noBody=0,badScale=0,nan=0,sunk=0,floating=0;const sources={};
+    for(const a of actors){if(a.realHead){real++;const g=a.realHead.group,before=g.matrixWorld.clone();g.updateMatrixWorld(true);let d=0;for(let i=0;i<16;i++)d=Math.max(d,Math.abs(before.elements[i]-g.matrixWorld.elements[i]));if(d>1e-4)stale++;}else if(a.root.userData.faceSource&&!a.photoFace&&a.fullBody?.visible)missingFace++;
+     if(a.fullBody&&!a.fullBody.visible&&a.root.userData.fullBodyLOD!=='existing-fallback')noBody++;const sy=a.body.scale.y;if(!(sy>.7&&sy<1.05))badScale++;
+     for(const n of [a.body,a.waist,a.head,...a.arms.flatMap(m=>[m.shoulder,m.elbow]),...a.legs.flatMap(l=>[l.hip,l.knee,l.boot])])if(!Number.isFinite(n.quaternion.x+n.quaternion.y+n.quaternion.z+n.quaternion.w))nan++;
+     a.root.updateMatrixWorld(true);const low=Math.min(...a.legs.map(l=>l.boot.matrixWorld.elements[13]));if(low<-.04)sunk++;const ud=a.root.userData;if(low>.30&&!ud.keeperTechnique&&!a.official)floating++;
+     const src=ud.footballClip?.source||ud.athleteMotion?.source||null;if(src){const k=String(src).startsWith('mocap/')?src:String(src).split('/')[0];sources[k]=(sources[k]||0)+1;}}
+    moments.push({t:+t.toFixed(1),actors:actors.length,real,stale,missingFace,noBody,badScale,nan,sunk,floating,sources});}
+   return{moments,imgs};},api);
+  r.imgs.forEach((im,i)=>{if(im)fs.writeFileSync(path.join(out,name+'-'+i+(im.startsWith('data:image/png')?'.png':'.jpg')),Buffer.from(im.split(',')[1],'base64'));});delete r.imgs;results.push({name,...r,errors:errs.slice(0,3)});console.log(name,JSON.stringify(results.at(-1)));}
+ catch(e){results.push({name,error:e.message.slice(0,300),errors:errs.slice(0,3)});console.log(name,'ERROR',e.message.slice(0,300));}await p.close();}
+fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(results,null,1));await b.close();server.close();})().catch(e=>{console.error(e);process.exit(1)});

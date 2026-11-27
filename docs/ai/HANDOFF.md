@@ -1,3 +1,13 @@
+## [2026-11-27] Claude · V264 — genel kontrol: ten rengi, sevinç duruşları, hakem eşyaları, NaN; gerçek sevinç/savunma/sprint kaydı
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V264).
+- Kullanıcı: tüm modlarda yüz/fizik/vücut/hareket/duruşları test et; penaltı sevincinde yamuk eğilme, hakem eli ağzında, Škriniar siyah ten.
+- tools/checks/full-review.cjs (yeni, yavaş): penaltı, düello (Messi–Ronaldo), serbest vuruş, Japon, ayak tenisi, bowling, lig 5v5, lig 11v11; her biri 4 anda. Sonuç: gerçek kafa tam, güncel olmayan 0, eksik yüz 0, gövde/ölçek hatası 0, gömülen ayak 0. Bulunan: 11v11'de gizli (ölçek 0) yedeklerde supportFeet NaN → düzeltildi; penaltı sonu kaybedenler havada yan yatma → düzeltildi. Japon'da ilk hata kontrol aracı zamanlamasıydı (arena prepare'den sonra kuruluyor) → araçta yeniden deneme.
+- Ten: manifest skinRGB yeniden örneklendi (resample-skin.py; KHR_mesh_quantization int16 konum × düğüm ölçeği; yanak bölgesi göz çizgisinin 2–6 cm altı, |x| 2,2–5,5 cm, öne bakan normal). player-faces matchSkin değişmedi (manifest skinRGB öncelikli).
+- Duruş: celebration-pack bend(a,x) (bel +x, kalça −x, baş −.35x) huddle/pileOn/bowToScorer; scene.js crouch aynı mantık; lowestPoint(a) eklem+yarıçap ile fall/keeperGrounded.
+- Hakem/top görevlisi eşyaları −Next90BP.HAND.
+- Mocap: convert-rokoko-soccer.mjs PLAN'a mCeleb1-3 (hips izi), mDefend1/2; celebration-pack 'mocap-knees-sky/arms-sky/spin-leap' (capture(), zemin sınırı), athlete-motion arenaJockey ve scene p.pressing üst gövde (upperOnly). extract-gaits.py --accad (Male1_C03_Run, Male2_C3_Run, Female1_C03_Run) → sprint.
+- Testler: mocap-football (12 klip, sevinç zemin), mocap-gait (ACCAD kaynak, bel alt sınırı .83), celebrations (109). 84/84.
+
 ## [2026-11-27] Claude · V263 — gerçek futbol hareket kaydı (şut/pas/penaltı/kaleci/hakem kartı)
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V263).
 - Kaynak araştırması (kullanıcı istedi): açık lisanslı uygun tek futbol paketi Anderson Rohr Gumroad "Free mocap pack 05: Soccer" (21 FBX, 60 fps, Rokoko/iClone/UE5 iskeleti; lisans: kişisel+ticari serbest, atıf gerekmez, paket bağımsız ürün olarak dağıtılamaz). Kullanıcının açık isteğiyle e-postası Gumroad 0 $ alımında kullanıldı; ZIP /tmp altında, repoya ham dosya girmedi. Diğer adaylar: ACCAD (CC BY 3.0, koşu/sprint var, futbol yok — koşu basma süresi denemesi için aday), Rokoko 12 spor (form), Xsens (ticari izin belirsiz), Bandai/LAFAN1 (ticari değil).

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V264 · 2026-11-27
+- Ten rengi: kafa kütüphanesinin skinRGB değeri boyun/çene altındaki gölgeli bölgeden örneklenmişti (profilden 60+ koyu 69/452 oyuncu: Škriniar, Kane, Rice, Salah, Oğuz Aydın…); gövde bu renge eşitlendiği için kol/bacak koyuydu. tools/head-import/resample-skin.py 3069 kafayı yanaklardan yeniden örnekledi (manifest skinRGB, skinSample 'cheeks-v264'): koyu sapma 69→19, medyan −28.
+- Sevinç duruşları: sarılma/yığılma/golcüye eğilme ve kaybeden 'crouch' tepkisi gövdeyi ayaktan devirerek eğiliyordu (dimdik tahta gibi yamuk); artık belden bükülür (bel öne, kalça ters, bacak dik). Düşme/yan yatma ve kalecinin yerde kalma ayarı skinned T-poz sınır kutusu yerine eklemlerden hesaplanır (kaybedenler ~0,5 m havada yan yatıyordu).
+- Hakem: düdük ve kart (ve top görevlisinin topu) eski kol boyunda ön kolun içinde kalıyordu → yeni el konumu; düdük gümüş ve görünür (eli ağzında görünmüyor).
+- Gerçek kayıt: 3 gol sevinci (dizlerde kollar göğe, ayakta kollar göğe, dönerek sıçrama; kalça izi ve zemin sınırı) sevinç paketine (106→109, küçük sevinçlere 1), savunma kaydı jokey/pres kol-baş duruşuna; sprint yürüyüşü ACCAD koşularından (CC BY 3.0): 7 m/s basma kayması 2,50→1,71.
+- Düzeltme: sıfır ölçekle gizlenen yedeklerde ayak yerleştirme NaN üretiyordu (supportFeet artık atlar).
+- Kontrol: tools/checks/full-review.cjs (8 mod × 4 an: gerçek kafa, eksik yüz, gövde, ölçek, NaN, ayak-zemin, hareket kaynağı). 84/84.
 ## V263 · 2026-11-27
 - Gerçek futbol hareket kaydı: Anderson Rohr "Free mocap pack 05: Soccer" (Rokoko, 21 klip, ücretsiz ticari kullanım; paket yeniden dağıtılmaz). tools/mocap/convert-rokoko-soccer.mjs (three FBXLoader) 7 pencereyi 13 aktör eklemine çevirir (T-poz farkı uzuv başına düzeltilir, 30 fps int16) → assets/mocap-football.js (62 KB).
 - Kullanım: duran oyuncunun pası (iç taraf) ve şutu (sert vuruş), penaltı vuruşu (penaltı stüdyosu ve maç penaltıları), kalecinin tutuşlu kurtarışları (yüksek/göğüs/yerden; ağırlık .40), hakemin sarı/kırmızı kart duruşu. Vuruş klipleri sol bacak için yazılır (sahne sağ ayaklılarda bacakları değiştirir); sağ ayakla çekilen pas/penaltı aynalanır. Koşarak vuruşlar, kafa ve uçan kurtarışlar mevcut kliplerle kalır.
