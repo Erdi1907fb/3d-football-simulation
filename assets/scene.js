@@ -657,7 +657,7 @@ ballGroup.traverse(o=>{if(o.isMesh&&o.material&&!o.material.isMeshPhysicalMateri
     if(['review','monitor'].includes(p.pose)){armTarget(a,1,[.16,.79,.025]);a.head.rotation.z=-.06;}
     if(p.pose==='screenSignal'){const u=Math.max(0,Math.min(1,p.signalProgress??.5)),x=u<.30?.29*u/.30:u<.72?.29:.29*(1-(u-.72)/.28),y=u<.30?.82:u<.72?.82-(u-.30)/.42*.28:.54;armTarget(a,0,[-x,y,.29]);armTarget(a,1,[x,y,.29]);}
     if(['confirm','penalty'].includes(p.pose)){a.arms[1].shoulder.rotation.x=-1.48;a.arms[1].elbow.rotation.x=-.04;}
-    if(p.pose==='yellow'||p.pose==='red'){a.arms[1].shoulder.rotation.x=-2.8;a.arms[1].elbow.rotation.x=-.15;}
+    if(p.pose==='yellow'||p.pose==='red'){if(!FootballClips.mocapPose?.(a,'mCard',1.4,.9,{preserveRoot:false})){a.arms[1].shoulder.rotation.x=-2.8;a.arms[1].elbow.rotation.x=-.15;}/* V263: captured referee booking posture (left arm raises the card, as the card mesh) */}
     if(p.pose==='indirect'||p.pose==='offside'){a.arms[1].shoulder.rotation.x=-3.05;a.arms[1].elbow.rotation.x=0;}if(p.pose==='disallow'){const u=Math.min(1,(p.decisionAge??1)/.55),x=.13+.22*u;armTarget(a,0,[x,.49,.32]);armTarget(a,1,[-x,.57,.28]);}
    }
    a.root.userData.photoPose=false;

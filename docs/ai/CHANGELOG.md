@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V263 · 2026-11-27
+- Gerçek futbol hareket kaydı: Anderson Rohr "Free mocap pack 05: Soccer" (Rokoko, 21 klip, ücretsiz ticari kullanım; paket yeniden dağıtılmaz). tools/mocap/convert-rokoko-soccer.mjs (three FBXLoader) 7 pencereyi 13 aktör eklemine çevirir (T-poz farkı uzuv başına düzeltilir, 30 fps int16) → assets/mocap-football.js (62 KB).
+- Kullanım: duran oyuncunun pası (iç taraf) ve şutu (sert vuruş), penaltı vuruşu (penaltı stüdyosu ve maç penaltıları), kalecinin tutuşlu kurtarışları (yüksek/göğüs/yerden; ağırlık .40), hakemin sarı/kırmızı kart duruşu. Vuruş klipleri sol bacak için yazılır (sahne sağ ayaklılarda bacakları değiştirir); sağ ayakla çekilen pas/penaltı aynalanır. Koşarak vuruşlar, kafa ve uçan kurtarışlar mevcut kliplerle kalır.
+- Test: mocap-football.cjs. 84/84.
 ## V262 · 2026-11-27
 - Yerinde dönüş adımları (athlete-motion turnStep): neredeyse dururken dönen oyuncu ayakları üstünde dönmek yerine her 90°'de iki adım atar; evre doğrudan bakış açısından (basan ayak dünya açısını tam korur), dönüş hızı yalnız adımları açıp kapatmak için oyuncu başına kısa bir sunum notu. Basan ayak kayması 2 ve 4 rad/s'de ~0,22/0,44 → 0,000 m/s (1 rad/s'de kısmi, 0,085).
 - Duruş: hazır duruş dizleri ~20° (önce 41°, çömelmiş); duruş IK'sı hâlâ eski .37/.35 bacak boyunu kullanıyordu (V260'ta kaçmış) → THIGH/SHIN. Kollar gevşek (dirsek −0,26, omuz 0,05 rad; önce 0,13 rad ile eller 20 cm dışarıda). Ağırlık bir bacaktan diğerine yavaşça kayar, yükü alınan diz yumuşar (sunum duruşu ayrı kalır).

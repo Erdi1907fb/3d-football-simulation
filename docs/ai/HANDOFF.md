@@ -1,3 +1,11 @@
+## [2026-11-27] Claude · V263 — gerçek futbol hareket kaydı (şut/pas/penaltı/kaleci/hakem kartı)
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V263).
+- Kaynak araştırması (kullanıcı istedi): açık lisanslı uygun tek futbol paketi Anderson Rohr Gumroad "Free mocap pack 05: Soccer" (21 FBX, 60 fps, Rokoko/iClone/UE5 iskeleti; lisans: kişisel+ticari serbest, atıf gerekmez, paket bağımsız ürün olarak dağıtılamaz). Kullanıcının açık isteğiyle e-postası Gumroad 0 $ alımında kullanıldı; ZIP /tmp altında, repoya ham dosya girmedi. Diğer adaylar: ACCAD (CC BY 3.0, koşu/sprint var, futbol yok — koşu basma süresi denemesi için aday), Rokoko 12 spor (form), Xsens (ticari izin belirsiz), Bandai/LAFAN1 (ticari değil).
+- Dönüştürme: node tools/mocap/convert-rokoko-soccer.mjs <Rokoko_Default> assets/mocap-football.js (npm i three@0.160.1 gerekir). PLAN pencereleri ve temas anları: pas 08 (sağ, 1,38 s), şut 09 (sol, 2,58), penaltı 10 (sağ, 6,56), kurtarış 15/16/17 (5,25/3,33/7,3), kart 20. Retarget: uzuv başına dinlenme yönü düzeltmesi (fix·Wrest)^-1, dünya delta, ebeveyn bacakları 'middle' (bel) üzerinden; saklama s=C^-1·q·C (soccerviewer kuralı).
+- football-clips: mocapClips() yüklemede birleştirir ('mocap/…', contactTime, foot); action() duran 'shot'/'pass' girişlerinde gerçek klip (penaltıda mPenalty), sağ ayaklı klip aynalanır; goalkeeper() tutuşlu stiller (saveHoldHigh/Trunk/Knee/Low) → mSave*, ağırlık .40; mocapPose() dışa açık; scene.js hakem sarı/kırmızı → mCard t=1,4 (sol kol, kart nesnesiyle aynı).
+- Görsel: scratch body/mc-sheet.png (7 klip, aktörde), kick-sheet.png (penaltı stüdyosu vuruş anı). Sırada (isteğe bağlı): ACCAD koşu ile basma süresi; sevinç (3 klip, kalça yüksekliği gerekir), savunma, top sürme.
+- 84/84.
+
 ## [2026-11-27] Claude · V262 — yerinde dönüş, hazır duruş, ivmeli adım, kol duruşu
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V262).
 - Kullanıcı kalan 5 fizik/duruş işini sırayla istedi: (1) yerinde dönüş (2) ayakta duruş (3) koşuda çömelme (4) kalkış/duruş geçişi (5) omuz/kol.
