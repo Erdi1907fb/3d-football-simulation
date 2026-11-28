@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## V267 · 2026-11-28
+- Serbest 11v11 (kullanıcı: Fenerbahçe–Erzurumspor 7-1, 7 golü de Muriqi attı, 5. golde kale dibine kadar sürüp vurdu):
+  - Veri: kişisel maçta sunucu gücü gelmeyince katalog önceliği kullanılıyor; Erzurumspor 50 (alt lig düzeyi) kalmıştı. Süper Lig'deki güncel konumlarına göre düzeltildi: Erzurumspor 50→63, Amed 52→63, Çorum 51→61, Gençlerbirliği 55→62, Eyüpspor 56→60, Gaziantep 57→62, Kocaelispor 58→61.
+  - possession-engine (yalnız free): ev sahibi santrforuna fazladan pas ağırlığı kaldırıldı (tek oyuncu golleri buradan); şut seçimi açı+mesafe+önündeki savunmacıya göre (umutsuz açıdan şut yok, ceza sahasında karar hızlı, kale dibine kadar sürme cezalı); şut fiziğinde çapraz şutlarda top hızı gerçek hıza ölçeklendi (dar açıdan ~100 m/s top hatası); kaleci açıortayda, top yaklaştıkça çıkar, ceza sahasında topu sürene çıkar ve kapanır (claim); geride kalan stoper/bek/ön libero topla kale arasına depar atar; adam takibi kendi yarı sahada kilitli; savunma ceza sahasında ikili mücadelede güçlü.
+  - Atak çeşitliliği: kanattan ceza sahasına orta (topun baş yüksekliğine indiği buluşma noktası), kafa ve vole vuruşları, ceza sahasına gelen pasa tek vuruş, daha çok ara pas. free-football kafa pozu (headingBall/jump).
+  - Skor sınırı yok; skorlar oyundan çıkar. Ölçüm (30 maç, 90 sn): maç başı ~1,7 gol (önce 2,2), şutların %64'ü gol; Fenerbahçe–Erzurumspor (84–63) 20 maç ort. 1,05–0,55.
+- Test: free-football-realism (umutsuz açı yok, fiziksel şut hızı, kale çizgisine sürme yok, orta oynanıyor).
+
 ## V266 · 2026-11-28
 - Top sektirme (gerçek kayıt, Juggling_01 4,0–5,8 sn, 3 dokunuş): ayak tenisinde servisçi 3 servisten 2'sinde yerine vardıktan sonra topu 3 kez sektirip eline alır, sonra servis atar. Top dokunuşlar arasında yerçekimli yaylarla gider; dokunuş anında ayak ucu–top merkezi 6–10 cm (rig üzerinde kalibre). Yalnız servis beklemesi; oyun fiziği ve istatistikleri değişmez (sayı başı +1–2 sn).
 - Top sürme (gerçek kayıt, Dribble_03): 11v11, 5v5 ve Japon kalede topu süren oyuncunun başı/omuzları/kolları kayıttan (0,4–5 m/s, hızla azalan ağırlık, ileri-geri oynatma); bacaklar adım sisteminde (kayma yok).

@@ -1,3 +1,12 @@
+## [2026-11-28] Claude · V267 — serbest 11v11 gerçekçilik + katalog güç düzeltmesi
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V267).
+- Kullanıcı: Fenerbahçe–Erzurumspor serbest maç 7-1 (hepsi Muriqi), 5. golde kale dibine kadar boş sürüp vurma. Açık talimat: SKORLARA SINIR KOYMA; güçlü–zayıf maçlarda büyük skorlar çıkabilir. Sadece veriyi tutarlı yap ve saçma oyunu düzelt.
+- Kök neden: (1) assets/catalog.js Erzurumspor strength 50 (kişisel maçta sunucu gücü yoksa bu kullanılır) → football-ai profile q=(s-75)/100 ±.2 beceri farkı; terfi eden/alt sıradaki 7 takım güncellendi. (2) possession-engine c.finisher (ev sahibi 9 numara) pas çarpanı free modda da çalışıyordu → `!free` ile kapatıldı.
+- possession-engine free yolu: shotQuality(açı, mesafe, blokçu), shoot() (beceri/baskı/mesafe hatası, slant ile gerçek top hızı, reach 1.5, chip), kaleci açıortay+çıkış, claim, sprint (geride kalan savunmacı), trackRunner kilidi, ceza sahası ikili `squared`, cross seçeneği + flight.meet, aerial temas (≤2.5 m) → header/volley, ceza sahasına pas → 'first'. Analiz modu değişmedi.
+- free-football.js: shot.technique==='header' için headingBall/headingContact/jump (0,25 sn önden).
+- Ölçüm aracı (scratch free-stats.cjs): 30 maç eşit takım 1,7 gol/maç, konversiyon .64, kafa 9, vole 3; önce 2,2 ve .62.
+- Electron yok → browser-free-football çalıştırılamadı; kafa pozu verisi Node'da doğrulandı.
+
 ## [2026-11-28] Claude · V266 — top sektirme ve top sürme kayıtları + son genel doğrulama
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V266).
 - footvolley-engine: JUGGLE (Next90MocapFootball mJuggle.touches); setUpServe'de serveCount%3!==2 ise juggle={p,start=t+max(1.1,d/4.5+.5),end=start+dur+.28}, p.juggle; jugglePosition(): eller→dokunuşlar→eller, X=p+lx·x·.48+fx·z·.47, Y=.30+R·.55 (rig ölçümüyle kalibre; cam/jug.cjs), yay +½g·dt²·u(1−u); pose() juggle dalı; footvolley-ui Next90FootvolleyPose 'juggle' → mocapPose(mJuggle). rng kullanılmaz (dizi bozulmaz).
