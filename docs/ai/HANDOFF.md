@@ -2,7 +2,8 @@
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V266).
 - footvolley-engine: JUGGLE (Next90MocapFootball mJuggle.touches); setUpServe'de serveCount%3!==2 ise juggle={p,start=t+max(1.1,d/4.5+.5),end=start+dur+.28}, p.juggle; jugglePosition(): eller→dokunuşlar→eller, X=p+lx·x·.48+fx·z·.47, Y=.30+R·.55 (rig ölçümüyle kalibre; cam/jug.cjs), yay +½g·dt²·u(1−u); pose() juggle dalı; footvolley-ui Next90FootvolleyPose 'juggle' → mocapPose(mJuggle). rng kullanılmaz (dizi bozulmaz).
 - football-clips locomotion: mDribble upperOnly+preserveRoot, w=smooth(.4,1.2,v)·(1−smooth(3.5,5.5,v))·.55·(1−vuruş/karşılama), userData.dribbleCapture; applyClip options.record=false.
-- Doğrulama: tam test + tools/checks/full-review (8 mod × 4 an) — sonuçlar aşağıda.
+- Doğrulama: tools/checks/full-review (8 mod × 4 an): penaltı 47 gerçek kafa, düello 26–27, serbest vuruş 31–36, Japon 12, ayak tenisi 4, bowling 4, lig 5v5 10, lig 11v11 44–47; stale/eksik yüz/gövdesiz/ölçek/NaN/havada 0. İlk turda penaltı ve 5v5'te birer 'batık ayak' çıktı: GameplayFootball 'deflect/idle/090_high_deflect_far' (kaleci uzak yüksek uzanma, blok/parry h>1.4) kökü düşürüp krampon −0,12 m'ye iniyordu → football-clips.js keeperGround() kramponu ≥0,045 m'de tutuyor; tests/mocap-football.cjs bunu kontrol ediyor. Rapor artık batık oyuncuyu sunkList ile listeler. Hareket kaynakları: dribble-capture (11v11 + arena), mJuggle (ayak tenisi servisi), mDefend1/2, mSave*.
+- Testler 85/85 (temporal-quality için CODEX_PRIMARY_RUNTIME_NODE_MODULES @napi-rs/canvas yolunu göstermeli). Manifest yeniden üretildi, php build.php filesMatch true.
 
 ## [2026-11-27] Claude · V265 — ayak tenisi oyun akışı, dikey kamera, tüm kadro seçimi
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V265).

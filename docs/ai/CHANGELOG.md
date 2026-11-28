@@ -5,6 +5,8 @@
 - Top sürme (gerçek kayıt, Dribble_03): 11v11, 5v5 ve Japon kalede topu süren oyuncunun başı/omuzları/kolları kayıttan (0,4–5 m/s, hızla azalan ağırlık, ileri-geri oynatma); bacaklar adım sisteminde (kayma yok).
 - tools/mocap/convert-rokoko-soccer.mjs: dokunuş listesi (zaman, ayak, oyuncuya göre konum); mocap-football.js 14 klip.
 - Test: mocap-football (sektirme dokunuşu/ele dönüş/servis, top sürme yalnız taşıyıcıda).
+- Kaleci uzak yüksek uzanma klibinde krampon çimin altına iniyordu; keeperGround() ile düzeltildi (+ test). full-review batık oyuncuları sunkList ile raporlar.
+
 ## V265 · 2026-11-27
 - Ayak tenisi oyun akışı (footvolley-engine): teknik oyuncu — hücumların gerçek uçuşu (sürtünme+dönüş) file kontrolünden geçer, aşamayacaksa smaç derine, diğerleri güvenli aşırtmaya döner (file riski file dibinde ~%0,2–0,5, uzakta/düşük temasta daha fazla); set pasları fileden 1,3–2,0 m geride ve havada smaçla karşılanır; pas hedefleri fileye değil arkadaşın gerisine; servis file kontrolü. Smaç 45–60 km/s (önce ~34), sert smaçta tepki +0,2 sn; yeni vuruşlar kafa smacı, makas vole, daha sık rövaşata; savunmada topukla ve uzanarak kurtarış; ikili/üçlüde anlaşamama (~7/100 sayı); oyuncular derin topa saha dışına 4 m kadar kovalar.
 - Ölçüm (40 maç/mod): sayı süresi 1v1 10,7→15 sn, 2v2 13,7→16, 3v3 15,3→14; hücumla biten sayı 1v1 %51→90, 2v2 %25→92, 3v3 %9→94; file hatası 1v1 %14→0,7, 2v2 %28→0,6, 3v3 %1,5→0; dışarı giden hücum %5–7.
