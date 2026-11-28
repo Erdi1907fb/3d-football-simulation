@@ -1,3 +1,9 @@
+## [2026-11-28] Claude · V266 — top sektirme ve top sürme kayıtları + son genel doğrulama
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V266).
+- footvolley-engine: JUGGLE (Next90MocapFootball mJuggle.touches); setUpServe'de serveCount%3!==2 ise juggle={p,start=t+max(1.1,d/4.5+.5),end=start+dur+.28}, p.juggle; jugglePosition(): eller→dokunuşlar→eller, X=p+lx·x·.48+fx·z·.47, Y=.30+R·.55 (rig ölçümüyle kalibre; cam/jug.cjs), yay +½g·dt²·u(1−u); pose() juggle dalı; footvolley-ui Next90FootvolleyPose 'juggle' → mocapPose(mJuggle). rng kullanılmaz (dizi bozulmaz).
+- football-clips locomotion: mDribble upperOnly+preserveRoot, w=smooth(.4,1.2,v)·(1−smooth(3.5,5.5,v))·.55·(1−vuruş/karşılama), userData.dribbleCapture; applyClip options.record=false.
+- Doğrulama: tam test + tools/checks/full-review (8 mod × 4 an) — sonuçlar aşağıda.
+
 ## [2026-11-27] Claude · V265 — ayak tenisi oyun akışı, dikey kamera, tüm kadro seçimi
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V265).
 - Kullanıcı: ayak tenisinde daha çok/çeşitli smaç (kafa, ayak, rövaşata), daha teknik karşılama, file dibinden saçma takılmalar çok az, sayılar smaç/karşılanamama/dışarı/anlaşamama/topuk/file kenarı kurtarış; dikey kamera titremesi; oyuncu seçiminde kadro dışı/ilk 11 dışı oyuncular (Osimhen, Trossard bulunamıyor).

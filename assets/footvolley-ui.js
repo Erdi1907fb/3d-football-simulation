@@ -178,6 +178,7 @@ async function boot(){try{status(tr('Kadrolar açılıyor…','Loading squads…
  * thigh pop. Legs: [0] right, [1] left; hip.x < 0 swings the leg forward/up; waist.x < 0 leans back. */
 const ss=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
 window.Next90FootvolleyPose=function(a,p){const u=p.fvMovePhase||0,kick=p.kickFoot==='left'?1:0,K=a.legs[kick],S=a.legs[1-kick],side=kick?1:-1,set=(j,x,y=0,z=0)=>j.rotation.set(x,y,z),arms=(fn)=>a.arms.forEach((arm,k)=>fn(arm,k?1:-1,k===kick));
+ if(p.fvMove==='juggle'){/* V266 captured keepie-uppie before the serve */const C=globalThis.SekmeFootballClips,c=C?.mocapClip?.('mJuggle');if(c)C.mocapPose(a,'mJuggle',u*c.duration,1,{});return;}
  if(p.fvMove==='bicycle'){const c=.4,lean=u<c?-1.55*ss(u/c):-1.55+1.25*ss((u-c)/(1-c));a.body.position.y=.42*Math.sin(Math.PI*Math.min(1,u/.92));a.waist.rotation.set(lean,0,0);
   set(K.hip,u<c?-.3-2.15*ss(u/c):-2.45-.35*ss((u-c)/.2)+2.4*ss((u-c-.2)/.45));set(K.knee,u<c?.9*Math.sin(Math.PI*u/c):.2*ss((u-c)/(1-c)));set(K.boot,.35);
   set(S.hip,u<.3?-1.9*ss(u/.3):u<c+.1?-1.9+1.5*ss((u-.3)/(c-.2)):-.4+.2*ss((u-c-.1)/.4));set(S.knee,.55);set(S.boot,.2);
