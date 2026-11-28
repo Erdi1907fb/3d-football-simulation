@@ -1,3 +1,11 @@
+## [2026-11-28] Claude · V268 — veriye dayalı yayınlanan skor + oynanmamış maç geçişi + "Bu skorla oynat"
+- Dal → main (ff). Canlı build 267 (kullanıcı V267'yi yükledi; build.php filesMatch true). ZIP V267'ye göre.
+- Kullanıcı: Fenerbahçe–Erzurumspor (e0de9bda0a9e0039ba8bb521, 29.11) hep 7-x. Ekrandaki maç analiz maçıydı (500 pas). Sunucu xG 2,34–0,86, güç 77,4–71,3; eski pp_scenario_score u=0,9958 → 7-2.
+- Kullanıcı kararları: zar yerine veri + futbol şansı; Fenerbahçe bu maçı kazansın (yeni kuralla doğal olarak 2-0 çıktı, hash ayarlanmadı); haftalık programdaki oynanmamış maçlar da yeni kurala geçsin; bilinen/oynanmış tahminler bozulmasın; SKOR SINIRI YOK.
+- lib.php: PP_SCENARIO_POLICY_V2='data-weighted-scenario-v2', pp_scenario_score_v2 (sonuç p^1,8, skor p², anahtar 'score-scenario-v268|seed|result/score'), pp_build_prediction tarih ≥2026-11-28 → v2; pp_update mevcut tahmin döngüsünde pp_scenario_migrate. s3_replay skoru tahminden anlık türettiği için replay uyumlu. Önceden çekilmiş/yüklenmiş haftalık video varsa eski skoru gösterir.
+- Geçiş canlıda bir sonraki pp_update'te (ziyaret auto_refresh veya cron) çalışır.
+- Maç ekranı senaryo menüsü #scenarioMode (official/custom/montecarlo) + #scoreInputs + #scoreMatch 'Oynat'; app.js fixtureGoals/fixtureSeed (Sekme3D'de de), bulletin.js lobi 'montecarlo' → custom hedef. assets/monte-carlo.js (Next90MonteCarlo.run). Node'da hedef 2-1/0-3/5-0/3-3/0-0 birebir; Chromium'da üç seçenek: MC 2-0 (%10,8) custom 4-1 official 2-0, sayfa hatası yok. Test: tests/monte-carlo.cjs.
+
 ## [2026-11-28] Claude · V267 — serbest 11v11 gerçekçilik + katalog güç düzeltmesi
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V267).
 - Kullanıcı: Fenerbahçe–Erzurumspor serbest maç 7-1 (hepsi Muriqi), 5. golde kale dibine kadar boş sürüp vurma. Açık talimat: SKORLARA SINIR KOYMA; güçlü–zayıf maçlarda büyük skorlar çıkabilir. Sadece veriyi tutarlı yap ve saçma oyunu düzelt.

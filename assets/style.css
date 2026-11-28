@@ -26,3 +26,6 @@
 /* Six-day calendar filters wrap on phones. */
 .day-tabs{display:flex;flex-wrap:wrap;gap:6px;max-width:100%}.bulletin-filters{flex-wrap:wrap}.day-tabs button{white-space:nowrap}
 .lineup-source-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 16px 18px}.lineup-source-panel[hidden]{display:none}.lineup-source-panel>div{padding:14px;background:#0b182266;border:1px solid #ffffff16;border-radius:10px;display:flex;flex-direction:column;gap:7px;font-size:12px}.lineup-source-panel strong{font-size:14px;color:#d8eab3}.lineup-source-panel small{color:#9bb0c1;line-height:1.6}.lineup-source-panel a{color:#afc9d8;font-size:11px}@media(max-width:600px){.lineup-source-panel{grid-template-columns:1fr}}
+
+/* V268: write a score and play an 11v11 scenario that ends with it */
+.score-pick{display:inline-flex;align-items:center;gap:4px}.score-pick input{width:44px;padding:6px 4px;text-align:center;background:#101c24;color:#e8f0e0;border:1px solid #31444f;border-radius:6px;font:inherit}.score-pick #scoreInputs{display:inline-flex;align-items:center;gap:4px}.score-pick #scoreInputs[hidden]{display:none}.score-pick #scoreInputs>span{color:#9fb0a6}.score-pick select{padding:6px;background:#101c24;color:#e8f0e0;border:1px solid #31444f;border-radius:6px;font:inherit;max-width:210px}#scoreMatch{color:#d4e6a8}

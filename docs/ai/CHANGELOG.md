@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V268 · 2026-11-28
+- Yayınlanan skor (kullanıcı: Fenerbahçe–Erzurumspor analiz maçı hep 7-1/7-2): sebep motor değil, sunucunun skor senaryosu. Model 2,34–0,86 gol bekliyordu; skor Poisson dağılımından maç kimliğine bağlı sabit zarla tekdüze çekiliyordu, bu maçın zarı 0,9958 (en uç %0,4) → 7-2 (%0,11), her denemede aynı.
+- server/lib.php pp_scenario_score_v2 (data-weighted-scenario-v2), kullanıcı isteği "zar yerine veriler harmanlansın + futbol şansı": önce sonuç (ev/beraberlik/deplasman) modelin olasılıkları p^1,8 ile güçlüye doğru keskinleşerek, sonra o sonucun içinde skor p² ile çekilir. Sınır yok. 2,34–0,86: favori ~%88 kazanır, en sık 2-0/1-0/2-1/3-0; dengeli 1,4–1,3: %43/%21/%36; 4,6–0,25: 5-0/6-0 çıkar. Fenerbahçe–Erzurumspor → 2-0 (doğal sonuç, elle ayar yok).
+- pp_scenario_migrate: oynanmamış, başlamamış, korumasız, eski politikalı tahminler (haftalık program dahil) bir kez yeniden çekilir; oynanmış maçlar (bilinen tutturulan tahminler) değişmez. previousPublishedScore + revision.
+- 11v11 maç ekranı (her maç kendi ekranında): senaryo menüsü + "Oynat": 1) Analiz tahmini (sunucu targetScore, mode official), 2) İstediğim skoru canlandır (0–10 kutular, mode custom), 3) 100.000 kez oynat · en sık skor (assets/monte-carlo.js: maçın xG'si, her koşuda takım başına form/şans log-normal σ .18 + ortak tempo σ .10, Poisson; en sık skor canlandırılır; maç kimliğine bağlı tohum, ~80 ms). Lobiye de '100.000 simülasyon · en sık skor' seçeneği. Fenerbahçe–Erzurumspor: 2-0 (%10,7).
+- app.js politika etiketleri (concept-engine değişmedi: turnuva/lig motoru da onu kullanıyor). Test: tests/scenario-v2.php.
+
 ## V267 · 2026-11-28
 - Serbest 11v11 (kullanıcı: Fenerbahçe–Erzurumspor 7-1, 7 golü de Muriqi attı, 5. golde kale dibine kadar sürüp vurdu):
   - Veri: kişisel maçta sunucu gücü gelmeyince katalog önceliği kullanılıyor; Erzurumspor 50 (alt lig düzeyi) kalmıştı. Süper Lig'deki güncel konumlarına göre düzeltildi: Erzurumspor 50→63, Amed 52→63, Çorum 51→61, Gençlerbirliği 55→62, Eyüpspor 56→60, Gaziantep 57→62, Kocaelispor 58→61.

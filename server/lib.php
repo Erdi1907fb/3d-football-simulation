@@ -130,6 +130,30 @@ function pp_distribution(float $h, float $a): array {
     foreach ($p as &$v) $v /= $sum; unset($v);
     return ['probabilities' => $p, 'goalDistribution'=>array_map(fn($v)=>$v/$sum,$totals), 'scoreSelection'=>['policy'=>'most-likely-exact-score','probability'=>$best/$sum,'forcedHighScores'=>false], 'mostLikelyScore' => $score, 'modelOdds' => ['home' => round(1 / $p['home'], 2), 'draw' => round(1 / $p['draw'], 2), 'away' => round(1 / $p['away'], 2), 'label' => 'MODEL']];
 }
+// V267: likelihood-weighted scenario. Scores are still drawn from the Poisson model (no cap), but the weights are
+// sharpened (p^2) so the published scenario sits where the model's mass is; an upset or a big score stays possible.
+const PP_SCENARIO_POLICY_V2='data-weighted-scenario-v2';
+function pp_scenario_score_v2(float $h,float $a,int $seed):array {
+ // Two stages: the result (home/draw/away) is drawn from the model's outcome probabilities sharpened toward the data
+ // (p^1.8: the stronger side usually wins, upsets keep a real share), then the exact score inside that result is drawn
+ // with likelihood-sharpened weights (p^2). Nothing is capped; a lopsided model can still produce a big score.
+ $ph=pp_poisson($h,10);$pa=pp_poisson($a,10);$sum=array_sum($ph)*array_sum($pa);$cells=['home'=>[],'draw'=>[],'away'=>[]];$out=['home'=>0.,'draw'=>0.,'away'=>0.];
+ foreach($ph as$i=>$hp)foreach($pa as$j=>$ap){$v=$hp*$ap/$sum;$o=$i>$j?'home':($i===$j?'draw':'away');$cells[$o][]=[$i,$j,$v];$out[$o]+=$v;}
+ $draw=fn(string $k)=>(hexdec(substr(hash('sha256','score-scenario-v268|'.$seed.'|'.$k),0,8))+.5)/4294967296;
+ $w=array_map(fn($p)=>$p**1.8,$out);$t=array_sum($w);$u=$draw('result')*$t;$result='home';foreach($w as$o=>$x){$u-=$x;if($u<=0){$result=$o;break;}}
+ $list=$cells[$result];usort($list,fn($x,$y)=>$y[2]<=>$x[2]?:$x[0]<=>$y[0]?:$x[1]<=>$y[1]);$t=0.;foreach($list as$c)$t+=$c[2]**2;$u=$draw('score')*$t;$pick=$list[0];foreach($list as$c){$u-=$c[2]**2;if($u<=0){$pick=$c;break;}}
+ return ['score'=>['home'=>$pick[0],'away'=>$pick[1]],'selection'=>['policy'=>PP_SCENARIO_POLICY_V2,'probability'=>$pick[2],'resultProbability'=>$out[$result],'forcedHighScores'=>false,'note'=>'Data-weighted scenario: the result follows the model probabilities (sharpened toward the stronger side, upsets possible), the score is drawn inside it; not capped.']];
+}
+// V267: an unplayed forecast published under the old uniform scenario draw is re-drawn once with the
+// likelihood-weighted policy (model, xG and seed unchanged; played or protected forecasts are never touched).
+function pp_scenario_migrate(array $q,array $m,DateTimeImmutable $now):array {
+ if(!empty($m['result'])||!empty($q['result'])||($q['scoreSelection']['policy']??'')!=='seeded-predictive-scenario'||pp_forecast_protected($q)||!isset($q['expectedGoals']['home'],$q['expectedGoals']['away'],$q['seed']))return $q;
+ $kick=$m['kickoff']??$q['kickoff']??null;if(is_string($kick)&&strtotime($kick)!==false&&strtotime($kick)<=$now->getTimestamp())return $q;
+ $sc=pp_scenario_score_v2((float)$q['expectedGoals']['home'],(float)$q['expectedGoals']['away'],(int)$q['seed']);
+ $q['previousPublishedScore']=$q['publishedScore']??null;$q['publishedScore']=$sc['score'];$q['scoreSelection']=$sc['selection'];$q['revision']=(int)($q['revision']??0)+1;$q['revisedAt']=$now->format(DATE_ATOM);
+ if(isset($q['analysis']['uncertainty'])&&is_array($q['analysis']['uncertainty']))$q['analysis']['uncertainty']['scorePolicy']=PP_SCENARIO_POLICY_V2;
+ return $q;
+}
 function pp_scenario_score(float $h,float $a,int $seed):array {
  $ph=pp_poisson($h,10);$pa=pp_poisson($a,10);$sum=array_sum($ph)*array_sum($pa);$u=(hexdec(substr(hash('sha256','score-scenario-v72|'.$seed),0,8))+.5)/4294967296;$cursor=0.;$selected=['home'=>10,'away'=>10];$prob=0.;
  foreach($ph as$i=>$hp)foreach($pa as$j=>$ap){$v=$hp*$ap/$sum;$cursor+=$v;if($cursor>=$u){$selected=['home'=>$i,'away'=>$j];$prob=$v;break 2;}}
@@ -243,7 +267,7 @@ function pp_is_featured(array $match, array $rank, array $cfg): bool {
 }
 function pp_build_prediction(array $m,array $history,DateTimeImmutable $now):array{
 $prediction=array_merge($m,pp_forecast($m,$history,$now));$prediction['home']=array_merge($prediction['home'],$prediction['teamProfiles']['home']);$prediction['away']=array_merge($prediction['away'],$prediction['teamProfiles']['away']);unset($prediction['teamProfiles']);
-            $prediction['publishedScore']=$prediction['mostLikelyScore'];$prediction['engineVersion']=$m['date']>='2026-10-24'?'2.6.0':'2.5.0';$prediction['animationProfile']='expanded-v2';$prediction['playerPolicy']=$m['date']>='2026-10-21'?'role-xi-v1':null;$prediction['replayDuration']=35;$prediction['replayPlan']=['policy'=>'pre-match-likelihood-v1','candidates'=>8];$prediction['context']=['venue'=>($m['neutral']??false)?'neutral':'home'];$prediction['forecastSource']=$m['source'];$prediction['seed']=(int)hexdec(substr(hash('sha256','pp-daily-v1|'.$m['id']),0,8));if($m['date']>='2026-10-27'){$scenario=pp_scenario_score((float)$prediction['expectedGoals']['home'],(float)$prediction['expectedGoals']['away'],$prediction['seed']);$prediction['publishedScore']=$scenario['score'];$prediction['scoreSelection']=$scenario['selection'];if(isset($prediction['analysis']['uncertainty']))$prediction['analysis']['uncertainty']=array_replace($prediction['analysis']['uncertainty'],['scorePolicy'=>'seeded-predictive-scenario','note'=>'A reproducible model-weighted scenario; the modal exact score and broader outcome probabilities are separate statistics.']);$prediction['engineVersion']='2.7.0';}$prediction['createdAt']=$now->format(DATE_ATOM);$prediction['originalPublishedDate']=$m['date'];$prediction['inputSnapshot']=$prediction['authorizedInputs']??[];unset($prediction['authorizedInputs']);return $prediction;
+            $prediction['publishedScore']=$prediction['mostLikelyScore'];$prediction['engineVersion']=$m['date']>='2026-10-24'?'2.6.0':'2.5.0';$prediction['animationProfile']='expanded-v2';$prediction['playerPolicy']=$m['date']>='2026-10-21'?'role-xi-v1':null;$prediction['replayDuration']=35;$prediction['replayPlan']=['policy'=>'pre-match-likelihood-v1','candidates'=>8];$prediction['context']=['venue'=>($m['neutral']??false)?'neutral':'home'];$prediction['forecastSource']=$m['source'];$prediction['seed']=(int)hexdec(substr(hash('sha256','pp-daily-v1|'.$m['id']),0,8));if($m['date']>='2026-10-27'){$v2=$m['date']>='2026-11-28';$scenario=($v2?'pp_scenario_score_v2':'pp_scenario_score')((float)$prediction['expectedGoals']['home'],(float)$prediction['expectedGoals']['away'],$prediction['seed']);$prediction['publishedScore']=$scenario['score'];$prediction['scoreSelection']=$scenario['selection'];if(isset($prediction['analysis']['uncertainty']))$prediction['analysis']['uncertainty']=array_replace($prediction['analysis']['uncertainty'],['scorePolicy'=>$scenario['selection']['policy'],'note'=>'A reproducible model-weighted scenario; the modal exact score and broader outcome probabilities are separate statistics.']);$prediction['engineVersion']='2.7.0';}$prediction['createdAt']=$now->format(DATE_ATOM);$prediction['originalPublishedDate']=$m['date'];$prediction['inputSnapshot']=$prediction['authorizedInputs']??[];unset($prediction['authorizedInputs']);return $prediction;
 }
 function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = null, ?callable $fetcher = null): array {
     $now=($clock??new DateTimeImmutable('now'))->setTimezone(new DateTimeZone($cfg['timezone']));$epoch=$now->getTimestamp();$bulletinDay=pp_bulletin_day($now);$web=(bool)($cfg['_web_mode']??false);$started=microtime(true);$prepared=$cfg['_prepare_fixture']??null;$published=0;
@@ -306,6 +330,9 @@ function pp_update(array $cfg, bool $force = false, ?DateTimeImmutable $clock = 
             // once that match is played (and before this kick-off) it is rebuilt from the updated ratings.
             if(!empty($predictions[$id]['nationalProvisional'])&&empty($m['result'])&&pp_forecast_eligible($m,$now)&&!pp_nr_pending_before($m,$history)&&!pp_forecast_protected($predictions[$id])){
                 $keep=$predictions[$id];$m['analysis']=$keep['analysis']??($m['analysis']??null);try{$fresh=pp_build_prediction($m,$history,$now);}catch(Throwable $e){continue;}$fresh['nationalProvisional']=false;$fresh['revision']=(int)($keep['revision']??0)+1;$fresh['revisedAt']=$now->format(DATE_ATOM);$fresh['previousPublishedScore']=$keep['publishedScore']??null;$fresh['createdAt']=$fresh['createdAt']??$keep['createdAt']??$now->format(DATE_ATOM);$predictions[$id]=$fresh;continue;}
+            // V267: an unplayed forecast published under the old uniform scenario draw is re-drawn once with the
+            // likelihood-weighted policy (model, xG and seed unchanged; played or protected forecasts are never touched).
+            $predictions[$id]=pp_scenario_migrate($predictions[$id],$m,$now);
             $oldResult=$predictions[$id]['result']??null;
             foreach(['date','kickoff','result','source','timeConfirmed','scheduleProvisional']as$field)if(array_key_exists($field,$m))$predictions[$id][$field]=$m[$field];
             if($m['result']&&$m['result']!==$oldResult){$predictions[$id]['resultReceivedAt']=$predictions[$id]['resultReceivedAt']??$now->format(DATE_ATOM);$predictions[$id]['resultUpdatedAt']=$now->format(DATE_ATOM);}
