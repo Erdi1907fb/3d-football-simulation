@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## V265 · 2026-11-27
+- Ayak tenisi oyun akışı (footvolley-engine): teknik oyuncu — hücumların gerçek uçuşu (sürtünme+dönüş) file kontrolünden geçer, aşamayacaksa smaç derine, diğerleri güvenli aşırtmaya döner (file riski file dibinde ~%0,2–0,5, uzakta/düşük temasta daha fazla); set pasları fileden 1,3–2,0 m geride ve havada smaçla karşılanır; pas hedefleri fileye değil arkadaşın gerisine; servis file kontrolü. Smaç 45–60 km/s (önce ~34), sert smaçta tepki +0,2 sn; yeni vuruşlar kafa smacı, makas vole, daha sık rövaşata; savunmada topukla ve uzanarak kurtarış; ikili/üçlüde anlaşamama (~7/100 sayı); oyuncular derin topa saha dışına 4 m kadar kovalar.
+- Ölçüm (40 maç/mod): sayı süresi 1v1 10,7→15 sn, 2v2 13,7→16, 3v3 15,3→14; hücumla biten sayı 1v1 %51→90, 2v2 %25→92, 3v3 %9→94; file hatası 1v1 %14→0,7, 2v2 %28→0,6, 3v3 %1,5→0; dışarı giden hücum %5–7.
+- Dikey ayak tenisi/bowling takip kamerası ±0,5 sn yükseltilmiş kosinüs ortalaması (0,1 sn ızgara önbellekli): adım adım titreme yok, zamanın saf fonksiyonu.
+- Yeni hareket pozları: makas vole, topukla kurtarış, uzanarak kurtarış; etiketler KAFA SMAÇI!/MAKAS VOLE!/TOPUKLA KURTARIŞ!/UZANARAK KURTARIŞ!
+- Hakemler: baş hakem paletten koyu tene düşüyordu; dört hakeme sabit görünüm (açık ten, temiz tıraş, yeni 'neat' kısa erkek kesimi — alnı açık, kaşa inen küt kakül yok; 4. hakem kırlaşmış). Tam gövde hakemde bu profili kullanır; yan hakem bayrağı yeni el konumunda. Dikey kamera titremesi ölçüldü: kare başı ikinci fark ortalaması 0,078→0,0012, en büyük sıçrama ~7 m→0,006; kadraj korunur.
+- Ayak tenisi/futbol bowlingi oyuncu listesi tüm kadroyu gösterir (önce uygunlar, sonra sakat/cezalı/oynayamaz/kadro dışı ve kaleciler etiketli); varsayılan seçim yine uygunlardan. Penaltı ve lig/kupa zaten kadro dışı oyuncuları etiketle seçtiriyordu.
 ## V264 · 2026-11-27
 - Ten rengi: kafa kütüphanesinin skinRGB değeri boyun/çene altındaki gölgeli bölgeden örneklenmişti (profilden 60+ koyu 69/452 oyuncu: Škriniar, Kane, Rice, Salah, Oğuz Aydın…); gövde bu renge eşitlendiği için kol/bacak koyuydu. tools/head-import/resample-skin.py 3069 kafayı yanaklardan yeniden örnekledi (manifest skinRGB, skinSample 'cheeks-v264'): koyu sapma 69→19, medyan −28.
 - Sevinç duruşları: sarılma/yığılma/golcüye eğilme ve kaybeden 'crouch' tepkisi gövdeyi ayaktan devirerek eğiliyordu (dimdik tahta gibi yamuk); artık belden bükülür (bel öne, kalça ters, bacak dik). Düşme/yan yatma ve kalecinin yerde kalma ayarı skinned T-poz sınır kutusu yerine eklemlerden hesaplanır (kaybedenler ~0,5 m havada yan yatıyordu).

@@ -1,3 +1,15 @@
+## [2026-11-27] Claude · V265 — ayak tenisi oyun akışı, dikey kamera, tüm kadro seçimi
+- Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V265).
+- Kullanıcı: ayak tenisinde daha çok/çeşitli smaç (kafa, ayak, rövaşata), daha teknik karşılama, file dibinden saçma takılmalar çok az, sayılar smaç/karşılanamama/dışarı/anlaşamama/topuk/file kenarı kurtarış; dikey kamera titremesi; oyuncu seçiminde kadro dışı/ilk 11 dışı oyuncular (Osimhen, Trossard bulunamıyor).
+- footvolley-engine: flightClears(state) gerçek uçuş; hücumda netRisk (file dibi .0015+…); smaç düzeltmesi hedefi derine (aim.x+=s*.45); set: n2 %72 ilk dokunuş, n1 %55 kendine, hedef fileden 1,3–2,0 m; replan: set/arkadaş pası havada (sekme cezası .55), file yanında sekme +.8, stretch (late<.2, hız<16) heel/dive; mixup (iki aday maliyet farkı<.16, sert top>9 m/s, servis değil, p=.2); reach(): sert top (>15 m/s, servis değil) +.2+…(3v3 +.08); smaç süresi .1+d/24 (.22–.5), kafa smacı .16+d/19, makas/rövaşata .22+d/20; clears() fileye ulaşmayan topu artık 'geçti' saymaz; oyuncu kovalaması ±4 m/±2,6 m.
+- Ölçüm aracı: /tmp scratch stats2.cjs (40 tohum × mod; sınıflar KILL/attack-out/net/own…). Sonuç CHANGELOG'da.
+- footvolley-ui: smoothFollow (±.5 s cos² pencere, .1 s ızgara Map önbellek); pozlar scissor/heel/dive; KINDS etiketleri; oyuncu listesi tüm kadro + etiket (Analysis.best varsayılanları değişmedi).
+- Not: yerel ve canlı (252) veride Osimhen (432) ve Trossard (1895) kadroda ve 'not-flagged'; listede vardı (Osimhen 3., Trossard ilk 11). Kullanıcı başka bir akışta (ör. eski önbellek/oyuncu kapışması) görmemiş olabilir; artık uygun olmayanlar da listede.
+- Hakem (kullanıcı: beyaz tenli, düzgün yüz/saç): scene.js officials identity.appearance (ten/saç/'neat', profile); fullbody apply resmi kişide identity.appearance.profile kullanır; hairVariants.neat = scalp'tan alın saçağı kırpılmış (önde z>.035 ve y<1,875−headShortening+şakak .25·(|x|−.05)). Gerçek hakem yüzü/kafası yok (benzerlik kaynağı yok); MPFB yüz.
+- Kamera ölçümü (cam.cjs, frameCheck): titreme ortalama 7,8e-2→1,2e-3, maks 6,97→6,3e-3; kadraj en kötü x .857 (sınır .92).
+- Testler: footvolley.cjs seed-56 anlık regresyon satırı kaldırıldı (genel kural aşağıda tüm tohumlarda), footvolley-net file teması için daha çok tohum tarar.
+- 84/84.
+
 ## [2026-11-27] Claude · V264 — genel kontrol: ten rengi, sevinç duruşları, hakem eşyaları, NaN; gerçek sevinç/savunma/sprint kaydı
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V264).
 - Kullanıcı: tüm modlarda yüz/fizik/vücut/hareket/duruşları test et; penaltı sevincinde yamuk eğilme, hakem eli ağzında, Škriniar siyah ten.
