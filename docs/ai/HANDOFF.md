@@ -6,6 +6,7 @@
 - free-football.js: shot.technique==='header' için headingBall/headingContact/jump (0,25 sn önden).
 - Ölçüm aracı (scratch free-stats.cjs): 30 maç eşit takım 1,7 gol/maç, konversiyon .64, kafa 9, vole 3; önce 2,2 ve .62.
 - Electron yok → browser-free-football çalıştırılamadı; kafa pozu verisi Node'da doğrulandı.
+- Testler: run-all 85/85 + free-football-realism ayrıca geçti (run-all listesine ayrı girdi olarak eklendi; sonraki tam koşuda 86).
 
 ## [2026-11-28] Claude · V266 — top sektirme ve top sürme kayıtları + son genel doğrulama
 - Dal → main (ff). Canlı build 252; ZIP V252'ye göre (V253–V266).
